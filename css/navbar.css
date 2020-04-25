@@ -1,0 +1,31 @@
+.navbar {
+    width: 100%;
+    margin: 0 0 -200px;
+    position: 0 -100px ;
+    display: block;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.navbar a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 8mm;
+}
+
+.navbar img {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    transition: 0.2s ease;
+    vertical-align: text-bottom;
+}
+
+.navbar img:hover {
+    transform: scale(1.05);
+}
+
+.navbar span {
+    margin-left: -20px;
+}

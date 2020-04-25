@@ -1,16 +1,20 @@
+@import "navbar.css";
+
 html,
 body {
     padding: 10px 0;
     font-family: 'Fira Code', monospace;
     font-size: 20px;
+    min-width: 1000px;
 }
 
-body {
-    background-image: url(../images/emptyGear.png);
-    background-size: 100%;
-    background-position: -50% 0;
+.bgimage {
+    height: 700px;
+    background-image: url(../images/bg2.png);
+    background-size: 700px 700px;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: -100px 200px;
 }
 
 h1,
@@ -21,18 +25,12 @@ h3 {
     font-weight: bold;
 }
 
-.logo-image {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    transition: 0.3s ease;
+.title {
+    font-size: 300%;
+    background-color: black;
+    color: white;
+    margin-top: 0%;
 }
-
-.logo-image:hover {
-    transform: scale(1.05);
-}
-
 
 .header-image {
     display: block;
@@ -79,6 +77,11 @@ h3 {
     font-family: 'Fira Code';
     src: url('/fonts/firacode/static/FiraCode-Light.ttf')  format('truetype');
   }
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/fonts/firacode/static/FiraCode-Bold.ttf')  format('truetype');
+    font-weight: bold;
+}
 
 @media (max-width: 500px) {
     html,
