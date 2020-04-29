@@ -1,0 +1,9 @@
+.flowVid {
+    position: absolute;
+    bottom: 45%;
+    left: 5%;
+    width: 420px;
+    height: 315px;
+    min-width: 500px;
+    overflow: auto;
+}
