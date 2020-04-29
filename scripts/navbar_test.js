@@ -8,7 +8,7 @@ $(window).scroll(function(){
         $('.navbar div').css('transform','scale(1.0)');
         $('.navbar div').css('margin-top','0px');
     }
-    else if(distanceFromTop > 200)
+    else if(distanceFromTop > 100)
     {
         // navbar
         $('.navbar').css('height', '50px');
