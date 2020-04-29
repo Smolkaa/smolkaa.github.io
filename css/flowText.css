@@ -1,0 +1,23 @@
+.flowText {
+    font-size: 24px;
+    position: absolute;
+    width: 60%;
+    height: 1000px;
+    right: 0;
+    min-width: 500px;
+    overflow: auto;
+}
+
+.flowText div {
+    background-color: white;
+    border-bottom: black;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+}
+
+.flowText h1 {
+}
+
+.flowText p {
+    padding: 5px;
+}
