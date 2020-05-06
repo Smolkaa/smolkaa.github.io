@@ -1,6 +1,6 @@
 $(window).scroll(function(){
     var distanceFromTop = $(document).scrollTop();    
-    if(distanceFromTop < 84 )
+    if(distanceFromTop < 40 )
     {
         $('.navbar').css('height', '220px');
         $('.navbar').css('padding-bottom', '20px');
@@ -8,7 +8,7 @@ $(window).scroll(function(){
         $('.navbar div').css('transform','scale(1.0)');
         $('.navbar div').css('margin-top','0px');
     }
-    else if(distanceFromTop > 100)
+    else if(distanceFromTop > 50)
     {
         // navbar
         $('.navbar').css('height', '50px');
