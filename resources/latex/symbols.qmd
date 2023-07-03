@@ -1,0 +1,68 @@
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+
+\newcommand{\activationEnergy}{E_a}
+\newcommand{\area}{A}
+\newcommand{\azimuthAngle}{\alpha}
+\newcommand{\baseVector}{\hat{\vec{e}}}
+\newcommand{\cartesianCoordinate}{\vec{x}}
+    \newcommand{\cartesianCoordinateX}{x}
+    \newcommand{\cartesianCoordinateY}{y}
+    \newcommand{\cartesianCoordinateZ}{z}
+    \newcommand{\cartesianCoordinateDef}{\left[\cartesianCoordinateX, \cartesianCoordinateY, \cartesianCoordinateZ\right]^T}
+    \newcommand{\cartesianBaseVectorX}{\baseVector_\cartesianCoordinateX}
+    \newcommand{\cartesianBaseVectorY}{\baseVector_\cartesianCoordinateY}
+    \newcommand{\cartesianBaseVectorZ}{\baseVector_\cartesianCoordinateZ}
+\newcommand{\density}{\rho}
+\newcommand{\distance}{d}
+\newcommand{\eccentricity}{e}
+\newcommand{\eccentricAnomaly}{E} 
+\newcommand{\energy}{E}
+    \newcommand{\kineticEnergy}{\energy_{kin}}
+    \newcommand{\relativeEnergy}{\epsilon}
+    \newcommand{\relativeKineticEnergy}{\relativeEnergy_{kin}}
+\newcommand{\error}{e}
+\newcommand{\extinctionCoefficient}{E}
+\newcommand{\force}{F}
+\newcommand{\height}{h}
+\newcommand{\latitude}{\Phi}
+\newcommand{\localTime}{\Time_\text{LT}}
+\newcommand{\longitude}{\Theta}
+\newcommand{\machineAccuracy}{\epsilon}
+\newcommand{\mass}{m}
+\newcommand{\mean}{\mu}
+    \newcommand{\meanof}[1]{\langle #1 \rangle}
+\newcommand{\meanAnomaly}{M}
+\newcommand{\numberDensity}{n}
+    \newcommand{\surfaceNumberDensity}{n_0}
+\newcommand{\partitionFunction}{\zeta}
+\newcommand{\period}{P}
+\newcommand{\poissonRatio}{\nu}
+\newcommand{\porosity}{\Psi}
+\newcommand{\potential}{U}
+\newcommand{\pressure}{p}
+\newcommand{\radius}{r}
+\newcommand{\residenceTime}{\tau}
+\newcommand{\semiLatusRectum}{p}
+\newcommand{\semiMajorAxis}{a}
+\newcommand{\sphericalCoordinate}{\vec{r}}
+    \newcommand{\sphericalCoordinateRadius}{r}
+    \newcommand{\sphericalCoordinateAzimuth}{\vartheta}
+    \newcommand{\sphericalCoordinateElevation}{\varphi}
+    \newcommand{\sphericalCoordinateDef}{\left[\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right]^T}
+    \newcommand{\sphericalBaseVectorRadius}{\baseVector_\sphericalCoordinateRadius}
+    \newcommand{\sphericalBaseVectorAzimuth}{\baseVector_\sphericalCoordinateAzimuth}
+    \newcommand{\sphericalBaseVectorElevation}{\baseVector_\sphericalCoordinateElevation}
+\newcommand{\standardDeviation}{\sigma}
+\newcommand{\sublimationFlux}{\Phi}
+\newcommand{\temperature}{T}
+\newcommand{\thermalAccommodationCoefficient}{\alpha}
+\newcommand{\thermalConductivity}{\lambda}
+\newcommand{\Time}{t}
+    \newcommand{\flightTime}{\Time_{flight}}
+\newcommand{\trueAnomaly}{\theta}
+\newcommand{\variance}{\standardDeviation^2}
+\newcommand{\velocity}{v}
+    \newcommand{\Velocity}{V}
+\newcommand{\volume}{V}
+\newcommand{\youngsModulus}{Y}
+\newcommand{\zenithAngle}{\psi}

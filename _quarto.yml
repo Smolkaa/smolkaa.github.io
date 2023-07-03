@@ -1,0 +1,77 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ExESS"
+  search: true
+  navbar:
+    background: primary
+    left:
+      - text: "Home"
+        href: src/index.qmd
+      - text: "Documentation"
+        href: src/documentation.qmd
+      - text: "Wiki"
+        href: src/wiki.qmd
+      - text: "Manual"
+        href: src/manual.qmd
+      - text: "API"
+        href: src/api.qmd
+
+  sidebar:
+    - title: "Home"
+      style: docked
+      background: light
+      contents:
+        - text: "Home"
+          href: src/index.qmd
+
+    - title: "Documentation"
+      style: docked
+      background: light
+      collapse-level: 3
+      contents:
+        - text: "Documentation"
+          href: src/documentation.qmd
+        - text: "**1 -- Introduction**"
+          href: documentation/introduction.qmd
+        - section: "**2 -- Mathematics, Numerics, and Computational Foundations**"
+          contents:
+            - section: "2.1 -- Coordinate Systems"
+              contents:
+                - text: "2.1.1 -- Cartesian and Spherical Coordinates"
+                - text: "2.1.2 -- Coordinate Differentials"
+                  href: documentation/02_MathNumComp/coordinate_systems/coordinate_differentials.qmd
+                - text: "2.1.3 -- Reference Frames"
+
+    - title: "Wiki"
+      style: docked
+      background: light
+      contents:
+        - src/wiki.qmd
+
+    - title: "Manual"
+      style: docked
+      background: light
+      contents:
+        - src/manual.qmd
+
+    - title: "API"
+      style: docked
+      background: light
+      contents:
+        - src/api.qmd
+
+format:
+  html:
+    theme: [flatly, _mystyle.scss]
+    css: styles.css
+    html-math-method: mathjax
+    include-in-header: 
+      - resources/mathjax.html
+    grid:
+      sidebar-width: 250px
+
+
+

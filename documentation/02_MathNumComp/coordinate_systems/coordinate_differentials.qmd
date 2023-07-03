@@ -1,0 +1,111 @@
+---
+title: "2.1.2 -- Coordinate Differentials"
+date: last-modified
+author: "Alexander Smolka"
+---
+
+{{< include /resources/latex/symbols.qmd >}}
+
+---
+
+This work is regularly relying on vector calculus which includes a substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.
+
+\begin{align}
+    \frac{\partial}{\partial\Time} &= 0, \\
+    \frac{\partial\cartesianBaseVectorX}{\partial\sphericalCoordinateRadius} &= \frac{\partial\cartesianBaseVectorX}{\partial\sphericalCoordinateAzimuth} = \frac{\partial\cartesianBaseVectorX}{\partial\sphericalCoordinateElevation} = \frac{\partial\cartesianBaseVectorY}{\partial\sphericalCoordinateRadius} = \frac{\partial\cartesianBaseVectorY}{\partial\sphericalCoordinateAzimuth} = \frac{\partial\cartesianBaseVectorY}{\partial\sphericalCoordinateElevation} = \frac{\partial\cartesianBaseVectorZ}{\partial\sphericalCoordinateRadius} = \frac{\partial\cartesianBaseVectorZ}{\partial\sphericalCoordinateAzimuth} = \frac{\partial\cartesianBaseVectorZ}{\partial\sphericalCoordinateElevation} = 0, \\
+    \frac{\partial\sphericalBaseVectorRadius}{\partial\cartesianCoordinateX} &= \frac{\partial\sphericalBaseVectorRadius}{\partial\cartesianCoordinateY} = \frac{\partial\sphericalBaseVectorRadius}{\partial\cartesianCoordinateZ} = \frac{\partial\sphericalBaseVectorAzimuth}{\partial\cartesianCoordinateX} = \frac{\partial\sphericalBaseVectorAzimuth}{\partial\cartesianCoordinateY} = \frac{\partial\sphericalBaseVectorAzimuth}{\partial\cartesianCoordinateZ} = \frac{\partial\sphericalBaseVectorElevation}{\partial\cartesianCoordinateX} = \frac{\partial\sphericalBaseVectorElevation}{\partial\cartesianCoordinateY} = \frac{\partial\sphericalBaseVectorElevation}{\partial\cartesianCoordinateZ} = 0.
+\end{align}
+
+For example, the differential of a stationary cartesian coordinate vector and cartesian elements is
+
+\begin{equation}
+    d\cartesianCoordinate = \frac{\partial\cartesianCoordinate}{\partial\cartesianCoordinateX}d\cartesianCoordinateX + \frac{\partial\cartesianCoordinate}{\partial\cartesianCoordinateY}d\cartesianCoordinateY + \frac{\partial\cartesianCoordinate}{\partial\cartesianCoordinateZ}d\cartesianCoordinateZ = d\cartesianCoordinateX \cartesianBaseVectorX + d\cartesianCoordinateY \cartesianBaseVectorY + d\cartesianCoordinateZ \cartesianBaseVectorZ = \begin{bmatrix} d\cartesianCoordinateX \\ d\cartesianCoordinateY \\ d\cartesianCoordinateZ \end{bmatrix},
+\end{equation}
+
+and for spherical coordinates and elements
+
+\begin{equation}
+    d\sphericalCoordinate = \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateRadius}d\sphericalCoordinateRadius + \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateAzimuth}d\sphericalCoordinateAzimuth + \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateElevation}d\sphericalCoordinateElevation = d\sphericalCoordinateRadius \sphericalBaseVectorRadius + d\sphericalCoordinateAzimuth \sphericalBaseVectorAzimuth + d\sphericalCoordinateElevation \sphericalBaseVectorElevation = \begin{bmatrix} d\sphericalCoordinateRadius \\ d\sphericalCoordinateAzimuth \\ d\sphericalCoordinateElevation \end{bmatrix}.
+\end{equation}
+
+The above total differentials are relatively simple to set up since their respective partial differentials cancel out to only contain one variable each. However, the differentials for the cartesian vector in spherical elements and the spherical vector in cartesian elements are more complicated, with the former differential given by
+
+\begin{align}
+    d\cartesianCoordinate &= \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateRadius}d\sphericalCoordinateRadius + \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateAzimuth}d\sphericalCoordinateAzimuth + \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateElevation}d\sphericalCoordinateElevation \\
+    &= \left(\cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation \cartesianBaseVectorX + \sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation \cartesianBaseVectorY + \sin\sphericalCoordinateElevation \cartesianBaseVectorZ\right) d\sphericalCoordinateRadius \nonumber \\
+    &+ \left(-\sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation \cartesianBaseVectorX + \sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation \cartesianBaseVectorY\right) d\sphericalCoordinateAzimuth \nonumber \\
+    &+ \left(-\sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation \cartesianBaseVectorX - \sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation \cartesianBaseVectorY + \sphericalCoordinateRadius\cos\sphericalCoordinateElevation \cartesianBaseVectorZ\right) d\sphericalCoordinateElevation \\
+    &= \begin{bmatrix} 
+        \cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation &  -\sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation & -\sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation \\
+        \sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation & \sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation & - \sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation \\
+        \sin\sphericalCoordinateElevation & 0 & \sphericalCoordinateRadius\cos\sphericalCoordinateElevation
+    \end{bmatrix} \begin{bmatrix} d\sphericalCoordinateRadius \\ d\sphericalCoordinateAzimuth \\ d\sphericalCoordinateElevation \end{bmatrix}  \label{eq:total_cartesian_spherical_differential_matrix}\\
+    &= \begin{bmatrix} 
+        \cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation d\sphericalCoordinateRadius -\sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation d\sphericalCoordinateAzimuth -\sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation d\sphericalCoordinateElevation \\
+        \sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation d\sphericalCoordinateRadius + \sphericalCoordinateRadius\cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation d\sphericalCoordinateAzimuth - \sphericalCoordinateRadius\sin\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation d\sphericalCoordinateElevation \\
+        \sin\sphericalCoordinateElevation d\sphericalCoordinateRadius + \sphericalCoordinateRadius\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation
+    \end{bmatrix}. \label{eq:total_cartesian_spherical_differential}
+\end{align}
+
+The resulting vector in Eq. \eqref{eq:total_cartesian_spherical_differential} contains the scalar differentials of the spherical elements in each of its entries, which can also be pulled out of the vector and written as a linear combination using a matrix notation, shown in Eq. \eqref{eq:total_cartesian_spherical_differential_matrix}. While the differential of a spherical vector in cartesian elements can be calculated in the same way, which is $d\sphericalCoordinate = \frac{\partial\sphericalCoordinate}{\partial\cartesianCoordinateX}d\cartesianCoordinateX + \frac{\partial\sphericalCoordinate}{\partial\cartesianCoordinateY}d\cartesianCoordinateY + \frac{\partial\sphericalCoordinate}{\partial\cartesianCoordinateZ}d\cartesianCoordinateZ$, its trigonometric functions and subsequent differentiations make it less common and inefficient to use, which is why it is not shown here for brevity.
+
+These vectorized total differentials are regularly used in vector calculus. A prime example is calculating the gradient $\nabla$ of a scalar function $f$, which is given by
+\begin{equation}
+    \frac{df}{d\cartesianCoordinate} = \nabla f = \begin{bmatrix}
+        \frac{\partial f}{\partial\cartesianCoordinateX} \\
+        \frac{\partial f}{\partial\cartesianCoordinateY} \\
+        \frac{\partial f}{\partial\cartesianCoordinateZ}
+    \end{bmatrix},
+\end{equation}
+as an example in a cartesian coordinate system and with cartesian elements. Many problems feature the second-order derivatives of a scalar function, which is called the Laplacian $\nabla^2$ and is given by
+\begin{equation}
+    \nabla \cdot \nabla f = \nabla^2 f = \frac{\partial^2 f}{\partial\cartesianCoordinateX^2} + \frac{\partial^2 f}{\partial\cartesianCoordinateY^2} + \frac{\partial^2 f}{\partial\cartesianCoordinateZ^2}.
+\end{equation}
+
+Both the gradient and the laplacian can also be expressed in spherical coordinates. The former makes use of the chain rule of differentiation, which evaluates to the inverse matrix of the coordinate projection of Eq. \eqref{eq:total_cartesian_spherical_differential_matrix}:
+\begin{align}
+    \begin{bmatrix}
+        \frac{\partial}{\partial\cartesianCoordinateX} \\
+        \frac{\partial}{\partial\cartesianCoordinateY} \\
+        \frac{\partial}{\partial\cartesianCoordinateZ}
+    \end{bmatrix} &= \begin{bmatrix} 
+        \frac{\partial\sphericalCoordinateRadius}{\partial\cartesianCoordinateX} & \frac{\partial\sphericalCoordinateAzimuth}{\partial\cartesianCoordinateX} & \frac{\partial\sphericalCoordinateElevation}{\partial\cartesianCoordinateX} \\
+        \frac{\partial\sphericalCoordinateRadius}{\partial\cartesianCoordinateY} & \frac{\partial\sphericalCoordinateAzimuth}{\partial\cartesianCoordinateY} & \frac{\partial\sphericalCoordinateElevation}{\partial\cartesianCoordinateY} \\
+        \frac{\partial\sphericalCoordinateRadius}{\partial\cartesianCoordinateZ} & \frac{\partial\sphericalCoordinateAzimuth}{\partial\cartesianCoordinateZ} & \frac{\partial\sphericalCoordinateElevation}{\partial\cartesianCoordinateZ}
+    \end{bmatrix}\begin{bmatrix}
+        \frac{\partial}{\partial\sphericalCoordinateRadius} \\
+        \frac{\partial}{\partial\sphericalCoordinateAzimuth} \\
+        \frac{\partial}{\partial\sphericalCoordinateElevation}
+    \end{bmatrix} \\
+    &= \begin{bmatrix} 
+        \cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation & -\frac{\sin\sphericalCoordinateAzimuth}{\sphericalCoordinateRadius\cos\sphericalCoordinateElevation} & -\frac{\cos\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation}{\sphericalCoordinateRadius} \\
+        \sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation & \frac{\cos\sphericalCoordinateAzimuth}{\sphericalCoordinateRadius\cos\sphericalCoordinateElevation} & -\frac{\sin\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation}{\sphericalCoordinateRadius} \\
+        \sin\sphericalCoordinateElevation & 0 & \frac{\cos\sphericalCoordinateElevation}{\sphericalCoordinateRadius}
+    \end{bmatrix}\begin{bmatrix}
+        \frac{\partial}{\partial\sphericalCoordinateRadius} \\
+        \frac{\partial}{\partial\sphericalCoordinateAzimuth} \\
+        \frac{\partial}{\partial\sphericalCoordinateElevation}
+    \end{bmatrix}\\
+    \Rightarrow\qquad \frac{\partial}{\partial\cartesianCoordinateX} &= \cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation\frac{\partial}{\partial\sphericalCoordinateRadius} -\frac{\sin\sphericalCoordinateAzimuth}{\sphericalCoordinateRadius\cos\sphericalCoordinateElevation} \frac{\partial}{\partial\sphericalCoordinateAzimuth} -\frac{\cos\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation}{\sphericalCoordinateRadius} \frac{\partial}{\partial\sphericalCoordinateElevation} \label{eq:spherical_gradient_x}\\
+    \Rightarrow\qquad \frac{\partial}{\partial\cartesianCoordinateY} &= \sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation\frac{\partial}{\partial\sphericalCoordinateRadius} + \frac{\cos\sphericalCoordinateAzimuth}{\sphericalCoordinateRadius\cos\sphericalCoordinateElevation} \frac{\partial}{\partial\sphericalCoordinateAzimuth} -\frac{\sin\sphericalCoordinateAzimuth\sin\sphericalCoordinateElevation}{\sphericalCoordinateRadius} \frac{\partial}{\partial\sphericalCoordinateElevation} \label{eq:spherical_gradient_y}\\
+    \Rightarrow\qquad \frac{\partial}{\partial\cartesianCoordinateZ} &= \sin\sphericalCoordinateElevation\frac{\partial}{\partial\sphericalCoordinateRadius} + \frac{\cos\sphericalCoordinateElevation}{\sphericalCoordinateRadius} \frac{\partial}{\partial\sphericalCoordinateElevation}. \label{eq:spherical_gradient_z}
+\end{align}
+The latter can be derived by applying the chain rule twice, which is a tedious but straightforward calculation, leading to:
+\begin{align}
+    \nabla^2 &= \frac{\partial^2}{\partial\sphericalCoordinateRadius^2} + \frac{2}{\sphericalCoordinateRadius}\frac{\partial}{\partial\sphericalCoordinateRadius} + \frac{1}{\sphericalCoordinateRadius^2\cos^2\sphericalCoordinateElevation}\frac{\partial}{\partial\sphericalCoordinateAzimuth} + \frac{1}{\sphericalCoordinateRadius^2} \frac{\partial^2}{\partial\sphericalCoordinateElevation^2} - \frac{\sin\sphericalCoordinateElevation}{\sphericalCoordinateRadius^2\cos\sphericalCoordinateElevation} \frac{\partial}{\partial\sphericalCoordinateElevation} \\
+    &= \frac{1}{\sphericalCoordinateRadius^2}\frac{\partial}{\partial\sphericalCoordinateRadius}\left(\sphericalCoordinateRadius^2\frac{\partial}{\partial\sphericalCoordinateRadius}\right) + \frac{1}{\sphericalCoordinateRadius^2\cos^2\sphericalCoordinateElevation}\frac{\partial}{\partial\sphericalCoordinateAzimuth} + \frac{1}{\sphericalCoordinateRadius^2\cos\sphericalCoordinateElevation} \frac{\partial}{\partial\sphericalCoordinateElevation} \left(\cos\sphericalCoordinateElevation\frac{\partial}{\partial\sphericalCoordinateElevation}\right). \label{eq:laplace_spherical}
+\end{align}
+
+{{< include _laplace_derivation.qmd >}}
+
+Another example of the use of differentials is in integration, where it is used to represent an infinitesimal change in the variable. Shorthand versions of multi-dimensional integrals are often written using vector variables, such as
+\begin{equation}
+    \int_X \int_Y \int_Z f d\cartesianCoordinateZ d\cartesianCoordinateY d\cartesianCoordinateX = \int_\volume f d^3\cartesianCoordinate,
+\end{equation}
+where $\volume$ is the volume of the integration domain, with the infinitesimal \emph{and scalar} volume element $d^3\cartesianCoordinate \in \volume = \left\{d\cartesianCoordinateX \, d\cartesianCoordinateY \, d\cartesianCoordinateZ \; | \; d\cartesianCoordinateX \in X, d\cartesianCoordinateY \in Y, d\cartesianCoordinateZ \in Z \right\}$. The superscript $\bullet^3$ in the differentials indicates that the differential is \emph{not} a vector but a scalar representation of the element's size created by the vector elements. As before, the differential $d^3\cartesianCoordinate$ can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq.~(\ref{eq:total_cartesian_spherical_differential_matrix}), of the transformation:
+\begin{equation}
+    d^3\cartesianCoordinate = \left|\frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinate}\right| d^3\sphericalCoordinate = \sphericalCoordinateRadius^2\cos\sphericalCoordinateElevation d\sphericalCoordinateRadius d\sphericalCoordinateAzimuth d\sphericalCoordinateElevation.
+\end{equation}
+@fig-spherical_differential_element illustrates the spherical differential element $d^3\sphericalCoordinate$ in a three-dimensional cartesian coordinate system. The azimuth angle $\sphericalCoordinateAzimuth$ rotates inside of the $\cartesianCoordinateX$--$\cartesianCoordinateY$ plane, while the elevation angle $\sphericalCoordinateElevation$ rotates the vector out of that plane in $\cartesianCoordinateZ$ direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume $d^3\sphericalCoordinate \approx \sphericalCoordinateRadius^2 \sin\sphericalCoordinateElevation \, d\sphericalCoordinateRadius d\sphericalCoordinateAzimuth d\sphericalCoordinateElevation$.
+
+{{< include _figure_spherical_differential_element/_figure_spherical_differential_element.qmd >}}
