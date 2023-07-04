@@ -5,8 +5,10 @@ title: "API"
 ::: {.hidden}
 ```{julia}
 #| echo: false
-include(joinpath(@__DIR__, "..", "..", "exess.jl", "src", "ExESS.jl"))
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
+end
 ```
 :::
 

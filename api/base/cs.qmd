@@ -6,10 +6,10 @@ title: "Coordinate Systems"
 # ExESS API -- ``GlobalCartesianPosition``
 ```{julia}
 #| echo: false
-
+if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
-
+end
 @doc ExESS.GlobalCartesianPosition
 ```
 :::

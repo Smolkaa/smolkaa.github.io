@@ -69,6 +69,8 @@ website:
           href: api/api.qmd
         - section: "Base"
           contents:
+            - text: "Constants"
+              href: api/base/constants.qmd
             - text: "Coordinate Systems"
               href: api/base/cs.qmd
 
@@ -82,10 +84,3 @@ format:
       - resources/mathjax.html
     grid:
       sidebar-width: 250px
-
-
-execute:
-  freeze: auto  
-  eval: true
-  echo: true
-  # output: false

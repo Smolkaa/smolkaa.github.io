@@ -1,11 +1,28 @@
 ---
-title: "ExESS -- Base -- Constants"
+title: "Constants"
 ---
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS API -- 
+# ExESS API -- Base -- Constants
 ```{julia}
 #| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+
+println("AVOGADRO_CONSTANT:         $AVOGADRO_CONSTANT")
+println("BOLTZMANN_CONSTANT         $BOLTZMANN_CONSTANT")
+println("ELEMENTARY_CHARGE:         $ELEMENTARY_CHARGE")
+println("GRAVITATIONAL_CONSTANT:    $GRAVITATIONAL_CONSTANT")
+println("PLANCK_CONSTANT:           $PLANCK_CONSTANT")
+println("STEFAN_BOLTZMANN_CONSTANT: $STEFAN_BOLTZMANN_CONSTANT")
+println("UNIVERSAL_GAS_CONSTANT:    $UNIVERSAL_GAS_CONSTANT")
+println("LUNAR_DAY:                 $LUNAR_DAY")
+println("LUNAR_MASS:                $LUNAR_MASS")
+println("LUNAR_RADIUS:              $LUNAR_RADIUS")
+println("LUNAR_g0:                  $LUNAR_g0")
+println("LUNAR_vesc:                $LUNAR_vesc")
 
 ```
 :::
