@@ -47,5 +47,12 @@
     "title": "API",
     "section": "",
     "text": "API for ExESS."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Extraterrestrial Exosphere and Surface Simulations",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]

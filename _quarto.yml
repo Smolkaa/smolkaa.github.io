@@ -9,7 +9,7 @@ website:
     background: primary
     left:
       - text: "Home"
-        href: src/index.qmd
+        href: index.qmd
       - text: "Documentation"
         href: src/documentation.qmd
       - text: "Wiki"
@@ -25,7 +25,7 @@ website:
       background: light
       contents:
         - text: "Home"
-          href: src/index.qmd
+          href: index.qmd
 
     - title: "Documentation"
       style: docked

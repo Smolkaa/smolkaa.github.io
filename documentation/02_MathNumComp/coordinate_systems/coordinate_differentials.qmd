@@ -109,3 +109,6 @@ where $\volume$ is the volume of the integration domain, with the infinitesimal 
 @fig-spherical_differential_element illustrates the spherical differential element $d^3\sphericalCoordinate$ in a three-dimensional cartesian coordinate system. The azimuth angle $\sphericalCoordinateAzimuth$ rotates inside of the $\cartesianCoordinateX$--$\cartesianCoordinateY$ plane, while the elevation angle $\sphericalCoordinateElevation$ rotates the vector out of that plane in $\cartesianCoordinateZ$ direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume $d^3\sphericalCoordinate \approx \sphericalCoordinateRadius^2 \sin\sphericalCoordinateElevation \, d\sphericalCoordinateRadius d\sphericalCoordinateAzimuth d\sphericalCoordinateElevation$.
 
 {{< include ./_figure_spherical_differential_element/_figure_spherical_differential_element.qmd >}}
+
+
+![](./_figure_spherical_differential_element/_figure_spherical_differential_element.svg){width=70%}
