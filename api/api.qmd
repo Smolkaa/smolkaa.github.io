@@ -1,0 +1,14 @@
+---
+title: "API"
+---
+
+<!-- ::: {.hidden}
+# ExESS API -- trajectory
+```{julia}
+#| echo: false
+include(joinpath(@__DIR__, "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+```
+::: -->
+
+API for `ExESS`.

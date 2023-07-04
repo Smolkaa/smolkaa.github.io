@@ -2,8 +2,9 @@ project:
   type: website
   output-dir: docs
 
-filters:
-  - include-code-files
+jupyter: julia-1.9
+
+bibliography: "../asmolka_library/main.bib"
 
 website:
   title: "ExESS"
@@ -14,13 +15,13 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Documentation"
-        href: src/documentation.qmd
+        href: documentation/documentation.qmd
       - text: "Wiki"
         href: src/wiki.qmd
       - text: "Manual"
         href: src/manual.qmd
       - text: "API"
-        href: src/api.qmd
+        href: api/api.qmd
 
   sidebar:
     - title: "Home"
@@ -36,7 +37,7 @@ website:
       collapse-level: 3
       contents:
         - text: "Documentation"
-          href: src/documentation.qmd
+          href: documentation/documentation.qmd
         - text: "**1 -- Introduction**"
           href: documentation/introduction.qmd
         - section: "**2 -- Mathematics, Numerics, and Computational Foundations**"
@@ -64,17 +65,22 @@ website:
       style: docked
       background: light
       contents:
-        - src/api.qmd
+        - text: ExESS API
+          href: api/api.qmd
+        - section: "Base"
+          contents:
+            - text: "Coordinate Systems"
+              href: api/base/cs.qmd
 
 format:
   html:
     theme: [flatly, _mystyle.scss]
     css: styles.css
+    code-link: true
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
     grid:
       sidebar-width: 250px
-
 
 

@@ -1,0 +1,15 @@
+---
+title: "ExESS -- Base -- Coordinate Systems"
+---
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS API -- GlobalCartesianPosition
+```{julia}
+#| echo: false
+
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+
+@doc ExESS.GlobalCartesianPosition
+```
+:::
