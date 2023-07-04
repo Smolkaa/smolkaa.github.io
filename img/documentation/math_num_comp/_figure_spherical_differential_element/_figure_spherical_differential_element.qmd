@@ -8,6 +8,10 @@
 Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.
 :::
 
+# LaTeX
+```{.tex include=img/documentation/math_num_comp/_figure_spherical_differential_element/_figure_spherical_differential_element.tex}
+```
+
 # Code
 ```latex
 \documentclass[crop,tikz]{standalone}

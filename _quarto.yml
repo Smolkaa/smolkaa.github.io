@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: docs
 
+filters:
+  - include-code-files
+
 website:
   title: "ExESS"
   search: true
