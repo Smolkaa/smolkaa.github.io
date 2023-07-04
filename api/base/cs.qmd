@@ -2,8 +2,31 @@
 title: "Coordinate Systems"
 ---
 
+Coordinates in `ExESS` are implemented as their custom, three-dimensional vectors, which
+are based on their scope, the coordinate system, and their physical type. The scope can
+either be `Global[...]` or `Local[...]`, which is referring to a fixed planetary system or
+a local reference frame, respectively. The coordinate system is either `[...]Cartesian[...]`
+or `[...]Spherical[...]`, which is referring to a Cartesian or spherical coordinate system,
+respectively. The physical type is either `[...]Position` or `[...]Velocity`, which is referring 
+to a position or velocity vector, respectively. The following structure shows all currently
+implemented coordinates in `ExESS`:
+
+```julia
+ExESS
+└─ AbstractCoordinates
+    │
+    ├─ AbstractPosition
+    │  ├─ GlobalCartesianPosition{T<:Real}
+    │  └─ GlobalSphericalPosition{T<:Real}
+    │
+    └─ AbstractVelocity
+       ├─ GlobalCartesianVelocity{T<:Real}
+       ├─ LocalCartesianVelocity{T<:Real}
+       └─ GlobalSphericalVelocity{T<:Real}
+```
+
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS API -- ``GlobalCartesianPosition``
+# ExESS: ``GlobalCartesianPosition`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -11,5 +34,17 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.GlobalCartesianPosition
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``GlobalSphericalPosition`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalSphericalPosition
 ```
 :::

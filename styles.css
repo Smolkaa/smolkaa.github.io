@@ -1,1 +1,6 @@
 /* css styles */
+
+.navbar-logo {
+    width: 70px;
+    scale: 1.5;
+}

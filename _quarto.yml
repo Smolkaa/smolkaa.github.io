@@ -8,9 +8,12 @@ bibliography: "../asmolka_library/main.bib"
 
 website:
   title: "ExESS"
+  favicon: "/resources/logo/exess_logo.png"
   search: true
   navbar:
     background: primary
+    logo: /resources/logo/exess_logo.svg
+    logo-href: /index.qmd
     left:
       - text: "Home"
         href: index.qmd

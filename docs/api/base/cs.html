@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -78,6 +113,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../resources/logo/exess_logo.svg" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ExESS</span>
     </a>
@@ -186,18 +224,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Coordinates in <code>ExESS</code> are implemented as their custom, three-dimensional vectors, which are based on their scope, the coordinate system, and their physical type. The scope can either be <code>Global[...]</code> or <code>Local[...]</code>, which is referring to a fixed planetary system or a local reference frame, respectively. The coordinate system is either <code>[...]Cartesian[...]</code> or <code>[...]Spherical[...]</code>, which is referring to a Cartesian or spherical coordinate system, respectively. The physical type is either <code>[...]Position</code> or <code>[...]Velocity</code>, which is referring to a position or velocity vector, respectively. The following structure shows all currently implemented coordinates in <code>ExESS</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ExESS</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>└─ AbstractCoordinates</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    │</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ├─ AbstractPosition</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    │  ├─ GlobalCartesianPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    │  └─ GlobalSphericalPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    │</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    └─ AbstractVelocity</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       ├─ GlobalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       ├─ LocalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>       └─ GlobalSphericalVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-ExESS API – <code>GlobalCartesianPosition</code>
+ExESS: <code>GlobalCartesianPosition</code> – Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>[1] GlobalCartesianPosition(x::Real, y::Real, z::Real)
 [2] GlobalCartesianPosition(X::AbstractVector)
 [3] GlobalCartesianPosition(x::AbstractPosition)</code></pre>
@@ -206,6 +256,25 @@ ExESS API – <code>GlobalCartesianPosition</code>
 [2] GlobalCartesianPosition(sol::ODESolution, t::Real)
 [3] GlobalCartesianPosition(sol::ODESolution, t::AbstractVector)</code></pre>
 <p>Extracts <code>GlobalCartesianPosition</code> from <code>ODESolution</code> at given index, all indexes, time or times. Note that this constructor assumes the solution object to be from a <code>SecondOrderODEProblem</code>, where the components of the solution vector are ordered as <code>[vx, vy, vz, x, y, z]</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS: <code>GlobalSphericalPosition</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>[1] GlobalSphericalPosition(r::Real, theta::Real, phi::Real)
+[2] GlobalSphericalPosition(X::AbstractVector)
+[3] GlobalSphericalPosition(x::AbstractPosition)</code></pre>
 </div>
 </div>
 </div>
