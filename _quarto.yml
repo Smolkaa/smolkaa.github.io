@@ -84,3 +84,8 @@ format:
       sidebar-width: 250px
 
 
+execute:
+  freeze: auto  
+  eval: true
+  echo: true
+  # output: false

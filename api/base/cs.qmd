@@ -1,9 +1,9 @@
 ---
-title: "ExESS -- Base -- Coordinate Systems"
+title: "Coordinate Systems"
 ---
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS API -- GlobalCartesianPosition
+# ExESS API -- ``GlobalCartesianPosition``
 ```{julia}
 #| echo: false
 
