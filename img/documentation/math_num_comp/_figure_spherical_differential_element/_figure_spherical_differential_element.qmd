@@ -1,9 +1,15 @@
-%
-% copied from: https://tikz.net/spherical_volume/
-% date: 2023, June 26
-%
-% adjusted by Alexander Smolka
-%
+::: {.panel-tabset}
+
+# Figure
+
+::: {#fig-spherical_differential_element}
+![](/img/documentation/math_num_comp/_figure_spherical_differential_element/_figure_spherical_differential_element.svg){width=70%}
+
+Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.
+:::
+
+# Code
+```latex
 \documentclass[crop,tikz]{standalone}
 \usepackage{tikz}
 	\usetikzlibrary{shapes}
@@ -171,3 +177,6 @@
 \end{tikzpicture}
 
 \end{document}
+```
+
+:::
