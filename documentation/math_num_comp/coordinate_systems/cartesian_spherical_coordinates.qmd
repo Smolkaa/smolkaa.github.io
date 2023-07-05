@@ -33,7 +33,11 @@ The same vector in the same coordinate system and, thus, the same domain, can al
 Note that the subscript $s$ indicates that the vector is expressed in spherical elements. Both vectors describe the same coordinate in the same coordinate system, thus $\cartesianCoordinate = \cartesianCoordinate_s$. On the other hand, a coordinate can also be projected into a spherical coordiante system, $\sphericalCoordinate$, which is a different domain, and expressed in spherical elements $\left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right)$:
 \begin{equation}
     \sphericalCoordinate = \begin{bmatrix}\sphericalCoordinateRadius \\ \sphericalCoordinateAzimuth \\ \sphericalCoordinateElevation \end{bmatrix} \qquad\text{with }\sphericalCoordinateRadius\in\Set{R}^+,\;\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+    \label{eq:spherical_coordinate}
 \end{equation}
+
+{{< include apirefs/_spherical_coordinates.qmd >}}
+
 The same coordinate can also be expressed in cartesian elements $\left(\cartesianCoordinateX, \cartesianCoordinateY, \cartesianCoordinateZ\right)$:
 \begin{equation}
     \sphericalCoordinate_c = \begin{bmatrix}

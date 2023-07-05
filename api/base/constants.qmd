@@ -3,7 +3,7 @@ title: "Constants"
 ---
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS API -- Base -- Constants
+# Base -- Constants
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

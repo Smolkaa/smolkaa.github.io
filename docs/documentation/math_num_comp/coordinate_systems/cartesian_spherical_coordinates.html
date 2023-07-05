@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">**2 -- Mathematics, Numerics, and Computational Foundations**</li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1 – Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1.1 – Cartesian and Spherical Coordinates</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 – Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems.html">2.1 – Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1.1 – Cartesian and Spherical Coordinates</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -148,13 +148,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>1 – Introduction</strong></span></a>
+ <span class="menu-text">1 – Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text"><strong>2 – Mathematics, Numerics, and Computational Foundations</strong></span></a>
+            <a href="../../../documentation/math_num_comp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2 -- Mathematics, Numerics, and Computational Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -162,8 +162,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">2.1 – Coordinate Systems</span></a>
+            <a href="../../../documentation/math_num_comp/coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 -- Coordinate Systems</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -177,13 +177,16 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/coordinate_systems/coordinate_differentials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.2 – Coordinate Differentials</span></a>
+  <a href="../../../documentation/math_num_comp/coordinate_systems/spacial_differentials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1.2 – Spacial Differentials</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">2.1.3 -- Reference Frames</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1.3 – Temporal Differentials</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -232,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
         x\\
         y\\
         z
-    \end{bmatrix} \qquad\text{with } x\in\Set{R},\;y\in\Set{R},\;z\in\Set{R}.
+    \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
     \label{eq:cartesian_coordinate}
 \end{equation}\]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -247,7 +250,7 @@ ExESS API – Cartesian Coordinates
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a cartesian coordinate system and in cartesian elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a>.</p>
+<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a>.</p>
 </div>
 </div>
 </div>
@@ -256,15 +259,33 @@ ExESS API – Cartesian Coordinates
         r\cos\vartheta\cos\varphi\\
         r\sin\vartheta\cos\varphi\\
         r\sin\varphi
-    \end{bmatrix} \qquad\text{with }r\in\Set{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+    \end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
 \end{equation}\]</span> Note that the subscript <span class="math inline">\(s\)</span> indicates that the vector is expressed in spherical elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s\)</span>. On the other hand, a coordinate can also be projected into a spherical coordiante system, <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span>, which is a different domain, and expressed in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>: <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\Set{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
-\end{equation}\]</span> The same coordinate can also be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+    \label{eq:spherical_coordinate}
+\end{equation}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API – Spherical Coordinates
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalSphericalPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a>.</p>
+</div>
+</div>
+</div>
+<p>The same coordinate can also be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{r}}_c = \begin{bmatrix}
         \sqrt{x^2 + y^2 + z^2} \\
         \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
         \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
-    \end{bmatrix}  \qquad\text{with } x\in\Set{R},\;y\in\Set{R},\;z\in\Set{R}.
+    \end{bmatrix}  \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
 \end{equation}\]</span> Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences of these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
 <p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
     \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad

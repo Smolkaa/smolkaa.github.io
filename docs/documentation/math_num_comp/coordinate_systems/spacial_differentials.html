@@ -9,7 +9,7 @@
 <meta name="author" content="Alexander Smolka">
 <meta name="dcterms.date" content="2023-07-05">
 
-<title>ExESS - 2.1.2 – Coordinate Differentials</title>
+<title>ExESS - 2.1.2 – Spacial Differentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -161,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">**2 -- Mathematics, Numerics, and Computational Foundations**</li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1 – Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/coordinate_differentials.html">2.1.2 – Coordinate Differentials</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 – Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems.html">2.1 – Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/spacial_differentials.html">2.1.2 – Spacial Differentials</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -182,13 +182,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>1 – Introduction</strong></span></a>
+ <span class="menu-text">1 – Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text"><strong>2 – Mathematics, Numerics, and Computational Foundations</strong></span></a>
+            <a href="../../../documentation/math_num_comp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2 -- Mathematics, Numerics, and Computational Foundations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -196,8 +196,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">2.1 – Coordinate Systems</span></a>
+            <a href="../../../documentation/math_num_comp/coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 -- Coordinate Systems</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -211,13 +211,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/coordinate_systems/coordinate_differentials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2.1.2 – Coordinate Differentials</span></a>
+  <a href="../../../documentation/math_num_comp/coordinate_systems/spacial_differentials.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2.1.2 – Spacial Differentials</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">2.1.3 -- Reference Frames</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1.3 – Temporal Differentials</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -233,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2.1.2 – Coordinate Differentials</h1>
+<h1 class="title">2.1.2 – Spacial Differentials</h1>
 </div>
 
 
@@ -375,7 +378,7 @@ Derivation of spherical Laplace operator.
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../../../img/documentation/math_num_comp/_figure_spherical_differential_element/_figure_spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="../../..\img/documentation/math_num_comp/_figure_spherical_differential_element/_figure_spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
 </figure>
 </div>

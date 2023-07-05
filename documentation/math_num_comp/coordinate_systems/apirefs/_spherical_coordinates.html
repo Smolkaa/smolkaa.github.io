@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>cartesian_coordinates</title>
+<title>spherical_coordinates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,17 +23,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="_cartesian_coordinates_files/libs/clipboard/clipboard.min.js"></script>
-<script src="_cartesian_coordinates_files/libs/quarto-html/quarto.js"></script>
-<script src="_cartesian_coordinates_files/libs/quarto-html/popper.min.js"></script>
-<script src="_cartesian_coordinates_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="_cartesian_coordinates_files/libs/quarto-html/anchor.min.js"></script>
-<link href="_cartesian_coordinates_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="_cartesian_coordinates_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="_cartesian_coordinates_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="_cartesian_coordinates_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="_cartesian_coordinates_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="_spherical_coordinates_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_spherical_coordinates_files/libs/quarto-html/quarto.js"></script>
+<script src="_spherical_coordinates_files/libs/quarto-html/popper.min.js"></script>
+<script src="_spherical_coordinates_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_spherical_coordinates_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_spherical_coordinates_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_spherical_coordinates_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_spherical_coordinates_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_spherical_coordinates_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_spherical_coordinates_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -45,19 +47,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-ExESS API – Cartesian Coordinates
+ExESS API – Spherical Coordinates
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a cartesian coordinate system are implemented as <a href="/api/base/cs.qmd"><code>GlobalCartesianPosition</code></a> and <a href="/api/base/cs.qmd"><code>GlobalCartesianVelocity</code></a>.</p>
+<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="/api/base/cs.qmd"><code>GlobalSphericalPosition</code></a> and <a href="/api/base/cs.qmd"><code>GlobalSphericalVelocity</code></a>.</p>
 </div>
 </div>
 </div>

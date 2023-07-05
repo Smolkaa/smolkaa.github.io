@@ -28,6 +28,11 @@ ExESS
        └─ GlobalSphericalVelocity{T<:Real}
 ```
 
+More information on the mathematical description of the different coordinate vectors are
+presented in the [(2.1.1 -- Cartesian and Spherical Coordinates)](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd).
+The mathematical foundation for the conversion functions are shown in [(2.1.2 -- Spacial Differentials)](/documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd),
+and [(2.1.3 -- Temporal Differentials)](/documentation/math_num_comp/coordinate_systems/tempoarl_differentials.qmd),
+
 ::: {.callout-note appearance="simple" icon=false}
 # ExESS: ``GlobalCartesianPosition`` -- Struct
 ```{julia}

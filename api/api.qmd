@@ -1,15 +1,9 @@
 ---
-title: "API"
+title: "ExESS -- API"
+date: last-modified
+author: "Alexander Smolka"
 ---
 
-::: {.hidden}
-```{julia}
-#| echo: false
-if !isdefined(Main, :ExESS)
-include(joinpath(@__DIR__, "..", "..", "exess.jl", "src", "ExESS.jl"))
-using .ExESS
-end
-```
-:::
+---
 
 API for `ExESS`.
