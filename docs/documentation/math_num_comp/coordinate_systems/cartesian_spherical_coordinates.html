@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexander Smolka">
+<meta name="dcterms.date" content="2023-07-05">
 
-<title>ExESS - Introduction</title>
+<title>ExESS - 2.1.1 – Cartesian and Spherical Coordinates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="..//resources/logo/exess_logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,8 +70,10 @@ ul.task-list li input[type="checkbox"] {
     };
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed fullcontent">
@@ -79,10 +83,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../resources/logo/exess_logo.svg" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../resources/logo/exess_logo.svg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ExESS</span>
     </a>
   </div>
@@ -93,23 +97,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../documentation/documentation.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../../documentation/documentation.html" rel="" target="" aria-current="page">
  <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../src/wiki.html" rel="" target="">
+    <a class="nav-link" href="../../../src/wiki.html" rel="" target="">
  <span class="menu-text">Wiki</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../src/manual.html" rel="" target="">
+    <a class="nav-link" href="../../../src/manual.html" rel="" target="">
  <span class="menu-text">Manual</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../api/api.html" rel="" target="">
+    <a class="nav-link" href="../../../api/api.html" rel="" target="">
  <span class="menu-text">API</span></a>
   </li>  
 </ul>
@@ -123,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../documentation/introduction.html"><strong>1 – Introduction</strong></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">**2 -- Mathematics, Numerics, and Computational Foundations**</li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1 – Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1.1 – Cartesian and Spherical Coordinates</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -137,13 +141,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../documentation/documentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Documentation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../documentation/introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../documentation/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><strong>1 – Introduction</strong></span></a>
   </div>
 </li>
@@ -167,13 +171,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.1.1 – Cartesian and Spherical Coordinates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../documentation/math_num_comp/coordinate_systems/coordinate_differentials.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../documentation/math_num_comp/coordinate_systems/coordinate_differentials.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.1.2 – Coordinate Differentials</span></a>
   </div>
 </li>
@@ -195,14 +199,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">2.1.1 – Cartesian and Spherical Coordinates</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexander Smolka </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -210,6 +226,63 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<hr>
+<p>A clear distinction has been made between cartesian and spherical coordinates and cartesian and spherical elements. The former are used to describe the domain in which the vector is defined, while the latter are used to describe the vector and its components itself. For example, a position vector in a cartesian coordinate system, <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span>, can be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>, which are the x-, y-, and z-components of the vector: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
+        x\\
+        y\\
+        z
+    \end{bmatrix} \qquad\text{with } x\in\Set{R},\;y\in\Set{R},\;z\in\Set{R}.
+    \label{eq:cartesian_coordinate}
+\end{equation}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API – Cartesian Coordinates
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vectors defining a position or a velocity in a cartesian coordinate system and in cartesian elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a>.</p>
+</div>
+</div>
+</div>
+<p>The same vector in the same coordinate system and, thus, the same domain, can also be expressed used spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{x}}_s = \begin{bmatrix}
+        r\cos\vartheta\cos\varphi\\
+        r\sin\vartheta\cos\varphi\\
+        r\sin\varphi
+    \end{bmatrix} \qquad\text{with }r\in\Set{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+\end{equation}\]</span> Note that the subscript <span class="math inline">\(s\)</span> indicates that the vector is expressed in spherical elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s\)</span>. On the other hand, a coordinate can also be projected into a spherical coordiante system, <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span>, which is a different domain, and expressed in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\Set{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+\end{equation}\]</span> The same coordinate can also be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{r}}_c = \begin{bmatrix}
+        \sqrt{x^2 + y^2 + z^2} \\
+        \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
+        \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
+    \end{bmatrix}  \qquad\text{with } x\in\Set{R},\;y\in\Set{R},\;z\in\Set{R}.
+\end{equation}\]</span> Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences of these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
+<p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
+    \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
+    \hat{\boldsymbol{\mathbf{e}}}_y= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
+    \hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}0 \\ 0 \\ 1 \end{bmatrix},
+\end{equation}\]</span> which leads to the following expression for the cartesian coordinate vector, for both in cartesian and spherical elements: <span class="math display">\[\begin{align}
+    \boldsymbol{\mathbf{x}}&amp;= x\hat{\boldsymbol{\mathbf{e}}}_x+ y\hat{\boldsymbol{\mathbf{e}}}_y+ z\hat{\boldsymbol{\mathbf{e}}}_z\nonumber \\
+    &amp;= \left(r\cos\vartheta\cos\varphi\right)\hat{\boldsymbol{\mathbf{e}}}_x+ \left(r\sin\vartheta\cos\varphi\right) \hat{\boldsymbol{\mathbf{e}}}_y+ \left(r\sin\varphi\right) \hat{\boldsymbol{\mathbf{e}}}_z= \boldsymbol{\mathbf{x}}_s.
+\end{align}\]</span> Similarly, the base vectors of any spherical coordinate system are: <span class="math display">\[\begin{equation}
+    \hat{\boldsymbol{\mathbf{e}}}_r= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
+    \hat{\boldsymbol{\mathbf{e}}}_\vartheta= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
+    \hat{\boldsymbol{\mathbf{e}}}_\varphi= \begin{bmatrix}0 \\ 0 \\ 1 \end{bmatrix},
+\end{equation}\]</span> which leads to the following expression for the spherical coordinate vector, for both in cartesian and spherical elements: <span class="math display">\[\begin{align}
+    \boldsymbol{\mathbf{r}}&amp;= r\hat{\boldsymbol{\mathbf{e}}}_r+ \vartheta\hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \varphi\hat{\boldsymbol{\mathbf{e}}}_\varphi\nonumber \\
+    &amp;= \left(\sqrt{x^2 + y^2 + z^2}\right)\hat{\boldsymbol{\mathbf{e}}}_r+ \left(\mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \left(\sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\varphi\\
+    &amp;= \boldsymbol{\mathbf{r}}_c.\nonumber
+\end{align}\]</span></p>
+<p>Due to the equalities of the vectors in their respective same coordinate system, the rest of this work will only use <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span> and <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span> without their indexed counterparts. The element type will be indicated by the context of the equation.</p>
 
 
 

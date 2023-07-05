@@ -8,6 +8,10 @@ author: "Alexander Smolka"
 
 ---
 
+::: {.column-margin}
+
+:::
+
 This work is regularly relying on vector calculus which includes a substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.
 
 \begin{align}
@@ -102,7 +106,7 @@ Another example of the use of differentials is in integration, where it is used 
 \begin{equation}
     \int_X \int_Y \int_Z f d\cartesianCoordinateZ d\cartesianCoordinateY d\cartesianCoordinateX = \int_\volume f d^3\cartesianCoordinate,
 \end{equation}
-where $\volume$ is the volume of the integration domain, with the infinitesimal \emph{and scalar} volume element $d^3\cartesianCoordinate \in \volume = \left\{d\cartesianCoordinateX \, d\cartesianCoordinateY \, d\cartesianCoordinateZ \; | \; d\cartesianCoordinateX \in X, d\cartesianCoordinateY \in Y, d\cartesianCoordinateZ \in Z \right\}$. The superscript $\bullet^3$ in the differentials indicates that the differential is \emph{not} a vector but a scalar representation of the element's size created by the vector elements. As before, the differential $d^3\cartesianCoordinate$ can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq.~(\ref{eq:total_cartesian_spherical_differential_matrix}), of the transformation:
+where $\volume$ is the volume of the integration domain, with the infinitesimal \emph{and scalar} volume element $d^3\cartesianCoordinate \in \volume = \left\{d\cartesianCoordinateX \, d\cartesianCoordinateY \, d\cartesianCoordinateZ \; | \; d\cartesianCoordinateX \in X, d\cartesianCoordinateY \in Y, d\cartesianCoordinateZ \in Z \right\}$. The superscript $\bullet^3$ in the differentials indicates that the differential is \emph{not} a vector but a scalar representation of the element's size created by the vector elements. As before, the differential $d^3\cartesianCoordinate$ can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq. \eqref{eq:total_cartesian_spherical_differential_matrix}, of the transformation:
 \begin{equation}
     d^3\cartesianCoordinate = \left|\frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinate}\right| d^3\sphericalCoordinate = \sphericalCoordinateRadius^2\cos\sphericalCoordinateElevation d\sphericalCoordinateRadius d\sphericalCoordinateAzimuth d\sphericalCoordinateElevation.
 \end{equation}

@@ -1,0 +1,3 @@
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+\DeclareMathOperator{\erf}{erf} 
+\DeclareMathOperator{\sgn}{sgn}

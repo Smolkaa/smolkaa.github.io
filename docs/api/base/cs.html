@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexander Smolka">
+<meta name="dcterms.date" content="2023-07-05">
 
 <title>ExESS - Coordinate Systems</title>
 <style>
@@ -216,7 +218,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexander Smolka </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 5, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -224,6 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<hr>
 <p>Coordinates in <code>ExESS</code> are implemented as their custom, three-dimensional vectors, which are based on their scope, the coordinate system, and their physical type. The scope can either be <code>Global[...]</code> or <code>Local[...]</code>, which is referring to a fixed planetary system or a local reference frame, respectively. The coordinate system is either <code>[...]Cartesian[...]</code> or <code>[...]Spherical[...]</code>, which is referring to a Cartesian or spherical coordinate system, respectively. The physical type is either <code>[...]Position</code> or <code>[...]Velocity</code>, which is referring to a position or velocity vector, respectively. The following structure shows all currently implemented coordinates in <code>ExESS</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ExESS</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>└─ AbstractCoordinates</span>
@@ -247,7 +262,7 @@ ExESS: <code>GlobalCartesianPosition</code> – Struct
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] GlobalCartesianPosition(x::Real, y::Real, z::Real)
 [2] GlobalCartesianPosition(X::AbstractVector)
 [3] GlobalCartesianPosition(x::AbstractPosition)</code></pre>
@@ -271,7 +286,7 @@ ExESS: <code>GlobalSphericalPosition</code> – Struct
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] GlobalSphericalPosition(r::Real, theta::Real, phi::Real)
 [2] GlobalSphericalPosition(X::AbstractVector)
 [3] GlobalSphericalPosition(x::AbstractPosition)</code></pre>

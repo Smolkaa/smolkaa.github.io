@@ -1,5 +1,8 @@
 ---
 title: "Coordinate Systems"
+date: last-modified
+author: "Alexander Smolka"
+---
 ---
 
 Coordinates in `ExESS` are implemented as their custom, three-dimensional vectors, which
