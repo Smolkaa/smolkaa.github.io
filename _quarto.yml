@@ -41,12 +41,13 @@ website:
       contents:
         - text: "Documentation"
           href: documentation/documentation.qmd
-        - text: "1 -- Introduction"
+        - text: "1 – Introduction"
           href: documentation/introduction.qmd
-        - section: "2 -- Mathematics, Numerics, and Computational Foundations"
+        - section: "2 – Mathematics, Numerics, and Computational Foundations"
           href: documentation/math_num_comp.qmd
           contents:
-            - section: "2.1 -- Coordinate Systems"
+            - section: 
+              text: "2.1 – Coordinate Systems"
               href: documentation/math_num_comp/coordinate_systems.qmd
               contents:
                 - documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd
