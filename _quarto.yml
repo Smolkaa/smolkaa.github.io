@@ -53,6 +53,11 @@ website:
                 - documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd
                 - documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd
                 - documentation/math_num_comp/coordinate_systems/temporal_differentials.qmd
+            - section:
+              text: "2.2 - Numerical Grids"
+              href: documentation/math_num_comp/numerical_grids.qmd
+              contents:
+                - documentation/math_num_comp/numerical_grids/global_structured_grids.qmd
 
     - title: "Wiki"
       style: docked
@@ -84,6 +89,8 @@ format:
     theme: [flatly, _mystyle.scss]
     css: styles.css
     code-link: true
-    html-math-method: mathjax
+    html-math-method: 
+      method: mathjax
+    extra_dependencies: ["siunitx"]
     include-in-header: 
       - resources/mathjax.html

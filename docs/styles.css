@@ -1,0 +1,11 @@
+/* css styles */
+
+.navbar-logo {
+    width: 70px;
+    scale: 1.5;
+}
+
+div.callout-tip.callout-titled .callout-icon::before {
+  background-image: url('resources/icons/cli.svg');
+  width: 25px;
+}

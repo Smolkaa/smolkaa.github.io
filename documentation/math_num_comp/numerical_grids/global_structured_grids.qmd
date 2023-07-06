@@ -1,0 +1,63 @@
+---
+title: "2.2.1 -- Global Structured Grids"
+date: last-modified
+author: "Alexander Smolka"
+---
+
+{{< include /resources/latex/defs.qmd >}}
+{{< include /resources/latex/symbols.qmd >}}
+
+---
+
+The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$, see Sec.~\ref{sec:coordinate_systems}.
+
+
+The spherical coordinates, the azimuth $\sphericalCoordinateAzimuth$ and elevation $\sphericalCoordinateElevation$, are created as follows:
+\begin{alignat}{4}
+    \sphericalCoordinateAzimuth_i &= - \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth} + (i-1)\Delta\sphericalCoordinateAzimuth & \quad\text{for } i \in \{1, \dots, N_\sphericalCoordinateAzimuth\} & \quad\text{with } \Delta\sphericalCoordinateAzimuth = \frac{2\pi}{N_\sphericalCoordinateAzimuth} \label{eq:gs2dgrid_azimuth} \\
+    \sphericalCoordinateElevation_j &= - \frac{\pi}{2} + \frac{\pi}{2N_\sphericalCoordinateElevation} + (j-1)\Delta\sphericalCoordinateElevation & \quad\text{for } j \in \{1, \dots, N_\sphericalCoordinateElevation\} & \quad\text{with } \Delta\sphericalCoordinateElevation = \frac{\pi}{N_\sphericalCoordinateElevation} \label{eq:gs2dgrid_elevation}
+\end{alignat}
+where $N_\sphericalCoordinateAzimuth$ and $N_\sphericalCoordinateElevation$ define the number of elements in the azimuth and elevation direction, respectively. Let $k$ be a common index with $k = (i-1)N_\sphericalCoordinateElevation + j$, then every grid element's coordinate can be written as $\sphericalCoordinate_k = \left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right)$.
+
+
+With the same index notation, the area of each spherical grid element can be calculated as the integral over its angles at each angular position:
+\begin{align}
+    \area_k &= \int_{\sphericalCoordinateAzimuth_i-\frac{\Delta\sphericalCoordinateAzimuth}{2}}^{\sphericalCoordinateAzimuth_i+\frac{\Delta\sphericalCoordinateAzimuth}{2}} \int_{\sphericalCoordinateElevation_j-\frac{\Delta\sphericalCoordinateElevation}{2}}^{\sphericalCoordinateElevation_j+\frac{\Delta\sphericalCoordinateElevation}{2}} \sphericalCoordinateRadius^2 \cos \left( \sphericalCoordinateElevation \right) d\sphericalCoordinateElevation d\sphericalCoordinateAzimuth \\
+    \Rightarrow\qquad\area_k &= \sphericalCoordinateRadius^2 \cdot \Delta\sphericalCoordinateAzimuth \cdot \left(\sin\left(\sphericalCoordinateElevation_j + \frac{\Delta\sphericalCoordinateElevation}{2}\right) - \sin\left(\sphericalCoordinateElevation_j - \frac{\Delta\sphericalCoordinateElevation}{2}\right)\right).
+    \label{eq:area_gs2dgrid}
+\end{align}
+Note that the definition for the area is independent of the azimuth angle $\sphericalCoordinateAzimuth$, thus equal across all $N_\sphericalCoordinateAzimuth$ elements in the azimuth direction.
+
+
+{{< include /img/documentation/math_num_comp/numerical_grids/gs2dgrid/_gs2dgrid.qmd >}}
+
+$\ce{He}$
+
+@fig-gs2dgrid shows an example of a spherical surface discretization based on the global, structured, two-dimensional grid. Elements were created based on Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_elevation} with $N_\sphericalCoordinateAzimuth = 20$ elements in azimuth and $N_\sphericalCoordinateElevation = 10$ elements in elevation, leading to a total of $\num{200}$ grid elements and, thus, coordinates $\sphericalCoordinate_k$ for $k\in\{1,\dots,200\}$. The grid resolution is $\Delta\sphericalCoordinateAzimuth\times\Delta\sphericalCoordinateElevation = \SI{18}{\degree}\times\SI{18}{\degree}$. The figure shows three different views of the same numerical discretization. The top left in a conventional axis making use of the two-dimensionality of the grid, with the azimuth angle $\sphericalCoordinateAzimuth$ on the horizontal axis and the elevation angle $\sphericalCoordinateElevation$ on the vertical axis. This view highlights the structured nature of the discretization scheme with equally resolved angular elements across the entire domain. The centered graph is a projected view of the spherical coordinates, visualized on a flattened spherical surface based on a \emph{Natural Earth} projection method \citep{Jenny2008}. While this flattened surface is neither a conformal nor an equal-area projection of an actual sphere, it provides a good and easily understandable visual representation of the spherical nature of the grid. The structure of the discretization scheme is still visible, while the accumulation of grid elements in the polar region becomes apparent. This accumulation is a direct result of the spherical nature of the grid, where the same angular resolution $\Delta\sphericalCoordinateAzimuth\times\Delta\sphericalCoordinateElevation$ leads to a smaller area of the grid elements in the polar region. The bottom right graph depicts the same discretization scheme in a conventional, cartesian coordinate system, which shows the grid in its physical, three-dimensional form, where the polar grid elements are undistorted. Note that this last representation of the grid only shows half of the sphere ($\cartesianCoordinateX > 0$) since the other half is identical due to the symmetry of the spherical coordinate system.
+
+
+The transformation from one of the visualizations to another is termed either a \emph{spherical} or a \emph{cartesian projection} in @fig-gs2dgrid, depending on the type of coordinate system of the destination. The compilation of the three shown views helps to understand both the structural nature of the grid and the general downside of using such a simple discretization scheme, i.e., the clumping of elements around the poles. As already apparent from the area calculation seen in Eq. \eqref{eq:area_gs2dgrid}, the surface coverage of each element on the same elevation is equal, while it decreases with $\sin\sphericalCoordinateElevation \rightarrow 0$ towards the poles. 
+
+
+
+
+In many applications of numerical grids, it is necessary to map coordinates in the continuous domain to the discrete grid points, i.e., to find the grid element the continuous coordinate is located in. For the structural grid, the problem can be defined in terms of the shared index $k$ as $\sphericalCoordinate \mapsto \sphericalCoordinate_k = \left[\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_k, \sphericalCoordinateElevation_k\right]^T$, or in terms of the individual indices $i$ and $j$ as $\sphericalCoordinate \mapsto \left[\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right]$ with $k = (i-1)N_\sphericalCoordinateElevation + j$. The latter approach can be analytically solved for the azimuth and elevation indices using the \emph{ceiling} function, $\lceil\bullet\rceil$, to round the floating-point calculations to the next higher integer index:
+\begin{align}
+    i &= \left\lceil \frac{\left(\sphericalCoordinateAzimuth+\pi\right)N_\sphericalCoordinateAzimuth}{2\pi} \right\rceil = \left\lceil \frac{\sphericalCoordinateAzimuth+\pi}{\Delta\sphericalCoordinateAzimuth} \right\rceil, \label{eq:gs2dgrid_coord2idx_azimuth}\\
+    j &= \left\lceil \frac{\left(\sphericalCoordinateElevation+\pi/2\right)N_\sphericalCoordinateElevation}{\pi} \right\rceil = \left\lceil \frac{\sphericalCoordinateElevation+\pi/2}{\Delta\sphericalCoordinateElevation} \right\rceil. \label{eq:gs2dgrid_coord2idx_elevation}
+\end{align}
+Numerical problems can arise around the boundaries of the numerical grid due to $\lceil 0 \rceil = 0$. As no zeroth grid element exists, the inputs must be pretreated to avoid this problem. For the azimuth angle, the angle is mapped to the half-open interval $\left(-\pi, \pi\right]$, thus if $\sphericalCoordinateAzimuth=-\pi$ then $\sphericalCoordinateAzimuth \mapsto \sphericalCoordinateAzimuth + 2\pi$. The elevation is mapped to the open interval $\left(-\pi/2, \pi/2\right)$ and should $|\sphericalCoordinateElevation| = \pi/2$ then $\sphericalCoordinateElevation \mapsto \sphericalCoordinateElevation - \sgn\left(\sphericalCoordinateElevation\right)\machineAccuracy$, with the machine accuracy $\machineAccuracy$ being the smallest floating point number available to the machine\footnote{Example: for 64-bit floating numbers the machine accuracy is: $2^{-52} \approx 2.22\times 10^{-16}$.}.
+
+
+For some applications, equatorial symmetry of the underlying problem can be assumed, which can be exploited to reduce the number of grid elements. In this case, the grid is only defined for $\sphericalCoordinateElevation \in \left[0, \pi/2\right)$, and the elevation is subsequently calculated like in Eq. \eqref{eq:gs2dgrid_elevation}, but with a resolution of $\Delta\sphericalCoordinateElevation = \frac{\pi}{2N_\sphericalCoordinateElevation}$. This also changes the function mapping continuous coordinates to specific and discrete grid elements; see Eq. \eqref{eq:gs2dgrid_coord2idx_elevation}:
+\begin{equation}
+    j = \left\lceil \frac{\left|\sphericalCoordinateElevation\right| \cdot N_\sphericalCoordinateElevation}{\pi/2} \right\rceil = \left\lceil \frac{\sphericalCoordinateElevation+\pi/2}{\Delta\sphericalCoordinateElevation} \right\rceil.
+\end{equation}
+Taking the absolute value of the elevation angle in the equation above ensures that the function is defined for the entire sphere. Still, the mapping always projects the coordinate onto the upper hemisphere. 
+
+
+{\color{red} into a box?}
+Due to the $2\pi$-periodicity of the azimuth angle $\sphericalCoordinateAzimuth$, the structure, which is the constant $\Delta\sphericalCoordinateAzimuth$ angular distance between elements, has to be shown across its periodic boundaries:
+\begin{align}
+    \sphericalCoordinateAzimuth_1 + 2\pi - \sphericalCoordinateAzimuth_{N_\sphericalCoordinateAzimuth} &= \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth}\right) + 2\pi - \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth} + (N_\sphericalCoordinateAzimuth-1)\frac{2\pi}{N_\sphericalCoordinateAzimuth} \right) = \frac{2\pi}{N_\sphericalCoordinateAzimuth} = \Delta\sphericalCoordinateAzimuth
+\end{align}

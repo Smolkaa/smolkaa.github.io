@@ -9,7 +9,7 @@
 <meta name="author" content="Alexander Smolka">
 <meta name="dcterms.date" content="2023-07-06">
 
-<title>ExESS - 2.1.1 – Cartesian and Spherical Coordinates</title>
+<title>ExESS - 2.2.1 – Global Structured Grids</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -135,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems.html">2.1 - Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html">2.1.1 – Cartesian and Spherical Coordinates</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids.html">2.2 - Numerical Grids</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html">2.2.1 – Global Structured Grids</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -179,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.1.1 – Cartesian and Spherical Coordinates</span></a>
   </div>
 </li>
@@ -208,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">2.2.1 – Global Structured Grids</span></a>
   </div>
 </li>
@@ -227,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2.1.1 – Cartesian and Spherical Coordinates</h1>
+<h1 class="title">2.2.1 – Global Structured Grids</h1>
 </div>
 
 
@@ -255,80 +289,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>A clear distinction has been made between cartesian and spherical coordinates and cartesian and spherical elements. The former are used to describe the domain in which the vector is defined, while the latter are used to describe the vector and its components itself. For example, a position vector in a cartesian coordinate system, <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span>, can be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>, which are the x-, y-, and z-components of the vector: <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
-        x\\
-        y\\
-        z
-    \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
-    \label{eq:cartesian_coordinate}
-\end{equation}\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ExESS API – Cartesian Coordinates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a>.</p>
+<p>The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius <span class="math inline">\(r\)</span> using a regular, structured grid with a fixed angular resolution <span class="math inline">\(\Delta\vartheta\times \Delta\varphi\)</span>, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates <span class="math inline">\(\boldsymbol{\mathbf{r}}= \left[r, \vartheta, \varphi\right]^T\)</span>, see Sec.~<span class="math inline">\(\ref{sec:coordinate_systems}\)</span>.</p>
+<p>The spherical coordinates, the azimuth <span class="math inline">\(\vartheta\)</span> and elevation <span class="math inline">\(\varphi\)</span>, are created as follows: <span class="math display">\[\begin{alignat}{4}
+    \vartheta_i &amp;= - \pi + \frac{\pi}{N_\vartheta} + (i-1)\Delta\vartheta&amp; \quad\text{for } i \in \{1, \dots, N_\vartheta\} &amp; \quad\text{with } \Delta\vartheta= \frac{2\pi}{N_\vartheta} \label{eq:gs2dgrid_azimuth} \\
+    \varphi_j &amp;= - \frac{\pi}{2} + \frac{\pi}{2N_\varphi} + (j-1)\Delta\varphi&amp; \quad\text{for } j \in \{1, \dots, N_\varphi\} &amp; \quad\text{with } \Delta\varphi= \frac{\pi}{N_\varphi} \label{eq:gs2dgrid_elevation}
+\end{alignat}\]</span> where <span class="math inline">\(N_\vartheta\)</span> and <span class="math inline">\(N_\varphi\)</span> define the number of elements in the azimuth and elevation direction, respectively. Let <span class="math inline">\(k\)</span> be a common index with <span class="math inline">\(k = (i-1)N_\varphi+ j\)</span>, then every grid element’s coordinate can be written as <span class="math inline">\(\boldsymbol{\mathbf{r}}_k = \left(r, \vartheta_i, \varphi_j\right)\)</span>.</p>
+<p>With the same index notation, the area of each spherical grid element can be calculated as the integral over its angles at each angular position: <span class="math display">\[\begin{align}
+    A_k &amp;= \int_{\vartheta_i-\frac{\Delta\vartheta}{2}}^{\vartheta_i+\frac{\Delta\vartheta}{2}} \int_{\varphi_j-\frac{\Delta\varphi}{2}}^{\varphi_j+\frac{\Delta\varphi}{2}} r^2 \cos \left( \varphi\right) d\varphi d\vartheta\\
+    \Rightarrow\qquad A_k &amp;= r^2 \cdot \Delta\vartheta\cdot \left(\sin\left(\varphi_j + \frac{\Delta\varphi}{2}\right) - \sin\left(\varphi_j - \frac{\Delta\varphi}{2}\right)\right).
+    \label{eq:area_gs2dgrid}
+\end{align}\]</span> Note that the definition for the area is independent of the azimuth angle <span class="math inline">\(\vartheta\)</span>, thus equal across all <span class="math inline">\(N_\vartheta\)</span> elements in the azimuth direction.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="fig-gs2dgrid" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid.svg" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Global, structured, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e.&nbsp;radius <span class="math inline">\(r\)</span>.</figcaption>
+</figure>
 </div>
 </div>
-</div>
-<p>The same vector in the same coordinate system and, thus, the same domain, can also be expressed used spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{x}}_s = \begin{bmatrix}
-        r\cos\vartheta\cos\varphi\\
-        r\sin\vartheta\cos\varphi\\
-        r\sin\varphi
-    \end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
-\end{equation}\]</span> Note that the subscript <span class="math inline">\(s\)</span> indicates that the vector is expressed in spherical elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s\)</span>. On the other hand, a coordinate can also be projected into a spherical coordiante system, <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span>, which is a different domain, and expressed in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>: <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
-    \label{eq:spherical_coordinate}
-\end{equation}\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ExESS API – Spherical Coordinates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span> are implemented as <a href="../../../api/base/cs.html"><code>GlobalSphericalPosition</code></a> and <a href="../../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a>.</p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>The same coordinate can also be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>: <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{r}}_c = \begin{bmatrix}
-        \sqrt{x^2 + y^2 + z^2} \\
-        \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
-        \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
-    \end{bmatrix}  \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
-\end{equation}\]</span> Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences of these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
-<p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
-    \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
-    \hat{\boldsymbol{\mathbf{e}}}_y= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
-    \hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}0 \\ 0 \\ 1 \end{bmatrix},
-\end{equation}\]</span> which leads to the following expression for the cartesian coordinate vector, for both in cartesian and spherical elements: <span class="math display">\[\begin{align}
-    \boldsymbol{\mathbf{x}}&amp;= x\hat{\boldsymbol{\mathbf{e}}}_x+ y\hat{\boldsymbol{\mathbf{e}}}_y+ z\hat{\boldsymbol{\mathbf{e}}}_z\nonumber \\
-    &amp;= \left(r\cos\vartheta\cos\varphi\right)\hat{\boldsymbol{\mathbf{e}}}_x+ \left(r\sin\vartheta\cos\varphi\right) \hat{\boldsymbol{\mathbf{e}}}_y+ \left(r\sin\varphi\right) \hat{\boldsymbol{\mathbf{e}}}_z= \boldsymbol{\mathbf{x}}_s.
-\end{align}\]</span> Similarly, the base vectors of any spherical coordinate system are: <span class="math display">\[\begin{equation}
-    \hat{\boldsymbol{\mathbf{e}}}_r= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
-    \hat{\boldsymbol{\mathbf{e}}}_\vartheta= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
-    \hat{\boldsymbol{\mathbf{e}}}_\varphi= \begin{bmatrix}0 \\ 0 \\ 1 \end{bmatrix},
-\end{equation}\]</span> which leads to the following expression for the spherical coordinate vector, for both in cartesian and spherical elements: <span class="math display">\[\begin{align}
-    \boldsymbol{\mathbf{r}}&amp;= r\hat{\boldsymbol{\mathbf{e}}}_r+ \vartheta\hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \varphi\hat{\boldsymbol{\mathbf{e}}}_\varphi\nonumber \\
-    &amp;= \left(\sqrt{x^2 + y^2 + z^2}\right)\hat{\boldsymbol{\mathbf{e}}}_r+ \left(\mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \left(\sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\varphi\\
-    &amp;= \boldsymbol{\mathbf{r}}_c.\nonumber
+<p><span class="math inline">\(\ce{He}\)</span></p>
+<p><a href="#fig-gs2dgrid">Figure&nbsp;1</a> shows an example of a spherical surface discretization based on the global, structured, two-dimensional grid. Elements were created based on Eqs. <span class="math inline">\(\eqref{eq:gs2dgrid_azimuth}\)</span>, <span class="math inline">\(\eqref{eq:gs2dgrid_elevation}\)</span> with <span class="math inline">\(N_\vartheta= 20\)</span> elements in azimuth and <span class="math inline">\(N_\varphi= 10\)</span> elements in elevation, leading to a total of <span class="math inline">\(\num{200}\)</span> grid elements and, thus, coordinates <span class="math inline">\(\boldsymbol{\mathbf{r}}_k\)</span> for <span class="math inline">\(k\in\{1,\dots,200\}\)</span>. The grid resolution is <span class="math inline">\(\Delta\vartheta\times\Delta\varphi= \SI{18}{\degree}\times\SI{18}{\degree}\)</span>. The figure shows three different views of the same numerical discretization. The top left in a conventional axis making use of the two-dimensionality of the grid, with the azimuth angle <span class="math inline">\(\vartheta\)</span> on the horizontal axis and the elevation angle <span class="math inline">\(\varphi\)</span> on the vertical axis. This view highlights the structured nature of the discretization scheme with equally resolved angular elements across the entire domain. The centered graph is a projected view of the spherical coordinates, visualized on a flattened spherical surface based on a projection method . While this flattened surface is neither a conformal nor an equal-area projection of an actual sphere, it provides a good and easily understandable visual representation of the spherical nature of the grid. The structure of the discretization scheme is still visible, while the accumulation of grid elements in the polar region becomes apparent. This accumulation is a direct result of the spherical nature of the grid, where the same angular resolution <span class="math inline">\(\Delta\vartheta\times\Delta\varphi\)</span> leads to a smaller area of the grid elements in the polar region. The bottom right graph depicts the same discretization scheme in a conventional, cartesian coordinate system, which shows the grid in its physical, three-dimensional form, where the polar grid elements are undistorted. Note that this last representation of the grid only shows half of the sphere (<span class="math inline">\(x&gt; 0\)</span>) since the other half is identical due to the symmetry of the spherical coordinate system.</p>
+<p>The transformation from one of the visualizations to another is termed either a or a in <a href="#fig-gs2dgrid">Figure&nbsp;1</a>, depending on the type of coordinate system of the destination. The compilation of the three shown views helps to understand both the structural nature of the grid and the general downside of using such a simple discretization scheme, i.e., the clumping of elements around the poles. As already apparent from the area calculation seen in Eq. <span class="math inline">\(\eqref{eq:area_gs2dgrid}\)</span>, the surface coverage of each element on the same elevation is equal, while it decreases with <span class="math inline">\(\sin\varphi\rightarrow 0\)</span> towards the poles.</p>
+<p>In many applications of numerical grids, it is necessary to map coordinates in the continuous domain to the discrete grid points, i.e., to find the grid element the continuous coordinate is located in. For the structural grid, the problem can be defined in terms of the shared index <span class="math inline">\(k\)</span> as <span class="math inline">\(\boldsymbol{\mathbf{r}}\mapsto \boldsymbol{\mathbf{r}}_k = \left[r, \vartheta_k, \varphi_k\right]^T\)</span>, or in terms of the individual indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> as <span class="math inline">\(\boldsymbol{\mathbf{r}}\mapsto \left[r, \vartheta_i, \varphi_j\right]\)</span> with <span class="math inline">\(k = (i-1)N_\varphi+ j\)</span>. The latter approach can be analytically solved for the azimuth and elevation indices using the function, <span class="math inline">\(\lceil\bullet\rceil\)</span>, to round the floating-point calculations to the next higher integer index: <span class="math display">\[\begin{align}
+    i &amp;= \left\lceil \frac{\left(\vartheta+\pi\right)N_\vartheta}{2\pi} \right\rceil = \left\lceil \frac{\vartheta+\pi}{\Delta\vartheta} \right\rceil, \label{eq:gs2dgrid_coord2idx_azimuth}\\
+    j &amp;= \left\lceil \frac{\left(\varphi+\pi/2\right)N_\varphi}{\pi} \right\rceil = \left\lceil \frac{\varphi+\pi/2}{\Delta\varphi} \right\rceil. \label{eq:gs2dgrid_coord2idx_elevation}
+\end{align}\]</span> Numerical problems can arise around the boundaries of the numerical grid due to <span class="math inline">\(\lceil 0 \rceil = 0\)</span>. As no zeroth grid element exists, the inputs must be pretreated to avoid this problem. For the azimuth angle, the angle is mapped to the half-open interval <span class="math inline">\(\left(-\pi, \pi\right]\)</span>, thus if <span class="math inline">\(\vartheta=-\pi\)</span> then <span class="math inline">\(\vartheta\mapsto \vartheta+ 2\pi\)</span>. The elevation is mapped to the open interval <span class="math inline">\(\left(-\pi/2, \pi/2\right)\)</span> and should <span class="math inline">\(|\varphi| = \pi/2\)</span> then <span class="math inline">\(\varphi\mapsto \varphi- \mathop{\mathrm{sgn}}\left(\varphi\right)\epsilon\)</span>, with the machine accuracy <span class="math inline">\(\epsilon\)</span> being the smallest floating point number available to the machine.</p>
+<p>For some applications, equatorial symmetry of the underlying problem can be assumed, which can be exploited to reduce the number of grid elements. In this case, the grid is only defined for <span class="math inline">\(\varphi\in \left[0, \pi/2\right)\)</span>, and the elevation is subsequently calculated like in Eq. <span class="math inline">\(\eqref{eq:gs2dgrid_elevation}\)</span>, but with a resolution of <span class="math inline">\(\Delta\varphi= \frac{\pi}{2N_\varphi}\)</span>. This also changes the function mapping continuous coordinates to specific and discrete grid elements; see Eq. <span class="math inline">\(\eqref{eq:gs2dgrid_coord2idx_elevation}\)</span>: <span class="math display">\[\begin{equation}
+    j = \left\lceil \frac{\left|\varphi\right| \cdot N_\varphi}{\pi/2} \right\rceil = \left\lceil \frac{\varphi+\pi/2}{\Delta\varphi} \right\rceil.
+\end{equation}\]</span> Taking the absolute value of the elevation angle in the equation above ensures that the function is defined for the entire sphere. Still, the mapping always projects the coordinate onto the upper hemisphere.</p>
+<p>{ into a box?} Due to the <span class="math inline">\(2\pi\)</span>-periodicity of the azimuth angle <span class="math inline">\(\vartheta\)</span>, the structure, which is the constant <span class="math inline">\(\Delta\vartheta\)</span> angular distance between elements, has to be shown across its periodic boundaries: <span class="math display">\[\begin{align}
+    \vartheta_1 + 2\pi - \vartheta_{N_\vartheta} &amp;= \left(- \pi + \frac{\pi}{N_\vartheta}\right) + 2\pi - \left(- \pi + \frac{\pi}{N_\vartheta} + (N_\vartheta-1)\frac{2\pi}{N_\vartheta} \right) = \frac{2\pi}{N_\vartheta} = \Delta\vartheta
 \end{align}\]</span></p>
-<p>Due to the equalities of the vectors in their respective same coordinate system, the rest of this work will only use <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span> and <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span> without their indexed counterparts. The element type will be indicated by the context of the equation.</p>
 
 
 
