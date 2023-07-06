@@ -2,3 +2,15 @@
 \newcommand{\Set}[1]{\mathbb{#1}}
 \DeclareMathOperator{\erf}{erf} 
 \DeclareMathOperator{\sgn}{sgn}
+
+
+
+<!-- SIUNITX WORKAROUND -->
+
+\newcommand{\num}[1]{#1}
+\newcommand{\SI}[2]{#1\,\mathrm{#2}}
+
+\newcommand{\per}{/}
+
+\newcommand{\metre}{m}
+\newcommand{\second}{s}

@@ -1,0 +1,8 @@
+::: {.callout-tip collapse="true"}
+# ExESS API -- Global Structured Grids - Equatorial Symmetry
+
+Global, structured, equatorial symmetric grids are implemented in `ExESS` as [`GlobalStructuredGrid_EqSim`](/api/grids/global_structured_2d_grids.qmd).
+
+For utility functions, see: `areas`, `coords`, `coord2idx`, `surfacecoords`, and `volumes`.
+
+:::

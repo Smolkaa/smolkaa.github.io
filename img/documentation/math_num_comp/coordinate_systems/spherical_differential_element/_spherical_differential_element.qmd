@@ -10,29 +10,7 @@ Three-dimensional sketch of a spherical differential element in a cartesian coor
 
 # LaTeX
 ```latex
-%
-% copied from: https://tikz.net/spherical_volume/
-% date: 2023, June 26
-%
-% adjusted by Alexander Smolka
-%
-\documentclass[crop,tikz]{standalone}
-\usepackage{tikz}
-	\usetikzlibrary{shapes}
-	\usetikzlibrary{automata}
-	\usetikzlibrary{arrows}
-	\usetikzlibrary{backgrounds}
-	\usetikzlibrary{calc}
-	\usetikzlibrary{positioning}
-	\usetikzlibrary{patterns}
-	\usetikzlibrary{decorations.pathmorphing}
-	\usetikzlibrary{decorations.pathreplacing}
-\usepackage{tikz-3dplot}
-
-% !! Quarto specific !!
-\input{../../../../resources/latex/symbols.qmd}
-
-\begin{document}
+% based on: https://tikz.net/spherical_volume/
 
 %Axis Angles
 \tdplotsetmaincoords{70}{110}
@@ -168,11 +146,8 @@ Three-dimensional sketch of a spherical differential element in a cartesian coor
         \fill[black!50, opacity=0.5] (A) to[bend left=2] (D) to (H) to[bend right=2.5] (E) to[bend right=4] cycle;
         \fill[black!50, opacity=0.5] (D) to (H) to[bend left=6] (G) to[bend right=2] (C) to[bend right=6] cycle;
     \end{pgfonlayer}
-    
-    
+        
 \end{tikzpicture}
-
-\end{document}
 ```
 
 :::
