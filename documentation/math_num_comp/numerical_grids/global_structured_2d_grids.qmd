@@ -1,5 +1,5 @@
 ---
-title: "2.2.1 -- Global Structured Grids"
+title: "2.2.1 -- Global Structured Two-Dimensional Grids"
 date: last-modified
 author: "Alexander Smolka"
 ---
@@ -17,7 +17,10 @@ The spherical coordinates, the azimuth $\sphericalCoordinateAzimuth$ and elevati
     \sphericalCoordinateAzimuth_i &= - \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth} + (i-1)\Delta\sphericalCoordinateAzimuth & \quad\text{for } i \in \{1, \dots, N_\sphericalCoordinateAzimuth\} & \quad\text{with } \Delta\sphericalCoordinateAzimuth = \frac{2\pi}{N_\sphericalCoordinateAzimuth} \label{eq:gs2dgrid_azimuth} \\
     \sphericalCoordinateElevation_j &= - \frac{\pi}{2} + \frac{\pi}{2N_\sphericalCoordinateElevation} + (j-1)\Delta\sphericalCoordinateElevation & \quad\text{for } j \in \{1, \dots, N_\sphericalCoordinateElevation\} & \quad\text{with } \Delta\sphericalCoordinateElevation = \frac{\pi}{N_\sphericalCoordinateElevation} \label{eq:gs2dgrid_elevation}
 \end{alignat}
-where $N_\sphericalCoordinateAzimuth$ and $N_\sphericalCoordinateElevation$ define the number of elements in the azimuth and elevation direction, respectively. Let $k$ be a common index with $k = (i-1)N_\sphericalCoordinateElevation + j$, then every grid element's coordinate can be written as $\sphericalCoordinate_k = \left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right)$.
+where $N_\sphericalCoordinateAzimuth$ and $N_\sphericalCoordinateElevation$ define the number of elements in the azimuth and elevation direction, respectively. The created points of the grid are located in the center of each rectangular grid cell, i.e., at $\Delta\sphericalCoordinateAzimuth / 2 = \pi /N_\sphericalCoordinateAzimuth$ and $\Delta\sphericalCoordinateElevation / 2 = \pi / \left(2N_\sphericalCoordinateElevation\right)$ of each elements sides. Let $k$ be a common index with $k = (i-1)N_\sphericalCoordinateElevation + j$, then every grid element's coordinate can be written as $\sphericalCoordinate_k = \left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right)$.
+
+
+{{< include boxes/_gs2dgrid_azimuth_periodicity.qmd >}}
 
 
 With the same index notation, the area of each spherical grid element can be calculated as the integral over its angles at each angular position:
@@ -45,21 +48,17 @@ In many applications of numerical grids, it is necessary to map coordinates in t
 Numerical problems can arise around the boundaries of the numerical grid due to $\lceil 0 \rceil = 0$. As no zeroth grid element exists, the inputs must be pretreated to avoid this problem. For the azimuth angle, the angle is mapped to the half-open interval $\left(-\pi, \pi\right]$, thus if $\sphericalCoordinateAzimuth=-\pi$ then $\sphericalCoordinateAzimuth \mapsto \sphericalCoordinateAzimuth + 2\pi$. The elevation is mapped to the open interval $\left(-\pi/2, \pi/2\right)$ and should $|\sphericalCoordinateElevation| = \pi/2$ then $\sphericalCoordinateElevation \mapsto \sphericalCoordinateElevation - \sgn\left(\sphericalCoordinateElevation\right)\machineAccuracy$, with the machine accuracy $\machineAccuracy$ being the smallest floating point number available to the machine\footnote{Example: for 64-bit floating numbers the machine accuracy is: $2^{-52} \approx 2.22\times 10^{-16}$.}.
 
 
-{{< include apirefs/_GlobalStructuredGrid.qmd >}}
-
-
-For some applications, equatorial symmetry of the underlying problem can be assumed, which can be exploited to reduce the number of grid elements. In this case, the grid is only defined for $\sphericalCoordinateElevation \in \left[0, \pi/2\right)$, and the elevation is subsequently calculated like in Eq. \eqref{eq:gs2dgrid_elevation}, but with a resolution of $\Delta\sphericalCoordinateElevation = \frac{\pi}{2N_\sphericalCoordinateElevation}$. This also changes the function mapping continuous coordinates to specific and discrete grid elements; see Eq. \eqref{eq:gs2dgrid_coord2idx_elevation}:
+For some applications, equatorial symmetry of the underlying problem can be assumed, which can be exploited to reduce the number of grid elements. In this case, the grid is only defined for $\sphericalCoordinateElevation \in \left[0, \pi/2\right)$, and the elevation is subsequently calculated similar to Eq. \eqref{eq:gs2dgrid_elevation}:
+\begin{equation}
+    \sphericalCoordinateElevation_j = \frac{\pi}{4N_\sphericalCoordinateElevation} + (j-1)\Delta\sphericalCoordinateElevation \quad\text{for } j \in \{1, \dots, N_\sphericalCoordinateElevation\}  \quad\text{with}\quad \Delta\sphericalCoordinateElevation = \frac{\pi}{2N_\sphericalCoordinateElevation}
+    \label{eq:gs2dgrid_eqsim_elevation}
+\end{equation}
+This also changes the function mapping continuous coordinates to specific and discrete grid elements; see Eq. \eqref{eq:gs2dgrid_coord2idx_elevation}:
 \begin{equation}
     j = \left\lceil \frac{\left|\sphericalCoordinateElevation\right| \cdot N_\sphericalCoordinateElevation}{\pi/2} \right\rceil = \left\lceil \frac{\sphericalCoordinateElevation+\pi/2}{\Delta\sphericalCoordinateElevation} \right\rceil.
+    \label{eq:gs2dgrid_eqsim_coord2idx_elevation}
 \end{equation}
 Taking the absolute value of the elevation angle in the equation above ensures that the function is defined for the entire sphere. Still, the mapping always projects the coordinate onto the upper hemisphere. 
 
 
-{{< include apirefs/_GlobalStructuredGrid_EqSim.qmd >}}
-
-
-{\color{red} into a box?}
-Due to the $2\pi$-periodicity of the azimuth angle $\sphericalCoordinateAzimuth$, the structure, which is the constant $\Delta\sphericalCoordinateAzimuth$ angular distance between elements, has to be shown across its periodic boundaries:
-\begin{align}
-    \sphericalCoordinateAzimuth_1 + 2\pi - \sphericalCoordinateAzimuth_{N_\sphericalCoordinateAzimuth} &= \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth}\right) + 2\pi - \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth} + (N_\sphericalCoordinateAzimuth-1)\frac{2\pi}{N_\sphericalCoordinateAzimuth} \right) = \frac{2\pi}{N_\sphericalCoordinateAzimuth} = \Delta\sphericalCoordinateAzimuth
-\end{align}
+{{< include apirefs/_GlobalStructuredGrid.qmd >}}

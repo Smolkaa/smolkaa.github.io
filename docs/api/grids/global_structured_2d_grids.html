@@ -9,7 +9,7 @@
 <meta name="author" content="Alexander Smolka">
 <meta name="dcterms.date" content="2023-07-07">
 
-<title>ExESS - 2.2 – Numerical Grids</title>
+<title>ExESS - Global Structured Two-Dimensional Grids</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../documentation/documentation.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../documentation/documentation.html" rel="" target="">
  <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Manual</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../api/api.html" rel="" target="">
+    <a class="nav-link active" href="../../api/api.html" rel="" target="" aria-current="page">
  <span class="menu-text">API</span></a>
   </li>  
 </ul>
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../documentation/math_num_comp/numerical_grids.html">2.2 - Numerical Grids</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html"><code>/grids</code></a></li><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html">Global Structured Two-Dimensional Grids</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -147,74 +147,48 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documentation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../documentation/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1 - Introduction</span></a>
+  <a href="../../api/api.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../documentation/math_num_comp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2 - Mathematics, Numerics, and Computational Foundations</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><code>/base</code></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../documentation/math_num_comp/coordinate_systems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1 - Coordinate Systems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.1 – Cartesian and Spherical Coordinates</span></a>
+  <a href="../../api/base/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constants</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/math_num_comp/coordinate_systems/spacial_differentials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.2 – Spacial Differentials</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.3 – Temporal Differentials</span></a>
+  <a href="../../api/base/cs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coordinate Systems</span></a>
   </div>
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../documentation/math_num_comp/numerical_grids.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2.2 - Numerical Grids</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><code>/grids</code></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/math_num_comp/numerical_grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2.1 – Global Structured Two-Dimensional Grids</span></a>
+  <a href="../../api/grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Global Structured Two-Dimensional Grids</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
- <span class="menu-text">documentation/math_num_comp/numerical_grids/utility.qmd</span>
-  </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -228,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2.2 – Numerical Grids</h1>
+<h1 class="title">Global Structured Two-Dimensional Grids</h1>
 </div>
 
 
@@ -256,9 +230,128 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p><strong>2.2 – Numerical Grids</strong> <em>(this file)</em><br>
-  <a href="../../documentation/math_num_comp/numerical_grids/global_structured_grids.qmd">2.2.1 – Global Structured Grids</a></p>
-<hr>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS: <code>GlobalStructured2DGrid</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>[1] struct GlobalStructured2DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+[2] GlobalStructured2DGrid([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
+<p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over a sphere of radius <code>r</code>.</p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 41%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>r</code></td>
+<td style="text-align: left;"><code>T</code></td>
+<td style="text-align: left;">radius of global body (sphere)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>N_theta</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in azimuth direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>N_phi</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in elevation direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>coords</code></td>
+<td style="text-align: left;"><code>Vector{GlobalSphericalPosition{T}}</code></td>
+<td style="text-align: left;">coordinates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>areas</code></td>
+<td style="text-align: left;"><code>Vector{T}</code></td>
+<td style="text-align: left;">surface area</td>
+</tr>
+</tbody>
+</table>
+<p>To ensure expected behavior, the grid object should generally be created with the outer constructor [2].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS: <code>GlobalStructured2DGrid_EqSim</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>[1] struct GlobalStructured2DGrid_EqSim{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+[2] GlobalStructured2DGrid_EqSim([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
+<p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the upper hemisphere with radius <code>r</code>, assuming equatorial symmetry.</p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 41%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>r</code></td>
+<td style="text-align: left;"><code>T</code></td>
+<td style="text-align: left;">radius of global body (sphere)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>N_theta</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in azimuth direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>N_phi</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in elevation direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>coords</code></td>
+<td style="text-align: left;"><code>Vector{GlobalSphericalPosition{T}}</code></td>
+<td style="text-align: left;">coordinates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>areas</code></td>
+<td style="text-align: left;"><code>Vector{T}</code></td>
+<td style="text-align: left;">surface area</td>
+</tr>
+</tbody>
+</table>
+<p>To ensure expected behavior, the grid object should generally be created with the outer constructor [2].</p>
+</div>
+</div>
+</div>
+</div>
 
 
 

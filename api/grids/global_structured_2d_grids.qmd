@@ -1,0 +1,31 @@
+---
+title: "Global Structured Two-Dimensional Grids"
+date: last-modified
+author: "Alexander Smolka"
+---
+---
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``GlobalStructured2DGrid`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured2DGrid
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``GlobalStructured2DGrid_EqSim`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured2DGrid_EqSim
+```
+:::

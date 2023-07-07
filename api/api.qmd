@@ -1,9 +1,14 @@
 ---
-title: "ExESS -- API"
+title: "API"
 date: last-modified
 author: "Alexander Smolka"
 ---
 
 ---
 
-API for `ExESS`.
+The `ExESS` package is structured into four main parts, which are the four main folders in the `/src` directory:
+
+* `/base` contains basic functionality that is used at multiple places in the code, e.g., physical constants, coordinate system definitions, utility functions, and some probability distributions.
+* `/grids` contains all numerical discretization methods used in this package. While most functions can be called with `AbstractVector` inputs, their main use is meant to be in conjunction with the previously defined custom coordinate systems.
+* `/exospheres` contains all scripts that define functions that have something to do with simulating the exosphere. Due to the assumption of surface-bounded exospheres, [Monte-Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) are the preferred simulation tool as each individual particle of the exosphere can be simulated independently. Implemented functionalities are mostly based on ballistic trajectory calculations.
+* `/surfaces` contains all functions that are used to calculate surface properties, e.g., surface temperatures, reaction kinetics, thermal conductivities, and diffusion coefficients.

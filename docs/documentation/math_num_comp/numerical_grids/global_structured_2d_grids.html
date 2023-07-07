@@ -9,7 +9,7 @@
 <meta name="author" content="Alexander Smolka">
 <meta name="dcterms.date" content="2023-07-07">
 
-<title>ExESS - 2.2.1 – Global Structured Grids</title>
+<title>ExESS - 2.2.1 – Global Structured Two-Dimensional Grids</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids.html">2.2 - Numerical Grids</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html">2.2.1 – Global Structured Grids</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids.html">2.2 - Numerical Grids</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/numerical_grids/global_structured_2d_grids.html">2.2.1 – Global Structured Two-Dimensional Grids</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -242,8 +242,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2.2.1 – Global Structured Grids</span></a>
+  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2.2.1 – Global Structured Two-Dimensional Grids</span></a>
   </div>
 </li>
       </ul>
@@ -261,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2.2.1 – Global Structured Grids</h1>
+<h1 class="title">2.2.1 – Global Structured Two-Dimensional Grids</h1>
 </div>
 
 
@@ -510,11 +510,11 @@ ExESS API – Two-Dimensional Global Structured Grids
 </ul>
 <p><strong>Utility functions</strong>:</p>
 <ul>
-<li><code>areas</code>: Eq. <span class="math inline">\(\eqref{eq:area_gs2dgrid}\)</span></li>
-<li><code>coords</code>: Eqs. <span class="math inline">\(\eqref{eq:gs2dgrid_azimuth}\)</span>, <span class="math inline">\(\eqref{eq:gs2dgrid_elevation}\)</span>, and <span class="math inline">\(\eqref{eq:gs2dgrid_eqsim_elevation}\)</span></li>
-<li><code>coord2idx</code>: Eqs. <span class="math inline">\(\eqref{eq:gs2dgrid_coord2idx_azimuth}\)</span>, <span class="math inline">\(\eqref{eq:gs2dgrid_coord2idx_elevation}\)</span>, and <span class="math inline">\(\eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}\)</span></li>
-<li><code>surfacecoords</code>: identical to <code>coords</code></li>
-<li><code>volumes</code>: zero, since only two-dimensions</li>
+<li><a href="../../../api/grids/utility.html"><code>areas</code></a>: Eq. <span class="math inline">\(\eqref{eq:area_gs2dgrid}\)</span></li>
+<li><a href="../../../api/grids/utility.html"><code>coords</code></a>: Eqs. <span class="math inline">\(\eqref{eq:gs2dgrid_azimuth}\)</span>, <span class="math inline">\(\eqref{eq:gs2dgrid_elevation}\)</span>, and <span class="math inline">\(\eqref{eq:gs2dgrid_eqsim_elevation}\)</span></li>
+<li><a href="../../../api/grids/utility.html"><code>coord2idx</code></a>: Eqs. <span class="math inline">\(\eqref{eq:gs2dgrid_coord2idx_azimuth}\)</span>, <span class="math inline">\(\eqref{eq:gs2dgrid_coord2idx_elevation}\)</span>, and <span class="math inline">\(\eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}\)</span></li>
+<li><a href="../../../api/grids/utility.html"><code>surfacecoords</code></a>: identical to <code>coords</code></li>
+<li><a href="../../../api/grids/utility.html"><code>volumes</code></a>: zero, since only two-dimensions</li>
 </ul>
 </div>
 </div>

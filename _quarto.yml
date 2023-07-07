@@ -57,7 +57,7 @@ website:
               text: "2.2 - Numerical Grids"
               href: documentation/math_num_comp/numerical_grids.qmd
               contents:
-                - documentation/math_num_comp/numerical_grids/global_structured_grids.qmd
+                - documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd
 
     - title: "Wiki"
       style: docked
@@ -75,14 +75,16 @@ website:
       style: docked
       background: light
       contents:
-        - text: ExESS API
+        - text: "Home"
           href: api/api.qmd
-        - section: "Base"
+        - section: "`/base`"
           contents:
-            - text: "Constants"
-              href: api/base/constants.qmd
-            - text: "Coordinate Systems"
-              href: api/base/cs.qmd
+            - api/base/constants.qmd
+            - api/base/cs.qmd
+        - section: "`/grids`"
+          contents:
+            - api/grids/global_structured_2d_grids.qmd
+            - api/grids/utility.qmd
 
 format:
   html:

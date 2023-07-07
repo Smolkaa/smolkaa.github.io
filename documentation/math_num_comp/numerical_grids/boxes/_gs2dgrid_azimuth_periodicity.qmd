@@ -1,0 +1,7 @@
+::: {.callout-note collapse="true"}
+# Azimuth Periodicity
+Due to the $2\pi$-periodicity of the azimuth angle $\sphericalCoordinateAzimuth$, the structure, which is the constant $\Delta\sphericalCoordinateAzimuth$ angular distance between elements, has to be shown across its periodic boundaries:
+\begin{align*}
+    \sphericalCoordinateAzimuth_1 + 2\pi - \sphericalCoordinateAzimuth_{N_\sphericalCoordinateAzimuth} &= \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth}\right) + 2\pi - \left(- \pi + \frac{\pi}{N_\sphericalCoordinateAzimuth} + (N_\sphericalCoordinateAzimuth-1)\frac{2\pi}{N_\sphericalCoordinateAzimuth} \right) = \frac{2\pi}{N_\sphericalCoordinateAzimuth} = \Delta\sphericalCoordinateAzimuth
+\end{align*}
+:::

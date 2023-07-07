@@ -1,8 +1,16 @@
 ::: {.callout-tip collapse="true"}
-# ExESS API -- Global Structured Grids
+# ExESS API -- Two-Dimensional Global Structured Grids
 
-Global, structured grids are implemented in `ExESS` as [`GlobalStructuredGrid`](/api/grids/global_structured_2d_grids.qmd).
+* [`GlobalStructuredGrid`](/api/grids/global_structured_2d_grids.qmd): global, structured grids, see Eqs. \eqref{eq:gs2dgrid_azimuth} -- \eqref{eq:gs2dgrid_coord2idx_elevation}
+* [`GlobalStructuredGrid_EqSim`](/api/grids/global_structured_2d_grids.qmd): global, structured, equatorially symmetric grids, additionally see Eqs. \eqref{eq:gs2dgrid_eqsim_elevation} -- \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}
 
-For utility functions, see: `areas`, `coords`, `coord2idx`, `surfacecoords`, and `volumes`.
+
+**Utility functions**:   
+
+* [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid}
+* [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_elevation}, and \eqref{eq:gs2dgrid_eqsim_elevation}
+* [`coord2idx`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_coord2idx_azimuth}, \eqref{eq:gs2dgrid_coord2idx_elevation}, and \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}
+* [`surfacecoords`](/api/grids/utility.qmd): identical to `coords` 
+* [`volumes`](/api/grids/utility.qmd): zero, since only two-dimensions
 
 :::

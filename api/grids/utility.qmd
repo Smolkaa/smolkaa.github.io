@@ -1,0 +1,71 @@
+---
+title: "Utility"
+date: last-modified
+author: "Alexander Smolka"
+---
+---
+
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``areas`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.areas
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``coords`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.coords
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``coord2idx`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.coord2idx
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``surfacecoords`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.surfacecoords
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ExESS: ``volume`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.volume
+```
+:::
