@@ -5,9 +5,9 @@
 ::: {#fig-lunar_surface_temperatures layout-nrow=2}
 ![Based on a Diviner measurement snapshot.](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner.png){#fig-lunar-surface-temperatures-diviner}
 
-![Based on the average Diviner measurements.](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png){#fig-lunar-surface-temperatures-diviner-average´}
+![Based on the average Diviner measurements.](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png){#fig-lunar-surface-temperatures-diviner-average}
 
-![Based on the analytic function of @Butler1997.](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png){#fig-lunar-surface-temperatures-BUTLER´}
+![Based on the analytic function of @Butler1997.](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png){#fig-lunar-surface-temperatures-BUTLER}
 
 ![Based on the analytic function of @Hurley2015](/img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png){#fig-lunar-surface-temperatures-HURLEY}
 
