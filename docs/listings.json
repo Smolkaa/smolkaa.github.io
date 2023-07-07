@@ -1,8 +1,9 @@
 [
   {
-    "listing": "/src/wiki.html",
+    "listing": "/manuals/manuals.html",
     "items": [
-      "/posts/test/index.html"
+      "/manuals/git_workflow/index.html",
+      "/manuals/package_installation/index.html"
     ]
   }
 ]

@@ -1,0 +1,14 @@
+---
+title: "Manuals"
+listing:
+  contents:
+    - "*/*.qmd"
+  sort: "title asc"
+  type: table
+  categories: true
+page-navigation: true
+date-modified: last-modified
+author: "Alexander Smolka"
+---
+
+---

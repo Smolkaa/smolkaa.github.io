@@ -1,6 +1,6 @@
 ---
-title: "2.1.2 -- Spacial Differentials"
-date: last-modified
+title: "2.1.2 - Spacial Differentials"
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 

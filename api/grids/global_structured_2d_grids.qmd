@@ -1,12 +1,12 @@
 ---
 title: "Global Structured Two-Dimensional Grids"
-date: last-modified
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 ---
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``GlobalStructured2DGrid`` -- Struct
+# ExESS: ``GlobalStructured2DGrid`` - Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -19,7 +19,7 @@ end
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``GlobalStructured2DGrid_EqSim`` -- Struct
+# ExESS: ``GlobalStructured2DGrid_EqSim`` - Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

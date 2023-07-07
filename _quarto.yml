@@ -9,22 +9,26 @@ bibliography: "../asmolka_library/main.bib"
 website:
   title: "ExESS"
   favicon: "/resources/logo/exess_logo.png"
+  page-footer:
+      center: "{{< fa circle-user >}} &ensp; Alexander Smolka &emsp; | &emsp; {{< fa at >}} &ensp; [a.smolka@tum.de](mailto:a.smolka@tum.de) &emsp; | &emsp; {{< fa calendar >}} &ensp; 2023"
+
   search: true
   navbar:
     background: primary
     logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
     left:
-      - text: "Home"
+      - text: "{{< fa house >}} Home"
         href: index.qmd
-      - text: "Documentation"
+      - text: "{{< fa book >}} Documentation"
         href: documentation/documentation.qmd
-      - text: "Wiki"
-        href: src/wiki.qmd
-      - text: "Manual"
-        href: src/manual.qmd
-      - text: "API"
+      - text: "{{< fa book-open-reader >}} Manuals"
+        href: manuals/manuals.qmd
+      - text: "{{< fa code >}} API"
         href: api/api.qmd
+    right:
+      - icon: github
+        href: https://github.com/Smolkaa
 
   sidebar:
     - title: "Home"
@@ -37,39 +41,43 @@ website:
     - title: "Documentation"
       style: docked
       background: light
-      collapse-level: 3
+      collapse-level: 4
       contents:
-        - text: "Documentation"
+        - text: "Home"
           href: documentation/documentation.qmd
         - text: "1 - Introduction"
           href: documentation/introduction.qmd
         - section: "2 - Mathematics, Numerics, and Computational Foundations"
           href: documentation/math_num_comp.qmd
           contents:
-            - section: 
-              text: "2.1 - Coordinate Systems"
+            - section: "2.1 - Coordinate Systems"
               href: documentation/math_num_comp/coordinate_systems.qmd
               contents:
                 - documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd
                 - documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd
                 - documentation/math_num_comp/coordinate_systems/temporal_differentials.qmd
-            - section:
-              text: "2.2 - Numerical Grids"
+            - section: "2.2 - Numerical Grids"
               href: documentation/math_num_comp/numerical_grids.qmd
               contents:
                 - documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd
+        - section: "3 - Fundamentals"
+          href: documentation/fundamentals.qmd
+          contents: 
+            - section: "3.1 - Planetary Bodies with Surface-Bounded Exospheres"
+              href: documentation/fundamentals/planetary_bodies.qmd
+              contents: 
+                - section: "3.1.1 - The Moon"
+                  href: documentation/fundamentals/planetary_bodies/moon.qmd
+                  contents: 
+                    - documentation/fundamentals/planetary_bodies/moon/temperatures.qmd
 
-    - title: "Wiki"
+
+    - title: "Manuals"
       style: docked
       background: light
       contents:
-        - src/wiki.qmd
-
-    - title: "Manual"
-      style: docked
-      background: light
-      contents:
-        - src/manual.qmd
+        - text: "Overview"
+          href: manuals/manuals.qmd
 
     - title: "API"
       style: docked
@@ -77,22 +85,21 @@ website:
       contents:
         - text: "Home"
           href: api/api.qmd
-        - section: "`/base`"
+        - section: "Base"
           contents:
             - api/base/constants.qmd
             - api/base/cs.qmd
-        - section: "`/grids`"
+        - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd
             - api/grids/utility.qmd
 
 format:
   html:
-    theme: [flatly, _mystyle.scss]
-    css: styles.css
     code-link: true
-    html-math-method: 
-      method: mathjax
-    extra_dependencies: ["siunitx"]
+    css: styles.css
+    html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
+    page-layout: full
+    theme: [flatly, _mystyle.scss]

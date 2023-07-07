@@ -1,0 +1,116 @@
+---
+title: "DRAFT! Git Workflow"
+author: Alexander Smolka
+date-modified: last-modified
+page-layout: full
+---
+
+[{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)
+
+---
+
+In order to use and work with the `ExESS.jl` package, you need to have access to the code and be able to download it. You can find the repository with all files on  [**GitLab**](https://gitlab.lrz.de/exess/exess.jl). Only the developers of the package have full access to the code and are able to edit them directly, though **Git** and **GitLab** offer wonderful collaboration tools for you to work with code, even if you do not own it, and even to suggest changes to it. This manual page will go through some of the usual workflow steps for working with `ExESS.jl` and Git.
+
+[Here]((https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow)) is a great and more extended tutorial/manual on how to use Git.
+
+
+## Forking the Repository
+
+While you can *see* the repository with the code, you cannot download and *use* it yet. To be able to do so, you need to create an online copy of the repository and put it in your name space, where you have full access to, a process called **forking**. This is done by clicking the **Fork** button on the top right corner of the repository page on GitLab. Once you click the button, GitLab will ask you about the **Project name**, **Project URL** (i.e., the name space), the **Project slug**, and an optional **Project description** of the forked repository. Note that the default values are copied from the original `ExESS.jl` repository, but since this is your personal copy, you can change anything to whatever you want. Here are a couple of hints to make your life easier:
+* Use your own user-name name-space in the **Project URL** (e.g., `https://gitlab.lrz.de/<username>/`)
+* The **Project slug** is the name of the online repository and will be the default value for your local copies (i.e., the folder name on your computer). Make it short and fit for a folder name (e.g., `exess`).
+
+At the bottom of the **Fork Project** page, you can also choose the **Visibility Level**; please leave the default value of **Internal** for me to be able to see your work.
+
+Why did you have to go through all this trouble to copy some files from the internet? Couldn't you just download them plain and simple? Well, yes, but doing it "The Git Way" has a couple of advantages:
+* You do not *just* have the code; you now have a **connected** copy of the code. This means that anytime there is a change in the original repository, your fork will notice that instantly and give you the option to update your copy to match the newest original version.
+* You can make changes to the original code without actually changing the original code. Nonetheless, if you want to make your change a part of the original code, you can suggest your version to the original code's author, and they can decide whether to accept your suggestion. This is done through a **Merge Request** (see below).
+* Should at any time in your work you want to go back to the original code, you can do so with a single click.
+
+
+## Cloning the Repository
+
+Now that you have a forked copy of the repository, you can download it to your computer. This is called **cloning** the repository. To do so, you need to copy the **Project URL** of your forked repository (e.g., `https://gitlab.lrz.de/<username>/exess`). You can find a blue **Clone** button on your forked repository page; expanding it shows you the option to `Clone with HTTPS` where you can simply copy the URL from. Use it in the following command:
+
+```sh
+git clone <project_url>
+```
+
+This will create a folder with the name of the **Project slug** (e.g., `exess`) in your current directory. This folder is your local copy of the repository, and you can now work with it as you wish. Note that you can clone the repository to any directory you want, and you can clone it as many times as you want.
+
+
+## Updating the Repository
+
+As mentioned above, you can update your local copy of the repository to match the newest version of the original repository. This is done by **pulling** the changes from the original repository. 
+
+```sh
+git pull
+```
+
+## Working with Branches
+
+Branches are a convenient way to work on different versions of the code at the same time. For example, you can have a branch for the newest version of the code and another branch for a version that you are working on. You can switch between branches at any time, and you can merge branches together. The default branch is called `main`, which contains the current version of the code that is ready to be used. A second branch, called `dev` is used for development purposes, and it contains the newest version of the code that is currently under development, which means there can still be (even more) bugs there. The general rule is that if you work **with** the code, you should use the `main` branch, and if you work **on** the code, you should use the `dev` branch.
+
+Should you want to create a new branch, you can either do it online, using the little plus button on the top left (drop-down to `New Branch`), or you can do so with the following command:
+
+```sh
+git branch <branch_name>
+```
+
+If you created the branch online, do not forget to `pull` the online changes to your local copy! If you created the branch locally, you can `push` it to the online repository with the following command:
+
+```sh
+git push --set-upstream origin <branch_name>
+```
+
+To switch between branches, use the following command:
+
+```sh
+git checkout <branch_name>
+```
+
+## Working with the Repository
+
+You now have your local version of `ExESS.jl` and want to fork with/on it. While there are many files in the repository, the main `Julia` files, containing the functions you're are most likely interested in, are located in the `src` folder. 
+
+If you write and add your own **functions**, please create another directory inside of the home or the `src` folder and give it a fitting name. You can now work directly in the local repository, on your or on the original functions.
+
+If you have added your changes to the code, you can `add` and, thus, **stage** your changes to be uploaded and synchronized with the online repository. This is done with the following commands:
+
+```sh
+git add <file> # chose a or multiple, specific files
+git add --all  # stage ALL changed/added files
+```
+
+Your changes are now ready for `commit`. This is done with the following command:
+
+```sh
+git commit -m "<commit_message>"
+```
+
+This command will finalize your updates and prepare them to be uploaded to the online repository. Note that you can `add` and `commit` as many times as you want before you `push` your changes to the online repository. For both documentation and debugging purposes, it is recommended to regularly `add` and `commit` your changes and always write a meaningful and short `commit_message` that describes the changes you have made. 
+
+To upload your changes to the online repository, use the following command:
+
+```sh
+git push
+```
+
+Now your local and online versions are synchronized again (at least regarding the files that have been pushed). These online changes, including the `commit_message`, can be seen on the online repository page.
+
+
+## Merging Code
+
+Any time you want Git to synchronize a local and an online version of a repository, Git will change all touched files and put them to their newest version. While this usually goes smoothly, it can happen that both the online as well as the local version of a file have been changed, making it impossible for Git to know which of the versions to use. In this case, Git will ask you to **merge** the two versions. You, as the user and author of the changes, are to decide which version to use or how to combine the two versions into a new one.
+
+You should generally always make these kinds of merges on your local repository and then `push` the merged version with all conflicts resolved to the online repository. Depending on the editor you use, it will ask you to write a message describing your merge (e.g., `Merge two versions of src/grids.jl`). This message is not the same as the `commit_message` and is used for documentation purposes. **Always resolve your merge conflicts and keep a clean repository!**
+
+## Merge Requests
+
+The same merge conflict can happen between your forked code and the original `ExESS.jl` repository. Either the authors have updated the original code and you want to include it in your own forked version where you have already made some changes yourself, or maybe you have made some changes to your forked version and want to suggest them to the original authors. In the former case, you simply have to resolve all conflicts in your own online and local version yourself, which has no influence on the original code. In the latter cases, you can create a **Merge Request** to suggest your changes to the original repository.
+
+On the top of the GitLab page, the repository will track how many `commits` your version is further (or behind) the original code. It then suggests a **Merge Request** to you, where you can suggest your changes to the original code. The request will then arrive at the authors to review all changes and to make sure that they are compatible with the original code. If they accept your request, your changes will be included in the original code. If they reject your request, you can either try to resolve the conflicts yourself and make a new request, or you can keep your changes in your own forked version.
+
+## Working with VSCode
+
+See the documentation for both the already installed `Source Contro with Git` and the `GitLens` extensions.

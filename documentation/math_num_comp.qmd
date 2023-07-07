@@ -1,17 +1,17 @@
 ---
-title: "2 -- Mathematics, Numerics, and Computational Foundations"
-date: last-modified
+title: "2 - Mathematics, Numerics, and Computational Foundations"
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 ---
 
-**2 -- Mathematics, Numerics, and Computational Foundations**  _(this file)_  
-&emsp; [2.1 -- Coordinate Systems](/documentation/math_num_comp/coordinate_systems.qmd)  
-&emsp;&emsp; [2.1.1 -- Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd)  
-&emsp;&emsp; [2.1.2 -- Spacial Differentials](/documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd)  
-&emsp;&emsp; [2.1.3 -- Temporal Differentials](/documentation/math_num_comp/coordinate_systems/temporal_differentials.qmd)  
-&emsp; [2.2 -- Numerical Grids](/documentation/math_num_comp/numerical_grids.qmd)  
-&emsp;&emsp; [2.2.1 -- Global Structured Grids](/documentation/math_num_comp/numerical_grids/global_structured_grids.qmd)  
+**2 - Mathematics, Numerics, and Computational Foundations**  _(this file)_  
+&emsp; [2.1 - Coordinate Systems](/documentation/math_num_comp/coordinate_systems.qmd)  
+&emsp;&emsp; [2.1.1 - Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd)  
+&emsp;&emsp; [2.1.2 - Spacial Differentials](/documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd)  
+&emsp;&emsp; [2.1.3 - Temporal Differentials](/documentation/math_num_comp/coordinate_systems/temporal_differentials.qmd)  
+&emsp; [2.2 - Numerical Grids](/documentation/math_num_comp/numerical_grids.qmd)  
+&emsp;&emsp; [2.2.1 - Global Structured Grids](/documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd)  
 
 ---
 

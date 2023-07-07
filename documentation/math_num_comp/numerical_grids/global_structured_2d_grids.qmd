@@ -1,6 +1,6 @@
 ---
-title: "2.2.1 -- Global Structured Two-Dimensional Grids"
-date: last-modified
+title: "2.2.1 - Global Structured Two-Dimensional Grids"
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 
@@ -9,7 +9,7 @@ author: "Alexander Smolka"
 
 ---
 
-The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$, see [2.1.1 -- Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd).
+The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$, see [2.1.1 - Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd).
 
 
 The spherical coordinates, the azimuth $\sphericalCoordinateAzimuth$ and elevation $\sphericalCoordinateElevation$, are created as follows:

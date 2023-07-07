@@ -1,0 +1,55 @@
+---
+title: "3.1.1.1 - Lunar Temperatures"
+date-modified: last-modified
+author: "Alexander Smolka"
+---
+
+{{< include /resources/latex/defs.qmd >}}
+{{< include /resources/latex/symbols.qmd >}}
+
+---
+
+
+Aboard the \gls{LRO} the \gls{DLRE} gathered infrared data of the lunar surface to create temperatures maps of the Moon.
+
+
+{{< include /img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/_lunar_surface_temperatures.qmd >}}
+
+
+@Butler1997 proposed an analytical surface temperature distribution based on the solar zenith angle $\zenithAngle_s$ with regard to the local surface normal, assuming a perfectly spherical Moon, see @fig-lunar_surface_temperatures. Given the subsolar position $\left(\longitude_{ss}, \latitude_{ss}\right)$, longitude and latitude respectively, the cosine of the zenith angle can be calculate as $\cos\zenithAngle_s = \cos\longitude_{ss} \cdot \cos\latitude_{ss}$. All measurements of the lunar surface temperatures on the dayside suggest a $\cos^{1/4}$ shape with regard to the solar zenith angle [@Vasavada2012; @Hurley2015], though such models break down on the nightside. By introducing a cutoff at the terminators alongside a defined nightside temperature shifting the distribution up, @Butler1997 arrived at
+\begin{equation}
+    \temperature (\zenithAngle_s) = \begin{cases}
+        \SI{250}{\kelvin} \cdot \cos^{1/4} (\zenithAngle_s) + \SI{100}{\kelvin}, \qquad & \text{ if } \zenithAngle_s \leq \SI{90}{\degree}, \\
+        \SI{100}{\kelvin}, & \text{ if } \zenithAngle_s > \SI{90}{\degree}.
+    \end{cases} \label{eq:lunar_surface_temperatures_BUTLER}
+\end{equation}
+
+
+@Hurley2015 proposed another model to further improve the analytical description of the lunar surface temperatures, which included a combination of a cosine-law dependence on the dayside and a 6-term polynomial fitted cooling function for the nightside:
+\begin{equation}
+    \temperature (\longitude_{ss}, \latitude_{ss}) = \begin{cases}
+        \SI{262}{\kelvin} \cdot \cos^{1/2} \left( \zenithAngle_s \right) + \SI{130}{\kelvin}, \qquad & \text{ if } \left|\longitude_{ss}\right| < \SI{90}{\degree}, \\
+        \left( \sum_{i=0}^5 a_i \longitude_{ss}^i \right) + \SI{35}{\kelvin} \left( \sin \overline{\latitude_{ss}} - 1\right), \qquad & \text{ else.} 
+    \end{cases} \label{eq:lunar_surface_temperatures_HURLEY} 
+\end{equation}
+with the longitude $\longitude_{ss}$ and the subsolar co-latitude $\overline{\latitude_{ss}} = \pi/2 - \latitude_{ss}$. The coefficients of the polynomial fit are $a = \left[444.738,\; -448.937,\; 239.668,\; -63.8844,\; 8.34064,\; -0.423502 \right]$ in kelvin. Note that the longitude has to be used in radians and must be positively defined on the range of $\longitude_{ss} \in \left(\pi/2, 3\pi/2\right)$ for the nightside.
+
+
+
+
+
+
+\input{src/temperatures/figures/lunar_surface_temperatures_comparison.tex}
+
+
+The two presented analytical models of the lunar surface temperatures have been compared with the averaged \gls{DLRE} measurements. Figure~\ref{fig:lunar_surface_temperatures_comparison} shows this statistical analysis of the temperatures difference of the @Butler1997 and @Hurley2015 calculated as $\Delta\temperature_i = \temperature_i - \temperature_\text{Diviner}$ for each analytical model $i$, evaluated on \SI{270e3}{} surface points, globally distributed using the \gls{HEALPix} method. 
+
+
+The left side shows the statistical mean of said temperature differences as a function of subsolar latitude for both models, both globally as well as exclusively on the dayside and nightside of the Moon. Up to $\latitude_{ss}=\SI{60}{\degree}$, the @Hurley2015 model has global means very close to zero, with slight deviations for the exclusive day- and nightside. Closer to the poles, the model tends towards positive temperature differences, peaking at around \SI{35}{\kelvin} above the Diviner model on the sunlit side. Using the model by @Butler1997 this effect is even more pronounced with the means starting below zero at the equator and continuously increasing with higher latitudes. Final values close to the poles reach temperature differences of more than \SI{60}{\kelvin} on the dayside.
+
+
+To further investigate the two models, the \gls{rms} value of the temperature differences
+\begin{equation}
+    \Delta\temperature_{\text{rms}, i} = \sqrt{\frac{1}{N_j} \cdot \sum_j^{N_j} \left(\Delta\temperature_{i,j}\right)^2},
+\end{equation}
+for $N_j$ applicable positions $j$ is shown on the right side of Fig. \ref{fig:lunar_surface_temperatures_comparison}. In comparison with the previously shown statistical mean, the \gls{rms} shows the spread of the temperatures around the mean. For all cases, globally, dayside, and nightside, the @Hurley2015 model has lower \gls{rms} values, which are less than \SI{10}{\kelvin} for latitude uo to \SI{60}{\degree}. Closer to the poles and similar to the mean value, the dayside temperatures tend to deviate the most, peaking at \SI{43}{\kelvin} at \SI{80}{\degree}. Generally, a steadily increasing behaviour with higher latitudes can be observed. For the @Butler1997 model, the \gls{rms} values start out considerably higher with the worst deviations on the dayside of the Moon. For roughly \SI{50}{\degree} from the equator, the values are decreasing to a lowest value of \SI{17}{\kelvin} before sharply increasing polewards of it.

@@ -1,5 +1,5 @@
 ::: {.callout-tip collapse="true"}
-# ExESS API -- Cartesian Coordinates 
+# ExESS API - Cartesian Coordinates 
 Vectors defining a position or a velocity in a **cartesian** coordinate system and in **cartesian** 
 elements, like the one shown in Eq. \eqref{eq:cartesian_coordinate} are implemented as 
 [`GlobalCartesianPosition`](/api/base/cs.qmd) and [`GlobalCartesianVelocity`](/api/base/cs.qmd).  

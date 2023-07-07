@@ -1,6 +1,6 @@
 ---
-title: "2.1.1 -- Cartesian and Spherical Coordinates"
-date: last-modified
+title: "2.1.1 - Cartesian and Spherical Coordinates"
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 

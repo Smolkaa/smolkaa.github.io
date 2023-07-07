@@ -4,6 +4,8 @@
 \DeclareMathOperator{\sgn}{sgn}
 
 
+\newcommand{\citet}[1]{a}
+
 
 <!-- SIUNITX WORKAROUND -->
 
@@ -14,3 +16,4 @@
 
 \newcommand{\metre}{m}
 \newcommand{\second}{s}
+\newcommand{\kelvin}{K}

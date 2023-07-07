@@ -1,12 +1,12 @@
 ---
-title: "2.2 -- Numerical Grids"
-date: last-modified
+title: "2.2 - Numerical Grids"
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 ---
 
-**2.2 -- Numerical Grids** _(this file)_  
-&emsp; [2.2.1 -- Global Structured Grids](/documentation/math_num_comp/numerical_grids/global_structured_grids.qmd)  
+**2.2 - Numerical Grids** _(this file)_  
+&emsp; [2.2.1 - Global Structured Grids](/documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd)  
 
 ---
 

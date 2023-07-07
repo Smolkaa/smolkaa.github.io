@@ -1,14 +1,9 @@
 ---
 title: "Extraterrestrial Exosphere and Surface Simulations"
-date: last-modified
+date-modified: last-modified
 author: "Alexander Smolka"
 ---
 
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-::: {#refs}
-:::
+This website is still under construction! {{< fa wrench >}}

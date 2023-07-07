@@ -1,3 +1,6 @@
 ---
 title: "Introduction"
+date-modified: last-modified
+author: "Alexander Smolka"
+---
 ---

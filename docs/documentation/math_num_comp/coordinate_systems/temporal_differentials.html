@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-07-06">
 
-<title>ExESS - 2.1.3 – Temporal Differentials</title>
+<title>ExESS - 2.1.3 - Temporal Differentials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,26 +105,29 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../../../documentation/documentation.html" rel="" target="" aria-current="page">
- <span class="menu-text">Documentation</span></a>
+ <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../src/wiki.html" rel="" target="">
- <span class="menu-text">Wiki</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../../src/manual.html" rel="" target="">
- <span class="menu-text">Manual</span></a>
+    <a class="nav-link" href="../../../manuals/manuals.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-book-open-reader" aria-label="book-open-reader"></i> Manuals</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../api/api.html" rel="" target="">
- <span class="menu-text">API</span></a>
+ <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> API</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Smolkaa" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -133,14 +137,14 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems.html">2.1 - Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html">2.1.3 – Temporal Differentials</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp.html">2 - Mathematics, Numerics, and Computational Foundations</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems.html">2.1 - Coordinate Systems</a></li><li class="breadcrumb-item"><a href="../../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html">2.1.3 - Temporal Differentials</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
@@ -148,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documentation</span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -170,27 +174,27 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../documentation/math_num_comp/coordinate_systems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.1 - Coordinate Systems</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.1 – Cartesian and Spherical Coordinates</span></a>
+ <span class="menu-text">2.1.1 - Cartesian and Spherical Coordinates</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/math_num_comp/coordinate_systems/spacial_differentials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1.2 – Spacial Differentials</span></a>
+ <span class="menu-text">2.1.2 - Spacial Differentials</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../documentation/math_num_comp/coordinate_systems/temporal_differentials.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">2.1.3 – Temporal Differentials</span></a>
+ <span class="menu-text">2.1.3 - Temporal Differentials</span></a>
   </div>
 </li>
       </ul>
@@ -199,17 +203,56 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="../../../documentation/math_num_comp/numerical_grids.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2.2 - Numerical Grids</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_grids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2.1 – Global Structured Grids</span></a>
+  <a href="../../../documentation/math_num_comp/numerical_grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2.1 - Global Structured Two-Dimensional Grids</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../documentation/fundamentals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3 - Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../documentation/fundamentals/planetary_bodies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 - Planetary Bodies with Surface-Bounded Exospheres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../documentation/fundamentals/planetary_bodies/moon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1.1 - The Moon</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../documentation/fundamentals/planetary_bodies/moon/temperatures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1.1.1 - Lunar Temperatures</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
       </ul>
@@ -221,11 +264,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2.1.3 – Temporal Differentials</h1>
+<h1 class="title">2.1.3 - Temporal Differentials</h1>
 </div>
 
 
@@ -239,13 +282,13 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
+  
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 6, 2023</p>
+      <p class="date-modified">July 7, 2023</p>
     </div>
   </div>
-  
     
   </div>
   
@@ -491,6 +534,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><i class="fa-solid fa-circle-user" aria-label="circle-user"></i>   Alexander Smolka   |   <i class="fa-solid fa-at" aria-label="at"></i>   <a href="mailto:a.smolka@tum.de">a.smolka@tum.de</a>   |   <i class="fa-solid fa-calendar" aria-label="calendar"></i>   2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

@@ -1,5 +1,3 @@
-using Revise
-
 # load packages and themes
 includet(joinpath(@__DIR__, "..","..","..","..","..","resources","julia","theme.jl"))
 
