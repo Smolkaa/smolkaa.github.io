@@ -1,7 +1,5 @@
 ---
 title: "Code"
-date-modified: last-modified
-author: "Alexander Smolka"
 ---
 
 ---
