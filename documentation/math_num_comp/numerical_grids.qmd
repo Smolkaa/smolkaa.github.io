@@ -1,13 +1,29 @@
 ---
-title: "2.2 - Numerical Grids"
-date-modified: last-modified
-author: "Alexander Smolka"
----
+title: "Numerical Grids"
 ---
 
-**2.2 - Numerical Grids** _(this file)_  
-&emsp; [2.2.1 - Global Structured Grids](/documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd)  
+{{< include /resources/latex/defs.qmd >}}
+{{< include /resources/latex/symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
 
 ---
+
+
+Some introduction text...
+
+## Global, Structured, Two-Dimensional Grids
+{{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids.qmd >}}
+
+
+## Global, HEALPix, Two-Dimensional Grids
+{{< include /documentation/math_num_comp/numerical_grids/_global_healpix_2d_grids.qmd >}}
+
+
+
+::: {#ref}
+:::
 
 

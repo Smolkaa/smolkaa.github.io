@@ -1,6 +1,0 @@
----
-title: "3 - Fundamentals"
-date-modified: last-modified
-author: "Alexander Smolka"
----
----

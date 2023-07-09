@@ -3,6 +3,9 @@ title: "DRAFT! Git Workflow"
 author: Alexander Smolka
 date-modified: last-modified
 page-layout: full
+categories:
+  - Git
+  - On-Boarding
 ---
 
 [{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)

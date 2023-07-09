@@ -7,3 +7,7 @@ author: "Alexander Smolka"
 ---
 
 This website is still under construction! {{< fa wrench >}}
+
+## Citation
+
+Download citation: {{< downloadthis cite.bib >}}

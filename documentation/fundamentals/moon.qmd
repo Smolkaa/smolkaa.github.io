@@ -1,0 +1,25 @@
+---
+title: "The Moon"
+---
+
+{{< include /resources/latex/defs.qmd >}}
+{{< include /resources/latex/symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}} {#sec-{{< meta title >}}}
+
+{{< toc >}}
+:::
+
+---
+
+
+Some introduction text...
+
+## Lunar Surface Temperatures
+{{< include /documentation/fundamentals/moon/_lunar_surface_temperatures.qmd >}}
+
+
+::: {#ref}
+:::
+

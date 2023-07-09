@@ -1,0 +1,19 @@
+---
+title: "Biblography"
+date-modified: last-modified
+author: "Alexander Smolka"
+format:
+  html: default
+  pdf: default
+---
+
+---
+
+| 
+
+
+
+## References
+
+::: {#ref}
+:::

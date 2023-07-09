@@ -3,6 +3,9 @@ title: "ExESS Package Installation"
 author: Alexander Smolka
 date-modified: last-modified
 page-layout: full
+categories:
+  - Julia
+  - On-Boarding
 ---
 
 [{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)

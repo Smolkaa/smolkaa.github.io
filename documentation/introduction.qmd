@@ -1,6 +1,12 @@
 ---
 title: "Introduction"
-date-modified: last-modified
-author: "Alexander Smolka"
 ---
+
+{{< include /resources/latex/defs.qmd >}}
+{{< include /resources/latex/symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
 ---

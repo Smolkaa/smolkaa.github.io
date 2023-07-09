@@ -163,12 +163,12 @@ end
 
 # Downloads
 
-* {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid.svg label="figure.svg" type="light" dname="figure" >}} 
+* {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid.svg label="figure.svg" type="light" dname="figure" >}} 
 
-* {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.svg label="2d.svg" type="light" dname="2d" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.pdf label="2d.pdf" type="light" dname="2d" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.png label="2d.png" type="light" dname="2d" >}} 
+* {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.svg label="2d.svg" type="light" dname="2d" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.pdf label="2d.pdf" type="light" dname="2d" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_2d.png label="2d.png" type="light" dname="2d" >}} 
 
-* {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.svg label="proj.svg" type="light" dname="proj" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.pdf label="proj.pdf" type="light" dname="proj" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.png label="proj.png" type="light" dname="proj" >}} 
+* {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.svg label="proj.svg" type="light" dname="proj" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.pdf label="proj.pdf" type="light" dname="proj" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_proj.png label="proj.png" type="light" dname="proj" >}} 
 
-* {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.svg label="3d.svg" type="light" dname="3d" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.pdf label="3d.pdf" type="light" dname="3d" >}} {{< downloadthis ../../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.png label="3d.png" type="light" dname="3d" >}}
+* {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.svg label="3d.svg" type="light" dname="3d" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.pdf label="3d.pdf" type="light" dname="3d" >}} {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid_3d.png label="3d.png" type="light" dname="3d" >}}
 
 :::

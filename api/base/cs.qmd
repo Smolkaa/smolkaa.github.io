@@ -1,8 +1,11 @@
 ---
 title: "Coordinate Systems"
-date-modified: last-modified
-author: "Alexander Smolka"
 ---
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
 ---
 
 Coordinates in `ExESS` are implemented as their custom, three-dimensional vectors, which
@@ -11,8 +14,11 @@ either be `Global[...]` or `Local[...]`, which is referring to a fixed planetary
 a local reference frame, respectively. The coordinate system is either `[...]Cartesian[...]`
 or `[...]Spherical[...]`, which is referring to a Cartesian or spherical coordinate system,
 respectively. The physical type is either `[...]Position` or `[...]Velocity`, which is referring 
-to a position or velocity vector, respectively. The following structure shows all currently
-implemented coordinates in `ExESS`:
+to a position or velocity vector, respectively. 
+
+## Type Structure
+
+The following structure shows all currently implemented coordinates in `ExESS`:
 
 ```julia
 ExESS
@@ -28,10 +34,11 @@ ExESS
        └─ GlobalSphericalVelocity{T<:Real}
 ```
 
-More information on the mathematical description of the different coordinate vectors are
-presented in the [(2.1.1 - Cartesian and Spherical Coordinates)](/documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd).
-The mathematical foundation for the conversion functions are shown in [(2.1.2 - Spacial Differentials)](/documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd),
-and [(2.1.3 - Temporal Differentials)](/documentation/math_num_comp/coordinate_systems/tempoarl_differentials.qmd),
+More information on the mathematical description of the different coordinate vectors and the mathematical foundation for the conversion functions are presented in [Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems.qmd).
+
+
+## API
+
 
 ::: {.callout-note appearance="simple" icon=false}
 # ExESS: ``GlobalCartesianPosition`` - Struct

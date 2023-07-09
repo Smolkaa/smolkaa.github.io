@@ -17,10 +17,11 @@ Global, stationary lunar surface temperature maps. Coordinates given with respec
 # Julia
 ```julia
 using .ExESS
+using CairoMakie, ColorSchemes
+    
+cmap = ColorSchemes.lipari
 
-cmap = lipari
-
-
+#::. functions
 function _default_(N=240, M=120)
     fig     = Figure(;resolution=(600,285))
     ga      = MyLTGeoAxis(fig[1,1];)
@@ -29,7 +30,6 @@ function _default_(N=240, M=120)
     phi     = range(-1,1,M) .* pi/2 .* 0.96
     return fig, ga, theta, phi
 end
-
 
 function lunarSurfaceTemperaturesDivinerAverage(name="lunarSurfaceTemperatureDivinerAverage")
     fig, ga, theta, phi = _default_()
@@ -51,7 +51,6 @@ function lunarSurfaceTemperaturesDivinerAverage(name="lunarSurfaceTemperatureDiv
     return nothing
 end
 
-
 function lunarSurfaceTemperaturesDiviner(name="lunarSurfaceTemperatureDiviner")
     fig, ga, theta, phi = _default_(720, 360)
 
@@ -72,7 +71,6 @@ function lunarSurfaceTemperaturesDiviner(name="lunarSurfaceTemperatureDiviner")
     return nothing
 end
 
-
 function lunarSurfaceTemperaturesBUTLER(name="lunarSurfaceTemperatureBUTLER")
     fig, ga, theta, phi = _default_()
     T = lunar_surface_temperatures_BUTLER1997(theta, phi)
@@ -86,7 +84,6 @@ function lunarSurfaceTemperaturesBUTLER(name="lunarSurfaceTemperatureBUTLER")
 
     return nothing
 end
-
 
 function lunarSurfaceTemperaturesHURLEY(name="lunarSurfaceTemperatureHURLEY")
     fig, ga, theta, phi = _default_()
@@ -105,7 +102,6 @@ function lunarSurfaceTemperaturesHURLEY(name="lunarSurfaceTemperatureHURLEY")
     return nothing
 end
 
-
 function run_all()
     lunarSurfaceTemperaturesDivinerAverage()
     lunarSurfaceTemperaturesDiviner()
@@ -116,15 +112,12 @@ end
 
 # Downloads
 
-* {{< downloadthis ../../../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner.png label="diviner.png" type="light" dname="diviner" >}}
+* {{< downloadthis ../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner.png label="diviner.png" type="light" dname="diviner" >}}
 
-* {{< downloadthis ../../../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png label="diviner_average.png" type="light" dname="diviner_average" >}}
+* {{< downloadthis ../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png label="diviner_average.png" type="light" dname="diviner_average" >}}
 
-* {{< downloadthis ../../../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png label="butler.png" type="light" dname="butler" >}}
+* {{< downloadthis ../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png label="butler.png" type="light" dname="butler" >}}
 
-* {{< downloadthis ../../../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png label="hurley.png" type="light" dname="hurley" >}}
-
-#### Cite as:
-Smolka, A. (2023), _ExESS - Extraterrestrial Exosphere and Surface Simulations_ [online], available at: https://smolkaa.github.io (last accessed DATE).
+* {{< downloadthis ../../img/documentation/fundamentals/planetary_bodies/moon/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png label="hurley.png" type="light" dname="hurley" >}}
 
 :::

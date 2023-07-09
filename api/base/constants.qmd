@@ -2,6 +2,12 @@
 title: "Constants"
 ---
 
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
 ::: {.callout-note appearance="simple" icon=false}
 # Base - Constants
 ```{julia}
@@ -10,19 +16,34 @@ if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
+using Printf
 
-println("AVOGADRO_CONSTANT:         $AVOGADRO_CONSTANT")
-println("BOLTZMANN_CONSTANT         $BOLTZMANN_CONSTANT")
-println("ELEMENTARY_CHARGE:         $ELEMENTARY_CHARGE")
-println("GRAVITATIONAL_CONSTANT:    $GRAVITATIONAL_CONSTANT")
-println("PLANCK_CONSTANT:           $PLANCK_CONSTANT")
-println("STEFAN_BOLTZMANN_CONSTANT: $STEFAN_BOLTZMANN_CONSTANT")
-println("UNIVERSAL_GAS_CONSTANT:    $UNIVERSAL_GAS_CONSTANT")
-println("LUNAR_DAY:                 $LUNAR_DAY")
-println("LUNAR_MASS:                $LUNAR_MASS")
-println("LUNAR_RADIUS:              $LUNAR_RADIUS")
-println("LUNAR_g0:                  $LUNAR_g0")
-println("LUNAR_vesc:                $LUNAR_vesc")
+@printf "AVOGADRO_CONSTANT:         %12e [mol-1]\n" AVOGADRO_CONSTANT
+@printf "BOLTZMANN_CONSTANT:        %12e [m2 kg s-2 K-1]\n" BOLTZMANN_CONSTANT
+@printf "ELEMENTARY_CHARGE:         %12e [C]\n" ELEMENTARY_CHARGE
+@printf "GRAVITATIONAL_CONSTANT:    %12e [m3 kg-1 s-2]\n" GRAVITATIONAL_CONSTANT
+@printf "PLANCK_CONSTANT:           %12e [m2 kg s-1]\n" PLANCK_CONSTANT
+@printf "STEFAN_BOLTZMANN_CONSTANT: %12e [W m-2 K-4]\n" STEFAN_BOLTZMANN_CONSTANT
+@printf "UNIVERSAL_GAS_CONSTANT:    %12e [J K-1 mol-1]\n" UNIVERSAL_GAS_CONSTANT
+```
+:::
 
+
+
+::: {.callout-note appearance="simple" icon=false}
+# Base - Constants - The Moon
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+using Printf
+
+@printf "LUNAR_DAY:                 %12e [s]\n" LUNAR_DAY
+@printf "LUNAR_MASS:                %12e [kg]\n" LUNAR_MASS
+@printf "LUNAR_RADIUS:              %12e [m]\n" LUNAR_RADIUS
+@printf "LUNAR_g0:                  %12e [m s-2]\n" LUNAR_g0
+@printf "LUNAR_vesc:                %12e [m s-1]\n" LUNAR_vesc
 ```
 :::

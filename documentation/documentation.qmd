@@ -2,4 +2,8 @@
 title: "Documentation"
 ---
 
-About this site
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---

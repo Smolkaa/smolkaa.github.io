@@ -1,0 +1,11 @@
+format:
+  html:
+    author:
+      - id: asmolka
+        name: Alexander Smolka
+        email: a.smolka@tum.de
+        orcid: 0000-0002-4848-3473
+    date: last-modified
+
+execute:
+  cache: true

@@ -7,14 +7,17 @@ jupyter: julia-1.9
 bibliography: "../asmolka_library/main.bib"
 
 website:
+  site-url: https://smolkaa.github.io
   title: "ExESS"
+  repo-url: https://github.com/Smolkaa/smolkaa.github.io
+  repo-actions: [edit]
   favicon: "/resources/logo/exess_logo.png"
-  page-footer:
-      center: "{{< fa circle-user >}} &ensp; Alexander Smolka &emsp; | &emsp; {{< fa at >}} &ensp; [a.smolka@tum.de](mailto:a.smolka@tum.de) &emsp; | &emsp; {{< fa calendar >}} &ensp; 2023"
-
   search: true
+  page-navigation: true
+
   navbar:
     background: primary
+    pinned: true
     logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
     left:
@@ -24,64 +27,44 @@ website:
         href: documentation/documentation.qmd
       - text: "{{< fa book-open-reader >}} Manuals"
         href: manuals/manuals.qmd
-      - text: "{{< fa code >}} API"
+      - text: "{{< fa code >}} Code"
         href: api/api.qmd
+      - text: "{{< fa bookmark >}} Bibliography"
+        href: bibliography/bibliography.qmd
     right:
       - icon: github
         href: https://github.com/Smolkaa
 
   sidebar:
     - title: "Home"
-      style: docked
-      background: light
+      border: true
+      collapse-level: 2
+      pinned: true
+      style: "floating"
       contents:
         - text: "Home"
           href: index.qmd
 
     - title: "Documentation"
-      style: docked
-      background: light
-      collapse-level: 4
       contents:
         - text: "Home"
           href: documentation/documentation.qmd
-        - text: "1 - Introduction"
+        - text: "Introduction"
           href: documentation/introduction.qmd
-        - section: "2 - Mathematics, Numerics, and Computational Foundations"
-          href: documentation/math_num_comp.qmd
+        - section: "Mathematics, Numerics, and Computational Foundations"
           contents:
-            - section: "2.1 - Coordinate Systems"
-              href: documentation/math_num_comp/coordinate_systems.qmd
-              contents:
-                - documentation/math_num_comp/coordinate_systems/cartesian_spherical_coordinates.qmd
-                - documentation/math_num_comp/coordinate_systems/spacial_differentials.qmd
-                - documentation/math_num_comp/coordinate_systems/temporal_differentials.qmd
-            - section: "2.2 - Numerical Grids"
-              href: documentation/math_num_comp/numerical_grids.qmd
-              contents:
-                - documentation/math_num_comp/numerical_grids/global_structured_2d_grids.qmd
-        - section: "3 - Fundamentals"
-          href: documentation/fundamentals.qmd
-          contents: 
-            - section: "3.1 - Planetary Bodies with Surface-Bounded Exospheres"
-              href: documentation/fundamentals/planetary_bodies.qmd
-              contents: 
-                - section: "3.1.1 - The Moon"
-                  href: documentation/fundamentals/planetary_bodies/moon.qmd
-                  contents: 
-                    - documentation/fundamentals/planetary_bodies/moon/temperatures.qmd
-
+            - documentation/math_num_comp/coordinate_systems.qmd
+            - documentation/math_num_comp/numerical_grids.qmd
+        - section: "Fundamentals"
+          contents:
+            - documentation/fundamentals/moon.qmd
 
     - title: "Manuals"
-      style: docked
-      background: light
       contents:
         - text: "Overview"
           href: manuals/manuals.qmd
 
-    - title: "API"
-      style: docked
-      background: light
+    - title: "Code"
       contents:
         - text: "Home"
           href: api/api.qmd
@@ -94,12 +77,26 @@ website:
             - api/grids/global_structured_2d_grids.qmd
             - api/grids/utility.qmd
 
+    - title: "Bibliography"
+      contents:
+        - text: "Overview"
+          href: bibliography/bibliography.qmd
+
 format:
   html:
+    anchor-sections: true  
+    code-copy: true
     code-link: true
     css: styles.css
+    grid:
+      sidebar-width: 300px
+      body-width: 1000px
+      margin-width: 400px
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
-    page-layout: full
+    link-external-newwindow: true
     theme: [flatly, _mystyle.scss]
+    title-block-style: default
+    toc: true
+

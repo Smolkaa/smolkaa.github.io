@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -116,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,7 +149,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../api/api.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> API</span></a>
+ <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../bibliography/bibliography.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Bibliography</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -177,9 +180,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -195,9 +198,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Git">Git <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Julia">Julia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="On-Boarding">On-Boarding <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -266,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1688747551655" data-listing-reading-time-sort="8" data-listing-title-sort="DRAFT! Git Workflow" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-categories="Git,On-Boarding" data-listing-file-modified-sort="1688832018317" data-listing-reading-time-sort="8" data-listing-title-sort="DRAFT! Git Workflow" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../manuals/git_workflow/index.html" class="title listing-title">DRAFT! Git Workflow</a>
 </td>
@@ -274,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="listing-author">Alexander Smolka</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1688747373515" data-listing-reading-time-sort="1" data-listing-title-sort="ExESS Package Installation" data-listing-filename-sort="index.qmd">
+<tr data-index="1" data-categories="Julia,On-Boarding" data-listing-file-modified-sort="1688832060677" data-listing-reading-time-sort="1" data-listing-title-sort="ExESS Package Installation" data-listing-filename-sort="index.qmd">
 <td>
 <a href="../manuals/package_installation/index.html" class="title listing-title">ExESS Package Installation</a>
 </td>
@@ -520,21 +523,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/smolkaa\.github\.io");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center"><i class="fa-solid fa-circle-user" aria-label="circle-user"></i>   Alexander Smolka   |   <i class="fa-solid fa-at" aria-label="at"></i>   <a href="mailto:a.smolka@tum.de">a.smolka@tum.de</a>   |   <i class="fa-solid fa-calendar" aria-label="calendar"></i>   2023</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/manuals/manuals.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
