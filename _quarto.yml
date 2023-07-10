@@ -49,6 +49,7 @@ website:
       contents:
         - text: "Home"
           href: documentation/documentation.qmd
+        - documentation/acronyms.qmd
         - text: "Introduction"
           href: documentation/introduction.qmd
         - section: "Mathematics, Numerics, and Computational Foundations"

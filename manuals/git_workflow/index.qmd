@@ -14,7 +14,7 @@ categories:
 
 In order to use and work with the `ExESS.jl` package, you need to have access to the code and be able to download it. You can find the repository with all files on  [**GitLab**](https://gitlab.lrz.de/exess/exess.jl). Only the developers of the package have full access to the code and are able to edit them directly, though **Git** and **GitLab** offer wonderful collaboration tools for you to work with code, even if you do not own it, and even to suggest changes to it. This manual page will go through some of the usual workflow steps for working with `ExESS.jl` and Git.
 
-[Here]((https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow)) is a great and more extended tutorial/manual on how to use Git.
+<https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow> is a great and more extended tutorial/manual on how to use Git.
 
 
 ## Forking the Repository

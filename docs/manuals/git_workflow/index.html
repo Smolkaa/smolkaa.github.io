@@ -99,7 +99,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script>
     MathJax = { 
         tex: { 
-            tags: 'ams'  // should be 'ams', 'none', or 'all' 
+            tags: 'ams',  // should be 'ams', 'none', or 'all' 
         }
     };
 </script>
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         TeX: {
-            extensions: ["mhchem.js", "siunitx.js"]
+            extensions: ["mhchem.js", "glossaries.jl"],
           }
       });
 </script>
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 8, 2023</p>
+      <p class="date-modified">July 10, 2023</p>
     </div>
   </div>
     
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="../../manuals/manuals.html"><i class="fa-solid fa-arrow-left" aria-label="arrow-left"></i> Manuals</a></p>
 <hr>
 <p>In order to use and work with the <code>ExESS.jl</code> package, you need to have access to the code and be able to download it. You can find the repository with all files on <a href="https://gitlab.lrz.de/exess/exess.jl"><strong>GitLab</strong></a>. Only the developers of the package have full access to the code and are able to edit them directly, though <strong>Git</strong> and <strong>GitLab</strong> offer wonderful collaboration tools for you to work with code, even if you do not own it, and even to suggest changes to it. This manual page will go through some of the usual workflow steps for working with <code>ExESS.jl</code> and Git.</p>
-<p><a href="(https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow)">Here</a> is a great and more extended tutorial/manual on how to use Git.</p>
+<p><a href="https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow" class="uri">https://www.atlassian.com/git/tutorials/comparing-workflows?section=forking-workflow</a> is a great and more extended tutorial/manual on how to use Git.</p>
 <section id="forking-the-repository" class="level2">
 <h2 class="anchored" data-anchor-id="forking-the-repository">Forking the Repository</h2>
 <p>While you can <em>see</em> the repository with the code, you cannot download and <em>use</em> it yet. To be able to do so, you need to create an online copy of the repository and put it in your name space, where you have full access to, a process called <strong>forking</strong>. This is done by clicking the <strong>Fork</strong> button on the top right corner of the repository page on GitLab. Once you click the button, GitLab will ask you about the <strong>Project name</strong>, <strong>Project URL</strong> (i.e., the name space), the <strong>Project slug</strong>, and an optional <strong>Project description</strong> of the forked repository. Note that the default values are copied from the original <code>ExESS.jl</code> repository, but since this is your personal copy, you can change anything to whatever you want. Here are a couple of hints to make your life easier: * Use your own user-name name-space in the <strong>Project URL</strong> (e.g., <code>https://gitlab.lrz.de/&lt;username&gt;/</code>) * The <strong>Project slug</strong> is the name of the online repository and will be the default value for your local copies (i.e., the folder name on your computer). Make it short and fit for a folder name (e.g., <code>exess</code>).</p>

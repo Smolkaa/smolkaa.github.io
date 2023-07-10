@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-07-07">
+<meta name="dcterms.date" content="2023-07-10">
 
 <title>ExESS - Utility</title>
 <style>
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
     MathJax = { 
         tex: { 
-            tags: 'ams'  // should be 'ams', 'none', or 'all' 
+            tags: 'ams',  // should be 'ams', 'none', or 'all' 
         }
     };
 </script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         TeX: {
-            extensions: ["mhchem.js", "siunitx.js"]
+            extensions: ["mhchem.js", "glossaries.jl"],
           }
       });
 </script>
@@ -236,14 +236,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 7, 2023</p>
+      <p class="date">July 10, 2023</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 7, 2023</p>
+      <p class="date-modified">July 10, 2023</p>
     </div>
   </div>
     
@@ -263,7 +263,7 @@ ExESS: <code>areas</code> - Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] areas([T::Type,] grid::AbstractGrid)</code></pre>
 <p>For 2D grids, returns the surface area of each grid element. For 3D grids, returns the base area of each grid element.</p>
@@ -281,7 +281,7 @@ ExESS: <code>coords</code> - Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] coords([T::Type,] grid::AbstractGrid)</code></pre>
 <p>Returns the coordinates of each grid element.</p>
@@ -299,7 +299,7 @@ ExESS: <code>coord2idx</code> - Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] coord2idx(grid::AbstractGlobalGrid, [r::Real,] theta::Real, phi::Real)
 [2] coord2idx(grid::AbstractGlobalGrid, [r::AbstractVector,] theta::AbstractVector, phi::AbstractVector)
@@ -320,7 +320,7 @@ ExESS: <code>surfacecoords</code> - Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[1] surfacecoords([T::Type,] grid::AbstractGrid)</code></pre>
 <p>Returns only the coordinates of the surface (i.e.&nbsp;the base) of the discretized geometry.</p>
@@ -338,7 +338,7 @@ ExESS: <code>volume</code> - Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <p>No documentation found.</p>
 <p>Binding <code>Main.ExESS.volume</code> does not exist.</p>

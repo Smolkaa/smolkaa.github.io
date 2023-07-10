@@ -2,8 +2,8 @@
 title: "Coordinate Systems"
 ---
 
-{{< include /resources/latex/defs.qmd >}}
-{{< include /resources/latex/symbols.qmd >}}
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
 # {{< meta title >}}

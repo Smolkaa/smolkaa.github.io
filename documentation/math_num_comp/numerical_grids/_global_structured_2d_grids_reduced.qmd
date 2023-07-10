@@ -1,0 +1,17 @@
+
+
+In order to counter the disadvantages of the full grid, the reduced, structured grid was introduced. The main goal of this discretization scheme is to keep the advantages of the structured grid as much as possible while reducing the number of elements, especially those at high elevation angles. Mathematically speaking, during the creation of the grid, the individual elements are as close as possible to equal area squares with a constant, physical resolution of $\left(\sphericalCoordinateRadius\cdot\cos\sphericalCoordinateElevation\cdot\Delta\sphericalCoordinateAzimuth\right)\times\left(\sphericalCoordinateRadius\cdot\Delta\sphericalCoordinateElevation\right)$.
+
+
+
+The coordinates for the grid are calculated by iterating over the fixed number $N_\sphericalCoordinateElevation$ of elevation angles (which calculation is equal to the standard, structured grid, see Eq.~(\ref{eq:gs2dgrid_elevation})), which lead to a variable number $\left(N_\sphericalCoordinateAzimuth\right)_j$ of azimuth angles for each elevation angle $\sphericalCoordinateElevation_j$:
+\begin{alignat}{3}
+    \sphericalCoordinateElevation_j &= - \frac{\pi}{2} + \frac{\pi}{2N_\sphericalCoordinateElevation} + (j-1)\Delta\sphericalCoordinateElevation &&\quad\text{with } \Delta\sphericalCoordinateElevation = \frac{\pi}{N_\sphericalCoordinateElevation}  \label{eq:gs2dgrid_reduced_elevation} \\
+    &\Rightarrow\quad \left(N_\sphericalCoordinateAzimuth\right)_j = \left\lceil \frac{2\pi\sphericalCoordinateElevation_j}{\pi N_\sphericalCoordinateElevation} \right\rceil \label{eq:gs2dgrid_reduced_azimuth_elements} \\
+    \sphericalCoordinateAzimuth_{i,j} &= - \pi + \frac{\pi}{\left(N_\sphericalCoordinateAzimuth\right)_j} + (i-1)\Delta\sphericalCoordinateAzimuth_j &&\quad\text{with } \Delta\sphericalCoordinateAzimuth_j = \frac{2\pi}{\left(N_\sphericalCoordinateAzimuth\right)_j} \label{eq:gs2dgrid_reduced_azimuth}
+\end{alignat}
+for $j \in \{1, \dots, N_\sphericalCoordinateElevation\}$ and $i \in \{1, \dots, \left(N_\sphericalCoordinateAzimuth\right)_j\}$, respectively.
+
+
+{{< include /img/documentation/math_num_comp/numerical_grids/gs2dgrid_reduced/_gs2dgrid_reduced.qmd >}}
+\input{src/grids/figures/gs2dgrid_reduced.tex}

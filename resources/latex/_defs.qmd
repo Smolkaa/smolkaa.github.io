@@ -1,0 +1,23 @@
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+::: {.content-visible when-format="html"}
+
+\newcommand{\Set}[1]{\mathbb{#1}}
+\DeclareMathOperator{\erf}{erf} 
+\DeclareMathOperator{\sgn}{sgn}
+
+<!-- SIUNITX WORKAROUND -->
+
+\newcommand{\num}[1]{#1}
+\newcommand{\SI}[2]{#1\,\mathrm{#2}}
+
+\newcommand{\per}{/}
+
+\newcommand{\metre}{m}
+\newcommand{\second}{s}
+\newcommand{\kelvin}{K}
+
+<!-- GLS WORKAROUND -->
+\newcommand{\gls}[1]{\text{#1}}
+\newcommand{\glspl}[1]{\mathrm{#1's}}
+
+:::

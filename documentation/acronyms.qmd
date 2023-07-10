@@ -1,0 +1,88 @@
+---
+title: Acronyms
+citation: false
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+
++-----------+---------------------------------------------------+
+| ALSEP     | Apollo Lunar Surface Experiments Package          |
++-----------+---------------------------------------------------+
+| cdf       | cumulative distribution function                  |
++-----------+---------------------------------------------------+
+| DLRE      | Diviner Lunar Radiometer Experiment               |
++-----------+---------------------------------------------------+
+| ESA       | European Space Agency                             |
++-----------+---------------------------------------------------+
+| LACE      | Lunar Atmospheric Composition Experiment          |
+|           |                                                   |
+| LADEE     | Lunar Atmosphere and Dust Environment Explorer    |  
+|           |                                                   |
+| LRO       | Lunar Reconnaissance Orbiter                      |
++-----------+---------------------------------------------------+
+| HEALPix   | Hierarchical Equal Area iso-Latitude Pixelization |
++-----------+---------------------------------------------------+
+| MBD       | Maxwell-Boltzmann Distribution                    |
+|           |                                                   |
+| MBFD      | Maxwell-Boltzmann Flux Distribution               |
++-----------+---------------------------------------------------+
+| NASA      | National Aeronautis and Space Administration      |
+|           |                                                   |
+| NMS       | Neutral Mass Spectrometer                         |
++-----------+---------------------------------------------------+
+| NASA      | National Aeronautis and Space Administration      |
+|           |                                                   |
+| NMS       | Neutral Mass Spectrometer                         |
++-----------+---------------------------------------------------+
+| pdf       | probability density function                      |
+|           |                                                   |
+| PDS       | Planetary Data System                             |
++-----------+---------------------------------------------------+
+| rms       | root mean squared                                 |
++-----------+---------------------------------------------------+
+| SSE       | Selenocentric Solar Ecliptic                      |
++-----------+---------------------------------------------------+
+| TUM       | Technical University of Munich                    |
++-----------+---------------------------------------------------+
+
+: {.hover}
+
+
+## LaTeX - Glossary Acronyms Definition
+
+```latex
+\newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}
+
+\newacronym{cdf}{cdf}{cumulative distribution function}
+
+\newacronym{DLRE}{DLRE}{Diviner Lunar Radiometer Experiment}
+
+\newacronym{ESA}{ESA}{European Space Agency}
+
+\newacronym{LACE}{LACE}{Lunar Atmospheric Composition Experiment}
+\newacronym{LADEE}{LADEE}{Lunar Atmosphere and Dust Environment Explorer}
+\newacronym{LRO}{LRO}{Lunar Reconnaissance Orbiter}
+
+\newacronym{HEALPix}{HEALPix}{Hierarchical Equal Area iso-Latitude Pixelization}
+
+\newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}
+\newacronym{MBFD}{MBFD}{Maxwell-Boltzmann Flux Distribution}
+
+\newacronym{NASA}{NASA}{National Aeronautis and Space Administration}
+\newacronym{NMS}{NMS}{Neutral Mass Spectrometer}
+
+\newacronym{pdf}{pdf}{probability density function}
+\newacronym{PDS}{PDS}{Planetary Data System}
+
+\newacronym{rms}{rms}{root mean squared}
+
+\newacronym{SSE}{SSE}{Selenocentric Solar Ecliptic}
+
+\newacronym{TUM}{TUM}{Technical University of Munich}
+```

@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# Figure
+# {{< fa image >}} Figure
 
 ::: {#fig-gs2dgrid}
 ![](/img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid.svg){width=80%}
@@ -8,7 +8,7 @@
 Global, structured, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e. radius $\sphericalCoordinateRadius$.
 :::
 
-# Julia
+# {{< fa code >}} Julia
 ```julia
 using .ExESS
 using CairoMakie, GeoMakie
@@ -138,7 +138,7 @@ function run_all()
 end
 ```
 
-# LaTeX
+# {{< fa code >}} LaTeX
 
 ```latex
 \begin{tikzpicture}
@@ -161,7 +161,7 @@ end
 \end{tikzpicture}
 ```
 
-# Downloads
+# {{< fa download >}} Downloads
 
 * {{< downloadthis ../../img/documentation/math_num_comp/numerical_grids/gs2dgrid/gs2dgrid.svg label="figure.svg" type="light" dname="figure" >}} 
 

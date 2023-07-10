@@ -42,7 +42,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
     MathJax = { 
         tex: { 
-            tags: 'ams'  // should be 'ams', 'none', or 'all' 
+            tags: 'ams',  // should be 'ams', 'none', or 'all' 
         }
     };
 </script>
@@ -74,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         TeX: {
-            extensions: ["mhchem.js", "siunitx.js"]
+            extensions: ["mhchem.js", "glossaries.jl"],
           }
       });
 </script>
@@ -196,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 8, 2023</p>
+      <p class="date-modified">July 10, 2023</p>
     </div>
   </div>
     
@@ -209,15 +208,7 @@ ul.task-list li input[type="checkbox"] {
 <p>This website is still under construction! <i class="fa-solid fa-wrench" aria-label="wrench"></i></p>
 <section id="citation" class="level2">
 <h2 class="anchored" data-anchor-id="citation">Citation</h2>
-<p>Download citation: <a href="#dnldts35423" onclick="fetch('data:text/plain;base64,QE1pc2N7ZXhlc3MyMDIzLAogIGF1dGhvciAgICAgICA9IHtTbW9sa2EsIEFsZXhhbmRlcn0sCiAgaG93cHVibGlzaGVkID0ge1x1cmx7aHR0cHM6Ly9zbW9sa2FhLmdpdGh1Yi5pb319LAogIHRpdGxlICAgICAgICA9IHtFeHRyYXRlcnJlc3RyaWFsIEV4b3NwaGVyZSBhbmQgU3VyZmFjZSBTaW11bGF0aW9uc30sCiAgeWVhciAgICAgICAgID0gezIwMjN9LAp9Cg==').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = 'file.bib'; a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts35423"><i class="bi bi-download"></i> Download </button></a></p>
+<p>Download citation: </p>
 
 
 </section>

@@ -2,8 +2,8 @@
 title: "Numerical Grids"
 ---
 
-{{< include /resources/latex/defs.qmd >}}
-{{< include /resources/latex/symbols.qmd >}}
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
 # {{< meta title >}}
@@ -16,6 +16,10 @@ Some introduction text...
 
 ## Global, Structured, Two-Dimensional Grids
 {{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids.qmd >}}
+
+
+## Global, Structured, Reduced, Two-Dimensional Grids
+{{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids_reduced.qmd >}}
 
 
 ## Global, HEALPix, Two-Dimensional Grids
