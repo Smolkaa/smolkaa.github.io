@@ -89,6 +89,8 @@ format:
     code-copy: true
     code-link: true
     css: styles.css
+    filters:
+      - lightbox
     grid:
       sidebar-width: 300px
       body-width: 1000px
@@ -96,6 +98,7 @@ format:
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
+    lightbox: auto
     link-external-newwindow: true
     theme: [flatly, _mystyle.scss]
     title-block-style: default

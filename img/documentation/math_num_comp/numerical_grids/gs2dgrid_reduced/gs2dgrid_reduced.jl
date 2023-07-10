@@ -40,6 +40,7 @@ function gs2dgrid_reduced_2d(N_phi=10)
 
     # save figure
     save(joinpath(@__DIR__, "gs2dgrid_reduced_2d.pdf"), fig)
+    save(joinpath(@__DIR__, "gs2dgrid_reduced_2d.svg"), fig)
     save(joinpath(@__DIR__, "gs2dgrid_reduced_2d.png"), fig, px_per_unit=4)
     nothing
 end

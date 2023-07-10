@@ -3,7 +3,7 @@
 # {{< fa image >}} Figure
 
 ::: {#fig-gs2dgrid_reduced}
-![](/img/documentation/math_num_comp/numerical_grids/gs2dgrid_reduced/gs2dgrid_reduced.svg){width=80%}
+![](/img/documentation/math_num_comp/numerical_grids/gs2dgrid_reduced/gs2dgrid_reduced.svg){width=80% background-color="white"}
 
 Global, structured, reduced, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e. radius $\sphericalCoordinateRadius$.
 :::
