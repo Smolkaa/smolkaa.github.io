@@ -221,7 +221,7 @@
     "href": "documentation/documentation.html",
     "title": "Documentation",
     "section": "",
-    "text": "Documentation\n\n\n\n\n\nCitationBibTeX citation:@online{smolka2023,\n  author = {Smolka, Alexander},\n  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}\n    {Simulations}},\n  date = {2023},\n  url = {https://smolkaa.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSmolka, Alexander. 2023. “ExESS - Extraterrestrial Exosphere and\nSurface Simulations.” 2023. https://smolkaa.github.io."
+    "text": "Documentation"
   },
   {
     "objectID": "documentation/fundamentals/velocity_distributions/tables/mbd_typical_speeds/raw_mbd_typical_speeds.html",
@@ -299,5 +299,19 @@
     "title": "Manuals",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nDRAFT! Git Workflow\n\n\nAlexander Smolka\n\n\n\n\nExESS Package Installation\n\n\nAlexander Smolka\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "documentation/math_num_comp/statistics.html",
+    "href": "documentation/math_num_comp/statistics.html",
+    "title": "Statistics",
+    "section": "",
+    "text": "Statistics\n\n\n\n\n\nCitationBibTeX citation:@online{smolka2023,\n  author = {Smolka, Alexander},\n  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}\n    {Simulations}},\n  date = {2023},\n  url = {https://smolkaa.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSmolka, Alexander. 2023. “ExESS - Extraterrestrial Exosphere and\nSurface Simulations.” 2023. https://smolkaa.github.io."
+  },
+  {
+    "objectID": "documentation/math_num_comp/statistics.html#ensemble-averages",
+    "href": "documentation/math_num_comp/statistics.html#ensemble-averages",
+    "title": "Statistics",
+    "section": "Ensemble Averages",
+    "text": "Ensemble Averages\nThe analyses of this work will regularly include statements about a statistical ensemble of samples, i.e. of thermodynamic particles in equilibrium. Following Schörghofer (2022) derivation and notation, given any , \\(f(x)\\), the ensemble average of a quantity \\(Y\\) is \\[\\begin{equation}\n    \\langle Y \\rangle = \\int Yf(x)dx. \\label{eq:ensemble_average}\n\\end{equation}\\]"
   }
 ]

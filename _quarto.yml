@@ -56,6 +56,7 @@ website:
           contents:
             - documentation/math_num_comp/coordinate_systems.qmd
             - documentation/math_num_comp/numerical_grids.qmd
+            - documentation/math_num_comp/statistics.qmd
         - section: "Fundamentals"
           contents:
             - documentation/fundamentals/moon.qmd

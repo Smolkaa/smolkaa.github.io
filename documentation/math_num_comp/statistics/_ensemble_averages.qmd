@@ -1,0 +1,4 @@
+The analyses of this work will regularly include statements about a statistical ensemble of samples, i.e. of thermodynamic particles in equilibrium. Following @Schoerghofer2022 derivation and notation, given any \gls{pdf}, $f(x)$, the ensemble average of a quantity $Y$ is
+\begin{equation}
+    \meanof{Y} = \int Yf(x)dx. \label{eq:ensemble_average}
+\end{equation}
