@@ -8,7 +8,7 @@ author: "Alexander Smolka"
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``areas`` - Struct
+# ``areas`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -20,7 +20,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``coords`` - Struct
+# ``coords`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -33,7 +33,7 @@ end
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``coord2idx`` - Struct
+# ``coord2idx`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -46,7 +46,7 @@ end
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``surfacecoords`` - Struct
+# ``surfacecoords`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -59,7 +59,7 @@ end
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``volume`` - Struct
+# ``volume`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

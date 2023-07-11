@@ -41,7 +41,7 @@ More information on the mathematical description of the different coordinate vec
 
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``GlobalCartesianPosition`` - Struct
+# ``GlobalCartesianPosition`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -53,7 +53,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ExESS: ``GlobalSphericalPosition`` - Struct
+# ``GlobalSphericalPosition`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

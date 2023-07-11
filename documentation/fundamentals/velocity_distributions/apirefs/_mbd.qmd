@@ -1,0 +1,12 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - Maxwell-Boltzmann Velocity Distribution
+
+[`MaxwellBoltzmannVelocityDistribution`](/api/base/distributions.qmd): `struct`; defining a Maxwell-Boltzmann velocity distribution
+
+
+**Utility functions**:   
+
+* [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d}
+* [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d}
+* [`sample`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
+:::

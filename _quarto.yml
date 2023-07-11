@@ -74,6 +74,7 @@ website:
           contents:
             - api/base/constants.qmd
             - api/base/cs.qmd
+            - api/base/distributions.qmd
         - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd

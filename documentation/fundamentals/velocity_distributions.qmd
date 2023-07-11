@@ -20,3 +20,4 @@ Some intro ...
 
 
 ## Maxwell-Boltzmann Flux Distribution
+{{< include /documentation/fundamentals/velocity_distributions/_mbfd.qmd >}}

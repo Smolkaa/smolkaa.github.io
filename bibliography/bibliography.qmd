@@ -1,5 +1,5 @@
 ---
-title: "Biblography"
+title: "Bibliography"
 format:
   html: default
   # pdf: default

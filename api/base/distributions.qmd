@@ -1,0 +1,91 @@
+---
+title: "Distributions"
+---
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
+## Type Structure
+
+The following structure shows all currently implemented coordinates in `ExESS`:
+
+```julia
+ExESS
+└─ AbstractDistribution
+    ├─ MaxwellBoltzmannVelocityDistribution
+    └─ MaxwellBoltzmannFluxVelocityDistribution
+```
+
+## Velocity Distributions
+
+For the theoretical description of the velocity distributions, please read the [documentation](/documentation/fundamentals/velocity_distributions.qmd).
+
+### Maxwell-Boltzmann Velocity Distribution
+
+::: {.callout-note appearance="simple" icon=false}
+# ``MaxwellBoltzmannVelocityDistribution`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.MaxwellBoltzmannVelocityDistribution
+```
+:::
+
+### Maxwell-Boltzmann Flux Velocity Distribution
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``MaxwellBoltzmannFluxVelocityDistribution`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.MaxwellBoltzmannFluxVelocityDistribution
+```
+:::
+
+### Utility Functions
+
+::: {.callout-note appearance="simple" icon=false}
+# ``cdf`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.cdf
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``pdf`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.pdf
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``sample`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.sample
+```
+:::
