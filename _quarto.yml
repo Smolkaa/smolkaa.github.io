@@ -59,6 +59,7 @@ website:
         - section: "Fundamentals"
           contents:
             - documentation/fundamentals/moon.qmd
+            - documentation/fundamentals/velocity_distributions.qmd
 
     - title: "Manuals"
       contents:

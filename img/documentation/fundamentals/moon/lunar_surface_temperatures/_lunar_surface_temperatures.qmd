@@ -101,13 +101,6 @@ function lunarSurfaceTemperaturesHURLEY(name="lunarSurfaceTemperatureHURLEY")
 
     return nothing
 end
-
-function run_all()
-    lunarSurfaceTemperaturesDivinerAverage()
-    lunarSurfaceTemperaturesDiviner()
-    lunarSurfaceTemperaturesBUTLER()
-    lunarSurfaceTemperaturesHURLEY()
-end
 ```
 
 # {{< fa download >}}  Downloads

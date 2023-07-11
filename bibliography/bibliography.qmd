@@ -2,7 +2,7 @@
 title: "Biblography"
 format:
   html: default
-  pdf: default
+  # pdf: default
 ---
 
 ---

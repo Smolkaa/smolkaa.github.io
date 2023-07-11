@@ -1,0 +1,22 @@
+---
+title: Velocity Distributions
+format:
+  html: default
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
+Some intro ...
+
+## Maxwell-Boltzmann Distribution
+{{< include /documentation/fundamentals/velocity_distributions/_mbd.qmd >}}
+
+
+## Maxwell-Boltzmann Flux Distribution

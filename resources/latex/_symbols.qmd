@@ -64,3 +64,13 @@
 \newcommand{\volume}{V}
 \newcommand{\youngsModulus}{Y}
 \newcommand{\zenithAngle}{\psi}
+
+
+\newcommand{\BoltzmannConstant}{k_B}
+\newcommand{\BoltzmannConstantValue}{\SI{1.38e-23}{\joule\per\kelvin}}
+\newcommand{\GravitationalConstant}{G}
+\newcommand{\GravitationalConstantValue}{\SI{6.674e-11}{\metre\cubed\per\kilo\gram\per\second\squared}}
+\newcommand{\StefanBoltzmannConstant}{\sigma}
+\newcommand{\StefanBoltzmannConstantValue}{\SI{5.67e-8}{\watt\per\metre\squared\per\kelvin\tothe{4}}}
+\newcommand{\PlanckConstant}{h}
+\newcommand{\PlanckConstantValue}{\SI{6.626e-34}{\metre\squared\kilo\gram\per\second}}

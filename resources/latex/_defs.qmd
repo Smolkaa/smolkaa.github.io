@@ -1,5 +1,6 @@
-\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 ::: {.content-visible when-format="html"}
+
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 
 \newcommand{\Set}[1]{\mathbb{#1}}
 \DeclareMathOperator{\erf}{erf} 
@@ -15,6 +16,15 @@
 \newcommand{\metre}{m}
 \newcommand{\second}{s}
 \newcommand{\kelvin}{K}
+\newcommand{\joule}{J}
+\newcommand{\gram}{g}
+\newcommand{\watt}{W}
+
+\newcommand{\kilo}{k}
+
+\newcommand{\tothe}[1]{^{\mathrm{#1}}}
+\newcommand{\squared}{\tothe{2}}
+\newcommand{\cubed}{\tothe{3}}
 
 <!-- GLS WORKAROUND -->
 \newcommand{\gls}[1]{\text{#1}}
