@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/math_num_comp/numerical_grids.html</loc>
-    <lastmod>2023-07-11T21:17:22.870Z</lastmod>
+    <lastmod>2023-07-12T05:12:26.535Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/introduction.html</loc>
-    <lastmod>2023-07-11T14:37:28.307Z</lastmod>
+    <lastmod>2023-07-12T05:38:06.351Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.html</loc>
@@ -22,11 +22,11 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/moon.html</loc>
-    <lastmod>2023-07-11T14:37:22.636Z</lastmod>
+    <lastmod>2023-07-12T05:38:19.075Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/acronyms.html</loc>
-    <lastmod>2023-07-11T14:37:17.951Z</lastmod>
+    <lastmod>2023-07-12T05:38:05.031Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/api/grids/utility.html</loc>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/documentation.html</loc>
-    <lastmod>2023-07-11T21:17:11.794Z</lastmod>
+    <lastmod>2023-07-12T05:38:03.875Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbd_typical_speeds/raw_mbd_typical_speeds.html</loc>
@@ -66,11 +66,11 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions.html</loc>
-    <lastmod>2023-07-11T21:16:41.606Z</lastmod>
+    <lastmod>2023-07-12T05:38:24.563Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/math_num_comp/coordinate_systems.html</loc>
-    <lastmod>2023-07-11T14:37:29.660Z</lastmod>
+    <lastmod>2023-07-12T05:38:08.871Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/index.html</loc>
@@ -78,10 +78,26 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/manuals/manuals.html</loc>
-    <lastmod>2023-07-11T14:37:35.749Z</lastmod>
+    <lastmod>2023-07-12T05:11:31.122Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/math_num_comp/statistics.html</loc>
     <lastmod>2023-07-11T21:19:23.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/gravitational_potential.html</loc>
+    <lastmod>2023-07-12T05:38:12.819Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/trajectories/orbital_mechanics.html</loc>
+    <lastmod>2023-07-12T05:32:42.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/trajectories/orbital_mechanics_functions.html</loc>
+    <lastmod>2023-07-12T05:37:57.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/trajectories/2d_landing_position.html</loc>
+    <lastmod>2023-07-12T05:35:00.122Z</lastmod>
   </url>
 </urlset>

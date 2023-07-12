@@ -52,15 +52,23 @@ website:
         - documentation/acronyms.qmd
         - text: "Introduction"
           href: documentation/introduction.qmd
+        - "---"
         - section: "Mathematics, Numerics, and Computational Foundations"
           contents:
             - documentation/math_num_comp/coordinate_systems.qmd
             - documentation/math_num_comp/numerical_grids.qmd
             - documentation/math_num_comp/statistics.qmd
+        - "---"
         - section: "Fundamentals"
           contents:
             - documentation/fundamentals/moon.qmd
             - documentation/fundamentals/velocity_distributions.qmd
+            - documentation/fundamentals/gravitational_potential.qmd
+        - "---"
+        - section: "Particle Trajectories"
+          contents:
+            - documentation/trajectories/orbital_mechanics_functions.qmd
+            - documentation/trajectories/2d_landing_position.qmd
 
     - title: "Manuals"
       contents:

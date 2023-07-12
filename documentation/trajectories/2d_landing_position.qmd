@@ -1,0 +1,16 @@
+---
+title: "Two-Dimensional Landing Position Calculation"
+format:
+  html: default
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
+The following calculations are based on the orbital mechanics functions introduced in section [Orbital Mechanics Functions](/documentation/trajectories/orbital_mechanics_functions.qmd).

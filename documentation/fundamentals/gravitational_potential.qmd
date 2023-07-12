@@ -1,0 +1,56 @@
+---
+title: "Gravitational Potential"
+format:
+  html: default
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
+
+The physical fundamentals of orbital mechanics, based on the assumption of negligible relativistic effects, is the Poisson's equation
+\begin{equation}
+    \nabla^2\potential = 4\pi\GravitationalConstant \cdot \density,
+    \label{eq:poisson_equation}
+\end{equation}
+which is a second-order differential equation describing the gravitational potential $\potential$ as a function of the mass density $\density$, reflecting the curvature of space [@Walter2018]. The Laplace operator $\nabla^2$ is defined As
+\begin{equation}
+    \nabla^2 = \nabla \cdot \nabla = \left[\frac{\partial}{\partial\cartesianCoordinateX}, \frac{\partial}{\partial\cartesianCoordinateY}, \frac{\partial}{\partial\cartesianCoordinateZ}\right]^T \cdot \left[\frac{\partial}{\partial\cartesianCoordinateX}, \frac{\partial}{\partial\cartesianCoordinateY}, \frac{\partial}{\partial\cartesianCoordinateZ}\right]^T = \frac{\partial^2}{\partial\cartesianCoordinateX^2} + \frac{\partial^2}{\partial\cartesianCoordinateY^2} + \frac{\partial^2}{\partial\cartesianCoordinateZ^2}.
+    \label{eq:laplace_operator}
+\end{equation}
+Assuming isotropic mass distribution, the mass density $\density$ can be expressed as a function of the radius $\radius$ only, thus requiring the laplacian $\nabla^2 U$ in spherical elements $\left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right)$. Using the angular symmetry $\frac{\partial\potential}{\partial\sphericalCoordinateAzimuth} = \frac{\partial\potential}{\partial\sphericalCoordinateElevation} = 0$, the spherical and angular symmetric Laplace operator is reduced to $\nabla^2 = \frac{1}{\radius^2} \frac{\partial}{\partial \radius} \left(\radius^2 \frac{\partial}{\partial \radius}\right)$, leading to Poisson's equation as
+\begin{equation}
+    \frac{d}{d\radius}\left(\radius^2\frac{d\potential}{d\radius}\right) = 4\pi\GravitationalConstant\density\radius^2.
+    \label{eq:poisson_equation_symmetric}
+\end{equation}
+
+
+Integrating over the radius leads to the Newton's equation
+\begin{equation}
+    \frac{d\potential}{d\radius} = \frac{\GravitationalConstant\hat\mass}{\radius^2},
+    \label{eq:gravitational_potential}
+\end{equation}
+with mass $\hat\mass$ of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass \citep{Walter2018}. One can easily derive \emph{Newton's law of gravitation} for the gravitational force
+\begin{equation}
+    \vec{\force} = - \mass\frac{d\potential}{d^3\sphericalCoordinate} = - \mass\frac{d\potential}{d\radius} \cdot \frac{\sphericalCoordinate}{\radius} = - \frac{\mass\hat\mass\GravitationalConstant}{\radius^3}\cdot\sphericalCoordinate,
+    \label{eq:gravitational_force}
+\end{equation}
+for a mass $\mass$ placed into the gravitational potential $\potential$ of mass $\hat\mass$ [@Walter2018].
+
+
+The gravitational force is a vital part used orbital mechanics and the calculation of trajectories on planetary bodies. To derive the equation of motion, \emph{Newton's laws of motion} can be applied, which starts at the gradient of the energy conservation
+\begin{equation}
+    0 = \sum_i - \frac{d\energy_i}{d\cartesianCoordinate} = \sum_i \vec\force_i,
+    \label{eq:gradient_energy_conservation}
+\end{equation}
+with the sum over all relevant energies and forces. On of such relevant components is the gradient of the kinetic energy
+\begin{equation}
+    \frac{d\kineticEnergy}{d\cartesianCoordinate} = \frac{d}{d\cartesianCoordinate} \left( \frac{1}{2} \mass \velocity^2 \right) = \mass \ddot{\cartesianCoordinate}
+\end{equation}
+with the acceleration $\ddot{\cartesianCoordinate}$ due to changes in the kinetic energy.
