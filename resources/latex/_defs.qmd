@@ -16,12 +16,14 @@
 
 \newcommand{\metre}{m}
 \newcommand{\second}{s}
+\newcommand{\minute}{min}
 \newcommand{\kelvin}{K}
 \newcommand{\joule}{J}
 \newcommand{\gram}{g}
 \newcommand{\watt}{W}
 \newcommand{\percent}{\%}
 
+\newcommand{\centi}{c}
 \newcommand{\kilo}{k}
 
 \newcommand{\tothe}[1]{^{\mathrm{#1}}}

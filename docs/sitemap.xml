@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.html</loc>
-    <lastmod>2023-07-11T21:16:38.326Z</lastmod>
+    <lastmod>2023-07-12T20:36:32.814Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/moon.html</loc>
@@ -62,11 +62,11 @@
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbd_typical_speeds/raw_mbd_typical_speeds.html</loc>
-    <lastmod>2023-07-11T21:16:38.902Z</lastmod>
+    <lastmod>2023-07-12T20:36:34.450Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions.html</loc>
-    <lastmod>2023-07-12T05:38:24.563Z</lastmod>
+    <lastmod>2023-07-12T20:36:39.430Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/math_num_comp/coordinate_systems.html</loc>
@@ -99,5 +99,9 @@
   <url>
     <loc>https://smolkaa.github.io/documentation/trajectories/2d_landing_position.html</loc>
     <lastmod>2023-07-12T05:35:00.122Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/planetary_measurements/lunar_exosphere_densities.html</loc>
+    <lastmod>2023-07-12T20:58:07.814Z</lastmod>
   </url>
 </urlset>

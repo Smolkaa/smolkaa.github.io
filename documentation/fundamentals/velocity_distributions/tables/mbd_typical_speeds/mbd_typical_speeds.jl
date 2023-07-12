@@ -63,7 +63,10 @@ function maketable()
         raw"$\velocity / \velocity_\text{rms}$", ""]
     data = hcat(Vstr, FF, V, Vvp, Vvp_extra, Vvm, Vvm_extra, Vvr, Vvr_extra)
 
-    return pretty_table(String, data; backend=Val(:text), tf=tf_markdown, header=header, alignment=:l)
+    # formatter
+    f = (v, i, j) -> !(j in [1,5,7,9]) ? "\$$(round(v, digits=3))\$" : v
+
+    return pretty_table(String, data; backend=Val(:text), tf=tf_markdown, header=header, alignment=:l, formatters=f)
 end
 
 
