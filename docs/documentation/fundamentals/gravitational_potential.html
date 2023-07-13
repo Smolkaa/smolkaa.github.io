@@ -277,6 +277,24 @@ div.csl-indent {
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Planetary Measurements and Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lunar Exosphere Densities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -332,7 +350,7 @@ div.csl-indent {
 <p>The physical fundamentals of orbital mechanics, based on the assumption of negligible relativistic effects, is the Poisson’s equation <span class="math display">\[\begin{equation}
     \nabla^2U= 4\pi G\cdot \rho,
     \label{eq:poisson_equation}
-\end{equation}\]</span> which is a second-order differential equation describing the gravitational potential <span class="math inline">\(U\)</span> as a function of the mass density <span class="math inline">\(\rho\)</span>, reflecting the curvature of space <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter 2018</a>)</span>. The Laplace operator <span class="math inline">\(\nabla^2\)</span> is defined As <span class="math display">\[\begin{equation}
+\end{equation}\]</span> which is a second-order differential equation describing the gravitational potential <span class="math inline">\(U\)</span> as a function of the mass density <span class="math inline">\(\rho\)</span>, reflecting the curvature of space <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. The Laplace operator <span class="math inline">\(\nabla^2\)</span> is defined As <span class="math display">\[\begin{equation}
     \nabla^2 = \nabla \cdot \nabla = \left[\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right]^T \cdot \left[\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right]^T = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}.
     \label{eq:laplace_operator}
 \end{equation}\]</span> Assuming isotropic mass distribution, the mass density <span class="math inline">\(\rho\)</span> can be expressed as a function of the radius <span class="math inline">\(r\)</span> only, thus requiring the laplacian <span class="math inline">\(\nabla^2 U\)</span> in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>. Using the angular symmetry <span class="math inline">\(\frac{\partial U}{\partial\vartheta} = \frac{\partial U}{\partial\varphi} = 0\)</span>, the spherical and angular symmetric Laplace operator is reduced to <span class="math inline">\(\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right)\)</span>, leading to Poisson’s equation as <span class="math display">\[\begin{equation}
@@ -345,7 +363,7 @@ div.csl-indent {
 \end{equation}\]</span> with mass <span class="math inline">\(\hat m\)</span> of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass . One can easily derive for the gravitational force <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{F}} = - m\frac{dU}{d^3\boldsymbol{\mathbf{r}}} = - m\frac{dU}{dr} \cdot \frac{\boldsymbol{\mathbf{r}}}{r} = - \frac{m\hat mG}{r^3}\cdot\boldsymbol{\mathbf{r}},
     \label{eq:gravitational_force}
-\end{equation}\]</span> for a mass <span class="math inline">\(m\)</span> placed into the gravitational potential <span class="math inline">\(U\)</span> of mass <span class="math inline">\(\hat m\)</span> <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter 2018</a>)</span>.</p>
+\end{equation}\]</span> for a mass <span class="math inline">\(m\)</span> placed into the gravitational potential <span class="math inline">\(U\)</span> of mass <span class="math inline">\(\hat m\)</span> <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>.</p>
 <p>The gravitational force is a vital part used orbital mechanics and the calculation of trajectories on planetary bodies. To derive the equation of motion, can be applied, which starts at the gradient of the energy conservation <span class="math display">\[\begin{equation}
     0 = \sum_i - \frac{dE_i}{d\boldsymbol{\mathbf{x}}} = \sum_i \boldsymbol{\mathbf{F}}_i,
     \label{eq:gradient_energy_conservation}
@@ -356,9 +374,9 @@ div.csl-indent {
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Walter2018" class="csl-entry" role="listitem">
-Walter, U. 2018. <em><span class="nocase">Astronautics, The Physics of Space Flight</span></em>. 3rd ed. Springer Cham. <a href="https://doi.org/10.1007/978-3-319-74373-8">https://doi.org/10.1007/978-3-319-74373-8</a>.
+Walter, U. (2018). <em><span class="nocase">Astronautics, The Physics of Space Flight</span></em> (3rd ed.). Springer Cham. <a href="https://doi.org/10.1007/978-3-319-74373-8">https://doi.org/10.1007/978-3-319-74373-8</a>
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
@@ -369,8 +387,8 @@ Walter, U. 2018. <em><span class="nocase">Astronautics, The Physics of Space Fli
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-smolka2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Smolka, Alexander. 2023. <span>“ExESS - Extraterrestrial Exosphere and
-Surface Simulations.”</span> 2023. <a href="https://smolkaa.github.io">https://smolkaa.github.io</a>.
+Smolka, A. (2023). <em>ExESS - Extraterrestrial Exosphere and Surface
+Simulations</em>. <a href="https://smolkaa.github.io">https://smolkaa.github.io</a>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
