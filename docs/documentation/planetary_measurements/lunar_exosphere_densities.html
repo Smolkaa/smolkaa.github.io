@@ -9,7 +9,7 @@
 <meta name="author" content="Alexander Smolka">
 <meta name="dcterms.date" content="2023-07-13">
 
-<title>ExESS - Lunar Exosphere Densities</title>
+<title>ExESS - Lunar Exosphere Surface Densities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../_styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -162,7 +162,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html">Planetary Measurements and Data</a></li><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html">Lunar Exosphere Densities</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html">Planetary Measurements and Data</a></li><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html">Lunar Exosphere Surface Densities</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -289,7 +289,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lunar Exosphere Densities</span></a>
+ <span class="menu-text">Lunar Exosphere Surface Densities</span></a>
   </div>
 </li>
       </ul>
@@ -304,11 +304,15 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Lunar Exosphere Densities</a></li>
+  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Lunar Exosphere Surface Densities</a></li>
   <li><a href="#atomic-hydrogen-ceh" id="toc-atomic-hydrogen-ceh" class="nav-link" data-scroll-target="#atomic-hydrogen-ceh">Atomic Hydrogen – <span class="math inline">\(\ce{H}\)</span></a></li>
   <li><a href="#molecular-hydrogen-ceh2" id="toc-molecular-hydrogen-ceh2" class="nav-link" data-scroll-target="#molecular-hydrogen-ceh2">Molecular Hydrogen – <span class="math inline">\(\ce{H2}\)</span></a></li>
   <li><a href="#helium-cehe" id="toc-helium-cehe" class="nav-link" data-scroll-target="#helium-cehe">Helium – <span class="math inline">\(\ce{He}\)</span></a></li>
+  <li><a href="#hydroxyl-ceoh" id="toc-hydroxyl-ceoh" class="nav-link" data-scroll-target="#hydroxyl-ceoh">Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></a></li>
+  <li><a href="#water-ceh2o" id="toc-water-ceh2o" class="nav-link" data-scroll-target="#water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></a></li>
   <li><a href="#neon-cene" id="toc-neon-cene" class="nav-link" data-scroll-target="#neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></a></li>
+  <li><a href="#neon-cear" id="toc-neon-cear" class="nav-link" data-scroll-target="#neon-cear">Neon – <span class="math inline">\(\ce{Ar}\)</span></a></li>
+  
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/planetary_measurements/lunar_exosphere_densities.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -317,20 +321,27 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lunar Exosphere Densities</h1>
+<h1 class="title">Lunar Exosphere Surface Densities</h1>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alexander Smolka <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+    <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Technical University of Munich
+          </p>
+      </div>
+    </div>
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alexander Smolka <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-          </div>
-  </div>
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
@@ -347,10 +358,10 @@ div.csl-indent {
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <section id="meta-title" class="level1 hidden">
-<h1>Lunar Exosphere Densities</h1>
+<h1>Lunar Exosphere Surface Densities</h1>
 </section>
 <hr>
-<p>Some intro</p>
+<p>This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span>. Some references are providing their values in terms of a column density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-2}}}\right]\)</span>, which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.</p>
 <section id="atomic-hydrogen-ceh" class="level2">
 <h2 class="anchored" data-anchor-id="atomic-hydrogen-ceh">Atomic Hydrogen – <span class="math inline">\(\ce{H}\)</span></h2>
 <div id="tbl-H" class="anchored">
@@ -397,7 +408,6 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span> assume for the derivations a <span class="math inline">\(30\,\mathrm{min}\)</span>, <span class="math inline">\(3\sigma\)</span> observation, and a path length of <span class="math inline">\(300\,\mathrm{km}\)</span>.</p>
 </section>
 <section id="molecular-hydrogen-ceh2" class="level2">
 <h2 class="anchored" data-anchor-id="molecular-hydrogen-ceh2">Molecular Hydrogen – <span class="math inline">\(\ce{H2}\)</span></h2>
@@ -465,7 +475,6 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</p>
 </section>
 <section id="helium-cehe" class="level2">
 <h2 class="anchored" data-anchor-id="helium-cehe">Helium – <span class="math inline">\(\ce{He}\)</span></h2>
@@ -508,7 +517,12 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<p><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</p>
+</section>
+<section id="hydroxyl-ceoh" class="level2">
+<h2 class="anchored" data-anchor-id="hydroxyl-ceoh">Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></h2>
+</section>
+<section id="water-ceh2o" class="level2">
+<h2 class="anchored" data-anchor-id="water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></h2>
 </section>
 <section id="neon-cene" class="level2">
 <h2 class="anchored" data-anchor-id="neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></h2>
@@ -547,12 +561,22 @@ div.csl-indent {
 </table>
 </div>
 <p><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</p>
-
-
-
+</section>
+<section id="neon-cear" class="level2">
+<h2 class="anchored" data-anchor-id="neon-cear">Neon – <span class="math inline">\(\ce{Ar}\)</span></h2>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section id="additional-information" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Additional Information</h2><div class="quarto-appendix-contents">
+
+<ul>
+<li><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span> assume for the LAMP derivations a <span class="math inline">\(30\,\mathrm{min}\)</span>, <span class="math inline">\(3\sigma\)</span> observation, and a path length of <span class="math inline">\(300\,\mathrm{km}\)</span>.</li>
+<li><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</li>
+</ul>
+
+
+
+</div></section><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Cook2013" class="csl-entry" role="listitem">
 Cook, J. C., Stern, S. A., Feldman, P. D., Gladstone, G. R., Retherford, K. D., &amp; Tsang, C. C. C. (2013). New upper limits on numerous atmospheric species in the native lunar atmosphere. <em>Icarus</em>. https://doi.org/<a href="http://dx.doi.org/10.1016/j.icarus.2013.04.010">http://dx.doi.org/10.1016/j.icarus.2013.04.010</a>
 </div>

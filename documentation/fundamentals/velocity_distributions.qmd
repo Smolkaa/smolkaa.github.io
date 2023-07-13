@@ -13,7 +13,9 @@ format:
 
 ---
 
+::: {.text-danger}
 Some intro ...
+:::
 
 ## Maxwell-Boltzmann Distribution
 {{< include /documentation/fundamentals/velocity_distributions/_mbd.qmd >}}

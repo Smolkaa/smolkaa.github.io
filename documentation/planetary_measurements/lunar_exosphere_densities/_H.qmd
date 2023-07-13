@@ -15,5 +15,3 @@
 
 : Overview of reported hydrogen surface number densities in reviewed and published literature. {#tbl-H .borderless .hover} 
 
-
-@Gladstone2009 assume for the derivations a  $\SI{30}{\minute}$, $3\sigma$ observation, and a path length of $\SI{300}{\kilo\metre}$.

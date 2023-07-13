@@ -13,6 +13,3 @@
 
 : Overview of reported helium surface number densities in reviewed and published literature. {#tbl-H2 .borderless .hover}
 
-
-@Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.
-

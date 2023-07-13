@@ -1,5 +1,5 @@
 ---
-title: "Lunar Exosphere Densities"
+title: "Lunar Exosphere Surface Densities"
 format:
   html: default
 tbl-colwidths: [35,25,40]
@@ -14,7 +14,7 @@ tbl-colwidths: [35,25,40]
 
 ---
 
-Some intro
+This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in $\left[\si{\centi\metre\tothe{-3}}\right]$. Some references are providing their values in terms of a column density in $\left[\si{\centi\metre\tothe{-2}}\right]$, which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.
 
 ## Atomic Hydrogen -- $\ce{H}$
 {{< include lunar_exosphere_densities/_H.qmd >}}
@@ -25,8 +25,19 @@ Some intro
 ## Helium -- $\ce{He}$
 {{< include lunar_exosphere_densities/_He.qmd >}}
 
+## Hydroxyl -- $\ce{OH}$
 
+
+## Water -- $\ce{H2O}$
 
 
 ## Neon -- $\ce{Ne}$
 {{< include lunar_exosphere_densities/_Ne.qmd >}}
+
+## Neon -- $\ce{Ar}$
+
+
+## Additional Information {.appendix}
+
+* @Gladstone2009 assume for the LAMP derivations a  $\SI{30}{\minute}$, $3\sigma$ observation, and a path length of $\SI{300}{\kilo\metre}$.
+* @Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.

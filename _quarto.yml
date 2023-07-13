@@ -5,9 +5,10 @@ project:
 jupyter: julia-1.9
 
 bibliography: "../asmolka_library/main.bib"
-csl: apa.csl
+csl: _apa.csl
 
 website:
+  back-to-top-navigation: true
   site-url: https://smolkaa.github.io
   title: "ExESS"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
@@ -17,7 +18,7 @@ website:
   page-navigation: true
 
   navbar:
-    background: primary
+    background: light
     pinned: true
     logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
@@ -105,9 +106,10 @@ format:
     anchor-sections: true  
     code-copy: true
     code-link: true
-    css: styles.css
+    css: _styles.css
     filters:
       - lightbox
+    highlight-style: github-dark
     grid:
       sidebar-width: 300px
       body-width: 1000px
