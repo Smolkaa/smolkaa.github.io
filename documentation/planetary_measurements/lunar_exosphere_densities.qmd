@@ -16,9 +16,17 @@ tbl-colwidths: [35,25,40]
 
 Some intro
 
-## Noble Gases
+## Atomic Hydrogen -- $\ce{H}$
+{{< include lunar_exosphere_densities/_H.qmd >}}
 
-## Hydrogen Based Species
+## Molecular Hydrogen -- $\ce{H2}$
+{{< include lunar_exosphere_densities/_H2.qmd >}}
 
-{{< include lunar_exosphere_densities/_hydrogen_based_gases.qmd >}}
+## Helium -- $\ce{He}$
+{{< include lunar_exosphere_densities/_He.qmd >}}
 
+
+
+
+## Neon -- $\ce{Ne}$
+{{< include lunar_exosphere_densities/_Ne.qmd >}}

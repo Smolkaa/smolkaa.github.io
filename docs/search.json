@@ -410,7 +410,7 @@
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#hydrogen-based-species",
     "title": "Lunar Exosphere Densities",
     "section": "Hydrogen Based Species",
-    "text": "Hydrogen Based Species\n\nAtomic Hydrogen – \\(\\ce{H}\\)\n\n\nTable 1: Caption\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nupper limit\n\\(1.7 \\times 10^1\\)\nGladstone et al. (2009)\n\n\nLAMP\n\\(1.4 \\times 10^{-1}\\)\nGladstone et al. (2009)\n\n\nLAMP, upper limit\n\\(2.4 \\times 10^1\\)\nCook et al. (2013)\n\n\n\n\nGladstone et al. (2009) assume for the derivations a \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation, and a path length of \\(300\\,\\mathrm{km}\\).\n\n\nMolecular Hydrogen – \\(\\ce{H2}\\)\n\n\nTable 2: Caption\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, subsolar\n\\(2.0 \\times 10^3\\)\nHodges, Hoffman, and Johnson (1973)\n\n\nModel predictions, antisolar\n\\(1.2 \\times 10^4\\)\nHodges, Hoffman, and Johnson (1973)\n\n\n\n\nHodges, Hoffman, and Johnson (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+    "text": "Hydrogen Based Species\n\nAtomic Hydrogen – \\(\\ce{H}\\)\n\n\nTable 1: Caption\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nupper limit\n\\(1.7 \\times 10^1\\)\nGladstone et al. (2009)\n\n\nLAMP\n\\(1.4 \\times 10^{-1}\\)\nGladstone et al. (2009)\n\n\nLAMP, upper limit\n\\(2.4 \\times 10^1\\)\nCook et al. (2013)\n\n\n\n\nGladstone et al. (2009) assume for the derivations a \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation, and a path length of \\(300\\,\\mathrm{km}\\).\n\n\nMolecular Hydrogen – \\(\\ce{H2}\\)\n\n\nTable 2: Caption\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(2.0 \\times 10^3\\)\nHodges, Hoffman, and Johnson (1973)\n\n\nModel predictions, nightside\n\\(1.2 \\times 10^4\\)\nHodges, Hoffman, and Johnson (1973)\n\n\nupper limit, dayside\n\\(6.0 \\times 10^3\\)\n(Hoffmann1973?)\n\n\n\n\nHodges, Hoffman, and Johnson (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#footnotes",
@@ -418,5 +418,40 @@
     "title": "Lunar Exosphere Densities",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nAssumes \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation & path length of \\(300\\,\\mathrm{km}\\) (Gladstone et al. 2009)↩︎"
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#atomic-hydrogen-ceh",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#atomic-hydrogen-ceh",
+    "title": "Lunar Exosphere Densities",
+    "section": "Atomic Hydrogen – \\(\\ce{H}\\)",
+    "text": "Atomic Hydrogen – \\(\\ce{H}\\)\n\n\nTable 1: Overview of reported hydrogen surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nupper limit, UVS Apollo 17\n\\(1.0 \\times 10^1\\)\nFastie et al. (1973)\n\n\nupper limit\n\\(1.7 \\times 10^1\\)\nFeldman & Morrison (1991)  Gladstone et al. (2009)\n\n\nLAMP\n\\(1.4 \\times 10^{-1}\\)\nGladstone et al. (2009)\n\n\nmodel predictions, dayside\n\\(8.0 \\times 10^0\\)\nWurz et al. (2012)\n\n\nLAMP, upper limit\n\\(2.4 \\times 10^1\\)\nCook et al. (2013)\n\n\n\n\nGladstone et al. (2009) assume for the derivations a \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation, and a path length of \\(300\\,\\mathrm{km}\\)."
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#molecular-hydrogen-ceh2",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#molecular-hydrogen-ceh2",
+    "title": "Lunar Exosphere Densities",
+    "section": "Molecular Hydrogen – \\(\\ce{H2}\\)",
+    "text": "Molecular Hydrogen – \\(\\ce{H2}\\)\n\n\nTable 2: Overview of reported molecular hydrogen surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nmodel predictions, dayside\n\\(2.0 \\times 10^3\\)\nHodges et al. (1973)\n\n\nmodel predictions, nightside\n\\(1.2 \\times 10^4\\)\nHodges et al. (1973)\n\n\nupper limit, dayside\n\\(6.0 \\times 10^3\\)\nHoffman et al. (1973)\n\n\nupper limit, nightside\n\\(6.5 \\times 10^4\\)\nHoffman et al. (1973)\n\n\nupper limit, UVS Apollo 17\n\\(1.2 \\times 10^4\\)\nFastie et al. (1973)\n\n\nupper limit, Apollo measurements    dayside    nightside\n \\(2.5 \\text{ to } 9.9 \\times 10^3\\) \\(1.0 \\text{ to } 15.0 \\times 10^4\\)\n Heiken et al. (1991), chap 3.10\n\n\nupper limit  expected LAMP density\n\\(9.0 \\times 10^3\\)  \\(1.1 \\times 10^4\\)\nGladstone et al. (2009)\n\n\nmodel predictions, upper limit  \\(\\ce{H-&gt;[100\\%]H2}\\)\n\\(2.1 \\times 10^3\\)\nWurz et al. (2012)\n\n\nLAMP, upper limit, dusk  LAMP, upper limit, dawn\n\\(1.3 \\text{ to } 2.1 \\times 10^3\\) \\(1.8 \\text{ to } 2.4 \\times 10^3\\)\nCook et al. (2013)\n\n\n\n\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#molecular-hydrogen-cehe",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#molecular-hydrogen-cehe",
+    "title": "Lunar Exosphere Densities",
+    "section": "Molecular Hydrogen – \\(\\ce{He}\\)",
+    "text": "Molecular Hydrogen – \\(\\ce{He}\\)\n\n\nTable 3: Caption\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(2.0 \\times 10^3\\)\nHodges, Hoffman, and Johnson (1973)\n\n\nModel predictions, nightside\n\\(1.2 \\times 10^4\\)\nHodges, Hoffman, and Johnson (1973)\n\n\nupper limit, dayside\n\\(6.0 \\times 10^3\\)\n(Hoffmann1973?)\n\n\nupper limit, nightside\n\\(6.5 \\times 10^4\\)\n(Hoffmann1973?)\n\n\n\n\nHodges, Hoffman, and Johnson (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#helium-cehe",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#helium-cehe",
+    "title": "Lunar Exosphere Densities",
+    "section": "Helium – \\(\\ce{He}\\)",
+    "text": "Helium – \\(\\ce{He}\\)\n\n\nTable 3: Overview of reported helium surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(1.6 \\times 10^3\\)\nHodges et al. (1973)\n\n\nModel predictions, nightside\n\\(3.8 \\times 10^4\\)\nHodges et al. (1973)\n\n\nupper limit, dayside\n\\(2.0 \\times 10^3\\)\nHoffman et al. (1973)\n\n\nupper limit, nightside\n\\(4.0 \\times 10^4\\)\nHoffman et al. (1973)\n\n\n\n\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#neon-cene",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#neon-cene",
+    "title": "Lunar Exosphere Densities",
+    "section": "Neon – \\(\\ce{Ne}\\)",
+    "text": "Neon – \\(\\ce{Ne}\\)\n\n\nTable 4: Overview of reported Neon surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(4.0 \\text{ to } 7.0 \\times 10^3\\)\nHodges et al. (1973)\n\n\nModel predictions, nightside\n\\(1.0 \\text{ to } 2.0 \\times 10^5\\)\nHodges et al. (1973)\n\n\nsolar zenith angle:    \\(+168\\degree\\)    \\(-136\\degree\\)    \\(-112\\degree\\)    \\(-89\\degree\\)    average\n \\(9.4 \\times 10^4\\)  \\(7.7 \\times 10^4\\)  \\(7.1 \\times 10^4\\)  \\(8.7 \\times 10^4\\)  \\(8.2 \\times 10^4\\) \n   Hoffman et al. (1973)\n\n\n\n\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
   }
 ]

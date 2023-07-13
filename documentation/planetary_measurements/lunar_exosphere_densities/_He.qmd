@@ -1,0 +1,18 @@
++------------------------------+--------------------------------------------------+---------------+
+| Description                  | Value $\left[\si{\centi\metre\tothe{-3}}\right]$ | Reference(s)  |
++==============================+==================================================+===============+
+| Model predictions, dayside   | $1.6 \times 10^3$                                | @Hodges1973   |
++------------------------------+--------------------------------------------------+---------------+
+| Model predictions, nightside | $3.8 \times 10^4$                                | @Hodges1973   |
++------------------------------+--------------------------------------------------+---------------+
+| upper limit, dayside         | $2.0 \times 10^3$                                | @Hoffman1973  |
++------------------------------+--------------------------------------------------+---------------+
+| upper limit, nightside       | $4.0 \times 10^4$                                | @Hoffman1973  |
++------------------------------+--------------------------------------------------+---------------+
+
+
+: Overview of reported helium surface number densities in reviewed and published literature. {#tbl-H2 .borderless .hover}
+
+
+@Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.
+

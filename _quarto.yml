@@ -5,6 +5,7 @@ project:
 jupyter: julia-1.9
 
 bibliography: "../asmolka_library/main.bib"
+csl: apa.csl
 
 website:
   site-url: https://smolkaa.github.io
@@ -70,7 +71,7 @@ website:
             - documentation/trajectories/orbital_mechanics_functions.qmd
             - documentation/trajectories/2d_landing_position.qmd
         - "---"
-        - section: "Planetary Measurements"
+        - section: "Planetary Measurements and Data"
           contents: 
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
         

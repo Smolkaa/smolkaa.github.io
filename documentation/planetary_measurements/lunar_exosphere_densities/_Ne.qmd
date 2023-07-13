@@ -1,0 +1,21 @@
++------------------------------+--------------------------------------------------+---------------+
+| Description                  | Value $\left[\si{\centi\metre\tothe{-3}}\right]$ | Reference(s)  |
++==============================+==================================================+===============+
+| Model predictions, dayside   | $4.0 \text{ to } 7.0 \times 10^3$                | @Hodges1973   |
++------------------------------+--------------------------------------------------+---------------+
+| Model predictions, nightside | $1.0 \text{ to } 2.0 \times 10^5$                | @Hodges1973   |
++------------------------------+--------------------------------------------------+---------------+
+| solar zenith angle: </br>    | </br>                                            | </br>         |
+| &emsp; $+168\degree$ </br>   | $9.4 \times 10^4$ </br>                          | </br>         |
+| &emsp; $-136\degree$ </br>   | $7.7 \times 10^4$ </br>                          | </br>         |
+| &emsp; $-112\degree$ </br>   | $7.1 \times 10^4$ </br>                          | @Hoffman1973  |
+| &emsp; $-89\degree$ </br>    | $8.7 \times 10^4$ </br>                          |               |
+| &emsp; average               | $8.2 \times 10^4$ </br>                          |               |
++------------------------------+--------------------------------------------------+---------------+
+
+
+: Overview of reported Neon surface number densities in reviewed and published literature. {#tbl-H2 .borderless .hover}
+
+
+@Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.
+
