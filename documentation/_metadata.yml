@@ -2,12 +2,15 @@ format:
   html:
     author:
       - id: asmolka
-        name: Alexander Smolka
+        name: |
+          Alexander Smolka, [`a.smolka@tum.de`](mailto:a.smolka@tum.de) </br>
+          Technical University of Munich
         email: a.smolka@tum.de
-        orcid: 0000-0002-4848-3473
-        affiliation: Technical University of Munich
+        # orcid: 0000-0002-4848-3473
+        # affiliation: Technical University of Munich
         roles: something
     citation:
+      author: Alexander Smolka
       title: ExESS - Extraterrestrial Exosphere and Surface Simulations
       url: "https://smolkaa.github.io"
       issued: 2023

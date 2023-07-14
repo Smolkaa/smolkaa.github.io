@@ -312,7 +312,7 @@
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html",
     "title": "Lunar Exosphere Surface Densities",
     "section": "",
-    "text": "This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\). Some references are providing their values in terms of a column density in \\(\\left[\\,\\mathrm{cm^{\\mathrm{-2}}}\\right]\\), which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP."
+    "text": "This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\). Some references are providing their values in terms of a column density in \\(\\left[\\,\\mathrm{cm^{\\mathrm{-2}}}\\right]\\), which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.\nSee the additional information section on this section’s appendix to find details about some sources, their assumptions, and their measurement methods."
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#atomic-hydrogen-ceh",
@@ -326,35 +326,35 @@
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#molecular-hydrogen-ceh2",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Molecular Hydrogen – \\(\\ce{H2}\\)",
-    "text": "Molecular Hydrogen – \\(\\ce{H2}\\)\n\n\nTable 2: Overview of reported molecular hydrogen surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nmodel predictions, dayside\n\\(2.0 \\times 10^3\\)\nHodges et al. (1973)\n\n\nmodel predictions, nightside\n\\(1.2 \\times 10^4\\)\nHodges et al. (1973)\n\n\nupper limit, dayside\n\\(6.0 \\times 10^3\\)\nHoffman et al. (1973)\n\n\nupper limit, nightside\n\\(6.5 \\times 10^4\\)\nHoffman et al. (1973)\n\n\nupper limit, UVS Apollo 17\n\\(1.2 \\times 10^4\\)\nFastie et al. (1973)\n\n\nupper limit, Apollo measurements    dayside    nightside\n \\(2.5 \\text{ to } 9.9 \\times 10^3\\) \\(1.0 \\text{ to } 15.0 \\times 10^4\\)\n Heiken et al. (1991), chap 3.10\n\n\nupper limit  expected LAMP density\n\\(9.0 \\times 10^3\\)  \\(1.1 \\times 10^4\\)\nGladstone et al. (2009)\n\n\nmodel predictions, upper limit  \\(\\ce{H-&gt;[100\\%]H2}\\)\n\\(2.1 \\times 10^3\\)\nWurz et al. (2012)\n\n\nLAMP, upper limit, dusk  LAMP, upper limit, dawn\n\\(1.3 \\text{ to } 2.1 \\times 10^3\\) \\(1.8 \\text{ to } 2.4 \\times 10^3\\)\nCook et al. (2013)"
+    "text": "Molecular Hydrogen – \\(\\ce{H2}\\)\n\n\nTable 2: Overview of reported molecular hydrogen surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nmodel predictions, dayside  model predictions, nightside\n\\(2.0 \\times 10^3\\)  \\(1.2 \\times 10^4\\)\nHodges et al. (1973)\n\n\nLACE, upper limit, dayside  LACE, upper limit, nightside\n\\(6.0 \\times 10^3\\)  \\(6.5 \\times 10^4\\)\nHoffman et al. (1973)\n\n\nUVS Apollo 17, upper limit\n\\(1.2 \\times 10^4\\)\nFastie et al. (1973)\n\n\nApollo, upper limit, dayside  Apollo, upper limit, nightside\n\\(2.5 \\text{ to } 9.9 \\times 10^3\\)  \\(1.0 \\text{ to } 15.0 \\times 10^4\\)\nHeiken et al. (1991), chap 3.10\n\n\nupper limit  expected LAMP density\n\\(9.0 \\times 10^3\\)  \\(1.1 \\times 10^4\\)\nGladstone et al. (2009)\n\n\nmodel predictions, upper limit, dayside  \\(\\ce{p+-&gt;[100\\%]H2}\\)\n\\(2.1 \\times 10^3\\)\nWurz et al. (2012)\n\n\nLAMP, upper limit, dusk  LAMP, upper limit, dawn\n\\(1.3 \\text{ to } 2.1 \\times 10^3\\)  \\(1.8 \\text{ to } 2.4 \\times 10^3\\)\nCook et al. (2013)\n\n\nLAMP, “effective”  LAMP, nightside, dusk  LAMP, nightside, dawn\n\\(0.8 \\text{ to } 1.6 \\times 10^3\\)  \\(0.5 \\text{ to } 1.5 \\times 10^3\\)  \\(0.9 \\text{ to } 1.9 \\times 10^3\\)\n Stern et al. (2013)\n\n\nCHACE, at latitudes: \\(20\\text{ to }50\\,\\mathrm{\\degree}\\)  CHACE, at latitudes: \\(50\\text{ to }70\\,\\mathrm{\\degree}\\)  CHACE, at latitudes: \\(70\\text{ to }90\\,\\mathrm{\\degree}\\)\n\\(4.0 \\text{ to } 6.0 \\times 10^2\\)  \\(5.0 \\text{ to } 6.5 \\times 10^2\\)  \\(6.5 \\text{ to } 8.5 \\times 10^2\\) \n Thampi et al. (2015)\n\n\nmodel predictions, equator, dayside  model predictions, equator, nightside  model predictions, equator, dayside, in magnetotail  model predictions, equator, nightside, in magnetotail\n\\(1.5 \\text{ to } 2.2 \\times 10^3\\)  \\(3.0 \\text{ to } 4.2 \\times 10^3\\)  \\(0.4 \\text{ to } 0.7 \\times 10^3\\)  \\(1.0 \\text{ to } 1.5 \\times 10^3\\)\n Tucker et al. (2021)"
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#helium-cehe",
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#helium-cehe",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Helium – \\(\\ce{He}\\)",
-    "text": "Helium – \\(\\ce{He}\\)\n\n\nTable 3: Overview of reported helium surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(1.6 \\times 10^3\\)\nHodges et al. (1973)\n\n\nModel predictions, nightside\n\\(3.8 \\times 10^4\\)\nHodges et al. (1973)\n\n\nupper limit, dayside\n\\(2.0 \\times 10^3\\)\nHoffman et al. (1973)\n\n\nupper limit, nightside\n\\(4.0 \\times 10^4\\)\nHoffman et al. (1973)"
+    "text": "Helium – \\(\\ce{He}\\)\n\n\nTable 3: Overview of reported helium surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside  Model predictions, nightside\n\\(1.6 \\times 10^3\\)  \\(3.8 \\times 10^4\\)\nHodges et al. (1973)\n\n\nupper limit, dayside  upper limit, nightside\n\\(2.0 \\times 10^3\\)  \\(4.0 \\times 10^4\\)\nHoffman et al. (1973)"
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#hydroxyl-ceoh",
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#hydroxyl-ceoh",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Hydroxyl – \\(\\ce{OH}\\)",
-    "text": "Hydroxyl – \\(\\ce{OH}\\)"
+    "text": "Hydroxyl – \\(\\ce{OH}\\)\n\n\nTable 4: Overview of reported hydroxyl surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nApollo, upper limit, dayside\n\\(0.5 \\times 10^0\\)\nHeiken et al. (1991), chap 3.10\n\n\nmodel predictions, upper limit, dayside  \\(\\ce{p+-&gt;[100\\%]OH}\\)\n\\(1.0 \\times 10^0\\)\nWurz et al. (2012)"
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#water-ceh2o",
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#water-ceh2o",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Water – \\(\\ce{H2O}\\)",
-    "text": "Water – \\(\\ce{H2O}\\)"
+    "text": "Water – \\(\\ce{H2O}\\)\n\n\nTable 5: Overview of reported water surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nApollo, upper limit, dayside\n\\(0.5 \\times 10^0\\)\nHeiken et al. (1991), chap 3.10\n\n\nmodel predictions, upper limit, dayside  \\(\\ce{p+-&gt;[100\\%]H2O}\\)\n\\(2.9 \\times 10^3\\)\nWurz et al. (2012)"
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#neon-cene",
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#neon-cene",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Neon – \\(\\ce{Ne}\\)",
-    "text": "Neon – \\(\\ce{Ne}\\)\n\n\nTable 4: Overview of reported Neon surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside\n\\(4.0 \\text{ to } 7.0 \\times 10^3\\)\nHodges et al. (1973)\n\n\nModel predictions, nightside\n\\(1.0 \\text{ to } 2.0 \\times 10^5\\)\nHodges et al. (1973)\n\n\nsolar zenith angle:    \\(+168\\degree\\)    \\(-136\\degree\\)    \\(-112\\degree\\)    \\(-89\\degree\\)    average\n \\(9.4 \\times 10^4\\)  \\(7.7 \\times 10^4\\)  \\(7.1 \\times 10^4\\)  \\(8.7 \\times 10^4\\)  \\(8.2 \\times 10^4\\) \n   Hoffman et al. (1973)\n\n\n\n\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+    "text": "Neon – \\(\\ce{Ne}\\)\n\n\nTable 6: Overview of reported Neon surface number densities in reviewed and published literature.\n\n\n\n\n\n\n\nDescription\nValue \\(\\left[\\,\\mathrm{cm^{\\mathrm{-3}}}\\right]\\)\nReference(s)\n\n\n\n\nModel predictions, dayside  Model predictions, nightside\n\\(4.0 \\text{ to } 7.0 \\times 10^3\\)  \\(1.0 \\text{ to } 2.0 \\times 10^5\\)\nHodges et al. (1973)\n\n\nsolar zenith angle:    \\(+168\\degree\\)    \\(-136\\degree\\)    \\(-112\\degree\\)    \\(-89\\degree\\)  \\(\\Rightarrow\\) average\n \\(9.4 \\times 10^4\\)  \\(7.7 \\times 10^4\\)  \\(7.1 \\times 10^4\\)  \\(8.7 \\times 10^4\\)  \\(8.2 \\times 10^4\\) \n   Hoffman et al. (1973)"
   },
   {
     "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#neon-cear",
@@ -368,7 +368,7 @@
     "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#additional-information",
     "title": "Lunar Exosphere Surface Densities",
     "section": "Additional Information",
-    "text": "Additional Information\n\n\nGladstone et al. (2009) assume for the LAMP derivations a \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation, and a path length of \\(300\\,\\mathrm{km}\\).\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations."
+    "text": "Additional Information\n\n\nGladstone et al. (2009) assume for the LAMP derivations a \\(30\\,\\mathrm{min}\\), \\(3\\sigma\\) observation, and a path length of \\(300\\,\\mathrm{km}\\).\nHodges et al. (1973) assumed a solar wind proton influx of \\(3 \\times 10^8 \\,\\mathrm{s^{\\mathrm{-1}}cm^{\\mathrm{-3}}}\\) for their simulations.\nCHACE measurements were made during a Moon’s pass through Earth’s magnetotail, reducing the solar wind influx of particles dramatically.\nHeiken et al. (1991) reported a joint upper limit of \\(0.5 \\times 10^0\\) for both \\(\\ce{OH}\\) and \\(\\ce{H2O}\\)"
   },
   {
     "objectID": "documentation/trajectories/orbital_mechanics_functions.html",
@@ -397,5 +397,12 @@
     "title": "Manuals",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nDRAFT! Git Workflow\n\n\nAlexander Smolka\n\n\n\n\nExESS Package Installation\n\n\nAlexander Smolka\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "documentation/planetary_measurements/lunar_exosphere_densities.html#argon-cear",
+    "href": "documentation/planetary_measurements/lunar_exosphere_densities.html#argon-cear",
+    "title": "Lunar Exosphere Surface Densities",
+    "section": "Argon – \\(\\ce{Ar}\\)",
+    "text": "Argon – \\(\\ce{Ar}\\)"
   }
 ]

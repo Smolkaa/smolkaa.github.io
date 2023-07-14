@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-07-13">
+<meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
+<meta name="dcterms.date" content="2023-07-14">
 
 <title>ExESS - Lunar Exosphere Surface Densities</title>
 <style>
@@ -311,7 +311,7 @@ div.csl-indent {
   <li><a href="#hydroxyl-ceoh" id="toc-hydroxyl-ceoh" class="nav-link" data-scroll-target="#hydroxyl-ceoh">Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></a></li>
   <li><a href="#water-ceh2o" id="toc-water-ceh2o" class="nav-link" data-scroll-target="#water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></a></li>
   <li><a href="#neon-cene" id="toc-neon-cene" class="nav-link" data-scroll-target="#neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></a></li>
-  <li><a href="#neon-cear" id="toc-neon-cear" class="nav-link" data-scroll-target="#neon-cear">Neon – <span class="math inline">\(\ce{Ar}\)</span></a></li>
+  <li><a href="#argon-cear" id="toc-argon-cear" class="nav-link" data-scroll-target="#argon-cear">Argon – <span class="math inline">\(\ce{Ar}\)</span></a></li>
   
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/planetary_measurements/lunar_exosphere_densities.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -325,27 +325,20 @@ div.csl-indent {
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Alexander Smolka <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Technical University of Munich
-          </p>
-      </div>
-    </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p></p><p>Alexander Smolka, <a href="mailto:a.smolka@tum.de"><code>a.smolka@tum.de</code></a> <br> Technical University of Munich</p> <p></p>
+          </div>
+  </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 13, 2023</p>
+      <p class="date">July 14, 2023</p>
     </div>
   </div>
   
@@ -362,15 +355,16 @@ div.csl-indent {
 </section>
 <hr>
 <p>This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span>. Some references are providing their values in terms of a column density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-2}}}\right]\)</span>, which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.</p>
+<p>See the additional information section on this section’s appendix to find details about some sources, their assumptions, and their measurement methods.</p>
 <section id="atomic-hydrogen-ceh" class="level2">
 <h2 class="anchored" data-anchor-id="atomic-hydrogen-ceh">Atomic Hydrogen – <span class="math inline">\(\ce{H}\)</span></h2>
 <div id="tbl-H" class="anchored">
 <table class="table-borderless table-hover table">
 <caption>Table&nbsp;1: Overview of reported hydrogen surface number densities in reviewed and published literature.</caption>
 <colgroup>
-<col style="width: 35%">
-<col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -415,9 +409,9 @@ div.csl-indent {
 <table class="table-borderless table-hover table">
 <caption>Table&nbsp;2: Overview of reported molecular hydrogen surface number densities in reviewed and published literature.</caption>
 <colgroup>
-<col style="width: 35%">
-<col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -428,34 +422,24 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td>model predictions, dayside</td>
-<td><span class="math inline">\(2.0 \times 10^3\)</span></td>
+<td>model predictions, dayside <br> model predictions, nightside</td>
+<td><span class="math inline">\(2.0 \times 10^3\)</span> <br> <span class="math inline">\(1.2 \times 10^4\)</span></td>
 <td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 <tr class="even">
-<td>model predictions, nightside</td>
-<td><span class="math inline">\(1.2 \times 10^4\)</span></td>
-<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
-</tr>
-<tr class="odd">
-<td>upper limit, dayside</td>
-<td><span class="math inline">\(6.0 \times 10^3\)</span></td>
-<td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
-</tr>
-<tr class="even">
-<td>upper limit, nightside</td>
-<td><span class="math inline">\(6.5 \times 10^4\)</span></td>
+<td>LACE, upper limit, dayside <br> LACE, upper limit, nightside</td>
+<td><span class="math inline">\(6.0 \times 10^3\)</span> <br> <span class="math inline">\(6.5 \times 10^4\)</span></td>
 <td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 <tr class="odd">
-<td>upper limit, UVS Apollo 17</td>
+<td>UVS Apollo 17, upper limit</td>
 <td><span class="math inline">\(1.2 \times 10^4\)</span></td>
 <td><span class="citation" data-cites="Fastie1973">Fastie et al. (<a href="#ref-Fastie1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 <tr class="even">
-<td>upper limit, Apollo measurements <br>   dayside <br>   nightside</td>
-<td><br> <span class="math inline">\(2.5 \text{ to } 9.9 \times 10^3\)</span> <span class="math inline">\(1.0 \text{ to } 15.0 \times 10^4\)</span></td>
-<td><br> <span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+<td>Apollo, upper limit, dayside <br> Apollo, upper limit, nightside</td>
+<td><span class="math inline">\(2.5 \text{ to } 9.9 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 15.0 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
 </tr>
 <tr class="odd">
 <td>upper limit <br> expected LAMP density</td>
@@ -463,14 +447,29 @@ div.csl-indent {
 <td><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span></td>
 </tr>
 <tr class="even">
-<td>model predictions, upper limit <br> <span class="math inline">\(\ce{H-&gt;[100\%]H2}\)</span></td>
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]H2}\)</span></td>
 <td><span class="math inline">\(2.1 \times 10^3\)</span></td>
 <td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>LAMP, upper limit, dusk <br> LAMP, upper limit, dawn</td>
-<td><span class="math inline">\(1.3 \text{ to } 2.1 \times 10^3\)</span> <span class="math inline">\(1.8 \text{ to } 2.4 \times 10^3\)</span></td>
+<td><span class="math inline">\(1.3 \text{ to } 2.1 \times 10^3\)</span> <br> <span class="math inline">\(1.8 \text{ to } 2.4 \times 10^3\)</span></td>
 <td><span class="citation" data-cites="Cook2013">Cook et al. (<a href="#ref-Cook2013" role="doc-biblioref">2013</a>)</span></td>
+</tr>
+<tr class="even">
+<td>LAMP, “effective” <br> LAMP, nightside, dusk <br> LAMP, nightside, dawn</td>
+<td><span class="math inline">\(0.8 \text{ to } 1.6 \times 10^3\)</span> <br> <span class="math inline">\(0.5 \text{ to } 1.5 \times 10^3\)</span> <br> <span class="math inline">\(0.9 \text{ to } 1.9 \times 10^3\)</span></td>
+<td><br> <span class="citation" data-cites="Stern2013">Stern et al. (<a href="#ref-Stern2013" role="doc-biblioref">2013</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>CHACE, at latitudes: <span class="math inline">\(20\text{ to }50\,\mathrm{\degree}\)</span> <br> CHACE, at latitudes: <span class="math inline">\(50\text{ to }70\,\mathrm{\degree}\)</span> <br> CHACE, at latitudes: <span class="math inline">\(70\text{ to }90\,\mathrm{\degree}\)</span></td>
+<td><span class="math inline">\(4.0 \text{ to } 6.0 \times 10^2\)</span> <br> <span class="math inline">\(5.0 \text{ to } 6.5 \times 10^2\)</span> <br> <span class="math inline">\(6.5 \text{ to } 8.5 \times 10^2\)</span> <br></td>
+<td><br> <span class="citation" data-cites="Thampi2015">Thampi et al. (<a href="#ref-Thampi2015" role="doc-biblioref">2015</a>)</span></td>
+</tr>
+<tr class="even">
+<td>model predictions, equator, dayside <br> model predictions, equator, nightside <br> model predictions, equator, dayside, in magnetotail <br> model predictions, equator, nightside, in magnetotail</td>
+<td><span class="math inline">\(1.5 \text{ to } 2.2 \times 10^3\)</span> <br> <span class="math inline">\(3.0 \text{ to } 4.2 \times 10^3\)</span> <br> <span class="math inline">\(0.4 \text{ to } 0.7 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 1.5 \times 10^3\)</span></td>
+<td><br> <span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -482,9 +481,9 @@ div.csl-indent {
 <table class="table-borderless table-hover table">
 <caption>Table&nbsp;3: Overview of reported helium surface number densities in reviewed and published literature.</caption>
 <colgroup>
-<col style="width: 35%">
-<col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -495,23 +494,13 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Model predictions, dayside</td>
-<td><span class="math inline">\(1.6 \times 10^3\)</span></td>
+<td>Model predictions, dayside <br> Model predictions, nightside</td>
+<td><span class="math inline">\(1.6 \times 10^3\)</span> <br> <span class="math inline">\(3.8 \times 10^4\)</span></td>
 <td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 <tr class="even">
-<td>Model predictions, nightside</td>
-<td><span class="math inline">\(3.8 \times 10^4\)</span></td>
-<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
-</tr>
-<tr class="odd">
-<td>upper limit, dayside</td>
-<td><span class="math inline">\(2.0 \times 10^3\)</span></td>
-<td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
-</tr>
-<tr class="even">
-<td>upper limit, nightside</td>
-<td><span class="math inline">\(4.0 \times 10^4\)</span></td>
+<td>upper limit, dayside <br> upper limit, nightside</td>
+<td><span class="math inline">\(2.0 \times 10^3\)</span> <br> <span class="math inline">\(4.0 \times 10^4\)</span></td>
 <td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 </tbody>
@@ -520,19 +509,13 @@ div.csl-indent {
 </section>
 <section id="hydroxyl-ceoh" class="level2">
 <h2 class="anchored" data-anchor-id="hydroxyl-ceoh">Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></h2>
-</section>
-<section id="water-ceh2o" class="level2">
-<h2 class="anchored" data-anchor-id="water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></h2>
-</section>
-<section id="neon-cene" class="level2">
-<h2 class="anchored" data-anchor-id="neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></h2>
-<div id="tbl-H2" class="anchored">
+<div id="tbl-OH" class="anchored">
 <table class="table-borderless table-hover table">
-<caption>Table&nbsp;4: Overview of reported Neon surface number densities in reviewed and published literature.</caption>
+<caption>Table&nbsp;4: Overview of reported hydroxyl surface number densities in reviewed and published literature.</caption>
 <colgroup>
-<col style="width: 35%">
-<col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -543,27 +526,85 @@ div.csl-indent {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Model predictions, dayside</td>
-<td><span class="math inline">\(4.0 \text{ to } 7.0 \times 10^3\)</span></td>
+<td>Apollo, upper limit, dayside</td>
+<td><span class="math inline">\(0.5 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+</tr>
+<tr class="even">
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]OH}\)</span></td>
+<td><span class="math inline">\(1.0 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="water-ceh2o" class="level2">
+<h2 class="anchored" data-anchor-id="water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></h2>
+<div id="tbl-OH" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;5: Overview of reported water surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Apollo, upper limit, dayside</td>
+<td><span class="math inline">\(0.5 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+</tr>
+<tr class="even">
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]H2O}\)</span></td>
+<td><span class="math inline">\(2.9 \times 10^3\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="neon-cene" class="level2">
+<h2 class="anchored" data-anchor-id="neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></h2>
+<div id="tbl-H2" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;6: Overview of reported Neon surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model predictions, dayside <br> Model predictions, nightside</td>
+<td><span class="math inline">\(4.0 \text{ to } 7.0 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 2.0 \times 10^5\)</span></td>
 <td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 <tr class="even">
-<td>Model predictions, nightside</td>
-<td><span class="math inline">\(1.0 \text{ to } 2.0 \times 10^5\)</span></td>
-<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
-</tr>
-<tr class="odd">
-<td>solar zenith angle: <br>   <span class="math inline">\(+168\degree\)</span> <br>   <span class="math inline">\(-136\degree\)</span> <br>   <span class="math inline">\(-112\degree\)</span> <br>   <span class="math inline">\(-89\degree\)</span> <br>   average</td>
+<td>solar zenith angle: <br>   <span class="math inline">\(+168\degree\)</span> <br>   <span class="math inline">\(-136\degree\)</span> <br>   <span class="math inline">\(-112\degree\)</span> <br>   <span class="math inline">\(-89\degree\)</span> <br> <span class="math inline">\(\Rightarrow\)</span> average</td>
 <td><br> <span class="math inline">\(9.4 \times 10^4\)</span> <br> <span class="math inline">\(7.7 \times 10^4\)</span> <br> <span class="math inline">\(7.1 \times 10^4\)</span> <br> <span class="math inline">\(8.7 \times 10^4\)</span> <br> <span class="math inline">\(8.2 \times 10^4\)</span> <br></td>
 <td><br> <br> <br> <span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</p>
 </section>
-<section id="neon-cear" class="level2">
-<h2 class="anchored" data-anchor-id="neon-cear">Neon – <span class="math inline">\(\ce{Ar}\)</span></h2>
+<section id="argon-cear" class="level2">
+<h2 class="anchored" data-anchor-id="argon-cear">Argon – <span class="math inline">\(\ce{Ar}\)</span></h2>
 </section>
 
 
@@ -572,6 +613,8 @@ div.csl-indent {
 <ul>
 <li><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span> assume for the LAMP derivations a <span class="math inline">\(30\,\mathrm{min}\)</span>, <span class="math inline">\(3\sigma\)</span> observation, and a path length of <span class="math inline">\(300\,\mathrm{km}\)</span>.</li>
 <li><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</li>
+<li>CHACE measurements were made during a Moon’s pass through Earth’s magnetotail, reducing the solar wind influx of particles dramatically.</li>
+<li><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span> reported a joint upper limit of <span class="math inline">\(0.5 \times 10^0\)</span> for both <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span></li>
 </ul>
 
 
@@ -597,6 +640,15 @@ Hodges, R. R. Jr., Hoffman, J. H., &amp; Johnson, F. S. (1973). Composition and 
 </div>
 <div id="ref-Hoffman1973" class="csl-entry" role="listitem">
 Hoffman, J. H., Hodges, R. R., Johnson, F. S., &amp; Evans, D. E. (1973). Lunar atmospheric composition results from <span>A</span>pollo 17. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2865–2875.
+</div>
+<div id="ref-Stern2013" class="csl-entry" role="listitem">
+Stern, S. A., Cook, J. C., Chaufray, J. Y., Feldman, P. D., Gladstone, G. R., &amp; Retherford, K. D. (2013). Lunar atmospheric <span>H2</span> detections by the <span>LAMP UV</span> spectrograph on the <span>L</span>unar <span>R</span>econnaissance <span>O</span>rbiter. <em>Icarus</em>, <em>226</em>(2), 1210–1213. <a href="https://doi.org/10.1016/j.icarus.2013.07.011">https://doi.org/10.1016/j.icarus.2013.07.011</a>
+</div>
+<div id="ref-Thampi2015" class="csl-entry" role="listitem">
+Thampi, S. V., Sridharan, R., Das, T. P., Ahmed, S. M., Kamalakar, J. A., &amp; Bhardwaj, A. (2015). The spatial distribution of molecular hydrogen in the lunar atmosphere—new results. <em>Planetary and Space Science</em>, <em>106</em>, 142–147. <a href="https://doi.org/10.1016/j.pss.2014.12.018">https://doi.org/10.1016/j.pss.2014.12.018</a>
+</div>
+<div id="ref-Tucker2021" class="csl-entry" role="listitem">
+Tucker, O. J., Farrell, W. M., &amp; Poppe, A. R. (2021). On the effect of magnetospheric shielding on the lunar hydrogen cycle. <em>Journal of Geophysical Research: Planets</em>, <em>126</em>(2). <a href="https://doi.org/10.1029/2020je006552">https://doi.org/10.1029/2020je006552</a>
 </div>
 <div id="ref-Wurz2012" class="csl-entry" role="listitem">
 Wurz, P., Abplanalp, D., Tulej, M., &amp; Lammer, H. (2012). A neutral gas mass spectrometer for the investigation of lunar volatiles. <em>Planetary and Space Science</em>, <em>74</em>(1), 264–269. <a href="https://doi.org/10.1016/j.pss.2012.05.016">https://doi.org/10.1016/j.pss.2012.05.016</a>
