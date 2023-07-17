@@ -61,13 +61,13 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``volume`` -- Struct
+# ``volumes`` -- Struct
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.volume
+@doc ExESS.volumes
 ```
 :::

@@ -49,26 +49,26 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``eccentricity_f2_alpha`` -- Function
+# ``eccentricity_epskin_psi`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.eccentricity_f2_alpha
+@doc ExESS.eccentricity_epskin_psi
 ```
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``eccentricity_f2_v`` -- Function
+# ``eccentricity_epskin_v`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.eccentricity_f2_v
+@doc ExESS.eccentricity_epskin_v
 ```
 :::
 
@@ -145,50 +145,50 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``fvesc2_vesc_v`` -- Function
+# ``epskin_vesc_v`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.fvesc2_vesc_v
+@doc ExESS.epskin_vesc_v
 ```
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``fvesc2_r_m_v`` -- Function
+# ``epskin_r_m_v`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.fvesc2_r_m_v
+@doc ExESS.epskin_r_m_v
 ```
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``fvesc2_r_a`` -- Function
+# ``epskin_r_a`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.fvesc2_r_a
+@doc ExESS.epskin_r_a
 ```
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``fvesc2_e_theta`` -- Function
+# ``epskin_e_theta`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.fvesc2_e_theta
+@doc ExESS.epskin_e_theta
 ```
 :::
 
@@ -313,14 +313,14 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``semi_major_axis_r_f2`` -- Function
+# ``semi_major_axis_r_epskin`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.semi_major_axis_r_f2
+@doc ExESS.semi_major_axis_r_epskin
 ```
 :::
 
@@ -373,26 +373,26 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``true_anomaly_e_f2`` -- Function
+# ``true_anomaly_e_epskin`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.true_anomaly_e_f2
+@doc ExESS.true_anomaly_e_epskin
 ```
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``true_anomaly_f2_v`` -- Function
+# ``true_anomaly_epskin_v`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
 include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
-@doc ExESS.true_anomaly_f2_v
+@doc ExESS.true_anomaly_epskin_v
 ```
 :::
 

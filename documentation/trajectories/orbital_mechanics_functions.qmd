@@ -27,7 +27,7 @@ Every function below can be solved analytically, except for Eq. \eqref{eq:eccent
 
 
 
-### Azimuth Angle
+### Azimuth Angle -- $\azimuthAngle$
 
 The azimuth angle $\azimuthAngle$ can be calculated using the following multi-case definition:
 \begin{equation}
@@ -44,7 +44,7 @@ with a [local cartesian](/documentation/math_num_comp/coordinate_systems.qmd) ve
 {{< include orbital_mechanics_functions/apirefs/_azimuth_angle.qmd >}}
 
 
-### Ecccentric Anomaly
+### Ecccentric Anomaly -- $\eccentricAnomaly$
 
 \begin{align}
     \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right) &= \begin{cases}
@@ -58,15 +58,20 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \tan\left(\eccentricAnomaly/2\right) = \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\trueAnomaly/2\right).
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_eccentric_anomaly.qmd >}}
+
 
 ### Eccentricity
 
 \begin{align}
-    \eccentricity\left(\relativeKineticEnergy, \zenithAngle\right) &= \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenithAngle}  \label{eq:eccentricity_gamma_psi} \\
+    \eccentricity\left(\relativeKineticEnergy, \zenithAngle\right) &= \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenithAngle}  \label{eq:eccentricity_epskin_psi} \\
     \eccentricity\left(\semiMajorAxis, \semiLatusRectum\right) &= \sqrt{1 - \frac{\semiLatusRectum}{\semiMajorAxis}}  \label{eq:eccentricity_a_p} \\
     \eccentricity\left(\radius, \semiLatusRectum, \trueAnomaly\right) &= \frac{1}{\cos\trueAnomaly}\cdot\left(\frac{\semiLatusRectum}{\radius} - 1\right)  \label{eq:eccentricity_r_p_theta} \\
     \eccentricity\left(\eccentricAnomaly, \meanAnomaly\right) &= \frac{\eccentricAnomaly - \meanAnomaly}{\sin \eccentricAnomaly}  \label{eq:eccentricity_E_M}
 \end{align}
+
+{{< include orbital_mechanics_functions/apirefs/_eccentricity.qmd >}}
+
 
 
 ### Escape Velocity
@@ -114,17 +119,17 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 
 ### Semi-Major Axis
 \begin{align}
-    \semiMajorAxis\left(\radius, \relativeKineticEnergy\right) &= \frac{\radius}{2 \cdot \left(1 - \relativeKineticEnergy \right)}  \label{eq:semi_major_axis_r_gamma} \\
+    \semiMajorAxis\left(\radius, \relativeKineticEnergy\right) &= \frac{\radius}{2 \cdot \left(1 - \relativeKineticEnergy \right)}  \label{eq:semi_major_axis_r_epskin} \\
     \semiMajorAxis\left(\semiLatusRectum, \eccentricity\right) &= \frac{\semiLatusRectum}{1 - \eccentricity^2}  \label{eq:semi_major_axis_p_e}
 \end{align}
 
 ### True Anomaly
 \begin{align}
     \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{\semiMajorAxis}{\radius} \left( 1 - \eccentricity^2 \right) -1 \right)\right)  \label{eq:true_anomaly_r_a_e} \\
-    \trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{1 - \eccentricity^2}{2-2 \relativeKineticEnergy} -1 \right)\right)  \label{eq:true_anomaly_e_gamma}
+    \trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{1 - \eccentricity^2}{2-2 \relativeKineticEnergy} -1 \right)\right)  \label{eq:true_anomaly_e_epskin}
 \end{align}
 
-### Zenith Angle  
+### Zenith Angle -- $\zenithAngle$
 \begin{equation}
     \zenithAngle\left(\vec\velocity\right) = \tan^{-1}\left(\frac{\sqrt{\velocity_1^2 + \velocity_2^2}}{\velocity_3}\right)  \label{eq:zenith_angle_v}
 \end{equation}

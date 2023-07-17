@@ -1,10 +1,5 @@
 ::: {.callout-tip collapse="true"}
 # ExESS API - Azimuth Angle
 
-[`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): implementation of Eq. \eqref{eq:azimuth_angle_v}
-
-```julia
-v = rand(Float64, 3)
-azimuth_angle(v)
-```
+[`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:azimuth_angle_v}
 :::

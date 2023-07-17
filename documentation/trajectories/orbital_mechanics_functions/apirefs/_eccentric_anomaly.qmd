@@ -1,0 +1,6 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - Eccentric Anomaly
+[`eccentric_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:eccentric_anomaly_e_theta}  
+
+[`eccentric_anomaly_e_M`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:eccentric_anomaly_e_M}
+:::
