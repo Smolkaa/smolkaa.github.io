@@ -41,6 +41,8 @@ with a [local cartesian](/documentation/math_num_comp/coordinate_systems.qmd) ve
     \cos\azimuthAngle = \frac{\velocity_2}{\sqrt{\velocity_1^2+\velocity_2^2}}.
 \end{equation} 
 
+{{< include orbital_mechanics_functions/apirefs/_azimuth_angle.qmd >}}
+
 
 ### Ecccentric Anomaly
 
