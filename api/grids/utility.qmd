@@ -1,11 +1,16 @@
 ---
 title: "Utility"
-date-modified: last-modified
-author: "Alexander Smolka"
----
 ---
 
+::: {.hidden }
+# {{< meta title >}}
+:::
 
+---
+
+## Usage
+
+## API
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``areas`` -- Struct
@@ -31,7 +36,6 @@ end
 ```
 :::
 
-
 ::: {.callout-note appearance="simple" icon=false}
 # ``coord2idx`` -- Struct
 ```{julia}
@@ -44,7 +48,6 @@ end
 ```
 :::
 
-
 ::: {.callout-note appearance="simple" icon=false}
 # ``surfacecoords`` -- Struct
 ```{julia}
@@ -56,7 +59,6 @@ end
 @doc ExESS.surfacecoords
 ```
 :::
-
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``volume`` -- Struct

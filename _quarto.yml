@@ -63,9 +63,11 @@ website:
         - "---"
         - section: "Fundamentals"
           contents:
+            - documentation/fundamentals/introduction.qmd
             - documentation/fundamentals/moon.qmd
             - documentation/fundamentals/velocity_distributions.qmd
             - documentation/fundamentals/gravitational_potential.qmd
+            - documentation/fundamentals/density_projections.qmd
         - "---"
         - section: "Particle Trajectories"
           contents:
@@ -91,10 +93,14 @@ website:
             - api/base/constants.qmd
             - api/base/cs.qmd
             - api/base/distributions.qmd
+            - api/base/utility.qmd
         - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd
             - api/grids/utility.qmd
+        - section: "Exospheres"
+          contents:
+            - api/exospheres/orbital_mechanics.qmd
 
     - title: "Bibliography"
       contents:
@@ -109,7 +115,7 @@ format:
     css: _styles.css
     filters:
       - lightbox
-    highlight-style: github-dark
+    # highlight-style: github-dark
     grid:
       sidebar-width: 300px
       body-width: 1000px

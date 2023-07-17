@@ -19,11 +19,13 @@ ExESS
     └─ MaxwellBoltzmannFluxVelocityDistribution
 ```
 
-## Velocity Distributions
+## Usage 
+
+### Velocity Distributions
 
 For the theoretical description of the velocity distributions, please read the [documentation](/documentation/fundamentals/velocity_distributions.qmd).
 
-### Maxwell-Boltzmann Velocity Distribution
+## API
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``MaxwellBoltzmannVelocityDistribution`` -- Struct
@@ -36,9 +38,6 @@ end
 @doc ExESS.MaxwellBoltzmannVelocityDistribution
 ```
 :::
-
-### Maxwell-Boltzmann Flux Velocity Distribution
-
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``MaxwellBoltzmannFluxVelocityDistribution`` -- Struct

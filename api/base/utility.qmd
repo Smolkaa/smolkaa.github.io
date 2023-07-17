@@ -1,0 +1,49 @@
+---
+title: "Utility"
+---
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
+---
+
+## Usage
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``amu2kg`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.amu2kg
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``limit_acos`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.limit_acos
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``sgn`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.sgn
+```
+:::

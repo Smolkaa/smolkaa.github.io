@@ -8,6 +8,10 @@ title: "Constants"
 
 ---
 
+## Usage
+
+## API
+
 ::: {.callout-note appearance="simple" icon=false}
 # Base - Constants
 ```{julia}

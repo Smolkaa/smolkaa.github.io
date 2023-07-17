@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-07-12">
+<meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
+<meta name="dcterms.date" content="2023-07-17">
 
 <title>ExESS - Orbital Mechanics Functions</title>
 <style>
@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -216,6 +235,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../documentation/fundamentals/moon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Moon</span></a>
   </div>
@@ -230,6 +255,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../../documentation/fundamentals/gravitational_potential.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Gravitational Potential</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/density_projections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exospheric Density Projections</span></a>
   </div>
 </li>
       </ul>
@@ -315,27 +346,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Alexander Smolka <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-  </div>
-    <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Technical University of Munich
-          </p>
-      </div>
-    </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p></p><p>Alexander Smolka, <a href="mailto:a.smolka@tum.de"><code>a.smolka@tum.de</code></a> <br> Technical University of Munich</p> <p></p>
+          </div>
+  </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 12, 2023</p>
+      <p class="date">July 17, 2023</p>
     </div>
   </div>
   
@@ -354,20 +378,17 @@ ul.task-list li input[type="checkbox"] {
 <p>For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the <a href="../../documentation/fundamentals/gravitational_potential.html">Gravitational Potential</a> section.</p>
 <section id="orbital-parameters" class="level2">
 <h2 class="anchored" data-anchor-id="orbital-parameters">Orbital Parameters</h2>
-<p>The functions in Tab.~<span class="math inline">\(\ref{tab:om_functions}\)</span> derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation . While there are multiple ways of rewriting the functions in Tab.~<span class="math inline">\(\ref{tab:om_functions}\)</span>, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\in\mathbb{R}^3\)</span>, the mass of the planetary object <span class="math inline">\(m\in\mathbb{R}^+\)</span>, and the current radial position <span class="math inline">\(r\in\mathbb{R}^+\)</span>. Note that the velocity vector has to be provided in a coordinate system with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> being the components in the horizontal plane and <span class="math inline">\(v_3\)</span> being the vertical component, see Sec.~<span class="math inline">\(\ref{sec:coordinate_systems}\)</span> for more information. The physical parameters in Tab.~<span class="math inline">\(\ref{tab:om_functions}\)</span> are usually defined for all or all positive real numbers, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{R}^+\)</span>, with the exception of the azimuth and zenith angle, <span class="math inline">\(\alpha, \psi\in\left[-\pi, \pi\right)\)</span>, and the true anomaly, eccentric anomaly, and mean anomaly, <span class="math inline">\(\theta, E, M\in\left[0, 2\pi\right)\)</span>, respectively.</p>
-<p>Note that Eqs.~(<span class="math inline">\(\ref{eq:azimuth_angle_v}\)</span>) and (<span class="math inline">\(\ref{eq:eccentric_anomaly_e_theta}\)</span>) are defined using multiple cases, based on the input parameters, due to the periodicity of inverse trigonometric functions. Rewriting the equations to avoid the inverse cosine and tangents expressions leads to single-case definitions: <span class="math display">\[\begin{equation}
-    \cos\alpha= \frac{v_2}{\sqrt{v_1^2+v_2^2}}
-\end{equation}\]</span> and <span class="math display">\[\begin{equation}
-    \tan\left(E/2\right) = \sqrt{\frac{1-e}{1+e}} \cdot \tan\left(\theta/2\right).
-\end{equation}\]</span></p>
-<p>Every function in Tab.~<span class="math inline">\(\ref{tab:om_functions}\)</span> can be solved analytically, except for Eq.~(<span class="math inline">\(\ref{eq:eccentric_anomaly_e_M}\)</span>). This equation is the iterative solution of Kepler’s equation, based on the definition of the mean anomaly, see Eq.~(<span class="math inline">\(\ref{eq:mean_anomaly_e_E}\)</span>). Nonetheless, one can solve for the eccentric anomaly numerically using stationary iterative methods. The starting point <span class="math inline">\(E_0=M\)</span> given in the Table could also be substituted with <span class="math inline">\(E_0=0\)</span>, where <span class="math inline">\(E_1=M\)</span> leads to the same numerical solution after just one more iteration step.</p>
+<p>The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation <span class="citation" data-cites="Walter2018 Schoerghofer2022a">(<a href="#ref-Schoerghofer2022a" role="doc-biblioref">Schoerghofer, 2022</a>; <a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\in\mathbb{R}^3\)</span>, the mass of the planetary object <span class="math inline">\(m\in\mathbb{R}^+\)</span>, and the current radial position <span class="math inline">\(r\in\mathbb{R}^+\)</span>. Note that the velocity vector has to be provided in a <a href="../../documentation/math_num_comp/coordinate_systems.html">local cartesian coordinate system</a> with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> being the components in the horizontal plane and <span class="math inline">\(v_3\)</span> being the vertical component. The physical parameters are usually defined for all or all positive real numbers, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{R}^+\)</span>, with the exception of the azimuth and zenith angle, <span class="math inline">\(\alpha, \psi\in\left[-\pi, \pi\right)\)</span>, and the true anomaly, eccentric anomaly, and mean anomaly, <span class="math inline">\(\theta, E, M\in\left[0, 2\pi\right)\)</span>, respectively.</p>
+<p>Every function below can be solved analytically, except for Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_M}\)</span>. This equation is the iterative solution of Kepler’s equation, based on the definition of the mean anomaly, see Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span>. Nonetheless, one can solve for the eccentric anomaly numerically using stationary iterative methods. The starting point <span class="math inline">\(E_0=M\)</span> given in the Table could also be substituted with <span class="math inline">\(E_0=0\)</span>, where <span class="math inline">\(E_1=M\)</span> leads to the same numerical solution after just one more iteration step.</p>
 <section id="azimuth-angle" class="level3">
 <h3 class="anchored" data-anchor-id="azimuth-angle">Azimuth Angle</h3>
-<p><span class="math display">\[\begin{equation}
+<p>The azimuth angle <span class="math inline">\(\alpha\)</span> can be calculated using the following multi-case definition: <span class="math display">\[\begin{equation}
     \alpha\left(\boldsymbol{\mathbf{v}}\right) = \begin{cases}
         \cos^{-1}\left(v_2/\sqrt{v_1^2 + v_2^2}\right) &amp; \text{for } v_2\geq0\\
         -\cos^{-1}\left(v_2/\sqrt{v_1^2 + v_2^2}\right) &amp; \text{for } v_2&lt;0
     \end{cases} \label{eq:azimuth_angle_v}
+\end{equation}\]</span> with a <a href="../../documentation/math_num_comp/coordinate_systems.html">local cartesian</a> velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}= \left[v_1, v_2, v_3\right]^T\)</span>. The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression: <span class="math display">\[\begin{equation}
+    \cos\alpha= \frac{v_2}{\sqrt{v_1^2+v_2^2}}.
 \end{equation}\]</span></p>
 </section>
 <section id="ecccentric-anomaly" class="level3">
@@ -378,7 +399,9 @@ ul.task-list li input[type="checkbox"] {
         2 \tan^{-1}\left( \sqrt{\frac{1-e}{1+e}} \cdot \tan\left(\frac{\theta}{2}\right) \right) + 2\pi &amp; \text{for } \pi\leq\theta&lt;2\pi
     \end{cases}  \label{eq:eccentric_anomaly_e_theta} \\[3mm]
      E_{i+1}\left(e, M, E_i\right) &amp;= M+ e\sin E_i \quad\text{ with }\quad E_0 = M\label{eq:eccentric_anomaly_e_M}
-\end{align}\]</span></p>
+\end{align}\]</span> Similar to the azimuth angle before, Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span> can be rewritten as a single-case equation, avoiding the inverse tangent expression: <span class="math display">\[\begin{equation}
+    \tan\left(E/2\right) = \sqrt{\frac{1-e}{1+e}} \cdot \tan\left(\theta/2\right).
+\end{equation}\]</span></p>
 </section>
 <section id="eccentricity" class="level3">
 <h3 class="anchored" data-anchor-id="eccentricity">Eccentricity</h3>
@@ -454,10 +477,18 @@ ul.task-list li input[type="checkbox"] {
 \end{equation}\]</span></p>
 
 
+
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Schoerghofer2022a" class="csl-entry" role="listitem">
+Schoerghofer, N. (2022). <em><span class="nocase">Planetary-Code-Collection: Thermal, Ice Evolution, and Exosphere Models for Planetary Surfaces</span></em> (Version 1.2.0). <a href="https://doi.org/10.5281/zenodo.594268">https://doi.org/10.5281/zenodo.594268</a>
+</div>
+<div id="ref-Walter2018" class="csl-entry" role="listitem">
+Walter, U. (2018). <em><span class="nocase">Astronautics, The Physics of Space Flight</span></em> (3rd ed.). Springer Cham. <a href="https://doi.org/10.1007/978-3-319-74373-8">https://doi.org/10.1007/978-3-319-74373-8</a>
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
   title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
     {Simulations}},

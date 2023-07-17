@@ -1,9 +1,18 @@
 ---
-title: "Global Structured Two-Dimensional Grids"
-date-modified: last-modified
-author: "Alexander Smolka"
+title: "Global, Structured, Two-Dimensional Grids"
 ---
+
+::: {.hidden }
+# {{< meta title >}}
+:::
+
 ---
+
+## Type Structure
+
+## Usage
+
+## API
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``GlobalStructured2DGrid`` -- Struct
@@ -16,7 +25,6 @@ end
 @doc ExESS.GlobalStructured2DGrid
 ```
 :::
-
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``GlobalStructured2DGrid_EqSim`` -- Struct

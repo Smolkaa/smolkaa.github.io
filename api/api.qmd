@@ -2,6 +2,10 @@
 title: "Code"
 ---
 
+::: {.hidden }
+# {{< meta title >}}
+:::
+
 ---
 
 The `ExESS` package is structured into four main parts, which are the four main folders in the `/src` directory:

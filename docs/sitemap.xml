@@ -1,107 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smolkaa.github.io/manuals/package_installation/index.html</loc>
-    <lastmod>2023-07-13T14:12:52.410Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/manuals/git_workflow/index.html</loc>
-    <lastmod>2023-07-13T14:12:50.613Z</lastmod>
-  </url>
-  <url>
     <loc>https://smolkaa.github.io/index.html</loc>
-    <lastmod>2023-07-14T04:57:27.771Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/trajectories/2d_landing_position.html</loc>
-    <lastmod>2023-07-13T14:12:46.165Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/math_num_comp/statistics.html</loc>
-    <lastmod>2023-07-13T14:12:43.805Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/math_num_comp/coordinate_systems.html</loc>
-    <lastmod>2023-07-13T14:12:38.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions.html</loc>
-    <lastmod>2023-07-14T04:57:27.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbd_typical_speeds/raw_mbd_typical_speeds.html</loc>
-    <lastmod>2023-07-13T14:12:31.978Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/fundamentals/gravitational_potential.html</loc>
-    <lastmod>2023-07-13T14:12:26.053Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/documentation/acronyms.html</loc>
-    <lastmod>2023-07-13T14:12:23.739Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/grids/utility.html</loc>
-    <lastmod>2023-07-13T14:12:22.004Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/base/distributions.html</loc>
-    <lastmod>2023-07-13T14:12:17.421Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/base/constants.html</loc>
-    <lastmod>2023-07-13T14:12:12.794Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/api.html</loc>
-    <lastmod>2023-07-13T14:12:09.377Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/base/cs.html</loc>
-    <lastmod>2023-07-13T14:12:15.083Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smolkaa.github.io/api/grids/global_structured_2d_grids.html</loc>
-    <lastmod>2023-07-13T14:12:19.708Z</lastmod>
+    <lastmod>2023-07-17T05:38:02.073Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/bibliography/bibliography.html</loc>
-    <lastmod>2023-07-13T14:12:22.730Z</lastmod>
+    <lastmod>2023-07-17T05:38:01.381Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/documentation/documentation.html</loc>
-    <lastmod>2023-07-13T14:12:24.721Z</lastmod>
+    <loc>https://smolkaa.github.io/manuals/git_workflow/index.html</loc>
+    <lastmod>2023-07-17T05:38:00.725Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/documentation/fundamentals/moon.html</loc>
-    <lastmod>2023-07-13T14:12:30.655Z</lastmod>
+    <loc>https://smolkaa.github.io/api/api.html</loc>
+    <lastmod>2023-07-17T05:37:59.309Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.html</loc>
-    <lastmod>2023-07-13T14:12:33.112Z</lastmod>
+    <loc>https://smolkaa.github.io/api/grids/global_structured_2d_grids.html</loc>
+    <lastmod>2023-07-17T05:37:57.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/base/constants.html</loc>
+    <lastmod>2023-07-17T05:37:54.521Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/base/distributions.html</loc>
+    <lastmod>2023-07-17T05:37:51.993Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/introduction.html</loc>
-    <lastmod>2023-07-13T14:12:37.520Z</lastmod>
+    <lastmod>2023-07-17T05:37:49.081Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/documentation/math_num_comp/numerical_grids.html</loc>
-    <lastmod>2023-07-13T14:12:42.751Z</lastmod>
+    <loc>https://smolkaa.github.io/documentation/documentation.html</loc>
+    <lastmod>2023-07-17T05:37:47.621Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/documentation/planetary_measurements/lunar_exosphere_densities.html</loc>
-    <lastmod>2023-07-14T08:03:51.886Z</lastmod>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/introduction.html</loc>
+    <lastmod>2023-07-17T05:37:44.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/density_projections.html</loc>
+    <lastmod>2023-07-17T05:37:41.269Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbd_typical_speeds/raw_mbd_typical_speeds.html</loc>
+    <lastmod>2023-07-17T05:37:40.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/acronyms.html</loc>
+    <lastmod>2023-07-17T05:37:39.005Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/documentation/trajectories/orbital_mechanics_functions.html</loc>
-    <lastmod>2023-07-13T14:12:47.508Z</lastmod>
+    <lastmod>2023-07-17T05:37:38.017Z</lastmod>
   </url>
   <url>
-    <loc>https://smolkaa.github.io/LICENSE.html</loc>
-    <lastmod>2023-07-13T14:12:49.232Z</lastmod>
+    <loc>https://smolkaa.github.io/documentation/math_num_comp/numerical_grids.html</loc>
+    <lastmod>2023-07-17T05:37:36.861Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/math_num_comp/coordinate_systems.html</loc>
+    <lastmod>2023-07-17T05:37:34.309Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/math_num_comp/statistics.html</loc>
+    <lastmod>2023-07-17T05:37:37.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/trajectories/2d_landing_position.html</loc>
+    <lastmod>2023-07-17T05:37:38.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.html</loc>
+    <lastmod>2023-07-17T05:37:39.569Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/gravitational_potential.html</loc>
+    <lastmod>2023-07-17T05:37:40.665Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/velocity_distributions.html</loc>
+    <lastmod>2023-07-17T05:37:43.717Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/fundamentals/moon.html</loc>
+    <lastmod>2023-07-17T05:37:47.249Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/documentation/planetary_measurements/lunar_exosphere_densities.html</loc>
+    <lastmod>2023-07-17T05:37:48.525Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/base/cs.html</loc>
+    <lastmod>2023-07-17T05:37:50.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/base/utility.html</loc>
+    <lastmod>2023-07-17T05:37:53.241Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/exospheres/orbital_mechanics.html</loc>
+    <lastmod>2023-07-17T05:37:56.465Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/api/grids/utility.html</loc>
+    <lastmod>2023-07-17T05:37:58.917Z</lastmod>
   </url>
   <url>
     <loc>https://smolkaa.github.io/manuals/manuals.html</loc>
-    <lastmod>2023-07-13T14:12:51.544Z</lastmod>
+    <lastmod>2023-07-17T05:37:59.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/manuals/package_installation/index.html</loc>
+    <lastmod>2023-07-17T05:38:01.073Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smolkaa.github.io/LICENSE.html</loc>
+    <lastmod>2023-07-17T05:38:01.717Z</lastmod>
   </url>
 </urlset>
