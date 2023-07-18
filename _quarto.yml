@@ -44,13 +44,11 @@ website:
       pinned: true
       style: "floating"
       contents:
-        - "---"
         - text: "Home"
           href: index.qmd
 
     - title: "Documentation"
       contents:
-        - "---"
         - text: "Home"
           href: documentation/documentation.qmd
         - documentation/acronyms.qmd
@@ -83,7 +81,6 @@ website:
 
     - title: "Manuals"
       contents:
-        - "---"
         - manuals/manuals.qmd
         - "---"
         - section: "Exercises"
@@ -107,7 +104,6 @@ website:
 
     - title: "Code"
       contents:
-        - "---"
         - text: "Home"
           href: api/api.qmd
         - section: "Base"
@@ -126,7 +122,6 @@ website:
 
     - title: "Bibliography"
       contents:
-        - "---"
         - text: "Overview"
           href: bibliography/bibliography.qmd
 
