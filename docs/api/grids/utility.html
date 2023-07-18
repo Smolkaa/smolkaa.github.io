@@ -92,9 +92,6 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../resources/logo/exess_logo.svg" alt="" class="navbar-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ExESS</span>
     </a>
@@ -106,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
@@ -118,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-solid fa-book-open-reader" aria-label="book-open-reader"></i> Manuals</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../api/api.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../api/api.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
   </li>  
   <li class="nav-item">
@@ -153,8 +150,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../api/api.html" class="sidebar-item-text sidebar-link">
@@ -303,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] areas([T::Type,] grid::AbstractGrid)</code></pre>
 <p>For 2D grids, returns the surface area of each grid element. For 3D grids, returns the base area of each grid element.</p>
@@ -321,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] coords([T::Type,] grid::AbstractGrid)</code></pre>
 <p>Returns the coordinates of each grid element.</p>
@@ -339,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] coord2idx(grid::AbstractGlobalGrid, [r::Real,] theta::Real, phi::Real)
 [2] coord2idx(grid::AbstractGlobalGrid, [r::AbstractVector,] theta::AbstractVector, phi::AbstractVector)
@@ -360,7 +363,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[1] surfacecoords([T::Type,] grid::AbstractGrid)</code></pre>
 <p>Returns only the coordinates of the surface (i.e.&nbsp;the base) of the discretized geometry.</p>
@@ -378,7 +381,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>[1] volumes([T::Type,] grid::AbstractGrid)</code></pre>
 <p>For 2D grids, returns a vector of <code>zeros(T)</code> for each grid element. For 3D grids, returns the volume of each grid element.</p>

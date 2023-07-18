@@ -19,7 +19,7 @@ website:
   navbar:
     background: light
     pinned: true
-    logo: /resources/logo/exess_logo.svg
+    # logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
     left:
       - text: "{{< fa house >}} Home"
@@ -39,15 +39,18 @@ website:
   sidebar:
     - title: "Home"
       border: true
+      logo: /resources/logo/exess_logo.svg
       collapse-level: 2
       pinned: true
       style: "floating"
       contents:
+        - "---"
         - text: "Home"
           href: index.qmd
 
     - title: "Documentation"
       contents:
+        - "---"
         - text: "Home"
           href: documentation/documentation.qmd
         - documentation/acronyms.qmd
@@ -80,6 +83,7 @@ website:
 
     - title: "Manuals"
       contents:
+        - "---"
         - manuals/manuals.qmd
         - "---"
         - section: "Exercises"
@@ -103,6 +107,7 @@ website:
 
     - title: "Code"
       contents:
+        - "---"
         - text: "Home"
           href: api/api.qmd
         - section: "Base"
@@ -121,6 +126,7 @@ website:
 
     - title: "Bibliography"
       contents:
+        - "---"
         - text: "Overview"
           href: bibliography/bibliography.qmd
 

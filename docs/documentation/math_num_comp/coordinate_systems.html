@@ -130,9 +130,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../resources/logo/exess_logo.svg" alt="" class="navbar-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ExESS</span>
     </a>
@@ -144,11 +141,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../documentation/documentation.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../documentation/documentation.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
   </li>  
   <li class="nav-item">
@@ -191,8 +188,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
@@ -576,7 +579,7 @@ Derivation of spherical Laplace operator.
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p><a href="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../..\img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></a></p>
 </figure>
 </div>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
@@ -1004,7 +1007,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 

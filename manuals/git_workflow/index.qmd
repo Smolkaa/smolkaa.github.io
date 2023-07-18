@@ -9,8 +9,6 @@ categories:
   - On-Boarding
 ---
 
-[{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)
-
 ::: {.hidden }
 # {{< meta title >}}
 :::

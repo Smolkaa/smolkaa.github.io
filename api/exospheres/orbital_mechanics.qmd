@@ -407,3 +407,16 @@ end
 @doc ExESS.zenith_angle_v
 ```
 :::
+
+
+## Test
+
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+using Test
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "test", "tests", "exospheres", "orbital_mechanics.jl"));
+```

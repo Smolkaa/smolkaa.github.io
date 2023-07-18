@@ -1,8 +1,8 @@
 /* css styles */
 
-.navbar-logo {
-    width: 70px;
-    scale: 1.5;
+.sidebar-logo {
+  max-width: 80%;
+  padding-left: 15%;
 }
 
 .nav-item {

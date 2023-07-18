@@ -10,9 +10,6 @@ categories:
 tbl-colwidths: [10,20,10,20,10,20]
 ---
 
-[{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)
-
-
 ::: {.hidden }
 # {{< meta title >}}
 :::
@@ -42,8 +39,6 @@ You can use the `mod` function to compute the remainder of the division of two i
 
 
 ## Solution
-
-You solved the problem? Great! To see one possible solution, compute the last digits for `n = [87883, 22078, 65144, 42513, 99380, 98764]` and append these digits in the given order to your browser's URL, add `.html` and hit {{< kbd Enter >}}.
 
 ::: {.callout-note collapse="true" appearance="simple"}
 # Values
