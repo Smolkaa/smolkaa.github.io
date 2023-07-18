@@ -2,8 +2,9 @@
   {
     "listing": "/manuals/manuals.html",
     "items": [
-      "/manuals/git_workflow/index.html",
-      "/manuals/package_installation/index.html"
+      "/manuals/package_installation/index.html",
+      "/manuals/exercise_fibonacci/index.html",
+      "/manuals/git_workflow/index.html"
     ]
   }
 ]

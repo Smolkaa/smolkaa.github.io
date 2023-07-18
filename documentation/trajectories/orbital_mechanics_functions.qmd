@@ -28,7 +28,6 @@ Every function below can be solved analytically, except for Eq. \eqref{eq:eccent
 
 
 ### Azimuth Angle -- $\azimuthAngle$
-
 The azimuth angle $\azimuthAngle$ can be calculated using the following multi-case definition:
 \begin{equation}
     \azimuthAngle\left(\vec\velocity \right) = \begin{cases}
@@ -45,7 +44,6 @@ with a [local cartesian](/documentation/math_num_comp/coordinate_systems.qmd) ve
 
 
 ### Ecccentric Anomaly -- $\eccentricAnomaly$
-
 \begin{align}
     \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right) &= \begin{cases}
         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) & \text{for } 0\leq\trueAnomaly<\pi\\
@@ -61,8 +59,7 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 {{< include orbital_mechanics_functions/apirefs/_eccentric_anomaly.qmd >}}
 
 
-### Eccentricity
-
+### Eccentricity -- $\eccentricity$
 \begin{align}
     \eccentricity\left(\relativeKineticEnergy, \zenithAngle\right) &= \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenithAngle}  \label{eq:eccentricity_epskin_psi} \\
     \eccentricity\left(\semiMajorAxis, \semiLatusRectum\right) &= \sqrt{1 - \frac{\semiLatusRectum}{\semiMajorAxis}}  \label{eq:eccentricity_a_p} \\
@@ -73,57 +70,65 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 {{< include orbital_mechanics_functions/apirefs/_eccentricity.qmd >}}
 
 
-
-### Escape Velocity
-
+### Escape Velocity -- $\velocity_{esc}$
 \begin{equation}
     \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity_r_m}
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_escape_velocity.qmd >}}
 
-### Ground Track Distance  
+
+### Ground Track Distance -- $\distance$ 
 \begin{equation}
     \distance\left(\radius, \Delta\trueAnomaly\right) = \radius \cdot \Delta\trueAnomaly  \label{eq:ground_track_distance_r_dtheta}
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_ground_track_distance.qmd >}}
 
-### Mean Anomaly  
+
+### Mean Anomaly  -- $\meanAnomaly$
 \begin{equation}
     \meanAnomaly\left(\eccentricity, \eccentricAnomaly\right) = \eccentricAnomaly - \eccentricity\sin \eccentricAnomaly  \label{eq:mean_anomaly_e_E}
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_mean_anomaly.qmd >}}
 
-### Orbital Period  
+
+### Orbit Period -- $\period$
 \begin{equation}
-    \period\left(\semiMajorAxis, \mass\right) = 2\pi\sqrt{\frac{\semiMajorAxis^3}{\GravitationalConstant \mass}}  \label{eq:orbital_period_a_m}
+    \period\left(\semiMajorAxis, \mass\right) = 2\pi\sqrt{\frac{\semiMajorAxis^3}{\GravitationalConstant \mass}}  \label{eq:orbit_period_a_m}
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_orbit_period.qmd >}}
 
-### Orbit Time  
+
+### Orbit Time -- $\Time$
 \begin{equation}
     \Time\left(\meanAnomaly, \period\right) = \frac{\meanAnomaly}{2\pi} \cdot \period  \label{eq:orbit_time_M_P}
 \end{equation}
 
+{{< include orbital_mechanics_functions/apirefs/_orbit_time.qmd >}}
 
-### Relative Kinetic Energy 
+
+### Relative Kinetic Energy -- $\relativeKineticEnergy$
 \begin{align}
     \relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right) &= \left(\frac{|\vec\velocity|}{\velocity_{esc}}\right)^2  \label{eq:relative_Ekin_v_vesc} \\
     \relativeKineticEnergy\left(\eccentricity, \trueAnomaly\right) &= 1 - \frac{1 - \eccentricity^2}{2 + 2\eccentricity\cos\left(\trueAnomaly\right)}  \label{eq:relative_Ekin_e_theta}
 \end{align}
 
-### Semi-Latus Rectum
+### Semi-Latus Rectum -- $\semiLatusRectum$
 \begin{align}
     \semiLatusRectum\left(\semiMajorAxis, \eccentricity\right) &= \semiMajorAxis \cdot (1 - \eccentricity^2)  \label{eq:semi_latus_rectum_a_e} \\
     \semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right) &= \radius \cdot \left(1 + \eccentricity \cdot \cos \trueAnomaly\right)  \label{eq:semi_latus_rectum_r_e_theta}
 \end{align}
 
-### Semi-Major Axis
+### Semi-Major Axis -- $\semiMajorAxis$
 \begin{align}
     \semiMajorAxis\left(\radius, \relativeKineticEnergy\right) &= \frac{\radius}{2 \cdot \left(1 - \relativeKineticEnergy \right)}  \label{eq:semi_major_axis_r_epskin} \\
     \semiMajorAxis\left(\semiLatusRectum, \eccentricity\right) &= \frac{\semiLatusRectum}{1 - \eccentricity^2}  \label{eq:semi_major_axis_p_e}
 \end{align}
 
-### True Anomaly
+### True Anomaly -- $\trueAnomaly$
 \begin{align}
     \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{\semiMajorAxis}{\radius} \left( 1 - \eccentricity^2 \right) -1 \right)\right)  \label{eq:true_anomaly_r_a_e} \\
     \trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{1 - \eccentricity^2}{2-2 \relativeKineticEnergy} -1 \right)\right)  \label{eq:true_anomaly_e_epskin}

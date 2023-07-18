@@ -1,14 +1,20 @@
 ---
 title: "Manuals"
 listing:
+  # categories: true
   contents:
     - "*/*.qmd"
-  sort: "title asc"
+  fields: [image, title, description, author, date]
   type: table
-  categories: true
+  table-hover: true
+  image-height: 50px
+  sort: "title asc"
+  
 page-navigation: true
-date-modified: last-modified
-author: "Alexander Smolka"
 ---
+
+::: {.hidden }
+# {{< meta title >}}
+:::
 
 ---

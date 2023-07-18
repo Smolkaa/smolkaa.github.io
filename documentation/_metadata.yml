@@ -8,7 +8,6 @@ format:
         email: a.smolka@tum.de
         # orcid: 0000-0002-4848-3473
         # affiliation: Technical University of Munich
-        roles: something
     citation:
       author: Alexander Smolka
       title: ExESS - Extraterrestrial Exosphere and Surface Simulations

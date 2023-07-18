@@ -1,0 +1,6 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - Mean Anomaly
+[`mean_anomaly_e_E`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:mean_anomaly_e_E}  
+
+[`mean_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:mean_anomaly_e_E} with $\eccentricAnomaly=\eccentricAnomaly(\eccentricity, \trueAnomaly)$ from Eq. \eqref{eq:eccentric_anomaly_e_theta}
+:::

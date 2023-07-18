@@ -1,14 +1,19 @@
 ---
-title: "DRAFT! Git Workflow"
+title: "Git Workflow"
+description: "Git, On-Boarding"
+image: Git-Icon-Black.png
 author: Alexander Smolka
-date-modified: last-modified
-page-layout: full
+date: 05 07 23
 categories:
   - Git
   - On-Boarding
 ---
 
 [{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)
+
+::: {.hidden }
+# {{< meta title >}}
+:::
 
 ---
 

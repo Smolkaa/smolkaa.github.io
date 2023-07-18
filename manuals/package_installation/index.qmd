@@ -1,14 +1,19 @@
 ---
 title: "ExESS Package Installation"
+description: "Julia, On-Boarding"
+image: exess_logo.png
 author: Alexander Smolka
-date-modified: last-modified
-page-layout: full
+date: 17 07 23
 categories:
   - Julia
   - On-Boarding
 ---
 
 [{{< fa arrow-left >}} Manuals](/manuals/manuals.qmd)
+
+::: {.hidden }
+# {{< meta title >}}
+:::
 
 ---
 

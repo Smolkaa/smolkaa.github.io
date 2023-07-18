@@ -8,7 +8,6 @@ bibliography: "../asmolka_library/main.bib"
 csl: _apa.csl
 
 website:
-  back-to-top-navigation: true
   site-url: https://smolkaa.github.io
   title: "ExESS"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
@@ -81,8 +80,26 @@ website:
 
     - title: "Manuals"
       contents:
-        - text: "Overview"
-          href: manuals/manuals.qmd
+        - manuals/manuals.qmd
+        - "---"
+        - section: "Exercises"
+          contents:
+            - manuals/exercise_fibonacci/index.qmd
+        - "---"
+        - section: "Git"
+          contents:
+            - manuals/git_workflow/index.qmd
+        - "---"
+        - section: "Julia"
+          contents:
+            - manuals/package_installation/index.qmd
+            - manuals/exercise_fibonacci/index.qmd
+        - "---"
+        - section: "On-Boarding"
+          contents:
+            - manuals/git_workflow/index.qmd
+            - manuals/package_installation/index.qmd
+
 
     - title: "Code"
       contents:
