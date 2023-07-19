@@ -1,7 +1,7 @@
 ::: {.callout-tip collapse="true"}
 # ExESS API - Ground Track Distance
-[`ground_distance_R_dtheta`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:ground_track_distance_r_dtheta}  
+[`ground_distance_R_dtheta`](/api/exospheres/orbital_mechanics.qmd): $\distance\left(\radius, \trueAnomaly\right)$: Eq. \eqref{eq:ground_track_distance_r_dtheta}  
 
-[`ground_distance_R_a_e`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:ground_track_distance_r_dtheta} with $\Delta\trueAnomaly = 2\pi - 2\trueAnomaly$ and $\trueAnomaly = \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right)$ of Eq. \eqref{eq:true_anomaly_r_a_e}
+[`ground_distance_R_a_e`](/api/exospheres/orbital_mechanics.qmd): $\distance\left(\radius, \semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:ground_track_distance_r_dtheta} with $\Delta\trueAnomaly = 2\pi - 2\trueAnomaly$ and $\trueAnomaly = \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right)$ of Eq. \eqref{eq:true_anomaly_r_a_e}
 
 :::

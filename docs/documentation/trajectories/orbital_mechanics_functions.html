@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-18">
+<meta name="dcterms.date" content="2023-07-19">
 
 <title>ExESS - Orbital Mechanics Functions</title>
 <style>
@@ -322,19 +322,19 @@ div.csl-indent {
   <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Orbital Mechanics Functions</a></li>
   <li><a href="#orbital-parameters" id="toc-orbital-parameters" class="nav-link" data-scroll-target="#orbital-parameters">Orbital Parameters</a>
   <ul class="collapse">
-  <li><a href="#azimuth-angle-alpha" id="toc-azimuth-angle-alpha" class="nav-link" data-scroll-target="#azimuth-angle-alpha">Azimuth Angle – <span class="math inline">\(\alpha\)</span></a></li>
-  <li><a href="#ecccentric-anomaly-e" id="toc-ecccentric-anomaly-e" class="nav-link" data-scroll-target="#ecccentric-anomaly-e">Ecccentric Anomaly – <span class="math inline">\(E\)</span></a></li>
-  <li><a href="#eccentricity-e" id="toc-eccentricity-e" class="nav-link" data-scroll-target="#eccentricity-e">Eccentricity – <span class="math inline">\(e\)</span></a></li>
-  <li><a href="#escape-velocity-v_esc" id="toc-escape-velocity-v_esc" class="nav-link" data-scroll-target="#escape-velocity-v_esc">Escape Velocity – <span class="math inline">\(v_{esc}\)</span></a></li>
-  <li><a href="#ground-track-distance-d" id="toc-ground-track-distance-d" class="nav-link" data-scroll-target="#ground-track-distance-d">Ground Track Distance – <span class="math inline">\(d\)</span></a></li>
-  <li><a href="#mean-anomaly-m" id="toc-mean-anomaly-m" class="nav-link" data-scroll-target="#mean-anomaly-m">Mean Anomaly – <span class="math inline">\(M\)</span></a></li>
-  <li><a href="#orbit-period-p" id="toc-orbit-period-p" class="nav-link" data-scroll-target="#orbit-period-p">Orbit Period – <span class="math inline">\(P\)</span></a></li>
-  <li><a href="#orbit-time-t" id="toc-orbit-time-t" class="nav-link" data-scroll-target="#orbit-time-t">Orbit Time – <span class="math inline">\(t\)</span></a></li>
-  <li><a href="#relative-kinetic-energy-epsilon_kin" id="toc-relative-kinetic-energy-epsilon_kin" class="nav-link" data-scroll-target="#relative-kinetic-energy-epsilon_kin">Relative Kinetic Energy – <span class="math inline">\(\epsilon_{kin}\)</span></a></li>
-  <li><a href="#semi-latus-rectum-p" id="toc-semi-latus-rectum-p" class="nav-link" data-scroll-target="#semi-latus-rectum-p">Semi-Latus Rectum – <span class="math inline">\(p\)</span></a></li>
-  <li><a href="#semi-major-axis-a" id="toc-semi-major-axis-a" class="nav-link" data-scroll-target="#semi-major-axis-a">Semi-Major Axis – <span class="math inline">\(a\)</span></a></li>
-  <li><a href="#true-anomaly-theta" id="toc-true-anomaly-theta" class="nav-link" data-scroll-target="#true-anomaly-theta">True Anomaly – <span class="math inline">\(\theta\)</span></a></li>
-  <li><a href="#zenith-angle-psi" id="toc-zenith-angle-psi" class="nav-link" data-scroll-target="#zenith-angle-psi">Zenith Angle – <span class="math inline">\(\psi\)</span></a></li>
+  <li><a href="#sec-azimuth-angle" id="toc-sec-azimuth-angle" class="nav-link" data-scroll-target="#sec-azimuth-angle">Azimuth Angle – <span class="math inline">\(\vartheta\)</span></a></li>
+  <li><a href="#sec-eccentric-anomaly" id="toc-sec-eccentric-anomaly" class="nav-link" data-scroll-target="#sec-eccentric-anomaly">Ecccentric Anomaly – <span class="math inline">\(E\)</span></a></li>
+  <li><a href="#sec-eccentricity" id="toc-sec-eccentricity" class="nav-link" data-scroll-target="#sec-eccentricity">Eccentricity – <span class="math inline">\(e\)</span></a></li>
+  <li><a href="#sec-escape-velocity" id="toc-sec-escape-velocity" class="nav-link" data-scroll-target="#sec-escape-velocity">Escape Velocity – <span class="math inline">\(v_{esc}\)</span></a></li>
+  <li><a href="#sec-ground-track-distance" id="toc-sec-ground-track-distance" class="nav-link" data-scroll-target="#sec-ground-track-distance">Ground Track Distance – <span class="math inline">\(d\)</span></a></li>
+  <li><a href="#sec-mean-anomaly" id="toc-sec-mean-anomaly" class="nav-link" data-scroll-target="#sec-mean-anomaly">Mean Anomaly – <span class="math inline">\(M\)</span></a></li>
+  <li><a href="#sec-orbit-period" id="toc-sec-orbit-period" class="nav-link" data-scroll-target="#sec-orbit-period">Orbit Period – <span class="math inline">\(P\)</span></a></li>
+  <li><a href="#orbit-time-t-sec-orbit-time" id="toc-orbit-time-t-sec-orbit-time" class="nav-link" data-scroll-target="#orbit-time-t-sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span> {sec-orbit-time}</a></li>
+  <li><a href="#sec-relative-kinetic-energy" id="toc-sec-relative-kinetic-energy" class="nav-link" data-scroll-target="#sec-relative-kinetic-energy">Relative Kinetic Energy – <span class="math inline">\(\epsilon_{kin}\)</span></a></li>
+  <li><a href="#sec-semi-latus-rectum" id="toc-sec-semi-latus-rectum" class="nav-link" data-scroll-target="#sec-semi-latus-rectum">Semi-Latus Rectum – <span class="math inline">\(p\)</span></a></li>
+  <li><a href="#sec-semi-major-axis" id="toc-sec-semi-major-axis" class="nav-link" data-scroll-target="#sec-semi-major-axis">Semi-Major Axis – <span class="math inline">\(a\)</span></a></li>
+  <li><a href="#sec-true-anomaly" id="toc-sec-true-anomaly" class="nav-link" data-scroll-target="#sec-true-anomaly">True Anomaly – <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#sec-zenith-angle" id="toc-sec-zenith-angle" class="nav-link" data-scroll-target="#sec-zenith-angle">Zenith Angle – <span class="math inline">\(\psi\)</span></a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/trajectories/orbital_mechanics_functions.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -361,7 +361,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 18, 2023</p>
+      <p class="date">July 19, 2023</p>
     </div>
   </div>
   
@@ -380,17 +380,17 @@ div.csl-indent {
 <p>For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the <a href="../../documentation/fundamentals/gravitational_potential.html">Gravitational Potential</a> section.</p>
 <section id="orbital-parameters" class="level2">
 <h2 class="anchored" data-anchor-id="orbital-parameters">Orbital Parameters</h2>
-<p>The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation <span class="citation" data-cites="Walter2018 Schoerghofer2022a">(<a href="#ref-Schoerghofer2022a" role="doc-biblioref">Schoerghofer, 2022</a>; <a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\in\mathbb{R}^3\)</span>, the mass of the planetary object <span class="math inline">\(m\in\mathbb{R}^+\)</span>, and the current radial position <span class="math inline">\(r\in\mathbb{R}^+\)</span>. Note that the velocity vector has to be provided in a <a href="../../documentation/math_num_comp/coordinate_systems.html">local cartesian coordinate system</a> with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> being the components in the horizontal plane and <span class="math inline">\(v_3\)</span> being the vertical component. The physical parameters are usually defined for all or all positive real numbers, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{R}^+\)</span>, with the exception of the azimuth and zenith angle, <span class="math inline">\(\alpha, \psi\in\left[-\pi, \pi\right)\)</span>, and the true anomaly, eccentric anomaly, and mean anomaly, <span class="math inline">\(\theta, E, M\in\left[0, 2\pi\right)\)</span>, respectively.</p>
+<p>The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation <span class="citation" data-cites="Walter2018 Schoerghofer2022a">(<a href="#ref-Schoerghofer2022a" role="doc-biblioref">Schoerghofer, 2022</a>; <a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\in\mathbb{R}^3\)</span>, the mass of the planetary object <span class="math inline">\(m\in\mathbb{R}^+\)</span>, and the current radial position <span class="math inline">\(r\in\mathbb{R}^+\)</span>. Note that the velocity vector has to be provided in a <a href="../../documentation/math_num_comp/coordinate_systems.html">local cartesian coordinate system</a> with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> being the components in the horizontal plane and <span class="math inline">\(v_3\)</span> being the vertical component. The physical parameters are usually defined for all or all positive real numbers, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{R}^+\)</span>, with the exception of the azimuth and zenith angle, <span class="math inline">\(\vartheta, \psi\in\left[-\pi, \pi\right)\)</span>, and the true anomaly, eccentric anomaly, and mean anomaly, <span class="math inline">\(\theta, E, M\in\left[0, 2\pi\right)\)</span>, respectively.</p>
 <p>Every function below can be solved analytically, except for Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_M}\)</span>. This equation is the iterative solution of Kepler’s equation, based on the definition of the mean anomaly, see Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span>. Nonetheless, one can solve for the eccentric anomaly numerically using stationary iterative methods. The starting point <span class="math inline">\(E_0=M\)</span> given in the Table could also be substituted with <span class="math inline">\(E_0=0\)</span>, where <span class="math inline">\(E_1=M\)</span> leads to the same numerical solution after just one more iteration step.</p>
-<section id="azimuth-angle-alpha" class="level3">
-<h3 class="anchored" data-anchor-id="azimuth-angle-alpha">Azimuth Angle – <span class="math inline">\(\alpha\)</span></h3>
-<p>The azimuth angle <span class="math inline">\(\alpha\)</span> can be calculated using the following multi-case definition: <span class="math display">\[\begin{equation}
-    \alpha\left(\boldsymbol{\mathbf{v}}\right) = \begin{cases}
+<section id="sec-azimuth-angle" class="level3">
+<h3 class="anchored" data-anchor-id="sec-azimuth-angle">Azimuth Angle – <span class="math inline">\(\vartheta\)</span></h3>
+<p>The azimuth angle <span class="math inline">\(\vartheta\)</span> can be calculated using the following multi-case definition: <span class="math display">\[\begin{equation}
+    \vartheta\left(\boldsymbol{\mathbf{v}}\right) = \begin{cases}
         \cos^{-1}\left(v_2/\sqrt{v_1^2 + v_2^2}\right) &amp; \text{for } v_2\geq0\\
         -\cos^{-1}\left(v_2/\sqrt{v_1^2 + v_2^2}\right) &amp; \text{for } v_2&lt;0
     \end{cases} \label{eq:azimuth_angle_v}
 \end{equation}\]</span> with a <a href="../../documentation/math_num_comp/coordinate_systems.html">local cartesian</a> velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}= \left[v_1, v_2, v_3\right]^T\)</span>. The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression: <span class="math display">\[\begin{equation}
-    \cos\alpha= \frac{v_2}{\sqrt{v_1^2+v_2^2}}.
+    \cos\vartheta= \frac{v_2}{\sqrt{v_1^2+v_2^2}}.
 \end{equation}\]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -404,13 +404,13 @@ ExESS API - Azimuth Angle
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>azimuth_angle_v</code></a>: Eq. <span class="math inline">\(\eqref{eq:azimuth_angle_v}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>azimuth_angle_v</code></a>: <span class="math inline">\(\vartheta\left(\boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:azimuth_angle_v}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="ecccentric-anomaly-e" class="level3">
-<h3 class="anchored" data-anchor-id="ecccentric-anomaly-e">Ecccentric Anomaly – <span class="math inline">\(E\)</span></h3>
+<section id="sec-eccentric-anomaly" class="level3">
+<h3 class="anchored" data-anchor-id="sec-eccentric-anomaly">Ecccentric Anomaly – <span class="math inline">\(E\)</span></h3>
 <p><span class="math display">\[\begin{align}
     E\left(e, \theta\right) &amp;= \begin{cases}
         2 \tan^{-1}\left( \sqrt{\frac{1-e}{1+e}} \cdot \tan\left(\frac{\theta}{2}\right) \right) &amp; \text{for } 0\leq\theta&lt;\pi\\
@@ -432,14 +432,14 @@ ExESS API - Eccentric Anomaly
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentric_anomaly_e_theta</code></a>: Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentric_anomaly_e_M</code></a>: Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_M}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentric_anomaly_e_theta</code></a>: <span class="math inline">\(E\left(e, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentric_anomaly_e_M</code></a>: <span class="math inline">\(E\left(e, M\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_M}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="eccentricity-e" class="level3">
-<h3 class="anchored" data-anchor-id="eccentricity-e">Eccentricity – <span class="math inline">\(e\)</span></h3>
+<section id="sec-eccentricity" class="level3">
+<h3 class="anchored" data-anchor-id="sec-eccentricity">Eccentricity – <span class="math inline">\(e\)</span></h3>
 <p><span class="math display">\[\begin{align}
     e\left(\epsilon_{kin}, \psi\right) &amp;= \sqrt{1 - 4 \epsilon_{kin}\cdot (1 - \epsilon_{kin}) \cdot \sin^2 \psi}  \label{eq:eccentricity_epskin_psi} \\
     e\left(a, p\right) &amp;= \sqrt{1 - \frac{p}{a}}  \label{eq:eccentricity_a_p} \\
@@ -458,15 +458,15 @@ ExESS API - Eccentricity
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_epskin_psi</code></a>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_epskin_v</code></a>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span> with <span class="math inline">\(v=v(\psi)\)</span> from Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_r_m_v</code></a>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span> with <span class="math inline">\(\epsilon_{kin}=\epsilon_{kin}\left(v_{esc}(r,m),v\right)\)</span> from Eqs. <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span> and <span class="math inline">\(\eqref{eq:relative_Ekin_v_vesc}\)</span>, and with <span class="math inline">\(v=v(\psi)\)</span> from Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_epskin_psi</code></a>: <span class="math inline">\(e\left(\epsilon_{kin}, \psi\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_epskin_v</code></a>: <span class="math inline">\(e\left(\epsilon_{kin}, \boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span> with <span class="math inline">\(v=v(\psi)\)</span> from Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>eccentricity_r_m_v</code></a>: <span class="math inline">\(e\left(r, m, v\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:eccentricity_epskin_psi}\)</span> with <span class="math inline">\(\epsilon_{kin}=\epsilon_{kin}\left(v_{esc}(r,m),v\right)\)</span> from Eqs. <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span> and <span class="math inline">\(\eqref{eq:relative_Ekin_v_vesc}\)</span>, and with <span class="math inline">\(v=v(\psi)\)</span> from Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="escape-velocity-v_esc" class="level3">
-<h3 class="anchored" data-anchor-id="escape-velocity-v_esc">Escape Velocity – <span class="math inline">\(v_{esc}\)</span></h3>
+<section id="sec-escape-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="sec-escape-velocity">Escape Velocity – <span class="math inline">\(v_{esc}\)</span></h3>
 <p><span class="math display">\[\begin{equation}
     v_{esc}\left(r, m\right) = \sqrt{\frac{2 Gm}{r}} \label{eq:escape_velocity_r_m}
 \end{equation}\]</span></p>
@@ -482,13 +482,13 @@ ExESS API - Escape Velocity
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>escape_velocity_r_m</code></a>: Eq. <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>escape_velocity_r_m</code></a>: <span class="math inline">\(v_{esc}\left(r, m\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="ground-track-distance-d" class="level3">
-<h3 class="anchored" data-anchor-id="ground-track-distance-d">Ground Track Distance – <span class="math inline">\(d\)</span></h3>
+<section id="sec-ground-track-distance" class="level3">
+<h3 class="anchored" data-anchor-id="sec-ground-track-distance">Ground Track Distance – <span class="math inline">\(d\)</span></h3>
 <p><span class="math display">\[\begin{equation}
     d\left(r, \Delta\theta\right) = r\cdot \Delta\theta\label{eq:ground_track_distance_r_dtheta}
 \end{equation}\]</span></p>
@@ -504,14 +504,14 @@ ExESS API - Ground Track Distance
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>ground_distance_R_dtheta</code></a>: Eq. <span class="math inline">\(\eqref{eq:ground_track_distance_r_dtheta}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>ground_distance_R_a_e</code></a>: Eq. <span class="math inline">\(\eqref{eq:ground_track_distance_r_dtheta}\)</span> with <span class="math inline">\(\Delta\theta= 2\pi - 2\theta\)</span> and <span class="math inline">\(\theta= \theta\left(r, a, e\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:true_anomaly_r_a_e}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>ground_distance_R_dtheta</code></a>: <span class="math inline">\(d\left(r, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:ground_track_distance_r_dtheta}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>ground_distance_R_a_e</code></a>: <span class="math inline">\(d\left(r, a, e\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:ground_track_distance_r_dtheta}\)</span> with <span class="math inline">\(\Delta\theta= 2\pi - 2\theta\)</span> and <span class="math inline">\(\theta= \theta\left(r, a, e\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:true_anomaly_r_a_e}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="mean-anomaly-m" class="level3">
-<h3 class="anchored" data-anchor-id="mean-anomaly-m">Mean Anomaly – <span class="math inline">\(M\)</span></h3>
+<section id="sec-mean-anomaly" class="level3">
+<h3 class="anchored" data-anchor-id="sec-mean-anomaly">Mean Anomaly – <span class="math inline">\(M\)</span></h3>
 <p><span class="math display">\[\begin{equation}
     M\left(e, E\right) = E- e\sin E\label{eq:mean_anomaly_e_E}
 \end{equation}\]</span></p>
@@ -527,14 +527,14 @@ ExESS API - Mean Anomaly
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>mean_anomaly_e_E</code></a>: Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>mean_anomaly_e_theta</code></a>: Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span> with <span class="math inline">\(E=E(e, \theta)\)</span> from Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>mean_anomaly_e_E</code></a>: <span class="math inline">\(M\left(e, E\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>mean_anomaly_e_theta</code></a>: <span class="math inline">\(M\left(e, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span> with <span class="math inline">\(E=E(e, \theta)\)</span> from Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="orbit-period-p" class="level3">
-<h3 class="anchored" data-anchor-id="orbit-period-p">Orbit Period – <span class="math inline">\(P\)</span></h3>
+<section id="sec-orbit-period" class="level3">
+<h3 class="anchored" data-anchor-id="sec-orbit-period">Orbit Period – <span class="math inline">\(P\)</span></h3>
 <p><span class="math display">\[\begin{equation}
     P\left(a, m\right) = 2\pi\sqrt{\frac{a^3}{Gm}}  \label{eq:orbit_period_a_m}
 \end{equation}\]</span></p>
@@ -550,13 +550,13 @@ ExESS API - Orbit Period
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_period_a_m</code></a>: Eq. <span class="math inline">\(\eqref{eq:orbit_period_a_m}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_period_a_m</code></a>: <span class="math inline">\(P\left(a, m\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:orbit_period_a_m}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="orbit-time-t" class="level3">
-<h3 class="anchored" data-anchor-id="orbit-time-t">Orbit Time – <span class="math inline">\(t\)</span></h3>
+<section id="orbit-time-t-sec-orbit-time" class="level3">
+<h3 class="anchored" data-anchor-id="orbit-time-t-sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span> {sec-orbit-time}</h3>
 <p><span class="math display">\[\begin{equation}
     t\left(M, P\right) = \frac{M}{2\pi} \cdot P\label{eq:orbit_time_M_P}
 \end{equation}\]</span></p>
@@ -572,46 +572,136 @@ ExESS API - Orbit Time
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_M_P</code></a>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_e_E_P</code></a>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span> with <span class="math inline">\(M= M(e, E)\)</span> of Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span></p>
-<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_e_theta_P</code></a>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span> with <span class="math inline">\(M= M(e, E)\)</span> of Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span> and <span class="math inline">\(E= E\left(e, \theta\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_M_P</code></a>: <span class="math inline">\(t\left(M, P\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_e_E_P</code></a>: <span class="math inline">\(t\left(e, E, P\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span> with <span class="math inline">\(M= M(e, E)\)</span> of Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_time_e_theta_P</code></a>: <span class="math inline">\(t\left(e, \theta, P\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:orbit_time_M_P}\)</span> with <span class="math inline">\(M= M(e, E)\)</span> of Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span> and <span class="math inline">\(E= E\left(e, \theta\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_theta}\)</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="relative-kinetic-energy-epsilon_kin" class="level3">
-<h3 class="anchored" data-anchor-id="relative-kinetic-energy-epsilon_kin">Relative Kinetic Energy – <span class="math inline">\(\epsilon_{kin}\)</span></h3>
+<section id="sec-relative-kinetic-energy" class="level3">
+<h3 class="anchored" data-anchor-id="sec-relative-kinetic-energy">Relative Kinetic Energy – <span class="math inline">\(\epsilon_{kin}\)</span></h3>
 <p><span class="math display">\[\begin{align}
     \epsilon_{kin}\left(\boldsymbol{\mathbf{v}}, v_{esc}\right) &amp;= \left(\frac{|\boldsymbol{\mathbf{v}}|}{v_{esc}}\right)^2  \label{eq:relative_Ekin_v_vesc} \\
+    \epsilon_{kin}\left(r, a\right) &amp;= 1 - \frac{r}{2a}  \label{eq:relative_Ekin_r_a} \\
     \epsilon_{kin}\left(e, \theta\right) &amp;= 1 - \frac{1 - e^2}{2 + 2e\cos\left(\theta\right)}  \label{eq:relative_Ekin_e_theta}
 \end{align}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API - Relative Kinetic Energy
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>epskin_vesc_v</code></a>: <span class="math inline">\(\epsilon_{kin}\left(\boldsymbol{\mathbf{v}}, v_{esc}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:relative_Ekin_v_vesc}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>epskin_r_m_v</code></a>: <span class="math inline">\(\epsilon_{kin}\left(r, m, \boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:relative_Ekin_v_vesc}\)</span> with <span class="math inline">\(v_{esc} = v_{esc}\left(r, m\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>epskin_r_a</code></a>: <span class="math inline">\(\epsilon_{kin}\left(r, a\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:relative_Ekin_r_a}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>epskin_e_theta</code></a>: <span class="math inline">\(\epsilon_{kin}\left(e, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:relative_Ekin_e_theta}\)</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="semi-latus-rectum-p" class="level3">
-<h3 class="anchored" data-anchor-id="semi-latus-rectum-p">Semi-Latus Rectum – <span class="math inline">\(p\)</span></h3>
+<section id="sec-semi-latus-rectum" class="level3">
+<h3 class="anchored" data-anchor-id="sec-semi-latus-rectum">Semi-Latus Rectum – <span class="math inline">\(p\)</span></h3>
 <p><span class="math display">\[\begin{align}
     p\left(a, e\right) &amp;= a\cdot (1 - e^2)  \label{eq:semi_latus_rectum_a_e} \\
     p\left(r, e, \theta\right) &amp;= r\cdot \left(1 + e\cdot \cos \theta\right)  \label{eq:semi_latus_rectum_r_e_theta}
 \end{align}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API - Semi-Latus Rectum
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_latus_rectum_a_e</code></a>: <span class="math inline">\(p\left(a, e\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_latus_rectum_a_e}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_latus_rectum_r_e_theta</code></a>: <span class="math inline">\(p\left(r, e, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_latus_rectum_r_e_theta}\)</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="semi-major-axis-a" class="level3">
-<h3 class="anchored" data-anchor-id="semi-major-axis-a">Semi-Major Axis – <span class="math inline">\(a\)</span></h3>
+<section id="sec-semi-major-axis" class="level3">
+<h3 class="anchored" data-anchor-id="sec-semi-major-axis">Semi-Major Axis – <span class="math inline">\(a\)</span></h3>
 <p><span class="math display">\[\begin{align}
     a\left(r, \epsilon_{kin}\right) &amp;= \frac{r}{2 \cdot \left(1 - \epsilon_{kin}\right)}  \label{eq:semi_major_axis_r_epskin} \\
     a\left(p, e\right) &amp;= \frac{p}{1 - e^2}  \label{eq:semi_major_axis_p_e}
 \end{align}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API - Semi-Major Axis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_major_axis_r_epskin</code></a>: <span class="math inline">\(a\left(r, \epsilon_{kin}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_major_axis_r_epskin}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_major_axis_r_m_v</code></a>: <span class="math inline">\(a\left(r, m, \boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_major_axis_r_epskin}\)</span> with <span class="math inline">\(\epsilon_{kin}=\epsilon_{kin}\left(r, m, \boldsymbol{\mathbf{v}}\right)\)</span> and <span class="math inline">\(v_{esc}=v_{esc}\left(r, m\right)\)</span> of Eqs. <span class="math inline">\(\eqref{eq:relative_Ekin_v_vesc}\)</span> and <span class="math inline">\(\eqref{eq:escape_velocity_r_m}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_major_axis_p_e</code></a>: <span class="math inline">\(a\left(p, e\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_major_axis_p_e}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>semi_major_axis_r_e_theta</code></a>: <span class="math inline">\(a\left(r, e, \theta\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:semi_major_axis_p_e}\)</span> with <span class="math inline">\(p=p\left(r, e, \theta\right)\)</span> of Eq. <span class="math inline">\(\eqref{eq:semi_latus_rectum_r_e_theta}\)</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="true-anomaly-theta" class="level3">
-<h3 class="anchored" data-anchor-id="true-anomaly-theta">True Anomaly – <span class="math inline">\(\theta\)</span></h3>
+<section id="sec-true-anomaly" class="level3">
+<h3 class="anchored" data-anchor-id="sec-true-anomaly">True Anomaly – <span class="math inline">\(\theta\)</span></h3>
 <p><span class="math display">\[\begin{align}
     \theta\left(r, a, e\right) &amp;= \cos^{-1}\left(\frac{1}{e} \cdot \left(\frac{a}{r} \left( 1 - e^2 \right) -1 \right)\right)  \label{eq:true_anomaly_r_a_e} \\
     \theta\left(e, \epsilon_{kin}\right) &amp;= \cos^{-1}\left(\frac{1}{e} \cdot \left(\frac{1 - e^2}{2-2 \epsilon_{kin}} -1 \right)\right)  \label{eq:true_anomaly_e_epskin}
 \end{align}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API - True Anomaly
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>true_anomaly_r_a_e</code></a>: <span class="math inline">\(\theta\left(r, a, e\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:true_anomaly_r_a_e}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>true_anomaly_e_epskin</code></a>: <span class="math inline">\(\theta\left(e, \epsilon_{kin}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:true_anomaly_e_epskin}\)</span></p>
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>true_anomaly_epskin_v</code></a>: <span class="math inline">\(\theta\left(\epsilon_{kin}, \boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:true_anomaly_epskin_v}\)</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="zenith-angle-psi" class="level3">
-<h3 class="anchored" data-anchor-id="zenith-angle-psi">Zenith Angle – <span class="math inline">\(\psi\)</span></h3>
+<section id="sec-zenith-angle" class="level3">
+<h3 class="anchored" data-anchor-id="sec-zenith-angle">Zenith Angle – <span class="math inline">\(\psi\)</span></h3>
 <p><span class="math display">\[\begin{equation}
     \psi\left(\boldsymbol{\mathbf{v}}\right) = \tan^{-1}\left(\frac{\sqrt{v_1^2 + v_2^2}}{v_3}\right)  \label{eq:zenith_angle_v}
 \end{equation}\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS API - Zenith Angle
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="../../api/exospheres/orbital_mechanics.html"><code>zenith_angle_v</code></a>: <span class="math inline">\(\psi\left(\boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
+</div>
+</div>
+</div>
 
 
 

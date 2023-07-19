@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-12">
+<meta name="dcterms.date" content="2023-07-19">
 
 <title>ExESS - Two-Dimensional Landing Position Calculation</title>
 <style>
@@ -22,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -80,6 +99,8 @@ ul.task-list li input[type="checkbox"] {
       });
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../_styles.css">
 </head>
@@ -156,7 +177,6 @@ ul.task-list li input[type="checkbox"] {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
@@ -325,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 12, 2023</p>
+      <p class="date">July 19, 2023</p>
     </div>
   </div>
   
@@ -341,11 +361,23 @@ ul.task-list li input[type="checkbox"] {
 <h1>Two-Dimensional Landing Position Calculation</h1>
 </section>
 <hr>
-<p>The following calculations are based on the orbital mechanics functions introduced in section <a href="../../documentation/trajectories/orbital_mechanics_functions.html">Orbital Mechanics Functions</a>.</p>
+<p>The following calculations are based on the orbital mechanics functions introduced in section <a href="../../documentation/trajectories/orbital_mechanics_functions.html">Orbital Mechanics Functions</a> to calculate the landing position <span class="math inline">\(\left(\Theta_1, \Phi_1\right)\)</span>. Note that this approach is quasi-two-dimensional as the radial dimension of the spherical three-dimensional coordinate system is neglected, assuming a perfectly spherical central body. The trajectory starts and the launch position <span class="math inline">\(\left(\Theta_0, \Phi_0\right)\)</span> and, as mentioned above, requires knowledge about the mass and radius of the planetary body, <span class="math inline">\(m\)</span> and <span class="math inline">\(r\)</span>, as well as the launch, or initial, velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\)</span>.</p>
+<p>Based on the escape velocity <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-escape-velocity"><span class="math inline">\(v_{esc}(r, m)\)</span></a>, the relative kinetic energy fraction <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-relative-kinetic-energy"><span class="math inline">\(\epsilon_{kin}(\boldsymbol{\mathbf{v}}, v_{esc})\)</span></a>, can be determined, which in turn is used to calculate the semi-major axis of the trajectory, <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-semi-major-axis"><span class="math inline">\(a(r, \epsilon_{kin})\)</span></a>. Since the launch velocity vector is given in local cartesian coordinates, both its zenith angle <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-zenith-angle"><span class="math inline">\(\psi(\boldsymbol{\mathbf{v}})\)</span></a> and its azimuth angle <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-azimuth-angle"><span class="math inline">\(\vartheta\left(\boldsymbol{\mathbf{v}}\right)\)</span></a> can be directly extracted. The former is subsequently used for the determination of the eccentricity <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-eccentricity"><span class="math inline">\(e\left(\epsilon_{kin}, \psi\right)\)</span></a>. With both <span class="math inline">\(a\)</span> and <span class="math inline">\(e\)</span> known, the true anomaly at launch <span class="math inline">\(\theta_0(r, a, e)\)</span>, and due to symmetry conditions, also the landing position <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-true-anomaly"><span class="math inline">\(\theta_1 = 2\pi - \theta_0\)</span></a>, can be calculated. The angular difference between the landing and launch true anomaly <span class="math inline">\(\theta_1 - \theta_0 = 2\pi - 2\theta= \Delta\theta\)</span> can then easily be converted into the ground track distance of the projected trajectory <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-ground-track-distance"><span class="math inline">\(d(r, \Delta\theta)\)</span></a>.</p>
+<p>Based on <span class="citation" data-cites="Schoerghofer2022a">Schoerghofer (<a href="#ref-Schoerghofer2022a" role="doc-biblioref">2022</a>)</span>, the landing position <span class="math inline">\(\left(\Theta_1, \Phi_1\right)\)</span> can now be calculated using the launch position <span class="math inline">\(\left(\Theta_0, \Phi_0\right)\)</span>, the ground track distance <span class="math inline">\(d\)</span>, and the azimuth angle <span class="math inline">\(\vartheta\)</span> as <span class="math display">\[\begin{align}
+    \sin\Phi_1 &amp;= \sin\left(\frac{d}{r}\right) \cdot \cos\Phi_0 \cdot \cos\vartheta+ \cos\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \\
+    \cos\Delta\Theta&amp;= \cos\left(\frac{d}{r}\right) \cdot \cos\Phi_0 - \sin\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \cdot \cos\vartheta\cdot \cos^{-1}\Phi_1 \\
+    \Rightarrow \Theta_1 &amp;= \Theta_0 + \mathop{\mathrm{sgn}}\left(v_1\right)\cdot\Delta\Theta,
+\end{align}\]</span> with the signum function <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = 1\)</span> for <span class="math inline">\(v_1\geq0\)</span> and <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = -1\)</span> for <span class="math inline">\(v_1&lt;0\)</span>.</p>
+<p>Calculating the time of flight <span class="math inline">\(t_{flight}= t_1 - t_0 = P- 2t_0\)</span> requires the orbital period <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-orbit-period"><span class="math inline">\(P\left(a, m\right)\)</span></a> as well as the orbit time <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-orbit-time"><span class="math inline">\(t(M, P)\)</span></a>, where <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span> are the orbit times at the launch and landing, respectively, with <span class="math inline">\(t_1 = P-t_0\)</span> for symmetry reasons. The mean anomaly <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-mean-anomaly"><span class="math inline">\(M_0\)</span></a> at launch can be calculated using the eccentric anomaly <a href="../../documentation/trajectories/orbital_mechanics_functions.html#sec-eccentric-anomaly"><span class="math inline">\(E_0\)</span></a> and the eccentricity <span class="math inline">\(e\)</span>.</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Schoerghofer2022a" class="csl-entry" role="listitem">
+Schoerghofer, N. (2022). <em><span class="nocase">Planetary-Code-Collection: Thermal, Ice Evolution, and Exosphere Models for Planetary Surfaces</span></em> (Version 1.2.0). <a href="https://doi.org/10.5281/zenodo.594268">https://doi.org/10.5281/zenodo.594268</a>
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
   title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
     {Simulations}},

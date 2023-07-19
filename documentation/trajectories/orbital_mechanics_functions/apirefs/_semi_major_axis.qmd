@@ -1,0 +1,10 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - Semi-Major Axis
+[`semi_major_axis_r_epskin`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \relativeKineticEnergy\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin}  
+
+[`semi_major_axis_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$ and $\velocity_{esc}=\velocity_{esc}\left(\radius, \mass\right)$ of Eqs. \eqref{eq:relative_Ekin_v_vesc} and \eqref{eq:escape_velocity_r_m}
+
+[`semi_major_axis_p_e`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\semiLatusRectum, \eccentricity\right)$: Eq. \eqref{eq:semi_major_axis_p_e}  
+
+[`semi_major_axis_r_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:semi_major_axis_p_e} with $\semiLatusRectum=\semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right)$ of Eq. \eqref{eq:semi_latus_rectum_r_e_theta}
+:::

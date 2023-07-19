@@ -1,6 +1,6 @@
 \newcommand{\activationEnergy}{E_a}
 \newcommand{\area}{A}
-\newcommand{\azimuthAngle}{\alpha}
+\newcommand{\azimuthAngle}{\vartheta}
 \newcommand{\baseVector}{\hat{\vec{e}}}
 \newcommand{\cartesianCoordinate}{\vec{x}}
     \newcommand{\cartesianCoordinateX}{x}
@@ -44,7 +44,7 @@
 \newcommand{\semiMajorAxis}{a}
 \newcommand{\sphericalCoordinate}{\vec{r}}
     \newcommand{\sphericalCoordinateRadius}{r}
-    \newcommand{\sphericalCoordinateAzimuth}{\vartheta}
+    \newcommand{\sphericalCoordinateAzimuth}{\azimuthAngle}
     \newcommand{\sphericalCoordinateElevation}{\varphi}
     \newcommand{\sphericalCoordinateDef}{\left[\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right]^T}
     \newcommand{\sphericalBaseVectorRadius}{\baseVector_\sphericalCoordinateRadius}

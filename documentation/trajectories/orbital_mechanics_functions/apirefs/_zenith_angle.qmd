@@ -1,0 +1,4 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - Zenith Angle
+[`zenith_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\zenithAngle\left(\vec\velocity\right)$: Eq. \eqref{eq:zenith_angle_v}  
+:::

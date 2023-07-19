@@ -1,0 +1,9 @@
+::: {.callout-tip collapse="true"}
+# ExESS API - True Anomaly
+[`true_anomaly_r_a_e`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:true_anomaly_r_a_e}  
+
+[`true_anomaly_e_epskin`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right)$: Eq. \eqref{eq:true_anomaly_e_epskin}  
+
+[`true_anomaly_epskin_v`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\relativeKineticEnergy, \vec\velocity\right)$: Eq. \eqref{eq:true_anomaly_epskin_v}  
+
+:::
