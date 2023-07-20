@@ -6,7 +6,7 @@ title: "Numerical Grids"
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---
@@ -14,19 +14,23 @@ title: "Numerical Grids"
 
 Some introduction text...
 
-## Global, Structured, Two-Dimensional Grids
+# Global (Spherical) Grids
+
+$\mathbb{S}^2$
+
+
+##  Structured, Two-Dimensional
 {{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids.qmd >}}
 
-
-## Global, Structured, Reduced, Two-Dimensional Grids
+## Structured, Reduced, Two-Dimensional
 {{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids_reduced.qmd >}}
 
+## Spiral, Two-Dimensional
+{{< include /documentation/math_num_comp/numerical_grids/_global_spiral_2d_grids.qmd >}}
 
-## Global, HEALPix, Two-Dimensional Grids
+## HEALPix, Two-Dimensional
 {{< include /documentation/math_num_comp/numerical_grids/_global_healpix_2d_grids.qmd >}}
 
-
-
-::: {#ref}
-:::
+# Local Grids
+something
 

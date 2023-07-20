@@ -8,7 +8,7 @@ format:
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---
@@ -36,7 +36,7 @@ Integrating over the radius leads to the Newton's equation
     \frac{d\potential}{d\radius} = \frac{\GravitationalConstant\hat\mass}{\radius^2},
     \label{eq:gravitational_potential}
 \end{equation}
-with mass $\hat\mass$ of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass \citep{Walter2018}. One can easily derive \emph{Newton's law of gravitation} for the gravitational force
+with mass $\hat\mass$ of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass [@Walter2018]. One can easily derive \emph{Newton's law of gravitation} for the gravitational force
 \begin{equation}
     \vec{\force} = - \mass\frac{d\potential}{d^3\sphericalCoordinate} = - \mass\frac{d\potential}{d\radius} \cdot \frac{\sphericalCoordinate}{\radius} = - \frac{\mass\hat\mass\GravitationalConstant}{\radius^3}\cdot\sphericalCoordinate,
     \label{eq:gravitational_force}

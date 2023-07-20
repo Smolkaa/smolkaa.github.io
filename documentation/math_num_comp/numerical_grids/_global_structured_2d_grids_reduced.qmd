@@ -4,6 +4,8 @@ In order to counter the disadvantages of the full grid, the reduced, structured 
 
 
 
+### Coordinate Calculation
+
 The coordinates for the grid are calculated by iterating over the fixed number $N_\sphericalCoordinateElevation$ of elevation angles (which calculation is equal to the standard, structured grid, see Eq.~(\ref{eq:gs2dgrid_elevation})), which lead to a variable number $\left(N_\sphericalCoordinateAzimuth\right)_j$ of azimuth angles for each elevation angle $\sphericalCoordinateElevation_j$:
 \begin{alignat}{3}
     \sphericalCoordinateElevation_j &= - \frac{\pi}{2} + \frac{\pi}{2N_\sphericalCoordinateElevation} + (j-1)\Delta\sphericalCoordinateElevation &&\quad\text{with } \Delta\sphericalCoordinateElevation = \frac{\pi}{N_\sphericalCoordinateElevation}  \label{eq:gs2dgrid_reduced_elevation} \\
@@ -14,4 +16,12 @@ for $j \in \{1, \dots, N_\sphericalCoordinateElevation\}$ and $i \in \{1, \dots,
 
 
 {{< include /img/documentation/math_num_comp/numerical_grids/gs2dgrid_reduced/_gs2dgrid_reduced.qmd >}}
-\input{src/grids/figures/gs2dgrid_reduced.tex}
+
+
+### Area Calculation
+
+
+### Continuous to Discrete Mapping
+
+
+### Equatorial Symmetry

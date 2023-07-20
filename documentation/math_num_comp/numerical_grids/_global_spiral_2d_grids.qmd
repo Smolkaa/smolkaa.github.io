@@ -1,0 +1,48 @@
+### Coordinate Calculation
+
+Points on a spherical surface $\mathbb{S}^2$ which form a path in the form of a spiral can be expressed in spherical coordinates of the form
+\begin{equation}
+    \sphericalCoordinateAzimuth=L\sphericalCoordinateElevation, \qquad 0 \leq \sphericalCoordinateElevation \leq \pi
+\end{equation}
+with the polar angle $\sphericalCoordinateElevation$ and the azimuth $\sphericalCoordinateAzimuth$, or the latitude and longitude, respectively [@Hardin2016]. The factor $L$ gives the slope of the spiral. One generation method of $N$ points defines the two spherical coordinates as
+\begin{aligned}
+    L =& \; \sqrt{N\pi}, \\
+    h_k =& \; 1 -\frac{2k-1}{N}, \\ 
+    \sphericalCoordinateElevation_k =& \; \cos^{-1}(h_k), \\
+    \sphericalCoordinateAzimuth_k =& \; L\sphericalCoordinateElevation_k 
+\end{aligned}
+for $k = 1,\dots, N$, where the slope $L$ is chosen in order to equalize the distance between adjacent points on the same level of the spiral and points on adjacent levels which differ by $2\pi$ in $\sphericalCoordinateAzimuth$ [@Hardin2016].
+
+
+A specialized method of creating a set of spiral points implements the Fibonacci sequence
+\begin{equation}
+    \left\{ F_k \right\} = \left\{1, 1, 2, 3, 5, 8, 13, \dots \right\}
+\end{equation}
+and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2}.$ The general algorithm defines a lattice of points on the square $\left[ 0,1 \right)^2$, which is subsequently mapped to a unit sphere using the Lambert cylindrical equal-area projection $\Lambda$:
+\begin{equation}
+    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \left( \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\cos\left(2\pi \cartesianCoordinateX\right), \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\sin\left(2\pi \cartesianCoordinateX\right), 2\cartesianCoordinateY-1 \right)
+\end{equation}
+in Cartesian coordinates, and
+\begin{equation}
+    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \left(\cos^{-1}(2\cartesianCoordinateY-1), 2\pi \cartesianCoordinateX \right) = \left( \sphericalCoordinateElevation, \sphericalCoordinateAzimuth \right)
+\end{equation}
+in spherical coordinates. The points $(\cartesianCoordinateX, \cartesianCoordinateY)$ on the square $\left[ 0,1 \right)^2$ are created through
+\begin{equation}
+    (\tilde \cartesianCoordinateX, \cartesianCoordinateY)_{F_k} = \left( \frac{iF_{k-1}}{F_k} , \frac{i}{F_k} \right), \qquad 0 \leq i \leq F_k
+\end{equation}
+where $\cartesianCoordinateX = \tilde \cartesianCoordinateX - \lfloor \tilde \cartesianCoordinateX \rfloor$ as just the fractional part of $\tilde \cartesianCoordinateX$ [@Hardin2016]. While this implementation can only be applied for $N+1$ elements, where $N \in \{ F_k \}$, a more general approach involves the golden ratio $\varphi$. Based on Binet's formula the calculation of $(\cartesianCoordinateX, \cartesianCoordinateY)$ can be changed to
+\begin{equation}
+    (\tilde \cartesianCoordinateX, \cartesianCoordinateY)_{N} = \left( \frac{i}{\varphi}, \frac{i}{N} \right), \qquad 0 \leq i \leq N.
+\end{equation}
+
+
+### Area Calculation
+
+
+### Continuous to Discrete Mapping
+
+
+### Analysis of Point Distribution
+
+Almost all points have equal distances from one another. Numerical analyses of the Fibonacci-based spiral sequence $\omega_N$ in @Hardin2016 found minimal separations to appear at the poles with value $|\cartesianCoordinateX_1 - \cartesianCoordinateX_4|, \, \cartesianCoordinateX_i\in\omega_N$ and maximum hole in the lattice to occurs in the triangle $(\cartesianCoordinateX_2, \cartesianCoordinateX_3, \cartesianCoordinateX_5)$. 
+

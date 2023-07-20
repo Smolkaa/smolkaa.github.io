@@ -8,6 +8,8 @@ title: "Orbital Mechanics"
 
 ---
 
+The mathematical definition of the implemented functions is presented in the documentation, in the section [Orbital Mechanics Functions](/documentation/trajectories/orbital_mechanics_functions.qmd).
+
 ## Usage
 
 ## API

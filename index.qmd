@@ -4,6 +4,10 @@ date-modified: last-modified
 author: "Alexander Smolka"
 ---
 
+::: {.hidden }
+# {{< meta title >}}
+:::
+
 ---
 
 This website is still under construction! {{< fa wrench >}}

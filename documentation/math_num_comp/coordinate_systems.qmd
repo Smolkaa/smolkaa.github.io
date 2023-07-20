@@ -6,23 +6,21 @@ title: "Coordinate Systems"
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}}  {.unnumbered}
 :::
 
 ---
 
 Some introduction text...
 
-## Cartesian and Spherical Coordinates
+# Cartesian and Spherical Coordinates
 {{< include /documentation/math_num_comp/coordinate_systems/_cartesian_spherical_coordinates.qmd >}}
 
 
-## Spacial Differentials
+# Spacial Differentials
 {{< include /documentation/math_num_comp//coordinate_systems/_spacial_differentials.qmd >}}
 
 
-## Temporal Differentials
+# Temporal Differentials
 {{< include /documentation/math_num_comp//coordinate_systems/_temporal_differentials.qmd >}}
 
-::: {#ref}
-:::

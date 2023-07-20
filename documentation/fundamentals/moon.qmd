@@ -8,21 +8,18 @@ format:
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---
 
 Some intro text...
 
-## Lunar Orbit Orientation
+# Lunar Orbit Orientation
 {{< include /documentation/fundamentals/moon/_lunar_orbit_orientation.qmd >}}
 
 
-## Lunar Surface Temperatures
+# Lunar Surface Temperatures
 {{< include /documentation/fundamentals/moon/_lunar_surface_temperatures.qmd >}}
 
-
-::: {#ref}
-:::
 

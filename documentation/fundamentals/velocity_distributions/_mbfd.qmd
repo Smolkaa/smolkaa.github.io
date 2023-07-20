@@ -45,7 +45,7 @@ Note that the scaling factor $2$ is a result from the integration over half the 
 Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following. Note that, contrary to the [MBD](/documentation/acronyms.qmd), the root mean squared speed is lower than the other two typical speeds, due to its additional speed dependency, which is shifting the entire distribution to higher values and, thus, to $f(\velocity \approx 0.0) \approx 0.0$.
 
 
-### Typical Speeds
+## Typical Speeds
 
 The most probable speed occurs at the maximum likelihood of the Eq. \eqref{eq:mbfd_speed}:
 \begin{equation}
@@ -77,7 +77,7 @@ Lastly, the \gls{rms} speed is calculated as
 @tbl-mbfd_typical_speeds shows an overview of the speeds of the [MBFD](/documentation/acronyms.qmd) and their relation to the typical speeds. The $\velocity_{XX}$ denotes the speed at which the [cdf](/documentation/acronyms.qmd) evaluated to $F(\velocity_{XX}) = \int_0^{\velocity_{XX}} f(\velocity) d\velocity= XX\si{\percent}$. The entries are sorted by their [cdf](/documentation/acronyms.qmd) with the typical speeds highlighted and placed at the correct position. Note that $\velocity_{50}$ denotes the median of the distribution, which is not equal to the expected value $\meanof{\velocity}$. 
 
 
-### Numerical Sampling
+## Numerical Sampling
 
 Let $\vec\Velocity$ be the random variable of the [MBFD](/documentation/acronyms.qmd) velocity, then any realization can be drawn from the respective [pdf](/documentation/acronyms.qmd):
 \begin{equation}

@@ -36,7 +36,7 @@ with the speed $\velocity=\sqrt{\vec\velocity ^T\vec\velocity}$. Identical to th
 These one-directional forms of the [MBD](/documentation/acronyms.qmd) are helpful for velocities where one direction is obstructed, for example when launching particles from a surface, where a movement downwards into the ground is not physical. The third distribution (<tt>3D-MBD, speed</tt>) is presenting the graph of Eq. \eqref{eq:mbd_speed_3d}. Note that, as with the graph before, this distribution is also one-directional, though in this case, it is by nature, since the speed in the spherical coordinate system description can only assume a positive value. Additionally, the speed distribution has three indicated and typical speeds shown, which will be explained in the following.
 
 
-### Typical Speeds
+## Typical Speeds
 
 One of those typical speeds obtained from properties of the [MBD](/documentation/acronyms.qmd) is the most probable speed, $\velocity_p$, which describes the speed at which Eq. \eqref{eq:mbd_speed_3d} reaches its maximum value. Since the [pdf](/documentation/acronyms.qmd) is normalized, we can infer that it must have at least one global extreme point at which its derivative equals zero:
 \begin{equation}
@@ -67,7 +67,7 @@ Lastly and similar to the mean speed, the mean square speed $\meanof{\velocity^2
 
 
 
-### Numrical Sampling
+## Numrical Sampling
 
 Let $\vec\Velocity$ be the random variable of the [MBD](/documentation/acronyms.qmd) velocity, then any realization of $\vec\Velocity$ can be drawn from the respective [pdf](/documentation/acronyms.qmd), in this case Eq. \eqref{eq:mbd_3d},
 \begin{equation}

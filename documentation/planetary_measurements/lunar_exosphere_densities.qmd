@@ -1,7 +1,5 @@
 ---
 title: "Lunar Exosphere Surface Densities"
-format:
-  html: default
 tbl-colwidths: [45,23,32]
 ---
 
@@ -9,7 +7,7 @@ tbl-colwidths: [45,23,32]
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---
@@ -18,28 +16,28 @@ This section lists referenced values of the lunar exosphere surface densities, g
 
 See the additional information section on this section's appendix to find details about some sources, their assumptions, and their measurement methods.
 
-## Atomic Hydrogen -- $\ce{H}$
+# Atomic Hydrogen -- $\ce{H}$
 {{< include lunar_exosphere_densities/_H.qmd >}}
 
-## Molecular Hydrogen -- $\ce{H2}$
+# Molecular Hydrogen -- $\ce{H2}$
 {{< include lunar_exosphere_densities/_H2.qmd >}}
 
-## Helium -- $\ce{He}$
+# Helium -- $\ce{He}$
 {{< include lunar_exosphere_densities/_He.qmd >}}
 
-## Hydroxyl -- $\ce{OH}$
+# Hydroxyl -- $\ce{OH}$
 {{< include lunar_exosphere_densities/_OH.qmd >}}
 
-## Water -- $\ce{H2O}$
+# Water -- $\ce{H2O}$
 {{< include lunar_exosphere_densities/_H2O.qmd >}}
 
-## Neon -- $\ce{Ne}$
+# Neon -- $\ce{Ne}$
 {{< include lunar_exosphere_densities/_Ne.qmd >}}
 
-## Argon -- $\ce{Ar}$
+# Argon -- $\ce{Ar}$
 
 
-## Additional Information {.appendix}
+# Additional Information {.appendix .unnumbered}
 
 * @Gladstone2009 assume for the LAMP derivations a  $\SI{30}{\minute}$, $3\sigma$ observation, and a path length of $\SI{300}{\kilo\metre}$.
 * @Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.

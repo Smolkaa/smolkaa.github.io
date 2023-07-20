@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-10">
+<meta name="dcterms.date" content="2023-07-20">
 
 <title>ExESS - Coordinate Systems</title>
 <style>
@@ -338,9 +338,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Coordinate Systems</a></li>
-  <li><a href="#cartesian-and-spherical-coordinates" id="toc-cartesian-and-spherical-coordinates" class="nav-link" data-scroll-target="#cartesian-and-spherical-coordinates">Cartesian and Spherical Coordinates</a></li>
-  <li><a href="#spacial-differentials" id="toc-spacial-differentials" class="nav-link" data-scroll-target="#spacial-differentials">Spacial Differentials</a></li>
-  <li><a href="#temporal-differentials" id="toc-temporal-differentials" class="nav-link" data-scroll-target="#temporal-differentials">Temporal Differentials</a></li>
+  <li><a href="#cartesian-and-spherical-coordinates" id="toc-cartesian-and-spherical-coordinates" class="nav-link" data-scroll-target="#cartesian-and-spherical-coordinates"><span class="header-section-number">1</span> Cartesian and Spherical Coordinates</a></li>
+  <li><a href="#spacial-differentials" id="toc-spacial-differentials" class="nav-link" data-scroll-target="#spacial-differentials"><span class="header-section-number">2</span> Spacial Differentials</a></li>
+  <li><a href="#temporal-differentials" id="toc-temporal-differentials" class="nav-link" data-scroll-target="#temporal-differentials"><span class="header-section-number">3</span> Temporal Differentials</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/math_num_comp/coordinate_systems.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -366,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 10, 2023</p>
+      <p class="date">July 20, 2023</p>
     </div>
   </div>
   
@@ -378,13 +378,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
-<section id="meta-title" class="level1 hidden">
-<h1>Coordinate Systems</h1>
+<section id="meta-title" class="level1 unnumbered hidden">
+<h1 class="unnumbered">Coordinate Systems</h1>
 </section>
 <hr>
 <p>Some introduction text…</p>
-<section id="cartesian-and-spherical-coordinates" class="level2">
-<h2 class="anchored" data-anchor-id="cartesian-and-spherical-coordinates">Cartesian and Spherical Coordinates</h2>
+<section id="cartesian-and-spherical-coordinates" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Cartesian and Spherical Coordinates</h1>
 <p>A clear distinction has been made between cartesian and spherical coordinates and cartesian and spherical elements. The former are used to describe the domain in which the vector is defined, while the latter are used to describe the vector and its components itself. For example, a position vector in a cartesian coordinate system, <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span>, can be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>, which are the x-, y-, and z-components of the vector: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{x}}= \begin{bmatrix}
         x\\
@@ -460,8 +460,8 @@ ExESS API – Spherical Coordinates
 \end{align}\]</span></p>
 <p>Due to the equalities of the vectors in their respective same coordinate system, the rest of this work will only use <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span> and <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span> without their indexed counterparts. The element type will be indicated by the context of the equation.</p>
 </section>
-<section id="spacial-differentials" class="level2">
-<h2 class="anchored" data-anchor-id="spacial-differentials">Spacial Differentials</h2>
+<section id="spacial-differentials" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Spacial Differentials</h1>
 <p>This work is regularly relying on vector calculus which includes a substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.</p>
 <p><span class="math display">\[\begin{align}
     \frac{\partial}{\partial t} &amp;= 0, \\
@@ -578,7 +578,7 @@ Derivation of spherical Laplace operator.
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></a></p>
+<p><a href="../../img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../..\img/documentation/math_num_comp/coordinate_systems/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" style="width:70.0%"></a></p>
 </figure>
 </div>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
@@ -728,11 +728,8 @@ Derivation of spherical Laplace operator.
 </div>
 </div>
 </section>
-<section id="temporal-differentials" class="level2">
-<h2 class="anchored" data-anchor-id="temporal-differentials">Temporal Differentials</h2>
-<div id="ref">
-
-</div>
+<section id="temporal-differentials" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Temporal Differentials</h1>
 
 
 </section>
@@ -1006,7 +1003,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
 
 
 
