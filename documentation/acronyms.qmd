@@ -7,7 +7,7 @@ citation: false
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 
@@ -56,7 +56,7 @@ citation: false
 : {.hover}
 
 
-## LaTeX - Glossary Acronyms Definition
+## LaTeX - Glossary Acronyms Definition {.unnumbered}
 
 ```latex
 \newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}

@@ -1,5 +1,5 @@
 ---
-title: "Fibonnacci Sequence -- Last Digits"
+title: "Fibonnacci Sequence"
 description: "Julia, Exercise"
 image: image.png
 author: Alexander Smolka

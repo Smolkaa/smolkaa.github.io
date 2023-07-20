@@ -10,6 +10,7 @@
 
 \newcommand{\num}[1]{#1}
 \newcommand{\SI}[2]{#1\,\mathrm{#2}}
+\newcommand{\SIrange}[3]{#1\,\text{ to }\,#2\,\mathrm{#3}}
 \newcommand{\si}[1]{\,\mathrm{#1}}
 
 \newcommand{\per}{/}
@@ -17,6 +18,8 @@
 \newcommand{\metre}{m}
 \newcommand{\second}{s}
 \newcommand{\minute}{min}
+\newcommand{\hour}{h}
+\newcommand{\day}{d}
 \newcommand{\kelvin}{K}
 \newcommand{\joule}{J}
 \newcommand{\gram}{g}

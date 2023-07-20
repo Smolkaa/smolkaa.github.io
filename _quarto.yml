@@ -76,12 +76,17 @@ website:
         - "---"
         - section: "Planetary Measurements and Data"
           contents: 
+            - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
         
 
     - title: "Manuals"
       contents:
         - manuals/manuals.qmd
+        - "---"
+        - section: "Examples"
+          contents:
+            - manuals/example_trajectory_01/index.qmd
         - "---"
         - section: "Exercises"
           contents:
@@ -94,6 +99,7 @@ website:
         - section: "Julia"
           contents:
             - manuals/package_installation/index.qmd
+            - manuals/example_trajectory_01/index.qmd
             - manuals/exercise_fibonacci/index.qmd
         - "---"
         - section: "On-Boarding"

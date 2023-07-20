@@ -14,22 +14,30 @@ title: "Numerical Grids"
 
 Some introduction text...
 
-# Global (Spherical) Grids
+# Global, Two-Dimensional Grids
 
 $\mathbb{S}^2$
 
 
-##  Structured, Two-Dimensional
+##  Structured
 {{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids.qmd >}}
 
-## Structured, Reduced, Two-Dimensional
+## Structured, Reduced
 {{< include /documentation/math_num_comp/numerical_grids/_global_structured_2d_grids_reduced.qmd >}}
 
-## Spiral, Two-Dimensional
+## Spiral
 {{< include /documentation/math_num_comp/numerical_grids/_global_spiral_2d_grids.qmd >}}
 
-## HEALPix, Two-Dimensional
+## HEALPix
 {{< include /documentation/math_num_comp/numerical_grids/_global_healpix_2d_grids.qmd >}}
+
+
+# Global, Three-Dimensional Grids
+
+##  Structured
+
+## Structured, Reduced
+
 
 # Local Grids
 something

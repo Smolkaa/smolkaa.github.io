@@ -4,7 +4,7 @@ citation: false
 ---
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---

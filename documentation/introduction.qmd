@@ -6,7 +6,7 @@ title: "Introduction"
 {{< include /resources/latex/_symbols.qmd >}}
 
 ::: {.hidden }
-# {{< meta title >}}
+# {{< meta title >}} {.unnumbered}
 :::
 
 ---
