@@ -1,5 +1,5 @@
 ---
-title: "Orbital Mechanics Functions"
+title: "4.2 Orbital Mechanics Functions"
 format:
   html: default
 ---
@@ -7,18 +7,14 @@ format:
 {{< include /resources/latex/_defs.qmd >}}
 {{< include /resources/latex/_symbols.qmd >}}
 
-::: {.hidden }
-# {{< meta title >}} {.unnumbered}
-:::
-
 ---
 
-For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the [Gravitational Potential](/documentation/fundamentals/gravitational_potential.qmd) section.
+For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the [Gravitational Potential](/documentation/trajectories//gravitational_potential.qmd) section.
 
 
 # Orbital Parameters
 
-The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation [@Walter2018; @Schoerghofer2022a]. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector $\vec\velocity\in\Set{R}^3$, the mass of the planetary object $\mass\in\Set{R}^+$, and the current radial position $\radius\in\Set{R}^+$. Note that the velocity vector has to be provided in a [local cartesian coordinate system](/documentation/math_num_comp/coordinate_systems.qmd) with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. The physical parameters are usually defined for all or all positive real numbers, $\Set{R}$ or $\Set{R}^+$, with the exception of the azimuth and zenith angle, $\azimuthAngle, \zenithAngle\in\left[-\pi, \pi\right)$, and the true anomaly, eccentric anomaly, and mean anomaly, $\trueAnomaly, \eccentricAnomaly, \meanAnomaly\in\left[0, 2\pi\right)$, respectively.
+The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation [@Walter2018; @Schoerghofer2022a]. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector $\vec\velocity\in\Set{R}^3$, the mass of the planetary object $\mass\in\Set{R}^+$, and the current radial position $\radius\in\Set{R}^+$. Note that the velocity vector has to be provided in a [local cartesian coordinate system](/documentation/fundamentals/coordinate_systems.qmd) with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. The physical parameters are usually defined for all or all positive real numbers, $\Set{R}$ or $\Set{R}^+$, with the exception of the azimuth and zenith angle, $\azimuthAngle, \zenithAngle\in\left[-\pi, \pi\right)$, and the true anomaly, eccentric anomaly, and mean anomaly, $\trueAnomaly, \eccentricAnomaly, \meanAnomaly\in\left[0, 2\pi\right)$, respectively.
 
 
 
@@ -35,12 +31,13 @@ The azimuth angle $\azimuthAngle$ can be calculated using the following multi-ca
         -\cos^{-1}\left(\velocity_2/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2<0
     \end{cases} \label{eq:azimuth_angle_v}
 \end{equation}
-with a [local cartesian](/documentation/math_num_comp/coordinate_systems.qmd) velocity vector $\vec\velocity = \left[\velocity_1, \velocity_2, \velocity_3\right]^T$. The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression:
+with a [local cartesian](/documentation/fundamentals/coordinate_systems.qmd) velocity vector $\vec\velocity = \left[\velocity_1, \velocity_2, \velocity_3\right]^T$. The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression:
 \begin{equation}
     \cos\azimuthAngle = \frac{\velocity_2}{\sqrt{\velocity_1^2+\velocity_2^2}}.
 \end{equation} 
+[{{< fa code >}} [`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\azimuthAngle\left(\vec\velocity\right)$: Eq. \eqref{eq:azimuth_angle_v}]{.aside}
 
-{{< include orbital_mechanics_functions/apirefs/_azimuth_angle.qmd >}}
+
 
 
 ## Ecccentric Anomaly -- $\eccentricAnomaly$ {#sec-eccentric-anomaly}
@@ -55,8 +52,9 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 \begin{equation}
     \tan\left(\eccentricAnomaly/2\right) = \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\trueAnomaly/2\right).
 \end{equation}
+[{{< fa code >}} [`eccentric_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\eccentricAnomaly\left(\eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:eccentric_anomaly_e_theta} </br> {{< fa code >}} [`eccentric_anomaly_e_M`](/api/exospheres/orbital_mechanics.qmd): $\eccentricAnomaly\left(\eccentricity, \meanAnomaly\right)$: Eq. \eqref{eq:eccentric_anomaly_e_M}]{.aside}
 
-{{< include orbital_mechanics_functions/apirefs/_eccentric_anomaly.qmd >}}
+
 
 
 ## Eccentricity -- $\eccentricity$ {#sec-eccentricity}
@@ -67,7 +65,14 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \eccentricity\left(\eccentricAnomaly, \meanAnomaly\right) &= \frac{\eccentricAnomaly - \meanAnomaly}{\sin \eccentricAnomaly}  \label{eq:eccentricity_E_M}
 \end{align}
 
-{{< include orbital_mechanics_functions/apirefs/_eccentricity.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`eccentricity_epskin_psi`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\relativeKineticEnergy, \zenithAngle\right)$: Eq. \eqref{eq:eccentricity_epskin_psi}  
+
+{{< fa code >}} [`eccentricity_epskin_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\relativeKineticEnergy, \vec\velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\velocity=\velocity(\zenithAngle)$ from Eq. \eqref{eq:zenith_angle_v}
+
+{{< fa code >}} [`eccentricity_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\radius, \mass, \velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\velocity_{esc}(\radius,\mass),\velocity\right)$ from Eqs. \eqref{eq:escape_velocity_r_m} and \eqref{eq:relative_Ekin_v_vesc}, and with $\velocity=\velocity(\zenithAngle)$ from Eq. \eqref{eq:zenith_angle_v}
+:::
+
 
 
 ## Escape Velocity -- $\velocity_{esc}$ {#sec-escape-velocity}
@@ -75,7 +80,10 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity_r_m}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_escape_velocity.qmd >}}
+::: {.column-margin}
+{{< fa code >}}  [`escape_velocity_r_m`](/api/exospheres/orbital_mechanics.qmd): $\velocity_{esc}\left(\radius, \mass\right)$: Eq. \eqref{eq:escape_velocity_r_m} 
+:::
+
 
 
 ## Ground Track Distance -- $\distance$ {#sec-ground-track-distance}
@@ -83,7 +91,13 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \distance\left(\radius, \Delta\trueAnomaly\right) = \radius \cdot \Delta\trueAnomaly  \label{eq:ground_track_distance_r_dtheta}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_ground_track_distance.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`ground_distance_R_dtheta`](/api/exospheres/orbital_mechanics.qmd): $\distance\left(\radius, \trueAnomaly\right)$: Eq. \eqref{eq:ground_track_distance_r_dtheta}  
+
+{{< fa code >}} [`ground_distance_R_a_e`](/api/exospheres/orbital_mechanics.qmd): $\distance\left(\radius, \semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:ground_track_distance_r_dtheta} with $\Delta\trueAnomaly = 2\pi - 2\trueAnomaly$ and $\trueAnomaly = \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right)$ of Eq. \eqref{eq:true_anomaly_r_a_e}
+:::
+
+
 
 
 ## Mean Anomaly  -- $\meanAnomaly$ {#sec-mean-anomaly}
@@ -91,7 +105,13 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \meanAnomaly\left(\eccentricity, \eccentricAnomaly\right) = \eccentricAnomaly - \eccentricity\sin \eccentricAnomaly  \label{eq:mean_anomaly_e_E}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_mean_anomaly.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`mean_anomaly_e_E`](/api/exospheres/orbital_mechanics.qmd): $\meanAnomaly\left(\eccentricity, \eccentricAnomaly\right)$: Eq. \eqref{eq:mean_anomaly_e_E}  
+
+{{< fa code >}} [`mean_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\meanAnomaly\left(\eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:mean_anomaly_e_E} with $\eccentricAnomaly=\eccentricAnomaly(\eccentricity, \trueAnomaly)$ from Eq. \eqref{eq:eccentric_anomaly_e_theta}
+:::
+
+
 
 
 ## Orbit Period -- $\period$ {#sec-orbit-period}
@@ -99,7 +119,11 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \period\left(\semiMajorAxis, \mass\right) = 2\pi\sqrt{\frac{\semiMajorAxis^3}{\GravitationalConstant \mass}}  \label{eq:orbit_period_a_m}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_orbit_period.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`orbit_period_a_m`](/api/exospheres/orbital_mechanics.qmd): $\period\left(\semiMajorAxis, \mass\right)$: Eq. \eqref{eq:orbit_period_a_m}  
+:::
+
+
 
 
 ## Orbit Time -- $\Time$ {sec-orbit-time}
@@ -107,7 +131,15 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \Time\left(\meanAnomaly, \period\right) = \frac{\meanAnomaly}{2\pi} \cdot \period  \label{eq:orbit_time_M_P}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_orbit_time.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`orbit_time_M_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\meanAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P}  
+
+{{< fa code >}} [`orbit_time_e_E_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\eccentricity, \eccentricAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P} with $\meanAnomaly = \meanAnomaly(\eccentricity, \eccentricAnomaly)$ of Eq. \eqref{eq:mean_anomaly_e_E}
+
+{{< fa code >}} [`orbit_time_e_theta_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\eccentricity, \trueAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P} with $\meanAnomaly = \meanAnomaly(\eccentricity, \eccentricAnomaly)$ of Eq. \eqref{eq:mean_anomaly_e_E} and $\eccentricAnomaly = \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right)$ of Eq. \eqref{eq:eccentric_anomaly_e_theta}
+:::
+
+
 
 
 ## Relative Kinetic Energy -- $\relativeKineticEnergy$ {#sec-relative-kinetic-energy}
@@ -117,7 +149,18 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \relativeKineticEnergy\left(\eccentricity, \trueAnomaly\right) &= 1 - \frac{1 - \eccentricity^2}{2 + 2\eccentricity\cos\left(\trueAnomaly\right)}  \label{eq:relative_Ekin_e_theta}
 \end{align}
 
-{{< include orbital_mechanics_functions/apirefs/_relative_kinetic_energy.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`epskin_vesc_v`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right)$: Eq. \eqref{eq:relative_Ekin_v_vesc}  
+
+{{< fa code >}} [`epskin_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:relative_Ekin_v_vesc} with $\velocity_{esc} = \velocity_{esc}\left(\radius, \mass\right)$ of Eq. \eqref{eq:escape_velocity_r_m}
+
+{{< fa code >}} [`epskin_r_a`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\radius, \semiMajorAxis\right)$: Eq. \eqref{eq:relative_Ekin_r_a}
+
+{{< fa code >}} [`epskin_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:relative_Ekin_e_theta}
+:::
+
+
+
 
 ## Semi-Latus Rectum -- $\semiLatusRectum$ {#sec-semi-latus-rectum}
 \begin{align}
@@ -125,7 +168,14 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right) &= \radius \cdot \left(1 + \eccentricity \cdot \cos \trueAnomaly\right)  \label{eq:semi_latus_rectum_r_e_theta}
 \end{align}
 
-{{< include orbital_mechanics_functions/apirefs/_semi_latus_rectum.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`semi_latus_rectum_a_e`](/api/exospheres/orbital_mechanics.qmd): $\semiLatusRectum\left(\semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:semi_latus_rectum_a_e}  
+
+{{< fa code >}} [`semi_latus_rectum_r_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:semi_latus_rectum_r_e_theta}  
+:::
+
+
+
 
 ## Semi-Major Axis -- $\semiMajorAxis$ {#sec-semi-major-axis}
 \begin{align}
@@ -133,7 +183,17 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \semiMajorAxis\left(\semiLatusRectum, \eccentricity\right) &= \frac{\semiLatusRectum}{1 - \eccentricity^2}  \label{eq:semi_major_axis_p_e}
 \end{align}
 
-{{< include orbital_mechanics_functions/apirefs/_semi_major_axis.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`semi_major_axis_r_epskin`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \relativeKineticEnergy\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin}  
+
+{{< fa code >}} [`semi_major_axis_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$ and $\velocity_{esc}=\velocity_{esc}\left(\radius, \mass\right)$ of Eqs. \eqref{eq:relative_Ekin_v_vesc} and \eqref{eq:escape_velocity_r_m}
+
+{{< fa code >}} [`semi_major_axis_p_e`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\semiLatusRectum, \eccentricity\right)$: Eq. \eqref{eq:semi_major_axis_p_e}  
+
+{{< fa code >}} [`semi_major_axis_r_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:semi_major_axis_p_e} with $\semiLatusRectum=\semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right)$ of Eq. \eqref{eq:semi_latus_rectum_r_e_theta}
+:::
+
+
 
 ## True Anomaly -- $\trueAnomaly$ {#sec-true-anomaly}
 \begin{align}
@@ -141,11 +201,22 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
     \trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{1 - \eccentricity^2}{2-2 \relativeKineticEnergy} -1 \right)\right)  \label{eq:true_anomaly_e_epskin}
 \end{align}
 
-{{< include orbital_mechanics_functions/apirefs/_true_anomaly.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`true_anomaly_r_a_e`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:true_anomaly_r_a_e}  
+
+{{< fa code >}} [`true_anomaly_e_epskin`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right)$: Eq. \eqref{eq:true_anomaly_e_epskin}  
+
+{{< fa code >}} [`true_anomaly_epskin_v`](/api/exospheres/orbital_mechanics.qmd): $\trueAnomaly\left(\relativeKineticEnergy, \vec\velocity\right)$: Eq. \eqref{eq:true_anomaly_epskin_v}  
+:::
+
+
 
 ## Zenith Angle -- $\zenithAngle$ {#sec-zenith-angle}
 \begin{equation}
     \zenithAngle\left(\vec\velocity\right) = \tan^{-1}\left(\frac{\sqrt{\velocity_1^2 + \velocity_2^2}}{\velocity_3}\right)  \label{eq:zenith_angle_v}
 \end{equation}
 
-{{< include orbital_mechanics_functions/apirefs/_zenith_angle.qmd >}}
+::: {.column-margin}
+{{< fa code >}} [`zenith_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\zenithAngle\left(\vec\velocity\right)$: Eq. \eqref{eq:zenith_angle_v}  
+:::
+

@@ -1,5 +1,5 @@
 ---
-title: "Two-Dimensional Landing Position Calculation"
+title: "4.3 Two-Dimensional Landing Position Calculation"
 format:
   html: default
 ---
@@ -7,11 +7,11 @@ format:
 {{< include /resources/latex/_defs.qmd >}}
 {{< include /resources/latex/_symbols.qmd >}}
 
-::: {.hidden }
-# {{< meta title >}} {.unnumbered}
-:::
-
 ---
+
+For purely ballistic trajectories, the landing position of a particle can be analytically calculated.
+
+# General Solution
 
 The following calculations are based on the orbital mechanics functions introduced in section [Orbital Mechanics Functions](/documentation/trajectories/orbital_mechanics_functions.qmd) to calculate the landing position $\left(\longitude_1, \latitude_1\right)$. Note that this approach is quasi-two-dimensional as the radial dimension of the spherical three-dimensional coordinate system is neglected, assuming a perfectly spherical central body. The trajectory starts and the launch position $\left(\longitude_0, \latitude_0\right)$ and, as mentioned above, requires knowledge about the mass and radius of the planetary body, $\mass$ and $\radius$, as well as the launch, or initial, velocity vector $\vec\velocity$.
 
@@ -29,3 +29,6 @@ with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq
 
 
 Calculating the time of flight $\flightTime = \Time_1 - \Time_0 = \period - 2\Time_0$ requires the orbital period [$\period\left(\semiMajorAxis, \mass\right)$](/documentation/trajectories/orbital_mechanics_functions.qmd#sec-orbit-period) as well as the orbit time [$\Time(\meanAnomaly, \period)$](/documentation/trajectories/orbital_mechanics_functions.qmd#sec-orbit-time), where $\Time_0$ and $\Time_1$ are the orbit times at the launch and landing, respectively, with $\Time_1 = \period-\Time_0$ for symmetry reasons. The mean anomaly [$\meanAnomaly_0$](/documentation/trajectories/orbital_mechanics_functions.qmd#sec-mean-anomaly) at launch can be calculated using the eccentric anomaly [$\eccentricAnomaly_0$](/documentation/trajectories/orbital_mechanics_functions.qmd#sec-eccentric-anomaly) and the eccentricity $\eccentricity$.
+
+
+# Simplification for Small Trajectories

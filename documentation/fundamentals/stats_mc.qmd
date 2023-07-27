@@ -1,0 +1,12 @@
+---
+title: "2.4 Statistics and Monte-Carlo"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+## Ensemble Averages
+{{< include /documentation/fundamentals/stats_mc/_ensemble_averages.qmd >}}

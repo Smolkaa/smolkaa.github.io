@@ -1,4 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Orbit Period
-[`orbit_period_a_m`](/api/exospheres/orbital_mechanics.qmd): $\period\left(\semiMajorAxis, \mass\right)$: Eq. \eqref{eq:orbit_period_a_m}  
-:::

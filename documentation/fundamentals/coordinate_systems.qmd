@@ -1,0 +1,23 @@
+---
+title: "2.1 Coordinate Systems"
+
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+Some introduction text...
+
+# Cartesian and Spherical Coordinates
+{{< include /documentation/fundamentals/coordinate_systems/_cartesian_spherical_coordinates.qmd >}}
+
+
+# Spacial Differentials
+{{< include /documentation/fundamentals/coordinate_systems/_spacial_differentials.qmd >}}
+
+
+# Temporal Differentials
+{{< include /documentation/fundamentals/coordinate_systems/_temporal_differentials.qmd >}}
+

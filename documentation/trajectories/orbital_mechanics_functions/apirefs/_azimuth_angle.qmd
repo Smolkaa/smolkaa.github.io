@@ -1,5 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Azimuth Angle
-
-[`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\azimuthAngle\left(\vec\velocity\right)$: Eq. \eqref{eq:azimuth_angle_v}
-:::

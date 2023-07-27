@@ -14,7 +14,9 @@ format:
       url: "https://smolkaa.github.io"
       issued: 2023
     date: last-modified  
-    number-sections: true
+    # number-sections: true
+    # toc-depth: 5
+    toc-title: "{{< meta title >}}"
     
 execute:
   cache: true

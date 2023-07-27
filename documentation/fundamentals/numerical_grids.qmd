@@ -1,0 +1,40 @@
+---
+title: "2.2 Numerical Grids"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+Some introduction text...
+
+# Global, Two-Dimensional Grids
+
+$\mathbb{S}^2$
+
+
+##  Structured
+{{< include /documentation/fundamentals/numerical_grids/_global_structured_2d_grids.qmd >}}
+
+## Structured, Reduced
+{{< include /documentation/fundamentals/numerical_grids/_global_structured_2d_grids_reduced.qmd >}}
+
+## Spiral
+{{< include /documentation/fundamentals/numerical_grids/_global_spiral_2d_grids.qmd >}}
+
+## HEALPix
+{{< include /documentation/fundamentals/numerical_grids/_global_healpix_2d_grids.qmd >}}
+
+
+# Global, Three-Dimensional Grids
+
+##  Structured
+
+## Structured, Reduced
+
+
+# Local Grids
+something
+

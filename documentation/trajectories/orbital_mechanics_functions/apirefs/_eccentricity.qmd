@@ -1,8 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Eccentricity
-[`eccentricity_epskin_psi`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\relativeKineticEnergy, \zenithAngle\right)$: Eq. \eqref{eq:eccentricity_epskin_psi}  
-
-[`eccentricity_epskin_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\relativeKineticEnergy, \vec\velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\velocity=\velocity(\zenithAngle)$ from Eq. \eqref{eq:zenith_angle_v}
-
-[`eccentricity_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\radius, \mass, \velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\velocity_{esc}(\radius,\mass),\velocity\right)$ from Eqs. \eqref{eq:escape_velocity_r_m} and \eqref{eq:relative_Ekin_v_vesc}, and with $\velocity=\velocity(\zenithAngle)$ from Eq. \eqref{eq:zenith_angle_v}
-:::

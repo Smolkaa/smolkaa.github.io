@@ -26,12 +26,10 @@ website:
         href: index.qmd
       - text: "{{< fa book >}} Documentation"
         href: documentation/documentation.qmd
-      - text: "{{< fa book-open-reader >}} Manuals"
+      - text: "{{< fa bookmark >}} Manuals and Examples"
         href: manuals/manuals.qmd
       - text: "{{< fa code >}} Code"
         href: api/api.qmd
-      - text: "{{< fa bookmark >}} Bibliography"
-        href: bibliography/bibliography.qmd
     right:
       - icon: github
         href: https://github.com/Smolkaa
@@ -40,7 +38,7 @@ website:
     - title: "Home"
       border: true
       logo: /resources/logo/exess_logo.svg
-      collapse-level: 2
+      collapse-level: 1
       pinned: true
       style: "floating"
       contents:
@@ -49,36 +47,41 @@ website:
 
     - title: "Documentation"
       contents:
-        - text: "Home"
-          href: documentation/documentation.qmd
+        - documentation/documentation.qmd
         - documentation/acronyms.qmd
-        - text: "Introduction"
-          href: documentation/introduction.qmd
-        - "---"
-        - section: "Mathematics, Numerics, and Computational Foundations"
+        - documentation/introduction/introduction.qmd
+        - section: "2. Fundamentals"
           contents:
-            - documentation/math_num_comp/coordinate_systems.qmd
-            - documentation/math_num_comp/numerical_grids.qmd
-            - documentation/math_num_comp/statistics.qmd
-        - "---"
-        - section: "Fundamentals"
-          contents:
-            - documentation/fundamentals/introduction.qmd
+            - documentation/fundamentals/coordinate_systems.qmd
+            - documentation/fundamentals/numerical_grids.qmd
+            - "2.3. ODEs and Numerical Solvers"
+            - documentation/fundamentals/stats_mc.qmd
             - documentation/fundamentals/moon.qmd
-            - documentation/fundamentals/velocity_distributions.qmd
-            - documentation/fundamentals/gravitational_potential.qmd
-            - documentation/fundamentals/density_projections.qmd
-        - "---"
-        - section: "Particle Trajectories"
+            - "2.6. Other Exospheres in The Solar System"
+        - section: "3. Exospheres: Sources and Sinks"
           contents:
+            - "3.1. Solar Wind"
+            - "Photoionization and -dissociation"
+            - documentation/sources_sinks/thermal_sorption.qmd
+            - "Photodesorption"
+            - "MIV"
+        - section: "4. Exospheres: Particle Trajectories"
+          contents:
+            - documentation/trajectories/gravitational_potential.qmd
+            - "4.2 Ballistic Trajetories"
             - documentation/trajectories/orbital_mechanics_functions.qmd
             - documentation/trajectories/2d_landing_position.qmd
-        - "---"
-        - section: "Planetary Measurements and Data"
-          contents: 
+            - "4.4 Non-Ballistic Trajectories"
+        - section: "5. Planetary Measurements and Data"
+          contents:
+            - documentation/planetary_measurements/density_projections.qmd
             - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
-        
+        - section: "6. Lunar Water Exosphere Simulation"
+          contents:
+            - "6.X Hydrogen Surface Reaction Model"
+
+
 
     - title: "Manuals"
       contents:
@@ -125,11 +128,6 @@ website:
         - section: "Exospheres"
           contents:
             - api/exospheres/orbital_mechanics.qmd
-
-    - title: "Bibliography"
-      contents:
-        - text: "Overview"
-          href: bibliography/bibliography.qmd
 
 format:
   html:

@@ -1,13 +1,9 @@
 ---
-title: "Missions"
+title: "5.2 Missions"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
-{{< include /resources/latex/_symbols.qmd >}}
-
-::: {.hidden }
-# {{< meta title >}} {.unnumbered}
-:::
+{{< include /resources/latex/_symbols.qmd >}} 
 
 ---
 

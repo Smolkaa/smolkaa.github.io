@@ -1,9 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Orbit Time
-[`orbit_time_M_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\meanAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P}  
-
-[`orbit_time_e_E_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\eccentricity, \eccentricAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P} with $\meanAnomaly = \meanAnomaly(\eccentricity, \eccentricAnomaly)$ of Eq. \eqref{eq:mean_anomaly_e_E}
-
-[`orbit_time_e_theta_P`](/api/exospheres/orbital_mechanics.qmd): $\Time\left(\eccentricity, \trueAnomaly, \period\right)$: Eq. \eqref{eq:orbit_time_M_P} with $\meanAnomaly = \meanAnomaly(\eccentricity, \eccentricAnomaly)$ of Eq. \eqref{eq:mean_anomaly_e_E} and $\eccentricAnomaly = \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right)$ of Eq. \eqref{eq:eccentric_anomaly_e_theta}
-
-:::

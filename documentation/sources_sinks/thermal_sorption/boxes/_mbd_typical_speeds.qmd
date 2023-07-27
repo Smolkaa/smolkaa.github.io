@@ -1,0 +1,31 @@
+::: {.column-body-outset-right}
+::: {.callout-note collapse="true"}
+# Derivation of typical speeds of the Maxwell-Boltzmann distribution.
+
+First, the derivation of Eq. \eqref{eq:mbd_most_probable_speed}, with the most probable speed denoted as $\velocity_p$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$ and assuming that $\velocity_p > 0$:
+\begin{alignat*}{3}
+    && \left. \frac{df(\velocity)}{d\velocity}\right|_{\velocity_p} = \frac{d}{d\velocity} \left[ \left(\frac{\mass}{2\pi\BoltzmannConstant\temperature}\right)^{3/2} \cdot 4\pi\velocity^2 \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) \right]_{\velocity_p} &= 0 \\
+    %\Rightarrow\quad &&\; \frac{d}{d\velocity} \Big[ \velocity^2 \cdot \exp\left( -a\velocity^2\right) \Big]_{\velocity_p} &= 0  \\
+     \Rightarrow\quad &&\; 2\velocity_p \cdot \exp\left( -a\velocity_p^2 \right) - 2a\velocity_p^3 \cdot \exp\left( -a\velocity_p^2 \right) &= 0  \\
+     \Rightarrow\quad &&\; \velocity_p = \sqrt{\frac{1}{a}} &= \sqrt{\frac{2\BoltzmannConstant\temperature}{\mass}}
+ \end{alignat*}
+
+
+Second, the derivation of Eq. \eqref{eq:mbd_mean_speed}, with the mean speed denoted as $\meanof{\velocity}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$:
+\begin{align*}
+    \meanof{\velocity} &= \int_0^\infty \velocity \; f(\velocity) \; d\velocity = 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \int_0^\infty \velocity^3 \cdot \exp\left( - a \velocity^2 \right)d\velocity \\
+    \Rightarrow \quad \meanof{\velocity} &= 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[ - \frac{\left(a\velocity^2 + 1\right) \cdot \exp\left(-a\velocity^2\right)}{2a^2} \right]_0^\infty \\
+    %\Rightarrow \quad \meanof{\velocity} &= 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[\frac{1}{2a^2} \right] \\
+    \Rightarrow \quad \meanof{\velocity} &= \sqrt{\frac{4}{\pi a}} = \sqrt{\frac{8\BoltzmannConstant\temperature}{\pi\mass}} = \frac{2}{\sqrt{\pi}} \velocity_p. 
+\end{align*}
+
+
+Third and last, the derivation of Eq. \eqref{eq:mbd_rms}, with the root mean squared speed denoted as $\velocity_\text{rms}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$, and $\erf$ the Gaussian error function:
+\begin{align*}
+    \velocity_\text{rms} &= \sqrt{\meanof{\velocity^2}} = \left( \int_o^\infty \velocity^2 f(\velocity) d\velocity \right)^{1/2} \\
+    \Rightarrow\quad \velocity_\text{rms} &= \left( 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[ \frac{3\sqrt{\pi}\cdot\erf{\left(\sqrt{a}\velocity\right)}}{8a^{5/2}} - \frac{\velocity\exp\left(-a\velocity^2\right)\cdot\left(2a\velocity^2+3\right)}{4a^2} \right]_0^\infty \right)^{1/2}  \\
+    %\Rightarrow\quad \velocity_\text{rms} &= \left( 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[ \frac{3\sqrt{\pi}}{8a^{5/2}} \right]\right)^{1/2}  \\
+    \Rightarrow\quad \velocity_\text{rms} &= \sqrt{\frac{3}{2a}} = \sqrt{\frac{3\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{3}{2}} \velocity_p.
+\end{align*}
+:::
+:::

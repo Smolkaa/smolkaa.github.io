@@ -1,0 +1,109 @@
+The [MBD](/documentation/acronyms.qmd)  (Maxwell-Boltzmann velocity distribution) is a probability distribution function that describes the distribution of velocities and speeds of particles in a gas or liquid. It is intimately connected to the kinetic gas theory, which explains the behavior of gases in terms of the motion of their constituent particles, which is proportional to their temperature. 
+
+::: {.column-margin}
+{{< fa code >}} [`MaxwellBoltzmannVelocityDistribution`](/api/base/distributions.qmd)
+:::
+
+
+The one-dimensional [pdf](/documentation/acronyms.qmd) of the [MBD](/documentation/acronyms.qmd), given for a velocity in the direction $x$, is
+\begin{equation}
+   f(\velocity_x)d\velocity_x = \sqrt{\frac{\mass}{2\pi\BoltzmannConstant\temperature}} \cdot \exp\left(-\frac{\mass\velocity_x^2}{2\BoltzmannConstant\temperature}\right) d\velocity_x 
+   \label{eq:mbd_1d}
+\end{equation}
+with the mass $\mass$ and available thermodynamic temperature $\temperature$ of the particle, and the Boltzmann constant $\BoltzmannConstant$, properly normalized so that $\int_{-\infty}^\infty f(\velocity_x)d\velocity_x = 1$. Note that this distribution is identical to a Gaussian distribution with zero mean and variance of $\BoltzmannConstant\temperature / \mass$ [@Crider2002; @Smolka2022]. 
+
+
+One can extend the distribution to three cartesian dimensions, with the velocity vector $\vec\velocity = \left[\velocity_x, \velocity_y, \velocity_z\right]^T$ and $d^3\vec\velocity = d\velocity_xd\velocity_yd\velocity_z$, by linearly combining all three [pdf](/documentation/acronyms.qmd) given in Eq. \eqref{eq:mbd_1d}
+\begin{equation}
+    f(\vec\velocity)d^3\vec\velocity = \left(\frac{\mass}{2\pi\BoltzmannConstant\temperature}\right)^{3/2} \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d^3\vec\velocity.
+    \label{eq:mbd_3d}
+\end{equation}
+with the speed $\velocity=\sqrt{\vec\velocity ^T\vec\velocity}$. Identical to the one-dimensional form of the distribution, the three-dimensional one is based on a symmetric Gaussian distribution with zero mean. In order to convert it into a distribution of speeds, Eq. \eqref{eq:mbd_3d} can be integrated twice over arbitrary solid angles, utilizing its symmetry. For this, the differential will be expressed in spherical coordinates $\vec\velocity\left(\velocity, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right) = \left[ \velocity\cos\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation,\, \velocity\sin\sphericalCoordinateAzimuth\cos\sphericalCoordinateElevation,\, \velocity\sin\sphericalCoordinateElevation\right]^T$, leading to the differential $d^3\vec\velocity = \velocity^2 \cos\sphericalCoordinateElevation\, d\velocity\, d\sphericalCoordinateAzimuth\, d\sphericalCoordinateElevation$ with $\velocity\in\Set{R}^+$, $\sphericalCoordinateElevation\in\left[-\pi/2, \pi/2\right)$, and $\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right)$, which results in
+\begin{equation}
+    f(\velocity)d\velocity = \left(\frac{\mass}{2\pi\BoltzmannConstant\temperature}\right)^{3/2} \cdot 4\pi\velocity^2 \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity. \label{eq:mbd_speed_3d}
+\end{equation}
+
+::: {.column-margin}
+{{< fa code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< fa code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d}
+:::
+
+{{< include thermal_sorption/boxes/_mbd_components.qmd >}}
+
+
+{{< include thermal_sorption/imgs/mbd/_mbd.qmd >}}
+
+
+@fig-mbd shows three normalized [MBD](/documentation/acronyms.qmd)s, using the mass $\mass$ and temperature $\temperature$ for the normalization. The one-dimensional distribution (<tt>1D-MBD</tt>) according to Eq. \eqref{eq:mbd_1d} shows the symmetric normal distribution, as the normalization $\sqrt{\mass / (\BoltzmannConstant\temperature)} = \SI{1}{\second\per\metre}$ leads to a Gaussian distribution with zero mean and unit variance. The second one-dimensional distribution (<tt>1D-MBD, one-directional</tt>) is showing the same equation but in its one-directional form, leading to only positive velocities. Mathematically, this operation changes the integration boundaries for the elevation angle $\sphericalCoordinateElevation$ to $\left(0, \pi/2\right)$, which in turn leads to a doubling of the prefactor to assure [pdf](/documentation/acronyms.qmd) normalization:
+\begin{equation}
+    f_+(\velocity_x)d\velocity_x = \begin{cases}
+        2 \cdot f(\velocity_x) d\velocity_x, & \quad \velocity_x \geq \SI{0}{\metre\per\second}, \\
+        0, & \quad \text{else.}
+    \end{cases}
+    \label{eq:mbd_1d+}
+\end{equation}
+These one-directional forms of the [MBD](/documentation/acronyms.qmd) are helpful for velocities where one direction is obstructed, for example when launching particles from a surface, where a movement downwards into the ground is not physical. The third distribution (<tt>3D-MBD, speed</tt>) is presenting the graph of Eq. \eqref{eq:mbd_speed_3d}. Note that, as with the graph before, this distribution is also one-directional, though in this case, it is by nature, since the speed in the spherical coordinate system description can only assume a positive value. Additionally, the speed distribution has three indicated and typical speeds shown, which will be explained in the following.
+
+
+
+### Typical Speeds
+
+One of those typical speeds obtained from properties of the [MBD](/documentation/acronyms.qmd) is the most probable speed, $\velocity_p$, which describes the speed at which Eq. \eqref{eq:mbd_speed_3d} reaches its maximum value. Since the [pdf](/documentation/acronyms.qmd) is normalized, we can infer that it must have at least one global extreme point at which its derivative equals zero:
+\begin{equation}
+   \left. \frac{df(\velocity)}{d\velocity}\right|_{\velocity_p} = 0 \qquad\Rightarrow\qquad \velocity_p = \sqrt{\frac{2\BoltzmannConstant\temperature}{\mass}}. 
+    \label{eq:mbd_most_probable_speed}
+\end{equation}
+
+
+Another typical value that can be drawn from a distribution is the mean speed $\meanof{\velocity}$, being the ensemble expectation according to Eq. \eqref{eq:ensemble_average}. For the speed distribution, the expected value can be calculated by the speed-weighted average of the distribution:
+\begin{equation}
+    \meanof{\velocity} = \int_0^\infty \velocity \; f(\velocity) \; d\velocity = \sqrt{\frac{8\BoltzmannConstant\temperature}{\pi\mass}} = \frac{2}{\sqrt{\pi}} \velocity_p. 
+    \label{eq:mbd_mean_speed}
+\end{equation}
+Note that the expected speed $\meanof{\velocity}$ of the distribution is not equal to the median $m$ of the distribution, for which the expression $\int_0^m f(\velocity) d\velocity$ evaluates to \SI{50}{\percent}.
+
+
+Lastly and similar to the mean speed, the mean square speed $\meanof{\velocity^2}$ is an important value describing the distribution. As the second-order raw moment, it corresponds to the average kinetic energy of a particle and can be translated into the root mean squared speed $\velocity_\text{rms} = \sqrt{\meanof{\velocity^2}}$:
+\begin{equation}
+    \velocity_\text{rms} = \sqrt{\meanof{\velocity^2}} = \left( \int_0^\infty \velocity^2 f(\velocity) d\velocity \right)^{1/2} = \sqrt{\frac{3\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{3}{2}} \velocity_p. 
+    \label{eq:mbd_rms}
+\end{equation}
+
+
+{{< include thermal_sorption/boxes/_mbd_typical_speeds.qmd >}}
+
+
+{{< include thermal_sorption/tables/mbd_typical_speeds/_mbd_typical_speeds.qmd >}}
+
+
+
+### Numrical Sampling
+
+Let $\vec\Velocity$ be the random variable of the [MBD](/documentation/acronyms.qmd) velocity, then any realization of $\vec\Velocity$ can be drawn from the respective [pdf](/documentation/acronyms.qmd), in this case Eq. \eqref{eq:mbd_3d},
+\begin{equation}
+    \vec\Velocity \sim f(\vec\velocity) =  \left(\frac{\mass}{2\pi\BoltzmannConstant\temperature}\right)^{3/2} \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right).
+\end{equation}
+Numerically speaking, to draw any realization from a randomly distributed variable, the latter has to be mapped on to one implemented state space, which in the most basic cases is a uniform distribution with the random variable $R_u\in\left[0,1\right]$ with realization $r_u$ of $R_u \sim f(r_u) = 1$ and a normal distribution with the random variable $R_n\in\left(-\infty,\infty\right)$ with realization $r_n$ of $R_n\sim f(r_n) = \mathcal{N}\left(r_n |\mu,\sigma^2\right)$ with zero mean and unit variance. Since $\vec\Velocity$ is three-dimensional, each individual dimension requires its own mapping. In its cartesian form, $\vec\Velocity=\left(\Velocity_x, \Velocity_y, \Velocity_z\right)$, all three components are equal to a scaled normal distrinbution, which can be used directly as
+\begin{alignat}{3}
+    \Velocity_i &= R_n \cdot \sqrt{\frac{\BoltzmannConstant\temperature}{\mass}} \; \sim \; \mathcal{N} \left(\velocity_i \Big| 0, \frac{\BoltzmannConstant\temperature}{\mass}\right) \qquad && \forall i \in \{x, y, z\} \label{eq:mbd_random_cartesian_component_2} \\
+    \Rightarrow\qquad \velocity_i &= r_n \cdot \sqrt{\frac{\BoltzmannConstant\temperature}{\mass}} \qquad &&\forall i \in \{x,y,z\}. 
+    \label{eq:mbd_random_cartesian_component}
+\end{alignat}
+Should one dimension be one-directional, the absolute value $|r_n|$ can be used iun Eq. \eqref{eq:mbd_random_cartesian_component} instead.
+
+
+The random variable $\vec\Velocity$ can also be expressed in its spherical form, with its three components the speed $\Velocity_\velocity \in \left[0,\infty\right)$ with realization $\velocity$ of $\Velocity_\velocity \sim f(\velocity)$, the elevation angle $\Velocity_\sphericalCoordinateElevation \in \left[-\pi/2, \pi/2\right]$ with realization $\sphericalCoordinateElevation$ of $\Velocity_\sphericalCoordinateElevation \sim f(\sphericalCoordinateElevation) = 1/2 \cdot \cos\sphericalCoordinateElevation$, and the azimuth angle $\Velocity_\sphericalCoordinateAzimuth \in \left[-\pi,\pi\right)$ with realization $\sphericalCoordinateAzimuth$ of $\Velocity_\sphericalCoordinateAzimuth \sim f(\sphericalCoordinateAzimuth) = 1/2\pi$. Similar to the cartesian description above, these three random variables can be mathed to one of the numerically implemented distributions. Because all three [pdf](/documentation/acronyms.qmd)s of the random variables are normalized, their [cdf](/documentation/acronyms.qmd) can be set equal to the [cdf](/documentation/acronyms.qmd) of the uniform unit distribution $R_u \sim f(r_u) = 1$:
+\begin{alignat}{4}
+    r_\velocity &= \int_0^{r_\velocity} f(r_u)dr_u &&= \int_0^{\velocity} f(\tilde\velocity) d\tilde\velocity \label{eq:mbd_speed_random}\\
+    r_\sphericalCoordinateElevation &= \int_0^{r_\sphericalCoordinateElevation} f(r_u)dr_u &&= \int_{-\pi/2}^{\sphericalCoordinateElevation} f(\tilde\sphericalCoordinateElevation) d\tilde\sphericalCoordinateElevation &&= \frac{1}{2}\left(\sin\sphericalCoordinateElevation + 1\right) \label{eq:mbd_elevation_random}\\
+    r_\sphericalCoordinateAzimuth &= \int_0^{r_\sphericalCoordinateAzimuth} f(r_u)dr_u &&= \int_{-\pi}^{\sphericalCoordinateAzimuth} f(\tilde\sphericalCoordinateAzimuth) d\tilde\sphericalCoordinateAzimuth &&= \frac{\sphericalCoordinateAzimuth+\pi}{2\pi}, \label{eq:mbd_azimuth_random}
+\end{alignat}
+where the speed distribution is equal to Eq. \eqref{eq:mbd_speed_3d}. With the latter two integrals being trivial, the speed integral of Eq. \eqref{eq:mbd_speed_random} evaluates to:
+\begin{equation}
+   r_\velocity = \erf\left( \sqrt{\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}} \right) - \frac{2}{\sqrt{\pi}} \cdot \sqrt{\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}} \cdot \exp\left( - \frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right).
+   \label{eq:mbd_speed_random_evaluated}
+\end{equation}
+Due to the combination of the Gaussian error function $\erf$ and an exponential function $\exp$, there is no elementary analytical expression of $\velocity$ as a function of $r_\velocity$. Thus, for numerical implementations Eq. \eqref{eq:mbd_speed_random_evaluated} is usually pre-evaluated several times to build up an interpolation table that maps any uniform random $r_\velocity$ to a speific [MBD](/documentation/acronyms.qmd) speed. The other two components, see Eqs. \eqref{eq:mbd_elevation_random}, \eqref{eq:mbd_azimuth_random}, show that the elevation angle $\sphericalCoordinateElevation$ is $\sin$-distributed, while the azimuth angle $\sphericalCoordinateAzimuth$ is uniformly distributed.
+
+::: {.column-margin}
+{{< fa code >}} [`sample`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
+:::

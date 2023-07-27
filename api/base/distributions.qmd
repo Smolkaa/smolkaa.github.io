@@ -23,7 +23,7 @@ ExESS
 
 ### Velocity Distributions
 
-For the theoretical description of the velocity distributions, please read the [documentation](/documentation/fundamentals/velocity_distributions.qmd).
+For the theoretical description of the velocity distributions, please read the [documentation](/documentation/fundamentals/thermal_sorption.qmd#sec-velocity-distributions).
 
 ## API
 

@@ -1,4 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Escape Velocity
-[`escape_velocity_r_m`](/api/exospheres/orbital_mechanics.qmd): $\velocity_{esc}\left(\radius, \mass\right)$: Eq. \eqref{eq:escape_velocity_r_m} 
-:::

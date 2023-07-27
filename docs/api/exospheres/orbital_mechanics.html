@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-20">
+<meta name="dcterms.date" content="2023-07-26">
 
 <title>ExESS - Orbital Mechanics</title>
 <style>
@@ -111,15 +111,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-book-open-reader" aria-label="book-open-reader"></i> Manuals</span></a>
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals and Examples</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../bibliography/bibliography.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Bibliography</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -164,13 +160,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Base</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../api/base/constants.html" class="sidebar-item-text sidebar-link">
@@ -199,13 +195,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Numerical Grids</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../api/grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link">
@@ -276,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 20, 2023</p>
+      <p class="date">July 26, 2023</p>
     </div>
   </div>
   
@@ -306,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] azimuth_angle_v(v::AbstractVector)
 [2] azimuth_angle_v(v::LocalCartesianVelocity)</code></pre>
@@ -326,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] eccentric_anomaly_e_M(e::Real, M::Real, N=10)</code></pre>
 <p>Calculates the eccentric anomaly given the orbit’s eccentricity <code>e</code> and the mean anomaly <code>M</code>, which triggers a numerical approximation with <code>N</code> steps. The result is given in radians [0, 2π).</p>
@@ -348,7 +344,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] eccentric_anomaly_e_theta(e::Real, theta::Real)</code></pre>
 <p>Calculates the eccentric anomaly given the orbit’s eccentricity <code>e</code> and the true anomaly <code>theta</code>. The result is given in radians [0, 2π).</p>
@@ -370,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[1] eccentricity_epskin_psi(epskin::Real, psi::Real)</code></pre>
 <p>Calculates the eccentricity of an elliptical trajetory based on the squared escape velocity fraction <code>epskin</code>, and the zenith launch angle <code>psi</code>.</p>
@@ -392,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>[1] eccentricity_epskin_v(epskin::Real, v::AbstractVector)
 [2] eccentricity_epskin_v(epskin::Real, v::LocalCartesianVelocity)</code></pre>
@@ -415,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>[1] eccentricity_r_m_v(r::Real, m::Real, v::AbstractVector)
 [2] eccentricity_r_m_v(r::Real, m::Real, v::LocalCartesianVelocity)</code></pre>
@@ -438,7 +434,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>[1] escape_velocity_r_m(r::Real, m::Real)</code></pre>
 <p>Calculates the magnitude of the escape velocity for an orbital radius <code>r</code> and body mass <code>m</code>.</p>
@@ -456,7 +452,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[1] flight_time_t0_t1(t0::Real, t1::Real)</code></pre>
 <p>Calculates the time of flight between the two orbital times <code>t0</code> and <code>t1</code>.</p>
@@ -478,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[1] flight_time_t0_P(t0::Real, P::Real)</code></pre>
 <p>Calculates the time of flight, given a symmetrical trajectory with a starting orbital time of <code>t0</code> and a landing orbital time of <code>P-t0</code>, with the orbital period <code>P</code>.</p>
@@ -500,7 +496,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[1] flight_time_e_theta0_theta1_P(e::Real, theta0::Real, theta1::Real, P::Real)</code></pre>
 <p>Calculates the time of flight between the two orbital positions <code>theta0</code> and <code>theta1</code>, given the eccentricity <code>e</code> and period <code>P</code> of the orbit.</p>
@@ -522,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[1] flight_time_e_theta0_P(e::Real, theta0::Real, P::Real)</code></pre>
 <p>Calculates the time of flight, given a symmetrical trajectory between the two orbital positions <code>theta0</code> and <code>2π - theta0</code>, given the eccentricity <code>e</code> and period <code>P</code> of the orbit.</p>
@@ -544,7 +540,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>[1] epskin_vesc_v(vesc::Real, v::AbstractVector)
 [2] epskin_vesc_v(vesc::Real, v::LocalCartesianVelocity)</code></pre>
@@ -567,7 +563,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>[1] epskin_r_m_v(r::Real, m::Real, v::AbstractVector)
 [2] epskin_r_m_v(r::Real, m::Real, v::LocalCartesianVelocity)</code></pre>
@@ -590,7 +586,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[1] epskin_r_a(r::Real, a::Real)</code></pre>
 <p>Calculates the squared fraction of the velocity at the radial position <code>r</code> on an orbit defined through the semi-major axis <code>a</code>.</p>
@@ -612,7 +608,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>[1] epskin_e_theta(e::Real, theta::Real)</code></pre>
 <p>Calculates the squared fraction of the velocity at the angular position <code>theta</code> on an orbit defined through the eccentricity <code>e</code>.</p>
@@ -634,7 +630,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>[1] ground_distance_R_dtheta(R::Real, dtheta::Real)</code></pre>
 <p>Calculates the ground flight distance covered by an angle <code>dtheta</code> of an elliptical orbit, which intersects with a body of radius <code>R</code>.</p>
@@ -656,7 +652,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>[1] ground_distance_R_a_e(R::Real, a::Real, e::Real)</code></pre>
 <p>Calculates the ground flight distance covered based on the radius of the body <code>R</code>, the orbit’s semi-major axis <code>a</code>, and the eccentricity <code>e</code>.</p>
@@ -678,7 +674,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>[1] mean_anomaly_e_E(e::Real, E::Real)</code></pre>
 <p>Calculates the mean anomaly, given the orbit’s eccentricity <code>e</code> and the eccentric anomaly <code>E</code>.</p>
@@ -700,7 +696,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>[1] mean_anomaly_e_theta(e::Real, theta::Real)</code></pre>
 <p>Calculates the mean anomaly, given the orbit’s eccentricity <code>e</code> and the true anomaly <code>theta</code>.</p>
@@ -722,7 +718,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>[1] orbit_period_a_m(a::Real, m::Real)</code></pre>
 <p>Calculates the period of an elliptical orbit, based on the semi-major axis <code>a</code>, and the body’s mass <code>m</code>.</p>
@@ -740,7 +736,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>[1] orbit_time_M_P(M::Real, P::Real)</code></pre>
 <p>Calculates the time at the position of an orbit defined through the mean anomaly <code>M</code>, as well as the orbital period <code>P</code>.</p>
@@ -762,7 +758,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="22">
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>[1] orbit_time_e_E_P(e::Real, E::Real, P::Real)</code></pre>
 <p>Calculates the time at the position of an orbit defined through the eccentric anomaly <code>E</code>, the eccentricity <code>e</code>, and the orbital period <code>P</code>.</p>
@@ -784,7 +780,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="23">
 <div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>[1] orbit_time_e_theta_P(e::Real, theta::Real, P::Real)</code></pre>
 <p>Calculates the time at the position of an orbit defined through the true anomaly <code>theta</code>, the eccentricity <code>e</code>, and the orbital period <code>P</code>.</p>
@@ -806,7 +802,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>[1] semi_latus_rectum_a_e(a::Real, e::Real)</code></pre>
 <p>Calculates the semi-latus-rectum of the elliptical trajetory defined through the semi-major axis <code>a</code> and the eccentricity <code>e</code>.</p>
@@ -828,7 +824,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>[1] semi_latus_rectum_r_e_theta(r::Real, e::Real, theta::Real)</code></pre>
 <p>Calculates the semi-latus-rectum of the elliptical trajetory based on the orbital radius <code>r</code>, the eccentricity <code>e</code>, and the true anomaly <code>theta</code></p>
@@ -850,7 +846,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>[1] semi_major_axis_r_epskin(r::Real, epskin::Real)</code></pre>
 <p>Calculates the semi-major axis of an elliptical orbit with the current orbital radius <code>r</code> and the trajectory’s squared escape velocity fraction <code>epskin</code>.</p>
@@ -872,7 +868,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="27">
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>[1] semi_major_axis_r_m_v(r::Real, m::Real, v::AbstractVector)
 [2] semi_major_axis_r_m_v(r::Real, m::Real, v::LocalCartesianVelocity)</code></pre>
@@ -895,7 +891,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="29">
+<div class="cell" data-execution_count="28">
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>[1] semi_major_axis_p_e(p::Real, e::Real)</code></pre>
 <p>Calculates the semi-major axis of an elliptical orbit with the semi-latus rectum <code>p</code> and eccentricity <code>e</code>.</p>
@@ -917,7 +913,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>[1] semi_major_axis_r_e_theta(r::Real, e::Real, theta::Real)</code></pre>
 <p>Calculates the semi-major axis of an elliptical orbit with the oribital radius <code>r</code>, the eccentricity <code>e</code>, and the true anomaly <code>theta</code>.</p>
@@ -939,7 +935,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>[1] true_anomaly_r_a_e(r::Real, a::Real, e::Real)</code></pre>
 <p>Calculates the true anomaly at the radial position <code>r</code> based on the semi-major axis <code>a</code>, and the eccentricity of the orbit <code>e</code>.</p>
@@ -961,7 +957,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>[1] true_anomaly_e_epskin(e::Real, epskin::Real)</code></pre>
 <p>Calculates the true anomaly based on the eccentricity of the orbit <code>e</code> and the current squared escape velocity fraction <code>epskin</code>.</p>
@@ -983,7 +979,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="33">
+<div class="cell" data-execution_count="32">
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>[1] true_anomaly_epskin_v(epskin::Real, v::AbstractVector)
 [2] true_anomaly_epskin_v(epskin::Real, v::LocalCartesianVelocity)</code></pre>
@@ -1006,7 +1002,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="34">
+<div class="cell" data-execution_count="33">
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>[1] zenith_angle_v(v::AbstractVector)
 [2] zenith_angle_v(v::LocalCartesianVelocity)</code></pre>
@@ -1018,18 +1014,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="test" class="level2">
 <h2 class="anchored" data-anchor-id="test">Test</h2>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="34">
 <div class="cell-output cell-output-stdout">
 <pre><code>Test Summary:                 | Pass  Total   Time
-orbital_mechanics.jl ........ | 4461   4461  39.9s
-  azimuth_angle               |   17     17   0.6s
-  eccentric_anomaly           |  128    128   1.6s
-  eccentriccity               | 1000   1000  13.1s
-  epskin                      | 1002   1002   8.0s
-  escape_velocity             |   64     64   0.3s
-  flight_time                 | 1000   1000   7.0s
-  ground_distance             | 1000   1000   5.1s
-  true_anomaly                |  250    250   2.4s</code></pre>
+orbital_mechanics.jl ........ | 4461   4461  34.8s
+  azimuth_angle               |   17     17   0.5s
+  eccentric_anomaly           |  128    128   1.4s
+  eccentriccity               | 1000   1000  12.8s
+  epskin                      | 1002   1002   7.1s
+  escape_velocity             |   64     64   0.2s
+  flight_time                 | 1000   1000   5.2s
+  ground_distance             | 1000   1000   4.3s
+  true_anomaly                |  250    250   1.7s</code></pre>
 </div>
 </div>
 

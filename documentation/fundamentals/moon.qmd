@@ -1,15 +1,11 @@
 ---
-title: "The Moon"
+title: "2.5 The Moon"
 format:
   html: default
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
 {{< include /resources/latex/_symbols.qmd >}}
-
-::: {.hidden }
-# {{< meta title >}} {.unnumbered}
-:::
 
 ---
 

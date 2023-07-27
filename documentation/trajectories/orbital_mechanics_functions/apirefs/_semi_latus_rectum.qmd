@@ -1,7 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API - Semi-Latus Rectum
-[`semi_latus_rectum_a_e`](/api/exospheres/orbital_mechanics.qmd): $\semiLatusRectum\left(\semiMajorAxis, \eccentricity\right)$: Eq. \eqref{eq:semi_latus_rectum_a_e}  
-
-[`semi_latus_rectum_r_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:semi_latus_rectum_r_e_theta}  
-
-:::

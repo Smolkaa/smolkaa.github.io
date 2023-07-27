@@ -34,7 +34,7 @@ ExESS
        └─ GlobalSphericalVelocity{T<:Real}
 ```
 
-More information on the mathematical description of the different coordinate vectors and the mathematical foundation for the conversion functions are presented in [Cartesian and Spherical Coordinates](/documentation/math_num_comp/coordinate_systems.qmd).
+More information on the mathematical description of the different coordinate vectors and the mathematical foundation for the conversion functions are presented in [Cartesian and Spherical Coordinates](/documentation/fundamentals/coordinate_systems.qmd).
 
 
 ## Usage
