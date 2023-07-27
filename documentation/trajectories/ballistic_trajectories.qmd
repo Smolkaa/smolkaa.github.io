@@ -1,5 +1,5 @@
 ---
-title: "4.1 Ballistic Trajectories"
+title: "5.1 Ballistic Trajectories"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}

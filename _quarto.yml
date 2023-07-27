@@ -58,22 +58,23 @@ website:
             - documentation/fundamentals/stats_mc.qmd
             - documentation/fundamentals/moon.qmd
             - "2.6. Other Exospheres in The Solar System"
-        - section: "3. Exospheres: Sources and Sinks"
-          contents:
-            - "3.1. Solar Wind"
-            - "Photoionization and -dissociation"
-            - documentation/sources_sinks/thermal_sorption.qmd
-            - "Photodesorption"
-            - "MIV"
-        - section: "4. Exospheres: Particle Trajectories"
-          contents:
-            - documentation/trajectories/ballistic_trajectories.qmd
-            - documentation/trajectories/non-ballistic_trajectories.qmd
-        - section: "5. Planetary Measurements and Data"
+        - section: "3. Planetary Measurements and Data"
           contents:
             - documentation/planetary_measurements/density_projections.qmd
             - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
+        - section: "4. Exospheres: Sources and Sinks"
+          contents:
+            - "4.1. Solar Wind"
+            - documentation/sources_sinks/thermal_sorption.qmd
+            - documentation/sources_sinks/photoionization_dissociation.qmd
+            # - "Photoionization and -dissociation"
+            - "Photodesorption"
+            - "MIV"
+        - section: "5. Exospheres: Particle Trajectories"
+          contents:
+            - documentation/trajectories/ballistic_trajectories.qmd
+            - documentation/trajectories/non-ballistic_trajectories.qmd
         - section: "6. Lunar Water Exosphere Simulation"
           contents:
             - "6.X Hydrogen Surface Reaction Model"

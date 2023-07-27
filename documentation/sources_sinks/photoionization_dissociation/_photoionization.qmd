@@ -1,0 +1,5 @@
+
+
+## Photoionization Rates
+
+{{< include photoionization_dissociation/imgs/photoionization_rates/_photoionization_rates.qmd >}}

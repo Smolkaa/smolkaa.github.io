@@ -1,0 +1,17 @@
+---
+title: "4.3 Photoionization & -dissociation"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+Some Intro
+
+# Photoionization
+{{< include photoionization_dissociation/_photoionization.qmd >}}
+
+
+# Photodissociation
+Some Text

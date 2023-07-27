@@ -1,5 +1,5 @@
 ---
-title: "4.2 Non-Ballistic Trajectories"
+title: "5.2 Non-Ballistic Trajectories"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
