@@ -1,10 +1,14 @@
 ---
-title: "Documentation"
-citation: false
+title: "Preface"
 ---
 
-::: {.hidden }
-# {{< meta title >}} {.unnumbered}
-:::
-
 ---
+
+# Authors
+
+Alexander Smolka
+
+
+# License
+License
+

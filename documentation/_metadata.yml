@@ -17,6 +17,7 @@ format:
     # number-sections: true
     # toc-depth: 5
     toc-title: "{{< meta title >}}"
+    # toc-location: body
     
 execute:
   cache: true

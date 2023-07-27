@@ -67,11 +67,8 @@ website:
             - "MIV"
         - section: "4. Exospheres: Particle Trajectories"
           contents:
-            - documentation/trajectories/gravitational_potential.qmd
-            - "4.2 Ballistic Trajetories"
-            - documentation/trajectories/orbital_mechanics_functions.qmd
-            - documentation/trajectories/2d_landing_position.qmd
-            - "4.4 Non-Ballistic Trajectories"
+            - documentation/trajectories/ballistic_trajectories.qmd
+            - documentation/trajectories/non-ballistic_trajectories.qmd
         - section: "5. Planetary Measurements and Data"
           contents:
             - documentation/planetary_measurements/density_projections.qmd
@@ -145,8 +142,11 @@ format:
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
+      - resources/head.html
     lightbox: auto
     link-external-newwindow: true
+    mainfont: "'Roboto', sans-serif"
+    monofont: "'Roboto Mono', monospace"
     theme: [flatly, _mystyle.scss]
     title-block-style: default
     toc: true

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-26">
+<meta name="dcterms.date" content="2023-07-27">
 
-<title>ExESS - 4.2 Orbital Mechanics Functions</title>
+<title>ExESS - 4.1 Ballistic Trajectories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../documentation/trajectories/2d_landing_position.html" rel="next">
-<link href="../../documentation/trajectories/gravitational_potential.html" rel="prev">
+<link href="../../documentation/trajectories/non-ballistic_trajectories.html" rel="next">
+<link href="../../documentation/sources_sinks/thermal_sorption.html" rel="prev">
 <link href="../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -99,6 +99,9 @@ div.csl-indent {
           }
       });
 </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -157,7 +160,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/trajectories/gravitational_potential.html">4. Exospheres: Particle Trajectories</a></li><li class="breadcrumb-item"><a href="../../documentation/trajectories/orbital_mechanics_functions.html">4.2 Orbital Mechanics Functions</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/trajectories/ballistic_trajectories.html">4. Exospheres: Particle Trajectories</a></li><li class="breadcrumb-item"><a href="../../documentation/trajectories/ballistic_trajectories.html">4.1 Ballistic Trajectories</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -177,7 +180,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Documentation</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -273,28 +276,16 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/trajectories/gravitational_potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.1 Gravitational Potential</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
- <span class="menu-text">4.2 Ballistic Trajetories</span>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../documentation/trajectories/orbital_mechanics_functions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">4.2 Orbital Mechanics Functions</span></a>
+  <a href="../../documentation/trajectories/ballistic_trajectories.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">4.1 Ballistic Trajectories</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/trajectories/2d_landing_position.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Two-Dimensional Landing Position Calculation</span></a>
+  <a href="../../documentation/trajectories/non-ballistic_trajectories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Non-Ballistic Trajectories</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
- <span class="menu-text">4.4 Non-Ballistic Trajectories</span>
-  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -347,10 +338,11 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">4.2 Orbital Mechanics Functions</h2>
+    <h2 id="toc-title">4.1 Ballistic Trajectories</h2>
    
   <ul>
-  <li><a href="#orbital-parameters" id="toc-orbital-parameters" class="nav-link active" data-scroll-target="#orbital-parameters">Orbital Parameters</a>
+  <li><a href="#gravitational-potential-energy-and-force" id="toc-gravitational-potential-energy-and-force" class="nav-link active" data-scroll-target="#gravitational-potential-energy-and-force">Gravitational Potential, Energy, and Force</a></li>
+  <li><a href="#orbital-mechanics-functions" id="toc-orbital-mechanics-functions" class="nav-link" data-scroll-target="#orbital-mechanics-functions">Orbital Mechanics Functions</a>
   <ul class="collapse">
   <li><a href="#sec-azimuth-angle" id="toc-sec-azimuth-angle" class="nav-link" data-scroll-target="#sec-azimuth-angle">Azimuth Angle – <span class="math inline">\(\vartheta\)</span></a></li>
   <li><a href="#sec-eccentric-anomaly" id="toc-sec-eccentric-anomaly" class="nav-link" data-scroll-target="#sec-eccentric-anomaly">Ecccentric Anomaly – <span class="math inline">\(E\)</span></a></li>
@@ -359,22 +351,27 @@ div.csl-indent {
   <li><a href="#sec-ground-track-distance" id="toc-sec-ground-track-distance" class="nav-link" data-scroll-target="#sec-ground-track-distance">Ground Track Distance – <span class="math inline">\(d\)</span></a></li>
   <li><a href="#sec-mean-anomaly" id="toc-sec-mean-anomaly" class="nav-link" data-scroll-target="#sec-mean-anomaly">Mean Anomaly – <span class="math inline">\(M\)</span></a></li>
   <li><a href="#sec-orbit-period" id="toc-sec-orbit-period" class="nav-link" data-scroll-target="#sec-orbit-period">Orbit Period – <span class="math inline">\(P\)</span></a></li>
-  <li><a href="#orbit-time-t-sec-orbit-time" id="toc-orbit-time-t-sec-orbit-time" class="nav-link" data-scroll-target="#orbit-time-t-sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span> {sec-orbit-time}</a></li>
+  <li><a href="#sec-orbit-time" id="toc-sec-orbit-time" class="nav-link" data-scroll-target="#sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span></a></li>
   <li><a href="#sec-relative-kinetic-energy" id="toc-sec-relative-kinetic-energy" class="nav-link" data-scroll-target="#sec-relative-kinetic-energy">Relative Kinetic Energy – <span class="math inline">\(\epsilon_{kin}\)</span></a></li>
   <li><a href="#sec-semi-latus-rectum" id="toc-sec-semi-latus-rectum" class="nav-link" data-scroll-target="#sec-semi-latus-rectum">Semi-Latus Rectum – <span class="math inline">\(p\)</span></a></li>
   <li><a href="#sec-semi-major-axis" id="toc-sec-semi-major-axis" class="nav-link" data-scroll-target="#sec-semi-major-axis">Semi-Major Axis – <span class="math inline">\(a\)</span></a></li>
   <li><a href="#sec-true-anomaly" id="toc-sec-true-anomaly" class="nav-link" data-scroll-target="#sec-true-anomaly">True Anomaly – <span class="math inline">\(\theta\)</span></a></li>
   <li><a href="#sec-zenith-angle" id="toc-sec-zenith-angle" class="nav-link" data-scroll-target="#sec-zenith-angle">Zenith Angle – <span class="math inline">\(\psi\)</span></a></li>
   </ul></li>
+  <li><a href="#analytic-solution-of-the-landing-position" id="toc-analytic-solution-of-the-landing-position" class="nav-link" data-scroll-target="#analytic-solution-of-the-landing-position">Analytic Solution of the Landing Position</a>
+  <ul class="collapse">
+  <li><a href="#general-solution" id="toc-general-solution" class="nav-link" data-scroll-target="#general-solution">General Solution</a></li>
+  <li><a href="#simplification-for-uniform-gravity" id="toc-simplification-for-uniform-gravity" class="nav-link" data-scroll-target="#simplification-for-uniform-gravity">Simplification for Uniform Gravity</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/trajectories/orbital_mechanics_functions.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/trajectories/ballistic_trajectories.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">4.2 Orbital Mechanics Functions</h1>
+<h1 class="title">4.1 Ballistic Trajectories</h1>
 </div>
 
 
@@ -391,7 +388,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 26, 2023</p>
+      <p class="date">July 27, 2023</p>
     </div>
   </div>
   
@@ -404,9 +401,35 @@ div.csl-indent {
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <hr>
-<p>For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the <a href="../../documentation/trajectories/gravitational_potential.html">Gravitational Potential</a> section.</p>
-<section id="orbital-parameters" class="level1 page-columns page-full">
-<h1>Orbital Parameters</h1>
+<p>Intro</p>
+<section id="gravitational-potential-energy-and-force" class="level1">
+<h1>Gravitational Potential, Energy, and Force</h1>
+<p>The physical fundamentals of orbital mechanics, based on the assumption of negligible relativistic effects, is the Poisson’s equation <span class="math display">\[\begin{equation}
+    \nabla^2U= 4\pi G\cdot \rho,
+    \label{eq:poisson_equation}
+\end{equation}\]</span> which is a second-order differential equation describing the gravitational potential <span class="math inline">\(U\)</span> as a function of the mass density <span class="math inline">\(\rho\)</span>, reflecting the curvature of space <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. The Laplace operator <span class="math inline">\(\nabla^2\)</span> is defined As <span class="math display">\[\begin{equation}
+    \nabla^2 = \nabla \cdot \nabla = \left[\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right]^T \cdot \left[\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right]^T = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}.
+    \label{eq:laplace_operator}
+\end{equation}\]</span> Assuming isotropic mass distribution, the mass density <span class="math inline">\(\rho\)</span> can be expressed as a function of the radius <span class="math inline">\(r\)</span> only, thus requiring the laplacian <span class="math inline">\(\nabla^2 U\)</span> in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>. Using the angular symmetry <span class="math inline">\(\frac{\partial U}{\partial\vartheta} = \frac{\partial U}{\partial\varphi} = 0\)</span>, the spherical and angular symmetric Laplace operator is reduced to <span class="math inline">\(\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right)\)</span>, leading to Poisson’s equation as <span class="math display">\[\begin{equation}
+    \frac{d}{dr}\left(r^2\frac{dU}{dr}\right) = 4\pi G\rho r^2.
+    \label{eq:poisson_equation_symmetric}
+\end{equation}\]</span></p>
+<p>Integrating over the radius leads to the Newton’s equation <span class="math display">\[\begin{equation}
+    \frac{dU}{dr} = \frac{G\hat m}{r^2},
+    \label{eq:gravitational_potential}
+\end{equation}\]</span> with mass <span class="math inline">\(\hat m\)</span> of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. One can easily derive for the gravitational force <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{F}} = - m\frac{dU}{d^3\boldsymbol{\mathbf{r}}} = - m\frac{dU}{dr} \cdot \frac{\boldsymbol{\mathbf{r}}}{r} = - \frac{m\hat mG}{r^3}\cdot\boldsymbol{\mathbf{r}},
+    \label{eq:gravitational_force}
+\end{equation}\]</span> for a mass <span class="math inline">\(m\)</span> placed into the gravitational potential <span class="math inline">\(U\)</span> of mass <span class="math inline">\(\hat m\)</span> <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>.</p>
+<p>The gravitational force is a vital part used orbital mechanics and the calculation of trajectories on planetary bodies. To derive the equation of motion, can be applied, which starts at the gradient of the energy conservation <span class="math display">\[\begin{equation}
+    0 = \sum_i - \frac{dE_i}{d\boldsymbol{\mathbf{x}}} = \sum_i \boldsymbol{\mathbf{F}}_i,
+    \label{eq:gradient_energy_conservation}
+\end{equation}\]</span> with the sum over all relevant energies and forces. On of such relevant components is the gradient of the kinetic energy <span class="math display">\[\begin{equation}
+    \frac{dE_{kin}}{d\boldsymbol{\mathbf{x}}} = \frac{d}{d\boldsymbol{\mathbf{x}}} \left( \frac{1}{2} mv^2 \right) = m\ddot{\boldsymbol{\mathbf{x}}}
+\end{equation}\]</span> with the acceleration <span class="math inline">\(\ddot{\boldsymbol{\mathbf{x}}}\)</span> due to changes in the kinetic energy.</p>
+</section>
+<section id="orbital-mechanics-functions" class="level1 page-columns page-full">
+<h1>Orbital Mechanics Functions</h1>
 <p>The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation <span class="citation" data-cites="Walter2018 Schoerghofer2022a">(<a href="#ref-Schoerghofer2022a" role="doc-biblioref">Schoerghofer, 2022</a>; <a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\in\mathbb{R}^3\)</span>, the mass of the planetary object <span class="math inline">\(m\in\mathbb{R}^+\)</span>, and the current radial position <span class="math inline">\(r\in\mathbb{R}^+\)</span>. Note that the velocity vector has to be provided in a <a href="../../documentation/fundamentals/coordinate_systems.html">local cartesian coordinate system</a> with <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span> being the components in the horizontal plane and <span class="math inline">\(v_3\)</span> being the vertical component. The physical parameters are usually defined for all or all positive real numbers, <span class="math inline">\(\mathbb{R}\)</span> or <span class="math inline">\(\mathbb{R}^+\)</span>, with the exception of the azimuth and zenith angle, <span class="math inline">\(\vartheta, \psi\in\left[-\pi, \pi\right)\)</span>, and the true anomaly, eccentric anomaly, and mean anomaly, <span class="math inline">\(\theta, E, M\in\left[0, 2\pi\right)\)</span>, respectively.</p>
 <p>Every function below can be solved analytically, except for Eq. <span class="math inline">\(\eqref{eq:eccentric_anomaly_e_M}\)</span>. This equation is the iterative solution of Kepler’s equation, based on the definition of the mean anomaly, see Eq. <span class="math inline">\(\eqref{eq:mean_anomaly_e_E}\)</span>. Nonetheless, one can solve for the eccentric anomaly numerically using stationary iterative methods. The starting point <span class="math inline">\(E_0=M\)</span> given in the Table could also be substituted with <span class="math inline">\(E_0=0\)</span>, where <span class="math inline">\(E_1=M\)</span> leads to the same numerical solution after just one more iteration step.</p>
 <section id="sec-azimuth-angle" class="level2 page-columns page-full">
@@ -484,8 +507,8 @@ div.csl-indent {
 <div class="no-row-height column-margin column-container"><div class="">
 <p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/exospheres/orbital_mechanics.html"><code>orbit_period_a_m</code></a>: <span class="math inline">\(P\left(a, m\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:orbit_period_a_m}\)</span></p>
 </div></div></section>
-<section id="orbit-time-t-sec-orbit-time" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="orbit-time-t-sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span> {sec-orbit-time}</h2>
+<section id="sec-orbit-time" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-orbit-time">Orbit Time – <span class="math inline">\(t\)</span></h2>
 <p><span class="math display">\[\begin{equation}
     t\left(M, P\right) = \frac{M}{2\pi} \cdot P\label{eq:orbit_time_M_P}
 \end{equation}\]</span></p>
@@ -551,12 +574,31 @@ div.csl-indent {
     \psi\left(\boldsymbol{\mathbf{v}}\right) = \tan^{-1}\left(\frac{\sqrt{v_1^2 + v_2^2}}{v_3}\right)  \label{eq:zenith_angle_v}
 \end{equation}\]</span></p>
 
-
-
-
 <div class="no-row-height column-margin column-container"><div class="">
 <p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/exospheres/orbital_mechanics.html"><code>zenith_angle_v</code></a>: <span class="math inline">\(\psi\left(\boldsymbol{\mathbf{v}}\right)\)</span>: Eq. <span class="math inline">\(\eqref{eq:zenith_angle_v}\)</span></p>
 </div></div></section>
+</section>
+<section id="analytic-solution-of-the-landing-position" class="level1">
+<h1>Analytic Solution of the Landing Position</h1>
+<p>For purely ballistic trajectories, the landing position of a particle can be analytically calculated.</p>
+<section id="general-solution" class="level2">
+<h2 class="anchored" data-anchor-id="general-solution">General Solution</h2>
+<p>The following calculations are based on the orbital mechanics functions introduced in section <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd">Orbital Mechanics Functions</a> to calculate the landing position <span class="math inline">\(\left(\Theta_1, \Phi_1\right)\)</span>. Note that this approach is quasi-two-dimensional as the radial dimension of the spherical three-dimensional coordinate system is neglected, assuming a perfectly spherical central body. The trajectory starts and the launch position <span class="math inline">\(\left(\Theta_0, \Phi_0\right)\)</span> and, as mentioned above, requires knowledge about the mass and radius of the planetary body, <span class="math inline">\(m\)</span> and <span class="math inline">\(r\)</span>, as well as the launch, or initial, velocity vector <span class="math inline">\(\boldsymbol{\mathbf{v}}\)</span>.</p>
+<p>Based on the escape velocity <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-escape-velocity"><span class="math inline">\(v_{esc}(r, m)\)</span></a>, the relative kinetic energy fraction <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-relative-kinetic-energy"><span class="math inline">\(\epsilon_{kin}(\boldsymbol{\mathbf{v}}, v_{esc})\)</span></a>, can be determined, which in turn is used to calculate the semi-major axis of the trajectory, <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-semi-major-axis"><span class="math inline">\(a(r, \epsilon_{kin})\)</span></a>. Since the launch velocity vector is given in local cartesian coordinates, both its zenith angle <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-zenith-angle"><span class="math inline">\(\psi(\boldsymbol{\mathbf{v}})\)</span></a> and its azimuth angle <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-azimuth-angle"><span class="math inline">\(\vartheta\left(\boldsymbol{\mathbf{v}}\right)\)</span></a> can be directly extracted. The former is subsequently used for the determination of the eccentricity <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-eccentricity"><span class="math inline">\(e\left(\epsilon_{kin}, \psi\right)\)</span></a>. With both <span class="math inline">\(a\)</span> and <span class="math inline">\(e\)</span> known, the true anomaly at launch <span class="math inline">\(\theta_0(r, a, e)\)</span>, and due to symmetry conditions, also the landing position <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-true-anomaly"><span class="math inline">\(\theta_1 = 2\pi - \theta_0\)</span></a>, can be calculated. The angular difference between the landing and launch true anomaly <span class="math inline">\(\theta_1 - \theta_0 = 2\pi - 2\theta= \Delta\theta\)</span> can then easily be converted into the ground track distance of the projected trajectory <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-ground-track-distance"><span class="math inline">\(d(r, \Delta\theta)\)</span></a>.</p>
+<p>Based on <span class="citation" data-cites="Schoerghofer2022a">Schoerghofer (<a href="#ref-Schoerghofer2022a" role="doc-biblioref">2022</a>)</span>, the landing position <span class="math inline">\(\left(\Theta_1, \Phi_1\right)\)</span> can now be calculated using the launch position <span class="math inline">\(\left(\Theta_0, \Phi_0\right)\)</span>, the ground track distance <span class="math inline">\(d\)</span>, and the azimuth angle <span class="math inline">\(\vartheta\)</span> as <span class="math display">\[\begin{align}
+    \sin\Phi_1 &amp;= \sin\left(\frac{d}{r}\right) \cdot \cos\Phi_0 \cdot \cos\vartheta+ \cos\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \\
+    \cos\Delta\Theta&amp;= \cos\left(\frac{d}{r}\right) \cdot \cos\Phi_0 - \sin\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \cdot \cos\vartheta\cdot \cos^{-1}\Phi_1 \\
+    \Rightarrow \Theta_1 &amp;= \Theta_0 + \mathop{\mathrm{sgn}}\left(v_1\right)\cdot\Delta\Theta,
+\end{align}\]</span> with the signum function <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = 1\)</span> for <span class="math inline">\(v_1\geq0\)</span> and <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = -1\)</span> for <span class="math inline">\(v_1&lt;0\)</span>.</p>
+<p>Calculating the time of flight <span class="math inline">\(t_{flight}= t_1 - t_0 = P- 2t_0\)</span> requires the orbital period <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-orbit-period"><span class="math inline">\(P\left(a, m\right)\)</span></a> as well as the orbit time <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-orbit-time"><span class="math inline">\(t(M, P)\)</span></a>, where <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span> are the orbit times at the launch and landing, respectively, with <span class="math inline">\(t_1 = P-t_0\)</span> for symmetry reasons. The mean anomaly <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-mean-anomaly"><span class="math inline">\(M_0\)</span></a> at launch can be calculated using the eccentric anomaly <a href="../../documentation/trajectories/ballistic_trajectories/_orbital_mechanics_functions.qmd#sec-eccentric-anomaly"><span class="math inline">\(E_0\)</span></a> and the eccentricity <span class="math inline">\(e\)</span>.</p>
+</section>
+<section id="simplification-for-uniform-gravity" class="level2">
+<h2 class="anchored" data-anchor-id="simplification-for-uniform-gravity">Simplification for Uniform Gravity</h2>
+<p>Particles launched with small velocities are not reaching altitudes at which the gravitational acceleration changes significantly.</p>
+
+
+
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
@@ -827,13 +869,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../documentation/trajectories/gravitational_potential.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.1 Gravitational Potential</span>
+      <a href="../../documentation/sources_sinks/thermal_sorption.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3.3. Thermal Sorption</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../documentation/trajectories/2d_landing_position.html" class="pagination-link">
-        <span class="nav-page-text">4.3 Two-Dimensional Landing Position Calculation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../documentation/trajectories/non-ballistic_trajectories.html" class="pagination-link">
+        <span class="nav-page-text">4.2 Non-Ballistic Trajectories</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,21 +1,4 @@
----
-title: "4.2 Orbital Mechanics Functions"
-format:
-  html: default
----
-
-{{< include /resources/latex/_defs.qmd >}}
-{{< include /resources/latex/_symbols.qmd >}}
-
----
-
-For additional background information and the theory behind gravitational potential fields, as well as gravitational forces, see the [Gravitational Potential](/documentation/trajectories//gravitational_potential.qmd) section.
-
-
-# Orbital Parameters
-
 The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation [@Walter2018; @Schoerghofer2022a]. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector $\vec\velocity\in\Set{R}^3$, the mass of the planetary object $\mass\in\Set{R}^+$, and the current radial position $\radius\in\Set{R}^+$. Note that the velocity vector has to be provided in a [local cartesian coordinate system](/documentation/fundamentals/coordinate_systems.qmd) with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. The physical parameters are usually defined for all or all positive real numbers, $\Set{R}$ or $\Set{R}^+$, with the exception of the azimuth and zenith angle, $\azimuthAngle, \zenithAngle\in\left[-\pi, \pi\right)$, and the true anomaly, eccentric anomaly, and mean anomaly, $\trueAnomaly, \eccentricAnomaly, \meanAnomaly\in\left[0, 2\pi\right)$, respectively.
-
 
 
 
@@ -126,7 +109,7 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 
 
 
-## Orbit Time -- $\Time$ {sec-orbit-time}
+## Orbit Time -- $\Time$ {#sec-orbit-time}
 \begin{equation}
     \Time\left(\meanAnomaly, \period\right) = \frac{\meanAnomaly}{2\pi} \cdot \period  \label{eq:orbit_time_M_P}
 \end{equation}

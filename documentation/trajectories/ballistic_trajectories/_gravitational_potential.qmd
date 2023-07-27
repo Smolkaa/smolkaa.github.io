@@ -1,13 +1,3 @@
----
-title: "4.1 Gravitational Potential"
----
-
-{{< include /resources/latex/_defs.qmd >}}
-{{< include /resources/latex/_symbols.qmd >}}
-
----
-
-
 The physical fundamentals of orbital mechanics, based on the assumption of negligible relativistic effects, is the Poisson's equation
 \begin{equation}
     \nabla^2\potential = 4\pi\GravitationalConstant \cdot \density,

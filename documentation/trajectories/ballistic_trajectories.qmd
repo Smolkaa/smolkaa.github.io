@@ -1,0 +1,21 @@
+---
+title: "4.1 Ballistic Trajectories"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+Intro
+
+# Gravitational Potential, Energy, and Force
+{{< include ballistic_trajectories/_gravitational_potential.qmd >}}
+
+
+# Orbital Mechanics Functions
+{{< include ballistic_trajectories/_orbital_mechanics_functions.qmd >}}
+
+
+# Analytic Solution of the Landing Position
+{{< include ballistic_trajectories/_landing_position.qmd >}}
