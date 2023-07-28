@@ -7,11 +7,6 @@ categories:
   - Julia
   - On-Boarding
 ---
-
-::: {.hidden }
-# {{< meta title >}}
-:::
-
 ---
 
 ## Installation

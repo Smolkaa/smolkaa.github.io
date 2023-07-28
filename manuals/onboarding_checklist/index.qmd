@@ -1,0 +1,24 @@
+---
+title: "Student Thesis: On-Boarding Checklist"
+image: play-solid.svg
+author: Alexander Smolka
+date: 28 07 23
+categories:
+  - On-Boarding
+---
+---
+
+This page contains a checklist for students to get started working on their thesis based on the **ExESS** research project. While the [General Checklist](#sec-general) is applicable to students of all levels (Bachelor/Semester/Master) and all topics (theoretical/numerical/...); the other lists are only relevant for certains levels and topics. For questions, please contact me: [a.smolka@tum.de](mailto:a.smolka@tum.de).
+
+
+## General Checklist {#sec-general}
+This general checklist shall be completed in the first week(s) of your student thesis work.
+
+- [ ] receive "LPE Thesis Starter Set"
+  * read and understand the "Student Thesis Information" presentation slides
+- [ ] open (and/or install) [RocketChat](https://chat.tum.de/home)
+  * use RocketChat to send me a message containing one of the logical fallacies listed in the "Student Thesis Information"
+- [ ] set up [LRZ Sync&Share](https://syncandshare.lrz.de/) online folder
+- [ ] register your thesis
+  * check the information on the registration document (LRZ Sync&Share folder), sign the document, and upload the signed registration to the same folder
+- [ ] set up weekly meeting (including a fixed, weekly repeating outlook meeting)
