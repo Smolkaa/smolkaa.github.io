@@ -1,6 +1,5 @@
 ---
 title: "Trajectory Calculation"
-description: "Julia, Example"
 image: orbit.png
 author: Alexander Smolka
 date: 17 07 23

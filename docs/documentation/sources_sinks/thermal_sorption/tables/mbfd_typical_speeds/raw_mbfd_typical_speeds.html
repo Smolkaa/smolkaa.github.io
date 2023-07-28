@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-07-26">
 
 <title>ExESS – raw_mbfd_typical_speeds</title>
 <style>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals and Examples</span></a>
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../../../../api/api.html" rel="" target="">
@@ -532,7 +532,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/smolkaa\.github\.io");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

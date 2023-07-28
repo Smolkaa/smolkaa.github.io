@@ -1,20 +1,14 @@
 ---
-title: "Manuals"
+title: "Manuals & Examples"
 listing:
-  # categories: true
+  categories: true
   contents:
     - "*/*.qmd"
-  fields: [image, title, description, author, date]
-  type: table
-  table-hover: true
-  image-height: 45px
+  type: default
   sort: "title asc"
   
 page-navigation: true
 ---
 
-::: {.hidden }
-# {{< meta title >}}
-:::
 
 ---

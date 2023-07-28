@@ -136,7 +136,7 @@ div.csl-indent {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals and Examples</span></a>
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target="">
@@ -657,7 +657,7 @@ div.csl-indent {
 
 </div></section><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Cook2013" class="csl-entry" role="listitem">
-Cook, J. C., Stern, S. A., Feldman, P. D., Gladstone, G. R., Retherford, K. D., &amp; Tsang, C. C. C. (2013). New upper limits on numerous atmospheric species in the native lunar atmosphere. <em>Icarus</em>. https://doi.org/<a href="http://dx.doi.org/10.1016/j.icarus.2013.04.010">http://dx.doi.org/10.1016/j.icarus.2013.04.010</a>
+Cook, J. C., Stern, S. A., Feldman, P. D., Gladstone, G. R., Retherford, K. D., &amp; Tsang, C. C. C. (2013). New upper limits on numerous atmospheric species in the native lunar atmosphere. <em>Icarus</em>. <a href="https://doi.org/10.1016/j.icarus.2013.04.010">https://doi.org/10.1016/j.icarus.2013.04.010</a>
 </div>
 <div id="ref-Fastie1973" class="csl-entry" role="listitem">
 Fastie, Wm. G., Feldman, P. D., Henry, R. C., Moos, H. W., Barth, C. A., Thomas, G. E., &amp; M. Donahue, andThomas. (1973). <em><span class="nocase">A Search for Far-Ultraviolet Emissions from the Lunar Atmosphere</span></em>. <em>2023</em>. <a href="https://doi.org/10.1126/science.182.4113.710">https://doi.org/10.1126/science.182.4113.710</a>
@@ -933,7 +933,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/smolkaa\.github\.io");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

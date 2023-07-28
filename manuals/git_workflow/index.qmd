@@ -1,6 +1,5 @@
 ---
 title: "Git Workflow"
-description: "Git, On-Boarding"
 image: Git-Icon-Black.png
 author: Alexander Smolka
 date: 05 07 23

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-20">
+<meta name="dcterms.date" content="2023-07-28">
 
 <title>ExESS - Orbital Mechanics</title>
 <style>
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals and Examples</span></a>
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target="">
@@ -243,11 +243,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Orbital Mechanics</h2>
    
   <ul>
-  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Orbital Mechanics</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">Test</a></li>
   </ul>
@@ -275,7 +274,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 20, 2023</p>
+      <p class="date">July 28, 2023</p>
     </div>
   </div>
   
@@ -285,11 +284,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="meta-title" class="level1 hidden">
-<h1>Orbital Mechanics</h1>
-</section>
 <hr>
-<p>The mathematical definition of the implemented functions is presented in the documentation, in the section <a href="../../documentation/trajectories/orbital_mechanics_functions.qmd">Orbital Mechanics Functions</a>.</p>
+<p>The mathematical definition of the implemented functions is presented in the documentation, in the section <a href="../../documentation/trajectories/ballistic_trajectories.html">Ballistic Trajectories</a>.</p>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 </section>
@@ -1020,15 +1016,15 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell" data-execution_count="35">
 <div class="cell-output cell-output-stdout">
 <pre><code>Test Summary:                 | Pass  Total   Time
-orbital_mechanics.jl ........ | 4461   4461  39.9s
-  azimuth_angle               |   17     17   0.6s
-  eccentric_anomaly           |  128    128   1.6s
-  eccentriccity               | 1000   1000  13.1s
-  epskin                      | 1002   1002   8.0s
-  escape_velocity             |   64     64   0.3s
-  flight_time                 | 1000   1000   7.0s
-  ground_distance             | 1000   1000   5.1s
-  true_anomaly                |  250    250   2.4s</code></pre>
+orbital_mechanics.jl ........ | 4461   4461  34.8s
+  azimuth_angle               |   17     17   0.5s
+  eccentric_anomaly           |  128    128   1.4s
+  eccentriccity               | 1000   1000  12.8s
+  epskin                      | 1002   1002   7.1s
+  escape_velocity             |   64     64   0.2s
+  flight_time                 | 1000   1000   5.2s
+  ground_distance             | 1000   1000   4.3s
+  true_anomaly                |  250    250   1.7s</code></pre>
 </div>
 </div>
 
@@ -1268,7 +1264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/smolkaa\.github\.io");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }

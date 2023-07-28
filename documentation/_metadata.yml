@@ -13,11 +13,7 @@ format:
       title: ExESS - Extraterrestrial Exosphere and Surface Simulations
       url: "https://smolkaa.github.io"
       issued: 2023
-    date: last-modified  
-    # number-sections: true
-    # toc-depth: 5
-    toc-title: "{{< meta title >}}"
-    # toc-location: body
+    date: last-modified
     
 execute:
   cache: true

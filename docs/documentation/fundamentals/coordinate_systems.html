@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-07-28">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals and Examples</span></a>
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target="">
@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/fundamentals/coordinate_systems.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -390,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2023</p>
+      <p class="date">July 28, 2023</p>
     </div>
   </div>
   
@@ -404,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- GLS WORKAROUND -->
 <hr>
 <p>Some introduction text…</p>
-<section id="cartesian-and-spherical-coordinates" class="level1">
+<section id="cartesian-and-spherical-coordinates" class="level1 page-columns page-full">
 <h1>Cartesian and Spherical Coordinates</h1>
 <p>A clear distinction has been made between cartesian and spherical coordinates and cartesian and spherical elements. The former are used to describe the domain in which the vector is defined, while the latter are used to describe the vector and its components itself. For example, a position vector in a cartesian coordinate system, <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span>, can be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>, which are the x-, y-, and z-components of the vector: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{x}}= \begin{bmatrix}
@@ -414,23 +414,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
     \label{eq:cartesian_coordinate}
 \end{equation}\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ExESS API - Cartesian Coordinates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span> are implemented as <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> and <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a>.</p>
-</div>
-</div>
-</div>
-<p>The same vector in the same coordinate system and, thus, the same domain, can also be expressed used spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span>:</p>
+<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a></p>
+<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a></p>
+</div></div><p>The same vector in the same coordinate system and, thus, the same domain, can also be expressed used spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{x}}_s = \begin{bmatrix}
         r\cos\vartheta\cos\varphi\\
         r\sin\vartheta\cos\varphi\\
@@ -440,29 +429,19 @@ ExESS API - Cartesian Coordinates
     \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
     \label{eq:spherical_coordinate}
 \end{equation}\]</span></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-ExESS API – Spherical Coordinates
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span> are implemented as <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a> and <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a>.</p>
-</div>
-</div>
-</div>
 <p>The same coordinate can also be expressed in cartesian elements <span class="math inline">\(\left(x, y, z\right)\)</span>: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{r}}_c = \begin{bmatrix}
         \sqrt{x^2 + y^2 + z^2} \\
         \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
         \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
     \end{bmatrix}  \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
-\end{equation}\]</span> Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences of these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
+\end{equation}\]</span></p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span>:</p>
+<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a></p>
+<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a></p>
+</div></div><p>Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences of these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
 <p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
     \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
     \hat{\boldsymbol{\mathbf{e}}}_y= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
@@ -555,16 +534,14 @@ ExESS API – Spherical Coordinates
     &amp;= \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\cos^2\varphi}\frac{\partial}{\partial\vartheta} + \frac{1}{r^2\cos\varphi} \frac{\partial}{\partial\varphi} \left(\cos\varphi\frac{\partial}{\partial\varphi}\right). \label{eq:laplace_spherical}
 \end{align}\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Derivation of spherical Laplace operator.
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The laplacian is the linear summation of the second-order cartesian partial derivative <span class="math inline">\(\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\)</span>. The spherical laplacian can be derived by applying the chain rule of partial derivatives, shown in the gradient derivation in Eqs. <span class="math inline">\(\eqref{eq:spherical_gradient_x}\)</span>, <span class="math inline">\(\eqref{eq:spherical_gradient_y}\)</span>, <span class="math inline">\(\eqref{eq:spherical_gradient_z}\)</span> twice: <span class="math display">\[\begin{align*}
     \frac{\partial^2}{\partial x^2} &amp;= \cos\vartheta\cos\varphi\frac{\partial}{\partial r}\frac{\partial}{\partial x} -\frac{\sin\vartheta}{r\cos\varphi} \frac{\partial}{\partial\vartheta}\frac{\partial}{\partial x} -\frac{\cos\vartheta\sin\varphi}{r} \frac{\partial}{\partial\varphi}\frac{\partial}{\partial x} \\
@@ -585,7 +562,6 @@ Derivation of spherical Laplace operator.
 \end{align*}\]</span></p>
 </div>
 </div>
-</div>
 <p>Another example of the use of differentials is in integration, where it is used to represent an infinitesimal change in the variable. Shorthand versions of multi-dimensional integrals are often written using vector variables, such as <span class="math display">\[\begin{equation}
     \int_X \int_Y \int_Z f dzdydx= \int_Vf d^3\boldsymbol{\mathbf{x}},
 \end{equation}\]</span> where <span class="math inline">\(V\)</span> is the volume of the integration domain, with the infinitesimal volume element <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\in V= \left\{dx\, dy\, dz\; | \; dx\in X, dy\in Y, dz\in Z \right\}\)</span>. The superscript <span class="math inline">\(\bullet^3\)</span> in the differentials indicates that the differential is a vector but a scalar representation of the element’s size created by the vector elements. As before, the differential <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\)</span> can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq. <span class="math inline">\(\eqref{eq:total_cartesian_spherical_differential_matrix}\)</span>, of the transformation: <span class="math display">\[\begin{equation}
@@ -599,7 +575,7 @@ Derivation of spherical Laplace operator.
 <figure class="figure">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="../../documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../..\documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></a></p>
+<p><a href="../../documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="../../documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></a></p>
 </figure>
 </div>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
@@ -999,7 +975,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/smolkaa\.github\.io");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
@@ -1027,7 +1003,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
 
 
 

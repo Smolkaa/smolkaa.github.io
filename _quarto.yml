@@ -8,7 +8,7 @@ bibliography: "../asmolka_library/main.bib"
 csl: _apa.csl
 
 website:
-  site-url: https://smolkaa.github.io
+  # site-url: https://smolkaa.github.io
   title: "ExESS"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
   repo-actions: [edit]
@@ -26,7 +26,7 @@ website:
         href: index.qmd
       - text: "{{< fa book >}} Documentation"
         href: documentation/documentation.qmd
-      - text: "{{< fa bookmark >}} Manuals and Examples"
+      - text: "{{< fa bookmark >}} Manuals & Examples"
         href: manuals/manuals.qmd
       - text: "{{< fa code >}} Code"
         href: api/api.qmd
@@ -39,7 +39,6 @@ website:
       border: true
       logo: /resources/logo/exess_logo.svg
       collapse-level: 1
-      pinned: true
       style: "floating"
       contents:
         - text: "Home"
@@ -68,7 +67,6 @@ website:
             - "4.1. Solar Wind"
             - documentation/sources_sinks/thermal_sorption.qmd
             - documentation/sources_sinks/photoionization_dissociation.qmd
-            # - "Photoionization and -dissociation"
             - "Photodesorption"
             - "MIV"
         - section: "5. Exospheres: Particle Trajectories"
@@ -81,32 +79,9 @@ website:
 
 
 
-    - title: "Manuals"
+    - title: "Manuals & Examples"
       contents:
         - manuals/manuals.qmd
-        - "---"
-        - section: "Examples"
-          contents:
-            - manuals/example_trajectory_01/index.qmd
-        - "---"
-        - section: "Exercises"
-          contents:
-            - manuals/exercise_fibonacci/index.qmd
-        - "---"
-        - section: "Git"
-          contents:
-            - manuals/git_workflow/index.qmd
-        - "---"
-        - section: "Julia"
-          contents:
-            - manuals/package_installation/index.qmd
-            - manuals/example_trajectory_01/index.qmd
-            - manuals/exercise_fibonacci/index.qmd
-        - "---"
-        - section: "On-Boarding"
-          contents:
-            - manuals/git_workflow/index.qmd
-            - manuals/package_installation/index.qmd
 
 
     - title: "Code"
@@ -135,7 +110,6 @@ format:
     css: _styles.css
     filters:
       - lightbox
-    # highlight-style: github-dark
     grid:
       sidebar-width: 300px
       body-width: 1000px
@@ -151,4 +125,5 @@ format:
     theme: [flatly, _mystyle.scss]
     title-block-style: default
     toc: true
+    toc-title: "{{< meta title >}}"
 

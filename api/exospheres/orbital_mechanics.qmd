@@ -1,14 +1,9 @@
 ---
 title: "Orbital Mechanics"
 ---
-
-::: {.hidden }
-# {{< meta title >}}
-:::
-
 ---
 
-The mathematical definition of the implemented functions is presented in the documentation, in the section [Orbital Mechanics Functions](/documentation/trajectories/orbital_mechanics_functions.qmd).
+The mathematical definition of the implemented functions is presented in the documentation, in the section [Ballistic Trajectories](/documentation/trajectories/ballistic_trajectories.qmd).
 
 ## Usage
 

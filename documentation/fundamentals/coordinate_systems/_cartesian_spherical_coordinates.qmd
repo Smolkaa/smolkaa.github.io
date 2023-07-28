@@ -8,7 +8,15 @@ A clear distinction has been made between cartesian and spherical coordinates an
     \label{eq:cartesian_coordinate}
 \end{equation}
 
-{{< include coordinate_systems/apirefs/_cartesian_coordinates.qmd >}}
+::: {.column-margin}
+Vectors defining a position or a velocity in a **cartesian** coordinate system and in **cartesian** 
+elements, like the one shown in Eq. \eqref{eq:cartesian_coordinate}: 
+
+{{< fa code >}} [`GlobalCartesianPosition`](/api/base/cs.qmd)
+
+{{< fa code >}} [`GlobalCartesianVelocity`](/api/base/cs.qmd)
+:::
+
 
 The same vector in the same coordinate system and, thus, the same domain, can also be expressed used spherical elements $\left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right)$, which are the radial, azimuthal, and elevation components of the vector:
 \begin{equation}
@@ -24,7 +32,6 @@ Note that the subscript $s$ indicates that the vector is expressed in spherical 
     \label{eq:spherical_coordinate}
 \end{equation}
 
-{{< include coordinate_systems/apirefs/_spherical_coordinates.qmd >}}
 
 The same coordinate can also be expressed in cartesian elements $\left(\cartesianCoordinateX, \cartesianCoordinateY, \cartesianCoordinateZ\right)$:
 \begin{equation}
@@ -34,8 +41,18 @@ The same coordinate can also be expressed in cartesian elements $\left(\cartesia
         \sin^{-1}\left(\frac{\cartesianCoordinateZ}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}}\right) 
     \end{bmatrix}  \qquad\text{with } \cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R}.
 \end{equation}
-Note that the subscript $c$ indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus $\sphericalCoordinate = \sphericalCoordinate_c$. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: $\cartesianCoordinate = \cartesianCoordinate_s \neq \sphericalCoordinate = \sphericalCoordinate_c$. The following sections will go into more detail about the differences of these coordinate systems, where the names \emph{cartesian} and \emph{spherical} are used to describe the domain and not the elements.
 
+::: {.column-margin}
+Vectors defining a position or a velocity in a **spherical** coordinate system and in **spherical** 
+elements, like the one shown in Eq. \eqref{eq:spherical_coordinate}: 
+
+{{< fa code >}} [`GlobalSphericalPosition`](/api/base/cs.qmd)
+
+{{< fa code >}} [`GlobalSphericalVelocity`](/api/base/cs.qmd)
+:::
+
+
+Note that the subscript $c$ indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus $\sphericalCoordinate = \sphericalCoordinate_c$. Even though, physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: $\cartesianCoordinate = \cartesianCoordinate_s \neq \sphericalCoordinate = \sphericalCoordinate_c$. The following sections will go into more detail about the differences of these coordinate systems, where the names \emph{cartesian} and \emph{spherical} are used to describe the domain and not the elements.
 
 
 All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are:

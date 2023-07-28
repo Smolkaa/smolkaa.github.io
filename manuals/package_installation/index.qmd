@@ -1,6 +1,5 @@
 ---
 title: "ExESS Package Installation"
-description: "Julia, On-Boarding"
 image: exess_logo.png
 author: Alexander Smolka
 date: 17 07 23

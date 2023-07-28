@@ -1,6 +1,0 @@
-::: {.callout-tip collapse="true"}
-# ExESS API -- Spherical Coordinates 
-Vectors defining a position or a velocity in a **spherical** coordinate system and in **spherical** 
-elements, like the one shown in Eq. \eqref{eq:spherical_coordinate} are implemented as 
-[`GlobalSphericalPosition`](/api/base/cs.qmd) and [`GlobalSphericalVelocity`](/api/base/cs.qmd).  
-:::

@@ -4,7 +4,7 @@
 # {{< fa image >}} Figure
 
 ::: {#fig-photoionization-rates-BOCHSLER}
-![Helium surface number densities.](/documentation/sources_sinks/photoionization_dissociation/imgs/photoionization_rates/photoionization_rates_BOCHSLER2013.png){width="1200px"}
+![](/documentation/sources_sinks/photoionization_dissociation/imgs/photoionization_rates/photoionization_rates_BOCHSLER2013.png){width="1200px"}
 
 Photoionization rates for Hydrogen, Helium, Oxygen, and Neon during the period between 1978 and 2012, derived by a multilinear model of @Bochsler2013. The data is displayed as daily and yearly averages, with the extreme values of the yearly averages highlighted by dashed horizontal lines.
 :::
@@ -118,10 +118,6 @@ function plot_k_all(name::String="photoionization_rates_BOCHSLER2013"; n=5)
 
     save(joinpath(@__DIR__, "$name.pdf"), fig)
     save(joinpath(@__DIR__, "$name.png"), fig, px_per_unit=4)
-end
-
-function plot_all()
-    plot_k_all(; n=182)
 end
 ```
 

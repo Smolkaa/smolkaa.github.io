@@ -1,5 +1,5 @@
 ::: {.column-body-outset-right}
-::: {.callout-note collapse="true"}
+::: {.callout-note}
 # Derivation of typical speeds of the Maxwell-Boltzmann flux distribution.
 
 First, the derivation of Eq. \eqref{eq:mbfd_most_probable_speed}, with the most probable speed denoted as $\velocity_p$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$ and assuming that $\velocity_p > 0$:

@@ -15,6 +15,9 @@ div.callout-tip.callout-titled .callout-icon::before {
   width: 25px;
 }
 
-.lbsvg {
-  background-color: red
+/* makes thumbnails in "Manuals & Examples" smaller and listing's body bigger */
+div.quarto-post .thumbnail {
+  flex-basis: 13%
+}div.quarto-post .body {
+  flex-basis: 62%
 }

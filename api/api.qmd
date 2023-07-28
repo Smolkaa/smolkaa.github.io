@@ -1,10 +1,6 @@
 ---
-title: "Code"
+title: "Home"
 ---
-
-::: {.hidden }
-# {{< meta title >}}
-:::
 
 ---
 

@@ -1,18 +1,13 @@
 ---
 title: "Fibonnacci Sequence"
-description: "Julia, Exercise"
 image: image.png
 author: Alexander Smolka
 date: 17 07 2023
+tbl-colwidths: [10,20,10,20,10,20]
 categories:
   - Julia
   - Exercise
-tbl-colwidths: [10,20,10,20,10,20]
 ---
-
-::: {.hidden }
-# {{< meta title >}}
-:::
 
 ---
 
