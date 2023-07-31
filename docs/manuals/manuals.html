@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-date"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -220,13 +220,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
+<p>The following list contains all manuals, examples, and additional material that is available for the <strong>ExESS</strong> documentation and software. Note that you can use the filtering and ordering tools at the top of the list to filter and order the entries. Additionally, you can filter the entries by categories, which are listed in the right siderbar of this page. Here are some important manuals to check out:</p>
+<ul>
+<li><a href="../manuals/onboarding_checklist/index.html">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <strong>ExESS</strong> package</li>
+</ul>
+<hr>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Julia,On-Boarding" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690532014997" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="Julia,On-Boarding" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690545499831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="../manuals/package_installation/index.html"> <img src="../manuals/package_installation/exess_logo.png" class="thumbnail-image"> </a></p>
 </div>
@@ -264,7 +291,7 @@ Alexander Smolka
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Julia,Exercise" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690529688536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="1" data-categories="Julia,Exercise" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690521180440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="../manuals/exercise_fibonacci/index.html"> <img src="../manuals/exercise_fibonacci/image.png" class="thumbnail-image"> </a></p>
 </div>
@@ -302,7 +329,7 @@ Alexander Smolka
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="On-Boarding" data-listing-date-sort="1690495200000" data-listing-file-modified-sort="1690532334426" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-categories="On-Boarding" data-listing-date-sort="1690495200000" data-listing-file-modified-sort="1690545499827" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="../manuals/git_essentials/index.html"> <img src="../manuals/git_essentials/Git-Icon-Black.png" class="thumbnail-image"> </a></p>
 </div>
@@ -337,7 +364,7 @@ Alexander Smolka
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="On-Boarding" data-listing-date-sort="1690495200000" data-listing-file-modified-sort="1690534508708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="On-Boarding" data-listing-date-sort="1690495200000" data-listing-file-modified-sort="1690778239252" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
 <div class="thumbnail">
 <p><a href="../manuals/onboarding_checklist/index.html"> <img src="../manuals/onboarding_checklist/play-solid.svg" class="thumbnail-image"> </a></p>
 </div>
@@ -372,7 +399,7 @@ Alexander Smolka
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Julia,Example" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690529688536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="4" data-categories="Julia,Example" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690521196644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="../manuals/example_trajectory_01/index.html"> <img src="../manuals/example_trajectory_01/orbit.png" class="thumbnail-image"> </a></p>
 </div>
