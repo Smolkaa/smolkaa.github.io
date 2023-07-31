@@ -1,0 +1,43 @@
+---
+title: "Julia Programming Language: Links & Resources"
+image: julia-dots.svg
+author: Alexander Smolka
+date: 31 07 23
+categories:
+  - Julia
+---
+---
+
+[Julia](https://julialang.org/) is a cutting-edge, high-level programming language designed to address the unique challenges of scientific computing and data analytics. Born in 2012, Julia has quickly gained popularity among researchers, data scientists, and developers due to its remarkable performance and ease of use. The language's key strength lies in its ability to handle complex mathematical computations and large datasets seamlessly. Julia boasts an intuitive syntax and rich mathematical library, making it particularly well-suited for numerical simulations, machine learning, and advanced statistical analysis. With its open-source nature and active community, Julia continues to evolve, receiving regular updates and enhancements that cater to its users' diverse needs.
+
+
+## Learning Julia
+
+* [MIT's Introduction to Computational Thinking](https://computationalthinking.mit.edu/Fall23/)
+  - This free online course held by the creators of the Julia Programming Language offers you a good overview of numerical methods and scientific computing in Julia. The course is held in Julia and is a great way to get started with the language.
+* [TUM-Dynamics-Lecture, 1](https://github.com/TUM-PIK-ESM/TUM-Dynamics-Lecture/blob/main/lectures/lecture-1/lecture1.ipynb) and [TUM-Dynamics-Lecture, 2](https://github.com/TUM-PIK-ESM/TUM-Dynamics-Lecture/blob/main/lectures/lecture-2/lecture2.ipynb)
+  - Created by some colleagues of mine, these two lectures offer a great introduction to Julia and its applications in the field of dynamical systems. The lectures are held in Julia and are a great way to get started with the language.
+
+## Resources
+
+* [Julia Homepage](https://julialang.org/) (_last visited: 31/07/2023_)
+* [Julia Documentation](https://docs.julialang.org/en/v1/) (_last visited: 31/07/2023_)
+  - Once you are familiar with the basics of Julia, the documentation is the best place to look up specific functions and syntax. Especially helpful are the following manuals: [Performance Tips](https://docs.julialang.org/en/v1/manual/performance-tips/), [Workflow Tips](https://docs.julialang.org/en/v1/manual/workflow-tips/), and the [Style Guide](https://docs.julialang.org/en/v1/manual/style-guide/).
+* [SciML Style Guide for Julia](https://docs.sciml.ai/SciMLStyle/stable/), by Chris Rackauckas (_last visited: 31/07/2023_)
+  - A style guide for scientific machine learning in Julia. This guide is a work in progress and is updated regularly.
+
+## Packages
+
+* [`DataFrames.jl`](https://dataframes.juliadata.org/stable/)
+  - A package for working with tabular data in Julia. The package is part of the Julia Data Ecosystem and offers a wide range of tools for data manipulation and analysis.
+* [`DifferentialEquations.jl`](https://docs.sciml.ai/DiffEqDocs/stable/)
+  - One of the most popular packages for solving differential equations in Julia. The package is part of the SciML ecosystem and offers a wide range of solvers for ordinary and partial differential equations.
+* [`Makie.jl`](https://makie.org) and its [Documentation](https://docs.makie.org/stable/)
+  - A high-performance plotting library for Julia. It features multiple backends and is highly customizable.
+  - Also check out 
+    + [`GeoMakie.jl`](https://geo.makie.org/stable/) for plotting geospatial data.
+    + [`Colors.jl`](http://juliagraphics.github.io/Colors.jl/stable/) and [`ColorSchemes.jl`](https://juliagraphics.github.io/ColorSchemes.jl/stable/) for improved color handling.
+* [`Measurements.jl`](https://docs.sciml.ai/Measurements/stable/)
+  - A physics package that handles uncertainty propagations coming from any kind of physical measuements.
+* [Revise.jl](https://timholy.github.io/Revise.jl/stable/)
+  - A package that allows you to modify your code without having to restart the Julia session. This is especially useful when working with large projects.

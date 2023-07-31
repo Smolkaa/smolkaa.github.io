@@ -80,18 +80,3 @@ You can use the `mod` function to compute the remainder of the division of two i
 Why are the last couple of entries all **6**? Is this pure coincidence or do the last digits of the Fibonacci sequence repeat? Use your function to find out!
 
 :::
-
-::: {.callout-note collapse="true" appearance="simple"}
-# Code Example
-
-```julia
-function fib_last_digit(n::Integer)
-    F = [0,1]
-    for i in 3:n
-        push!(F, mod(F[end-1] + F[end], 10))
-    end 
-    return F[end]
-end
-```
-
-:::

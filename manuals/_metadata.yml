@@ -1,6 +1,8 @@
 format:
   html:
     page-layout: full
+    mermaid:
+      theme: neutral
     
 execute:
   cache: true

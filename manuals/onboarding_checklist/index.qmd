@@ -5,10 +5,6 @@ author: Alexander Smolka
 date: 28 07 23
 categories:
   - On-Boarding
-format:
-  html:
-    mermaid:
-      theme: neutral
 ---
 ---
 
@@ -61,5 +57,5 @@ gantt
 In case you are working on a numerical based thesis, the following checklist can help you get started with your work.
 
 - [ ] set up [Julia](https://julialang.org/)
-  * check out the list with recommended [Julia Resources]()
+  * check out the list with recommended [Julia Resources](/manuals/julia_links/index.qmd)
 - [ ] set up the `ExESS` package (if applicable)
