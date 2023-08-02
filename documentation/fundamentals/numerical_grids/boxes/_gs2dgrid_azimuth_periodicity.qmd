@@ -1,4 +1,4 @@
-::: {.callout-note collapse="true"}
+::: {.callout-note .column-page-right}
 # Azimuth Periodicity
 Due to the $2\pi$-periodicity of the azimuth angle $\sphericalCoordinateAzimuth$, the structure, which is the constant $\Delta\sphericalCoordinateAzimuth$ angular distance between elements, has to be shown across its periodic boundaries:
 \begin{align*}

@@ -1,0 +1,30 @@
+
+
+## Density Projections
+
+Due to the scarcity of ground-based data, satellite measurements at varying altitudes are often used in the investigation of planetary exospheres. In order to compare measurements at different altitudes, the data must be projected into a common altitude, which usually is the exobase altitude, which is the surface of the planetary body given surface-bounded exospheres.
+
+
+@Chamberlain1963 derived a model for the exospheric particle number density $\numberDensity\left(\radius\right)$ as a function of the radial distance from the center of the planetary body, based on the assumption of a hydrostatic equilibrium and a Maxwellian velocity distribution, see section [Velocity Distributions](/documentation/sources_sinks/thermal_sorption.qmd#sec-velocity-distributions): 
+\begin{equation}
+    % \numberDensity(\radius) = \numberDensity(\radius+\height) \cdot \partitionFunction \cdot \exp \left(\relativeEnergy\left(\radius\right) - \relativeEnergy\left(\radius+\height\right) \right)
+    \numberDensity = \tilde\numberDensity \cdot \partitionFunction \cdot \exp \left(\relativeEnergy - \tilde\relativeEnergy\right)
+    \label{eq:chamberlain_projection}
+\end{equation}
+with the known number density $\tilde\numberDensity = \numberDensity(\tilde\radius)$ at some known radial distance $\tilde\radius = \radius + \height$ with $\radius, \height\in\Set{R}^+$, relative potential energies $\relativeEnergy$, and a partition function $\partitionFunction$. If the radial distance is equal to the radius of the planetary body, the number density is equal to the surface number density $\surfaceNumberDensity$. Equation \eqref{eq:chamberlain_projection} is the general form of the isothermal barometric law [@Chamberlain1963].
+
+
+The relative energy of the projection function is given as absolute potential energy in units of thermal energy $\BoltzmannConstant \temperature$:
+\begin{equation}
+    \relativeEnergy\left(\radius\right) = \left| - \frac{\mass \hat\mass\GravitationalConstant}{\BoltzmannConstant \temperature \radius} \right|
+    \label{eq:relative_potential_energy}
+\end{equation}
+with the mass $\mass$ of the particle, the mass $\hat\mass$ of the planetary body, and the gravitational constant $\GravitationalConstant$ [@Chamberlain1963]. Both, $\relativeEnergy = \relativeEnergy\left(\radius\right)$ and $\tilde\relativeEnergy = \relativeEnergy\left(\radius+\height\right)$, are required for the partition function $\partitionFunction$, which is the linear combination of three individual partition functions which are describing particles in ballistic orbits, $\partitionFunction_{bal}$, particles in satellite orbits, $\partitionFunction_{sat}$, and particles that are on escape trajectories, $\partitionFunction_{esc}$:
+\begin{align}
+    \partitionFunction_{bal} &= \frac{2}{\sqrt{\pi}} \left( \gamma\left(\frac{3}{2}, \relativeEnergy\right) - \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \cdot \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right), \\
+    \partitionFunction_{sat} &= \frac{2}{\sqrt{\pi}} \left( \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \cdot \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right), \\
+    \partitionFunction_{esc} &= \frac{1}{\sqrt{\pi}} \left( \Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy\right) - \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \right. \nonumber \\
+    &\left. \qquad \cdot \left(\Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right) \right) \\[4mm]
+    \Rightarrow \partitionFunction &= \partitionFunction_{bal} + \partitionFunction_{sat} + \partitionFunction_{esc}
+\end{align}
+with the gamma and lower incomplete gamma function, $\Gamma$ and $\gamma$, respectively [@Cook2013].

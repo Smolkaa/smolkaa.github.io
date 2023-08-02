@@ -1,6 +1,4 @@
-
-
-::: {.callout-note}
+::: {.callout-note .column-page-right}
 # Derivation of spherical Laplace operator.
 
 The laplacian is the linear summation of the second-order cartesian partial derivative $\nabla^2 = \frac{\partial^2}{\partial\cartesianCoordinateX^2} + \frac{\partial^2}{\partial\cartesianCoordinateY^2} + \frac{\partial^2}{\partial\cartesianCoordinateZ^2}$. The spherical laplacian can be derived by applying the chain rule of partial derivatives, shown in the gradient derivation in Eqs. \eqref{eq:spherical_gradient_x}, \eqref{eq:spherical_gradient_y}, \eqref{eq:spherical_gradient_z} twice:

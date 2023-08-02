@@ -1,11 +1,6 @@
 ---
-title: "Global, Structured, Two-Dimensional Grids"
+title: "Global, Structured, 2D Grids"
 ---
-
-::: {.hidden }
-# {{< meta title >}}
-:::
-
 ---
 
 ## Type Structure
@@ -35,5 +30,30 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.GlobalStructured2DGrid_EqSim
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured2DGrid_Reduced`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured2DGrid_Reduced
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured2DGrid_Reduced_EqSim`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured2DGrid_Reduced_EqSim
 ```
 :::

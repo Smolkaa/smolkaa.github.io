@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-17">
+<meta name="dcterms.date" content="2023-08-02">
 
-<title>ExESS - Global, Structured, Two-Dimensional Grids</title>
+<title>ExESS - Global, Structured, 2D Grids</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../api/grids/utility.html" rel="next">
+<link href="../../api/grids/global_structured_3d_grids.html" rel="next">
 <link href="../../api/exospheres/orbital_mechanics.html" rel="prev">
 <link href="../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html">Numerical Grids</a></li><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html">Global, Structured, Two-Dimensional Grids</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html">Numerical Grids</a></li><li class="breadcrumb-item"><a href="../../api/grids/global_structured_2d_grids.html">Global, Structured, 2D Grids</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -226,7 +226,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../api/grids/global_structured_2d_grids.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Global, Structured, Two-Dimensional Grids</span></a>
+ <span class="menu-text">Global, Structured, 2D Grids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../api/grids/global_structured_3d_grids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Global, Structured, 3D Grids</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -261,11 +267,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Global, Structured, Two-Dimensional Grids</h2>
+    <h2 id="toc-title">Global, Structured, 2D Grids</h2>
    
   <ul>
-  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Global, Structured, Two-Dimensional Grids</a></li>
-  <li><a href="#type-structure" id="toc-type-structure" class="nav-link" data-scroll-target="#type-structure">Type Structure</a></li>
+  <li><a href="#type-structure" id="toc-type-structure" class="nav-link active" data-scroll-target="#type-structure">Type Structure</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
@@ -276,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Global, Structured, Two-Dimensional Grids</h1>
+<h1 class="title">Global, Structured, 2D Grids</h1>
 </div>
 
 
@@ -293,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 17, 2023</p>
+      <p class="date">August 2, 2023</p>
     </div>
   </div>
   
@@ -303,9 +308,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="meta-title" class="level1 hidden">
-<h1>Global, Structured, Two-Dimensional Grids</h1>
-</section>
 <hr>
 <section id="type-structure" class="level2">
 <h2 class="anchored" data-anchor-id="type-structure">Type Structure</h2>
@@ -325,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] struct GlobalStructured2DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
@@ -386,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] struct GlobalStructured2DGrid_EqSim{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid_EqSim([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
@@ -413,6 +415,128 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td style="text-align: left;"><code>N_theta</code></td>
 <td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in azimuth direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>N_phi</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in elevation direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>coords</code></td>
+<td style="text-align: left;"><code>Vector{GlobalSphericalPosition{T}}</code></td>
+<td style="text-align: left;">coordinates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>areas</code></td>
+<td style="text-align: left;"><code>Vector{T}</code></td>
+<td style="text-align: left;">surface area</td>
+</tr>
+</tbody>
+</table>
+<p>To ensure expected behavior, the grid object should generally be created with the outer constructor [2].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>GlobalStructured2DGrid_Reduced</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>[1] struct GlobalStructured2DGrid_Reduced{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+[2] GlobalStructured2DGrid_Reduced([T::Type,] r::Real, N_phi::Int64)</code></pre>
+<p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the sphere radius <code>r</code>. The grid is reduced in the azimuth direction to have approximately equal <code>2*pi*r*cos(phi)/N_theta</code> grid element lengths.</p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 41%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>r</code></td>
+<td style="text-align: left;"><code>T</code></td>
+<td style="text-align: left;">radius of global body (sphere)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>N_theta</code></td>
+<td style="text-align: left;"><code>Vector{Int64}</code></td>
+<td style="text-align: left;">number of elements in azimuth direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>N_phi</code></td>
+<td style="text-align: left;"><code>Int64</code></td>
+<td style="text-align: left;">number of elements in elevation direction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>coords</code></td>
+<td style="text-align: left;"><code>Vector{GlobalSphericalPosition{T}}</code></td>
+<td style="text-align: left;">coordinates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>areas</code></td>
+<td style="text-align: left;"><code>Vector{T}</code></td>
+<td style="text-align: left;">surface area</td>
+</tr>
+</tbody>
+</table>
+<p>To ensure expected behavior, the grid object should generally be created with the outer constructor [2].</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>GlobalStructured2DGrid_Reduced_EqSim</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>[1] struct GlobalStructured2DGrid_Reduced_EqSim{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+[2] GlobalStructured2DGrid_Reduced_EqSim([T::Type,] r::Real, N_phi::Int64)</code></pre>
+<p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the upper hemisphere with radius <code>r</code>, assuming equatorial symmetry. The grid is reduced in the azimuth direction to have approximately equal <code>2*pi*r*cos(phi)/N_theta</code> grid element lengths.</p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 41%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>r</code></td>
+<td style="text-align: left;"><code>T</code></td>
+<td style="text-align: left;">radius of global body (sphere)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>N_theta</code></td>
+<td style="text-align: left;"><code>Vector{Int64}</code></td>
 <td style="text-align: left;">number of elements in azimuth direction</td>
 </tr>
 <tr class="odd">
@@ -696,8 +820,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../api/grids/utility.html" class="pagination-link">
-        <span class="nav-page-text">Utility</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../api/grids/global_structured_3d_grids.html" class="pagination-link">
+        <span class="nav-page-text">Global, Structured, 3D Grids</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

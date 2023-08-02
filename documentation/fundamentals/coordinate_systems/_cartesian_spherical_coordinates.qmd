@@ -75,7 +75,9 @@ Similarly, the base vectors of any spherical coordinate system are:
 which leads to the following expression for the spherical coordinate vector, for both in cartesian and spherical elements:
 \begin{align}
     \sphericalCoordinate &= \sphericalCoordinateRadius \sphericalBaseVectorRadius + \sphericalCoordinateAzimuth \sphericalBaseVectorAzimuth + \sphericalCoordinateElevation \sphericalBaseVectorElevation \nonumber \\
-    &= \left(\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}\right)\sphericalBaseVectorRadius + \left(\sgn\left(\cartesianCoordinateY\right)\cdot\cos^{-1}\left(\frac{\cartesianCoordinateX}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2}}\right)\right) \sphericalBaseVectorAzimuth + \left(\sin^{-1}\left(\frac{\cartesianCoordinateZ}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}}\right)\right) \sphericalBaseVectorElevation \\
+    &= \left(\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}\right)\sphericalBaseVectorRadius \nonumber \\
+    &+ \left(\sgn\left(\cartesianCoordinateY\right)\cdot\cos^{-1}\left(\frac{\cartesianCoordinateX}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2}}\right)\right) \sphericalBaseVectorAzimuth \nonumber \\
+    &+ \left(\sin^{-1}\left(\frac{\cartesianCoordinateZ}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}}\right)\right) \sphericalBaseVectorElevation \\
     &= \sphericalCoordinate_c.\nonumber
 \end{align}
 

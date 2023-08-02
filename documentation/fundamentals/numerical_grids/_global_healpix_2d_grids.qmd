@@ -7,24 +7,21 @@
 
 ### Coordinate Calculation
 
-The generation of such points firstly requires a division of the sphere into twelve equal area, four sided pixels defined by:
-\begin{aligned}
-    |\cos\sphericalCoordinateElevation|>\frac{2}{3}, \qquad \sphericalCoordinateAzimuth=m\frac{\pi}{2}, \qquad & \quad m = 0,1,2,3 \\
-    \cos\sphericalCoordinateElevation = \frac{-2-4m}{3} + \frac{8\sphericalCoordinateAzimuth}{3\pi}, \qquad \frac{m\pi}{2} \leq \sphericalCoordinateAzimuth \leq \frac{(m+1)\pi}{2}, \qquad & \quad m=0,1,2,3 \\
-    \cos\sphericalCoordinateElevation=\frac{2-4m}{3}-\frac{8\sphericalCoordinateAzimuth}{3\pi}, \qquad \frac{-(m+1)\pi}{2} \leq \sphericalCoordinateAzimuth \leq \frac{-m\pi}{2}, \qquad & \quad  m=0,1,2,3.
-\end{aligned}
-
-These pixels can be further partitioned into a $k \times k$ grid of sub-pixels of the same shape and area. The points of the set are located in the centers of each pixel. The subdivision leads to $k$ iso-latitudinal rings at the polar region $|\cos\sphericalCoordinateElevation|>2/3$, with
+The generation of such points firstly requires a division of the sphere into twelve equal area, four sided pixels. These areas are defined through the following boundaries:
+\begin{align}
+    |\cos\sphericalCoordinateElevation| > \frac{2}{3}, & \qquad \sphericalCoordinateAzimuth = m\frac{\pi}{2},\\
+    \cos\sphericalCoordinateElevation = \frac{-2-4m}{3} + \frac{8\sphericalCoordinateAzimuth}{3\pi}, & \qquad \frac{m\pi}{2} \leq \sphericalCoordinateAzimuth \leq \frac{(m+1)\pi}{2}, \\
+    \cos\sphericalCoordinateElevation = \frac{2-4m}{3}-\frac{8\sphericalCoordinateAzimuth}{3\pi}, & \qquad \frac{-(m+1)\pi}{2} \leq \sphericalCoordinateAzimuth \leq \frac{-m\pi}{2}.
+\end{align}
+with $m \in \left\{0,1,2,3\right\}$. These pixels can be further partitioned into a $k \times k$ grid of sub-pixels of the same shape and area. The points of the set are located in the centers of each pixel. The subdivision leads to $k$ iso-latitudinal rings at the polar region $|\cos\sphericalCoordinateElevation|>2/3$:
 \begin{equation}
     |\cos\sphericalCoordinateElevation_i|=1-\frac{i^2}{3k^2}, \qquad \sphericalCoordinateAzimuth_j=\frac{\pi}{2i} \left( j - \frac{1}{2} \right),
 \end{equation}
-
-thus, every $i$-th ring has $4i$ equally spaced points. Closer to the equatorial region, $2k-1$ iso-latitudinal rings with $4k$ points each emerge. These points are indexed by $k \leq |i| \leq 2k$ and $1 \leq j \leq 4k$:
+with every $i$-th ring having $4i$ equally spaced points. Closer to the equatorial region, $2k-1$ iso-latitudinal rings with $4k$ points each emerge. These points are indexed by $k \leq |i| \leq 2k$ and $1 \leq j \leq 4k$:
 \begin{equation}
-    |\cos\sphericalCoordinateElevation_i| = \frac{4}{3} - \frac{2i}{3k}, \qquad \sphericalCoordinateAzimuth_j = \frac{\pi}{2k} \left( j - \frac{s}{2} \right), \qquad s = (i-k+1) \mod 2.
+    |\cos\sphericalCoordinateElevation_i| = \frac{4}{3} - \frac{2i}{3k}, \qquad \sphericalCoordinateAzimuth_j = \frac{\pi}{2k} \left( j - \frac{s}{2} \right)
 \end{equation}
-
-The last index, $s$, describes the phase shift between the rings. Finally, this configuration produces a set of $N=12k^2$ points [@Hardin2016].
+with $s = (i-k+1) \mod 2$, which describes the phase shift between the rings. This configuration produces a set of $N=12k^2$ points [@Hardin2016].
 
 
 ### Area Calculation

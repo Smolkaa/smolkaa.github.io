@@ -59,7 +59,6 @@ gantt
 ```
 :::
 
-
 ::: {.content-visible when-format="pdf"}
 ```{mermaid}
 %%| fig-width: 6

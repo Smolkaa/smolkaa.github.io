@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-08-02">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -265,20 +265,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/planetary_measurements/density_projections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.1 Exospheric Density Projections</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../documentation/planetary_measurements/missions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.2 Missions</span></a>
+ <span class="menu-text">3.1 Missions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3.3 Lunar Exosphere Surface Densities</span></a>
+ <span class="menu-text">3.2 Lunar Exosphere Surface Densities</span></a>
   </div>
 </li>
       </ul>
@@ -390,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2023</p>
+      <p class="date">August 2, 2023</p>
     </div>
   </div>
   
@@ -455,12 +449,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     \hat{\boldsymbol{\mathbf{e}}}_\varphi= \begin{bmatrix}0 \\ 0 \\ 1 \end{bmatrix},
 \end{equation}\]</span> which leads to the following expression for the spherical coordinate vector, for both in cartesian and spherical elements: <span class="math display">\[\begin{align}
     \boldsymbol{\mathbf{r}}&amp;= r\hat{\boldsymbol{\mathbf{e}}}_r+ \vartheta\hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \varphi\hat{\boldsymbol{\mathbf{e}}}_\varphi\nonumber \\
-    &amp;= \left(\sqrt{x^2 + y^2 + z^2}\right)\hat{\boldsymbol{\mathbf{e}}}_r+ \left(\mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\vartheta+ \left(\sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\varphi\\
+    &amp;= \left(\sqrt{x^2 + y^2 + z^2}\right)\hat{\boldsymbol{\mathbf{e}}}_r\nonumber \\
+    &amp;+ \left(\mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\vartheta\nonumber \\
+    &amp;+ \left(\sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)\right) \hat{\boldsymbol{\mathbf{e}}}_\varphi\\
     &amp;= \boldsymbol{\mathbf{r}}_c.\nonumber
 \end{align}\]</span></p>
 <p>Due to the equalities of the vectors in their respective same coordinate system, the rest of this work will only use <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span> and <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span> without their indexed counterparts. The element type will be indicated by the context of the equation.</p>
 </section>
-<section id="spacial-differentials" class="level1">
+<section id="spacial-differentials" class="level1 page-columns page-full">
 <h1>Spacial Differentials</h1>
 <p>This work is regularly relying on vector calculus which includes a substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.</p>
 <p><span class="math display">\[\begin{align}
@@ -533,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     \nabla^2 &amp;= \frac{\partial^2}{\partial r^2} + \frac{2}{r}\frac{\partial}{\partial r} + \frac{1}{r^2\cos^2\varphi}\frac{\partial}{\partial\vartheta} + \frac{1}{r^2} \frac{\partial^2}{\partial\varphi^2} - \frac{\sin\varphi}{r^2\cos\varphi} \frac{\partial}{\partial\varphi} \\
     &amp;= \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\cos^2\varphi}\frac{\partial}{\partial\vartheta} + \frac{1}{r^2\cos\varphi} \frac{\partial}{\partial\varphi} \left(\cos\varphi\frac{\partial}{\partial\varphi}\right). \label{eq:laplace_spherical}
 \end{align}\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="column-page-right callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -567,9 +563,9 @@ Derivation of spherical Laplace operator.
 \end{equation}\]</span> where <span class="math inline">\(V\)</span> is the volume of the integration domain, with the infinitesimal volume element <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\in V= \left\{dx\, dy\, dz\; | \; dx\in X, dy\in Y, dz\in Z \right\}\)</span>. The superscript <span class="math inline">\(\bullet^3\)</span> in the differentials indicates that the differential is a vector but a scalar representation of the element’s size created by the vector elements. As before, the differential <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\)</span> can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq. <span class="math inline">\(\eqref{eq:total_cartesian_spherical_differential_matrix}\)</span>, of the transformation: <span class="math display">\[\begin{equation}
     d^3\boldsymbol{\mathbf{x}}= \left|\frac{\partial\boldsymbol{\mathbf{x}}}{\partial\boldsymbol{\mathbf{r}}}\right| d^3\boldsymbol{\mathbf{r}}= r^2\cos\varphi drd\vartheta d\varphi.
 \end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;1</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset column-page-right page-columns page-full">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
-<div class="tab-content">
+<div class="tab-content column-page-right">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -1003,7 +999,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
 
 
 

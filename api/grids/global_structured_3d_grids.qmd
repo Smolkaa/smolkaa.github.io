@@ -1,0 +1,60 @@
+---
+title: "Global, Structured, 3D Grids"
+---
+---
+
+## Type Structure
+
+## Usage
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured3DGrid`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured3DGrid
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured3DGrid_EqSim`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured3DGrid_EqSim
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured3DGrid_Reduced`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured3DGrid_Reduced
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``GlobalStructured3DGrid_Reduced_EqSim`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.GlobalStructured3DGrid_Reduced_EqSim
+```
+:::

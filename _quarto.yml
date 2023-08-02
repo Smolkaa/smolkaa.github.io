@@ -59,7 +59,6 @@ website:
             - "2.6. Other Exospheres in The Solar System"
         - section: "3. Planetary Measurements and Data"
           contents:
-            - documentation/planetary_measurements/density_projections.qmd
             - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
         - section: "4. Exospheres: Sources and Sinks"
@@ -100,6 +99,7 @@ website:
         - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd
+            - api/grids/global_structured_3d_grids.qmd
             - api/grids/utility.qmd
         - section: "Surfaces"
           contents:
@@ -115,8 +115,8 @@ format:
       - lightbox
     grid:
       sidebar-width: 300px
-      body-width: 800px
-      margin-width: 400px
+      body-width: 900px
+      margin-width: 300px
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html

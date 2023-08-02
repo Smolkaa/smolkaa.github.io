@@ -20,11 +20,11 @@ A specialized method of creating a set of spiral points implements the Fibonacci
 \end{equation}
 and the golden ratio $\varphi = \frac{1 + \sqrt{5}}{2}.$ The general algorithm defines a lattice of points on the square $\left[ 0,1 \right)^2$, which is subsequently mapped to a unit sphere using the Lambert cylindrical equal-area projection $\Lambda$:
 \begin{equation}
-    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \left( \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\cos\left(2\pi \cartesianCoordinateX\right), \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\sin\left(2\pi \cartesianCoordinateX\right), 2\cartesianCoordinateY-1 \right)
+    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \begin{bmatrix} \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\cos\left(2\pi \cartesianCoordinateX\right) \\ \sqrt{1-(2\cartesianCoordinateY-1)^2}\cdot\sin\left(2\pi \cartesianCoordinateX\right), 2\cartesianCoordinateY-1 \end{bmatrix}
 \end{equation}
 in Cartesian coordinates, and
 \begin{equation}
-    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \left(\cos^{-1}(2\cartesianCoordinateY-1), 2\pi \cartesianCoordinateX \right) = \left( \sphericalCoordinateElevation, \sphericalCoordinateAzimuth \right)
+    \Lambda(\cartesianCoordinateX,\cartesianCoordinateY) = \begin{bmatrix}\cos^{-1}(2\cartesianCoordinateY-1) \\ 2\pi \cartesianCoordinateX\end{bmatrix} = \begin{bmatrix}\sphericalCoordinateElevation \\ \sphericalCoordinateAzimuth \end{bmatrix}
 \end{equation}
 in spherical coordinates. The points $(\cartesianCoordinateX, \cartesianCoordinateY)$ on the square $\left[ 0,1 \right)^2$ are created through
 \begin{equation}
