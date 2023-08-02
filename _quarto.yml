@@ -94,13 +94,16 @@ website:
             - api/base/cs.qmd
             - api/base/distributions.qmd
             - api/base/utility.qmd
+        - section: "Exospheres"
+          contents:
+            - api/exospheres/orbital_mechanics.qmd
         - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd
             - api/grids/utility.qmd
-        - section: "Exospheres"
+        - section: "Surfaces"
           contents:
-            - api/exospheres/orbital_mechanics.qmd
+            - api/surfaces/temperature.qmd
 
 format:
   html:
@@ -112,7 +115,7 @@ format:
       - lightbox
     grid:
       sidebar-width: 300px
-      body-width: 1000px
+      body-width: 800px
       margin-width: 400px
     html-math-method: mathjax
     include-in-header: 

@@ -1,4 +1,4 @@
-::: {.column-body-outset-right}
+::: {.column-page-right}
 ::: {.callout-note}
 # Cartesian and spherical components of the Maxwell-Boltzmann velocity distribution.
 Equation \eqref{eq:mbd_3d} can be devided into its three components of the respective coordinate system. Note that every component is representing a normalized [pdf](/documentation/acronyms.qmd) itself.

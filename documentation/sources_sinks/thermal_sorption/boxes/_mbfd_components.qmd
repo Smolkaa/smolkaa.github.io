@@ -1,4 +1,4 @@
-::: {.column-body-outset-right}
+::: {.column-page-right}
 ::: {.callout-note}
 # Cartesian and spherical components of the Maxwell-Boltzmann Flux velocity distribution.
 Equations \eqref{eq:mbfd} and \eqref{eq:mbfd_spherical} can be devided into its three components of the respective coordinate system. Note that every component is representing a normalized [pdf](/documentation/acronyms.qmd) itself.

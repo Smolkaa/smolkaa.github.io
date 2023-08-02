@@ -1,4 +1,4 @@
-::: {.column-body-outset-right}
+::: {.column-page-right}
 ::: {.panel-tabset}
 
 # {{< fa image >}} Figure

@@ -122,6 +122,6 @@ While the latter two integrals are trivial, leading to a cosine-squared dependen
 only $\sphericalCoordinateElevation=\cos^{-1}\left(1-r_\sphericalCoordinateElevation\right)$ and $\sphericalCoordinateAzimuth = 2\pi r_\sphericalCoordinateAzimuth - \pi$ can both be directly calculated from their respective realization of the uniform unit random variable, as there is no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
 
 ::: {.column-margin}
-{{< fa code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}#
+{{< fa code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}
 :::
 

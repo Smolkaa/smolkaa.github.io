@@ -1,4 +1,4 @@
-::: {.column-body-outset-right}
+::: {.column-page-right}
 ::: {.callout-note}
 # Derivation of typical speeds of the Maxwell-Boltzmann distribution.
 

@@ -1,0 +1,60 @@
+---
+title: "Temperature"
+---
+---
+
+A more in-depth description of the implemented functions listed below can be found in the following sections:
+
+* [Lunar Surface Temperatures](/documentation/fundamentals/moon.qmd#sec-lunar-surface-temperatures)
+
+## Usage
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``lunar_surface_temperatures_diviner`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.lunar_surface_temperatures_diviner
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``lunar_surface_temperatures_diviner_avg`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.lunar_surface_temperatures_diviner_avg
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``lunar_surface_temperatures_BUTLER1997`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.lunar_surface_temperatures_BUTLER1997
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``lunar_surface_temperatures_HURLEY2015`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.lunar_surface_temperatures_HURLEY2015
+```
+:::
