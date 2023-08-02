@@ -5,6 +5,12 @@ author: Alexander Smolka
 date: 28 07 23
 categories:
   - On-Boarding
+
+format:
+  html: default
+  pdf:
+    mermaid:
+      theme: neutral
 ---
 ---
 
@@ -33,6 +39,7 @@ The first time-plan does not need to be (can not and should not be) very detaile
 
 Over the course of your thesis, revisit the time-plan regularly and update it accordingly. This will help you to keep track of your progress and to identify potential problems early on. By adding more details to the time-plan over time, you will also have a good starting point for your thesis report.
 
+::: {.content-visible when-format="html"}
 ```{mermaid}
 gantt
   %% title Student Thesis Time-Plan
@@ -40,7 +47,7 @@ gantt
   axisFormat %m
 
   section On-Boarding
-    On-Boarding Checklist: 01-01, 15d
+    On-Boarding Checklist: 01-01, 16-01
     Learning Julia: 01-01, 01-03
   section Reading
     Reading Papers: 01-01, 01-04
@@ -50,6 +57,30 @@ gantt
     Thesis Review: 15-06, 01-07
     Thesis Submission: milestone, 01-07
 ```
+:::
+
+
+::: {.content-visible when-format="pdf"}
+```{mermaid}
+%%| fig-width: 6
+
+gantt
+  %% title Student Thesis Time-Plan
+  dateFormat DD-MM
+  axisFormat %m
+
+  section On-Boarding
+    On-Boarding Checklist: 01-01, 16-01
+    Learning Julia: 01-01, 01-03
+  section Reading
+    Reading Papers: 01-01, 01-04
+  section Writing
+    Continuous Documentation: 01-01, 15-05
+    Thesis Writing: 15-04, 15-06
+    Thesis Review: 15-06, 01-07
+    Thesis Submission: milestone, 01-07
+```
+:::
 :::
 
 
