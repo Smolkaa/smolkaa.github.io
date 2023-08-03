@@ -1,0 +1,11 @@
+---
+title: "TSU Mini-Moon Seminar"
+image: 
+author: Alexander Smolka
+date: 15 08 23
+categories:
+  - Misc
+
+---
+
+

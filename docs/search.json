@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Extraterrestrial Exosphere and Surface Simulations",
+    "section": "",
+    "text": "This website is still under construction! \n\nHome\n\n\nAuthor\n\n\nPublications\n\nA. Smolka, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: 10.1016/j.icarus.2023.115508."
+  },
+  {
+    "objectID": "manuals/package_installation/index.html#installation",
+    "href": "manuals/package_installation/index.html#installation",
+    "title": "ExESS Package Installation",
+    "section": "Installation",
+    "text": "Installation\nThis simulation tool was created as a custom package for the computer language Julia. Please refer to the official guide to installing Julia on your machine. To be able to use the ExESS package, the entire repository has to be downloaded from LRZ-GitLab. Afterward, the code can be used in several different ways. The entire module can be included directly by specifying the path of the downloaded package in the include call.\ninclude(joinpath(PathToPackage, \"src\", \"ExESS.jl\"))\nusing .ExESS"
+  },
+  {
+    "objectID": "manuals/package_installation/index.html#required-packages",
+    "href": "manuals/package_installation/index.html#required-packages",
+    "title": "ExESS Package Installation",
+    "section": "Required Packages",
+    "text": "Required Packages\nThe ExESS package relies on multiple other packages that have to be added and installed by the user. They can be added using Julia’s package-manager Pkg:\nusing Pkg\nPkg.add(\"Interpolations\")\nPkg.add(\"NearestNeighbors\")\nPkg.add(\"DifferentialEquations\")\nPkg.add(\"SpecialFunctions\")"
+  },
+  {
+    "objectID": "manuals/manuals.html",
+    "href": "manuals/manuals.html",
+    "title": "Manuals & Examples",
+    "section": "",
+    "text": "The following list contains all manuals, examples, and additional material that is available for the ExESS documentation and software. Note that you can use the filtering and ordering tools at the top of the list to filter and order the entries. Additionally, you can filter the entries by categories, which are listed in the right siderbar of this page. Here are some important manuals to check out:\n\nStudent Thesis: On-Boarding Checklist is recommended for all new students to get started with their university thesis and working with the ExESS package\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nExESS Package Installation\n\n\n\n\n\n\n\nJulia\n\n\nOn-Boarding\n\n\n\n\n\n\n\n\n\n\n\nJul 17, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\n  \n\n\n\n\nFibonnacci Sequence\n\n\n\n\n\n\n\nJulia\n\n\nExercise\n\n\n\n\n\n\n\n\n\n\n\nJul 17, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\n  \n\n\n\n\nGit Essentials\n\n\n\n\n\n\n\nOn-Boarding\n\n\n\n\n\n\n\n\n\n\n\nJul 28, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\n  \n\n\n\n\nJulia Programming Language: Links & Resources\n\n\n\n\n\n\n\nJulia\n\n\n\n\n\n\n\n\n\n\n\nJul 31, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\n  \n\n\n\n\nStudent Thesis: On-Boarding Checklist\n\n\n\n\n\n\n\nOn-Boarding\n\n\n\n\n\n\n\n\n\n\n\nJul 28, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\n  \n\n\n\n\nTrajectory Calculation\n\n\n\n\n\n\n\nJulia\n\n\nExample\n\n\n\n\n\n\n\n\n\n\n\nJul 17, 2023\n\n\nAlexander Smolka\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "manuals/git_essentials/index.html",
+    "href": "manuals/git_essentials/index.html",
+    "title": "Git Essentials",
+    "section": "",
+    "text": "Collaboration with Git and the Git workflow are essential aspects of modern software development. Git, a powerful version control system, enables seamless collaboration among developers by facilitating code sharing, tracking changes, and resolving conflicts. The Git workflow refers to a structured approach to managing team-based coding projects, encompassing branching, merging, pull requests, and code reviews.\nThis page provides a collection of online materials that delve into essential concepts, ranging from fundamental Git commands to advanced collaboration techniques."
+  },
+  {
+    "objectID": "manuals/git_essentials/index.html#git",
+    "href": "manuals/git_essentials/index.html#git",
+    "title": "Git Essentials",
+    "section": "Git",
+    "text": "Git\n\nA Beginner’s Guide to Git and Version Control (last visited: 28/07/2023)\nGetting Started with Git (last visited: 28/07/2023)\nCollaborating with Git (last visited: 28/07/2023)\nGit Documentation (last visited: 28/07/2023)"
+  },
+  {
+    "objectID": "manuals/git_essentials/index.html#github",
+    "href": "manuals/git_essentials/index.html#github",
+    "title": "Git Essentials",
+    "section": "GitHub",
+    "text": "GitHub\nWhile Git is a version control system that allows developers to track changes in their codebase and collaborate with other developers, GitHub is an online service that provides hosting for Git repositories.\n\nGit vs. GitHub: What’s the Difference? (last visited: 28/07/2023)"
+  },
+  {
+    "objectID": "manuals/git_essentials/index.html#gitlab-lrz",
+    "href": "manuals/git_essentials/index.html#gitlab-lrz",
+    "title": "Git Essentials",
+    "section": "GitLab (LRZ)",
+    "text": "GitLab (LRZ)\nBoth GitHub and GitLab are based around the overarching Git distributed control system. The LRZ GitLab is locally hosted and accessible with your (TUM/etc.) university account. Projects, groups, and repositories are only accessible to other authorized users of the LRZ GitLab.\n\nLRZ GitLab\nGitLab Documentation (last visited: 28/07/2023)"
+  },
+  {
+    "objectID": "manuals/git_essentials/index.html#vscode-extensions",
+    "href": "manuals/git_essentials/index.html#vscode-extensions",
+    "title": "Git Essentials",
+    "section": "VSCode Extensions",
+    "text": "VSCode Extensions\nSome useful extensions to use Git version control within VSCode.\n\nGitLense – Git supercharged (last visited: 28/07/2023)"
+  },
+  {
+    "objectID": "manuals/example_trajectory_01/index.html",
+    "href": "manuals/example_trajectory_01/index.html",
+    "title": "Trajectory Calculation",
+    "section": "",
+    "text": "Trajectory Calculation\n\n\nFirst, the locally available ExESS package has to be loaded:\ninclude(joinpath(@__DIR__, \"..\", \"..\", \"src\", \"ExESS.jl\"))\nusing .ExESS\nNext, all required inputs for the trajectory calculation are defined. If you are unsure about how the function works, you can type julia&gt; ?trajectory in the REPL to get a description of the function and its arguments.\nApart from the key-word arguments, the function requires the following inputs:\n\nx0: Initial position vector in Cartesian coordinates (m)\nv0: Initial velocity vector in Cartesian coordinates (m/s)\nddx: Acceleration function (m/s2)\n\nThe docstring (see ?trajectory) shows that these input can be of different types, either vectors (AbstractVector) or positions (AbstractPosition). The latter are custom types defined in the ExESS package to distinguish one three-dimensional in a certain coordinate space from another. The following example shows how to use the GlobalCartesianPosition.\nWe create a GlobalCartesianPosition object with the initial position vector, locate at [LUNAR_RADIUS, 0, 0], in other words: on the surface of a sphere with radius LUNAR_RADIUS.\nx0 = GlobalCartesianPosition(LUNAR_RADIUS, 0, 0)\nNext, the initial velocity vector is defined. We use the GlobalCartesianVelocity type to define a velocity vector in the same coordinate system as the position vector. Here, we only use a velocity in the x-direction, with a magnitude of 100 m/s.\nv0 = GlobalCartesianVelocity(100, 0, 0)\nWithout letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.\nWe can test this assumptions by using the ddx_lunar_gravity function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon’s mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electro-magnetic fields.\nddx = ddx_lunar_gravity\nFinally, we have all the required inputs to calculate the trajectory. Let’s call the function and save the solution in a variable called traj.\ntraj = trajectory(x0, v0, ddx)"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "ExESS",
+    "section": "",
+    "text": "MIT License\nCopyright (c) 2023 Alexander Smolka\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "manuals/exercise_fibonacci/index.html#problem",
+    "href": "manuals/exercise_fibonacci/index.html#problem",
+    "title": "Fibonnacci Sequence",
+    "section": "Problem",
+    "text": "Problem\nWrite a Julia function that computes the last digit of the n-th Fibonacci number, and compute the last digit of the 10th, 100th, 1000th, and 10000th Fibonacci number.\nAdditional Requirements:\n\nThe function’s name shall be fib_last_digit.\nThe Fibonacci sequence starts with 0 and 1.\nThe function should take only one argument called n of type Integer.\nThe function should return an Integer between 0 and 9 (inclusive).\nThe function should depend on no additional packages.\nThe function shall be fast!"
+  },
+  {
+    "objectID": "manuals/exercise_fibonacci/index.html#hints",
+    "href": "manuals/exercise_fibonacci/index.html#hints",
+    "title": "Fibonnacci Sequence",
+    "section": "Hints",
+    "text": "Hints\n\n\n\n\n\n\nHow to get the last digit of a number?\n\n\n\n\n\nYou can use the mod function to compute the remainder of the division of two integers. For example, mod(5, 2) returns 1. What would happend if you take the remainder of a number divided by 10?"
+  },
+  {
+    "objectID": "manuals/exercise_fibonacci/index.html#solution",
+    "href": "manuals/exercise_fibonacci/index.html#solution",
+    "title": "Fibonnacci Sequence",
+    "section": "Solution",
+    "text": "Solution\n\n\n\n\n\n\nValues\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\nfib_last_digit(n)\n\n\n\n\n1\n0\n\n\n2\n1\n\n\n3\n1\n\n\n4\n2\n\n\n5\n3\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\nfib_last_digit(n)\n\n\n\n\n6\n5\n\n\n7\n8\n\n\n8\n3\n\n\n9\n1\n\n\n10\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\nfib_last_digit(n)\n\n\n\n\n100\n6\n\n\n1,000\n6\n\n\n10,000\n6\n\n\n100,000\n6\n\n\n1,000,000\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFolllow-Up Question\n\n\n\n\n\nWhy are the last couple of entries all 6? Is this pure coincidence or do the last digits of the Fibonacci sequence repeat? Use your function to find out!"
+  },
+  {
+    "objectID": "manuals/julia_links/index.html",
+    "href": "manuals/julia_links/index.html",
+    "title": "Julia Programming Language: Links & Resources",
+    "section": "",
+    "text": "Julia is a cutting-edge, high-level programming language designed to address the unique challenges of scientific computing and data analytics. Born in 2012, Julia has quickly gained popularity among researchers, data scientists, and developers due to its remarkable performance and ease of use. The language’s key strength lies in its ability to handle complex mathematical computations and large datasets seamlessly. Julia boasts an intuitive syntax and rich mathematical library, making it particularly well-suited for numerical simulations, machine learning, and advanced statistical analysis. With its open-source nature and active community, Julia continues to evolve, receiving regular updates and enhancements that cater to its users’ diverse needs."
+  },
+  {
+    "objectID": "manuals/julia_links/index.html#learning-julia",
+    "href": "manuals/julia_links/index.html#learning-julia",
+    "title": "Julia Programming Language: Links & Resources",
+    "section": "Learning Julia",
+    "text": "Learning Julia\n\nMIT’s Introduction to Computational Thinking\n\nThis free online course held by the creators of the Julia Programming Language offers you a good overview of numerical methods and scientific computing in Julia. The course is held in Julia and is a great way to get started with the language.\n\nTUM-Dynamics-Lecture, 1 and TUM-Dynamics-Lecture, 2\n\nCreated by some colleagues of mine, these two lectures offer a great introduction to Julia and its applications in the field of dynamical systems. The lectures are held in Julia and are a great way to get started with the language."
+  },
+  {
+    "objectID": "manuals/julia_links/index.html#resources",
+    "href": "manuals/julia_links/index.html#resources",
+    "title": "Julia Programming Language: Links & Resources",
+    "section": "Resources",
+    "text": "Resources\n\nJulia Homepage (last visited: 31/07/2023)\nJulia Documentation (last visited: 31/07/2023)\n\nOnce you are familiar with the basics of Julia, the documentation is the best place to look up specific functions and syntax. Especially helpful are the following manuals: Performance Tips, Workflow Tips, and the Style Guide.\n\nSciML Style Guide for Julia, by Chris Rackauckas (last visited: 31/07/2023)\n\nA style guide for scientific machine learning in Julia. This guide is a work in progress and is updated regularly."
+  },
+  {
+    "objectID": "manuals/julia_links/index.html#packages",
+    "href": "manuals/julia_links/index.html#packages",
+    "title": "Julia Programming Language: Links & Resources",
+    "section": "Packages",
+    "text": "Packages\n\nDataFrames.jl\n\nA package for working with tabular data in Julia. The package is part of the Julia Data Ecosystem and offers a wide range of tools for data manipulation and analysis.\n\nDifferentialEquations.jl\n\nOne of the most popular packages for solving differential equations in Julia. The package is part of the SciML ecosystem and offers a wide range of solvers for ordinary and partial differential equations.\n\nJLD2.jl\n\nA package for saving and loading Julia data structures. Can also used for compressions (see CodecZlib.jl for more information).\n\nMakie.jl and its Documentation\n\nA high-performance plotting library for Julia. It features multiple backends and is highly customizable.\nAlso check out\n\nGeoMakie.jl for plotting geospatial data.\nColors.jl and ColorSchemes.jl for improved color handling.\n\n\nMeasurements.jl\n\nA physics package that handles uncertainty propagations coming from any kind of physical measuements.\n\nProgressMeter.jl\n\nProgress meter for long-running operations in Julia\n\nRevise.jl\n\nA package that allows you to modify your code without having to restart the Julia session. This is especially useful when working with large projects.\n\nUnitful.jl\n\nA package that allows you to work with physical units in Julia."
+  },
+  {
+    "objectID": "manuals/onboarding_checklist/index.html",
+    "href": "manuals/onboarding_checklist/index.html",
+    "title": "Student Thesis: On-Boarding Checklist",
+    "section": "",
+    "text": "This page contains a checklist for students to get started working on their thesis based on the ExESS research project. While the General Checklist is applicable to students of all levels (Bachelor/Semester/Master) and all topics (theoretical/numerical/…); the other lists are only relevant for certains levels and topics. For questions, please contact me: a.smolka@tum.de."
+  },
+  {
+    "objectID": "manuals/onboarding_checklist/index.html#sec-general",
+    "href": "manuals/onboarding_checklist/index.html#sec-general",
+    "title": "Student Thesis: On-Boarding Checklist",
+    "section": "General Checklist",
+    "text": "General Checklist\nThis general checklist shall be completed in the first week(s) of your student thesis work.\n\nreceive “LPE Thesis Starter Set”\n\nread and understand the “Student Thesis Information” presentation slides\n\nopen (and/or install) RocketChat\n\nuse RocketChat to send me a message containing one of the logical fallacies listed in the “Student Thesis Information”\n\nset up LRZ Sync&Share online folder\nregister your thesis\n\ncheck the information on the registration document (LRZ Sync&Share folder), sign the document, and upload the signed registration to the same folder\n\nset up weekly meeting (including a fixed, weekly repeating outlook meeting)\n\nplease prepare a short presentation for each regular meeting, which should at a minimum contain two slides; one with a list of the tasks you have completed since the last meeting and one with a list of the tasks you plan to complete until the next meeting\n\nset up a time-plan for your thesis and include the plan in your first presentation (see the example below)\n\n\n\n\n\n\n\nExample Time-Plan\n\n\n\nThe first time-plan does not need to be (can not and should not be) very detailed. It should however give a rough overview of the tasks you plan to complete and the time you plan to spend on each task. The following is an example of a first draft of a time-plan for a 6-month thesis. The time-plan is written in Mermaid, which is a markdown-like language for generating diagrams. The Mermaid code is included in the source of this page, so you can copy it and modify it for your own time-plan. You can also use the Mermaid Live Editor to generate your own time-plan.\nOver the course of your thesis, revisit the time-plan regularly and update it accordingly. This will help you to keep track of your progress and to identify potential problems early on. By adding more details to the time-plan over time, you will also have a good starting point for your thesis report.\n\n\n\n\ngantt\n  %% title Student Thesis Time-Plan\n  dateFormat DD-MM\n  axisFormat %m\n\n  section On-Boarding\n    On-Boarding Checklist: 01-01, 16-01\n    Learning Julia: 01-01, 01-03\n  section Reading\n    Reading Papers: 01-01, 01-04\n  section Writing\n    Continuous Documentation: 01-01, 15-05\n    Thesis Writing: 15-04, 15-06\n    Thesis Review: 15-06, 01-07\n    Thesis Submission: milestone, 01-07"
+  },
+  {
+    "objectID": "manuals/onboarding_checklist/index.html#sec-numerical",
+    "href": "manuals/onboarding_checklist/index.html#sec-numerical",
+    "title": "Student Thesis: On-Boarding Checklist",
+    "section": "Numerical Based Thesis Checklist",
+    "text": "Numerical Based Thesis Checklist\nIn case you are working on a numerical based thesis, the following checklist can help you get started with your work.\n\nset up Julia\n\ncheck out the list with recommended Julia Resources\n\nset up the ExESS package (if applicable)"
+  },
+  {
+    "objectID": "documentation/documentation.html",
+    "href": "documentation/documentation.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Authors\nAlexander Smolka\n\n\nLicense\nLicense\n\n\n\n\nCitationBibTeX citation:@online{smolka2023,\n  author = {Smolka, Alexander},\n  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}\n    {Simulations}},\n  date = {2023},\n  url = {https://smolkaa.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSmolka, A. (2023). ExESS - Extraterrestrial Exosphere and Surface\nSimulations. https://smolkaa.github.io"
+  }
+]
