@@ -23,6 +23,8 @@ end
 
 function anim_raw_diviner(steps=18)
     fig, ga, theta, phi = _default_(720, 360)
+    ga.xticklabelcolor = :white
+    ga.xlabelcolor = :white
 
     N, M = length(theta), length(phi)
     T = lunar_surface_temperatures_diviner(0, theta, phi)
@@ -35,8 +37,61 @@ function anim_raw_diviner(steps=18)
         T = reshape(T,N,M)
         s[3] = T
         
-    save(joinpath(@__DIR__, "anim_raw_diviner", @sprintf "%02i.png" step), fig, px_per_unit=4)
+        save(joinpath(@__DIR__, "anim_raw_diviner", @sprintf "%02i.png" step), fig, px_per_unit=4)
     end
-    # save(joinpath(@__DIR__, "anim_raw_diviner.png"), fig, px_per_unit=4)
+    return nothing
+end
+
+
+function anim_raw_diviner_fixed(steps=18)
+    fig, ga, theta, phi = _default_(720, 360)
+
+    N, M = length(theta), length(phi)
+    T = lunar_surface_temperatures_diviner(0, theta, phi)
+    T = reshape(T,N,M)
+    s = heatmap!(ga, -179..179, -89..89, T; colormap=cmap, colorrange=(50,400))
+    Colorbar(fig[:,2], s, label="Temperature [K]") 
+
+    for step in 1:steps
+        Nstep = floor(Int64, (step-1)*N/steps)
+        T = lunar_surface_temperatures_diviner(Nstep/N * 2pi, theta, phi)
+        T = reshape(T,N,M)
+        s[3] = T[vcat(Nstep+1:N, 1:Nstep), :]
+        
+    save(joinpath(@__DIR__, "anim_raw_diviner_fixed", @sprintf "%02i.png" step), fig, px_per_unit=4)
+    end
+    return nothing
+end
+
+
+function plot_diviner_avg()
+    fig, ga, theta, phi = _default_()
+    
+    N, M = length(theta), length(phi)
+    T = lunar_surface_temperatures_diviner_avg(theta, phi)
+    T = reshape(T,N,M)
+
+    s = heatmap!(ga, -179..179, -89..89, T; colormap=cmap, colorrange=(50,400))
+    c = contour!(ga, -179..179, -89..89, T; color=:white, levels=[100], linewidth=0.7)
+    t = text!(ga, -138, 0; text="100K", align=(:center,:center), color=:white)
+
+    Colorbar(fig[:,2], s, label="Temperature [K]")
+
+    save(joinpath(@__DIR__, "diviner_avg.png"), fig, px_per_unit=4)
+    return nothing
+end
+
+
+function plot_hurley()
+    fig, ga, theta, phi = _default_()
+    T = lunar_surface_temperatures_HURLEY2015(theta, phi)
+
+    s = heatmap!(ga, -179..179, -89..89, T; colormap=cmap, colorrange=(50,400))
+    c = contour!(ga, -179..179, -89..89, T; color=:white, levels=[100], linewidth=0.7)
+    t = text!(ga, -138, 0; text="100K", align=(:center,:center), color=:white)
+
+    Colorbar(fig[:,2], s, label="Temperature [K]") 
+
+    save(joinpath(@__DIR__, "hurley2015.png"), fig, px_per_unit=4)
     return nothing
 end
