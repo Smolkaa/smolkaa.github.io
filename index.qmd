@@ -6,3 +6,13 @@ author: "Alexander Smolka"
 ---
 
 This website is still under construction! {{< fa wrench >}}
+
+# Home
+
+
+# Author
+
+
+# Publications
+
+* **A. Smolka**, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: [10.1016/j.icarus.2023.115508.](https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854)

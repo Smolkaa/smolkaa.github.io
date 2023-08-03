@@ -12,7 +12,7 @@ A more in-depth description of the implemented functions listed below can be fou
 ## API
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``lunar_surface_temperatures_diviner`` -- Struct
+# ``lunar_surface_temperatures_diviner`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -24,7 +24,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``lunar_surface_temperatures_diviner_avg`` -- Struct
+# ``lunar_surface_temperatures_diviner_avg`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -36,7 +36,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``lunar_surface_temperatures_BUTLER1997`` -- Struct
+# ``lunar_surface_temperatures_BUTLER1997`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -48,7 +48,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``lunar_surface_temperatures_HURLEY2015`` -- Struct
+# ``lunar_surface_temperatures_HURLEY2015`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

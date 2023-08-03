@@ -96,6 +96,7 @@ website:
         - section: "Exospheres"
           contents:
             - api/exospheres/orbital_mechanics.qmd
+            - api/exospheres/trajectory.qmd
         - section: "Numerical Grids"
           contents:
             - api/grids/global_structured_2d_grids.qmd

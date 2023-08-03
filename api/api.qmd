@@ -38,7 +38,7 @@ ExESS/
 `ExESS/src/exospheres/` contains all scripts that define functions that have something to do with simulating the exosphere. Due to the assumption of surface-bounded exospheres, [Monte-Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) are the preferred simulation tool as each individual particle of the exosphere can be simulated independently. Implemented functionalities are mostly based on ballistic trajectory calculations.
 
 * [`orbital_mechanics.jl`](/api/exospheres/orbital_mechanics.qmd)
-* [`trajectories.jl`]()
+* [`trajectories.jl`](/api/exospheres/trajectory.qmd)
 * [`utils.jl`]()
 
 ### Numerical Grids -- `grids/`

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-02">
+<meta name="dcterms.date" content="2023-08-03">
 
 <title>ExESS - Code</title>
 <style>
@@ -245,6 +245,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Orbital Mechanics</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../api/exospheres/trajectory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trajectory</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -336,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 2, 2023</p>
+      <p class="date">August 3, 2023</p>
     </div>
   </div>
   
@@ -381,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>ExESS/src/exospheres/</code> contains all scripts that define functions that have something to do with simulating the exosphere. Due to the assumption of surface-bounded exospheres, <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo methods</a> are the preferred simulation tool as each individual particle of the exosphere can be simulated independently. Implemented functionalities are mostly based on ballistic trajectory calculations.</p>
 <ul>
 <li><a href="../api/exospheres/orbital_mechanics.html"><code>orbital_mechanics.jl</code></a></li>
-<li><a href=""><code>trajectories.jl</code></a></li>
+<li><a href="../api/exospheres/trajectory.html"><code>trajectories.jl</code></a></li>
 <li><a href=""><code>utils.jl</code></a></li>
 </ul>
 </section>

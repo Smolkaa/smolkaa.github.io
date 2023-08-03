@@ -9,7 +9,7 @@ title: "Utility"
 ## API
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``areas`` -- Struct
+# ``areas`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -21,7 +21,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``coords`` -- Struct
+# ``coords`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -33,7 +33,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``coord2idx`` -- Struct
+# ``coord2idx`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -45,7 +45,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``surfacecoords`` -- Struct
+# ``surfacecoords`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)
@@ -57,7 +57,7 @@ end
 :::
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``volumes`` -- Struct
+# ``volumes`` -- Function
 ```{julia}
 #| echo: false
 if !isdefined(Main, :ExESS)

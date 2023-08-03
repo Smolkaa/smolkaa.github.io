@@ -1,0 +1,46 @@
+---
+title: "Trajectory"
+---
+---
+
+A more in-depth description of the implemented functions listed below can be found in the following sections:
+
+* [Ballistic Trajectories](/documentation/trajectories/ballistic_trajectories.qmd)
+* [Non-Ballistic Trajectories](/documentation/trajectories/non-ballistic_trajectories.qmd)
+
+
+## Usage
+
+```julia
+x0 = GlobalCartesianPosition(LUNAR_RADIUS, 0, 0)
+v0 = GlobalCartesianVelocity(100, 0, 0)
+ddx = ddx_lunar_gravity
+traj = trajectory(x0, v0, ddx)
+```
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``trajectory`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.trajectory
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``ddx_lunar_gravity`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.ddx_lunar_gravity
+```
+:::

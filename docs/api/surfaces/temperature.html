@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-02">
+<meta name="dcterms.date" content="2023-08-03">
 
 <title>ExESS - Temperature</title>
 <style>
@@ -211,6 +211,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Orbital Mechanics</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../api/exospheres/trajectory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trajectory</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -296,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 2, 2023</p>
+      <p class="date">August 3, 2023</p>
     </div>
   </div>
   
@@ -322,18 +328,18 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>lunar_surface_temperatures_diviner</code> – Struct
+<code>lunar_surface_temperatures_diviner</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[1] lunar_surface_temperatures_diviner(lng0::Real)
 [2] lunar_surface_temperatures_diviner(lng0::Real, lng::Real, lat::Real)
 [3] lunar_surface_temperatures_diviner(lng0::Real, lngs::AbstractVector, lats::AbstractVector; matrix=true)
 [4] lunar_surface_temperatures_diviner(lng0::Real, xs::GlobalSphericalPosition) 
-[5] lunar_surface_temperatures_diviner(lng0::Real, XS::Vector{GlobalSphericalPosition}) 
-[6] lunar_surface_temperatures_diviner(lng0::Real, grid::Abstract2DGrid)</code></pre>
+[4] lunar_surface_temperatures_diviner(lng0::Real, XS::Vector{GlobalSphericalPosition}) 
+[5] lunar_surface_temperatures_diviner(lng0::Real, grid::Abstract2DGrid)</code></pre>
 <p>Returns the Diviner measurements based lunar surface temperatures, with the sub-solar point shifted by <code>lng</code> (in radians) from the center.</p>
 </div>
 </div>
@@ -345,12 +351,12 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>lunar_surface_temperatures_diviner_avg</code> – Struct
+<code>lunar_surface_temperatures_diviner_avg</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[1] lunar_surface_temperatures_diviner_avg()
 [2] lunar_surface_temperatures_diviner_avg(lng::Real, lat::Real)
 [3] lunar_surface_temperatures_diviner_avg(lngs::AbstractVector, lats::AbstractVector; matrix=true)
@@ -368,12 +374,12 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>lunar_surface_temperatures_BUTLER1997</code> – Struct
+<code>lunar_surface_temperatures_BUTLER1997</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[1] lunar_surface_temperatures_BUTLER1997(lng::Real, lat::Real)
 [2] lunar_surface_temperatures_BUTLER1997(lngs::AbstractVector, lats::AbstractVector; matrix=true)
 [3] lunar_surface_temperatures_BUTLER1997(xs::GlobalSphericalPosition)
@@ -391,17 +397,17 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>lunar_surface_temperatures_HURLEY2015</code> – Struct
+<code>lunar_surface_temperatures_HURLEY2015</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>[1] lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
 [2] lunar_surface_temperatures_HURLEY2015(lngs::AbstractVector, lats::AbstractVector; matrix=true)
 [3] lunar_surface_temperatures_HURLEY2015(xs::GlobalSphericalPosition)
-[4] lunar_surface_temperatures_HURLEY2015(XS::Vector{GlobalSphericalPosition})
-[5] lunar_surface_temperatures_HURLEY2015(grid::Abstract2DGrid)</code></pre>
+[3] lunar_surface_temperatures_HURLEY2015(XS::Vector{GlobalSphericalPosition})
+[4] lunar_surface_temperatures_HURLEY2015(grid::Abstract2DGrid)</code></pre>
 <p>Calculates the lunar surface temperatures based on the analytic formula given in Hurley et al.&nbsp;2015. All angular arguments are in radians.</p>
 </div>
 </div>
