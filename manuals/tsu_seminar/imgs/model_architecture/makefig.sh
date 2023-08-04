@@ -3,8 +3,9 @@
 #dvisvgm model_architecture.dvi
 
 pdflatex loop_I.tex
-latex loop_I.tex
-dvisvgm loop_I.dvi
+pdftocairo -svg loop_I.pdf
+pdftocairo -png -r 600 loop_I.pdf
+
 
 rm *.aux
 rm *.dvi

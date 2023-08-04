@@ -13,48 +13,58 @@
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 
-\usepackage{siunitx}
 \usepackage{booktabs}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{xcolor}
+    \definecolor{TUMOrange}{RGB}{227, 114,  34}
 
 \input{../../../../resources/latex/_symbols.qmd}
 
 \begin{document}
 
-
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 
 \begin{tikzpicture}[
-    main/.style={draw, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},
-    sub/.style={draw, rounded corners=4pt, inner sep=2pt},
+    main/.style={draw, thick, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},
 ]
   
     %::. main nodes
-    \node[main] (LAUNCH) at (0,0) {\n{Launch\\ Particle}};
-    \node[main, below = of LAUNCH] (TRAJECTORY) {\n{Calculate\\ Trajectory}};
-    \node[main, below = 1.5 of TRAJECTORY] (LAND) {\n{Landing}};
-    \node[main, below = of LAND] (SURF) {\n{Surface \\ Interactions}};
+    \node[main] (LAUNCH) at (0,0) {\n{Launch particle \\ at $\sphericalCoordinateAzimuth_0, \sphericalCoordinateElevation_0$ with \\ $\vec\velocity \sim \Velocity_\text{MBF}$}};
+    \node[main, below = 0.8 of LAUNCH] (TRAJECTORY) {\n{Calculate landing \\ position $\sphericalCoordinateAzimuth_1, \sphericalCoordinateElevation_1$ \\ and time-of-flight $\Time_f$}};
+    \node[main, below = 1.5 of TRAJECTORY] (LAND) {\n{Landing at $\sphericalCoordinateAzimuth_1, \sphericalCoordinateElevation_1$}};
+    \node[main, below = 0.8 of LAND] (SURF) {\n{Surface Interactions \\ at $\sphericalCoordinateAzimuth_1, \sphericalCoordinateElevation_1$}};
 
     %::. main connections
-    \draw[-latex] (LAUNCH.270) -- (TRAJECTORY.90);
-    \draw[-latex] (TRAJECTORY.270) -- (LAND.90);
-    \draw[-latex] (LAND.270) -- (SURF.90);
-    \draw[-latex] (SURF.270) |- +(-2,-1.5) -- ($(LAUNCH.90)+(-2,1)$) -| (LAUNCH.90);
+    \draw[-latex, thick] (LAUNCH.270) -- (TRAJECTORY.90);
+    \draw[-latex, thick] (TRAJECTORY.270) -- (LAND.90);
+    \draw[-latex, thick] (LAND.270) -- (SURF.90);
+    \draw[-latex, thick] (SURF.270) |- +(-2,-0.5) -- node[rotate=90, left, above] {Thermal Desorption; Photodesorption; Sputtering} ($(LAUNCH.90)+(-2,0.5)$) -| (LAUNCH.90);
 
     %::. loss nodes
     \node[right = 2 of TRAJECTORY] (ESCAPE) {\n{Escape}};
     \node[right = 2 of SURF] (TRAP) {\n{Cold \\ Trapping}};
 
     %::. loss connections
-    \draw[-latex] (TRAJECTORY) -- (ESCAPE) node [midway, above] {$\velocity > \velocity_{esc}$ };
-    \draw[-latex] (SURF) -- (TRAP);
+    \draw[-latex, thick] (TRAJECTORY) -- (ESCAPE) node[midway, above]{$\velocity \geq \velocity_{esc}$};
+    \draw[-latex, thick] (SURF) -- (TRAP);
 
     %::. conversion nodes
-    \node[below = 0.5 of ESCAPE] (PHOTO) {\textit{\n{Photo- \\ dissociation}}};
-    \node[below = 0.3 of TRAP] (CONV) {\textit{\n{(Sub-) Surface \\ Reaction}}};
+    \node[below = 0.5 of ESCAPE, text=TUMOrange] (PHOTO) {\textit{\n{Photo- \\ dissociation}}};
+    \node[below = 0.3 of TRAP, text=TUMOrange] (CONV) {\textit{\n{(Sub-) Surface \\ Reaction}}};
+    \node[below = 0.3 of CONV, text=TUMOrange] (ADPHOTO) {\textit{\n{Adsorbate \\ Photodissociation}}};
+
+    \node[right = 5 of LAUNCH, text=TUMOrange] (STORE) {\textit{\n{Store Converted \\ Particles For \\ Next Iteration}}};
 
     %::. conversion connections
-    \draw[-latex, dashed] (TRAJECTORY.300) |- (PHOTO);
-    \draw[-latex, dashed] (SURF.300) |- (CONV);
+    \draw[-latex, thick, dashed, TUMOrange] (TRAJECTORY.300) |- (PHOTO);
+    \draw[-latex, thick, dashed, TUMOrange] (SURF.310) |- (CONV);
+    \draw[-latex, thick, dashed, TUMOrange] (SURF.290) |- (ADPHOTO);
+
+    \draw[-latex, thick, dashed, TUMOrange] (PHOTO) -| (STORE.250);
+    \draw[-latex, thick, dashed, TUMOrange] (CONV) -| (STORE.270);
+    \draw[-latex, thick, dashed, TUMOrange] (ADPHOTO) -| (STORE.290);
 \end{tikzpicture}
 
 \end{document}
