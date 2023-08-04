@@ -17,7 +17,8 @@
 \usepackage{bm}
 \usepackage{siunitx}
 \usepackage{xcolor}
-    \definecolor{TUMOrange}{RGB}{227, 114,  34}
+    \definecolor{TUMOrange}{RGB}{227, 114, 34}
+    \definecolor{TUMBlueDark}{RGB}{0, 82, 147}
 
 \input{../../../../resources/latex/_symbols.qmd}
 
@@ -29,7 +30,10 @@
 \begin{tikzpicture}[
     main/.style={draw, thick, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},
 ]
-  
+    %::. background loop node
+    \draw[thick, fill=white!95!black, rounded corners=4pt] (-3,2) rectangle (6.75,-10.5);
+    \node[anchor=north east, text=TUMBlueDark] at (6.75,2) {\n{\textbf{Loop I} \\ Exospheric Particle Transport \\ and Surface Interactions}};
+
     %::. main nodes
     \node[main] (LAUNCH) at (0,0) {\n{Launch particle \\ at $\sphericalCoordinateAzimuth_0, \sphericalCoordinateElevation_0$ with \\ $\vec\velocity \sim \Velocity_\text{MBF}$}};
     \node[main, below = 0.8 of LAUNCH] (TRAJECTORY) {\n{Calculate landing \\ position $\sphericalCoordinateAzimuth_1, \sphericalCoordinateElevation_1$ \\ and time-of-flight $\Time_f$}};
@@ -37,10 +41,12 @@
     \node[main, below = 0.8 of LAND] (SURF) {\n{Surface Interactions \\ at $\sphericalCoordinateAzimuth_1, \sphericalCoordinateElevation_1$}};
 
     %::. main connections
+    \draw[latex-, thick] (LAUNCH.70) -- +(0,2) node[at end, above]{New particles};
+
     \draw[-latex, thick] (LAUNCH.270) -- (TRAJECTORY.90);
     \draw[-latex, thick] (TRAJECTORY.270) -- (LAND.90);
     \draw[-latex, thick] (LAND.270) -- (SURF.90);
-    \draw[-latex, thick] (SURF.270) |- +(-2,-0.5) -- node[rotate=90, left, above] {Thermal Desorption; Photodesorption; Sputtering} ($(LAUNCH.90)+(-2,0.5)$) -| (LAUNCH.90);
+    \draw[-latex, thick] (SURF.270) |- +(-2,-0.5) -- node[rotate=90, left, above] {thermal desorption; photodesorption; sputtering} ($(LAUNCH.90)+(-2,0.5)$) -| (LAUNCH.110);
 
     %::. loss nodes
     \node[right = 2 of TRAJECTORY] (ESCAPE) {\n{Escape}};
@@ -52,10 +58,10 @@
 
     %::. conversion nodes
     \node[below = 0.5 of ESCAPE, text=TUMOrange] (PHOTO) {\textit{\n{Photo- \\ dissociation}}};
-    \node[below = 0.3 of TRAP, text=TUMOrange] (CONV) {\textit{\n{(Sub-) Surface \\ Reaction}}};
-    \node[below = 0.3 of CONV, text=TUMOrange] (ADPHOTO) {\textit{\n{Adsorbate \\ Photodissociation}}};
+    \node[below = 0.3 of TRAP, text=TUMOrange] (CONV) {\textit{\n{(Sub-) Surface \\ reaction}}};
+    \node[below = 0.3 of CONV, text=TUMOrange] (ADPHOTO) {\textit{\n{Adsorbate \\ photodissociation}}};
 
-    \node[right = 5 of LAUNCH, text=TUMOrange] (STORE) {\textit{\n{Store Converted \\ Particles For \\ Next Iteration}}};
+    \node[right = 5.5 of LAUNCH, text=TUMOrange] (STORE) {\textit{\n{Store converted \\ particles for \\ next iteration}}};
 
     %::. conversion connections
     \draw[-latex, thick, dashed, TUMOrange] (TRAJECTORY.300) |- (PHOTO);
