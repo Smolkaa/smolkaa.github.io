@@ -39,6 +39,7 @@
 \newcommand{\potential}{U}
 \newcommand{\pressure}{p}
 \newcommand{\radius}{r}
+\newcommand{\rate}{k}
 \newcommand{\residenceTime}{\tau}
 \newcommand{\semiLatusRectum}{p}
 \newcommand{\semiMajorAxis}{a}
