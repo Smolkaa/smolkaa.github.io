@@ -1,10 +1,10 @@
 ---
 title: "TSU Mini-Moon Seminar"
-# image: 
+image: tsu.png
 author: Alexander Smolka
 date: 15 08 23
 categories:
-  - Misc
+  - Presentation
 
 ---
 
@@ -13,9 +13,19 @@ categories:
 
 ---
 
+# Video
 
-# Lunar Surface Temperatures
+
+
+# Presentation
+
+The following is showing the kex-figures and examples used during the TSU presentation.
+
+## Lunar Surface Temperatures
 {{< include _lunar_surface_temperatures.qmd >}}
 
-# Model Architecture
+## Model Architecture
 {{< include _model_architecture.qmd >}}
+
+## Numerical Grid
+{{< include _numerical_grid.qmd >}}

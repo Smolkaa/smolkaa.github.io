@@ -42,6 +42,7 @@
 \newcommand{\residenceTime}{\tau}
 \newcommand{\semiLatusRectum}{p}
 \newcommand{\semiMajorAxis}{a}
+\newcommand{\source}{s}
 \newcommand{\sphericalCoordinate}{\vec{r}}
     \newcommand{\sphericalCoordinateRadius}{r}
     \newcommand{\sphericalCoordinateAzimuth}{\azimuthAngle}
@@ -62,6 +63,7 @@
 \newcommand{\velocity}{v}
     \newcommand{\Velocity}{V}
 \newcommand{\volume}{V}
+\newcommand{\weight}{w}
 \newcommand{\youngsModulus}{Y}
 \newcommand{\zenithAngle}{\psi}
 
