@@ -23,6 +23,7 @@
 \newcommand{\gram}{g}
 \newcommand{\watt}{W}
 \newcommand{\percent}{\%}
+\newcommand{\electronvolt}{eV}
 
 \newcommand{\centi}{c}
 \newcommand{\kilo}{k}

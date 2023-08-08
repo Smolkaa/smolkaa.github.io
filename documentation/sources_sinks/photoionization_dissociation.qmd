@@ -18,3 +18,7 @@ Photoionization cross section also into table?
 
 # Photodissociation
 Some Text
+
+# Photoreaction Rates by @Huebner1992
+
+{{< include photoionization_dissociation/tables/_photorates_HUEBNER1992.qmd >}}

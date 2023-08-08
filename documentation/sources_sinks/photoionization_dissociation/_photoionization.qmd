@@ -2,6 +2,4 @@
 
 ## Photoionization Rates
 
-{{< include photoionization_dissociation/tables/_photoionization_HUEBNER1992.qmd >}}
-
 {{< include photoionization_dissociation/imgs/photoionization_rates/_photoionization_rates.qmd >}}
