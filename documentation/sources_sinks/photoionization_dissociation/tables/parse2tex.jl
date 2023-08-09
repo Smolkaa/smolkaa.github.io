@@ -10,14 +10,14 @@ function parsetable(name::String="photorates_HUEBNER1992")
 
     #::. find start of data
     Ndata = 1
-    for i in 3:N; if lines[i][1:2] == "+="; Ndata = i; break; end; end
+    for i in 7:N; if lines[i][1:2] == "+="; Ndata = i; break; end; end
 
     #::. open tex file
     fid = open(joinpath(@__DIR__, "$name.tex"), "w+")
 
     #::. write table start
-    write(fid, "\\documentclass[a4paper, 10pt]{article}\n\\usepackage{booktabs}\n\\usepackage[lmargin=10mm, rmargin=10mm]{geometry}\n\\usepackage[version=4]{mhchem}\n\\usepackage{tabularx}\n\\usepackage{siunitx}\n\\begin{document}\n\n")
-    write(fid, "\\begin{table}\n\t\\centering\n\t\\caption{}\n\t\\begin{tabularx}{0.99\\textwidth}{lX rrrr}\n\t\t\\toprule\n")
+    write(fid, "\\documentclass[a4paper, 10pt]{article}\n\\usepackage{booktabs}\n\\usepackage[lmargin=10mm, rmargin=10mm]{geometry}\n\\usepackage[version=4]{mhchem}\n\\usepackage{tabularx}\n\\usepackage{siunitx}\n\n\\begin{document}\n\\newcolumntype{R}{>{\\raggedleft\\arraybackslash}X}\n")
+    write(fid, "\\begin{table}\n\t\\centering\n\t\\caption{Photoreaction rates and excess energies of selected exospheric species for quiet and active Sun conditions at \$\\SI{1}{AU}\$ heliocentric distance, based on \\cite{Huebner1992}. Values in brakets indicate the use of experimental data for particle cross-sections.}\n\t\\begin{tabularx}{0.99\\textwidth}{ll RRRR}\n\t\t\\toprule\n")
     write(fid, "\t\t & Reaction & \\multicolumn{2}{c}{Quiet Sun} & \\multicolumn{2}{c}{Active Sun} \\\\\n")
     write(fid, "\t\t & & Ionization Rate & Excess Energy & Ionization Rate & Excess Energy \\\\\n")
     write(fid, "\t\t & & \$\\left[10^{-7}\\si{\\second\\tothe{-1}}\\right]\$ & \$\\left[\\si{\\electronvolt}\\right]\$ &  \$\\left[10^{-7}\\si{\\second\\tothe{-1}}\\right]\$ & \$\\left[\\si{\\electronvolt}\\right]\$\\\\\n")
@@ -39,6 +39,9 @@ function parsetable(name::String="photorates_HUEBNER1992")
 
         # skip emtpy lines
         if lines[i][1:8] == "|    |  "; continue; end
+
+        # sum lines
+        if lines[i][1:8] == "|    | -"; write(fid, "\t\t\\cmidrule{2-6}\n"); continue; end
 
         # handle data
         #M = length(lines[i])
