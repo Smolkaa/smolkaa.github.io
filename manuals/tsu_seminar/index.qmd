@@ -19,7 +19,7 @@ categories:
 
 # Presentation
 
-The following is showing the kex-figures and examples used during the TSU presentation.
+The following is showing the tex-figures and examples used during the TSU presentation.
 
 ## Numerical Grid
 {{< include _numerical_grid.qmd >}}
