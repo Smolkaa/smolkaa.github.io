@@ -21,3 +21,14 @@ div.quarto-post .thumbnail {
 }div.quarto-post .body {
   flex-basis: 62%
 }
+
+
+iframe.reveal-demo {
+  width: 100%;
+  height: 700px;
+  outline: none;
+}
+
+.border {
+  border: 1px solid #dee2e6;
+}

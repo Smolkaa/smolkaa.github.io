@@ -2,7 +2,7 @@
 
 # {{< fa image >}} Figure
 
-::: {#fig-spherical_differential_element}
+::: {#fig-spherical_differential_element }
 ![](/documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg){width="600px"}
 
 Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.

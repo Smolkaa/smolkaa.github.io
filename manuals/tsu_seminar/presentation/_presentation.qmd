@@ -1,0 +1,67 @@
+---
+title: "Coupled H, H2, OH, and H2O lunar exosphere simulation framework"
+
+author: "Alexander Smolka"
+
+bibliography: "../../../../asmolka_library/main.bib"
+csl: "../../../_apa.csl"
+
+format: 
+  revealjs: 
+    css: _style.css
+    logo: tum.png
+    smaller: true
+    theme: [simple, custom.scss]
+    width: 1285
+    margin: 0.05
+---
+
+
+
+
+# Surface Temperatures
+
+## Surface Temperatures
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Selenographic coordinate system.](../imgs/temperature_animations/anim_raw_diviner/anim.gif){#fig-diviner-selenographic width=600}
+:::
+
+:::{.column width="50%"}
+:::
+
+::::
+
+## Surface Temperatures
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Selenographic coordinate system.](../imgs/temperature_animations/anim_raw_diviner/anim.gif){#fig-diviner-selenographic width=600}
+:::
+
+:::{.column width="50%"}
+![Subsolar (local time) coordinate system.](../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif){#fig-diviner-subsolar width=600}
+:::
+
+::::
+
+## Selenographic coordinate system 
+
+::: {fig-width=600}
+![Subsolar (local time) coordinate system.](../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif){#fig-diviner-subsolar width=600}
+:::
+
+## Selenographic coordinate system
+
+::: {fig-width=600}
+![Subsolar (local time) coordinate system, averaged.](../imgs/temperature_animations/diviner_avg.png){#fig-diviner-avg width=600}
+:::
+
+## Selenographic coordinate system
+
+::: {fig-width=600}
+![Subsolar (local time) coordinate system, analytic temperature model by @Hurley2015.](../imgs/temperature_animations/hurley2015.png){#fig-hurley2015 width=600}
+:::
