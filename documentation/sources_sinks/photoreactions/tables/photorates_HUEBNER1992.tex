@@ -1,0 +1,52 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{booktabs}
+\usepackage[lmargin=10mm, rmargin=10mm]{geometry}
+\usepackage[version=4]{mhchem}
+\usepackage{tabularx}
+\usepackage{siunitx}
+
+\begin{document}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\begin{table}
+	\centering
+	\caption{Photoreaction rates and excess energies of selected exospheric species for quiet and active Sun conditions at $\SI{1}{AU}$ heliocentric distance, based on \cite{Huebner1992}. Values in brakets indicate the use of experimental data for particle cross-sections.}
+	\begin{tabularx}{0.99\textwidth}{ll RRRR}
+		\toprule
+		 & Reaction & \multicolumn{2}{c}{Quiet Sun} & \multicolumn{2}{c}{Active Sun} \\
+		 & & Photoreaction Rate & Excess Energy & Photoreaction Rate & Excess Energy \\
+		 & & $\left[10^{-7}\si{\second\tothe{-1}}\right]$ & $\left[\si{\electronvolt}\right]$ &  $\left[10^{-7}\si{\second\tothe{-1}}\right]$ & $\left[\si{\electronvolt}\right]$\\
+		\midrule
+		1 & $\ce{H +$\nu$ -> H+ + e-}$ & $\num{0.726}$ & $\num{3.54}$ & $\num{1.720}$ & $\num{3.97}$ \\
+		\midrule
+		2 & $\ce{H2 +$\nu$ -> H(1s) +H(1s)}$ & $\num{0.480}$ & $\num{8.23}$ & $\num{1.090}$ & $\num{8.22}$ \\
+		 &$\ce{H2 +$\nu$ -> H(1s) +H(2s,2p)}$& $\num{0.344}$ & $\num{0.44}$ & $\num{0.821}$ & $\num{0.42}$ \\
+		 & $\ce{H2 +$\nu$ -> H2+ + e-}$ & $\num{0.541}$ & $\num{6.56}$ & $\num{1.150}$ & $\num{7.17}$ \\
+		 & $\ce{H2 +$\nu$ -> H + H+ +e-}$ & $\num{0.095}$ & $\num{24.80}$ & $\num{0.279}$ & $\num{27.00}$ \\
+		\cmidrule{2-6}
+		 & $\Sigma$ & $\num{1.460}$ & & $\num{3.340}$ & \\
+		\midrule
+		4 & $\ce{He +$\nu$ -> He+ + e-}$ & $\num{0.525}$ & $\num{15.50}$ & $\num{1.510}$ & $\num{17.80}$ \\
+		\midrule
+		17 & $\ce{OH +$\nu$ -> O(3p) + H}$ &$(\num{120.00})\;\num{65.400}$&$(\num{2.00})\;\num{1.27}$ &$(\num{138.00})\;\num{71.700}$&$(\num{2.14})\;\num{1.43}$ \\
+		 & $\ce{OH +$\nu$ -> O(1d) + H}$ &$(\num{70.10})\;\num{6.350}$ &$(\num{7.73})\;\num{7.90}$ &$(\num{176.00})\;\num{15.100}$&$(\num{7.74})\;\num{7.88}$ \\
+		 & $\ce{OH +$\nu$ -> O(1s) + H}$ &$(\num{8.33})\;\num{0.671}$ &$(\num{10.00})\;\num{9.80}$ &$(\num{21.10})\;\num{1.640}$ &$(\num{10.00})\;\num{9.94}$ \\
+		 & $\ce{OH +$\nu$ -> OH+ + e-}$ &$(\num{2.43})\;\num{2.470}$ &$(\num{19.40})\;\num{19.10}$&$(\num{6.43})\;\num{6.520}$ &$(\num{23.60})\;\num{23.50}$\\
+		\cmidrule{2-6}
+		 & $\Sigma$ &$(\num{200.86})\;\num{74.891}$& &$(\num{341.53})\;\num{94.960}$& \\
+		\midrule
+		18 & $\ce{H2O +$\nu$ -> OH + H}$ & $\num{103.000}$ & $\num{3.42}$ & $\num{176.000}$ & $\num{4.04}$ \\
+		 & $\ce{H2O +$\nu$ -> H2 + O(1d)}$ & $\num{5.970}$ & $\num{3.84}$ & $\num{14.800}$ & $\num{3.94}$ \\
+		 & $\ce{H2O +$\nu$ -> H + H + O}$ & $\num{7.550}$ & $\num{0.70}$ & $\num{19.100}$ & $\num{0.70}$ \\
+		 & $\ce{H2O +$\nu$ -> H2O+ + e-}$ & $\num{3.310}$ & $\num{12.40}$ & $\num{8.280}$ & $\num{15.20}$ \\
+		 & $\ce{H2O +$\nu$ -> H + OH+ + e-}$ & $\num{0.554}$ & $\num{18.60}$ & $\num{1.510}$ & $\num{23.20}$ \\
+		 & $\ce{H2O +$\nu$ -> H2 + O+ + e-}$ & $\num{0.059}$ & $\num{36.50}$ & $\num{0.221}$ & $\num{39.80}$ \\
+		 & $\ce{H2O +$\nu$ -> OH + H+ + e-}$ & $\num{0.131}$ & $\num{25.00}$ & $\num{0.407}$ & $\num{30.50}$ \\
+		\cmidrule{2-6}
+		 & $\Sigma$ & $\num{120.574}$ & & $\num{220.318}$ & \\
+		\midrule
+		39 & $\ce{Ar +$\nu$ -> Ar+ + e-}$ & $\num{3.050}$ & $\num{10.10}$ & $\num{6.900}$ & $\num{12.80}$ \\
+		\bottomrule
+	\end{tabularx}
+	\label{tab:photorates_HUEBNER1992}
+\end{table}
+\end{document}

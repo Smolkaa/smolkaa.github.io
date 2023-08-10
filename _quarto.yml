@@ -67,7 +67,7 @@ website:
           contents:
             - "4.1. Solar Wind"
             - documentation/sources_sinks/thermal_sorption.qmd
-            - documentation/sources_sinks/photoionization_dissociation.qmd
+            - documentation/sources_sinks/photoreactions.qmd
             - "Photodesorption"
             - "MIV"
         - section: "5. Exospheres: Particle Trajectories"
