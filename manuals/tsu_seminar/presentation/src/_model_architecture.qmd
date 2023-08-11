@@ -1,0 +1,3 @@
+## Model Architecture
+
+![](../imgs/model_architecture/loop_I.svg){width=100%}

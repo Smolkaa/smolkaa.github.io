@@ -1,0 +1,45 @@
+## Surface Temperatures {transition="fade"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../imgs/temperature_animations/anim_raw_diviner/anim.gif){width=600}
+:::
+
+
+::: {.column width="50%"}
+::: {.fragment .fade-in}
+![](../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif){width=600}
+:::
+:::
+
+::::
+
+## Surface Temperatures {transition="fade"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.fragment .fade-in}
+![](../imgs/temperature_animations/diviner_avg.png){width=600}
+:::
+:::
+
+
+::: {.column width="50%"}
+[![](../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif){width=600}]{.fragment .semi-fade-out}
+:::
+
+::::
+
+## Surface Temperatures {transition="fade"}
+
+::: {fig-width=600}
+![](../imgs/temperature_animations/diviner_avg.png){#fig-diviner-avg width=600}
+:::
+
+## Surface Temperatures {transition="fade"} 
+
+::: {fig-width=600}
+![Subsolar (local time) coordinate system, analytic temperature model by @Hurley2015.](../imgs/temperature_animations/hurley2015.png){#fig-hurley2015 width=600}
+:::

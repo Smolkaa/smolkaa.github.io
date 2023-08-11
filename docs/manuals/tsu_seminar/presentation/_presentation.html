@@ -10,8 +10,7 @@
 <link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.433">
 
-  <meta name="author" content="Alexander Smolka">
-  <title>Coupled H, H2, OH, and H2O lunar exosphere simulation framework</title>
+  <title>Extraterrestrial Exosphere and Surface Simulation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -345,92 +344,111 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Coupled H, H2, OH, and H2O lunar exosphere simulation framework</h1>
+  <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
+  <p class="subtitle">Coupled H, H2, OH, and H2O lunar exosphere simulation framework</p>
 
 <div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Alexander Smolka 
-</div>
-</div>
 </div>
 
 </section>
+<section id="about-me" class="title-slide slide level1 center">
+<h1>About Me</h1>
+
+</section>
+
+<section id="why-julia" class="title-slide slide level1 center">
+<h1>Why Julia</h1>
+
+</section>
+
+<section>
+<section id="previous-works" class="title-slide slide level1 center">
+<h1>Previous Works</h1>
+
+</section>
+<section id="crider-2002" class="slide level2">
+<h2>Crider 2002</h2>
+</section></section>
 <section>
 <section id="surface-temperatures" class="title-slide slide level1 center">
 <h1>Surface Temperatures</h1>
 
 </section>
-<section id="surface-temperatures-1" class="slide level2">
+<section id="surface-temperatures-1" class="slide level2" data-transition="fade">
 <h2>Surface Temperatures</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="fig-diviner-selenographic" class="quarto-figure quarto-figure-center">
-<figure>
 <p><img data-src="../imgs/temperature_animations/anim_raw_diviner/anim.gif" width="600"></p>
-<figcaption>Figure&nbsp;1: Selenographic coordinate system.</figcaption>
-</figure>
-</div>
 </div><div class="column" style="width:50%;">
-
+<div class="fragment fade-in">
+<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></p>
+</div>
 </div>
 </div>
 </section>
-<section id="surface-temperatures-2" class="slide level2">
+<section id="surface-temperatures-2" class="slide level2" data-transition="fade">
 <h2>Surface Temperatures</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="fig-diviner-selenographic" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../imgs/temperature_animations/anim_raw_diviner/anim.gif" width="600"></p>
-<figcaption>Figure&nbsp;2: Selenographic coordinate system.</figcaption>
-</figure>
+<div class="fragment fade-in">
+<p><img data-src="../imgs/temperature_animations/diviner_avg.png" width="600"></p>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="fig-diviner-subsolar" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></p>
-<figcaption>Figure&nbsp;3: Subsolar (local time) coordinate system.</figcaption>
-</figure>
-</div>
+<p><span class="fragment semi-fade-out"><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></span></p>
 </div>
 </div>
 </section>
-<section id="selenographic-coordinate-system" class="slide level2">
-<h2>Selenographic coordinate system</h2>
-<div data-fig-width="600">
-<div id="fig-diviner-subsolar" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></p>
-<figcaption>Figure&nbsp;4: Subsolar (local time) coordinate system.</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="selenographic-coordinate-system-1" class="slide level2">
-<h2>Selenographic coordinate system</h2>
+<section id="surface-temperatures-3" class="slide level2" data-transition="fade">
+<h2>Surface Temperatures</h2>
 <div data-fig-width="600">
 <div id="fig-diviner-avg" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../imgs/temperature_animations/diviner_avg.png" width="600"></p>
-<figcaption>Figure&nbsp;5: Subsolar (local time) coordinate system, averaged.</figcaption>
+<figcaption>Figure&nbsp;1: <strong>?(caption)</strong></figcaption>
 </figure>
 </div>
 </div>
 </section>
-<section id="selenographic-coordinate-system-2" class="slide level2 smaller scrollable">
-<h2>Selenographic coordinate system</h2>
+<section id="surface-temperatures-4" class="slide level2" data-transition="fade">
+<h2>Surface Temperatures</h2>
 <div data-fig-width="600">
 <div id="fig-hurley2015" class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../imgs/temperature_animations/hurley2015.png" width="600"></p>
-<figcaption>Figure&nbsp;6: Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/selenographic-coordinate-system-2" role="doc-biblioref" onclick="">2015</a>)</span>.</figcaption>
+<figcaption>Figure&nbsp;2: Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>.</figcaption>
 </figure>
 </div>
 </div>
-<p><img src="tum.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section></section>
+<section>
+<section id="model-architecture" class="title-slide slide level1 center">
+<h1>Model Architecture</h1>
 
+</section>
+<section id="model-architecture-1" class="slide level2">
+<h2>Model Architecture</h2>
+
+<img data-src="../imgs/model_architecture/loop_I.svg" style="width:100.0%" class="r-stretch"></section></section>
+<section id="results" class="title-slide slide level1 center">
+<h1>Results</h1>
+
+</section>
+
+<section id="conversion-map" class="title-slide slide level1 center">
+<h1>Conversion Map</h1>
+
+</section>
+
+<section>
+<section id="what-next" class="title-slide slide level1 center">
+<h1>What next?</h1>
+
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+<img src="tum.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p>Alexander Smolka | Technical University of Munich</p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Hurley2015" class="csl-entry" role="listitem">
@@ -490,7 +508,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
