@@ -3,9 +3,6 @@
     color: gray;
 }
 
-.v {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-  }
+.slides h1 {
+    font-size: calc(2.5em / 1.5);
+}

@@ -1,3 +1,77 @@
-## Model Architecture
+## Model Architecture {auto-animate=true}
 
-![](../imgs/model_architecture/loop_I.svg){width=100%}
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_I.svg){width=90%}
+:::
+
+::: {.column}
+Some Text
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_I.svg){width=90%}
+:::
+
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+
+::: {.column}
+Some Text
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+
+::: {.column}
+Some Text
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+
+::: {.column}
+![](../imgs/model_architecture/loop_IV.svg){width=75%}
+:::
+::::

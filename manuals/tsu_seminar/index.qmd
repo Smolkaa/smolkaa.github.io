@@ -6,6 +6,8 @@ date: 15 08 23
 categories:
   - Presentation
 
+draft: true
+
 ---
 
 {{< include /resources/latex/_defs.qmd >}}

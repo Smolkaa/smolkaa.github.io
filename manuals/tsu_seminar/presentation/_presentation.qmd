@@ -1,6 +1,7 @@
 ---
 title: Extraterrestrial Exosphere and Surface Simulation
-subtitle: "Coupled H, H2, OH, and H2O lunar exosphere simulation framework"
+subtitle: "Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework"
+institute: Technical University of Munich
 
 # author: "Alexander Smolka"
 
@@ -17,12 +18,18 @@ format:
     smaller: true
     theme: [simple, custom.scss]
     width: 1285
+
+    center-title-slide: false
+    controls: true
 ---
 
 
-# About Me
+# About Me {visibility="hidden"}
+
+{{< include src/_me.qmd >}}
 
 # Why Julia
+{{< include src/_julia.qmd >}}
 
 # Previous Works
 ## Crider 2002

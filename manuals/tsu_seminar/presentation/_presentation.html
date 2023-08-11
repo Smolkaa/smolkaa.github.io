@@ -7,7 +7,9 @@
 <link href="_presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="_presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="_presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.433">
 
   <title>Extraterrestrial Exosphere and Surface Simulation</title>
@@ -343,26 +345,91 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="quarto-title-block">
   <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
-  <p class="subtitle">Coupled H, H2, OH, and H2O lunar exosphere simulation framework</p>
+  <p class="subtitle">Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="about-me" class="title-slide slide level1 center">
-<h1>About Me</h1>
+<section>
 
-</section>
+<section id="about-me-1" class="slide level2">
+<h2>About Me</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br><br> <strong>M.Sc. Alexander Smolka</strong></p>
+<blockquote>
+<p>Professorship of Lunar and Planetary Exploration Technologies<br>
+TUM School of Engineering and Design<br>
+Technical University of Munich</p>
+</blockquote>
+<div class="fragment" data-fragment-index="1">
+<div class="fragment semi-fade-out" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i>   Education</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>B.Sc. Mechanical Engineering, RWTH Aachen University</li>
+<li>M.Sc. Aerospace, Technical University of Munich (TUM)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-microscope" aria-label="microscope"></i>   Doctorate</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Research Assistant at the Professorship of Lunar and Planetary Exploration Technologies, TUM</li>
+<li>Research Topic: Investigation of Surface-Bounded Exospheres and their Surface Interaction</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
 
-<section id="why-julia" class="title-slide slide level1 center">
+</div>
+</div>
+<p><img data-src="/resources/imgs/me_gray.jpg" class="absolute" style="top: 50px; right: 75px; height: 80%; "></p>
+</section></section>
+<section>
+<section id="why-julia" class="title-slide slide level1">
 <h1>Why Julia</h1>
 
 </section>
-
+<section id="why-julia-1" class="slide level2">
+<h2>Why Julia</h2>
+<h4 id="advantages-of-julia-in-scientific-applications">Advantages of Julia in Scientific Applications</h4>
+<div class="columns">
+<div class="column">
+<p>Performance and Productivity:</p>
+<ul>
+<li>Julia designed for high-performance computing.</li>
+<li>JIT compilation for near-native speed.</li>
+</ul>
+<p>Versatility and Flexibility:</p>
+<ul>
+<li>Handles simulations, machine learning, data visualization.</li>
+<li>Extensive libraries available. Image: Collage of icons representing different scientific fields.</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../imgs/julia_benchmark.svg"></p>
+</div>
+</div>
+</section></section>
 <section>
-<section id="previous-works" class="title-slide slide level1 center">
+<section id="previous-works" class="title-slide slide level1">
 <h1>Previous Works</h1>
 
 </section>
@@ -370,7 +437,7 @@
 <h2>Crider 2002</h2>
 </section></section>
 <section>
-<section id="surface-temperatures" class="title-slide slide level1 center">
+<section id="surface-temperatures" class="title-slide slide level1">
 <h1>Surface Temperatures</h1>
 
 </section>
@@ -421,26 +488,82 @@
 </div>
 </section></section>
 <section>
-<section id="model-architecture" class="title-slide slide level1 center">
+<section id="model-architecture" class="title-slide slide level1">
 <h1>Model Architecture</h1>
 
 </section>
-<section id="model-architecture-1" class="slide level2">
-<h2>Model Architecture</h2>
-
-<img data-src="../imgs/model_architecture/loop_I.svg" style="width:100.0%" class="r-stretch"></section></section>
-<section id="results" class="title-slide slide level1 center">
+<section id="model-architecture-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<p>Some Text</p>
+</div>
+</div>
+</section>
+<section id="model-architecture-2" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-3" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p>Some Text</p>
+</div>
+</div>
+</section>
+<section id="model-architecture-4" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-5" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p>Some Text</p>
+</div>
+</div>
+</section>
+<section id="model-architecture-6" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section></section>
+<section id="results" class="title-slide slide level1">
 <h1>Results</h1>
 
 </section>
 
-<section id="conversion-map" class="title-slide slide level1 center">
+<section id="conversion-map" class="title-slide slide level1">
 <h1>Conversion Map</h1>
 
 </section>
 
 <section>
-<section id="what-next" class="title-slide slide level1 center">
+<section id="what-next" class="title-slide slide level1">
 <h1>What next?</h1>
 
 </section>
@@ -480,7 +603,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'smaller': true,
 'pdfSeparateFragments': false,
@@ -491,7 +614,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
 'smaller': true,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
