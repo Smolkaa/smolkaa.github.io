@@ -1,5 +1,5 @@
 ## Model Architecture {auto-animate=true}
-
+#### Nested-Loop Monte-Carlo Simulation
 
 :::: {.columns}
 ::: {.column}
@@ -7,11 +7,26 @@
 :::
 
 ::: {.column}
-Some Text
+
+* $\left(\surfaceNumberDensity\right)_k^{i,j}$: Surface number density of the $i$-th Monte-Carlo step, the $j$-th iteration, at the $k$-th grid element
+* Updating of the surface number density: $\left(\surfaceNumberDensity\right)_k^{i,j} += \frac{\weight}{\area\velocity_z}$
+  - $\weight$: current weight of the particle
+  - $\area$: area of the grid element at the current position
+  - $\velocity_z$: vertical velocity of the particle
+
+</br>
+
+* Updating the particle weight:
+  - rate losses: $\weight \mapsto \weight \cdot \left(1 - \exp\left(-\rate\Time\right)\right)$
+    - time-of-flight: $\Time_f$, or 
+    - residence time: $\residenceTime = \frac{\PlanckConstant}{\BoltzmannConstant\temperature}\cdot\exp\left(\frac{\energy}{\GasConstant\temperature}\right)$
+  - probability losses: $\weight \mapsto \weight \cdot \left(1 - \sum p \right)$
+  - escape or cold trapping: $\weight \mapsto 0.0$
 :::
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
 
 
 :::: {.columns}
@@ -25,6 +40,7 @@ Some Text
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
 
 
 :::: {.columns}
@@ -38,6 +54,7 @@ Some Text
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
 
 
 :::: {.columns}

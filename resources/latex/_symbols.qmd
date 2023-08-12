@@ -71,6 +71,8 @@
 
 \newcommand{\BoltzmannConstant}{k_B}
 \newcommand{\BoltzmannConstantValue}{\SI{1.38e-23}{\joule\per\kelvin}}
+\newcommand{\GasConstant}{R}
+
 \newcommand{\GravitationalConstant}{G}
 \newcommand{\GravitationalConstantValue}{\SI{6.674e-11}{\metre\cubed\per\kilo\gram\per\second\squared}}
 \newcommand{\StefanBoltzmannConstant}{\sigma}

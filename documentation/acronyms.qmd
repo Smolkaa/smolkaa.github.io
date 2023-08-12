@@ -56,7 +56,8 @@ citation: false
 : {.hover}
 
 
-## LaTeX - Glossary Acronyms Definition {.unnumbered}
+::: {.callout-note collapse=true}
+# LaTeX - Glossary Acronyms Definition {.unnumbered}
 
 ```latex
 \newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}
@@ -88,3 +89,4 @@ citation: false
 
 \newacronym{TUM}{TUM}{Technical University of Munich}
 ```
+:::

@@ -663,5 +663,12 @@
     "title": "Extraterrestrial Exosphere and Surface Simulations",
     "section": "Publications",
     "text": "Publications\n\nA. Smolka, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: 10.1016/j.icarus.2023.115508."
+  },
+  {
+    "objectID": "documentation/acronyms.html",
+    "href": "documentation/acronyms.html",
+    "title": "Acronyms",
+    "section": "",
+    "text": "Acronyms\n\n\n\n\n\n\n\n\n\nALSEP\nApollo Lunar Surface Experiments Package\n\n\ncdf\ncumulative distribution function\n\n\nDLRE\nDiviner Lunar Radiometer Experiment\n\n\nESA\nEuropean Space Agency\n\n\nLACE\nLADEE\nLRO\nLunar Atmospheric Composition Experiment\nLunar Atmosphere and Dust Environment Explorer\nLunar Reconnaissance Orbiter\n\n\nHEALPix\nHierarchical Equal Area iso-Latitude Pixelization\n\n\nMBD\nMBFD\nMaxwell-Boltzmann Distribution\nMaxwell-Boltzmann Flux Distribution\n\n\nNASA\nNMS\nNational Aeronautis and Space Administration\nNeutral Mass Spectrometer\n\n\nNASA\nNMS\nNational Aeronautis and Space Administration\nNeutral Mass Spectrometer\n\n\npdf\nPDS\nprobability density function\nPlanetary Data System\n\n\nrms\nroot mean squared\n\n\nSSE\nSelenocentric Solar Ecliptic\n\n\nTUM\nTechnical University of Munich\n\n\nUVS\nUltraviolet Spectrometer (Apollo 17)\n\n\n\n\n\n\n\n\n\nLaTeX - Glossary Acronyms Definition\n\n\n\n\n\n\\newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}\n\n\\newacronym{cdf}{cdf}{cumulative distribution function}\n\n\\newacronym{DLRE}{DLRE}{Diviner Lunar Radiometer Experiment}\n\n\\newacronym{ESA}{ESA}{European Space Agency}\n\n\\newacronym{LACE}{LACE}{Lunar Atmospheric Composition Experiment}\n\\newacronym{LADEE}{LADEE}{Lunar Atmosphere and Dust Environment Explorer}\n\\newacronym{LRO}{LRO}{Lunar Reconnaissance Orbiter}\n\n\\newacronym{HEALPix}{HEALPix}{Hierarchical Equal Area iso-Latitude Pixelization}\n\n\\newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}\n\\newacronym{MBFD}{MBFD}{Maxwell-Boltzmann Flux Distribution}\n\n\\newacronym{NASA}{NASA}{National Aeronautis and Space Administration}\n\\newacronym{NMS}{NMS}{Neutral Mass Spectrometer}\n\n\\newacronym{pdf}{pdf}{probability density function}\n\\newacronym{PDS}{PDS}{Planetary Data System}\n\n\\newacronym{rms}{rms}{root mean squared}\n\n\\newacronym{SSE}{SSE}{Selenocentric Solar Ecliptic}\n\n\\newacronym{TUM}{TUM}{Technical University of Munich}"
   }
 ]

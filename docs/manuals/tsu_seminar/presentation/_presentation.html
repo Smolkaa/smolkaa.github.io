@@ -7,7 +7,9 @@
 <link href="_presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="_presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="_presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.433">
 
   <title>Extraterrestrial Exosphere and Surface Simulation</title>
@@ -338,39 +340,113 @@
       margin-right: 0; 
     }
   </style>
+  <script>
+      MathJax = { 
+          tex: { 
+              tags: 'ams',  // should be 'ams', 'none', or 'all' 
+          }
+      };
+  </script>
+
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          TeX: {
+              extensions: ["mhchem.js", "glossaries.jl"],
+            }
+        });
+  </script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" class="quarto-title-block">
   <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
-  <p class="subtitle">Coupled H, H2, OH, and H2O lunar exosphere simulation framework</p>
+  <p class="subtitle">Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="about-me" class="title-slide slide level1 center">
-<h1>About Me</h1>
 
-</section>
 
-<section id="why-julia" class="title-slide slide level1 center">
+<section>
+
+<section id="about-me-1" class="slide level2">
+<h2>About Me</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br><br> <strong>M.Sc. Alexander Smolka</strong></p>
+<blockquote>
+<p>Professorship of Lunar and Planetary Exploration Technologies<br>
+TUM School of Engineering and Design<br>
+Technical University of Munich</p>
+</blockquote>
+<div class="fragment" data-fragment-index="1">
+<div class="fragment semi-fade-out" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i>   Education</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>B.Sc. Mechanical Engineering, RWTH Aachen University</li>
+<li>M.Sc. Aerospace, Technical University of Munich (TUM)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-microscope" aria-label="microscope"></i>   Doctorate</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Research Assistant at the Professorship of Lunar and Planetary Exploration Technologies, TUM</li>
+<li>Research Topic: Investigation of Surface-Bounded Exospheres and their Surface Interaction</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+
+</div>
+</div>
+<p><img data-src="/resources/imgs/me_gray.jpg" class="absolute" style="top: 50px; right: 75px; height: 80%; "></p>
+</section></section>
+<section>
+<section id="why-julia" class="title-slide slide level1">
 <h1>Why Julia</h1>
 
 </section>
-
-<section>
-<section id="previous-works" class="title-slide slide level1 center">
-<h1>Previous Works</h1>
-
-</section>
-<section id="crider-2002" class="slide level2">
-<h2>Crider 2002</h2>
+<section id="why-julia-1" class="slide level2">
+<h2>Why Julia</h2>
+<h4 id="advantages-of-julia-in-scientific-applications">Advantages of Julia in Scientific Applications</h4>
+<div class="columns">
+<div class="column">
+<p>Performance and Productivity:</p>
+<ul>
+<li>Julia designed for high-performance computing.</li>
+<li>JIT compilation for near-native speed.</li>
+</ul>
+<p>Versatility and Flexibility:</p>
+<ul>
+<li>Handles simulations, machine learning, data visualization.</li>
+<li>Extensive libraries available. Image: Collage of icons representing different scientific fields.</li>
+</ul>
+</div><div class="column">
+<p><img data-src="../imgs/julia_benchmark.svg"></p>
+</div>
+</div>
 </section></section>
 <section>
-<section id="surface-temperatures" class="title-slide slide level1 center">
+<section id="surface-temperatures" class="title-slide slide level1">
 <h1>Surface Temperatures</h1>
 
 </section>
@@ -421,26 +497,333 @@
 </div>
 </section></section>
 <section>
-<section id="model-architecture" class="title-slide slide level1 center">
+<section id="model-architecture" class="title-slide slide level1">
 <h1>Model Architecture</h1>
 
 </section>
-<section id="model-architecture-1" class="slide level2">
-<h2>Model Architecture</h2>
+<section id="model-architecture-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<ul>
+<li><span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span>: Surface number density of the <span class="math inline">\(i\)</span>-th Monte-Carlo step, the <span class="math inline">\(j\)</span>-th iteration, at the <span class="math inline">\(k\)</span>-th grid element</li>
+<li>Updating of the surface number density: <span class="math inline">\(\left(n_0\right)_k^{i,j} += \frac{w}{Av_z}\)</span>
+<ul>
+<li><span class="math inline">\(w\)</span>: current weight of the particle</li>
+<li><span class="math inline">\(A\)</span>: area of the grid element at the current position</li>
+<li><span class="math inline">\(v_z\)</span>: vertical velocity of the particle</li>
+</ul></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Updating the particle weight:
+<ul>
+<li>rate losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \exp\left(-kt\right)\right)\)</span>
+<ul>
+<li>time-of-flight: <span class="math inline">\(t_f\)</span>, or</li>
+<li>residence time: <span class="math inline">\(\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
+</ul></li>
+<li>probability losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \sum p \right)\)</span></li>
+<li>escape or cold trapping: <span class="math inline">\(w\mapsto 0.0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="model-architecture-2" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-1">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-3" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-2">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p>Some Text</p>
+</div>
+</div>
+</section>
+<section id="model-architecture-4" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-3">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-5" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p>Some Text</p>
+</div>
+</div>
+</section>
+<section id="model-architecture-6" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="conversions" class="title-slide slide level1">
+<h1>Conversions</h1>
 
-<img data-src="../imgs/model_architecture/loop_I.svg" style="width:100.0%" class="r-stretch"></section></section>
-<section id="results" class="title-slide slide level1 center">
+</section>
+<section id="conversions-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Conversions</h2>
+<h4 id="photoionization-and--dissociation">Photoionization and -dissociation</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span></p>
+<p><br><br></p>
+<ul>
+<li><span class="fragment highlight-current-blue" data-fragment-index="1">Ionization</span> removes particles from the simulation</li>
+<li><span class="fragment highlight-current-blue" data-fragment-index="2">Dissociation</span> converts particles into other exospheric species</li>
+</ul>
+<p><br><br></p>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Photoreactions of Adsorbate Species</strong></p>
+</div>
+<div class="callout-content">
+<p>The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle: <span class="math display">\[ k_{ads} = \begin{cases}\cos \psi\cdot k&amp; \text{for: } \psi\leq \pi/2 \\ 0 &amp; \text{else.}\end{cases}\]</span></p>
+</div>
+</div>
+</div>
+</div><div class="column">
+<div style="font-size: 0.7em;">
+<table style="width:99%;">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 52%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th><p><br> <br></p>
+<p>Reaction</p></th>
+<th style="text-align: right;">Quiet Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+<th style="text-align: right;">Active Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H +\nu -&gt; H+ + e-}\)</span></span></td>
+<td style="text-align: right;"><span class="math inline">\(0.726\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.720\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(1s)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(2s \text{or} 2p)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2 +\nu -&gt; H2+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H + H+ +e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(0.480\)</span></p>
+<p><span class="math inline">\(0.344\)</span></p>
+<p><span class="math inline">\(0.541\)</span></p>
+<p><span class="math inline">\(0.095\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(1.090\)</span></p>
+<p><span class="math inline">\(0.821\)</span></p>
+<p><span class="math inline">\(1.150\)</span></p>
+<p><span class="math inline">\(0.279\)</span></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(3p) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1d) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1s) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{OH +\nu -&gt; OH+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((120.00)\;65.400\)</span></p>
+<p><span class="math inline">\((70.10)\;6.350\)</span></p>
+<p><span class="math inline">\((8.33)\;0.671\)</span></p>
+<p><span class="math inline">\((2.43)\;2.470\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((138.00)\;71.700\)</span></p>
+<p><span class="math inline">\((176.00)\;15.100\)</span></p>
+<p><span class="math inline">\((21.10)\;1.640\)</span></p>
+<p><span class="math inline">\((6.43)\;6.520\)</span></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O(1d)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + H + O}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2O +\nu -&gt; H2O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + OH+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(103.000\)</span></p>
+<p><span class="math inline">\(5.970\)</span></p>
+<p><span class="math inline">\(7.550\)</span></p>
+<p><span class="math inline">\(3.310\)</span></p>
+<p><span class="math inline">\(0.554\)</span></p>
+<p><span class="math inline">\(0.059\)</span></p>
+<p><span class="math inline">\(0.131\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(176.000\)</span></p>
+<p><span class="math inline">\(14.800\)</span></p>
+<p><span class="math inline">\(19.100\)</span></p>
+<p><span class="math inline">\(8.280\)</span></p>
+<p><span class="math inline">\(1.510\)</span></p>
+<p><span class="math inline">\(0.221\)</span></p>
+<p><span class="math inline">\(0.407\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="conversions-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Conversions</h2>
+<h4 id="surface-reactions">Surface Reactions</h4>
+
+<img data-src="../imgs/crider2002.png" class="shadowbox r-stretch"><p><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
+<li><p>assumption: the same probabilities are valid for neutral <span class="math inline">\(\ce{H}\)</span>, leading to</p>
+<ul>
+<li><span class="math inline">\(\ce{H -&gt;[60\%] H2}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{H}\)</span> &amp; <span class="math inline">\(\ce{OH}\)</span></span></li>
+<li><span class="math inline">\(\ce{H -&gt;[10\%] OH}\)</span><span class="fragment" data-fragment-index="1">: proton implantation and atomic hydrogen diffusion</span></li>
+<li><span class="math inline">\(\ce{H -&gt;[2\%] H2O}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{OH}\)</span></span></li>
+</ul></li>
+</ul>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>note that these probabilities are <strong>global</strong> values (no temperature/time/concentration/etc. dependence), with the authors highlighting their high uncertainties</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="conversions-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Conversions</h2>
+<h4 id="surface-reactions-1">Surface Reactions</h4>
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\xi\)</span></th>
+<th style="text-align: right;">   <span class="math inline">\(\left(\ce{H}\right)\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{H2}\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{OH}\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{H2O}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(25\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((75\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(20.82\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.48\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.70\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(50\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((50\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(41.65\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.95\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.40\%\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(75\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((25\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(62.47\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.43\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.10\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(100\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((0\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(83.30\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(13.90\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.80\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+</ul>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li>MC: probability drawn from uniform distribtion between <span class="math inline">\(0\%\)</span> and the respective (maximum) value</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="results" class="title-slide slide level1">
 <h1>Results</h1>
 
 </section>
-
-<section id="conversion-map" class="title-slide slide level1 center">
+<section id="results-1" class="slide level2">
+<h2>Results</h2>
+<h4 id="surface-number-density">Surface Number Density</h4>
+<div width="80%">
+<p><img data-src="../imgs/result-1.png" class="shadowbox" style="width:80.0%"></p>
+</div>
+</section>
+<section id="results-2" class="slide level2">
+<h2>Results</h2>
+<h4 id="losses">Losses</h4>
+</section></section>
+<section id="conversion-map" class="title-slide slide level1">
 <h1>Conversion Map</h1>
 
 </section>
 
 <section>
-<section id="what-next" class="title-slide slide level1 center">
+<section id="what-next" class="title-slide slide level1">
 <h1>What next?</h1>
 
 </section>
@@ -451,6 +834,12 @@
 <p>Alexander Smolka | Technical University of Munich</p>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Crider2002" class="csl-entry" role="listitem">
+Crider, D., &amp; Vondrak, R. (2002). Hydrogen migration to the lunar poles by solar wind bombardment of the <span>M</span>oon. <em>Advances in Space Research</em>, <em>30</em>(8), 1869–1874.
+</div>
+<div id="ref-Huebner1992" class="csl-entry" role="listitem">
+Huebner, W., Keady, J., &amp; Lyon, S. (1992). Solar photo rates for planetary atmospheres and atmospheric pollutants. <em>Astrophysics and Space Science</em>, <em>195</em>, 1–294.
+</div>
 <div id="ref-Hurley2015" class="csl-entry" role="listitem">
 Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Siegler, M., Greenhagen, B., &amp; Paige, D. (2015). An analytic function of lunar surface temperature for exospheric modeling. <em>Icarus</em>, <em>255</em>, 159–163. <a href="https://doi.org/10.1016/j.icarus.2014.08.043">https://doi.org/10.1016/j.icarus.2014.08.043</a>
 </div>
@@ -480,7 +869,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'smaller': true,
 'pdfSeparateFragments': false,
@@ -491,7 +880,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
 'smaller': true,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -635,13 +1024,13 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
         // specified using percentage units.
         width: 1285,
 
-        height: 700,
+        height: 800,
 
         // Factor of the display size that should remain empty around the content
         margin: 5.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

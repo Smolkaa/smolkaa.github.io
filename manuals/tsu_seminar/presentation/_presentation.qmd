@@ -18,11 +18,20 @@ format:
     smaller: true
     theme: [simple, custom.scss]
     width: 1285
+    height: 800
 
     center-title-slide: false
     controls: true
----
 
+    html-math-method: mathjax
+    include-in-header: 
+      - ../../../resources/mathjax.html
+
+    pdf-separate-fragments: false
+---
+# internal {visibility="hidden"}
+{{< include ../../../resources/latex/_defs.qmd >}}
+{{< include ../../../resources/latex/_symbols.qmd >}}
 
 # About Me {visibility="hidden"}
 
@@ -31,16 +40,17 @@ format:
 # Why Julia
 {{< include src/_julia.qmd >}}
 
-# Previous Works
-## Crider 2002
-
 # Surface Temperatures
 {{< include src/_surface_temperatures.qmd >}}
 
 # Model Architecture
 {{< include src/_model_architecture.qmd >}}
 
+# Conversions
+{{< include src/_conversions.qmd >}}
+
 # Results
+{{< include src/_results.qmd >}}
 
 # Conversion Map
 

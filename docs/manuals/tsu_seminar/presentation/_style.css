@@ -1,11 +1,12 @@
 .references {
-    font-size: 0.5em;
+    font-size: 0.8em;
     color: gray;
 }
 
-.v {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-  }
+.slides h1 {
+    font-size: calc(2.5em / 1.5);
+}
+
+.shadowbox {
+    box-shadow: 4px 4px 4px 2px;
+}

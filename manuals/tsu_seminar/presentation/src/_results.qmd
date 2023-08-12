@@ -1,0 +1,9 @@
+## Results
+#### Surface Number Density
+
+::: {width=80%}
+![](../imgs/result-1.png){.shadowbox width=80%}
+:::
+
+## Results
+#### Losses
