@@ -106,18 +106,34 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 
 
 
-## The Model Framework {auto-animate=true}
+## The Model Framework
 #### Conversions
 
+:::: {.columns}
 
+::: {.column width=40%}
+
+</br>
 
 * Multi-element simulation: $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$
 * Assumption: Surface-bounded exosphere with particles **not** interacting with each other
-  - Dependencies between particles solely through conversion reactions
+  - Dependencies between particles solely through **conversion reactions**
 * Conversions can take place in the exosphere and on the surface
+  - exosphere: photodissociation of hydrogen-based molecules
+  - surface: physical/chemical reactions with the regolith and other volatiles
+:::
+
+::: {.column width=20%}
+:::
+
+::: {.column width=40%}
+
+</br>
 
 ![](../imgs/conversions_overview/conversions_overview.svg){width=400}
+:::
 
+::::
 
 
 ## The Model Framework  {auto-animate=true}
@@ -135,10 +151,12 @@ Rates by @Huebner1992
 
 </br></br>
 
+::: {.fragment fragment-index=3}
 ::: {.callout-note appearance="minimal" icon=false}
 # Photoreactions of Adsorbate Species
 The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle:
 $$ \rate_{ads} = \begin{cases}\cos \zenithAngle \cdot \rate & \text{for: } \zenithAngle \leq \pi/2 \\ 0 & \text{else.}\end{cases}$$
+:::
 :::
 
 :::
@@ -236,8 +254,8 @@ $$ \rate_{ads} = \begin{cases}\cos \zenithAngle \cdot \rate & \text{for: } \zeni
 ## The Model Framework {auto-animate=true}
 #### Conversions -- Surface Reactions
 
-| $\xi$ | &emsp;&emsp; $\left(\ce{H}\right)$ | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $\ce{H2}$ | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $\ce{OH}$ | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $\ce{H2O}$ |
-|:---:| ---:| ---:| ---:| ---:| 
+| $\xi$ | &emsp;&emsp; $\left(\ce{H}\right)$ | &emsp;&emsp;&emsp;&emsp;&emsp; $\ce{H2}$ | &emsp;&emsp;&emsp;&emsp;&emsp; $\ce{OH}$ | &emsp;&emsp;&emsp;&emsp;&emsp; $\ce{H2O}$ |
+|:---| ---:| ---:| ---:| ---:| 
 | $25\%$ | $(75\%)$ |$20.82\%$ | $3.48\%$ | $0.70\%$ | 
 | $50\%$ | $(50\%)$ |$41.65\%$ | $6.95\%$ | $1.40\%$ | 
 | $75\%$ | $(25\%)$ |$62.47\%$ | $10.43\%$ | $2.10\%$ | 
@@ -249,7 +267,7 @@ $$ \rate_{ads} = \begin{cases}\cos \zenithAngle \cdot \rate & \text{for: } \zeni
 ::: {.column}
 
 * assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at $60:10:2$
-* reactivity fraction $\xi$ is scaling these probabilities up/down
+* **reactivity fraction $\xi$** is scaling these probabilities up/down
 
 :::
 

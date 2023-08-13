@@ -428,7 +428,7 @@
 
 <section id="title-slide" class="quarto-title-block">
   <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
-  <p class="subtitle"></p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework <br> <br> <img data-src="../tsu.png" height="150">           <img data-src="tum.png" height="130"></p><p></p>
+  <p class="subtitle"></p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework <br> <br> <br> <br> <img data-src="../tsu.png" height="150">           <img data-src="tum.png" height="130"></p><p></p>
 
 <div class="quarto-title-authors">
 </div>
@@ -728,18 +728,31 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="the-model-framework-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<section id="the-model-framework-3" class="slide level2">
+<h2>The Model Framework</h2>
 <h4 id="conversions">Conversions</h4>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br></p>
 <ul>
 <li>Multi-element simulation: <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
 <li>Assumption: Surface-bounded exosphere with particles <strong>not</strong> interacting with each other
 <ul>
-<li>Dependencies between particles solely through conversion reactions</li>
+<li>Dependencies between particles solely through <strong>conversion reactions</strong></li>
 </ul></li>
-<li>Conversions can take place in the exosphere and on the surface</li>
+<li>Conversions can take place in the exosphere and on the surface
+<ul>
+<li>exosphere: photodissociation of hydrogen-based molecules</li>
+<li>surface: physical/chemical reactions with the regolith and other volatiles</li>
+</ul></li>
 </ul>
-<p><img data-src="../imgs/conversions_overview/conversions_overview.svg" width="600"></p>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<p><img data-src="../imgs/conversions_overview/conversions_overview.svg" width="400"></p>
+</div>
+</div>
 </section>
 <section id="the-model-framework-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The Model Framework</h2>
@@ -753,6 +766,7 @@ Technical University of Munich</p>
 <li><span class="fragment highlight-current-blue" data-fragment-index="2">Dissociation</span> converts particles into other exospheric species</li>
 </ul>
 <p><br><br></p>
+<div class="fragment" data-fragment-index="3">
 <div class="callout callout-note no-icon callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
@@ -760,6 +774,7 @@ Technical University of Munich</p>
 </div>
 <div class="callout-content">
 <p>The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle: <span class="math display">\[ k_{ads} = \begin{cases}\cos \psi\cdot k&amp; \text{for: } \psi\leq \pi/2 \\ 0 &amp; \text{else.}\end{cases}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -891,45 +906,45 @@ Technical University of Munich</p>
 <h4 id="conversions-surface-reactions-1">Conversions – Surface Reactions</h4>
 <table>
 <colgroup>
-<col style="width: 23%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;"><span class="math inline">\(\xi\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\xi\)</span></th>
 <th style="text-align: right;">   <span class="math inline">\(\left(\ce{H}\right)\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{H2}\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{OH}\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{H2O}\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{H2}\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{OH}\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{H2O}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(25\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(25\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\((75\%)\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(20.82\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(3.48\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(0.70\%\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(50\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(50\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\((50\%)\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(41.65\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(6.95\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(1.40\%\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(75\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(75\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\((25\%)\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(62.47\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(10.43\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(2.10\%\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">\(100\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(100\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\((0\%)\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(83.30\%\)</span></td>
 <td style="text-align: right;"><span class="math inline">\(13.90\%\)</span></td>
@@ -942,7 +957,7 @@ Technical University of Munich</p>
 <div class="column">
 <ul>
 <li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
-<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+<li><strong>reactivity fraction <span class="math inline">\(\xi\)</span></strong> is scaling these probabilities up/down</li>
 </ul>
 </div><div class="column">
 <div class="fragment">
@@ -1134,227 +1149,7 @@ Technical University of Munich</p>
 </div>
 </section></section>
 <section>
-<section id="conversions-1" class="title-slide slide level1">
-<h1>Conversions</h1>
 
-</section>
-<section id="conversions-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Conversions</h2>
-<h4 id="photoionization-and--dissociation">Photoionization and -dissociation</h4>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span></p>
-<p><br><br></p>
-<ul>
-<li><span class="fragment highlight-current-blue" data-fragment-index="1">Ionization</span> removes particles from the simulation</li>
-<li><span class="fragment highlight-current-blue" data-fragment-index="2">Dissociation</span> converts particles into other exospheric species</li>
-</ul>
-<p><br><br></p>
-<div class="callout callout-note no-icon callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Photoreactions of Adsorbate Species</strong></p>
-</div>
-<div class="callout-content">
-<p>The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle: <span class="math display">\[ k_{ads} = \begin{cases}\cos \psi\cdot k&amp; \text{for: } \psi\leq \pi/2 \\ 0 &amp; \text{else.}\end{cases}\]</span></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column">
-<div style="font-size: 0.7em;">
-<table style="width:99%;">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 52%">
-<col style="width: 21%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;"></th>
-<th><p><br> <br></p>
-<p>Reaction</p></th>
-<th style="text-align: right;">Quiet Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
-<th style="text-align: right;">Active Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H +\nu -&gt; H+ + e-}\)</span></span></td>
-<td style="text-align: right;"><span class="math inline">\(0.726\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(1.720\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(1s)}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(2s \text{or} 2p)}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2 +\nu -&gt; H2+ + e-}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H + H+ +e-}\)</span></span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\(0.480\)</span></p>
-<p><span class="math inline">\(0.344\)</span></p>
-<p><span class="math inline">\(0.541\)</span></p>
-<p><span class="math inline">\(0.095\)</span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\(1.090\)</span></p>
-<p><span class="math inline">\(0.821\)</span></p>
-<p><span class="math inline">\(1.150\)</span></p>
-<p><span class="math inline">\(0.279\)</span></p></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">17</td>
-<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(3p) + H}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1d) + H}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1s) + H}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{OH +\nu -&gt; OH+ + e-}\)</span></span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\((120.00)\;65.400\)</span></p>
-<p><span class="math inline">\((70.10)\;6.350\)</span></p>
-<p><span class="math inline">\((8.33)\;0.671\)</span></p>
-<p><span class="math inline">\((2.43)\;2.470\)</span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\((138.00)\;71.700\)</span></p>
-<p><span class="math inline">\((176.00)\;15.100\)</span></p>
-<p><span class="math inline">\((21.10)\;1.640\)</span></p>
-<p><span class="math inline">\((6.43)\;6.520\)</span></p></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">18</td>
-<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O(1d)}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + H + O}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2O +\nu -&gt; H2O+ + e-}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + OH+ + e-}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O+ + e-}\)</span></span></p>
-<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H+ + e-}\)</span></span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\(103.000\)</span></p>
-<p><span class="math inline">\(5.970\)</span></p>
-<p><span class="math inline">\(7.550\)</span></p>
-<p><span class="math inline">\(3.310\)</span></p>
-<p><span class="math inline">\(0.554\)</span></p>
-<p><span class="math inline">\(0.059\)</span></p>
-<p><span class="math inline">\(0.131\)</span></p></td>
-<td style="text-align: right;"><p><span class="math inline">\(176.000\)</span></p>
-<p><span class="math inline">\(14.800\)</span></p>
-<p><span class="math inline">\(19.100\)</span></p>
-<p><span class="math inline">\(8.280\)</span></p>
-<p><span class="math inline">\(1.510\)</span></p>
-<p><span class="math inline">\(0.221\)</span></p>
-<p><span class="math inline">\(0.407\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="conversions-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Conversions</h2>
-<h4 id="surface-reactions">Surface Reactions</h4>
-<p><img data-src="../imgs/crider2002.png" class="shadowbox"></p>
-<p><br></p>
-<div class="columns">
-<div class="column">
-<ul>
-<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
-<li><p>assumption: the same probabilities are valid for neutral <span class="math inline">\(\ce{H}\)</span>, leading to</p>
-<ul>
-<li><span class="math inline">\(\ce{H -&gt;[60\%] H2}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{H}\)</span> &amp; <span class="math inline">\(\ce{OH}\)</span></span></li>
-<li><span class="math inline">\(\ce{H -&gt;[10\%] OH}\)</span><span class="fragment" data-fragment-index="1">: proton implantation and atomic hydrogen diffusion</span></li>
-<li><span class="math inline">\(\ce{H -&gt;[2\%] H2O}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{OH}\)</span></span></li>
-</ul></li>
-</ul>
-<div class="fragment" data-fragment-index="2">
-<ul>
-<li>reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
-</ul>
-</div>
-</div><div class="column">
-<div class="fragment" data-fragment-index="3">
-<ul>
-<li>note that these probabilities are <strong>global</strong> values (no temperature/time/concentration/etc. dependence), with the authors highlighting their high uncertainties</li>
-</ul>
-</div>
-<div class="fragment" data-fragment-index="4">
-<ul>
-<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
-<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="conversions-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Conversions</h2>
-<h4 id="surface-reactions-1">Surface Reactions</h4>
-<table>
-<colgroup>
-<col style="width: 23%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(\xi\)</span></th>
-<th style="text-align: right;">   <span class="math inline">\(\left(\ce{H}\right)\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{H2}\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{OH}\)</span></th>
-<th style="text-align: right;">       <span class="math inline">\(\ce{H2O}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(25\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\((75\%)\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(20.82\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(3.48\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(0.70\%\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(50\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\((50\%)\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(41.65\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(6.95\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(1.40\%\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(75\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\((25\%)\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(62.47\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(10.43\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(2.10\%\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(100\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\((0\%)\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(83.30\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(13.90\%\)</span></td>
-<td style="text-align: right;"><span class="math inline">\(2.80\%\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><br><br></p>
-<div class="columns">
-<div class="column">
-<ul>
-<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
-<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
-</ul>
-</div><div class="column">
-<div class="fragment">
-<ul>
-<li>MC: probability drawn from uniform distribtion between <span class="math inline">\(0\%\)</span> and the respective (maximum) value</li>
-</ul>
-</div>
-</div>
-</div>
-</section></section>
-<section>
-<section id="results" class="title-slide slide level1">
-<h1>Results</h1>
-
-</section>
 <section id="results-1" class="slide level2">
 <h2>Results</h2>
 <h4 id="surface-number-density">Surface Number Density</h4>
@@ -1372,8 +1167,13 @@ Technical University of Munich</p>
 
 <section id="what-next-1" class="slide level2">
 <h2>What Next?</h2>
-<h4 id="lpsc-stuff">LPSC Stuff</h4>
+<h4 id="conversion-map-1">Conversion Map</h4>
+<div class="fragment semi-fade-out" data-fragment-index="1">
+<p><img data-src="../imgs/conversions_overview/conversions_overview.svg" class="absolute" style="top: 200px; left: 0px; width: 300px; "></p>
+</div>
+<div class="fragment" data-fragment-index="1">
 <p><img data-src="../imgs/lpsc.png" class="absolute" style="top: -30px; right: 60px; height: 1100px; "></p>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
