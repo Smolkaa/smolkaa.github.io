@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -55,6 +120,7 @@
   <link href="_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="_presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="_presentation_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
   <link href="_presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -362,7 +428,7 @@
 
 <section id="title-slide" class="quarto-title-block">
   <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
-  <p class="subtitle">Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework</p>
+  <p class="subtitle"></p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework <br> <br> <img data-src="../tsu.png" height="150">           <img data-src="tum.png" height="130"></p><p></p>
 
 <div class="quarto-title-authors">
 </div>
@@ -421,179 +487,244 @@ Technical University of Munich</p>
 <p><img data-src="/resources/imgs/me_gray.jpg" class="absolute" style="top: 50px; right: 75px; height: 80%; "></p>
 </section></section>
 <section>
-<section id="why-julia" class="title-slide slide level1">
-<h1>Why Julia</h1>
 
-</section>
-<section id="why-julia-1" class="slide level2">
-<h2>Why Julia</h2>
-<h4 id="advantages-of-julia-in-scientific-applications">Advantages of Julia in Scientific Applications</h4>
+<section id="about-the-presentation" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework">The Lunar Exosphere Simulation Framework</h4>
+<p><br></p>
+
+<img data-src="../imgs/paper.png" class="shadowbox r-stretch"></section>
+<section id="about-the-presentation-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-1">The Lunar Exosphere Simulation Framework</h4>
 <div class="columns">
-<div class="column">
-<p>Performance and Productivity:</p>
+<div class="column" style="width:40%;">
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Monte-Carlo simulation</li>
+<li>Implementation in Julia Language</li>
+<li>Quasi-steady 2D model</li>
+<li>Neutral exosphere of <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>Solar wind as the only source of hydrogen atoms</li>
+<li>Conversion reactions to connect the different species</li>
+<li>All relevant processes included as distributions</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="../imgs/paper.png" class="shadowbox" style="width:100.0%"></p>
+</div>
+</div>
+<p><br> <br></p>
+<div class="fragment" style="font-size: 1.5em">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-check" aria-label="check"></i> Goal of the Research</strong></p>
+</div>
+<div class="callout-content">
+<p>Build a framework to show the influence of conversion reactions on the lunar hydrogen exosphere.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about-the-presentation-2" class="slide level2" data-transition="fade-in">
+<h2>About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<p><img data-src="../imgs/julia_benchmark.svg" class="absolute shadowbox" style="top: 150px; left: 0px; width: 875px; "></p>
+<div class="fragment">
+<div class="absolute" style="background: rgba(220, 220, 220, 0.5); padding-left: 10px;top: 250px; left: 100px; width: 550px; ">
+<p><strong>Personal Reasons for Julia:</strong></p>
+<ul>
+<li>Similar to Matlab and Python (easy to learn)</li>
+<li>Great community in the scientific computing field
+<ul>
+<li>especially great ODE solvers</li>
+</ul></li>
+<li>Open-source &amp; easy to get started</li>
+<li>Great for teaching</li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:72%;">
+
+</div><div class="column" style="width:28%;">
+<p><br></p>
+<p><img data-src="../imgs/julia-logo.svg" width="175"></p>
+<p><br></p>
+<p><strong>Performance and Productivity:</strong></p>
 <ul>
 <li>Julia designed for high-performance computing.</li>
 <li>JIT compilation for near-native speed.</li>
 </ul>
-<p>Versatility and Flexibility:</p>
+<p><strong>Versatility and Flexibility:</strong></p>
 <ul>
 <li>Handles simulations, machine learning, data visualization.</li>
-<li>Extensive libraries available. Image: Collage of icons representing different scientific fields.</li>
+<li>Extensive libraries available.</li>
 </ul>
-</div><div class="column">
-<p><img data-src="../imgs/julia_benchmark.svg"></p>
 </div>
+</div>
+</section>
+<section id="about-the-presentation-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-1">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>    <span class="cf">end</span></span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="about-the-presentation-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-2">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb2" data-code-line-numbers="8"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="cf">end</span></span>
+<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="about-the-presentation-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-3">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb3" data-code-line-numbers="3-6"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>    <span class="cf">end</span></span>
+<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+<p><img data-src="../imgs/hurley2015-2.png" class="shadowbox"></p>
+</div>
+</div>
+</section>
+<section id="about-the-presentation-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-4">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb4" data-code-line-numbers="|1,10,15,18,21"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>    <span class="cf">end</span></span>
+<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a><span class="kw">end</span></span>
+<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs<span class="op">::</span><span class="dt">AbstractVector</span>, lats<span class="op">::</span><span class="dt">AbstractVector</span>; matrix<span class="op">=</span><span class="cn">true</span>)</span>
+<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a>    <span class="cf">return</span> matrix ? </span>
+<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng, lat) for lng <span class="kw">in</span> lngs, lat <span class="kw">in</span> lats] <span class="op">:</span></span>
+<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs[i], lats[i]) for i <span class="kw">in</span> <span class="fu">eachindex</span>(lngs)]</span>
+<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a><span class="kw">end</span></span>
+<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs<span class="op">::</span><span class="dt">GlobalSphericalPosition</span>)</span>
+<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs.theta, xs.phi)</span>
+<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a><span class="kw">end</span></span>
+<span id="cb4-18" class="hljs-ln-code"><a href="#cb4-18"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(XS<span class="op">::</span><span class="dt">Vector{GlobalSphericalPosition{T}}</span>) <span class="kw">where</span> {T}</span>
+<span id="cb4-19" class="hljs-ln-code"><a href="#cb4-19"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(XS)</span>
+<span id="cb4-20" class="hljs-ln-code"><a href="#cb4-20"></a><span class="kw">end</span></span>
+<span id="cb4-21" class="hljs-ln-code"><a href="#cb4-21"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(grid<span class="op">::</span><span class="dt">AbstractGrid</span>)</span>
+<span id="cb4-22" class="hljs-ln-code"><a href="#cb4-22"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(<span class="fu">surfacecoords</span>(grid))</span>
+<span id="cb4-23" class="hljs-ln-code"><a href="#cb4-23"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
-<section id="surface-temperatures" class="title-slide slide level1">
-<h1>Surface Temperatures</h1>
 
-</section>
-<section id="surface-temperatures-1" class="slide level2" data-transition="fade">
-<h2>Surface Temperatures</h2>
+<section id="the-model-framework" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="lunar-surface-temperatures">Lunar Surface Temperatures</h4>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../imgs/temperature_animations/anim_raw_diviner/anim.gif" width="600"></p>
-</div><div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></p>
+<div class="r-stack">
+<p><img data-src="../imgs/temperature_animations/anim_raw_diviner/anim.gif" class="fragment" data-fragment-index="1" width="600"></p>
+<p><img data-src="../imgs/temperature_animations/diviner_avg.png" class="fragment" data-fragment-index="3" width="600"></p>
 </div>
-</div>
-</div>
-</section>
-<section id="surface-temperatures-2" class="slide level2" data-transition="fade">
-<h2>Surface Temperatures</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment fade-in">
-<p><img data-src="../imgs/temperature_animations/diviner_avg.png" width="600"></p>
-</div>
-</div><div class="column" style="width:50%;">
-<p><span class="fragment semi-fade-out"><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" width="600"></span></p>
-</div>
-</div>
-</section>
-<section id="surface-temperatures-3" class="slide level2" data-transition="fade">
-<h2>Surface Temperatures</h2>
-<div data-fig-width="600">
-<div id="fig-diviner-avg" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../imgs/temperature_animations/diviner_avg.png" width="600"></p>
-<figcaption>Figure&nbsp;1: <strong>?(caption)</strong></figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="surface-temperatures-4" class="slide level2" data-transition="fade">
-<h2>Surface Temperatures</h2>
-<div data-fig-width="600">
-<div id="fig-hurley2015" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../imgs/temperature_animations/hurley2015.png" width="600"></p>
-<figcaption>Figure&nbsp;2: Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>.</figcaption>
-</figure>
-</div>
-</div>
-</section></section>
-<section>
-<section id="model-architecture" class="title-slide slide level1">
-<h1>Model Architecture</h1>
-
-</section>
-<section id="model-architecture-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<h4 id="nested-loop-monte-carlo-simulation">Nested-Loop Monte-Carlo Simulation</h4>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
-</div><div class="column">
+<div class="fragment" data-fragment-index="3">
 <ul>
-<li><span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span>: Surface number density of the <span class="math inline">\(i\)</span>-th Monte-Carlo step, the <span class="math inline">\(j\)</span>-th iteration, at the <span class="math inline">\(k\)</span>-th grid element</li>
-<li>Updating of the surface number density: <span class="math inline">\(\left(n_0\right)_k^{i,j} += \frac{w}{Av_z}\)</span>
-<ul>
-<li><span class="math inline">\(w\)</span>: current weight of the particle</li>
-<li><span class="math inline">\(A\)</span>: area of the grid element at the current position</li>
-<li><span class="math inline">\(v_z\)</span>: vertical velocity of the particle</li>
-</ul></li>
+<li>Subsolar (local time) coordinate system, Diviner measurements averaged.</li>
 </ul>
-<p><br></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" class="fragment" data-fragment-index="2" width="600"></p>
+<p><img data-src="../imgs/temperature_animations/hurley2015.png" class="fragment" data-fragment-index="4" width="600"></p>
+</div>
+<div class="fragment" data-fragment-index="4">
 <ul>
-<li>Updating the particle weight:
-<ul>
-<li>rate losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \exp\left(-kt\right)\right)\)</span>
-<ul>
-<li>time-of-flight: <span class="math inline">\(t_f\)</span>, or</li>
-<li>residence time: <span class="math inline">\(\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
-</ul></li>
-<li>probability losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \sum p \right)\)</span></li>
-<li>escape or cold trapping: <span class="math inline">\(w\mapsto 0.0\)</span></li>
-</ul></li>
+<li>Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>.</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="model-architecture-2" class="slide level2" data-auto-animate="true" data-transition="fade-in">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<h4 id="nested-loop-monte-carlo-simulation-1">Nested-Loop Monte-Carlo Simulation</h4>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
-</div><div class="column">
-<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
-</div>
 </div>
 </section>
-<section id="model-architecture-3" class="slide level2" data-auto-animate="true" data-transition="fade-in">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<h4 id="nested-loop-monte-carlo-simulation-2">Nested-Loop Monte-Carlo Simulation</h4>
+<section id="the-model-framework-1" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="numerical-grid-2d-quasi-stationary">Numerical Grid – 2D Quasi-Stationary</h4>
+<p><img data-src="../imgs/gs2dgrid.svg" class="absolute" style="top: 0px; right: -150px; width: 900px; "></p>
 <div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
-</div><div class="column">
-<p>Some Text</p>
+<div class="column" style="width:35%;">
+<p><strong>Structured, Two-Dimensional, Surface Grid</strong></p>
+<p>The grid assumes a perfectly spherical Moon. It’s coordinates are given in a sub-solar coordinate system with <span class="math inline">\(\left(0,0\right)\)</span> at the sub-solar point, at noon <span class="math inline">\(12\text{h}\)</span> local time.</p>
+<p><br><br></p>
+<div class="fragment">
+<div style="line-height: 30px;">
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to set up</p>
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to interpolate on</p>
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   analytic solution to mapping a continous point to its discrete grid element</p>
+</div>
+<p><br><br></p>
+<div style="line-height: 10px;">
+<p><i class="fa-solid fa-minus" aria-label="minus"></i>   element “clumping” at the poles</p>
+<p><i class="fa-solid fa-minus" aria-label="minus"></i>   changing element size with latitude</p>
 </div>
 </div>
-</section>
-<section id="model-architecture-4" class="slide level2" data-auto-animate="true" data-transition="fade-in">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<h4 id="nested-loop-monte-carlo-simulation-3">Nested-Loop Monte-Carlo Simulation</h4>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
-</div><div class="column">
-<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
-</div>
-</div>
-</section>
-<section id="model-architecture-5" class="slide level2" data-auto-animate="true" data-transition="fade-in">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
-</div><div class="column">
-<p>Some Text</p>
-</div>
-</div>
-</section>
-<section id="model-architecture-6" class="slide level2" data-auto-animate="true" data-transition="fade-in">
-<h2 data-id="quarto-animate-title">Model Architecture</h2>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
-</div><div class="column">
-<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
-</div>
-</div>
-</section></section>
-<section>
-<section id="conversions" class="title-slide slide level1">
-<h1>Conversions</h1>
+</div><div class="column" style="width:65%;">
 
+</div>
+</div>
 </section>
-<section id="conversions-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Conversions</h2>
-<h4 id="photoionization-and--dissociation">Photoionization and -dissociation</h4>
+<section id="the-model-framework-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions">Conversions</h4>
+<ul>
+<li>Multi-element simulation: <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>Assumption: Surface-bounded exosphere with particles <strong>not</strong> interacting with each other
+<ul>
+<li>Dependencies between particles solely through conversion reactions</li>
+</ul></li>
+<li>Conversions can take place in the exosphere and on the surface</li>
+</ul>
+</section>
+<section id="the-model-framework-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-photoionization-and--dissociation">Conversions – Photoionization and -dissociation</h4>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span></p>
@@ -613,6 +744,8 @@ Technical University of Munich</p>
 </div>
 </div>
 </div>
+</div><div class="column" style="width:5%;">
+
 </div><div class="column">
 <div style="font-size: 0.7em;">
 <table style="width:99%;">
@@ -698,7 +831,404 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
+<section id="the-model-framework-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-surface-reactions">Conversions – Surface Reactions</h4>
+
+<img data-src="../imgs/crider2002.png" class="shadowbox r-stretch"><p><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
+<li><p>assumption: the same probabilities are valid for neutral <span class="math inline">\(\ce{H}\)</span>, leading to</p>
+<ul>
+<li><span class="math inline">\(\ce{H -&gt;[60\%] H2}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{H}\)</span> &amp; <span class="math inline">\(\ce{OH}\)</span></span></li>
+<li><span class="math inline">\(\ce{H -&gt;[10\%] OH}\)</span><span class="fragment" data-fragment-index="1">: proton implantation and atomic hydrogen diffusion</span></li>
+<li><span class="math inline">\(\ce{H -&gt;[2\%] H2O}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{OH}\)</span></span></li>
+</ul></li>
+</ul>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>note that these probabilities are <strong>global</strong> values (no temperature/time/concentration/etc. dependence), with the authors highlighting their high uncertainties</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-model-framework-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-surface-reactions-1">Conversions – Surface Reactions</h4>
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\xi\)</span></th>
+<th style="text-align: right;">   <span class="math inline">\(\left(\ce{H}\right)\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{H2}\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{OH}\)</span></th>
+<th style="text-align: right;">       <span class="math inline">\(\ce{H2O}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(25\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((75\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(20.82\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.48\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.70\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(50\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((50\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(41.65\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.95\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.40\%\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(75\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((25\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(62.47\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.43\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.10\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(100\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((0\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(83.30\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(13.90\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.80\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+</ul>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li>MC: probability drawn from uniform distribtion between <span class="math inline">\(0\%\)</span> and the respective (maximum) value</li>
+</ul>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="model-architecture-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><br><br></p>
+<ul>
+<li>Nested-Loop architecture</li>
+<li>Four loops in total:
+<ul>
+<li><strong>Loop IV</strong>: Monte-Carlo steps</li>
+<li><strong>Loop III</strong>: Iterations
+<ul>
+<li>converted particles as source of other species in next iteration</li>
+</ul></li>
+<li><strong>Loop II</strong>: Grid elements
+<ul>
+<li>weighted particle launches from each grid element based on element size</li>
+</ul></li>
+<li><strong>Loop I</strong>: Particles Trajectories
+<ul>
+<li>tracking particle from source to loss/conversion</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Each Monte-Carlo step is representing an entire conversion cycle and provides one realization of the lunar exosphere</li>
+<li>Each Monte-Carlo step is <em>saved</em> for later statistical analysis (or to rerun the simulation for additional steps)</li>
+</ul>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<div class="fragment">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="model-architecture-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-1">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span>: Surface number density of the <span class="math inline">\(i\)</span>-th Monte-Carlo step, the <span class="math inline">\(j\)</span>-th iteration, at the <span class="math inline">\(k\)</span>-th grid element</li>
+<li>Updating of the surface number density: <span class="math inline">\(\left(n_0\right)_k^{i,j} \mathrel{{+}{=}} \frac{w}{Av_z}\)</span>
+<ul>
+<li><span class="math inline">\(w\)</span>: current weight of the particle</li>
+<li><span class="math inline">\(A\)</span>: area of the grid element at the current position</li>
+<li><span class="math inline">\(v_z\)</span>: vertical velocity of the particle</li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>Updating the particle weight:
+<ul>
+<li>rate losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \exp\left(-kt\right)\right)\)</span>
+<ul>
+<li>time-of-flight: <span class="math inline">\(t_f\)</span>, or</li>
+<li>residence time: <span class="math inline">\(\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
+</ul></li>
+<li>probability losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \sum p \right)\)</span></li>
+<li>escape or cold trapping: <span class="math inline">\(w\mapsto 0.0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="model-architecture-3" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-2">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-4" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-3">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li>intialization of particles at every grid element
+<ul>
+<li><span class="math inline">\(w_0\)</span>: initial weight at launch</li>
+<li>First iteration: solar wind as only source
+<ul>
+<li><span class="math inline">\(w_0 = 0\)</span> on the lunar night-side</li>
+<li><span class="math inline">\(w_0 = \dot s\cdot A \cdot \cos\psi\)</span> on the day-side</li>
+<li><span class="math inline">\(\dot s\)</span> source rate of the solar wind (acts as a linear scaling factor of the entire simulation, usually <span class="math inline">\(\approx 2 \times 10^8\,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-1}}}\)</span>)</li>
+</ul></li>
+<li>Second+ iteration: source rate from conversions of previous iteration</li>
+</ul></li>
+<li>sum up all <span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span> from all <span class="math inline">\(k\)</span> launches at all positions <span class="math inline">\(\,\Rightarrow\left(\boldsymbol{\mathbf{n_0}}\right)^{i,j}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="model-architecture-5" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-4">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-6" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-5">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li><strong>Loop II</strong> for each element <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span>
+<ul>
+<li>save all surface number densities <span class="math inline">\(\left(\boldsymbol{\mathbf{n_0}}\right)^{i,j}\)</span></li>
+<li>save all conversions</li>
+</ul></li>
+<li>perform multiple iterations until it converges
+<ul>
+<li>sum of conversions is reducing each iteration</li>
+<li>usually 4-5 iterations are enough to reach <span class="math inline">\(1 \times 10^{-3}\)</span> of the initial source rate</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="model-architecture-7" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-6">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br></p>
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-8" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-7">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><br></p>
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li>pure Monte-Carlo loop</li>
+<li>save all steps</li>
+<li>postprocessing after the simulation
+<ul>
+<li>if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="conversions-1" class="title-slide slide level1">
+<h1>Conversions</h1>
+
+</section>
 <section id="conversions-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Conversions</h2>
+<h4 id="photoionization-and--dissociation">Photoionization and -dissociation</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span></p>
+<p><br><br></p>
+<ul>
+<li><span class="fragment highlight-current-blue" data-fragment-index="1">Ionization</span> removes particles from the simulation</li>
+<li><span class="fragment highlight-current-blue" data-fragment-index="2">Dissociation</span> converts particles into other exospheric species</li>
+</ul>
+<p><br><br></p>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Photoreactions of Adsorbate Species</strong></p>
+</div>
+<div class="callout-content">
+<p>The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle: <span class="math display">\[ k_{ads} = \begin{cases}\cos \psi\cdot k&amp; \text{for: } \psi\leq \pi/2 \\ 0 &amp; \text{else.}\end{cases}\]</span></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<div style="font-size: 0.7em;">
+<table style="width:99%;">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 52%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th><p><br> <br></p>
+<p>Reaction</p></th>
+<th style="text-align: right;">Quiet Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+<th style="text-align: right;">Active Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H +\nu -&gt; H+ + e-}\)</span></span></td>
+<td style="text-align: right;"><span class="math inline">\(0.726\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.720\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(1s)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(2s \text{or} 2p)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2 +\nu -&gt; H2+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H + H+ +e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(0.480\)</span></p>
+<p><span class="math inline">\(0.344\)</span></p>
+<p><span class="math inline">\(0.541\)</span></p>
+<p><span class="math inline">\(0.095\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(1.090\)</span></p>
+<p><span class="math inline">\(0.821\)</span></p>
+<p><span class="math inline">\(1.150\)</span></p>
+<p><span class="math inline">\(0.279\)</span></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(3p) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1d) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1s) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{OH +\nu -&gt; OH+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((120.00)\;65.400\)</span></p>
+<p><span class="math inline">\((70.10)\;6.350\)</span></p>
+<p><span class="math inline">\((8.33)\;0.671\)</span></p>
+<p><span class="math inline">\((2.43)\;2.470\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((138.00)\;71.700\)</span></p>
+<p><span class="math inline">\((176.00)\;15.100\)</span></p>
+<p><span class="math inline">\((21.10)\;1.640\)</span></p>
+<p><span class="math inline">\((6.43)\;6.520\)</span></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O(1d)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + H + O}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2O +\nu -&gt; H2O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + OH+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(103.000\)</span></p>
+<p><span class="math inline">\(5.970\)</span></p>
+<p><span class="math inline">\(7.550\)</span></p>
+<p><span class="math inline">\(3.310\)</span></p>
+<p><span class="math inline">\(0.554\)</span></p>
+<p><span class="math inline">\(0.059\)</span></p>
+<p><span class="math inline">\(0.131\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(176.000\)</span></p>
+<p><span class="math inline">\(14.800\)</span></p>
+<p><span class="math inline">\(19.100\)</span></p>
+<p><span class="math inline">\(8.280\)</span></p>
+<p><span class="math inline">\(1.510\)</span></p>
+<p><span class="math inline">\(0.221\)</span></p>
+<p><span class="math inline">\(0.407\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="conversions-3" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Conversions</h2>
 <h4 id="surface-reactions">Surface Reactions</h4>
 
@@ -734,7 +1264,7 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="conversions-3" class="slide level2" data-auto-animate="true">
+<section id="conversions-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Conversions</h2>
 <h4 id="surface-reactions-1">Surface Reactions</h4>
 <table>
@@ -817,15 +1347,14 @@ Technical University of Munich</p>
 <h2>Results</h2>
 <h4 id="losses">Losses</h4>
 </section></section>
-<section id="conversion-map" class="title-slide slide level1">
-<h1>Conversion Map</h1>
 
-</section>
 
 <section>
-<section id="what-next" class="title-slide slide level1">
-<h1>What next?</h1>
 
+<section id="what-next-1" class="slide level2">
+<h2>What Next?</h2>
+<h4 id="lpsc-stuff">LPSC Stuff</h4>
+<p><img data-src="../imgs/lpsc.png" class="absolute" style="top: -30px; right: 60px; height: 1100px; "></p>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -855,6 +1384,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
   <script src="_presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="_presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
   <script src="_presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -877,6 +1407,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
 'smaller': true,
  
         // Display controls in the bottom right corner
@@ -1047,7 +1578,7 @@ Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Sieg
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
 
           RevealMath,
           RevealNotes,

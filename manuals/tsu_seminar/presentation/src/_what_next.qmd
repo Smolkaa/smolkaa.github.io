@@ -1,0 +1,4 @@
+## What Next?
+#### LPSC Stuff
+
+![](../imgs/lpsc.png){.absolute top=-30 right=60 height=1100}

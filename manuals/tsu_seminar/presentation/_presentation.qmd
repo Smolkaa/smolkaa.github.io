@@ -1,15 +1,20 @@
 ---
 title: Extraterrestrial Exosphere and Surface Simulation
-subtitle: "Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework"
-institute: Technical University of Munich
+subtitle: |
+  Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework
+  </br>
+  </br>
+  ![](../tsu.png){height=150px} &emsp; &emsp; &emsp; &emsp; &emsp; ![](tum.png){height=130px}
 
-# author: "Alexander Smolka"
+#author: "Alexander Smolka"
+#institute: Technical University of Munich
 
 bibliography: "../../../../asmolka_library/main.bib"
 csl: "../../../_apa.csl"
 
 format: 
   revealjs: 
+    auto-stretch: false
     css: _style.css
     footer: "Alexander Smolka | Technical University of Munich"
     logo: tum.png
@@ -28,33 +33,45 @@ format:
       - ../../../resources/mathjax.html
 
     pdf-separate-fragments: false
+
+revealjs-plugins:
+  - pointer
 ---
 # internal {visibility="hidden"}
 {{< include ../../../resources/latex/_defs.qmd >}}
 {{< include ../../../resources/latex/_symbols.qmd >}}
 
-# About Me {visibility="hidden"}
 
+# About Me {visibility="hidden"}
 {{< include src/_me.qmd >}}
 
-# Why Julia
-{{< include src/_julia.qmd >}}
 
-# Surface Temperatures
-{{< include src/_surface_temperatures.qmd >}}
+# The Paper {visibility="hidden"}
+{{< include src/_paper.qmd >}}
 
-# Model Architecture
+
+# The Model {visibility="hidden"}
+{{< include src/_model.qmd >}}
+
+
+# Model Architecture {visibility="hidden"}
 {{< include src/_model_architecture.qmd >}}
+
 
 # Conversions
 {{< include src/_conversions.qmd >}}
 
+
 # Results
 {{< include src/_results.qmd >}}
 
-# Conversion Map
 
-# What next?
+# Conversion Map {visibility="hidden"}
+
+
+# What next? {visibility="hidden"}
+{{< include src/_what_next.qmd >}}
+
 
 ---
 

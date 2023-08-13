@@ -2,20 +2,59 @@
 #### Nested-Loop Monte-Carlo Simulation
 
 :::: {.columns}
+
+::: {.column width=45%}
+
+</br></br>
+
+* Nested-Loop architecture
+* Four loops in total:
+  - **Loop IV**: Monte-Carlo steps
+  - **Loop III**: Iterations
+    + converted particles as source of other species in next iteration
+  - **Loop II**: Grid elements
+    + weighted particle launches from each grid element based on element size
+  - **Loop I**: Particles Trajectories
+    + tracking particle from source to loss/conversion
+
+::: {.fragment}
+* Each Monte-Carlo step is representing an entire conversion cycle and provides one realization of the lunar exosphere
+* Each Monte-Carlo step is _saved_ for later statistical analysis (or to rerun the simulation for additional steps)
+:::
+
+:::
+
+::: {.column width=5%}
+:::
+
+::: {.column}
+::: {.fragment}
+![](../imgs/model_architecture/loop_I.svg){width=90%}
+:::
+:::
+::::
+
+## Model Architecture {auto-animate=true}
+#### Nested-Loop Monte-Carlo Simulation
+
+:::: {.columns}
 ::: {.column}
 ![](../imgs/model_architecture/loop_I.svg){width=90%}
 :::
 
 ::: {.column}
 
+::: {.fragment}
 * $\left(\surfaceNumberDensity\right)_k^{i,j}$: Surface number density of the $i$-th Monte-Carlo step, the $j$-th iteration, at the $k$-th grid element
-* Updating of the surface number density: $\left(\surfaceNumberDensity\right)_k^{i,j} += \frac{\weight}{\area\velocity_z}$
+* Updating of the surface number density: $\left(\surfaceNumberDensity\right)_k^{i,j} \mathrel{{+}{=}} \frac{\weight}{\area\velocity_z}$
   - $\weight$: current weight of the particle
   - $\area$: area of the grid element at the current position
   - $\velocity_z$: vertical velocity of the particle
+:::
 
 </br>
 
+::: {.fragment}
 * Updating the particle weight:
   - rate losses: $\weight \mapsto \weight \cdot \left(1 - \exp\left(-\rate\Time\right)\right)$
     - time-of-flight: $\Time_f$, or 
@@ -23,6 +62,7 @@
   - probability losses: $\weight \mapsto \weight \cdot \left(1 - \sum p \right)$
   - escape or cold trapping: $\weight \mapsto 0.0$
 :::
+:::
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
@@ -49,7 +89,17 @@
 :::
 
 ::: {.column}
-Some Text
+
+</br></br></br>
+
+* intialization of particles at every grid element
+  - $\weight_0$: initial weight at launch
+  - First iteration: solar wind as only source
+    + $\weight_0 = 0$ on the lunar night-side
+    + $\weight_0 = \dot\source \cdot A \cdot \cos\zenithAngle$ on the day-side
+    + $\dot\source$ source rate of the solar wind (acts as a linear scaling factor of the entire simulation, usually $\approx \SI{2 \times 10^8}{\second\tothe{-1}\centi\metre\tothe{-1}}$)
+  - Second+ iteration: source rate from conversions of previous iteration
+* sum up all $\left(\surfaceNumberDensity\right)_k^{i,j}$ from all $k$ launches at all positions $\,\Rightarrow\left(\vec{\surfaceNumberDensity}\right)^{i,j}$
 :::
 ::::
 
@@ -68,6 +118,7 @@ Some Text
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
 
 
 :::: {.columns}
@@ -76,11 +127,20 @@ Some Text
 :::
 
 ::: {.column}
-Some Text
+
+</br></br></br>
+
+* **Loop II** for each element $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$
+  - save all surface number densities $\left(\vec{\surfaceNumberDensity}\right)^{i,j}$
+  - save all conversions
+* perform multiple iterations until it converges
+  - sum of conversions is reducing each iteration
+  - usually 4-5 iterations are enough to reach $1 \times 10^{-3}$ of the initial source rate
 :::
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
 
 
 :::: {.columns}
@@ -89,6 +149,31 @@ Some Text
 :::
 
 ::: {.column}
+</br>
+
 ![](../imgs/model_architecture/loop_IV.svg){width=75%}
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+
+::: {.column}
+</br>
+
+![](../imgs/model_architecture/loop_IV.svg){width=75%}
+:::
+
+::: {.column}
+
+</br></br></br>
+
+* pure Monte-Carlo loop
+* save all steps
+* postprocessing after the simulation
+  - if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps
 :::
 ::::
