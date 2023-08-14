@@ -518,10 +518,11 @@ Technical University of Munich</p>
 <div class="callout callout-note no-icon callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><i class="fa-solid fa-check" aria-label="check"></i> Goal of the Research</strong></p>
+<p><strong>Goal of the Research</strong></p>
 </div>
 <div class="callout-content">
-<p>Build a framework to show the influence of conversion reactions on the lunar hydrogen exosphere.</p>
+<p><i class="fa-solid fa-check" aria-label="check"></i>   Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions.</p>
+<p><i class="fa-solid fa-xmark" aria-label="xmark"></i>   Not predict the exact density of the lunar exosphere!</p>
 </div>
 </div>
 </div>
@@ -683,8 +684,8 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="the-model-framework-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<section id="the-model-framework-1" class="slide level2">
+<h2>The Model Framework</h2>
 <h4 id="lunar-surface-temperatures">Lunar Surface Temperatures</h4>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -704,14 +705,14 @@ Technical University of Munich</p>
 </div>
 <div class="fragment" data-fragment-index="4">
 <ul>
-<li>Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span>.</li>
+<li>Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2015</a>)</span>.</li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section id="the-model-framework-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<section id="the-model-framework-2" class="slide level2">
+<h2>The Model Framework</h2>
 <h4 id="velocity-distributions">Velocity Distributions</h4>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -729,6 +730,10 @@ Technical University of Munich</p>
 </div>
 </section>
 <section id="the-model-framework-3" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="adsorption-residence-time">Adsorption &amp; Residence Time</h4>
+</section>
+<section id="the-model-framework-4" class="slide level2">
 <h2>The Model Framework</h2>
 <h4 id="conversions">Conversions</h4>
 <div class="columns">
@@ -754,12 +759,12 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="the-model-framework-4" class="slide level2" data-auto-animate="true">
+<section id="the-model-framework-5" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The Model Framework</h2>
 <h4 id="conversions-photoionization-and--dissociation">Conversions – Photoionization and -dissociation</h4>
 <div class="columns">
 <div class="column" style="width:45%;">
-<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references" role="doc-biblioref" onclick="">1992</a>)</span></p>
+<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references-1" role="doc-biblioref" onclick="">1992</a>)</span></p>
 <p><br><br></p>
 <ul>
 <li><span class="fragment highlight-current-blue" data-fragment-index="1">Ionization</span> removes particles from the simulation</li>
@@ -865,7 +870,7 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="the-model-framework-5" class="slide level2" data-auto-animate="true">
+<section id="the-model-framework-6" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The Model Framework</h2>
 <h4 id="conversions-surface-reactions">Conversions – Surface Reactions</h4>
 <p><img data-src="../imgs/crider2002.png" class="shadowbox"></p>
@@ -873,7 +878,7 @@ Technical University of Munich</p>
 <div class="columns">
 <div class="column">
 <ul>
-<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
+<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references-1" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
 <li><p>assumption: the same probabilities are valid for neutral <span class="math inline">\(\ce{H}\)</span>, leading to</p>
 <ul>
 <li><span class="math inline">\(\ce{H -&gt;[60\%] H2}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{H}\)</span> &amp; <span class="math inline">\(\ce{OH}\)</span></span></li>
@@ -883,7 +888,7 @@ Technical University of Munich</p>
 </ul>
 <div class="fragment" data-fragment-index="2">
 <ul>
-<li>reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
+<li>water reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
 </ul>
 </div>
 </div><div class="column">
@@ -901,7 +906,7 @@ Technical University of Munich</p>
 </div>
 </div>
 </section>
-<section id="the-model-framework-6" class="slide level2" data-auto-animate="true">
+<section id="the-model-framework-7" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">The Model Framework</h2>
 <h4 id="conversions-surface-reactions-1">Conversions – Surface Reactions</h4>
 <table>
@@ -1150,15 +1155,88 @@ Technical University of Munich</p>
 </section></section>
 <section>
 
-<section id="results-1" class="slide level2">
+<section id="results-1" class="slide level2" data-transition="fade-in">
 <h2>Results</h2>
 <h4 id="surface-number-density">Surface Number Density</h4>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="r-stack">
+<p><img data-src="../imgs/H_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+<div class="r-stack">
+<p><img data-src="../imgs/OH_1-1.png" height="300"></p>
+<p><img data-src="../imgs/OH_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/OH_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/OH_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+</div><div class="column" style="width:16%;">
+<p><br><br><br><br><br><br><br><br></p>
+<div class="fragment semi-fade-out" data-fragment-index="1">
+<!-- -->
+<h3 id="xi-25"><strong><span class="math inline">\(\xi = 25\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<!-- -->
+<h3 class="fragment semi-fade-out" data-fragment-index="2" id="xi-50"><strong><span class="math inline">\(\xi = 50\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<!-- -->
+<h3 class="fragment semi-fade-out" data-fragment-index="3" id="xi-75"><strong><span class="math inline">\(\xi = 75\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<!-- -->
+<h3 id="xi-100"><strong><span class="math inline">\(\xi = 100\%\)</span></strong></h3>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="r-stack">
+<p><img data-src="../imgs/H2_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H2_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H2_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H2_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+<div class="r-stack">
+<p><img data-src="../imgs/H2O_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H2O_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H2O_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H2O_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="results-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
+<h4 id="surface-number-density-1">Surface Number Density</h4>
 <div width="80%">
 <p><img data-src="../imgs/result-1.png" class="shadowbox" style="width:80.0%"></p>
 </div>
 </section>
-<section id="results-2" class="slide level2">
-<h2>Results</h2>
+<section id="results-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
+<h4 id="surface-number-density-2">Surface Number Density</h4>
+<div class="columns">
+<div class="column">
+<p><br></p>
+<p><img data-src="../imgs/result-1.png" class="shadowbox"></p>
+</div><div class="column">
+<p><br><br></p>
+<p><strong>Main Observations</strong></p>
+<ul>
+<li>Increasing the reactivity <span class="math inline">\(\xi\)</span> decreases <span class="math inline">\(\ce{H}\)</span> densities, but increases <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span> densities</li>
+<li>At low reactivities, <span class="math inline">\(\ce{H}\)</span> and <span class="math inline">\(\ce{H2}\)</span> are dominated by the influence of the solar wind on the day-side</li>
+<li>Both <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span> form a morning-terminator peak due to them adsorbing over night and desorbing in the morning</li>
+<li>With higher reactivities, the morning-terminator peak is also becoming visible in the <span class="math inline">\(\ce{H}\)</span> densities
+<ul>
+<li><span class="math inline">\(\ce{H2}\)</span> is also affected, but much less pronounced <span class="math inline">\(\rightarrow\)</span> dawn-dusk asymmetry</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="results-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
 <h4 id="losses">Losses</h4>
 </section></section>
 
@@ -1175,7 +1253,12 @@ Technical University of Munich</p>
 <p><img data-src="../imgs/lpsc.png" class="absolute" style="top: -30px; right: 60px; height: 1100px; "></p>
 </div>
 </section>
-<section id="references" class="slide level2 smaller scrollable">
+<section class="slide level2">
+
+</section></section>
+<section>
+
+<section id="references-1" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <p><img src="tum.png" class="slide-logo"></p>
 <div class="footer footer-default">

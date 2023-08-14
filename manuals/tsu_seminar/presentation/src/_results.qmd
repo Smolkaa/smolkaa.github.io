@@ -1,9 +1,115 @@
-## Results
+## Results {transition="fade-in"}
+#### Surface Number Density
+
+:::: {.columns}
+
+::: {.column width=42%}
+::: {.r-stack}
+![](../imgs/H_1-1.png){height=300}
+
+![](../imgs/H_2-1.png){.fragment fragment-index=1 height=300}
+
+![](../imgs/H_3-1.png){.fragment fragment-index=2 height=300}
+
+![](../imgs/H_4-1.png){.fragment fragment-index=3 height=300}
+:::
+
+::: {.r-stack}
+![](../imgs/OH_1-1.png){height=300}
+
+![](../imgs/OH_2-1.png){.fragment fragment-index=1 height=300}
+
+![](../imgs/OH_3-1.png){.fragment fragment-index=2 height=300}
+
+![](../imgs/OH_4-1.png){.fragment fragment-index=3 height=300}
+:::
+:::
+
+::: {.column width=16%}
+
+</br></br></br></br></br></br></br></br>
+
+:::  {.fragment fragment-index=1 .semi-fade-out}
+### **$\xi = 25\%$**
+:::
+
+::: {.fragment fragment-index=1 .fade-in}
+### **$\xi = 50\%$** {.fragment fragment-index=2 .semi-fade-out}
+:::
+
+::: {.fragment fragment-index=2 .fade-in}
+### **$\xi = 75\%$** {.fragment fragment-index=3 .semi-fade-out}
+:::
+
+::: {.fragment fragment-index=3 .fade-in}
+### **$\xi = 100\%$**
+:::
+
+
+:::
+
+::: {.column width=42%}
+::: {.r-stack}
+![](../imgs/H2_1-1.png){height=300}
+
+![](../imgs/H2_2-1.png){.fragment fragment-index=1 height=300}
+
+![](../imgs/H2_3-1.png){.fragment fragment-index=2 height=300}
+
+![](../imgs/H2_4-1.png){.fragment fragment-index=3 height=300}
+:::
+
+::: {.r-stack}
+![](../imgs/H2O_1-1.png){height=300}
+
+![](../imgs/H2O_2-1.png){.fragment fragment-index=1 height=300}
+
+![](../imgs/H2O_3-1.png){.fragment fragment-index=2 height=300}
+
+![](../imgs/H2O_4-1.png){.fragment fragment-index=3 height=300}
+:::
+:::
+::::
+
+
+
+
+## Results {auto-animate=true}
 #### Surface Number Density
 
 ::: {width=80%}
 ![](../imgs/result-1.png){.shadowbox width=80%}
 :::
 
-## Results
+
+
+## Results {auto-animate=true}
+#### Surface Number Density
+
+:::: {.columns}
+
+::: {.column}
+</br>
+
+![](../imgs/result-1.png){.shadowbox}
+:::
+
+::: {.column}
+</br></br>
+
+**Main Observations**
+
+* Increasing the reactivity $\xi$ decreases $\ce{H}$ densities, but increases $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$ densities
+* At low reactivities, $\ce{H}$ and $\ce{H2}$ are dominated by the influence of the solar wind on the day-side
+* Both $\ce{OH}$ and $\ce{H2O}$ form a morning-terminator peak due to them adsorbing over night and desorbing in the morning
+* With higher reactivities, the morning-terminator peak is also becoming visible in the $\ce{H}$ densities
+  - $\ce{H2}$ is also affected, but much less pronounced $\rightarrow$ dawn-dusk asymmetry
+:::
+
+::::
+
+
+
+
+## Results {auto-animate=true}
 #### Losses

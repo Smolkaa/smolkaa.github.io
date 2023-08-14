@@ -71,4 +71,5 @@ revealjs-plugins:
 
 ---
 
+# References  {visibility="hidden"}
 ## References

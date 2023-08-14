@@ -5,6 +5,9 @@
 
 ![](../imgs/paper.png){.shadowbox}
 
+
+
+
 ## About the Presentation {auto-animate=true}
 #### The Lunar Exosphere Simulation Framework
 
@@ -35,10 +38,17 @@
 
 ::: {.fragment style="font-size: 1.5em"}
 ::: {.callout-note appearance="minimal" icon=false}
-# {{< fa check >}} Goal of the Research
-Build a framework to show the influence of conversion reactions on the lunar hydrogen exosphere.
+# Goal of the Research
+{{< fa check >}} &ensp; Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions. 
+
+{{< fa xmark >}} &ensp; Not predict the exact density of the lunar exosphere!
 :::
 :::
+
+
+
+
+
 
 ## About the Presentation {transition="fade-in"}
 #### The Lunar Exosphere Simulation Framework -- Why Julia
@@ -83,6 +93,9 @@ Build a framework to show the influence of conversion reactions on the lunar hyd
 ::::
 
 
+
+
+
 ## About the Presentation {auto-animate=true}
 #### The Lunar Exosphere Simulation Framework -- Why Julia
 
@@ -99,6 +112,10 @@ function lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
 end
 ```
 :::
+
+
+
+
 
 
 ## About the Presentation {auto-animate=true}
@@ -131,6 +148,9 @@ end
 
 
 
+
+
+
 ## About the Presentation {auto-animate=true}
 #### The Lunar Exosphere Simulation Framework -- Why Julia
 
@@ -159,6 +179,9 @@ end
 ![](../imgs/hurley2015-2.png){.shadowbox}
 :::
 ::::
+
+
+
 
 
 ## About the Presentation {auto-animate=true}

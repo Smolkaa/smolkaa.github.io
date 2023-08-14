@@ -40,7 +40,7 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 
 
 
-## The Model Framework  {auto-animate=true}
+## The Model Framework 
 #### Lunar Surface Temperatures
 
 :::: {.columns}
@@ -78,7 +78,7 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 
 
 
-## The Model Framework {auto-animate=true}
+## The Model Framework 
 #### Velocity Distributions
 
 :::: {.columns}
@@ -103,6 +103,9 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 
 ::::
 
+
+## The Model Framework
+#### Adsorption & Residence Time
 
 
 
@@ -229,7 +232,7 @@ $$ \rate_{ads} = \begin{cases}\cos \zenithAngle \cdot \rate & \text{for: } \zeni
   - $\ce{H ->[2\%] H2O}$[: recombinative desorption of $\ce{OH}$]{.fragment fragment-index=1}
 
 ::: {.fragment fragment-index=2}
-* reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: $\ce{OH ->[16\%] H2O}$
+* water reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: $\ce{OH ->[16\%] H2O}$
 :::
 
 :::
