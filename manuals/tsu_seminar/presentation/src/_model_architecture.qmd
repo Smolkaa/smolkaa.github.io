@@ -177,3 +177,13 @@
   - if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps
 :::
 ::::
+
+
+::: {.fragment style="font-size: 1.5em"}
+::: {.callout-note appearance="minimal" icon=false}
+# Goal of the Research
+{{< fa check >}} &ensp; Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions. 
+
+{{< fa xmark >}} &ensp; Not predict the exact density of the lunar exosphere!
+:::
+:::

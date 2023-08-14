@@ -527,134 +527,6 @@ Technical University of Munich</p>
 </div>
 </div>
 </div>
-</section>
-<section id="about-the-presentation-2" class="slide level2" data-transition="fade-in">
-<h2>About the Presentation</h2>
-<h4 id="the-lunar-exosphere-simulation-framework-why-julia">The Lunar Exosphere Simulation Framework – Why Julia</h4>
-<p><img data-src="../imgs/julia_benchmark.svg" class="absolute shadowbox" style="top: 150px; left: 0px; width: 875px; "></p>
-<div class="fragment">
-<div class="absolute" style="background: rgba(220, 220, 220, 0.5); padding-left: 10px;top: 250px; left: 100px; width: 550px; ">
-<p><strong>Personal Reasons for Julia:</strong></p>
-<ul>
-<li>Similar to Matlab and Python (easy to learn)</li>
-<li>Great community in the scientific computing field
-<ul>
-<li>especially great ODE solvers</li>
-</ul></li>
-<li>Open-source &amp; easy to get started</li>
-<li>Great for teaching</li>
-</ul>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:72%;">
-
-</div><div class="column" style="width:28%;">
-<p><br></p>
-<p><img data-src="../imgs/julia-logo.svg" width="175"></p>
-<p><br></p>
-<p><strong>Performance and Productivity:</strong></p>
-<ul>
-<li>Julia designed for high-performance computing.</li>
-<li>JIT compilation for near-native speed.</li>
-</ul>
-<p><strong>Versatility and Flexibility:</strong></p>
-<ul>
-<li>Handles simulations, machine learning, and data visualization.</li>
-<li>Extensive libraries available.</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="about-the-presentation-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">About the Presentation</h2>
-<h4 id="the-lunar-exosphere-simulation-framework-why-julia-1">The Lunar Exosphere Simulation Framework – Why Julia</h4>
-<div style="font-size: 1.5em">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
-<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
-<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
-<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
-<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
-<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
-<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>    <span class="cf">end</span></span>
-<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
-<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="about-the-presentation-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">About the Presentation</h2>
-<h4 id="the-lunar-exosphere-simulation-framework-why-julia-2">The Lunar Exosphere Simulation Framework – Why Julia</h4>
-<div style="font-size: 1.5em">
-<div class="sourceCode" id="cb2" data-code-line-numbers="8"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
-<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
-<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
-<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
-<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
-<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
-<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="cf">end</span></span>
-<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
-<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br><br></p>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
-</div><div class="column">
-
-</div>
-</div>
-</section>
-<section id="about-the-presentation-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">About the Presentation</h2>
-<h4 id="the-lunar-exosphere-simulation-framework-why-julia-3">The Lunar Exosphere Simulation Framework – Why Julia</h4>
-<div style="font-size: 1.5em">
-<div class="sourceCode" id="cb3" data-code-line-numbers="3-6"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
-<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
-<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
-<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
-<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
-<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
-<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>    <span class="cf">end</span></span>
-<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
-<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><br><br></p>
-<div class="columns">
-<div class="column">
-<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
-</div><div class="column">
-<p><img data-src="../imgs/hurley2015-2.png" class="shadowbox"></p>
-</div>
-</div>
-</section>
-<section id="about-the-presentation-6" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">About the Presentation</h2>
-<h4 id="the-lunar-exosphere-simulation-framework-why-julia-4">The Lunar Exosphere Simulation Framework – Why Julia</h4>
-<div style="font-size: 1.5em">
-<div class="sourceCode" id="cb4" data-code-line-numbers="|1,10,15,18,21"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
-<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
-<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
-<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
-<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
-<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
-<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>    <span class="cf">end</span></span>
-<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
-<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a><span class="kw">end</span></span>
-<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs<span class="op">::</span><span class="dt">AbstractVector</span>, lats<span class="op">::</span><span class="dt">AbstractVector</span>; matrix<span class="op">=</span><span class="cn">true</span>)</span>
-<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a>    <span class="cf">return</span> matrix ? </span>
-<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng, lat) for lng <span class="kw">in</span> lngs, lat <span class="kw">in</span> lats] <span class="op">:</span></span>
-<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs[i], lats[i]) for i <span class="kw">in</span> <span class="fu">eachindex</span>(lngs)]</span>
-<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a><span class="kw">end</span></span>
-<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs<span class="op">::</span><span class="dt">GlobalSphericalPosition</span>)</span>
-<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs.theta, xs.phi)</span>
-<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a><span class="kw">end</span></span>
-<span id="cb4-18" class="hljs-ln-code"><a href="#cb4-18"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(XS<span class="op">::</span><span class="dt">Vector{GlobalSphericalPosition{T}}</span>) <span class="kw">where</span> {T}</span>
-<span id="cb4-19" class="hljs-ln-code"><a href="#cb4-19"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(XS)</span>
-<span id="cb4-20" class="hljs-ln-code"><a href="#cb4-20"></a><span class="kw">end</span></span>
-<span id="cb4-21" class="hljs-ln-code"><a href="#cb4-21"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(grid<span class="op">::</span><span class="dt">AbstractGrid</span>)</span>
-<span id="cb4-22" class="hljs-ln-code"><a href="#cb4-22"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(<span class="fu">surfacecoords</span>(grid))</span>
-<span id="cb4-23" class="hljs-ln-code"><a href="#cb4-23"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section></section>
 <section>
 
@@ -1177,6 +1049,19 @@ Technical University of Munich</p>
 </ul>
 </div>
 </div>
+<div class="fragment" style="font-size: 1.5em">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Goal of the Research</strong></p>
+</div>
+<div class="callout-content">
+<p><i class="fa-solid fa-check" aria-label="check"></i>   Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions.</p>
+<p><i class="fa-solid fa-xmark" aria-label="xmark"></i>   Not predict the exact density of the lunar exosphere!</p>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 
@@ -1343,10 +1228,6 @@ Technical University of Munich</p>
 
 <section id="references-1" class="slide level2 smaller scrollable">
 <h2>References</h2>
-<p><img src="tum.png" class="slide-logo"></p>
-<div class="footer footer-default">
-<p>Alexander Smolka | Technical University of Munich</p>
-</div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
 <div id="ref-Crider2002" class="csl-entry" role="listitem">
 Crider, D., &amp; Vondrak, R. (2002). Hydrogen migration to the lunar poles by solar wind bombardment of the <span>M</span>oon. <em>Advances in Space Research</em>, <em>30</em>(8), 1869–1874.
@@ -1372,6 +1253,140 @@ Sarantos, M., &amp; Tsavachidis, S. (2020). The boundary of alkali surface bound
 <div id="ref-Teolis2023" class="csl-entry" role="listitem">
 Teolis, B., Sarantos, M., Schorghofer, N., Jones, B., Grava, C., Mura, A., Prem, P., Greenhagen, B., Capria, M. T., Cremonese, G., Lucchetti, A., &amp; Galluzzi, V. (2023). Surface exospheric interactions. <em>Space Science Reviews</em>. <a href="https://doi.org/10.1007/s11214-023-00951-5">https://doi.org/10.1007/s11214-023-00951-5</a>
 </div>
+</div>
+</section></section>
+<section>
+
+<section id="backup-slides-1" class="slide level2" data-transition="fade-in">
+<h2>Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<p><img data-src="../imgs/julia_benchmark.svg" class="absolute shadowbox" style="top: 150px; left: 0px; width: 875px; "></p>
+<div class="fragment">
+<div class="absolute" style="background: rgba(220, 220, 220, 0.5); padding-left: 10px;top: 250px; left: 100px; width: 550px; ">
+<p><strong>Personal Reasons for Julia:</strong></p>
+<ul>
+<li>Similar to Matlab and Python (easy to learn)</li>
+<li>Great community in the scientific computing field
+<ul>
+<li>especially great ODE solvers</li>
+</ul></li>
+<li>Open-source &amp; easy to get started</li>
+<li>Great for teaching</li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:72%;">
+
+</div><div class="column" style="width:28%;">
+<p><br></p>
+<p><img data-src="../imgs/julia-logo.svg" width="175"></p>
+<p><br></p>
+<p><strong>Performance and Productivity:</strong></p>
+<ul>
+<li>Julia designed for high-performance computing.</li>
+<li>JIT compilation for near-native speed.</li>
+</ul>
+<p><strong>Versatility and Flexibility:</strong></p>
+<ul>
+<li>Handles simulations, machine learning, and data visualization.</li>
+<li>Extensive libraries available.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="backup-slides-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-1">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>    <span class="cf">end</span></span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="backup-slides-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-2">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb2" data-code-line-numbers="8"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="cf">end</span></span>
+<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="backup-slides-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-3">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb3" data-code-line-numbers="3-6"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>    <span class="cf">end</span></span>
+<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+<p><img data-src="../imgs/hurley2015-2.png" class="shadowbox"></p>
+</div>
+</div>
+</section>
+<section id="backup-slides-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-4">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb4" data-code-line-numbers="|1,10,15,18,21"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>    <span class="cf">end</span></span>
+<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a><span class="kw">end</span></span>
+<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs<span class="op">::</span><span class="dt">AbstractVector</span>, lats<span class="op">::</span><span class="dt">AbstractVector</span>; matrix<span class="op">=</span><span class="cn">true</span>)</span>
+<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a>    <span class="cf">return</span> matrix ? </span>
+<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng, lat) for lng <span class="kw">in</span> lngs, lat <span class="kw">in</span> lats] <span class="op">:</span></span>
+<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs[i], lats[i]) for i <span class="kw">in</span> <span class="fu">eachindex</span>(lngs)]</span>
+<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a><span class="kw">end</span></span>
+<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs<span class="op">::</span><span class="dt">GlobalSphericalPosition</span>)</span>
+<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs.theta, xs.phi)</span>
+<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a><span class="kw">end</span></span>
+<span id="cb4-18" class="hljs-ln-code"><a href="#cb4-18"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(XS<span class="op">::</span><span class="dt">Vector{GlobalSphericalPosition{T}}</span>) <span class="kw">where</span> {T}</span>
+<span id="cb4-19" class="hljs-ln-code"><a href="#cb4-19"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(XS)</span>
+<span id="cb4-20" class="hljs-ln-code"><a href="#cb4-20"></a><span class="kw">end</span></span>
+<span id="cb4-21" class="hljs-ln-code"><a href="#cb4-21"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(grid<span class="op">::</span><span class="dt">AbstractGrid</span>)</span>
+<span id="cb4-22" class="hljs-ln-code"><a href="#cb4-22"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(<span class="fu">surfacecoords</span>(grid))</span>
+<span id="cb4-23" class="hljs-ln-code"><a href="#cb4-23"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="tum.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Alexander Smolka | Technical University of Munich</p>
 </div>
 </section></section>
     </div>
