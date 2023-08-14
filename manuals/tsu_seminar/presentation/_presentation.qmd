@@ -71,7 +71,6 @@ revealjs-plugins:
 {{< include src/_what_next.qmd >}}
 
 
----
 
 # References  {visibility="hidden"}
 ## References
