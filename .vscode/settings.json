@@ -2,8 +2,7 @@
     "grammarly.selectors": [
         {
             "language": "quarto",
-            "scheme": "file",
-            "pattern": "documentation/math_num_comp/numerical_grids/_global_spiral_2d_grids.qmd"
+            "scheme": "file"
         }
     ]
 }

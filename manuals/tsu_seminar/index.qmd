@@ -27,7 +27,9 @@ draft: true
 ```
 :::
 
-The following is showing the tex-figures and examples used during the TSU presentation.
+See the presentation [here](./presentation/_presentation.html).
+
+# Images and Tables
 
 ## Numerical Grid
 {{< include _numerical_grid.qmd >}}

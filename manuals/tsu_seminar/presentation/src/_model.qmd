@@ -9,7 +9,7 @@
 ::: {.column width=35%}
 **Structured, Two-Dimensional, Surface Grid**
 
-The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub-solar coordinate system with $\left(0,0\right)$ at the sub-solar point, at noon $12\text{h}$ local time.
+The grid assumes a perfectly spherical Moon. Its coordinates are given in a sub-solar coordinate system with $\left(0,0\right)$ at the sub-solar point, at noon $12\text{h}$ local time.
 
 </br></br>
 
@@ -19,7 +19,7 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 
 {{< fa plus >}} &ensp; easy to interpolate on
 
-{{< fa plus >}} &ensp; analytic solution to mapping a continous point to its discrete grid element
+{{< fa plus >}} &ensp; analytic solution to mapping a continuous point to its discrete grid element
 :::
 
 </br></br>
@@ -104,8 +104,39 @@ The grid assumes a perfectly spherical Moon. It's coordinates are given in a sub
 ::::
 
 
+
+
 ## The Model Framework
 #### Adsorption & Residence Time
+
+:::: {.columns}
+
+::: {.column}
+![](../imgs/adsorption.png){height=380}
+
+* from @Teolis2023
+* particles are thermally (first order) adsorbed to the surface
+  - residence time as statistical time-scale for desorption: $\qquad\residenceTime = \frac{\PlanckConstant}{\BoltzmannConstant\temperature}\cdot\exp\left(\frac{\energy}{\GasConstant\temperature}\right)$
+* physisorption requires less energy than chemisorption
+:::
+
+::: {.column}
+::: {.fragment fragment-index=2}
+![](../imgs/residence_time.png)
+:::
+
+::: {.fragment fragment-index=1}
+* $\energy_{\ce{H}} = \energy_{\ce{H2}} = 0$  [@Hodges1973]
+* $\energy_{\ce{OH}, min} = 6.75 \times 10^{4} \si{\joule\per\mole}$, $\energy_{\ce{OH}, max} = 11.58 \times 10^{4} \si{\joule\per\mole}$ 
+* $\energy_{\ce{H2O}, min} = 6.08 \times 10^{4} \si{\joule\per\mole}$, $\energy_{\ce{H2O}, max} = 8.68 \times 10^{4} \si{\joule\per\mole}$ 
+* see @Grumpe2019, @Sarantos2020, @Reiss2018
+:::
+:::
+
+
+
+::::
+
 
 
 

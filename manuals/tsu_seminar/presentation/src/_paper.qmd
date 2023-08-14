@@ -21,7 +21,7 @@
 * Implementation in Julia Language
 * Quasi-steady 2D model
 * Neutral exosphere of $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$
-* Solar wind as the only source of hydrogen atoms
+* Solar wind is the only source of hydrogen atoms
 * Conversion reactions to connect the different species
 * All relevant processes included as distributions
 
@@ -44,9 +44,6 @@
 {{< fa xmark >}} &ensp; Not predict the exact density of the lunar exosphere!
 :::
 :::
-
-
-
 
 
 
@@ -87,7 +84,7 @@
 
 **Versatility and Flexibility:**
 
-* Handles simulations, machine learning, data visualization.
+* Handles simulations, machine learning, and data visualization.
 * Extensive libraries available.
 :::
 ::::

@@ -24,6 +24,7 @@
 \newcommand{\watt}{W}
 \newcommand{\percent}{\%}
 \newcommand{\electronvolt}{eV}
+\newcommand{\mole}{mol}
 
 \newcommand{\centi}{c}
 \newcommand{\kilo}{k}

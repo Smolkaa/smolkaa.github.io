@@ -505,7 +505,7 @@ Technical University of Munich</p>
 <li>Implementation in Julia Language</li>
 <li>Quasi-steady 2D model</li>
 <li>Neutral exosphere of <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
-<li>Solar wind as the only source of hydrogen atoms</li>
+<li>Solar wind is the only source of hydrogen atoms</li>
 <li>Conversion reactions to connect the different species</li>
 <li>All relevant processes included as distributions</li>
 </ul>
@@ -560,7 +560,7 @@ Technical University of Munich</p>
 </ul>
 <p><strong>Versatility and Flexibility:</strong></p>
 <ul>
-<li>Handles simulations, machine learning, data visualization.</li>
+<li>Handles simulations, machine learning, and data visualization.</li>
 <li>Extensive libraries available.</li>
 </ul>
 </div>
@@ -665,13 +665,13 @@ Technical University of Munich</p>
 <div class="columns">
 <div class="column" style="width:35%;">
 <p><strong>Structured, Two-Dimensional, Surface Grid</strong></p>
-<p>The grid assumes a perfectly spherical Moon. It’s coordinates are given in a sub-solar coordinate system with <span class="math inline">\(\left(0,0\right)\)</span> at the sub-solar point, at noon <span class="math inline">\(12\text{h}\)</span> local time.</p>
+<p>The grid assumes a perfectly spherical Moon. Its coordinates are given in a sub-solar coordinate system with <span class="math inline">\(\left(0,0\right)\)</span> at the sub-solar point, at noon <span class="math inline">\(12\text{h}\)</span> local time.</p>
 <p><br><br></p>
 <div class="fragment">
 <div style="line-height: 30px;">
 <p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to set up</p>
 <p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to interpolate on</p>
-<p><i class="fa-solid fa-plus" aria-label="plus"></i>   analytic solution to mapping a continous point to its discrete grid element</p>
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   analytic solution to mapping a continuous point to its discrete grid element</p>
 </div>
 <p><br><br></p>
 <div style="line-height: 10px;">
@@ -732,6 +732,31 @@ Technical University of Munich</p>
 <section id="the-model-framework-3" class="slide level2">
 <h2>The Model Framework</h2>
 <h4 id="adsorption-residence-time">Adsorption &amp; Residence Time</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/adsorption.png" height="380"></p>
+<ul>
+<li>from <span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2023</a>)</span></li>
+<li>particles are thermally (first order) adsorbed to the surface
+<ul>
+<li>residence time as statistical time-scale for desorption: <span class="math inline">\(\qquad\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
+</ul></li>
+<li>physisorption requires less energy than chemisorption</li>
+</ul>
+</div><div class="column">
+<div class="fragment" data-fragment-index="2">
+<p><img data-src="../imgs/residence_time.png"></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><span class="math inline">\(E_{\ce{H}} = E_{\ce{H2}} = 0\)</span> <span class="citation" data-cites="Hodges1973">(<a href="#/references-1" role="doc-biblioref" onclick="">Hodges et al., 1973</a>)</span></li>
+<li><span class="math inline">\(E_{\ce{OH}, min} = 6.75 \times 10^{4} \,\mathrm{J/mol}\)</span>, <span class="math inline">\(E_{\ce{OH}, max} = 11.58 \times 10^{4} \,\mathrm{J/mol}\)</span></li>
+<li><span class="math inline">\(E_{\ce{H2O}, min} = 6.08 \times 10^{4} \,\mathrm{J/mol}\)</span>, <span class="math inline">\(E_{\ce{H2O}, max} = 8.68 \times 10^{4} \,\mathrm{J/mol}\)</span></li>
+<li>see <span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2019</a>)</span>, <span class="citation" data-cites="Sarantos2020">Sarantos &amp; Tsavachidis (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span>, <span class="citation" data-cites="Reiss2018">Reiss (<a href="#/references-1" role="doc-biblioref" onclick="">2018</a>)</span></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="the-model-framework-4" class="slide level2">
 <h2>The Model Framework</h2>
@@ -1238,6 +1263,64 @@ Technical University of Munich</p>
 <section id="results-4" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Results</h2>
 <h4 id="losses">Losses</h4>
+<p><img data-src="../imgs/losses.png" class="shadowbox"></p>
+<div class="fragment" data-fragment-index="1">
+<p><span class="absolute" style="background: rgba(255, 255, 255, 0.7); padding-left: 10px;top: 120px; left: 775px; width: 425px; height: 270px; "></span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div class="fragment fade-out" data-fragment-index="2">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 190px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<div class="fragment fade-out" data-fragment-index="3">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 240px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<div class="fragment fade-out" data-fragment-index="4">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 290px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="4">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 340px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+<div class="columns">
+<div class="column">
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><span class="math inline">\(\ce{H}\)</span> is only lost in the exosphere</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to fewer <span class="math inline">\(\ce{H}\)</span> losses</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><span class="math inline">\(\ce{H2}\)</span> is only lost in the exosphere</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{H2}\)</span> losses</li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><span class="math inline">\(\ce{OH}\)</span> is mainly lost as adsorbates on the lunar surface</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{OH}\)</span> losses
+<ul>
+<li>the ratio between exospheric and adsorbate losses stays <em>roughly</em> constant at 1:10</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li><span class="math inline">\(\ce{H2O}\)</span> is mainly lost as adsorbates on the lunar surface</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{H2O}\)</span> losses
+<ul>
+<li>the ratio between exospheric and adsorbate losses stays <em>roughly</em> constant at 1:10</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 </section></section>
 
 
@@ -1268,11 +1351,26 @@ Technical University of Munich</p>
 <div id="ref-Crider2002" class="csl-entry" role="listitem">
 Crider, D., &amp; Vondrak, R. (2002). Hydrogen migration to the lunar poles by solar wind bombardment of the <span>M</span>oon. <em>Advances in Space Research</em>, <em>30</em>(8), 1869–1874.
 </div>
+<div id="ref-Grumpe2019" class="csl-entry" role="listitem">
+Grumpe, A., Wöhler, C., Berezhnoy, A. A., &amp; Shevchenko, V. V. (2019). Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling. <em>Icarus</em>, <em>321</em>, 486–507. <a href="https://doi.org/10.1016/j.icarus.2018.11.025">https://doi.org/10.1016/j.icarus.2018.11.025</a>
+</div>
+<div id="ref-Hodges1973" class="csl-entry" role="listitem">
+Hodges, R. R. Jr., Hoffman, J. H., &amp; Johnson, F. S. (1973). Composition and dynamics of lunar atmosphere. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2855–2864.
+</div>
 <div id="ref-Huebner1992" class="csl-entry" role="listitem">
 Huebner, W., Keady, J., &amp; Lyon, S. (1992). Solar photo rates for planetary atmospheres and atmospheric pollutants. <em>Astrophysics and Space Science</em>, <em>195</em>, 1–294.
 </div>
 <div id="ref-Hurley2015" class="csl-entry" role="listitem">
 Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Siegler, M., Greenhagen, B., &amp; Paige, D. (2015). An analytic function of lunar surface temperature for exospheric modeling. <em>Icarus</em>, <em>255</em>, 159–163. <a href="https://doi.org/10.1016/j.icarus.2014.08.043">https://doi.org/10.1016/j.icarus.2014.08.043</a>
+</div>
+<div id="ref-Reiss2018" class="csl-entry" role="listitem">
+Reiss, P. (2018). A combined model of heat and mass transfer for the in situ extraction of volatile water from lunar regolith. <em>Icarus</em>, <em>306</em>(Germany), 1–15. <a href="https://doi.org/10.1016/j.icarus.2018.01.020">https://doi.org/10.1016/j.icarus.2018.01.020</a>
+</div>
+<div id="ref-Sarantos2020" class="csl-entry" role="listitem">
+Sarantos, M., &amp; Tsavachidis, S. (2020). The boundary of alkali surface boundary exospheres of mercury and the moon. <em>Geophysical Research Letters</em>, <em>47</em>(16). <a href="https://doi.org/10.1029/2020gl088930">https://doi.org/10.1029/2020gl088930</a>
+</div>
+<div id="ref-Teolis2023" class="csl-entry" role="listitem">
+Teolis, B., Sarantos, M., Schorghofer, N., Jones, B., Grava, C., Mura, A., Prem, P., Greenhagen, B., Capria, M. T., Cremonese, G., Lucchetti, A., &amp; Galluzzi, V. (2023). Surface exospheric interactions. <em>Space Science Reviews</em>. <a href="https://doi.org/10.1007/s11214-023-00951-5">https://doi.org/10.1007/s11214-023-00951-5</a>
 </div>
 </div>
 </section></section>
