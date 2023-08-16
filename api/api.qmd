@@ -11,17 +11,17 @@ The `ExESS` package is structured into four main parts, which are the four main 
 
 ```jl
 ExESS/  
-├─ data/  
-├─ res/  
-├─ src/  
-│  ├─ base/  
-│  ├─ exospheres/  
-│  ├─ grids/  
-│  ├─ surfaces/  
-│  └─ ExESS.jl  
-├─ test/  
-├─ . . .  
-└─ README.md  
+├── data/  
+├── res/  
+├── src/  
+│  ├── base/  
+│  ├── exospheres/  
+│  ├── grids/  
+│  ├── surfaces/  
+│  └── ExESS.jl  
+├── test/  
+├── . . .  
+└── README.md  
 ```
 
 ## Source Files
