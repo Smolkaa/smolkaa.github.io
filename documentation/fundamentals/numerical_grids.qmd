@@ -15,7 +15,7 @@ Some introduction text...
 $\mathbb{S}^2$
 
 
-##  Structured {#sec-structured-2d-grids}
+## Structured {#sec-structured_2d_grids}
 {{< include /documentation/fundamentals/numerical_grids/_global_structured_2d_grids.qmd >}}
 
 ## Structured, Reduced

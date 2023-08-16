@@ -1,0 +1,14 @@
+---
+title: "Presentation & Videos"
+listing:
+  categories: true
+  contents:
+    - "*/*.qmd"
+  type: default
+  sort: "title asc"
+  sort-ui: [title, date]
+  filter-ui: [title, date]
+  
+page-navigation: true
+---
+---

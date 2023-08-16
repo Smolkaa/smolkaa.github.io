@@ -7,7 +7,7 @@
 
 ### Coordinate Calculation
 
-The generation of such points firstly requires a division of the sphere into twelve equal area, four sided pixels. These areas are defined through the following boundaries:
+The generation of such points firstly requires a division of the sphere into twelve equal-area, four-sided pixels. These areas are defined through the following boundaries:
 \begin{align}
     |\cos\sphericalCoordinateElevation| > \frac{2}{3}, & \qquad \sphericalCoordinateAzimuth = m\frac{\pi}{2},\\
     \cos\sphericalCoordinateElevation = \frac{-2-4m}{3} + \frac{8\sphericalCoordinateAzimuth}{3\pi}, & \qquad \frac{m\pi}{2} \leq \sphericalCoordinateAzimuth \leq \frac{(m+1)\pi}{2}, \\

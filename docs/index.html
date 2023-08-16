@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./presentations/presentations.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./api/api.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
   </li>  
@@ -179,7 +183,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Extraterrestrial Exosphere and Surface Simulations</h2>
    
   <ul>
-  <li><a href="#home" id="toc-home" class="nav-link active" data-scroll-target="#home">Home</a></li>
+  <li><a href="#home" id="toc-home" class="nav-link active" data-scroll-target="#home">Home</a>
+  <ul class="collapse">
+  <li><a href="#news" id="toc-news" class="nav-link" data-scroll-target="#news">News</a></li>
+  </ul></li>
   <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
   <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
   </ul>
@@ -208,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 11, 2023</p>
+      <p class="date-modified">August 15, 2023</p>
     </div>
   </div>
     
@@ -221,6 +228,12 @@ ul.task-list li input[type="checkbox"] {
 <p>This website is still under construction! <i class="fa-solid fa-wrench" aria-label="wrench"></i></p>
 <section id="home" class="level2">
 <h2 class="anchored" data-anchor-id="home">Home</h2>
+<section id="news" class="level3">
+<h3 class="anchored" data-anchor-id="news">News</h3>
+<ul>
+<li><strong>2023-08-15:</strong>   <a href="./presentations/tsu_seminar/index.html">Presentation</a> at the Taiwan Space Union’s Mini-Moon Seminar Series.</li>
+</ul>
+</section>
 </section>
 <section id="author" class="level2">
 <h2 class="anchored" data-anchor-id="author">Author</h2>
@@ -508,7 +521,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 

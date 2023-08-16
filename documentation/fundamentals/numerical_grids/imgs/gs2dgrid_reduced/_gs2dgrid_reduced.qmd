@@ -6,7 +6,7 @@
 ::: {#fig-gs2dgrid_reduced}
 ![](/documentation/fundamentals/numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.svg){width="1200px"}
 
-Global, structured, reduced, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e. radius $\sphericalCoordinateRadius$.
+Global, structured, reduced, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e., radius $\sphericalCoordinateRadius$.
 :::
 
 # {{< fa code >}} Julia
@@ -167,9 +167,9 @@ end
 		\node[below right = -5.5 and -10 of proj] (3d) {\includegraphics[natwidth=400px, natheight=400px, trim={0 30pt 0 0}, clip]{./gs2dgrid_reduced_3d.pdf}};
 	\end{pgfonlayer}
 
-	\draw[-latex, very thick] ($(3d.90)+(0,-3)$) to [in=0, out=90] node[near end, above, yshift=40px]{\LARGE{spherical projection}} ($(2d.0)+(-4,0)$) ;
+	\draw[-latex, very thick] ($(3d.90)+(0,-3)$) to [in=0, out=90] node[near end, above, yshift=40px]{\LARGE{spherical projection}} ($(2d.0)+(-4,0)$);
 	
-	\draw[-latex, very thick] (2d.220) to [in=180, out=270] node[near end, below, yshift=-30px]{\LARGE{cartesian projection}} (3d.190) ;
+	\draw[-latex, very thick] (2d.220) to [in=180, out=270] node[near end, below, yshift=-30px]{\LARGE{cartesian projection}} (3d.190);
 
 \end{tikzpicture}
 ```

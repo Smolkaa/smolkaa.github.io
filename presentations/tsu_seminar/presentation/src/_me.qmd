@@ -1,0 +1,38 @@
+## About Me
+
+:::: {.columns}
+::: {.column width=60%}
+</br></br>
+**M.Sc. Alexander Smolka**
+
+> Professorship of Lunar and Planetary Exploration Technologies  
+> TUM School of Engineering and Design  
+> Technical University of Munich  
+
+::: {.fragment fragment-index=1}
+::: {.fragment fragment-index=2 .semi-fade-out}
+::: {.callout-note appearance="minimal" icon=false}
+# {{< fa graduation-cap >}} &ensp; Education 
+* B.Sc. Mechanical Engineering, RWTH Aachen University
+* M.Sc. Aerospace, Technical University of Munich (TUM)
+:::
+:::
+:::
+
+
+::: {.fragment fragment-index=2}
+
+::: {.callout-note appearance="minimal" icon=false}
+# {{< fa microscope >}} &ensp; Doctorate
+* Research Assistant at the Professorship of Lunar and Planetary Exploration Technologies, TUM
+* Research Topic: Investigation of Surface-Bounded Exospheres and their Surface Interaction
+:::
+:::
+
+:::
+
+::: {.column width=40%}
+:::
+
+::::
+![](/resources/imgs/me_gray.jpg){.absolute top=50 right=75 height=80%}

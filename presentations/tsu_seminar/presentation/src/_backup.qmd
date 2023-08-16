@@ -1,0 +1,392 @@
+
+
+
+
+## Backup Slides {transition="fade-in"}
+#### The Lunar Exosphere Simulation Framework -- Why Julia
+
+![](../imgs/julia_benchmark.svg){.absolute .shadowbox top=150 left=0 width=875}
+
+::: {.fragment}
+::: {.absolute top=250 left=100 width=550 style="background: rgba(220, 220, 220, 0.5); padding-left: 10px;"}
+**Personal Reasons for Julia:**
+
+* Similar to Matlab and Python (easy to learn)
+* Great community in the scientific computing field
+  - especially great ODE solvers
+* Open-source & easy to get started
+* Great for teaching
+:::
+:::
+
+:::: {.columns}
+::: {.column width=72%}
+:::
+
+::: {.column width=28%}
+
+</br>
+
+![](../imgs/julia-logo.svg){width=175}
+
+</br>
+
+**Performance and Productivity:**
+
+* Julia designed for high-performance computing.
+* JIT compilation for near-native speed.
+
+
+**Versatility and Flexibility:**
+
+* Handles simulations, machine learning, and data visualization.
+* Extensive libraries available.
+:::
+::::
+
+
+
+
+
+## Backup Slides {auto-animate=true}
+#### The Lunar Exosphere Simulation Framework -- Why Julia
+
+::: {style="font-size: 1.5em"}
+```{.julia}
+function lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
+    if abs(lng) >= pi/2
+        a = [444.738, -448.937, 239.668, -63.8844, 8.34064, -0.423502]
+        if lng < 0; lng += 2pi; end
+        colat = -(lat - pi/2)
+        return sum([a[i] * lng^(i-1) for i in 1:6]) + 35 * (sin(colat)-1) 
+    end
+    return 262*(cos(lng) * cos(lat))^(1/2) + 130
+end
+```
+:::
+
+
+
+
+
+
+## Backup Slides {auto-animate=true}
+#### The Lunar Exosphere Simulation Framework -- Why Julia
+
+::: {style="font-size: 1.5em"}
+```{.julia code-line-numbers="8"}
+function lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
+    if abs(lng) >= pi/2
+        a = [444.738, -448.937, 239.668, -63.8844, 8.34064, -0.423502]
+        if lng < 0; lng += 2pi; end
+        colat = -(lat - pi/2)
+        return sum([a[i] * lng^(i-1) for i in 1:6]) + 35 * (sin(colat)-1) 
+    end
+    return 262*(cos(lng) * cos(lat))^(1/2) + 130
+end
+```
+:::
+
+</br></br>
+
+:::: {.columns}
+::: {.column}
+![](../imgs/hurley2015-1.png){.shadowbox}
+:::
+
+::: {.column}
+:::
+::::
+
+
+
+
+
+
+## Backup Slides {auto-animate=true}
+#### The Lunar Exosphere Simulation Framework -- Why Julia
+
+::: {style="font-size: 1.5em"}
+```{.julia code-line-numbers="3-6"}
+function lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
+    if abs(lng) >= pi/2
+        a = [444.738, -448.937, 239.668, -63.8844, 8.34064, -0.423502]
+        if lng < 0; lng += 2pi; end
+        colat = -(lat - pi/2)
+        return sum([a[i] * lng^(i-1) for i in 1:6]) + 35 * (sin(colat)-1) 
+    end
+    return 262*(cos(lng) * cos(lat))^(1/2) + 130
+end
+```
+:::
+
+</br></br>
+
+:::: {.columns}
+::: {.column}
+![](../imgs/hurley2015-1.png){.shadowbox}
+:::
+
+::: {.column}
+![](../imgs/hurley2015-2.png){.shadowbox}
+:::
+::::
+
+
+
+
+
+## Backup Slides {auto-animate=true}
+#### The Lunar Exosphere Simulation Framework -- Why Julia
+
+::: {style="font-size: 1.5em"}
+```{.julia code-line-numbers="|1,10,15,18,21"}
+function lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
+    if abs(lng) >= pi/2
+        a = [444.738, -448.937, 239.668, -63.8844, 8.34064, -0.423502]
+        if lng < 0; lng += 2pi; end
+        colat = -(lat - pi/2)
+        return sum([a[i] * lng^(i-1) for i in 1:6]) + 35 * (sin(colat)-1) 
+    end
+    return 262*(cos(lng) * cos(lat))^(1/2) + 130
+end
+function lunar_surface_temperatures_HURLEY2015(lngs::AbstractVector, lats::AbstractVector; matrix=true)
+    return matrix ? 
+        [lunar_surface_temperatures_HURLEY2015(lng, lat) for lng in lngs, lat in lats] :
+        [lunar_surface_temperatures_HURLEY2015(lngs[i], lats[i]) for i in eachindex(lngs)]
+end
+function lunar_surface_temperatures_HURLEY2015(xs::GlobalSphericalPosition)
+    return lunar_surface_temperatures_HURLEY2015(xs.theta, xs.phi)
+end
+function lunar_surface_temperatures_HURLEY2015(XS::Vector{GlobalSphericalPosition{T}}) where {T}
+    return lunar_surface_temperatures_HURLEY2015.(XS)
+end
+function lunar_surface_temperatures_HURLEY2015(grid::AbstractGrid)
+    return lunar_surface_temperatures_HURLEY2015.(surfacecoords(grid))
+end
+```
+:::
+
+
+
+
+## Model Architecture {auto-animate=true}
+#### Nested-Loop Monte-Carlo Simulation
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_I.svg){width=90%}
+:::
+
+::: {.column}
+
+::: {.fragment}
+* $\left(\surfaceNumberDensity\right)_k^{i,j}$: Surface number density of the $i$-th Monte-Carlo step, the $j$-th iteration, at the $k$-th grid element
+* Updating of the surface number density: $\left(\surfaceNumberDensity\right)_k^{i,j} \mathrel{{+}{=}} \frac{\weight}{\area\velocity_z}$
+  - $\weight$: current weight of the particle
+  - $\area$: area of the grid element at the current position
+  - $\velocity_z$: vertical velocity of the particle
+:::
+
+</br>
+
+::: {.fragment}
+* Updating the particle weight:
+  - rate losses: $\weight \mapsto \weight \cdot \left(1 - \exp\left(-\rate\Time\right)\right)$
+    - time-of-flight: $\Time_f$, or 
+    - residence time: $\residenceTime = \frac{\PlanckConstant}{\BoltzmannConstant\temperature}\cdot\exp\left(\frac{\energy}{\GasConstant\temperature}\right)$
+  - probability losses: $\weight \mapsto \weight \cdot \left(1 - \sum p \right)$
+  - escape or cold trapping: $\weight \mapsto 0.0$
+:::
+:::
+::::
+
+
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_I.svg){width=90%}
+:::
+
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+::::
+
+
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+
+::: {.column}
+
+</br></br></br>
+
+* intialization of particles at every grid element
+  - $\weight_0$: initial weight at launch
+  - First iteration: solar wind as only source
+    + $\weight_0 = 0$ on the lunar night-side
+    + $\weight_0 = \dot\source \cdot A \cdot \cos\zenithAngle$ on the day-side
+    + $\dot\source$ source rate of the solar wind (acts as a linear scaling factor of the entire simulation, usually $\approx \SI{2 \times 10^8}{\second\tothe{-1}\centi\metre\tothe{-1}}$)
+  - Second+ iteration: source rate from conversions of previous iteration
+* sum up all $\left(\surfaceNumberDensity\right)_k^{i,j}$ from all $k$ launches at all positions $\,\Rightarrow\left(\vec{\surfaceNumberDensity}\right)^{i,j}$
+:::
+::::
+
+
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_II.svg){width=80%}
+:::
+
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+::::
+
+
+
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+
+::: {.column}
+
+</br></br></br>
+
+* **Loop II** for each element $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$
+  - save all surface number densities $\left(\vec{\surfaceNumberDensity}\right)^{i,j}$
+  - save all conversions
+* perform multiple iterations until it converges
+  - sum of conversions is reducing each iteration
+  - usually 4-5 iterations are enough to reach $1 \times 10^{-3}$ of the initial source rate
+:::
+::::
+
+
+
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+::: {.column}
+![](../imgs/model_architecture/loop_III.svg){width=75%}
+:::
+
+::: {.column}
+</br>
+
+![](../imgs/model_architecture/loop_IV.svg){width=75%}
+:::
+::::
+
+## Model Architecture {auto-animate=true transition="fade-in"}
+#### Nested-Loop Monte-Carlo Simulation
+
+
+:::: {.columns}
+
+::: {.column}
+</br>
+
+![](../imgs/model_architecture/loop_IV.svg){width=75%}
+:::
+
+::: {.column}
+
+</br></br></br>
+
+* pure Monte-Carlo loop
+* save all steps
+* postprocessing after the simulation
+  - if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps
+:::
+::::
+
+
+
+## Results {auto-animate=true}
+#### Losses
+
+![](../imgs/losses.png){.shadowbox}
+
+::: {.fragment fragment-index=1}
+[]{.absolute top=120 left=775 width=425 height=270 style="background: rgba(255, 255, 255, 0.7); padding-left: 10px;"}
+:::
+
+::: {.fragment .fade-in fragment-index=1}
+::: {.fragment .fade-out fragment-index=2}
+[]{.absolute top=190 left=10 width=730 height=48 style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;"}
+:::
+:::
+
+::: {.fragment .fade-in fragment-index=2}
+::: {.fragment .fade-out fragment-index=3}
+[]{.absolute top=240 left=10 width=730 height=48 style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;"}
+:::
+:::
+
+::: {.fragment .fade-in fragment-index=3}
+::: {.fragment .fade-out fragment-index=4}
+[]{.absolute top=290 left=10 width=730 height=48 style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;"}
+:::
+:::
+
+::: {.fragment .fade-in fragment-index=4}
+[]{.absolute top=340 left=10 width=730 height=48 style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;"}
+:::
+
+:::: {.columns}
+
+::: {.column}
+::: {.fragment fragment-index=1}
+* $\ce{H}$ is only lost in the exosphere
+* higher $\xi$ lead to fewer $\ce{H}$ losses
+:::
+
+</br>
+
+::: {.fragment fragment-index=2}
+* $\ce{H2}$ is only lost in the exosphere
+* higher $\xi$ lead to increased $\ce{H2}$ losses
+:::
+:::
+
+::: {.column}
+::: {.fragment fragment-index=3}
+* $\ce{OH}$ is mainly lost as adsorbates on the lunar surface
+* higher $\xi$ lead to increased $\ce{OH}$ losses
+  - the ratio between exospheric and adsorbate losses stays _roughly_ constant at 1:10
+:::
+
+::: {.fragment fragment-index=4}
+* $\ce{H2O}$ is mainly lost as adsorbates on the lunar surface
+* higher $\xi$ lead to increased $\ce{H2O}$ losses
+  - the ratio between exospheric and adsorbate losses stays _roughly_ constant at 1:10
+:::
+:::
+
+::::

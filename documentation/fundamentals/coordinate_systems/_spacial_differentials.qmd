@@ -1,4 +1,4 @@
-This work is regularly relying on vector calculus which includes a substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.
+This work regularly relies on vector calculus, including substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.
 
 \begin{align}
     \frac{\partial}{\partial\Time} &= 0, \\
@@ -18,7 +18,7 @@ and for spherical coordinates and elements
     d\sphericalCoordinate = \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateRadius}d\sphericalCoordinateRadius + \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateAzimuth}d\sphericalCoordinateAzimuth + \frac{\partial\sphericalCoordinate}{\partial\sphericalCoordinateElevation}d\sphericalCoordinateElevation = d\sphericalCoordinateRadius \sphericalBaseVectorRadius + d\sphericalCoordinateAzimuth \sphericalBaseVectorAzimuth + d\sphericalCoordinateElevation \sphericalBaseVectorElevation = \begin{bmatrix} d\sphericalCoordinateRadius \\ d\sphericalCoordinateAzimuth \\ d\sphericalCoordinateElevation \end{bmatrix}.
 \end{equation}
 
-The above total differentials are relatively simple to set up since their respective partial differentials cancel out to only contain one variable each. However, the differentials for the cartesian vector in spherical elements and the spherical vector in cartesian elements are more complicated, with the former differential given by
+The above total differentials are relatively simple to set up since their partial differentials cancel out to only contain one variable each. However, the differentials for the cartesian vector in spherical elements and the spherical vector in cartesian elements are more complicated, with the former differential given by
 
 \begin{align}
     d\cartesianCoordinate &= \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateRadius}d\sphericalCoordinateRadius + \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateAzimuth}d\sphericalCoordinateAzimuth + \frac{\partial\cartesianCoordinate}{\partial\sphericalCoordinateElevation}d\sphericalCoordinateElevation \\

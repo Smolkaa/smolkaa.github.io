@@ -5,12 +5,12 @@ Points on a spherical surface $\mathbb{S}^2$ which form a path in the form of a 
     \sphericalCoordinateAzimuth=L\sphericalCoordinateElevation, \qquad 0 \leq \sphericalCoordinateElevation \leq \pi
 \end{equation}
 with the polar angle $\sphericalCoordinateElevation$ and the azimuth $\sphericalCoordinateAzimuth$, or the latitude and longitude, respectively [@Hardin2016]. The factor $L$ gives the slope of the spiral. One generation method of $N$ points defines the two spherical coordinates as
-\begin{aligned}
+\begin{align}
     L =& \; \sqrt{N\pi}, \\
     h_k =& \; 1 -\frac{2k-1}{N}, \\ 
     \sphericalCoordinateElevation_k =& \; \cos^{-1}(h_k), \\
     \sphericalCoordinateAzimuth_k =& \; L\sphericalCoordinateElevation_k 
-\end{aligned}
+\end{align}
 for $k = 1,\dots, N$, where the slope $L$ is chosen in order to equalize the distance between adjacent points on the same level of the spiral and points on adjacent levels which differ by $2\pi$ in $\sphericalCoordinateAzimuth$ [@Hardin2016].
 
 

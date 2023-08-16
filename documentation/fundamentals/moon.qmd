@@ -1,7 +1,5 @@
 ---
 title: "2.5 The Moon"
-format:
-  html: default
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
@@ -9,7 +7,7 @@ format:
 
 ---
 
-Some intro text...
+Some intro text
 
 # Lunar Orbit Orientation
 {{< include /documentation/fundamentals/moon/_lunar_orbit_orientation.qmd >}}

@@ -9,6 +9,9 @@ This website is still under construction! {{< fa wrench >}}
 
 ## Home
 
+### News
+
+* **2023-08-15:** &ensp; [Presentation](/presentations/tsu_seminar/index.qmd) at the Taiwan Space Union's Mini-Moon Seminar Series.
 
 ## Author
 

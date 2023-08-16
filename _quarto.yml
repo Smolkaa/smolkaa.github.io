@@ -28,6 +28,8 @@ website:
         href: documentation/documentation.qmd
       - text: "{{< fa bookmark >}} Manuals & Examples"
         href: manuals/manuals.qmd
+      - text: "{{< fa tv >}} Presentations & Videos"
+        href: presentations/presentations.qmd
       - text: "{{< fa code >}} Code"
         href: api/api.qmd
     right:
@@ -82,7 +84,14 @@ website:
 
     - title: "Manuals & Examples"
       contents:
-        - manuals/manuals.qmd
+        - text: " " 
+          href: manuals/manuals.qmd
+
+
+    - title: "Presentations & Videos"
+      contents:
+        - text: " " 
+          href: presentations/presentations.qmd
 
 
     - title: "Code"

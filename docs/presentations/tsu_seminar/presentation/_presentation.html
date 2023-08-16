@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="_presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_presentation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="_presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="_presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="_presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="_presentation_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="_presentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="_presentation_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.3.433">
+
+  <title>Extraterrestrial Exosphere and Surface Simulation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="_presentation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="_presentation_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="_presentation_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="_style.css">
+  <link href="_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="_presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="_presentation_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="_presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script>
+      MathJax = { 
+          tex: { 
+              tags: 'ams',  // should be 'ams', 'none', or 'all' 
+          }
+      };
+  </script>
+
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          TeX: {
+              extensions: ["mhchem.js", "glossaries.jl"],
+            }
+        });
+  </script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block">
+  <h1 class="title">Extraterrestrial Exosphere and Surface Simulation</h1>
+  <p class="subtitle"></p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework <br> <br> <br> <br> <img data-src="../tsu.png" height="150">           <img data-src="tum.png" height="130"></p><p></p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+
+
+<section>
+
+<section id="about-me-1" class="slide level2">
+<h2>About Me</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br><br> <strong>M.Sc. Alexander Smolka</strong></p>
+<blockquote>
+<p>Professorship of Lunar and Planetary Exploration Technologies<br>
+TUM School of Engineering and Design<br>
+Technical University of Munich</p>
+</blockquote>
+<div class="fragment" data-fragment-index="1">
+<div class="fragment semi-fade-out" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i>   Education</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>B.Sc. Mechanical Engineering, RWTH Aachen University</li>
+<li>M.Sc. Aerospace, Technical University of Munich (TUM)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><i class="fa-solid fa-microscope" aria-label="microscope"></i>   Doctorate</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Research Assistant at the Professorship of Lunar and Planetary Exploration Technologies, TUM</li>
+<li>Research Topic: Investigation of Surface-Bounded Exospheres and their Surface Interaction</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+
+</div>
+</div>
+<p><img data-src="/resources/imgs/me_gray.jpg" class="absolute" style="top: 50px; right: 75px; height: 80%; "></p>
+</section></section>
+<section>
+
+<section id="about-the-presentation" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework">The Lunar Exosphere Simulation Framework</h4>
+<p><br></p>
+<p><img data-src="../imgs/paper.png" class="shadowbox"></p>
+</section>
+<section id="about-the-presentation-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">About the Presentation</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-1">The Lunar Exosphere Simulation Framework</h4>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Monte-Carlo simulation</li>
+<li>Implementation in Julia Language</li>
+<li>Stationary 2D model</li>
+<li>Neutral exosphere of <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>Solar wind is the only source of hydrogen atoms</li>
+<li>Conversion reactions to connect the different species</li>
+<li>All relevant processes included as distributions</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="../imgs/paper.png" class="shadowbox" style="width:100.0%"></p>
+</div>
+</div>
+<p><br> <br></p>
+<div class="fragment" style="font-size: 1.5em">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Goal of the Research</strong></p>
+</div>
+<div class="callout-content">
+<p><i class="fa-solid fa-check" aria-label="check"></i>   Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions.</p>
+<p><i class="fa-solid fa-xmark" aria-label="xmark"></i>   Not predict the exact density of the lunar exosphere!</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="the-model-framework" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="numerical-grid-2d-quasi-stationary">Numerical Grid – 2D Quasi-Stationary</h4>
+<p><img data-src="../imgs/gs2dgrid.svg" class="absolute" style="top: 0px; right: -150px; width: 900px; "></p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><strong>Structured, Two-Dimensional, Surface Grid</strong></p>
+<p>The grid assumes a perfectly spherical Moon. Its coordinates are given in a sub-solar coordinate system with <span class="math inline">\(\left(0,0\right)\)</span> at the sub-solar point, at noon <span class="math inline">\(12\text{h}\)</span> local time.</p>
+<p><br><br></p>
+<div class="fragment">
+<div style="line-height: 30px;">
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to set up</p>
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   easy to interpolate on</p>
+<p><i class="fa-solid fa-plus" aria-label="plus"></i>   analytic solution to mapping a continuous point to its discrete grid element</p>
+</div>
+<p><br><br></p>
+<div style="line-height: 10px;">
+<p><i class="fa-solid fa-minus" aria-label="minus"></i>   element “clumping” at the poles</p>
+<p><i class="fa-solid fa-minus" aria-label="minus"></i>   changing element size with latitude</p>
+</div>
+</div>
+</div><div class="column" style="width:65%;">
+
+</div>
+</div>
+</section>
+<section id="the-model-framework-1" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="lunar-surface-temperatures">Lunar Surface Temperatures</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="../imgs/temperature_animations/anim_raw_diviner/anim.gif" width="600"></p>
+<p><img data-src="../imgs/temperature_animations/diviner_avg.png" class="fragment" data-fragment-index="3" width="600"></p>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>Subsolar (local time) coordinate system, Diviner measurements averaged.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="r-stack">
+<p><img data-src="../imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif" class="fragment" data-fragment-index="2" width="600"></p>
+<p><img data-src="../imgs/temperature_animations/hurley2015.png" class="fragment" data-fragment-index="4" width="600"></p>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>Subsolar (local time) coordinate system, analytic temperature model by <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2015</a>)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-model-framework-2" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="velocity-distributions">Velocity Distributions</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment semi-fade-out" data-fragment-index="2">
+<p><strong>Maxwell-Boltzmann Distribution (MBD)</strong></p>
+<p><img data-src="../imgs/mbd.svg"></p>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Maxwell-Boltzmann Flux Distribution (MBFD)</strong></p>
+<p><img data-src="../imgs/mbfd.svg"></p>
+<p><span class="fragment" data-fragment-index="2"><em>This study exclusively used the MBFD.</em></span></p>
+</div>
+</div>
+</section>
+<section id="the-model-framework-3" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="adsorption-residence-time">Adsorption &amp; Residence Time</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/adsorption.png" height="380"></p>
+<ul>
+<li>from <span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2023</a>)</span></li>
+<li>particles are thermally (first order) adsorbed to the surface
+<ul>
+<li>residence time as statistical time-scale for desorption: <span class="math inline">\(\qquad\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
+</ul></li>
+<li>physisorption requires less energy than chemisorption</li>
+</ul>
+</div><div class="column">
+<div class="fragment" data-fragment-index="2">
+<p><img data-src="../imgs/residence_time.png"></p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><span class="math inline">\(E_{\ce{H}} = E_{\ce{H2}} = 0\)</span> <span class="citation" data-cites="Hodges1973">(<a href="#/references-1" role="doc-biblioref" onclick="">Hodges et al., 1973</a>)</span></li>
+<li><span class="math inline">\(E_{\ce{OH}, min} = 6.75 \times 10^{4} \,\mathrm{J/mol}\)</span>, <span class="math inline">\(E_{\ce{OH}, max} = 11.58 \times 10^{4} \,\mathrm{J/mol}\)</span></li>
+<li><span class="math inline">\(E_{\ce{H2O}, min} = 6.08 \times 10^{4} \,\mathrm{J/mol}\)</span>, <span class="math inline">\(E_{\ce{H2O}, max} = 8.68 \times 10^{4} \,\mathrm{J/mol}\)</span></li>
+<li>see <span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#/references-1" role="doc-biblioref" onclick="">2019</a>)</span>, <span class="citation" data-cites="Sarantos2020">Sarantos &amp; Tsavachidis (<a href="#/references-1" role="doc-biblioref" onclick="">2020</a>)</span>, <span class="citation" data-cites="Reiss2018">Reiss (<a href="#/references-1" role="doc-biblioref" onclick="">2018</a>)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-model-framework-4" class="slide level2">
+<h2>The Model Framework</h2>
+<h4 id="conversions">Conversions</h4>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br></p>
+<ul>
+<li>Multi-element simulation: <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>Assumption: Surface-bounded exosphere with particles <strong>not</strong> interacting with each other
+<ul>
+<li>Dependencies between particles solely through <strong>conversion reactions</strong></li>
+</ul></li>
+<li>Conversions can take place in the exosphere and on the surface
+<ul>
+<li>exosphere: photodissociation of hydrogen-based molecules</li>
+<li>surface: physical/chemical reactions with the regolith and other volatiles</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:20%;">
+
+</div><div class="column" style="width:40%;">
+<p><br></p>
+<p><img data-src="../imgs/conversions_overview/conversions_overview.svg" width="400"></p>
+</div>
+</div>
+</section>
+<section id="the-model-framework-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-photoionization-and--dissociation">Conversions – Photoionization and -dissociation</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Rates by <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#/references-1" role="doc-biblioref" onclick="">1992</a>)</span></p>
+<p><br><br></p>
+<ul>
+<li><span class="fragment highlight-current-blue" data-fragment-index="1">Ionization</span> removes particles from the simulation</li>
+<li><span class="fragment highlight-current-blue" data-fragment-index="2">Dissociation</span> converts particles into other exospheric species</li>
+</ul>
+<p><br><br></p>
+<div class="fragment" data-fragment-index="3">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Photoreactions of Adsorbate Species</strong></p>
+</div>
+<div class="callout-content">
+<p>The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle: <span class="math display">\[ k_{ads} = \begin{cases}\cos \psi\cdot k&amp; \text{for: } \psi\leq \pi/2 \\ 0 &amp; \text{else.}\end{cases}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<div style="font-size: 0.7em;">
+<table style="width:99%;">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 52%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th><p><br> <br></p>
+<p>Reaction</p></th>
+<th style="text-align: right;">Quiet Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+<th style="text-align: right;">Active Sun <br> Photoreaction Rate <br> in <span class="math inline">\(10^{-7}\)</span> <span class="math inline">\(\,\mathrm{s^{\mathrm{-1}}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H +\nu -&gt; H+ + e-}\)</span></span></td>
+<td style="text-align: right;"><span class="math inline">\(0.726\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.720\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(1s)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H(1s) +H(2s \text{or} 2p)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2 +\nu -&gt; H2+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2 +\nu -&gt; H + H+ +e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(0.480\)</span></p>
+<p><span class="math inline">\(0.344\)</span></p>
+<p><span class="math inline">\(0.541\)</span></p>
+<p><span class="math inline">\(0.095\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(1.090\)</span></p>
+<p><span class="math inline">\(0.821\)</span></p>
+<p><span class="math inline">\(1.150\)</span></p>
+<p><span class="math inline">\(0.279\)</span></p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(3p) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1d) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{OH +\nu -&gt; O(1s) + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{OH +\nu -&gt; OH+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((120.00)\;65.400\)</span></p>
+<p><span class="math inline">\((70.10)\;6.350\)</span></p>
+<p><span class="math inline">\((8.33)\;0.671\)</span></p>
+<p><span class="math inline">\((2.43)\;2.470\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\((138.00)\;71.700\)</span></p>
+<p><span class="math inline">\((176.00)\;15.100\)</span></p>
+<p><span class="math inline">\((21.10)\;1.640\)</span></p>
+<p><span class="math inline">\((6.43)\;6.520\)</span></p></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td><p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O(1d)}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + H + O}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="1"><span class="math inline">\(\ce{H2O +\nu -&gt; H2O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H + OH+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; H2 + O+ + e-}\)</span></span></p>
+<p><span class="fragment highlight-current-blue" data-fragment-index="2"><span class="math inline">\(\ce{H2O +\nu -&gt; OH + H+ + e-}\)</span></span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(103.000\)</span></p>
+<p><span class="math inline">\(5.970\)</span></p>
+<p><span class="math inline">\(7.550\)</span></p>
+<p><span class="math inline">\(3.310\)</span></p>
+<p><span class="math inline">\(0.554\)</span></p>
+<p><span class="math inline">\(0.059\)</span></p>
+<p><span class="math inline">\(0.131\)</span></p></td>
+<td style="text-align: right;"><p><span class="math inline">\(176.000\)</span></p>
+<p><span class="math inline">\(14.800\)</span></p>
+<p><span class="math inline">\(19.100\)</span></p>
+<p><span class="math inline">\(8.280\)</span></p>
+<p><span class="math inline">\(1.510\)</span></p>
+<p><span class="math inline">\(0.221\)</span></p>
+<p><span class="math inline">\(0.407\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="the-model-framework-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-surface-reactions">Conversions – Surface Reactions</h4>
+<p><img data-src="../imgs/crider2002.png" class="shadowbox"></p>
+<p><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>probabilities reported in <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#/references-1" role="doc-biblioref" onclick="">2002</a>)</span></p></li>
+<li><p>assumption: the same probabilities are valid for neutral <span class="math inline">\(\ce{H}\)</span>, leading to</p>
+<ul>
+<li><span class="math inline">\(\ce{H -&gt;[60\%] H2}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{H}\)</span> &amp; <span class="math inline">\(\ce{OH}\)</span></span></li>
+<li><span class="math inline">\(\ce{H -&gt;[10\%] OH}\)</span><span class="fragment" data-fragment-index="1">: proton implantation and atomic hydrogen diffusion</span></li>
+<li><span class="math inline">\(\ce{H -&gt;[2\%] H2O}\)</span><span class="fragment" data-fragment-index="1">: recombinative desorption of <span class="math inline">\(\ce{OH}\)</span></span></li>
+</ul></li>
+</ul>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li>water reaction requires protons to first convert to hydroxyl, which happens at a 10% chance: <span class="math inline">\(\ce{OH -&gt;[16\%] H2O}\)</span></li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>note that these probabilities are <strong>global</strong> values (no temperature/time/concentration/etc. dependence), with the authors highlighting their high uncertainties</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li>reactivity fraction <span class="math inline">\(\xi\)</span> is scaling these probabilities up/down</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-model-framework-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The Model Framework</h2>
+<h4 id="conversions-surface-reactions-1">Conversions – Surface Reactions</h4>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\xi\)</span></th>
+<th style="text-align: right;">   <span class="math inline">\(\left(\ce{H}\right)\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{H2}\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{OH}\)</span></th>
+<th style="text-align: right;">      <span class="math inline">\(\ce{H2O}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(25\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((75\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(20.82\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3.48\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(0.70\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(50\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((50\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(41.65\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(6.95\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(1.40\%\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(75\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((25\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(62.47\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(10.43\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.10\%\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(100\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\((0\%)\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(83.30\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(13.90\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(2.80\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<ul>
+<li>assumption: the ratio between the reported likelihoods is able to represent the proton/hydrogen interaction with the lunar surface at <span class="math inline">\(60:10:2\)</span></li>
+<li><strong>reactivity fraction <span class="math inline">\(\xi\)</span></strong> is scaling these probabilities up/down</li>
+</ul>
+</div><div class="column">
+
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="model-architecture-1" class="slide level2" data-transition="fade-in">
+<h2>Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><br><br></p>
+<ul>
+<li>Nested-Loop architecture</li>
+<li>Four loops in total:
+<ul>
+<li><strong>Loop IV</strong>: Monte-Carlo steps</li>
+<li><strong>Loop III</strong>: Iterations
+<ul>
+<li>converted particles as a source of other species in the next iteration</li>
+</ul></li>
+<li><strong>Loop II</strong>: Grid elements
+<ul>
+<li>weighted particle launches from each grid element based on the element size</li>
+</ul></li>
+<li><strong>Loop I</strong>: Particles Trajectories
+<ul>
+<li>tracking particle from source to loss/conversion</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column">
+<div class="r-stack">
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" class="fragment fade-in-then-out" style="width:100.0%" data-fragment-index="1"></p>
+<p><img data-src="../imgs/model_architecture/loop_III.svg" class="fragment fade-in-then-out" style="width:100.0%" data-fragment-index="2"></p>
+<p><img data-src="../imgs/model_architecture/loop_II.svg" class="fragment fade-in-then-out" style="width:100.0%" data-fragment-index="3"></p>
+<p><img data-src="../imgs/model_architecture/loop_I.svg" class="fragment fade-in" style="width:100.0%" data-fragment-index="4"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="results-1" class="slide level2" data-transition="fade-in">
+<h2>Results</h2>
+<h4 id="surface-number-density">Surface Number Density</h4>
+<div class="columns">
+<div class="column" style="width:42%;">
+<div class="r-stack">
+<p><img data-src="../imgs/H_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+<div class="r-stack">
+<p><img data-src="../imgs/OH_1-1.png" height="300"></p>
+<p><img data-src="../imgs/OH_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/OH_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/OH_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+</div><div class="column" style="width:16%;">
+<p><br><br><br><br><br><br><br><br></p>
+<div class="fragment semi-fade-out" data-fragment-index="1">
+<!-- -->
+<h3 id="xi-25"><strong><span class="math inline">\(\xi = 25\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<!-- -->
+<h3 class="fragment semi-fade-out" data-fragment-index="2" id="xi-50"><strong><span class="math inline">\(\xi = 50\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<!-- -->
+<h3 class="fragment semi-fade-out" data-fragment-index="3" id="xi-75"><strong><span class="math inline">\(\xi = 75\%\)</span></strong></h3>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<!-- -->
+<h3 id="xi-100"><strong><span class="math inline">\(\xi = 100\%\)</span></strong></h3>
+</div>
+</div><div class="column" style="width:42%;">
+<div class="r-stack">
+<p><img data-src="../imgs/H2_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H2_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H2_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H2_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+<div class="r-stack">
+<p><img data-src="../imgs/H2O_1-1.png" height="300"></p>
+<p><img data-src="../imgs/H2O_2-1.png" class="fragment" data-fragment-index="1" height="300"></p>
+<p><img data-src="../imgs/H2O_3-1.png" class="fragment" data-fragment-index="2" height="300"></p>
+<p><img data-src="../imgs/H2O_4-1.png" class="fragment" data-fragment-index="3" height="300"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="results-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
+<h4 id="surface-number-density-1">Surface Number Density</h4>
+<div width="80%">
+<p><img data-src="../imgs/result-1.png" class="shadowbox" style="width:80.0%"></p>
+</div>
+</section>
+<section id="results-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
+<h4 id="surface-number-density-2">Surface Number Density</h4>
+<div class="columns">
+<div class="column">
+<p><br></p>
+<p><img data-src="../imgs/result-1.png" class="shadowbox"></p>
+</div><div class="column">
+<p><br><br></p>
+<p><strong>Main Observations</strong></p>
+<ul>
+<li>Increasing the reactivity <span class="math inline">\(\xi\)</span> decreases <span class="math inline">\(\ce{H}\)</span> densities, but increases <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span> densities</li>
+<li>At low reactivities, <span class="math inline">\(\ce{H}\)</span> and <span class="math inline">\(\ce{H2}\)</span> are dominated by the influence of the solar wind on the day-side</li>
+<li>Both <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span> form a morning-terminator peak due to them adsorbing over night and desorbing in the morning</li>
+<li>With higher reactivities, the morning-terminator peak is also becoming visible in the <span class="math inline">\(\ce{H}\)</span> densities
+<ul>
+<li><span class="math inline">\(\ce{H2}\)</span> is also affected, but much less pronounced <span class="math inline">\(\rightarrow\)</span> dawn-dusk asymmetry</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment" style="font-size: 1.5em">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Goal of the Research</strong></p>
+</div>
+<div class="callout-content">
+<p><i class="fa-solid fa-check" aria-label="check"></i>   Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions.</p>
+<p><i class="fa-solid fa-xmark" aria-label="xmark"></i>   Not predict the exact density of the lunar exosphere!</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+
+
+<section>
+
+<section id="what-next-1" class="slide level2">
+<h2>What Next?</h2>
+<h4 id="conversion-map-1">Conversion Map</h4>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="fragment semi-fade-out" data-fragment-index="1">
+<p><img data-src="../imgs/conversions_overview/conversions_overview.svg" width="300"></p>
+</div>
+<ul>
+<li>main drawback: bad surface model</li>
+<li>improve on conversion reactions</li>
+<li>introduce parametric rates instead of fixes probabilities</li>
+</ul>
+</div><div class="column" style="width:70%;">
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="../imgs/lpsc.png" style="position: relative; top: -100px;"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-2">The Lunar Exosphere Simulation Framework</h4>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Monte-Carlo simulation</li>
+<li>Implementation in Julia Language</li>
+<li>Stationary 2D model</li>
+<li>Neutral exosphere of <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>Solar wind is the only source of hydrogen atoms</li>
+<li>Conversion reactions to connect the different species</li>
+<li>All relevant processes included as distributions</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="../imgs/paper.png" class="shadowbox" style="width:100.0%"></p>
+</div>
+</div>
+<p><br> <br></p>
+<div style="font-size: 1.5em">
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Goal of the Research</strong></p>
+</div>
+<div class="callout-content">
+<p><i class="fa-solid fa-check" aria-label="check"></i>   Build a framework to show the general influence of conversion reactions on the lunar hydrogen exosphere. Include uncertain pathways for particles with probability distributions.</p>
+<p><i class="fa-solid fa-xmark" aria-label="xmark"></i>   Not predict the exact density of the lunar exosphere!</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="references-1" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Crider2002" class="csl-entry" role="listitem">
+Crider, D., &amp; Vondrak, R. (2002). Hydrogen migration to the lunar poles by solar wind bombardment of the <span>M</span>oon. <em>Advances in Space Research</em>, <em>30</em>(8), 1869–1874.
+</div>
+<div id="ref-Grumpe2019" class="csl-entry" role="listitem">
+Grumpe, A., Wöhler, C., Berezhnoy, A. A., &amp; Shevchenko, V. V. (2019). Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling. <em>Icarus</em>, <em>321</em>, 486–507. <a href="https://doi.org/10.1016/j.icarus.2018.11.025">https://doi.org/10.1016/j.icarus.2018.11.025</a>
+</div>
+<div id="ref-Hodges1973" class="csl-entry" role="listitem">
+Hodges, R. R. Jr., Hoffman, J. H., &amp; Johnson, F. S. (1973). Composition and dynamics of lunar atmosphere. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2855–2864.
+</div>
+<div id="ref-Huebner1992" class="csl-entry" role="listitem">
+Huebner, W., Keady, J., &amp; Lyon, S. (1992). Solar photo rates for planetary atmospheres and atmospheric pollutants. <em>Astrophysics and Space Science</em>, <em>195</em>, 1–294.
+</div>
+<div id="ref-Hurley2015" class="csl-entry" role="listitem">
+Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Siegler, M., Greenhagen, B., &amp; Paige, D. (2015). An analytic function of lunar surface temperature for exospheric modeling. <em>Icarus</em>, <em>255</em>, 159–163. <a href="https://doi.org/10.1016/j.icarus.2014.08.043">https://doi.org/10.1016/j.icarus.2014.08.043</a>
+</div>
+<div id="ref-Reiss2018" class="csl-entry" role="listitem">
+Reiss, P. (2018). A combined model of heat and mass transfer for the in situ extraction of volatile water from lunar regolith. <em>Icarus</em>, <em>306</em>(Germany), 1–15. <a href="https://doi.org/10.1016/j.icarus.2018.01.020">https://doi.org/10.1016/j.icarus.2018.01.020</a>
+</div>
+<div id="ref-Sarantos2020" class="csl-entry" role="listitem">
+Sarantos, M., &amp; Tsavachidis, S. (2020). The boundary of alkali surface boundary exospheres of mercury and the moon. <em>Geophysical Research Letters</em>, <em>47</em>(16). <a href="https://doi.org/10.1029/2020gl088930">https://doi.org/10.1029/2020gl088930</a>
+</div>
+<div id="ref-Teolis2023" class="csl-entry" role="listitem">
+Teolis, B., Sarantos, M., Schorghofer, N., Jones, B., Grava, C., Mura, A., Prem, P., Greenhagen, B., Capria, M. T., Cremonese, G., Lucchetti, A., &amp; Galluzzi, V. (2023). Surface exospheric interactions. <em>Space Science Reviews</em>. <a href="https://doi.org/10.1007/s11214-023-00951-5">https://doi.org/10.1007/s11214-023-00951-5</a>
+</div>
+</div>
+</section></section>
+<section>
+
+<section id="backup-slides-1" class="slide level2" data-transition="fade-in">
+<h2>Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<p><img data-src="../imgs/julia_benchmark.svg" class="absolute shadowbox" style="top: 150px; left: 0px; width: 875px; "></p>
+<div class="fragment">
+<div class="absolute" style="background: rgba(220, 220, 220, 0.5); padding-left: 10px;top: 250px; left: 100px; width: 550px; ">
+<p><strong>Personal Reasons for Julia:</strong></p>
+<ul>
+<li>Similar to Matlab and Python (easy to learn)</li>
+<li>Great community in the scientific computing field
+<ul>
+<li>especially great ODE solvers</li>
+</ul></li>
+<li>Open-source &amp; easy to get started</li>
+<li>Great for teaching</li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:72%;">
+
+</div><div class="column" style="width:28%;">
+<p><br></p>
+<p><img data-src="../imgs/julia-logo.svg" width="175"></p>
+<p><br></p>
+<p><strong>Performance and Productivity:</strong></p>
+<ul>
+<li>Julia designed for high-performance computing.</li>
+<li>JIT compilation for near-native speed.</li>
+</ul>
+<p><strong>Versatility and Flexibility:</strong></p>
+<ul>
+<li>Handles simulations, machine learning, and data visualization.</li>
+<li>Extensive libraries available.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="backup-slides-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-1">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb1-1" class="hljs-ln-code"><a href="#cb1-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb1-2" class="hljs-ln-code"><a href="#cb1-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb1-3" class="hljs-ln-code"><a href="#cb1-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb1-4" class="hljs-ln-code"><a href="#cb1-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href="#cb1-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb1-6" class="hljs-ln-code"><a href="#cb1-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb1-7" class="hljs-ln-code"><a href="#cb1-7"></a>    <span class="cf">end</span></span>
+<span id="cb1-8" class="hljs-ln-code"><a href="#cb1-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb1-9" class="hljs-ln-code"><a href="#cb1-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="backup-slides-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-2">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb2" data-code-line-numbers="8"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb2-1" class="hljs-ln-code"><a href="#cb2-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb2-2" class="hljs-ln-code"><a href="#cb2-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb2-3" class="hljs-ln-code"><a href="#cb2-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb2-4" class="hljs-ln-code"><a href="#cb2-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a href="#cb2-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb2-6" class="hljs-ln-code"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb2-7" class="hljs-ln-code"><a href="#cb2-7"></a>    <span class="cf">end</span></span>
+<span id="cb2-8" class="hljs-ln-code"><a href="#cb2-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb2-9" class="hljs-ln-code"><a href="#cb2-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="backup-slides-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-3">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb3" data-code-line-numbers="3-6"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a>    <span class="cf">end</span></span>
+<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/hurley2015-1.png" class="shadowbox"></p>
+</div><div class="column">
+<p><img data-src="../imgs/hurley2015-2.png" class="shadowbox"></p>
+</div>
+</div>
+</section>
+<section id="backup-slides-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Backup Slides</h2>
+<h4 id="the-lunar-exosphere-simulation-framework-why-julia-4">The Lunar Exosphere Simulation Framework – Why Julia</h4>
+<div style="font-size: 1.5em">
+<div class="sourceCode" id="cb4" data-code-line-numbers="|1,10,15,18,21"><pre class="sourceCode numberSource julia number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode julia hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng<span class="op">::</span><span class="dt">Real</span>, lat<span class="op">::</span><span class="dt">Real</span>)</span>
+<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a>    <span class="cf">if</span> <span class="fu">abs</span>(lng) <span class="op">&gt;=</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span></span>
+<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a>        a <span class="op">=</span> [<span class="fl">444.738</span>, <span class="op">-</span><span class="fl">448.937</span>, <span class="fl">239.668</span>, <span class="op">-</span><span class="fl">63.8844</span>, <span class="fl">8.34064</span>, <span class="op">-</span><span class="fl">0.423502</span>]</span>
+<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a>        <span class="cf">if</span> lng <span class="op">&lt;</span> <span class="fl">0</span>; lng <span class="op">+=</span> <span class="fl">2</span>pi; <span class="cf">end</span></span>
+<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a>        colat <span class="op">=</span> <span class="fu">-</span>(lat <span class="op">-</span> <span class="cn">pi</span><span class="op">/</span><span class="fl">2</span>)</span>
+<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a>        <span class="cf">return</span> <span class="fu">sum</span>([a[i] <span class="op">*</span> lng<span class="op">^</span>(i<span class="op">-</span><span class="fl">1</span>) for i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">6</span>]) <span class="op">+</span> <span class="fl">35</span> <span class="op">*</span> (<span class="fu">sin</span>(colat)<span class="op">-</span><span class="fl">1</span>) </span>
+<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a>    <span class="cf">end</span></span>
+<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a>    <span class="cf">return</span> <span class="fl">262</span><span class="fu">*</span>(<span class="fu">cos</span>(lng) <span class="op">*</span> <span class="fu">cos</span>(lat))<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">130</span></span>
+<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a><span class="kw">end</span></span>
+<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs<span class="op">::</span><span class="dt">AbstractVector</span>, lats<span class="op">::</span><span class="dt">AbstractVector</span>; matrix<span class="op">=</span><span class="cn">true</span>)</span>
+<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a>    <span class="cf">return</span> matrix ? </span>
+<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lng, lat) for lng <span class="kw">in</span> lngs, lat <span class="kw">in</span> lats] <span class="op">:</span></span>
+<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a>        [<span class="fu">lunar_surface_temperatures_HURLEY2015</span>(lngs[i], lats[i]) for i <span class="kw">in</span> <span class="fu">eachindex</span>(lngs)]</span>
+<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a><span class="kw">end</span></span>
+<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs<span class="op">::</span><span class="dt">GlobalSphericalPosition</span>)</span>
+<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(xs.theta, xs.phi)</span>
+<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a><span class="kw">end</span></span>
+<span id="cb4-18" class="hljs-ln-code"><a href="#cb4-18"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(XS<span class="op">::</span><span class="dt">Vector{GlobalSphericalPosition{T}}</span>) <span class="kw">where</span> {T}</span>
+<span id="cb4-19" class="hljs-ln-code"><a href="#cb4-19"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(XS)</span>
+<span id="cb4-20" class="hljs-ln-code"><a href="#cb4-20"></a><span class="kw">end</span></span>
+<span id="cb4-21" class="hljs-ln-code"><a href="#cb4-21"></a><span class="kw">function</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>(grid<span class="op">::</span><span class="dt">AbstractGrid</span>)</span>
+<span id="cb4-22" class="hljs-ln-code"><a href="#cb4-22"></a>    <span class="cf">return</span> <span class="fu">lunar_surface_temperatures_HURLEY2015</span>.(<span class="fu">surfacecoords</span>(grid))</span>
+<span id="cb4-23" class="hljs-ln-code"><a href="#cb4-23"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="model-architecture-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-1">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<div class="fragment">
+<ul>
+<li><span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span>: Surface number density of the <span class="math inline">\(i\)</span>-th Monte-Carlo step, the <span class="math inline">\(j\)</span>-th iteration, at the <span class="math inline">\(k\)</span>-th grid element</li>
+<li>Updating of the surface number density: <span class="math inline">\(\left(n_0\right)_k^{i,j} \mathrel{{+}{=}} \frac{w}{Av_z}\)</span>
+<ul>
+<li><span class="math inline">\(w\)</span>: current weight of the particle</li>
+<li><span class="math inline">\(A\)</span>: area of the grid element at the current position</li>
+<li><span class="math inline">\(v_z\)</span>: vertical velocity of the particle</li>
+</ul></li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>Updating the particle weight:
+<ul>
+<li>rate losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \exp\left(-kt\right)\right)\)</span>
+<ul>
+<li>time-of-flight: <span class="math inline">\(t_f\)</span>, or</li>
+<li>residence time: <span class="math inline">\(\tau= \frac{h}{k_BT}\cdot\exp\left(\frac{E}{RT}\right)\)</span></li>
+</ul></li>
+<li>probability losses: <span class="math inline">\(w\mapsto w\cdot \left(1 - \sum p \right)\)</span></li>
+<li>escape or cold trapping: <span class="math inline">\(w\mapsto 0.0\)</span></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="model-architecture-3" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-2">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_I.svg" style="width:90.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-4" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-3">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li>intialization of particles at every grid element
+<ul>
+<li><span class="math inline">\(w_0\)</span>: initial weight at launch</li>
+<li>First iteration: solar wind as only source
+<ul>
+<li><span class="math inline">\(w_0 = 0\)</span> on the lunar night-side</li>
+<li><span class="math inline">\(w_0 = \dot s\cdot A \cdot \cos\psi\)</span> on the day-side</li>
+<li><span class="math inline">\(\dot s\)</span> source rate of the solar wind (acts as a linear scaling factor of the entire simulation, usually <span class="math inline">\(\approx 2 \times 10^8\,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-1}}}\)</span>)</li>
+</ul></li>
+<li>Second+ iteration: source rate from conversions of previous iteration</li>
+</ul></li>
+<li>sum up all <span class="math inline">\(\left(n_0\right)_k^{i,j}\)</span> from all <span class="math inline">\(k\)</span> launches at all positions <span class="math inline">\(\,\Rightarrow\left(\boldsymbol{\mathbf{n_0}}\right)^{i,j}\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="model-architecture-5" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-4">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_II.svg" style="width:80.0%"></p>
+</div><div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-6" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-5">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li><strong>Loop II</strong> for each element <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span>
+<ul>
+<li>save all surface number densities <span class="math inline">\(\left(\boldsymbol{\mathbf{n_0}}\right)^{i,j}\)</span></li>
+<li>save all conversions</li>
+</ul></li>
+<li>perform multiple iterations until it converges
+<ul>
+<li>sum of conversions is reducing each iteration</li>
+<li>usually 4-5 iterations are enough to reach <span class="math inline">\(1 \times 10^{-3}\)</span> of the initial source rate</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="model-architecture-7" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-6">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><img data-src="../imgs/model_architecture/loop_III.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br></p>
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="model-architecture-8" class="slide level2" data-auto-animate="true" data-transition="fade-in">
+<h2 data-id="quarto-animate-title">Model Architecture</h2>
+<h4 id="nested-loop-monte-carlo-simulation-7">Nested-Loop Monte-Carlo Simulation</h4>
+<div class="columns">
+<div class="column">
+<p><br></p>
+<p><img data-src="../imgs/model_architecture/loop_IV.svg" style="width:75.0%"></p>
+</div><div class="column">
+<p><br><br><br></p>
+<ul>
+<li>pure Monte-Carlo loop</li>
+<li>save all steps</li>
+<li>postprocessing after the simulation
+<ul>
+<li>if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="results-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Results</h2>
+<h4 id="losses">Losses</h4>
+<p><img data-src="../imgs/losses.png" class="shadowbox"></p>
+<div class="fragment" data-fragment-index="1">
+<p><span class="absolute" style="background: rgba(255, 255, 255, 0.7); padding-left: 10px;top: 120px; left: 775px; width: 425px; height: 270px; "></span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div class="fragment fade-out" data-fragment-index="2">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 190px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="2">
+<div class="fragment fade-out" data-fragment-index="3">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 240px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<div class="fragment fade-out" data-fragment-index="4">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 290px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="4">
+<p><span class="absolute" style="background: rgba(241, 240, 64, 0.25); padding-left: 10px;top: 340px; left: 10px; width: 730px; height: 48px; "></span></p>
+</div>
+<div class="columns">
+<div class="column">
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><span class="math inline">\(\ce{H}\)</span> is only lost in the exosphere</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to fewer <span class="math inline">\(\ce{H}\)</span> losses</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><span class="math inline">\(\ce{H2}\)</span> is only lost in the exosphere</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{H2}\)</span> losses</li>
+</ul>
+</div>
+</div><div class="column">
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li><span class="math inline">\(\ce{OH}\)</span> is mainly lost as adsorbates on the lunar surface</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{OH}\)</span> losses
+<ul>
+<li>the ratio between exospheric and adsorbate losses stays <em>roughly</em> constant at 1:10</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="4">
+<ul>
+<li><span class="math inline">\(\ce{H2O}\)</span> is mainly lost as adsorbates on the lunar surface</li>
+<li>higher <span class="math inline">\(\xi\)</span> lead to increased <span class="math inline">\(\ce{H2O}\)</span> losses
+<ul>
+<li>the ratio between exospheric and adsorbate losses stays <em>roughly</em> constant at 1:10</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<p><img src="tum.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Alexander Smolka | Technical University of Munich</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="_presentation_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="_presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="_presentation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'smaller': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'pointer': {"key":"q","color":"red","pointerSize":16,"alwaysVisible":false},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1285,
+
+        height: 800,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
