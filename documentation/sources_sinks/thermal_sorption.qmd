@@ -11,7 +11,6 @@ title: "4.2 Thermal Sorption"
 
 # Velocity Distributions {#sec-velocity-distributions}
 
-
 ## Maxwell-Boltzmann Distribution
 {{< include /documentation/sources_sinks/thermal_sorption/_mbd.qmd >}}
 

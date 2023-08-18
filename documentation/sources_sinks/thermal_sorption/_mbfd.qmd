@@ -4,7 +4,7 @@ The [MBFD](/documentation/acronyms.qmd) (Maxwell-Boltzmann flux velocity distrib
     \label{eq:mbfd_raw}
 \end{equation}
 
-::: {column-margin}
+::: {.column-margin}
 {{< fa code >}} [`MaxwellBoltzmannFluxVelocityDistribution`](/api/base/distributions.qmd)
 :::
 
@@ -39,18 +39,18 @@ Through integration over the solid angles of Eq. \eqref{eq:mbfd_spherical}, the 
     f(\velocity)d\velocity =  2 \cdot \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right)^2 \cdot \velocity^3 \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity.
     \label{eq:mbfd_speed}
 \end{equation}
-Note that the scaling factor $2$ is a result from the integration over half the sphere through $\sphericalCoordinateElevation\in\left(0,\pi/2\right)$. As before, this speed distribution can be analyzed to extract some typical speeds from it.
+Note that the scaling factor $2$ is a result from the integration over half the sphere through $\sphericalCoordinateElevation\in\left(0,\pi/2\right)$. As before, this speed distribution can be analyzed to extract typical speeds.
 
 
 {{< include thermal_sorption/imgs/mbfd/_mbfd.qmd >}}
 
 
-@fig-mbfd shows the probability densities of three [MBFD](/documentation/acronyms.qmd) distributed, normalized velocities. The normalization of the velocities has been performed with $\sqrt{\mass/\BoltzmannConstant\temperature} = 1$. The <tt>1D-MBFD</tt> curve is showing the [pdf](/documentation/acronyms.qmd) of a velocity component perpendicular to the flux direction, which is equal to one-dimensional [MBD](/documentation/acronyms.qmd) velocities, see Eq. \eqref{eq:mbd_1d}, which in fact is equal to the scaled normal distribution $\mathcal{N}(0, \BoltzmannConstant\temperature/\mass)$. The second graph, <tt>1D-MBFD, flux</tt> shows the distribution of a directed velocity component in flux direction, $f_\parallel(\velocity)$, which is equal to
+@fig-mbfd shows the probability densities of three [MBFD](/documentation/acronyms.qmd) distributed, normalized velocities. The normalization of the velocities has been performed with $\sqrt{\mass/\BoltzmannConstant\temperature} = 1$. The <tt>1D-MBFD</tt> curve shows the [pdf](/documentation/acronyms.qmd) of a velocity component perpendicular to the flux direction, which is equal to one-dimensional [MBD](/documentation/acronyms.qmd) velocities, see Eq. \eqref{eq:mbd_1d}, which in fact is equal to the scaled normal distribution $\mathcal{N}(0, \BoltzmannConstant\temperature/\mass)$. The second graph, <tt>1D-MBFD, flux</tt> shows the distribution of a directed velocity component in flux direction, $f_\parallel(\velocity)$, which is equal to
 \begin{equation}
     f_\parallel (\velocity) d\velocity = 2\velocity \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right) \cdot \exp\left(-\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity.
     \label{eq:mbfd_1d_parallel}
 \end{equation}
-Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following. Note that, contrary to the [MBD](/documentation/acronyms.qmd), the root mean squared speed is lower than the other two typical speeds, due to its additional speed dependency, which is shifting the entire distribution to higher values and, thus, to $f(\velocity \approx 0.0) \approx 0.0$.
+Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following. Note that, contrary to the [MBD](/documentation/acronyms.qmd), the root mean squared speed is lower than the other two typical speeds due to its additional speed dependency, which shifts the entire distribution to higher values and, thus, to $f(\velocity \approx 0.0) \approx 0.0$.
 
 
 ### Typical Speeds
@@ -94,7 +94,7 @@ Let $\vec\Velocity$ be the random variable of the [MBFD](/documentation/acronyms
 given in cartesian coordinates, see Eq. \eqref{eq:mbfd} and Eq. \eqref{eq:mbfd_spherical} for the function in spherical coordinates. Similar to the [MBD](/documentation/acronyms.qmd), the numerical sampling of the random variable can be performed by mapping each random component to one implemented numerical distribution. As a reminder, the most basic numerical distributions are the uniform distribution with random variable $R_u\in\left[0,1\right]$ with realization $r_u$ of $R_u\sim f(r_u)=1$ and a normal distribution with random variable $R_n\in\left(-\infty, \infty\right)$ with realization $r_n$ of $R_n\sim f(r_n) = \mathcal{N}\left(r_n | 0, 1 \right)$ with zero mean and unit variance.
 
 
-In cartesian coordinates, with $\vec\Velocity = \left(\Velocity_x, \Velocity_y, \Velocity_z\right)$, three first two directions are assumed to be perpendicular to the flux, while the z-direction is parallel to the flux. Thus, both the x- and the y-component, $\velocity_x$ and $\velocity_y$, can be numerically sampled like in the [MBD](/documentation/acronyms.qmd), which is with scaled normal distributions, see Eqs. \eqref{eq:mbd_random_cartesian_component_2}, \eqref{eq:mbd_random_cartesian_component}. The flux direction is drawing from the $f_\parallel$ [pdf](/documentation/acronyms.qmd), see Eq. \eqref{eq:mbfd_1d_parallel}, which can not directly translated in either a uniform or a normal distribution. Therefor, the respective [cdf](/documentation/acronyms.qmd), $F_\parallel\left(\velocity_z\right)$,  must be matched with the uniform [cdf](/documentation/acronyms.qmd):
+In cartesian coordinates, with $\vec\Velocity = \left(\Velocity_x, \Velocity_y, \Velocity_z\right)$, the first two directions are assumed to be perpendicular to the flux, while the z-direction is parallel to the flux. Thus, both the x- and the y-component, $\velocity_x$, and $\velocity_y$, can be numerically sampled like in the [MBD](/documentation/acronyms.qmd), which is with scaled normal distributions, see Eqs. \eqref{eq:mbd_random_cartesian_component_2}, \eqref{eq:mbd_random_cartesian_component}. The flux direction is drawn from the $f_\parallel$ [pdf](/documentation/acronyms.qmd), see Eq. \eqref{eq:mbfd_1d_parallel}, which can not be directly translated in either a uniform or a normal distribution. Therefore, the respective [cdf](/documentation/acronyms.qmd), $F_\parallel\left(\velocity_z\right)$,  must be matched with the uniform [cdf](/documentation/acronyms.qmd):
 \begin{align}
     r_{\velocity_z} &= \int_0^{r_{\velocity_z}} f(r_u) dr_u = \int_0^{\velocity_z} f_\parallel(\velocity) d\velocity = F_\parallel\left(\velocity_z\right) = 1 - \exp\left(-\frac{\mass\velocity_z^2}{2\BoltzmannConstant\temperature}\right) \\
     \Rightarrow\qquad \velocity_z &= \sqrt{-\ln\left(1-r_{\velocity_z}\right)\frac{2\BoltzmannConstant\temperature}{\mass}}.

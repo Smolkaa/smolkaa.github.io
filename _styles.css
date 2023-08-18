@@ -22,13 +22,20 @@ div.quarto-post .thumbnail {
   flex-basis: 62%
 }
 
+/* adjusts the code-output to have the same background color as the code itself */
+div.cell-output pre {
+  background-color: rgba(236,240,241,.65);
+  padding-left: 10px;
+}
 
+/* enables the use of iframes for revealjs presentations */
 iframe.reveal-demo {
   width: 100%;
   height: 700px;
   outline: none;
 }
 
+/* borders for anything */
 .border {
   border: 1px solid #dee2e6;
 }

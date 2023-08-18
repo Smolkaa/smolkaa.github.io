@@ -1,0 +1,80 @@
+The following example shows how to use the utility functions to calculate the required energy of a particle to escape the gravitational pull of the Moon. 
+
+
+```julia
+# defines the masses of hydrogen, molecular hydrogen, hydroxyl, and water 
+# in kilograms
+masses = amu2kg.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])
+
+# calculates the escape velocity of the Moon on its surface in m/s
+v_esc = escape_velocity_r_m(LUNAR_RADIUS, LUNAR_MASS)
+
+# define a function to calculate the kinetic energy of a particle, based on
+# its mass and velocity
+E_kin(m::Real; v=v_esc) = 0.5 * m * v_esc^2
+
+# calculate the kinetic energy of the particles defined above, in eV
+E = J2eV.(E_kin.(masses))
+```
+
+In the following, we will go through this example step-by-step. The first line of code defines the masses of hydrogen, molecular hydrogen, hydroxyl, and water in kilograms and saves their values in a vector `masses`. It uses the `amu2kg` function to turn the [constants](/api/base/constants.qmd) `AMU_H`, `AMU_H2`, `AMU_OH`, and `AMU_H2O` from atomic mass units to kilograms (note the `amu2kg.(...)` dot-notation to broadcast the function which is only defined for scalar inputs, to work with arrays):
+
+```julia
+masses = amu2kg.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])
+```
+
+The output is a vector of four elements, each corresponding to the mass of one of the particles in kilograms:
+
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+masses = amu2kg.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])
+```
+
+The next line calculates the velocity that each particle would need to escape the lunar gravity field, i.e., the [escape velocity](/documentation/trajectories/ballistic_trajectories.qmd#sec-escape-velocity), for which the orbital mechanics function [`escape_velocity_r_m`](/documentation/trajectories/ballistic_trajectories.qmd#sec-escape-velocity) is used. Note that, as the name of the function suggests, it requires the radius and mass of the respective body for which the escape velocity shall be calculated as inputs, which are provided as the constants `LUNAR_RADIUS` and `LUNAR_MASS`:
+
+```julia
+v_esc = escape_velocity_r_m(LUNAR_RADIUS, LUNAR_MASS)
+```
+
+It results in the following scalar value:
+
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+masses = amu2kg.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])
+v_esc = escape_velocity_r_m(LUNAR_RADIUS, LUNAR_MASS)
+```
+
+The third code line defines a new function called `E_kin`, which takes one argument `m::Real` as the mass of a particle in kilograms as a real number type, and one optional keyword argument `v` which is given the default value of our previously calculated escape velocity `v_esc`. 
+
+```julia
+E_kin(m::Real; v=v_esc) = 0.5 * m * v_esc^2
+```
+
+Now, the function `E_kin` can be used to calculate the kinetic energy of particles with masses saved in `masses`, again, by broadcasting over the function with the dot notation. In order to provide the result in a more convenient unit, the function `J2eV` is applied to the result, which converts the energy from Joules to electronvolts:
+
+```julia
+E = J2eV.(E_kin.(masses))
+```
+
+which leads to the final output vector:
+
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+masses = amu2kg.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])
+v_esc = escape_velocity_r_m(LUNAR_RADIUS, LUNAR_MASS)
+E_kin(m::Real; v=v_esc) = 0.5 * m * v_esc^2
+E = J2eV.(E_kin.(masses))
+```
+

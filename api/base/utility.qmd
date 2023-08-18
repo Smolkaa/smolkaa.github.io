@@ -8,7 +8,32 @@ title: "Utility"
 
 ---
 
+In `base/utility.jl`, you will find a collection of utility functions that are used throughout the package.
+
 ## Usage
+
+All the utility functions defined here are easy-to-use and generally self-explanatory. For example, the unit conversion functions `amu2kg`, `eV2J`, and `J2eV`:
+
+```julia
+m_H = amu2kg(AMU_H) # 1.673781838440757e-27
+```
+
+In the example above, the atomic mass of hydrogen, stored in the custom [constant](/api/base/constants.qmd) `AMU_H`, is converted from atomic mass units to kilograms and stored in a new variable `m_H` (its value is provided in the comment). 
+
+```julia
+eV = 1 # 1
+J = eV2J(eV) # 1.602176634e-19
+ev == J2eV(J) # true
+```
+
+The functions `eV2J` and `J2eV` convert the energy units electronvolt and joule. In the example above, the value of `eV` is converted to joules and stored in `J`. The conversion is then reversed, and the result is compared to the original value of `eV`.  Note that all three functions accept any `Real` number type, returning either the input type, if that type is a subtype of `AbstractFloat`, or a `Float64` otherwise (exception with the input type `BigInt` which leads the function to return a `BigFloat`).
+
+
+## Examples
+
+### Escape Velocities and Energies
+{{< include examples/_utility_example01.qmd >}}
+
 
 ## API
 
@@ -21,6 +46,32 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.amu2kg
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``eV2J`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.eV2J
+```
+:::
+
+
+::: {.callout-note appearance="simple" icon=false}
+# ``J2eV`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.J2eV
 ```
 :::
 
