@@ -1,5 +1,5 @@
 ---
-title: "2.5 The Moon"
+title: "2.6 The Moon"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}

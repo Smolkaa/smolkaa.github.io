@@ -11,47 +11,49 @@ citation: false
 :::
 
 
-+-----------+---------------------------------------------------+
-| ALSEP     | Apollo Lunar Surface Experiments Package          |
-+-----------+---------------------------------------------------+
-| cdf       | cumulative distribution function                  |
-+-----------+---------------------------------------------------+
-| DLRE      | Diviner Lunar Radiometer Experiment               |
-+-----------+---------------------------------------------------+
-| ESA       | European Space Agency                             |
-+-----------+---------------------------------------------------+
-| LACE      | Lunar Atmospheric Composition Experiment          |
-|           |                                                   |
-| LADEE     | Lunar Atmosphere and Dust Environment Explorer    |  
-|           |                                                   |
-| LRO       | Lunar Reconnaissance Orbiter                      |
-+-----------+---------------------------------------------------+
-| HEALPix   | Hierarchical Equal Area iso-Latitude Pixelization |
-+-----------+---------------------------------------------------+
-| MBD       | Maxwell-Boltzmann Distribution                    |
-|           |                                                   |
-| MBFD      | Maxwell-Boltzmann Flux Distribution               |
-+-----------+---------------------------------------------------+
-| NASA      | National Aeronautis and Space Administration      |
-|           |                                                   |
-| NMS       | Neutral Mass Spectrometer                         |
-+-----------+---------------------------------------------------+
-| NASA      | National Aeronautis and Space Administration      |
-|           |                                                   |
-| NMS       | Neutral Mass Spectrometer                         |
-+-----------+---------------------------------------------------+
-| pdf       | probability density function                      |
-|           |                                                   |
-| PDS       | Planetary Data System                             |
-+-----------+---------------------------------------------------+
-| rms       | root mean squared                                 |
-+-----------+---------------------------------------------------+
-| SSE       | Selenocentric Solar Ecliptic                      |
-+-----------+---------------------------------------------------+
-| TUM       | Technical University of Munich                    |
-+-----------+---------------------------------------------------+
-| UVS       | Ultraviolet Spectrometer (Apollo 17)              |
-+-----------+---------------------------------------------------+
++-----------+---------------------------------------------------------------+
+| ALSEP     | Apollo Lunar Surface Experiments Package                      |
++-----------+---------------------------------------------------------------+
+| cdf       | cumulative distribution function                              |
++-----------+---------------------------------------------------------------+
+| DLRE      | Diviner Lunar Radiometer Experiment                           |
++-----------+---------------------------------------------------------------+
+| ESA       | European Space Agency                                         |
++-----------+---------------------------------------------------------------+
+| LACE      | Lunar Atmospheric Composition Experiment                      |
+|           |                                                               |
+| LADEE     | Lunar Atmosphere and Dust Environment Explorer                |              
+|           |                                                               |
+| LRO       | Lunar Reconnaissance Orbiter                                  |
+|           |                                                               |
+| LROC      | Lunar Reconnaissance Orbiter Camera                           |
++-----------+---------------------------------------------------------------+
+| HEALPix   | Hierarchical Equal Area iso-Latitude Pixelization             |
++-----------+---------------------------------------------------------------+
+| MBD       | Maxwell-Boltzmann Distribution                                |
+|           |                                                               |
+| MBFD      | Maxwell-Boltzmann Flux Distribution                           |
+|           |                                                               |
+| MESSENGER | MErcury Surface, Space ENvironment, GEochemistry, and Ranging |
++-----------+---------------------------------------------------------------+
+| NASA      | National Aeronautics and Space Administration                 |
+|           |                                                               |
+| NMS       | Neutral Mass Spectrometer                                     |
++-----------+---------------------------------------------------------------+
+| pdf       | probability density function                                  |
+|           |                                                               |
+| PDS       | Planetary Data System                                         |
++-----------+---------------------------------------------------------------+
+| rms       | root mean squared                                             |
++-----------+---------------------------------------------------------------+
+| SSE       | Selenocentric Solar Ecliptic                                  |
++-----------+---------------------------------------------------------------+
+| TUM       | Technical University of Munich                                |
++-----------+---------------------------------------------------------------+
+| UVS       | Ultraviolet Spectrometer (Apollo 17)                          |
++-----------+---------------------------------------------------------------+
+| WAC       | Wide Angle Camera (LROC)                                      |
++-----------+---------------------------------------------------------------+
 
 : {.hover}
 
@@ -71,11 +73,13 @@ citation: false
 \newacronym{LACE}{LACE}{Lunar Atmospheric Composition Experiment}
 \newacronym{LADEE}{LADEE}{Lunar Atmosphere and Dust Environment Explorer}
 \newacronym{LRO}{LRO}{Lunar Reconnaissance Orbiter}
+\newacronym{LROC}{LROC}{Lunar Reconnaissance Orbiter Camera}
 
 \newacronym{HEALPix}{HEALPix}{Hierarchical Equal Area iso-Latitude Pixelization}
 
 \newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}
 \newacronym{MBFD}{MBFD}{Maxwell-Boltzmann Flux Distribution}
+\newacronym{MESSENGER}{MESSENGER}{MErcury Surface, Space ENvironment, GEochemistry, and Ranging}
 
 \newacronym{NASA}{NASA}{National Aeronautis and Space Administration}
 \newacronym{NMS}{NMS}{Neutral Mass Spectrometer}
@@ -88,5 +92,9 @@ citation: false
 \newacronym{SSE}{SSE}{Selenocentric Solar Ecliptic}
 
 \newacronym{TUM}{TUM}{Technical University of Munich}
+
+\newacronym{UVS}{UVS}{Ultraviolet Spectrometer}
+
+\newacronym{WAC}{WAC}{Wide Angle Camera}
 ```
 :::

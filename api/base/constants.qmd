@@ -35,6 +35,31 @@ using Printf
 
 
 ::: {.callout-note appearance="simple" icon=false}
+# Base - Constants - Particle Masses
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+using Printf
+
+@printf "AMU_H:                     %2.6f [u]\n" AMU_H
+@printf "AMU_He:                    %2.6f [u]\n" AMU_He
+@printf "AMU_O:                    %2.6f [u]\n" AMU_O
+@printf "AMU_Ne:                   %2.6f [u]\n" AMU_Ne
+@printf "AMU_Ar:                   %2.6f [u]\n" AMU_Ar
+println()
+@printf "AMU_H2:                    %2.6f [u]\n" AMU_H2
+@printf "AMU_OH:                   %2.6f [u]\n" AMU_OH
+@printf "AMU_H2O:                  %2.6f [u]\n" AMU_H2O
+```
+:::
+
+
+
+
+::: {.callout-note appearance="simple" icon=false}
 # Base - Constants - The Moon
 ```{julia}
 #| echo: false

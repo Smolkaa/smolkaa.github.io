@@ -9,7 +9,7 @@ csl: _apa.csl
 
 website:
   # site-url: https://smolkaa.github.io
-  title: "ExESS"
+  title: "**ExESS**"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
   repo-actions: [edit]
   favicon: "/resources/logo/exess_logo.png"
@@ -17,7 +17,7 @@ website:
   page-navigation: true
 
   navbar:
-    background: light
+    background: primary
     pinned: true
     # logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
@@ -57,17 +57,18 @@ website:
           contents:
             - documentation/fundamentals/coordinate_systems.qmd
             - documentation/fundamentals/numerical_grids.qmd
-            - "2.3. ODEs and Numerical Solvers"
+            - "2.3 ODEs and Numerical Solvers"
             - documentation/fundamentals/stats_mc.qmd
+            - documentation/fundamentals/exospheres.qmd
             - documentation/fundamentals/moon.qmd
-            - "2.6. Other Exospheres in The Solar System"
+            - "2.7 Other Exospheres in The Solar System"
         - section: "3. Planetary Measurements and Data"
           contents:
             - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
         - section: "4. Exospheres: Sources and Sinks"
           contents:
-            - "4.1. Solar Wind"
+            - "4.1 Solar Wind"
             - documentation/sources_sinks/thermal_sorption.qmd
             - documentation/sources_sinks/photoreactions.qmd
             - "Photodesorption"

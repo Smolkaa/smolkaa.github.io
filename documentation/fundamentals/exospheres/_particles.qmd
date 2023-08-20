@@ -1,0 +1,5 @@
+Exospheres contain particles of many different species. 
+
+@Prohaska2022 
+
+{{< include exospheres/tables/_atomic_weights.qmd >}}

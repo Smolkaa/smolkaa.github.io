@@ -6,8 +6,17 @@
 }
 
 .nav-item {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 55px;
+  padding-right: 25px;
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#quarto-header>nav {
+  padding-left: 80px;
 }
 
 div.callout-tip.callout-titled .callout-icon::before {

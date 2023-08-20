@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-26">
+<meta name="dcterms.date" content="2023-08-19">
 
 <title>ExESS - 1. Introduction</title>
 <style>
@@ -22,7 +22,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -43,6 +96,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -88,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -200,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">2.3. ODEs and Numerical Solvers</span>
+ <span class="menu-text">2.3 ODEs and Numerical Solvers</span>
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -210,12 +266,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../documentation/fundamentals/moon.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.5 The Moon</span></a>
+  <a href="../../documentation/fundamentals/exospheres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.5 Exospheres</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">2.6. Other Exospheres in The Solar System</span>
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/moon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.6 The Moon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">2.7 Other Exospheres in The Solar System</span>
   </li>
       </ul>
   </li>
@@ -252,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">4.1. Solar Wind</span>
+ <span class="menu-text">4.1 Solar Wind</span>
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -321,12 +383,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">1. Introduction</h2>
    
   <ul>
-  <li><a href="#some-title" id="toc-some-title" class="nav-link active" data-scroll-target="#some-title">Some Title</a></li>
+  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation">Background and Motivation</a></li>
+  <li><a href="#research-objectives" id="toc-research-objectives" class="nav-link" data-scroll-target="#research-objectives">Research Objectives</a></li>
+  <li><a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure">Document Structure</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/introduction/introduction.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -347,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 26, 2023</p>
+      <p class="date">August 19, 2023</p>
     </div>
   </div>
   
@@ -360,13 +424,83 @@ ul.task-list li input[type="checkbox"] {
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <hr>
-<section id="some-title" class="level1">
-<h1>Some Title</h1>
+<p>Space exploration has always captivated humanity’s imagination, driving scientific inquiry and technological advancement to unprecedented heights. While the Moon’s surface has been a focal point of human exploration, its tenuous exosphere, a fragile envelope of particles and gases, has long remained an understudied frontier. Recent decades have witnessed remarkable strides in our understanding of extraterrestrial exospheres, with a particular focus on the Moon’s exosphere and its intricate interactions with the lunar surface.</p>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="fig-LROC_poles" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-LROC_north_pole" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<figure class="figure">
+<p><a href="imgs/LROC_poles/LROC_north_pole.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Lunar north pole."><img src="imgs/LROC_poles/LROC_north_pole.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">(a) Lunar north pole.</figcaption>
+</figure>
+</div>
+<div id="fig-LROC_south_pole" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<figure class="figure">
+<p><a href="imgs/LROC_poles/LROC_south_pole.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Lunar south pole."><img src="imgs/LROC_poles/LROC_south_pole.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">(b) Lunar south pole.</figcaption>
+</figure>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: <a href="../../documentation/acronyms.html">LROC</a> Wide Angle Camera (<a href="../../documentation/acronyms.html">WAC</a>) mosaic of the lunar north and south pole region. With a resolution of 400m/pixel, the total width of each image extends to ~600km, ranging from 80° to 90° latitude, north and south, respectively. The names of major craters are indicated at their respective location. <em>Image Credit: NASA/GSFC/Arizona State University: <a href="http://lroc.sese.asu.edu/posts/242">North Pole</a>, <a href="http://lroc.sese.asu.edu/posts/237%3E">South Pole</a></em>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[tb]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\centering</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">subfigure</span>}[b]{.49<span class="fu">\textwidth</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\centerting</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">imgs/LROC_north_pole.jpg</span>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\caption</span>{Lunar north pole.}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">subfigure</span>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\begin</span>{<span class="ex">subfigure</span>}[b]{.49<span class="fu">\textwidth</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\centerting</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">\includegraphics</span>[width=<span class="fu">\textwidth</span>]{<span class="ex">imgs/LROC_south_pole.jpg</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\caption</span>{Lunar south pole.}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\end</span>{<span class="ex">subfigure</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\caption</span>{LROC Wide Angle Camera (WAC) mosaic of the lunar north and south pole region. With a resolution of <span class="ss">$</span><span class="sc">\SI</span><span class="ss">{400}{</span><span class="sc">\metre\per</span><span class="ss"> px}$</span>, the total width of each image extends to <span class="ss">$</span><span class="sc">\sim\SI</span><span class="ss">{600}{</span><span class="sc">\kilo\metre</span><span class="ss">}$</span>, ranging from <span class="ss">$</span><span class="sc">\$</span><span class="ss">SI{80}{</span><span class="sc">\degree</span><span class="ss">}$</span> to <span class="ss">$</span><span class="sc">\SI</span><span class="ss">{90}{</span><span class="sc">\degree</span><span class="ss">}$</span> latitude, north and south, respectively. The names of major craters are indicated at their respective location. <span class="fu">\emph</span>{Image Credit: NASA/GSFC/Arizona State University.}<span class="fu">\footnote</span>{North Pole: <span class="fu">\url</span>{http://lroc.sese.asu.edu/posts/242}. South Pole: <span class="fu">\url</span>{http://lroc.sese.asu.edu/posts/237}.}}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">\label</span>{<span class="ex">fig:lroc_poles</span>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the LaTeX code assumes the images are saved in a top-level directory called <code>imgs/</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Advances in space exploration have unveiled the Moon’s exosphere as a realm of astonishing complexity. Notable missions such as the Lunar Reconnaissance Orbiter (<a href="../../documentation/acronyms.html">LRO</a>) have played a pivotal role in unraveling the mysteries of the lunar exosphere. The orbiter mission has not only provided the most highly resolved images of the Moon’s surface, see <a href="#fig-LROC_poles">Fig.&nbsp;1</a> showing high-resolution mosaic images of the lunar’s north and south pole, but the Lyman Alpha Mapping Project (<a href="../../documentation/acronyms.html">LAMP</a>) <span class="citation" data-cites="Gladstone2009">(<a href="#ref-Gladstone2009" role="doc-biblioref">Gladstone et al., 2009</a>)</span> aboard <a href="../../documentation/acronyms.html">LRO</a> has studied the exosphere by analyzing the scattering of ultraviolet sunlight. Additionally, the Lunar Atmosphere and Dust Environment Explorer (<a href="../../documentation/acronyms.html">LADEE</a>) mission’s Neutral Mass Spectrometer (<a href="../../documentation/acronyms.html">NMS</a>) <span class="citation" data-cites="Benna2015">(<a href="#ref-Benna2015" role="doc-biblioref">Benna et al., 2015</a>)</span> provided valuable insights into the composition of the exosphere and its temporal variations. These missions collectively painted a new picture of the Moon—a dynamic world with a delicate exosphere shaped by intricate surface interactions.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>See <a href="../../documentation/planetary_measurements/missions.html">3.1 Missions</a> for more information on the missions mentioned here!</p>
+</div></div><p>However, the first endeavors to investigate the lunar exosphere were already made decades earlier, during the Apollo program, during which the Lunar Atmosphere Composition Experiment (<a href="../../documentation/acronyms.html">LACE</a>) instrument was deployed on the Moon’s surface by Apollo 17 as part of the Apollo Lunar Surface Experiment Package (<a href="../../documentation/acronyms.html">ALSEP</a>) <span class="citation" data-cites="Chang1972">(<a href="#ref-Chang1972" role="doc-biblioref">Chang, 1972</a>)</span>. <a href="../../documentation/acronyms.html">LACE</a> marked the first direct detection of exospheric species, capturing trace amounts of noble gases and demonstrating the existence of a lunar atmosphere. This historic endeavor laid the foundation for our present understanding, highlighting the complexity of the lunar exosphere and the need for continued exploration.</p>
+<p>In the broader scope of planetary science, beyond the lunar realm, lies a captivating tapestry of exospheric phenomena across our solar system. Among these, Mercury, the closest planet to the Sun, has beckoned explorers and researchers alike. Pioneering missions such as <a href="../../documentation/acronyms.html">NASA’s MESSENGER</a> (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) have revealed the intricate details of Mercury’s exosphere. <a href="../../documentation/acronyms.html">MESSENGER’s</a> observations have unraveled the complex interplay between the planet’s surface and its tenuous envelope of gases, shedding light on the origins of exospheric constituents and their dynamic behavior in response to solar wind interactions. Through these missions, the study of exospheres extends its reach beyond Earth’s celestial companion, contributing valuable insights to the broader understanding of planetary atmospheres and their interactions with the space environment.</p>
+<section id="background-and-motivation" class="level1">
+<h1>Background and Motivation</h1>
+</section>
+<section id="research-objectives" class="level1">
+<h1>Research Objectives</h1>
+</section>
+<section id="document-structure" class="level1">
+
+
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Document Structure</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Benna2015" class="csl-entry" role="listitem">
+Benna, M., Mahaffy, P. R., Halekas, J. S., Elphic, R. C., &amp; Delory, G. T. (2015). Variability of helium, neon, and argon in the lunar exosphere as observed by the <span>LADEE</span> <span>NMS</span> instrument. <em>Geophysical Research Letters</em>, <em>42</em>(10), 3723–3729. <a href="https://doi.org/10.1002/2015gl064120">https://doi.org/10.1002/2015gl064120</a>
+</div>
+<div id="ref-Chang1972" class="csl-entry" role="listitem">
+Chang, G. K. (1972). <em><span class="nocase">Apollo 17 lunar surface experiments summary: case 40058</span></em>. <a href="https://hdl.handle.net/20.500.11753/629">https://hdl.handle.net/20.500.11753/629</a>
+</div>
+<div id="ref-Gladstone2009" class="csl-entry" role="listitem">
+Gladstone, G. R., Stern, S. A., Retherford, K. D., Black, R. K., Slater, D. C., Davis, M. W., Versteeg, M. H., Persson, K. B., Parker, J. W., Kaufmann, D. E., Egan, A. F., Greathouse, T. K., Feldman, P. D., Hurley, D., Pryor, W. R., &amp; Hendrix, A. R. (2009). <span>LAMP</span>: <span>T</span>he <span>L</span>yman <span>A</span>lpha <span>M</span>apping project on <span>NASA</span>’s lunar reconnaissance orbiter mission. <em>Space Science Reviews</em>, <em>150</em>(1-4), 161–181. <a href="https://doi.org/10.1007/s11214-009-9578-6">https://doi.org/10.1007/s11214-009-9578-6</a>
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
   title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
     {Simulations}},
@@ -638,6 +772,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
 
 
 
