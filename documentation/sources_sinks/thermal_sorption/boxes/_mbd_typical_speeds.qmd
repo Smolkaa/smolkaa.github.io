@@ -22,7 +22,7 @@ Second, the derivation of Eq. \eqref{eq:mbd_mean_speed}, with the mean speed den
 
 Third and last, the derivation of Eq. \eqref{eq:mbd_rms}, with the root mean squared speed denoted as $\velocity_\text{rms}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$, and $\erf$ the Gaussian error function:
 \begin{align*}
-    \velocity_\text{rms} &= \sqrt{\meanof{\velocity^2}} = \left( \int_o^\infty \velocity^2 f(\velocity) d\velocity \right)^{1/2} \\
+    \velocity_\text{rms} &= \sqrt{\meanof{\velocity^2}} = \left( \int_0^\infty \velocity^2 f(\velocity) d\velocity \right)^{1/2} \\
     \Rightarrow\quad \velocity_\text{rms} &= \left( 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[ \frac{3\sqrt{\pi}\cdot\erf{\left(\sqrt{a}\velocity\right)}}{8a^{5/2}} - \frac{\velocity\exp\left(-a\velocity^2\right)\cdot\left(2a\velocity^2+3\right)}{4a^2} \right]_0^\infty \right)^{1/2}  \\
     %\Rightarrow\quad \velocity_\text{rms} &= \left( 4\pi\left(\frac{a}{\pi}\right)^{3/2} \cdot \left[ \frac{3\sqrt{\pi}}{8a^{5/2}} \right]\right)^{1/2}  \\
     \Rightarrow\quad \velocity_\text{rms} &= \sqrt{\frac{3}{2a}} = \sqrt{\frac{3\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{3}{2}} \velocity_p.

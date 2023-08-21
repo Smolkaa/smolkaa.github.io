@@ -10,7 +10,7 @@ First, the derivation of Eq. \eqref{eq:mbfd_most_probable_speed}, with the most 
 \end{alignat*}
 
 
-Second, the derivation of Eq. \eqref{eq:mbfd_mean_speed}, with the mean speed denoted as $\meanof{\velocity}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$:
+Second, the derivation of Eq. \eqref{eq:mbfd_mean_speed}, with the mean speed denoted as $\meanof{\velocity}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$, and $\erf$ the Gaussian error function::
 \begin{align*}
     % \meanof{\velocity} &= \int_0^\infty \velocity f(\velocity) d\velocity = 2 \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right)^2 \cdot \int_0^\infty \velocity^4 \exp\left(-\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity = 2 a^2 \int_0^\infty \velocity^4 \exp\left(- a\velocity^2\right) d\velocity \\
     \meanof{\velocity} &= \int_0^\infty \velocity f(\velocity) d\velocity = 2 a^2 \int_0^\infty \velocity^4 \exp\left(- a\velocity^2\right) d\velocity \\
@@ -19,11 +19,11 @@ Second, the derivation of Eq. \eqref{eq:mbfd_mean_speed}, with the mean speed de
 \end{align*}
 
 
-Third and last, the derivation of Eq. \eqref{eq:mbfd_rms_speed}, with the root mean squared speed denoted as $\velocity_\text{rms}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$, and $\erf$ the Gaussian error function:
+Third and last, the derivation of Eq. \eqref{eq:mbfd_rms_speed}, with the root mean squared speed denoted as $\velocity_\text{rms}$. Let $a = \frac{\mass}{2\BoltzmannConstant\temperature}$
 \begin{align*}
     \velocity_\text{rms} &= \sqrt{\meanof{\velocity^2}} = \left(\int_0^\infty \velocity^2 f(\velocity) d\velocity \right)^{1/2} = \left( \int_0^\infty 2a^2 \velocity^5 \exp\left(-a\velocity^2\right) d\velocity\right)^{1/2} \\
     \Rightarrow\qquad \velocity_\text{rms} &= \left( \left[-\frac{\exp\left(-a\velocity^2\right) \left(a^2\velocity^4 + 2a\velocity^2 + 2 \right)}{a}\right]_0^\infty \right)^{1/2} \\
-    \Rightarrow\qquad \velocity_\text{rms} &= \left(\frac{2}{a}\right)^{1/2} = \sqrt{\frac{2\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{2}{3}}\,\cdot \velocity_p.
+    \Rightarrow\qquad \velocity_\text{rms} &= \left(\frac{2}{a}\right)^{1/2} = \sqrt{\frac{4\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{4}{3}}\,\cdot \velocity_p.
 \end{align*}
 :::
 :::

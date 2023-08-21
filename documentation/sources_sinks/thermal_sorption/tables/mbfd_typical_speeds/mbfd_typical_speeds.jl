@@ -8,7 +8,7 @@ function maketable()
     # typical speeds, normalized
     vp = sqrt(3)
     vm = sqrt(9*pi/8)
-    vr = sqrt(2)
+    vr = sqrt(4)
 
     # integrals for typical speeds
     dv = 1e-4
@@ -28,7 +28,7 @@ function maketable()
     Vvr = V./vr
     
     # sorting
-    idx_sorted = [1,10,8,2,9,3,4,5,6,7]
+    idx_sorted = [1,8,2,9,10,3,4,5,6,7]
     FF = FF[idx_sorted]
     V = V[idx_sorted]
     Vvp = Vvp[idx_sorted]
@@ -37,10 +37,10 @@ function maketable()
 
     Vstr = [
         raw"$\velocity_{25}$",
-        raw"$\velocity_\text{rms}$",
         raw"$\velocity_p$",
         raw"$\velocity_{50}$",
         raw"$\meanof{\velocity}$",
+        raw"$\velocity_\text{rms}$",
         raw"$\velocity_{75}$",
         raw"$\velocity_{90}$",
         raw"$\velocity_{95}$",
@@ -49,9 +49,9 @@ function maketable()
     ]
 
     # additional columns for analytically exact values
-    Vvp_extra = ["",raw"$\approx\sqrt{2/3}$","","",raw"$\approx\sqrt{3\pi/8}$","", "", "", "", ""]
-    Vvm_extra = ["", raw"$\approx\sqrt{16/9\pi}$", raw"$\approx\sqrt{8/3\pi}$","", "", "", "", "", "", ""]
-    Vvr_extra = ["","",raw"$\approx\sqrt{3/2}$","",raw"$\approx\sqrt{9\pi/16\pi}$","", "", "", "", ""]
+    Vvp_extra = ["", "", "", raw"$\approx\sqrt{3\pi/8}$", raw"$\approx\sqrt{4/3}$","", "", "", "", ""]
+    Vvm_extra = ["", raw"$\approx\sqrt{8/3\pi}$", "", "", raw"$\approx\sqrt{32/9\pi}$", "", "", "", "", ""]
+    Vvr_extra = ["", raw"$\approx\sqrt{3/4}$", "", raw"$\approx\sqrt{9\pi/32}$", "", "", "", "", "", ""]
 
     # table
     header = [

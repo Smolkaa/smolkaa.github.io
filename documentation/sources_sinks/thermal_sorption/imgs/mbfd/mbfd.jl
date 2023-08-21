@@ -25,7 +25,7 @@ function mbfd(name="mbfd"; txt=true)
     # typical speeds (3d)
     vp = sqrt(3);         fvp = vp^3/2*exp(-vp^2/2)
     vmean = sqrt(9*pi/8); fvmean = vmean^3/2*exp(-vmean^2/2)
-    vrms = sqrt(2);       fvrms = vrms^3/2*exp(-vrms^2/2)
+    vrms = sqrt(4);       fvrms = vrms^3/2*exp(-vrms^2/2)
 
     # plot typical speeds (3d)
     scatter!(ax, [vp, vmean, vrms], [fvp, fvmean, fvrms]; 
@@ -35,7 +35,7 @@ function mbfd(name="mbfd"; txt=true)
         ALGN, FS = (:left, :center), 10
         text!(ax, vp*1.1, fvp*1.03; text="most probable", align=ALGN, fontsize=FS)
         text!(ax, vmean*1.1, fvmean*1.005; text="mean", align=ALGN, fontsize=FS)
-        text!(ax, vrms*0.9, fvrms*1.0; text="root mean squared", align=(:right, :center), fontsize=FS)
+        text!(ax, vrms*1.1, fvrms*1.0; text="root mean squared", align=(:left, :center), fontsize=FS)
     end
 
     lines!(ax, [vp,vp], [0,fvp]; color=TUMBlack, linestyle=:dash)
