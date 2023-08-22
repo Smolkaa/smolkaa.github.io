@@ -11,7 +11,7 @@ Based on the escape velocity [$\velocity_{esc}(\radius, \mass)$](#sec-escape-vel
 Based on @Schoerghofer2022a, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the ground track distance $d$, and the azimuth angle $\azimuthAngle$ as
 \begin{align}
     \sin\latitude_1 &= \sin\left(\frac{d}{\radius}\right) \cdot \cos\latitude_0 \cdot \cos\azimuthAngle + \cos\left(\frac{d}{\radius}\right) \cdot \sin\latitude_0 \\
-    \cos\Delta\longitude &= \cos\left(\frac{d}{\radius}\right) \cdot \cos\latitude_0 - \sin\left(\frac{d}{\radius}\right) \cdot \sin\latitude_0 \cdot \cos\azimuthAngle \cdot \cos^{-1}\latitude_1 \\
+    \cos\Delta\longitude &= \left(\cos\left(\frac{d}{\radius}\right) \cdot \cos\latitude_0 - \sin\left(\frac{d}{\radius}\right) \cdot \sin\latitude_0 \cdot \cos\azimuthAngle \cdot \right) \cos^{-1}\latitude_1 \\
     \Rightarrow \longitude_1 &= \longitude_0 + \sgn\left(\velocity_1\right)\cdot\Delta\longitude,
 \end{align}
 with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq0$ and $\sgn\left(\velocity_1\right) = -1$ for $\velocity_1<0$.

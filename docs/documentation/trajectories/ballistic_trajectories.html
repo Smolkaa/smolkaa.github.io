@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-07-28">
+<meta name="dcterms.date" content="2023-08-22">
 
 <title>ExESS - 5.1 Ballistic Trajectories</title>
 <style>
@@ -395,7 +395,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 28, 2023</p>
+      <p class="date">August 22, 2023</p>
     </div>
   </div>
   
@@ -594,7 +594,7 @@ div.csl-indent {
 <p>Based on the escape velocity <a href="#sec-escape-velocity"><span class="math inline">\(v_{esc}(r, m)\)</span></a>, the relative kinetic energy fraction <a href="#sec-relative-kinetic-energy"><span class="math inline">\(\epsilon_{kin}(\boldsymbol{\mathbf{v}}, v_{esc})\)</span></a>, can be determined, which in turn is used to calculate the semi-major axis of the trajectory, <a href="#sec-semi-major-axis"><span class="math inline">\(a(r, \epsilon_{kin})\)</span></a>. Since the launch velocity vector is given in local cartesian coordinates, both its zenith angle <a href="#sec-zenith-angle"><span class="math inline">\(\psi(\boldsymbol{\mathbf{v}})\)</span></a> and its azimuth angle <a href="#sec-azimuth-angle"><span class="math inline">\(\vartheta\left(\boldsymbol{\mathbf{v}}\right)\)</span></a> can be directly extracted. The former is subsequently used for the determination of the eccentricity <a href="#sec-eccentricity"><span class="math inline">\(e\left(\epsilon_{kin}, \psi\right)\)</span></a>. With both <span class="math inline">\(a\)</span> and <span class="math inline">\(e\)</span> known, the true anomaly at launch <span class="math inline">\(\theta_0(r, a, e)\)</span>, and due to symmetry conditions, also the landing position <a href="#sec-true-anomaly"><span class="math inline">\(\theta_1 = 2\pi - \theta_0\)</span></a>, can be calculated. The angular difference between the landing and launch true anomaly <span class="math inline">\(\theta_1 - \theta_0 = 2\pi - 2\theta= \Delta\theta\)</span> can then easily be converted into the ground track distance of the projected trajectory <a href="#sec-ground-track-distance"><span class="math inline">\(d(r, \Delta\theta)\)</span></a>.</p>
 <p>Based on <span class="citation" data-cites="Schoerghofer2022a">Schoerghofer (<a href="#ref-Schoerghofer2022a" role="doc-biblioref">2022</a>)</span>, the landing position <span class="math inline">\(\left(\Theta_1, \Phi_1\right)\)</span> can now be calculated using the launch position <span class="math inline">\(\left(\Theta_0, \Phi_0\right)\)</span>, the ground track distance <span class="math inline">\(d\)</span>, and the azimuth angle <span class="math inline">\(\vartheta\)</span> as <span class="math display">\[\begin{align}
     \sin\Phi_1 &amp;= \sin\left(\frac{d}{r}\right) \cdot \cos\Phi_0 \cdot \cos\vartheta+ \cos\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \\
-    \cos\Delta\Theta&amp;= \cos\left(\frac{d}{r}\right) \cdot \cos\Phi_0 - \sin\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \cdot \cos\vartheta\cdot \cos^{-1}\Phi_1 \\
+    \cos\Delta\Theta&amp;= \left(\cos\left(\frac{d}{r}\right) \cdot \cos\Phi_0 - \sin\left(\frac{d}{r}\right) \cdot \sin\Phi_0 \cdot \cos\vartheta\cdot \right) \cos^{-1}\Phi_1 \\
     \Rightarrow \Theta_1 &amp;= \Theta_0 + \mathop{\mathrm{sgn}}\left(v_1\right)\cdot\Delta\Theta,
 \end{align}\]</span> with the signum function <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = 1\)</span> for <span class="math inline">\(v_1\geq0\)</span> and <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = -1\)</span> for <span class="math inline">\(v_1&lt;0\)</span>.</p>
 <p>Calculating the time of flight <span class="math inline">\(t_{flight}= t_1 - t_0 = P- 2t_0\)</span> requires the orbital period <a href="#sec-orbit-period"><span class="math inline">\(P\left(a, m\right)\)</span></a> as well as the orbit time <a href="#sec-orbit-time"><span class="math inline">\(t(M, P)\)</span></a>, where <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span> are the orbit times at the launch and landing, respectively, with <span class="math inline">\(t_1 = P-t_0\)</span> for symmetry reasons. The mean anomaly <a href="#sec-mean-anomaly"><span class="math inline">\(M_0\)</span></a> at launch can be calculated using the eccentric anomaly <a href="#sec-eccentric-anomaly"><span class="math inline">\(E_0\)</span></a> and the eccentricity <span class="math inline">\(e\)</span>.</p>
