@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-03">
+<meta name="dcterms.date" content="2023-08-25">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 3, 2023</p>
+      <p class="date">August 25, 2023</p>
     </div>
   </div>
   
@@ -372,18 +372,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>trajectory</code> – Function
+<code>landing_position</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
+[2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
+<p>Calculates the landing position of a particle starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)), flying on a ballistic trajectory, i.e., only influenced by graviational forces.</p>
+<p>Returns the landing position in global spherical coordinates, [1]: as <code>r, lon, lat</code> or [2]: as <code>GlobalSphericalPosition(r, lon, lat)</code>.</p>
+<p><strong>Key-Word Arguments</strong></p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>m</code></td>
+<td style="text-align: right;"><code>LUNAR_MASS</code></td>
+<td style="text-align: left;">[kg]</td>
+<td style="text-align: left;">mass of planetary object</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong></p>
+<ul>
+<li>calling the function with <code>&lt;:Integer</code> arguments will promote them to <code>Float64</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>trajectory</code> – Function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] trajectory(x0::AbstractVector, v0::AbstractVector, ddx::Function; kwargs...)
-[2] trajectory(x0::AbstractPosition, v0::AbstractPosition, ddx::Function; kwargs...)</code></pre>
+[2] trajectory(x0::AbstractPosition, v0::AbstractVelocity, ddx::Function; kwargs...)</code></pre>
 <p>Calculate the trajectory of a particle starting at position <code>x0</code> (global cartesian coordinates), with initial velocity <code>v0</code> (global cartesian coordinates), given the acceleration function <code>ddx</code> (global cartesian coordinates).</p>
 <p>Returns a <code>ODESolution</code> object as the trajectory.</p>
-<section id="key-word-arguments" class="level2">
-<h2 class="anchored" data-anchor-id="key-word-arguments">Key-Word Arguments</h2>
+<p><strong>Key-Word Arguments</strong></p>
 <table class="table table-sm table-striped small">
 <colgroup>
 <col style="width: 12%">
@@ -433,7 +475,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>The integration terminates if either the minimum or maximum radius is exceeded or if the end of the time span is reached.</p>
-</section>
+<p><strong>Notes</strong></p>
+<ul>
+<li>calling the function with <code>&lt;:Integer</code> arguments will promote them to <code>Float64</code></li>
+</ul>
 </div>
 </div>
 </div>
@@ -448,8 +493,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] ddx_lunar_gravity(x::AbstractVector, [args...])</code></pre>
 <p>Acceleration function for the lunar gravity.</p>
 </div>
