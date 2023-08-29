@@ -17,6 +17,17 @@ Based on @Schoerghofer2022a and @Butler1997, the landing position $\left(\longit
 with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq0$ and $\sgn\left(\velocity_1\right) = -1$ for $\velocity_1<0$. Due to numerical inaccuracies, the cosine of the longitude difference $\cos\Delta\longitude$ can be slightly larger than one. In this case, the cosine will be set to either one or negative one, respectively. Additionally, since the cosine is a periodic function, the equations above cannot handle true anomalies that are bigger than half the circumference, i.e., $\Delta\trueAnomaly > \pi$, which would make $\cos\Delta\longitude$ overflow, returning smaller changes in the landing longitude than expected. In this case, the longitude difference is calculated as $\Delta\longitude = 2\pi - \cos^{-1}\left(\cos\Delta\longitude\right)$.
 
 
+\begin{align}
+    \sin\latitude_1 &= \sin\latitude_0 \cdot \cos\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuthAngle \\[3mm]
+    \cos\Delta\longitude &= \frac{\cos\Delta\trueAnomaly - \sin\latitude_0 \cdot \sin\latitude_1}{\cos\latitude_0 \cdot \cos\latitude_1} \\[3mm]
+
+    \Delta\longitude &= \begin{cases} \cos^{-1}\left(\cos\Delta\longitude\right) & \text{if } \Delta\trueAnomaly \leq \pi, \\ 2\pi - \cos^{-1}\left(\cos\Delta\longitude\right) & \text{else.} \end{cases}\\[3mm]
+
+    \Rightarrow \longitude_1 &= \longitude_0 + \sgn\left(\velocity_1\right)\cdot\Delta\longitude,
+\end{align}
+
+
+
 [Here comes a reference to the comparison study.]{style="color: red;"}
 
 

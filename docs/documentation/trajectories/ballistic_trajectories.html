@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-25">
+<meta name="dcterms.date" content="2023-08-29">
 
 <title>ExESS - 5.1 Ballistic Trajectories</title>
 <style>
@@ -395,7 +395,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 25, 2023</p>
+      <p class="date">August 29, 2023</p>
     </div>
   </div>
   
@@ -597,6 +597,14 @@ div.csl-indent {
     \cos\Delta\Theta&amp;= \frac{\cos\Delta\theta- \sin\Phi_0 \cdot \sin\Phi_1}{\cos\Phi_0 \cdot \cos\Phi_1} \\[3mm]
     \Rightarrow \Theta_1 &amp;= \Theta_0 + \mathop{\mathrm{sgn}}\left(v_1\right)\cdot\Delta\Theta,
 \end{align}\]</span> with the signum function <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = 1\)</span> for <span class="math inline">\(v_1\geq0\)</span> and <span class="math inline">\(\mathop{\mathrm{sgn}}\left(v_1\right) = -1\)</span> for <span class="math inline">\(v_1&lt;0\)</span>. Due to numerical inaccuracies, the cosine of the longitude difference <span class="math inline">\(\cos\Delta\Theta\)</span> can be slightly larger than one. In this case, the cosine will be set to either one or negative one, respectively. Additionally, since the cosine is a periodic function, the equations above cannot handle true anomalies that are bigger than half the circumference, i.e., <span class="math inline">\(\Delta\theta&gt; \pi\)</span>, which would make <span class="math inline">\(\cos\Delta\Theta\)</span> overflow, returning smaller changes in the landing longitude than expected. In this case, the longitude difference is calculated as <span class="math inline">\(\Delta\Theta= 2\pi - \cos^{-1}\left(\cos\Delta\Theta\right)\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+    \sin\Phi_1 &amp;= \sin\Phi_0 \cdot \cos\Delta\theta+ \cos\Phi_0 \cdot \sin\Delta\theta\cdot \sin\vartheta\\[3mm]
+    \cos\Delta\Theta&amp;= \frac{\cos\Delta\theta- \sin\Phi_0 \cdot \sin\Phi_1}{\cos\Phi_0 \cdot \cos\Phi_1} \\[3mm]
+
+    \Delta\Theta&amp;= \begin{cases} \cos^{-1}\left(\cos\Delta\Theta\right) &amp; \text{if } \Delta\theta\leq \pi, \\ 2\pi - \cos^{-1}\left(\cos\Delta\Theta\right) &amp; \text{else.} \end{cases}\\[3mm]
+
+    \Rightarrow \Theta_1 &amp;= \Theta_0 + \mathop{\mathrm{sgn}}\left(v_1\right)\cdot\Delta\Theta,
+\end{align}\]</span></p>
 <p><span style="color: red;">Here comes a reference to the comparison study.</span></p>
 <p>Calculating the time of flight <span class="math inline">\(t_{flight}= t_1 - t_0 = P- 2t_0\)</span> requires the orbital period <a href="#sec-orbit-period"><span class="math inline">\(P\left(a, m\right)\)</span></a> as well as the orbit time <a href="#sec-orbit-time"><span class="math inline">\(t(M, P)\)</span></a>, where <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span> are the orbit times at the launch and landing, respectively, with <span class="math inline">\(t_1 = P-t_0\)</span> for symmetry reasons. The mean anomaly <a href="#sec-mean-anomaly"><span class="math inline">\(M_0\)</span></a> at launch can be calculated using the eccentric anomaly <a href="#sec-eccentric-anomaly"><span class="math inline">\(E_0\)</span></a> and the eccentricity <span class="math inline">\(e\)</span>.</p>
 </section>
