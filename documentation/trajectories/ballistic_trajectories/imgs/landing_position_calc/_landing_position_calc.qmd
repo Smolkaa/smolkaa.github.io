@@ -1,64 +1,81 @@
-::: {.column-page-right}
 ::: {.panel-tabset}
 
 # {{< fa image >}} Figure
 
-::: {#fig-lunar_orbit_orientation}
-![](/documentation/fundamentals/moon/imgs/lunar_orbit_orientation/_landing_position_calc_.svg){width="1200px"}
+::: {#fig-landing_position_calc}
+![](/documentation/trajectories/ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.png){width="600px"}
 
-Lunar orbit orientation sketch with the Earth as well as the ecliptic plane as a reference.
+Sketch the spherical trigonometry problem of the landing position calculation. The ground track distance is given as an angular distance of $\Delta\trueAnomaly$, complemented by all additional angular arguments used for the derivation of the landing position.
 :::
 
 # {{< fa code >}} LaTeX
 ```latex
-\begin{tikzpicture}
+\tdplotsetmaincoords{70}{135}
+\begin{tikzpicture}[tdplot_main_coords, scale=1.25]
 
-    % ecliptic plane
-    \draw (0,0) -- (8,0) 
-        node[midway, below, xshift=20pt, yshift=2pt] {\footnotesize Ecliptic Plane};
+    %::. "coordinate system" and sphere lines
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (0,0,3);
+    \tdplotdrawarc[TUMGrayLight, dashed]{(0,0,0)}{3}{-1}{110}{}{}
+    \tdplotdrawarc[TUMGrayLight, dashed]{(0,0,1.460)}{2.573}{-3}{110}{}{}
 
-    % earth
-    \draw (2,0) circle (1);
-    \draw[dotted] (2,-1.5) -- (2,1.5);
-    \draw[rotate around={-23.44:(2,0)}] (2,-1.5) -- (2,1.5)
-        node[at end, right, xshift=-3pt, rotate=-23.44]{\tiny{N}}
-        node[at start, left, xshift=3pt, rotate=-23.44]{\tiny{S}};
-    \draw[rotate around={-113.44:(2,0)}, dashed] (2,-1.5) -- (2,1.5);
+    %::. start point
+    \pgfmathsetmacro{\psx}{2.433}
+    \pgfmathsetmacro{\psy}{0.973}
+    \pgfmathsetmacro{\psz}{1.460}
 
-    % moon
-    \begin{scope}[rotate around={5.14:(2,0)}]
-        % lunar orbit plane
-        \draw (0,0) -- (8,0) 
-            node[midway, above, rotate around={5.14:(2,0)}, xshift=20pt, yshift=4pt] {\footnotesize Lunar Orbit Plane};
-        
-        %
-        \draw (7.5,0) circle (0.25);
-        \draw[dotted] (7.5,-0.4) -- (7.5,0.5);
-        \draw[rotate around={-6.68:(7.5,0)}] 
-            (7.5,-0.4) -- (7.5,0.5)
-            node[at end, right, xshift=-3pt]{\tiny{N}}
-            node[at start, left, xshift=3pt]{\tiny{S}};
-        \draw[rotate around={-96.68:(7.5,0)}, dashed] (7.5,-0.5) -- (7.5,0.5);
-    \end{scope}
+    \node[anchor=east, yshift=-3] at (\psx, \psy, \psz) {\footnotesize launch};
 
-    % angles / arcs
-    \draw[latex-latex] (2,0) ++(90:1.4) arc (90:66.56:1.4) 
-        node[midway, above] {\footnotesize \begin{tabular}{c} Earth \\  Obliquity \\ \SI{23.44}{\degree} \end{tabular}};
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (2.7854, 1.1142, 0);
+    \draw[TUMGrayLight, dashed] (\psx, \psy, 0) -- (\psx, \psy, \psz);
 
-    \draw[latex-latex] (2,0) ++(0:4.5) arc (0:5.14:4.5);
-    \draw[thin] (2,0) ++(5.14:4.5) arc (5.14:12:4.5) 
-        node[at end, above, xshift=-10pt] {\footnotesize \begin{tabular}{c}Lunar Orbital \\ Inclination \\ \SI{5.14}{\degree}\end{tabular}};
+    \tdplotgetpolarcoords{\psx}{\psy}{\psz}
+    \tdplotsetthetaplanecoords{\tdplotresphi}
 
-    \draw[latex-latex] (2,0) ++(5:5.9) arc (5:0:5.9);
-    \draw[thin] (2,0) ++(0:5.9) arc (0:-3:9) 
-        node[at end, below] {\footnotesize \begin{tabular}{c}\SI{1.54}{\degree} \\ Lunar Obliquity \\ to Ecliptic \end{tabular}};
+    \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=east}{$\latitude_0$}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=east}{$\overline{\latitude_0}$}
 
+    %::. end point
+    \pgfmathsetmacro{\pex}{0.045}
+    \pgfmathsetmacro{\pey}{1.785}
+    \pgfmathsetmacro{\pez}{2.410}
+
+    \node[anchor=west, xshift=1] at (\pex, \pey, \pez) {\footnotesize landing};
+
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (0.0756, 2.999, 0);
+    \draw[TUMGrayLight, dashed] (\pex, \pey, 0) -- (\pex, \pey, \pez);
+
+    \tdplotgetpolarcoords{\pex}{\pey}{\pez}
+    \tdplotsetthetaplanecoords{\tdplotresphi}
+
+    \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=west}{$\latitude_1$}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=west, xshift=4}{$\overline{\latitude_1}$}
+
+    %::. connection (cross product for 3d orientation)
+    \tdplotcrossprod(\psx,\psy,\psz)(\pex,\pey,\pez)
+
+    \tdplotgetpolarcoords{\tdplotresx}{\tdplotresy}{\tdplotresz}
+    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{180-\tdplotrestheta+1}
+
+    \tdplotdrawarc[very thick, -latex, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=north, xshift=5}{$\Delta\trueAnomaly$}
+
+    %::. longitude
+    \tdplotdrawarc[latex-latex, thin,]{(0,0,0)}{1.5}{22}{88}{anchor=north}{$\Delta\longitude$}
+
+    %::. launch azimuth angle
+    \tdplotgetpolarcoords{\psx}{\psy}{\psz}
+    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{0}
+    \tdplotdrawarc[-latex, thin, tdplot_rotated_coords]{(0,0,3)}{0.6}{93}{135}{anchor=west}{$\azimuthAngle$}
 \end{tikzpicture}
 ```
 
+Note that the code above requires the TikZ package `tikz-3dplot`. Additionally, the code relies on further definitions, for example of the gray-color: `\definecolor{TUMGrayLight}  {RGB}{204, 204, 204}` based on the `xcolor` package.
+
 # {{< fa download >}} Download
 
-* {{< downloadthis moon/imgs/lunar_orbit_orientation/lunar_orbit_orientation.svg label="lunar_orbit_orientation.svg" type="light" dname="lunar_orbit_orientation" >}}
+* {{< downloadthis ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.svg label="landing_position_calc.svg" type="light" dname="landing_position_calc" >}}
 
-:::
+* {{< downloadthis ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.pdf label="landing_position_calc.pdf" type="light" dname="landing_position_calc" >}}
+
+* {{< downloadthis ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.png label="landing_position_calc.png" type="light" dname="landing_position_calc" >}}
+
 :::

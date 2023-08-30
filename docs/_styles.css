@@ -1,0 +1,50 @@
+/* css styles */
+
+.sidebar-logo {
+  max-width: 80%;
+  padding-left: 15%;
+}
+
+.nav-item {
+  padding-left: 55px;
+  padding-right: 25px;
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#quarto-header>nav {
+  padding-left: 80px;
+}
+
+div.callout-tip.callout-titled .callout-icon::before {
+  background-image: url('resources/icons/cli.svg');
+  width: 25px;
+}
+
+/* makes thumbnails in "Manuals & Examples" smaller and listing's body bigger */
+div.quarto-post .thumbnail {
+  flex-basis: 13%
+}div.quarto-post .body {
+  flex-basis: 62%
+}
+
+/* adjusts the code-output to have the same background color as the code itself */
+div.cell-output pre {
+  background-color: rgba(236,240,241,.65);
+  padding-left: 10px;
+}
+
+/* enables the use of iframes for revealjs presentations */
+iframe.reveal-demo {
+  width: 100%;
+  height: 700px;
+  outline: none;
+}
+
+/* borders for anything */
+.border {
+  border: 1px solid #dee2e6;
+}

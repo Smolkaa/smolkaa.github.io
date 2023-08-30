@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
+<meta name="dcterms.date" content="2023-08-02">
+
+<title>ExESS - 3.2 Lunar Exosphere Surface Densities</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../documentation/sources_sinks/thermal_sorption.html" rel="next">
+<link href="../../documentation/planetary_measurements/missions.html" rel="prev">
+<link href="../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+    MathJax = { 
+        tex: { 
+            tags: 'ams',  // should be 'ams', 'none', or 'all' 
+        }
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+            extensions: ["mhchem.js", "glossaries.jl"],
+          }
+      });
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../_styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><strong>ExESS</strong></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
+ <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../documentation/documentation.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../api/api.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Smolkaa" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/missions.html">3. Planetary Measurements and Data</a></li><li class="breadcrumb-item"><a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html">3.2 Lunar Exosphere Surface Densities</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/acronyms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acronyms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/introduction/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">2. Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Coordinate Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/numerical_grids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Numerical Grids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">2.3 ODEs and Numerical Solvers</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/stats_mc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Statistics and Monte-Carlo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/exospheres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.5 Exospheres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/moon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.6 The Moon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">2.7 Other Exospheres in The Solar System</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">3. Planetary Measurements and Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/planetary_measurements/missions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Missions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">3.2 Lunar Exosphere Surface Densities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">4. Exospheres: Sources and Sinks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">4.1 Solar Wind</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/sources_sinks/thermal_sorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Thermal Sorption</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/sources_sinks/photoreactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Photoreactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">Photodesorption</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">MIV</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">5. Exospheres: Particle Trajectories</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/trajectories/ballistic_trajectories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Ballistic Trajectories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/trajectories/non-ballistic_trajectories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Non-Ballistic Trajectories</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">6. Lunar Water Exosphere Simulation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">6.X Hydrogen Surface Reaction Model</span>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">3.2 Lunar Exosphere Surface Densities</h2>
+   
+  <ul>
+  <li><a href="#atomic-hydrogen-ceh" id="toc-atomic-hydrogen-ceh" class="nav-link active" data-scroll-target="#atomic-hydrogen-ceh">Atomic Hydrogen – <span class="math inline">\(\ce{H}\)</span></a></li>
+  <li><a href="#molecular-hydrogen-ceh2" id="toc-molecular-hydrogen-ceh2" class="nav-link" data-scroll-target="#molecular-hydrogen-ceh2">Molecular Hydrogen – <span class="math inline">\(\ce{H2}\)</span></a></li>
+  <li><a href="#helium-cehe" id="toc-helium-cehe" class="nav-link" data-scroll-target="#helium-cehe">Helium – <span class="math inline">\(\ce{He}\)</span></a></li>
+  <li><a href="#hydroxyl-ceoh" id="toc-hydroxyl-ceoh" class="nav-link" data-scroll-target="#hydroxyl-ceoh">Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></a></li>
+  <li><a href="#water-ceh2o" id="toc-water-ceh2o" class="nav-link" data-scroll-target="#water-ceh2o">Water – <span class="math inline">\(\ce{H2O}\)</span></a></li>
+  <li><a href="#neon-cene" id="toc-neon-cene" class="nav-link" data-scroll-target="#neon-cene">Neon – <span class="math inline">\(\ce{Ne}\)</span></a></li>
+  <li><a href="#argon-cear" id="toc-argon-cear" class="nav-link" data-scroll-target="#argon-cear">Argon – <span class="math inline">\(\ce{Ar}\)</span></a></li>
+  
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/planetary_measurements/lunar_exosphere_densities.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">3.2 Lunar Exosphere Surface Densities</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p></p><p>Alexander Smolka, <a href="mailto:a.smolka@tum.de"><code>a.smolka@tum.de</code></a> <br> Technical University of Munich</p> <p></p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- SIUNITX WORKAROUND -->
+<!-- GLS WORKAROUND -->
+<hr>
+<p>This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span>. Some references are providing their values in terms of a column density in <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-2}}}\right]\)</span>, which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.</p>
+<p>See the additional information section on this section’s appendix to find details about some sources, their assumptions, and their measurement methods.</p>
+<section id="atomic-hydrogen-ceh" class="level1">
+<h1>Atomic Hydrogen – <span class="math inline">\(\ce{H}\)</span></h1>
+<div id="tbl-H" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;1: Overview of reported hydrogen surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>upper limit, UVS Apollo 17</td>
+<td><span class="math inline">\(1.0 \times 10^1\)</span></td>
+<td><span class="citation" data-cites="Fastie1973">Fastie et al. (<a href="#ref-Fastie1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="even">
+<td>upper limit</td>
+<td><span class="math inline">\(1.7 \times 10^1\)</span></td>
+<td><span class="citation" data-cites="Feldman1991">Feldman &amp; Morrison (<a href="#ref-Feldman1991" role="doc-biblioref">1991</a>)</span> <br> <span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>LAMP</td>
+<td><span class="math inline">\(1.4 \times 10^{-1}\)</span></td>
+<td><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span></td>
+</tr>
+<tr class="even">
+<td>model predictions, dayside</td>
+<td><span class="math inline">\(8.0 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>LAMP, upper limit</td>
+<td><span class="math inline">\(2.4 \times 10^1\)</span></td>
+<td><span class="citation" data-cites="Cook2013">Cook et al. (<a href="#ref-Cook2013" role="doc-biblioref">2013</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="molecular-hydrogen-ceh2" class="level1">
+<h1>Molecular Hydrogen – <span class="math inline">\(\ce{H2}\)</span></h1>
+<div id="tbl-H2" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;2: Overview of reported molecular hydrogen surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>model predictions, dayside <br> model predictions, nightside</td>
+<td><span class="math inline">\(2.0 \times 10^3\)</span> <br> <span class="math inline">\(1.2 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="even">
+<td>LACE, upper limit, dayside <br> LACE, upper limit, nightside</td>
+<td><span class="math inline">\(6.0 \times 10^3\)</span> <br> <span class="math inline">\(6.5 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>UVS Apollo 17, upper limit</td>
+<td><span class="math inline">\(1.2 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Fastie1973">Fastie et al. (<a href="#ref-Fastie1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="even">
+<td>Apollo, upper limit, dayside <br> Apollo, upper limit, nightside</td>
+<td><span class="math inline">\(2.5 \text{ to } 9.9 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 15.0 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+</tr>
+<tr class="odd">
+<td>upper limit <br> expected LAMP density</td>
+<td><span class="math inline">\(9.0 \times 10^3\)</span> <br> <span class="math inline">\(1.1 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span></td>
+</tr>
+<tr class="even">
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]H2}\)</span></td>
+<td><span class="math inline">\(2.1 \times 10^3\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>LAMP, upper limit, dusk <br> LAMP, upper limit, dawn</td>
+<td><span class="math inline">\(1.3 \text{ to } 2.1 \times 10^3\)</span> <br> <span class="math inline">\(1.8 \text{ to } 2.4 \times 10^3\)</span></td>
+<td><span class="citation" data-cites="Cook2013">Cook et al. (<a href="#ref-Cook2013" role="doc-biblioref">2013</a>)</span></td>
+</tr>
+<tr class="even">
+<td>LAMP, “effective” <br> LAMP, nightside, dusk <br> LAMP, nightside, dawn</td>
+<td><span class="math inline">\(0.8 \text{ to } 1.6 \times 10^3\)</span> <br> <span class="math inline">\(0.5 \text{ to } 1.5 \times 10^3\)</span> <br> <span class="math inline">\(0.9 \text{ to } 1.9 \times 10^3\)</span></td>
+<td><br> <span class="citation" data-cites="Stern2013">Stern et al. (<a href="#ref-Stern2013" role="doc-biblioref">2013</a>)</span></td>
+</tr>
+<tr class="odd">
+<td>CHACE, at latitudes: <span class="math inline">\(20\text{ to }50\,\mathrm{\degree}\)</span> <br> CHACE, at latitudes: <span class="math inline">\(50\text{ to }70\,\mathrm{\degree}\)</span> <br> CHACE, at latitudes: <span class="math inline">\(70\text{ to }90\,\mathrm{\degree}\)</span></td>
+<td><span class="math inline">\(4.0 \text{ to } 6.0 \times 10^2\)</span> <br> <span class="math inline">\(5.0 \text{ to } 6.5 \times 10^2\)</span> <br> <span class="math inline">\(6.5 \text{ to } 8.5 \times 10^2\)</span> <br></td>
+<td><br> <span class="citation" data-cites="Thampi2015">Thampi et al. (<a href="#ref-Thampi2015" role="doc-biblioref">2015</a>)</span></td>
+</tr>
+<tr class="even">
+<td>model predictions, equator, dayside <br> model predictions, equator, nightside <br> model predictions, equator, dayside, in magnetotail <br> model predictions, equator, nightside, in magnetotail</td>
+<td><span class="math inline">\(1.5 \text{ to } 2.2 \times 10^3\)</span> <br> <span class="math inline">\(3.0 \text{ to } 4.2 \times 10^3\)</span> <br> <span class="math inline">\(0.4 \text{ to } 0.7 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 1.5 \times 10^3\)</span></td>
+<td><br> <span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="helium-cehe" class="level1">
+<h1>Helium – <span class="math inline">\(\ce{He}\)</span></h1>
+<div id="tbl-H2" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;3: Overview of reported helium surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model predictions, dayside <br> Model predictions, nightside</td>
+<td><span class="math inline">\(1.6 \times 10^3\)</span> <br> <span class="math inline">\(3.8 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="even">
+<td>upper limit, dayside <br> upper limit, nightside</td>
+<td><span class="math inline">\(2.0 \times 10^3\)</span> <br> <span class="math inline">\(4.0 \times 10^4\)</span></td>
+<td><span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hydroxyl-ceoh" class="level1">
+<h1>Hydroxyl – <span class="math inline">\(\ce{OH}\)</span></h1>
+<div id="tbl-OH" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;4: Overview of reported hydroxyl surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Apollo, upper limit, dayside</td>
+<td><span class="math inline">\(0.5 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+</tr>
+<tr class="even">
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]OH}\)</span></td>
+<td><span class="math inline">\(1.0 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="water-ceh2o" class="level1">
+<h1>Water – <span class="math inline">\(\ce{H2O}\)</span></h1>
+<div id="tbl-OH" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;5: Overview of reported water surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Apollo, upper limit, dayside</td>
+<td><span class="math inline">\(0.5 \times 10^0\)</span></td>
+<td><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span>, chap 3.10</td>
+</tr>
+<tr class="even">
+<td>model predictions, upper limit, dayside <br> <span class="math inline">\(\ce{p+-&gt;[100\%]H2O}\)</span></td>
+<td><span class="math inline">\(2.9 \times 10^3\)</span></td>
+<td><span class="citation" data-cites="Wurz2012">Wurz et al. (<a href="#ref-Wurz2012" role="doc-biblioref">2012</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="neon-cene" class="level1">
+<h1>Neon – <span class="math inline">\(\ce{Ne}\)</span></h1>
+<div id="tbl-H2" class="anchored">
+<table class="table-borderless table-hover table">
+<caption>Table&nbsp;6: Overview of reported Neon surface number densities in reviewed and published literature.</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 23%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value <span class="math inline">\(\left[\,\mathrm{cm^{\mathrm{-3}}}\right]\)</span></th>
+<th>Reference(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model predictions, dayside <br> Model predictions, nightside</td>
+<td><span class="math inline">\(4.0 \text{ to } 7.0 \times 10^3\)</span> <br> <span class="math inline">\(1.0 \text{ to } 2.0 \times 10^5\)</span></td>
+<td><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+<tr class="even">
+<td>solar zenith angle: <br>   <span class="math inline">\(+168\degree\)</span> <br>   <span class="math inline">\(-136\degree\)</span> <br>   <span class="math inline">\(-112\degree\)</span> <br>   <span class="math inline">\(-89\degree\)</span> <br> <span class="math inline">\(\Rightarrow\)</span> average</td>
+<td><br> <span class="math inline">\(9.4 \times 10^4\)</span> <br> <span class="math inline">\(7.7 \times 10^4\)</span> <br> <span class="math inline">\(7.1 \times 10^4\)</span> <br> <span class="math inline">\(8.7 \times 10^4\)</span> <br> <span class="math inline">\(8.2 \times 10^4\)</span> <br></td>
+<td><br> <br> <br> <span class="citation" data-cites="Hoffman1973">Hoffman et al. (<a href="#ref-Hoffman1973" role="doc-biblioref">1973</a>)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="argon-cear" class="level1">
+<h1>Argon – <span class="math inline">\(\ce{Ar}\)</span></h1>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="additional-information" class="level1 appendix unnumbered"><h2 class="anchored quarto-appendix-heading">Additional Information</h2><div class="quarto-appendix-contents">
+
+<ul>
+<li><span class="citation" data-cites="Gladstone2009">Gladstone et al. (<a href="#ref-Gladstone2009" role="doc-biblioref">2009</a>)</span> assume for the LAMP derivations a <span class="math inline">\(30\,\mathrm{min}\)</span>, <span class="math inline">\(3\sigma\)</span> observation, and a path length of <span class="math inline">\(300\,\mathrm{km}\)</span>.</li>
+<li><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> assumed a solar wind proton influx of <span class="math inline">\(3 \times 10^8 \,\mathrm{s^{\mathrm{-1}}cm^{\mathrm{-3}}}\)</span> for their simulations.</li>
+<li>CHACE measurements were made during a Moon’s pass through Earth’s magnetotail, reducing the solar wind influx of particles dramatically.</li>
+<li><span class="citation" data-cites="Heiken1991">Heiken et al. (<a href="#ref-Heiken1991" role="doc-biblioref">1991</a>)</span> reported a joint upper limit of <span class="math inline">\(0.5 \times 10^0\)</span> for both <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span></li>
+</ul>
+
+
+
+</div></section><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Cook2013" class="csl-entry" role="listitem">
+Cook, J. C., Stern, S. A., Feldman, P. D., Gladstone, G. R., Retherford, K. D., &amp; Tsang, C. C. C. (2013). New upper limits on numerous atmospheric species in the native lunar atmosphere. <em>Icarus</em>. <a href="https://doi.org/10.1016/j.icarus.2013.04.010">https://doi.org/10.1016/j.icarus.2013.04.010</a>
+</div>
+<div id="ref-Fastie1973" class="csl-entry" role="listitem">
+Fastie, Wm. G., Feldman, P. D., Henry, R. C., Moos, H. W., Barth, C. A., Thomas, G. E., &amp; M. Donahue, andThomas. (1973). <em><span class="nocase">A Search for Far-Ultraviolet Emissions from the Lunar Atmosphere</span></em>. <em>2023</em>. <a href="https://doi.org/10.1126/science.182.4113.710">https://doi.org/10.1126/science.182.4113.710</a>
+</div>
+<div id="ref-Feldman1991" class="csl-entry" role="listitem">
+Feldman, P. D., &amp; Morrison, D. (1991). <span class="nocase">The Apollo 17 Ultraviolet Spectrometer: Lunar Atmosphere Measurements revited</span>. <em>Geophysical Research Letters</em>, <em>18</em>(11), 2105–2108. <a href="https://doi.org/10.1029/91GL01998">https://doi.org/10.1029/91GL01998</a>
+</div>
+<div id="ref-Gladstone2009" class="csl-entry" role="listitem">
+Gladstone, G. R., Stern, S. A., Retherford, K. D., Black, R. K., Slater, D. C., Davis, M. W., Versteeg, M. H., Persson, K. B., Parker, J. W., Kaufmann, D. E., Egan, A. F., Greathouse, T. K., Feldman, P. D., Hurley, D., Pryor, W. R., &amp; Hendrix, A. R. (2009). <span>LAMP</span>: <span>T</span>he <span>L</span>yman <span>A</span>lpha <span>M</span>apping project on <span>NASA</span>’s lunar reconnaissance orbiter mission. <em>Space Science Reviews</em>, <em>150</em>(1-4), 161–181. <a href="https://doi.org/10.1007/s11214-009-9578-6">https://doi.org/10.1007/s11214-009-9578-6</a>
+</div>
+<div id="ref-Heiken1991" class="csl-entry" role="listitem">
+Heiken, G. H., Vaniman, D. T., &amp; French, B. M. (1991). <em><span class="nocase">Lunar sourcebook: a user’s guide to the Moon</span>: A user’s guide to the moon</em> (p. 756). Cambridge University Press.
+</div>
+<div id="ref-Hodges1973" class="csl-entry" role="listitem">
+Hodges, R. R. Jr., Hoffman, J. H., &amp; Johnson, F. S. (1973). Composition and dynamics of lunar atmosphere. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2855–2864.
+</div>
+<div id="ref-Hoffman1973" class="csl-entry" role="listitem">
+Hoffman, J. H., Hodges, R. R., Johnson, F. S., &amp; Evans, D. E. (1973). Lunar atmospheric composition results from <span>A</span>pollo 17. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2865–2875.
+</div>
+<div id="ref-Stern2013" class="csl-entry" role="listitem">
+Stern, S. A., Cook, J. C., Chaufray, J. Y., Feldman, P. D., Gladstone, G. R., &amp; Retherford, K. D. (2013). Lunar atmospheric <span>H2</span> detections by the <span>LAMP UV</span> spectrograph on the <span>L</span>unar <span>R</span>econnaissance <span>O</span>rbiter. <em>Icarus</em>, <em>226</em>(2), 1210–1213. <a href="https://doi.org/10.1016/j.icarus.2013.07.011">https://doi.org/10.1016/j.icarus.2013.07.011</a>
+</div>
+<div id="ref-Thampi2015" class="csl-entry" role="listitem">
+Thampi, S. V., Sridharan, R., Das, T. P., Ahmed, S. M., Kamalakar, J. A., &amp; Bhardwaj, A. (2015). The spatial distribution of molecular hydrogen in the lunar atmosphere—new results. <em>Planetary and Space Science</em>, <em>106</em>, 142–147. <a href="https://doi.org/10.1016/j.pss.2014.12.018">https://doi.org/10.1016/j.pss.2014.12.018</a>
+</div>
+<div id="ref-Tucker2021" class="csl-entry" role="listitem">
+Tucker, O. J., Farrell, W. M., &amp; Poppe, A. R. (2021). On the effect of magnetospheric shielding on the lunar hydrogen cycle. <em>Journal of Geophysical Research: Planets</em>, <em>126</em>(2). <a href="https://doi.org/10.1029/2020je006552">https://doi.org/10.1029/2020je006552</a>
+</div>
+<div id="ref-Wurz2012" class="csl-entry" role="listitem">
+Wurz, P., Abplanalp, D., Tulej, M., &amp; Lammer, H. (2012). A neutral gas mass spectrometer for the investigation of lunar volatiles. <em>Planetary and Space Science</em>, <em>74</em>(1), 264–269. <a href="https://doi.org/10.1016/j.pss.2012.05.016">https://doi.org/10.1016/j.pss.2012.05.016</a>
+</div>
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
+  author = {Smolka, Alexander},
+  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
+    {Simulations}},
+  date = {2023},
+  url = {https://smolkaa.github.io},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-smolka2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Smolka, A. (2023). <em>ExESS - Extraterrestrial Exosphere and Surface
+Simulations</em>. <a href="https://smolkaa.github.io">https://smolkaa.github.io</a>
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../documentation/planetary_measurements/missions.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3.1 Missions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../documentation/sources_sinks/thermal_sorption.html" class="pagination-link">
+        <span class="nav-page-text">4.2 Thermal Sorption</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

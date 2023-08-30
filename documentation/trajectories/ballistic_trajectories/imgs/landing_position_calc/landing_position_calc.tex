@@ -20,35 +20,50 @@
 
 \usepackage{siunitx}
 
+\usepackage{xcolor}
+	%::. TUM colors
+	\definecolor{TUMBlack}	    {RGB}{  0,   0,   0}
+	\definecolor{TUMGray}	    {RGB}{128, 128, 128}
+	\definecolor{TUMGrayDark}   {RGB}{ 51,  51,  51}
+	\definecolor{TUMGrayLight}  {RGB}{204, 204, 204}
+	\definecolor{TUMWhite}	    {RGB}{255, 255, 255}
+	\definecolor{TUMBlue}	    {RGB}{  0, 101, 189}
+	\definecolor{TUMBlueDark}   {RGB}{  0,  82, 147}
+	\definecolor{TUMBlueDarker} {RGB}{  0,  51,  89}
+	\definecolor{TUMBlueLight}  {RGB}{100, 160, 200}
+	\definecolor{TUMBlueLighter}{RGB}{152, 198, 234}
+	\definecolor{TUMOrange}	    {RGB}{227, 114,  34}
+	\definecolor{TUMGreen}	    {RGB}{162, 173,   0}
+
 
 \input{../../../../../resources/latex/_symbols.qmd}
 
 \begin{document}
 
-\tdplotsetmaincoords{70}{120}
-\begin{tikzpicture}[tdplot_main_coords]
-    %\draw[-latex] (0,0,0) -- (4,0,0) node[anchor=north east]{$x$};
-    %\draw[-latex] (0,0,0) -- (0,4,0) node[anchor=north west]{$y$};
-    %\draw[-latex] (0,0,0) -- (0,0,4) node[anchor=south]{$z$};
+\tdplotsetmaincoords{70}{135}
+\begin{tikzpicture}[tdplot_main_coords, scale=1.25]
 
-    \tdplotdrawarc[]{(0,0,0)}{3}{0}{360}{}{}
-    \tdplotdrawarc[dashed]{(0,0,1.543)}{2.573}{2}{88}{}{}
+    %::. "coordinate system" and sphere lines
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (0,0,3);
+    \tdplotdrawarc[TUMGrayLight, dashed]{(0,0,0)}{3}{-1}{110}{}{}
+    \tdplotdrawarc[TUMGrayLight, dashed]{(0,0,1.460)}{2.573}{-3}{110}{}{}
 
 
     %::. start point
-    \pgfmathsetmacro{\psx}{2.571}
-    \pgfmathsetmacro{\psy}{0.103}
-    \pgfmathsetmacro{\psz}{1.543}
+    \pgfmathsetmacro{\psx}{2.433}
+    \pgfmathsetmacro{\psy}{0.973}
+    \pgfmathsetmacro{\psz}{1.460}
+
+    \node[anchor=east, yshift=-3] at (\psx, \psy, \psz) {\footnotesize launch};
+
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (2.7854, 1.1142, 0);
+    \draw[TUMGrayLight, dashed] (\psx, \psy, 0) -- (\psx, \psy, \psz);
 
     \tdplotgetpolarcoords{\psx}{\psy}{\psz}
     \tdplotsetthetaplanecoords{\tdplotresphi}
 
-    \tdplotdrawarc[dotted, tdplot_rotated_coords]{(0,0,0)}{3}{-90}{0}{}{}
-    \tdplotdrawarc[dashed, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=east}{$\latitude_0$}
-    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{}{}
-
-    %\draw[dotted, red] (0,0,0) -- (\psx, \psy, 0);
-    %\draw[dotted, red] (\psx, \psy, 0) -- (\psx, \psy, \psz);
+    \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=east}{$\latitude_0$}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=east}{$\overline{\latitude_0}$}
 
 
     %::. end point
@@ -56,31 +71,35 @@
     \pgfmathsetmacro{\pey}{1.785}
     \pgfmathsetmacro{\pez}{2.410}
 
+    \node[anchor=west, xshift=1] at (\pex, \pey, \pez) {\footnotesize landing};
+
+    \draw[TUMGrayLight, dashed] (0,0,0) -- (0.0756, 2.999, 0);
+    \draw[TUMGrayLight, dashed] (\pex, \pey, 0) -- (\pex, \pey, \pez);
+
     \tdplotgetpolarcoords{\pex}{\pey}{\pez}
     \tdplotsetthetaplanecoords{\tdplotresphi}
 
-    \tdplotdrawarc[dotted, tdplot_rotated_coords]{(0,0,0)}{3}{-90}{0}{}{}
-    \tdplotdrawarc[dashed, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=west}{$\latitude_1$}
-    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{}{}
-
-
-
-    %\draw[dotted, red] (0,0,0) -- (\pex, \pey, 0);
-    %\draw[dotted, red] (\pex, \pey, 0) -- (\pex, \pey, \pez);
+    \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=west}{$\latitude_1$}
+    \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=west, xshift=4}{$\overline{\latitude_1}$}
 
 
     %::. connection (cross product for 3d orientation)
     \tdplotcrossprod(\psx,\psy,\psz)(\pex,\pey,\pez)
 
     \tdplotgetpolarcoords{\tdplotresx}{\tdplotresy}{\tdplotresz}
-    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{180-\tdplotrestheta + 4}
+    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{180-\tdplotrestheta+1}
 
-    % \tdplotdrawarc[thin, tdplot_rotated_coords, dashed]{(0,0,0)}{3}{-45}{\tdplotrestheta+8+45}{}{}
-    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta+8}{anchor=north, xshift=5}{$\Delta\trueAnomaly$}
-
+    \tdplotdrawarc[very thick, -latex, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=north, xshift=5}{$\Delta\trueAnomaly$}
 
 
+    %::. longitude
+    \tdplotdrawarc[latex-latex, thin,]{(0,0,0)}{1.5}{22}{88}{anchor=north}{$\Delta\longitude$}
 
+
+    %::. launch azimuth angle
+    \tdplotgetpolarcoords{\psx}{\psy}{\psz}
+    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{0}
+    \tdplotdrawarc[-latex, thin, tdplot_rotated_coords]{(0,0,3)}{0.6}{93}{135}{anchor=west}{$\azimuthAngle$}
 \end{tikzpicture}
 
 \end{document}

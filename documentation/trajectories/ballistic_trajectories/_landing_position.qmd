@@ -8,27 +8,28 @@ The following calculations are based on the orbital mechanics functions introduc
 Based on the escape velocity [$\velocity_{esc}(\radius, \mass)$](#sec-escape-velocity), the relative kinetic energy fraction [$\relativeKineticEnergy(\vec\velocity, \velocity_{esc})$](#sec-relative-kinetic-energy), can be determined, which in turn is used to calculate the semi-major axis of the trajectory, [$\semiMajorAxis(\radius, \relativeKineticEnergy)$](#sec-semi-major-axis). Since the launch velocity vector is given in local cartesian coordinates, both its zenith angle [$\zenithAngle(\vec\velocity)$](#sec-zenith-angle) and its azimuth angle [$\azimuthAngle\left(\vec\velocity\right)$](#sec-azimuth-angle) can be directly extracted. The former is subsequently used for the determination of the eccentricity [$\eccentricity\left(\relativeKineticEnergy, \zenithAngle\right)$](#sec-eccentricity). With both $\semiMajorAxis$ and $\eccentricity$ known, the true anomaly at launch $\trueAnomaly_0(\radius, \semiMajorAxis, \eccentricity)$, and due to symmetry conditions, also the landing position [$\trueAnomaly_1 = 2\pi - \trueAnomaly_0$](#sec-true-anomaly), can be calculated, leading to the angular difference between the landing and launch true anomaly $\trueAnomaly_1 - \trueAnomaly_0 = 2\pi - 2\trueAnomaly = \Delta\trueAnomaly$.
 
 
-Based on @Schoerghofer2022a and @Butler1997, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuthAngle$ as
+{{< include ballistic_trajectories/imgs/landing_position_calc/_landing_position_calc.qmd >}}
+
+
+Based on @Schoerghofer2022a and @Butler1997, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuthAngle$ of the launch velocity. The problem is sketched in @fig-landing_position_calc, where $\overline{\latitude_0}$ and $\overline{\latitude_1}$ are the complementary angles of the latitudes, i.e., $\latitude = \frac{\pi}{2} \cdot \overline{\latitude}$. Based on the cosine-law of spherical trigonometry, the angular triangle $\left(\Delta\trueAnomaly, \overline{\latitude_0}, \overline{\latitude_1}\right)$ can be used to find
+\begin{equation}
+    \sin\latitude_1 = \sin\latitude_0 \cdot \cos\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuthAngle
+\end{equation}
+with $\cos\overline\latitude = \sin\latitude$ and $\sin\overline\latitude = \cos\latitude$, and the same triangle can be used for the calculation of the longitude difference $\Delta\longitude$ using the cosine-law
 \begin{align}
-    \sin\latitude_1 &= \sin\latitude_0 \cdot \sin\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuthAngle \\[3mm]
-    \cos\Delta\longitude &= \frac{\cos\Delta\trueAnomaly - \sin\latitude_0 \cdot \sin\latitude_1}{\cos\latitude_0 \cdot \cos\latitude_1} \\[3mm]
-    \Rightarrow \longitude_1 &= \longitude_0 + \sgn\left(\velocity_1\right)\cdot\Delta\longitude,
+    \cos\Delta\trueAnomaly &= \sin\latitude_0 \cdot \sin\latitude_1 + \cos\latitude_0 \cdot \cos\latitude_1 \cdot \cos\Delta\longitude \\[3mm]
+    \Rightarrow\quad \cos\Delta\longitude &= \frac{\cos\Delta\trueAnomaly - \sin\latitude_0 \cdot \sin\latitude_1}{\cos\latitude_0 \cdot \cos\latitude_1}.
 \end{align}
-with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq0$ and $\sgn\left(\velocity_1\right) = -1$ for $\velocity_1<0$. Due to numerical inaccuracies, the cosine of the longitude difference $\cos\Delta\longitude$ can be slightly larger than one. In this case, the cosine will be set to either one or negative one, respectively. Additionally, since the cosine is a periodic function, the equations above cannot handle true anomalies that are bigger than half the circumference, i.e., $\Delta\trueAnomaly > \pi$, which would make $\cos\Delta\longitude$ overflow, returning smaller changes in the landing longitude than expected. In this case, the longitude difference is calculated as $\Delta\longitude = 2\pi - \cos^{-1}\left(\cos\Delta\longitude\right)$.
+Note that numerical round-off issues could lead to sine and cosine expressions larger than one. Due to the periodicity of the cosine, two different cases have to be considered when extracting the $\Delta\longitude$:
+\begin{equation}
+    \Delta\longitude = \begin{cases} \Delta\longitude & \text{if } \Delta\trueAnomaly \leq \pi, \\ 2\pi - \Delta\longitude & \text{else.} \end{cases}
+\end{equation}
+Finally, the landing longitude $\longitude_1$ can be calculated based on the direction of the launch velocity as
+\begin{equation}
+    \Rightarrow \longitude_1 = \longitude_0 + \sgn\left(\velocity_1\right)\cdot\Delta\longitude,
+\end{equation}
+with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq0$ and $\sgn\left(\velocity_1\right) = -1$ for $\velocity_1<0$.
 
-
-\begin{align}
-    \sin\latitude_1 &= \sin\latitude_0 \cdot \cos\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuthAngle \\[3mm]
-    \cos\Delta\longitude &= \frac{\cos\Delta\trueAnomaly - \sin\latitude_0 \cdot \sin\latitude_1}{\cos\latitude_0 \cdot \cos\latitude_1} \\[3mm]
-
-    \Delta\longitude &= \begin{cases} \cos^{-1}\left(\cos\Delta\longitude\right) & \text{if } \Delta\trueAnomaly \leq \pi, \\ 2\pi - \cos^{-1}\left(\cos\Delta\longitude\right) & \text{else.} \end{cases}\\[3mm]
-
-    \Rightarrow \longitude_1 &= \longitude_0 + \sgn\left(\velocity_1\right)\cdot\Delta\longitude,
-\end{align}
-
-
-
-[Here comes a reference to the comparison study.]{style="color: red;"}
 
 
 Calculating the time of flight $\flightTime = \Time_1 - \Time_0 = \period - 2\Time_0$ requires the orbital period [$\period\left(\semiMajorAxis, \mass\right)$](#sec-orbit-period) as well as the orbit time [$\Time(\meanAnomaly, \period)$](#sec-orbit-time), where $\Time_0$ and $\Time_1$ are the orbit times at the launch and landing, respectively, with $\Time_1 = \period-\Time_0$ for symmetry reasons. The mean anomaly [$\meanAnomaly_0$](#sec-mean-anomaly) at launch can be calculated using the eccentric anomaly [$\eccentricAnomaly_0$](#sec-eccentric-anomaly) and the eccentricity $\eccentricity$.
