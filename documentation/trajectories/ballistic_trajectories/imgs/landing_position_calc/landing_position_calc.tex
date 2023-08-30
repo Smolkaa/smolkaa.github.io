@@ -1,0 +1,86 @@
+%
+% copied from: https://tikz.net/spherical_volume/
+% date: 2023, June 26
+%
+% adjusted by Alexander Smolka
+%
+\documentclass[crop,tikz]{standalone}
+\usepackage{tikz}
+	\usetikzlibrary{shapes}
+	\usetikzlibrary{automata}
+	\usetikzlibrary{arrows}
+	\usetikzlibrary{backgrounds}
+	\usetikzlibrary{calc}
+	\usetikzlibrary{positioning}
+	\usetikzlibrary{patterns}
+	\usetikzlibrary{decorations.pathmorphing}
+	\usetikzlibrary{decorations.pathreplacing}
+\usepackage{tikz-3dplot}
+\usepackage{ifthen}
+
+\usepackage{siunitx}
+
+
+\input{../../../../../resources/latex/_symbols.qmd}
+
+\begin{document}
+
+\tdplotsetmaincoords{70}{120}
+\begin{tikzpicture}[tdplot_main_coords]
+    %\draw[-latex] (0,0,0) -- (4,0,0) node[anchor=north east]{$x$};
+    %\draw[-latex] (0,0,0) -- (0,4,0) node[anchor=north west]{$y$};
+    %\draw[-latex] (0,0,0) -- (0,0,4) node[anchor=south]{$z$};
+
+    \tdplotdrawarc[]{(0,0,0)}{3}{0}{360}{}{}
+    \tdplotdrawarc[dashed]{(0,0,1.543)}{2.573}{2}{88}{}{}
+
+
+    %::. start point
+    \pgfmathsetmacro{\psx}{2.571}
+    \pgfmathsetmacro{\psy}{0.103}
+    \pgfmathsetmacro{\psz}{1.543}
+
+    \tdplotgetpolarcoords{\psx}{\psy}{\psz}
+    \tdplotsetthetaplanecoords{\tdplotresphi}
+
+    \tdplotdrawarc[dotted, tdplot_rotated_coords]{(0,0,0)}{3}{-90}{0}{}{}
+    \tdplotdrawarc[dashed, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=east}{$\latitude_0$}
+    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{}{}
+
+    %\draw[dotted, red] (0,0,0) -- (\psx, \psy, 0);
+    %\draw[dotted, red] (\psx, \psy, 0) -- (\psx, \psy, \psz);
+
+
+    %::. end point
+    \pgfmathsetmacro{\pex}{0.045}
+    \pgfmathsetmacro{\pey}{1.785}
+    \pgfmathsetmacro{\pez}{2.410}
+
+    \tdplotgetpolarcoords{\pex}{\pey}{\pez}
+    \tdplotsetthetaplanecoords{\tdplotresphi}
+
+    \tdplotdrawarc[dotted, tdplot_rotated_coords]{(0,0,0)}{3}{-90}{0}{}{}
+    \tdplotdrawarc[dashed, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=west}{$\latitude_1$}
+    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{}{}
+
+
+
+    %\draw[dotted, red] (0,0,0) -- (\pex, \pey, 0);
+    %\draw[dotted, red] (\pex, \pey, 0) -- (\pex, \pey, \pez);
+
+
+    %::. connection (cross product for 3d orientation)
+    \tdplotcrossprod(\psx,\psy,\psz)(\pex,\pey,\pez)
+
+    \tdplotgetpolarcoords{\tdplotresx}{\tdplotresy}{\tdplotresz}
+    \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{180-\tdplotrestheta + 4}
+
+    % \tdplotdrawarc[thin, tdplot_rotated_coords, dashed]{(0,0,0)}{3}{-45}{\tdplotrestheta+8+45}{}{}
+    \tdplotdrawarc[thick, tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta+8}{anchor=north, xshift=5}{$\Delta\trueAnomaly$}
+
+
+
+
+\end{tikzpicture}
+
+\end{document}
