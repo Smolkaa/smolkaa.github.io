@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/manuals/manuals.html",
+    "items": [
+      "/manuals/2d_3d_landing_position_comparison/index.html",
+      "/manuals/package_installation/index.html",
+      "/manuals/exercise_fibonacci/index.html",
+      "/manuals/git_essentials/index.html",
+      "/manuals/julia_links/index.html",
+      "/manuals/onboarding_checklist/index.html",
+      "/manuals/example_trajectory_01/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations/presentations.html",
+    "items": [
+      "/presentations/tsu_seminar/index.html"
+    ]
+  }
+]
