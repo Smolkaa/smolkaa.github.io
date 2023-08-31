@@ -1,0 +1,191 @@
+::: {.column-page-right}
+::: {.panel-tabset}
+
+# {{< fa table >}} Table
+
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| Reference        | Description / Highlights                                                        | Connection                                        |
++:=================+=================================================================================+===================================================+
+| @Chamberlain1963 | * analytical model of density distributions in planetary atmospheres/exospheres |                                                   |
+|                  | * assumes an isothermal, spherically symmetric, and globally uniform atmosphere |                                                   |
+|                  | * developed a scaled barometric scaling for exospheric number densities at      |                                                   |
+|                  |   varying altitudes                                                             |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Vogel1966       | * theoretical model of molecular fluxes in the lunar exosphere                  |                                                   |
+|                  | * proposed an analytical framework to calculate elliptical trajectories and     |                                                   |
+|                  |   and the respective landing positions on the Moon                              |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Hodges1973      | * first $\ce{H2}, \ce{He}, \ce{Ne}$, and $\ce{Ar}$ model of the lunar exosphere |                                                   |
+|                  | * compared model results with preliminary Apollo 17 data                        |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Armand1977      | * proposed the theory of desorption                                             |                                                   |
+|                  |  [velocity distributions](/documentation/sources_sinks/thermal_sorption.qmd)    |                                                   |
+|                  |  (Maxwell-Boltzmann Flux)                                                       |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Smith1978       | * Monte-Carlo model of Mercury's exosphere                                      |                                                   |
+|                  | * [MBFD](/documentation/acronyms.qmd) distributed particle velocities           |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Huebner1992     | * provides a comprehensive overview of photoreaction rates widely used for      |                                                   |
+|                  |   modeling the lunar exosphere                                                  |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Butler1997      | * Monte-Carlo exosphere model of Mercury and the Moon                           | * extension of @Vogel1966 trajectory calculation  |
+|                  | * investigated $\ce{H2O}$ and $\ce{CO2}$                                        |                                                   |
+|                  | * proposed an analytic function to approximate the lunar surface temperature    |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Crider2002      | * Monte-Carlo simulation of exospheric hydrogen migration on the Moon           |                                                   |
+|                  | * lists a variety of conversion paths for solar wind protons to $\ce{H}$,       |                                                   |
+|                  |   $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$                                          |                                                   |
+|                  | * comments on the high inaccuracies of the implementation of the chemical and   |                                                   |
+|                  |   physical reactions                                                            |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Chaufray2009    | * Monte-Carlo model of the lunar argon exosphere                                |                                                   |
+|                  | * investigated the accumulation of $\ce{Ar}$ in PSRs                            |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Poppe2013       | * first "self-sputtering" model of the lunar exosphere                          |                                                   |
+|                  | * suggests that self-sputtering is a significant source of neutrals in the      |                                                   |
+|                  |   exosphere (locally comparable to solar wind and micrometeoroid bombardment)   |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Schorghofer2014 | * Monte-Carlo model of exospheric water migration of the Moon                   | * based on @Butler1997                            |
+|                  | * presents a dusk-dawn asymmetry of hydrogenous species                         |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Farrell2015     | * Monte-Carlo model of solar wind implantation into the lunar surface regolith  |                                                   |
+|                  | * systematically studied distributions of activation energies to simulate       |                                                   |
+|                  |   hydrogen retention and $\ce{OH}$ formation                                    |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Grava2015       | * Monte-Carlo model of the lunar argon exosphere                                | * based on @Chaufray2009                          |
+|                  | * compared model predictions with LACE, LAMP, and LADEE measurements            |                                                   |
+|                  | * found that charge exchange is a relevant argon loss process and that          |                                                   |
+|                  |   cold-trapping losses are comparable to ionization fluxes                      |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Hurley2015      | * presents an analytic approximation of the lunar surface temperatures, based   | * improved the analytical approach of @Butler1997 |
+|                  |   on Diviner measurements                                                       |                                                   |
+|                  | * temperature model does not include topographical, temporal, or compositional  |                                                   |
+|                  |   features                                                                      |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Prem2015        | * hybrid DSMC approach to investigate water transport in impact-generated lunar |                                                   |
+|                  |   atmosphere, combining a continuum description of the dense plume with a       |                                                   |
+|                  |   Monte-Carlo model of the tenuous water vapor exosphere                        |                                                   |
+|                  | * unsteady and three-dimensional simulations                                    |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Hurley2016      | * Monte-Carlo model of the lunar surface-bounded helium exosphere               | * built on previous works by @Killen1999,         |
+|                  | * suggests that endogenic helium provides roughly a third of the Moon's         |   @Hodges1973, @Butler1997, @Grava2015, and more  |
+|                  |   exospheric helium                                                             |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Moores2016      | * Monte-Carlo simulation to examine water delivery to lunar PSRs                | * water delivery through impacts based on         |
+|                  | * impactor and ballistic migration included as water sources                    |   @Prem2015                                       |
+|                  | * explicitly modeled the high-latitude regions, including several PSRs          | * extended @Crider2002 and @Schorghofer2014 for   |
+|                  |                                                                                 |   higher latitudes                                |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Farrell2017     | * formalism to statistically describe hydrogen implantation into the lunar      | * extension of previous model [@Farrell2015]      |
+|                  |   surface and subsurface diffusion of $\ce{H}$ using a Monte-Carlo simulation   |                                                   |
+|                  | * used distributed activation energies in the physical model                    |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Hurley2017      | * Monte-Carlo model to investigate spatial distribution of $\ce{H2}$ in the     | * extension of previous model [@Hurley2016]       |
+|                  |   lunar exosphere                                                               |                                                   |
+|                  | * examined the contributions of micrometeoroids and solar wind particles        |                                                   |
+|                  | * found that micrometeoroids are an insufficient source to reproduce LAMP       |                                                   |
+|                  |   $\ce{H2}$ measurements                                                        |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Kegerreis2017   | * Monte-Carlo model of the lunar $\ce{Ar}$ exosphere                            | * based on the works of @Smith1978, @Hodges1973,  |
+|                  | * compared densities with LADEE data                                            |   and @Butler1997                                 |
+|                  | * includes seasonal effects to study long-term variations                       |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Jones2018       | * chemical kinetics model of lunar surficial $\ce{OH}$ and $\ce{H2O}$,          |                                                   |
+|                  |   investigating the long-term evolution                                         |                                                   |
+|                  | * based on solar wind proton delivery as the main source of the simulated       |                                                   |
+|                  |   water cycle                                                                   |                                                   |
+|                  | * focusses on recombinative desorption as the main water formation pathway      |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Prem2018        | * numerical thermal model for a rough lunar surface                             | * extension of @Hurley2015 thermal model          |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Tucker2018      | * Monte-Carlo based simulation of solar wind implantation into the lunar        | * included models by @Killen1999, @Farrell2015,   |
+|                  |   lunar regolith to study $\ce{H}$ retention and implications for the $\ce{H2}$ |   @Farrell2017, and @Hurley2017                   |
+|                  |   exosphere                                                                     |                                                   |
+|                  | * modeled hydrogen diffusion and recombination to $\ce{H2}$                     |                                                   |
+|                  | * included Gaussian distributions of activation energies                        |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Grump2019       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Killen2019      | * Monte-Carlo simulation of the lunar neon exosphere                            |                                                   |
+|                  | * comparison with Apollo 17's LACE data                                         |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Prem2019        |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Grava2020       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Jones2020       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Kegerreis2020   |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Schoerghofer2020|                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Grava2021       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Jones2021       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Sarantos2021    |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Schoerghofer2021|                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Tucker2021      |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Morrissey2022   |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Poppe2022       |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Schoerghofer2022|                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Smolka2023      |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+| @Teolis2023      |                                                                                 |                                                   |
+|                  |                                                                                 |                                                   |
++------------------+---------------------------------------------------------------------------------+---------------------------------------------------+ 
+
+: Caption. {#tbl-sota_modeling .hover tbl-colwidths="[8,30,15]"}
+
+# {{< fa code >}} LaTeX
+```latex
+```
+
+
+:::
+:::

@@ -23,6 +23,12 @@ In the broader scope of planetary science, beyond the lunar realm, lies a captiv
 
 # Background and Motivation
 
+# State of the Art -- Modeling {#sec-sota_modeling}
+
+{{< include tables/_sota_modeling.qmd >}}
+
 # Research Objectives
 
 # Document Structure
+
+---

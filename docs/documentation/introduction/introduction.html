@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-19">
+<meta name="dcterms.date" content="2023-08-31">
 
 <title>ExESS - 1. Introduction</title>
 <style>
@@ -140,6 +140,8 @@ div.csl-indent {
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../_styles.css">
 </head>
@@ -373,6 +375,12 @@ div.csl-indent {
   </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/referenced_value_library/referenced_value_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A. Referenced Value Library</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -384,6 +392,7 @@ div.csl-indent {
    
   <ul>
   <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation">Background and Motivation</a></li>
+  <li><a href="#sec-sota_modeling" id="toc-sec-sota_modeling" class="nav-link" data-scroll-target="#sec-sota_modeling">State of the Art – Modeling</a></li>
   <li><a href="#research-objectives" id="toc-research-objectives" class="nav-link" data-scroll-target="#research-objectives">Research Objectives</a></li>
   <li><a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure">Document Structure</a></li>
   </ul>
@@ -411,7 +420,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 19, 2023</p>
+      <p class="date">August 31, 2023</p>
     </div>
   </div>
   
@@ -435,13 +444,13 @@ div.csl-indent {
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="fig-LROC_north_pole" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgs/LROC_poles/LROC_north_pole.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Lunar north pole."><img src="imgs/LROC_poles/LROC_north_pole.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="imgs/LROC_poles/LROC_north_pole.jpg" class="lightbox" title="Lunar north pole." data-gallery="quarto-lightbox-gallery-1"><img src="imgs/LROC_poles/LROC_north_pole.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">(a) Lunar north pole.</figcaption>
 </figure>
 </div>
 <div id="fig-LROC_south_pole" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgs/LROC_poles/LROC_south_pole.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Lunar south pole."><img src="imgs/LROC_poles/LROC_south_pole.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="imgs/LROC_poles/LROC_south_pole.jpg" class="lightbox" title="Lunar south pole." data-gallery="quarto-lightbox-gallery-2"><img src="imgs/LROC_poles/LROC_south_pole.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">(b) Lunar south pole.</figcaption>
 </figure>
 </div>
@@ -480,25 +489,481 @@ div.csl-indent {
 <section id="background-and-motivation" class="level1">
 <h1>Background and Motivation</h1>
 </section>
+<section id="sec-sota_modeling" class="level1 page-columns page-full">
+<h1>State of the Art – Modeling</h1>
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-solid fa-table" aria-label="table"></i> Table</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tbl-sota_modeling" class="anchored">
+<table class="table-hover table">
+<caption>Table&nbsp;1: Caption.</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 30%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Reference</th>
+<th>Description / Highlights</th>
+<th>Connection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Chamberlain1963">Chamberlain (<a href="#ref-Chamberlain1963" role="doc-biblioref">1963</a>)</span></td>
+<td><ul>
+<li>analytical model of density distributions in planetary atmospheres/exospheres</li>
+<li>assumes an isothermal, spherically symmetric, and globally uniform atmosphere</li>
+<li>developed a scaled barometric scaling for exospheric number densities at varying altitudes</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Vogel1966">Vogel (<a href="#ref-Vogel1966" role="doc-biblioref">1966</a>)</span></td>
+<td><ul>
+<li>theoretical model of molecular fluxes in the lunar exosphere</li>
+<li>proposed an analytical framework to calculate elliptical trajectories and and the respective landing positions on the Moon</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></td>
+<td><ul>
+<li>first <span class="math inline">\(\ce{H2}, \ce{He}, \ce{Ne}\)</span>, and <span class="math inline">\(\ce{Ar}\)</span> model of the lunar exosphere</li>
+<li>compared model results with preliminary Apollo 17 data</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Armand1977">Armand (<a href="#ref-Armand1977" role="doc-biblioref">1977</a>)</span></td>
+<td><ul>
+<li>proposed the theory of desorption <a href="../../documentation/sources_sinks/thermal_sorption.html">velocity distributions</a> (Maxwell-Boltzmann Flux)</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Smith1978">Smith et al. (<a href="#ref-Smith1978" role="doc-biblioref">1978</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of Mercury’s exosphere</li>
+<li><a href="../../documentation/acronyms.html">MBFD</a> distributed particle velocities</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#ref-Huebner1992" role="doc-biblioref">1992</a>)</span></td>
+<td><ul>
+<li>provides a comprehensive overview of photoreaction rates widely used for modeling the lunar exosphere</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo exosphere model of Mercury and the Moon</li>
+<li>investigated <span class="math inline">\(\ce{H2O}\)</span> and <span class="math inline">\(\ce{CO2}\)</span></li>
+<li>proposed an analytic function to approximate the lunar surface temperature</li>
+</ul></td>
+<td><ul>
+<li>extension of <span class="citation" data-cites="Vogel1966">Vogel (<a href="#ref-Vogel1966" role="doc-biblioref">1966</a>)</span> trajectory calculation</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#ref-Crider2002" role="doc-biblioref">2002</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo simulation of exospheric hydrogen migration on the Moon</li>
+<li>lists a variety of conversion paths for solar wind protons to <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{H2}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span></li>
+<li>comments on the high inaccuracies of the implementation of the chemical and physical reactions</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Chaufray2009">Chaufray et al. (<a href="#ref-Chaufray2009" role="doc-biblioref">2009</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of the lunar argon exosphere</li>
+<li>investigated the accumulation of <span class="math inline">\(\ce{Ar}\)</span> in PSRs</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Poppe2013">Poppe et al. (<a href="#ref-Poppe2013" role="doc-biblioref">2013</a>)</span></td>
+<td><ul>
+<li>first “self-sputtering” model of the lunar exosphere</li>
+<li>suggests that self-sputtering is a significant source of neutrals in the exosphere (locally comparable to solar wind and micrometeoroid bombardment)</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Schorghofer2014">Schorghofer (<a href="#ref-Schorghofer2014" role="doc-biblioref">2014</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of exospheric water migration of the Moon</li>
+<li>presents a dusk-dawn asymmetry of hydrogenous species</li>
+</ul></td>
+<td><ul>
+<li>based on <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of solar wind implantation into the lunar surface regolith</li>
+<li>systematically studied distributions of activation energies to simulate hydrogen retention and <span class="math inline">\(\ce{OH}\)</span> formation</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Grava2015">Grava et al. (<a href="#ref-Grava2015" role="doc-biblioref">2014</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of the lunar argon exosphere</li>
+<li>compared model predictions with LACE, LAMP, and LADEE measurements</li>
+<li>found that charge exchange is a relevant argon loss process and that cold-trapping losses are comparable to ionization fluxes</li>
+</ul></td>
+<td><ul>
+<li>based on <span class="citation" data-cites="Chaufray2009">Chaufray et al. (<a href="#ref-Chaufray2009" role="doc-biblioref">2009</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#ref-Hurley2015" role="doc-biblioref">2015</a>)</span></td>
+<td><ul>
+<li>presents an analytic approximation of the lunar surface temperatures, based on Diviner measurements</li>
+<li>temperature model does not include topographical, temporal, or compositional features</li>
+</ul></td>
+<td><ul>
+<li>improved the analytical approach of <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span></td>
+<td><ul>
+<li>hybrid DSMC approach to investigate water transport in impact-generated lunar atmosphere, combining a continuum description of the dense plume with a Monte-Carlo model of the tenuous water vapor exosphere</li>
+<li>unsteady and three-dimensional simulations</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2016">Hurley et al. (<a href="#ref-Hurley2016" role="doc-biblioref">2016</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of the lunar surface-bounded helium exosphere</li>
+<li>suggests that endogenic helium provides roughly a third of the Moon’s exospheric helium</li>
+</ul></td>
+<td><ul>
+<li>built on previous works by <span class="citation" data-cites="Killen1999">Killen &amp; Ip (<a href="#ref-Killen1999" role="doc-biblioref">1999</a>)</span>, <span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span>, <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span>, <span class="citation" data-cites="Grava2015">Grava et al. (<a href="#ref-Grava2015" role="doc-biblioref">2014</a>)</span>, and more</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Moores2016">Moores (<a href="#ref-Moores2016" role="doc-biblioref">2016</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo simulation to examine water delivery to lunar PSRs</li>
+<li>impactor and ballistic migration included as water sources</li>
+<li>explicitly modeled the high-latitude regions, including several PSRs</li>
+</ul></td>
+<td><ul>
+<li>water delivery through impacts based on <span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span></li>
+<li>extended <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#ref-Crider2002" role="doc-biblioref">2002</a>)</span> and <span class="citation" data-cites="Schorghofer2014">Schorghofer (<a href="#ref-Schorghofer2014" role="doc-biblioref">2014</a>)</span> for higher latitudes</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span></td>
+<td><ul>
+<li>formalism to statistically describe hydrogen implantation into the lunar surface and subsurface diffusion of <span class="math inline">\(\ce{H}\)</span> using a Monte-Carlo simulation</li>
+<li>used distributed activation energies in the physical model</li>
+</ul></td>
+<td><ul>
+<li>extension of previous model <span class="citation" data-cites="Farrell2015">(<a href="#ref-Farrell2015" role="doc-biblioref">Farrell et al., 2015</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2017">Hurley et al. (<a href="#ref-Hurley2017" role="doc-biblioref">2017</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model to investigate spatial distribution of <span class="math inline">\(\ce{H2}\)</span> in the lunar exosphere</li>
+<li>examined the contributions of micrometeoroids and solar wind particles</li>
+<li>found that micrometeoroids are an insufficient source to reproduce LAMP <span class="math inline">\(\ce{H2}\)</span> measurements</li>
+</ul></td>
+<td><ul>
+<li>extension of previous model <span class="citation" data-cites="Hurley2016">(<a href="#ref-Hurley2016" role="doc-biblioref">Hurley et al., 2016</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Kegerreis2017">J. A. Kegerreis et al. (<a href="#ref-Kegerreis2017" role="doc-biblioref">2017</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo model of the lunar <span class="math inline">\(\ce{Ar}\)</span> exosphere</li>
+<li>compared densities with LADEE data</li>
+<li>includes seasonal effects to study long-term variations</li>
+</ul></td>
+<td><ul>
+<li>based on the works of <span class="citation" data-cites="Smith1978">Smith et al. (<a href="#ref-Smith1978" role="doc-biblioref">1978</a>)</span>, <span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span>, and <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Jones2018">B. M. Jones et al. (<a href="#ref-Jones2018" role="doc-biblioref">2018</a>)</span></td>
+<td><ul>
+<li>chemical kinetics model of lunar surficial <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span>, investigating the long-term evolution</li>
+<li>based on solar wind proton delivery as the main source of the simulated water cycle</li>
+<li>focusses on recombinative desorption as the main water formation pathway</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Prem2018">Prem et al. (<a href="#ref-Prem2018" role="doc-biblioref">2018</a>)</span></td>
+<td><ul>
+<li>numerical thermal model for a rough lunar surface</li>
+</ul></td>
+<td><ul>
+<li>extension of <span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#ref-Hurley2015" role="doc-biblioref">2015</a>)</span> thermal model</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Tucker2018">Tucker et al. (<a href="#ref-Tucker2018" role="doc-biblioref">2018</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo based simulation of solar wind implantation into the lunar lunar regolith to study <span class="math inline">\(\ce{H}\)</span> retention and implications for the <span class="math inline">\(\ce{H2}\)</span> exosphere</li>
+<li>modeled hydrogen diffusion and recombination to <span class="math inline">\(\ce{H2}\)</span></li>
+<li>included Gaussian distributions of activation energies</li>
+</ul></td>
+<td><ul>
+<li>included models by <span class="citation" data-cites="Killen1999">Killen &amp; Ip (<a href="#ref-Killen1999" role="doc-biblioref">1999</a>)</span>, <span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span>, and <span class="citation" data-cites="Hurley2017">Hurley et al. (<a href="#ref-Hurley2017" role="doc-biblioref">2017</a>)</span></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Grump2019">(<a href="#ref-Grump2019" role="doc-biblioref"><strong>Grump2019?</strong></a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Killen2019">Killen et al. (<a href="#ref-Killen2019" role="doc-biblioref">2019</a>)</span></td>
+<td><ul>
+<li>Monte-Carlo simulation of the lunar neon exosphere</li>
+<li>comparison with Apollo 17’s LACE data</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Prem2019">Prem et al. (<a href="#ref-Prem2019" role="doc-biblioref">2019</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Grava2020">Grava et al. (<a href="#ref-Grava2020" role="doc-biblioref">2020</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Jones2020">B. M. Jones et al. (<a href="#ref-Jones2020" role="doc-biblioref">2020</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Kegerreis2020">J. Kegerreis (<a href="#ref-Kegerreis2020" role="doc-biblioref">2020</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2020">Schörghofer (<a href="#ref-Schoerghofer2020" role="doc-biblioref">2020</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Grava2021">Grava et al. (<a href="#ref-Grava2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Jones2021">B. Jones et al. (<a href="#ref-Jones2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Sarantos2021">Sarantos &amp; Tsavachidis (<a href="#ref-Sarantos2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2021">Schörghofer et al. (<a href="#ref-Schoerghofer2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Morrissey2022">Morrissey et al. (<a href="#ref-Morrissey2022" role="doc-biblioref">2022</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Poppe2022">Poppe et al. (<a href="#ref-Poppe2022" role="doc-biblioref">2022</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2022">Schörghofer (<a href="#ref-Schoerghofer2022" role="doc-biblioref">2022</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="Smolka2023">Smolka et al. (<a href="#ref-Smolka2023" role="doc-biblioref">2023</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#ref-Teolis2023" role="doc-biblioref">2023</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="research-objectives" class="level1">
 <h1>Research Objectives</h1>
 </section>
 <section id="document-structure" class="level1">
-
+<h1>Document Structure</h1>
+<hr>
 
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Document Structure</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-Armand1977" class="csl-entry" role="listitem">
+Armand, G. (1977). <em>Classical theory of desorption rate velocity distributionof desorbed atoms; possibility of a compensation effect</em>.
+</div>
 <div id="ref-Benna2015" class="csl-entry" role="listitem">
 Benna, M., Mahaffy, P. R., Halekas, J. S., Elphic, R. C., &amp; Delory, G. T. (2015). Variability of helium, neon, and argon in the lunar exosphere as observed by the <span>LADEE</span> <span>NMS</span> instrument. <em>Geophysical Research Letters</em>, <em>42</em>(10), 3723–3729. <a href="https://doi.org/10.1002/2015gl064120">https://doi.org/10.1002/2015gl064120</a>
+</div>
+<div id="ref-Butler1997" class="csl-entry" role="listitem">
+Butler, B. J. (1997). The migration of volatiles on the surfaces of <span>M</span>ercury and the <span>M</span>oon. <em>Journal of Geophysical Research</em>, <em>102</em>(E8), 19, 283–219, 291. <a href="https://doi.org/10.1029/97JE01347">https://doi.org/10.1029/97JE01347</a>
+</div>
+<div id="ref-Chamberlain1963" class="csl-entry" role="listitem">
+Chamberlain, J. (1963). Planetary coronae and atmospheric evaporation. <em>Planetary and Space Science</em>, <em>11</em>, 901–960.
 </div>
 <div id="ref-Chang1972" class="csl-entry" role="listitem">
 Chang, G. K. (1972). <em><span class="nocase">Apollo 17 lunar surface experiments summary: case 40058</span></em>. <a href="https://hdl.handle.net/20.500.11753/629">https://hdl.handle.net/20.500.11753/629</a>
 </div>
+<div id="ref-Chaufray2009" class="csl-entry" role="listitem">
+Chaufray, J.-Y., Retherford, K., Gladstone, G., Hurley, D., &amp; Hodges, R. (2009). Lunar <span>A</span>rgon cycle modeling. <em>Lunar Reconnaissance Orbiter Science Targeting Meeting</em>.
+</div>
+<div id="ref-Crider2002" class="csl-entry" role="listitem">
+Crider, D., &amp; Vondrak, R. (2002). Hydrogen migration to the lunar poles by solar wind bombardment of the <span>M</span>oon. <em>Advances in Space Research</em>, <em>30</em>(8), 1869–1874.
+</div>
+<div id="ref-Farrell2017" class="csl-entry" role="listitem">
+Farrell, W. M., Hurley, D. M., Esposito, V. J., McLain, J. L., &amp; Zimmerman, M. I. (2017). The statistical mechanics of solar wind hydroxylation at the moon, within lunar magnetic anomalies, and at phobos. <em>Journal of Geophysical Research: Planets</em>, <em>122</em>(1), 269–289. <a href="https://doi.org/10.1002/2016je005168">https://doi.org/10.1002/2016je005168</a>
+</div>
+<div id="ref-Farrell2015" class="csl-entry" role="listitem">
+Farrell, W. M., Hurley, D. M., &amp; Zimmerman, M. I. (2015). Solar wind implantation into lunar regolith: Hydrogen retention in a surface with defects. <em>Icarus</em>, <em>255</em>, 116–126. <a href="https://doi.org/10.1016/j.icarus.2014.09.014">https://doi.org/10.1016/j.icarus.2014.09.014</a>
+</div>
 <div id="ref-Gladstone2009" class="csl-entry" role="listitem">
 Gladstone, G. R., Stern, S. A., Retherford, K. D., Black, R. K., Slater, D. C., Davis, M. W., Versteeg, M. H., Persson, K. B., Parker, J. W., Kaufmann, D. E., Egan, A. F., Greathouse, T. K., Feldman, P. D., Hurley, D., Pryor, W. R., &amp; Hendrix, A. R. (2009). <span>LAMP</span>: <span>T</span>he <span>L</span>yman <span>A</span>lpha <span>M</span>apping project on <span>NASA</span>’s lunar reconnaissance orbiter mission. <em>Space Science Reviews</em>, <em>150</em>(1-4), 161–181. <a href="https://doi.org/10.1007/s11214-009-9578-6">https://doi.org/10.1007/s11214-009-9578-6</a>
+</div>
+<div id="ref-Grava2015" class="csl-entry" role="listitem">
+Grava, C., Chaufray, J.-Y., Retherford, K. D., Gladstone, G. R., Greathouse, T. K., Hurley, D. M., Hodges, R. R., Bayless, A. J., Cook, J. C., &amp; Stern, S. A. (2014). Lunar exospheric argon modeling. <em>Icarus</em>, <em>255</em>, 135–147. <a href="https://doi.org/10.1016/j.icarus.2014.09.029">https://doi.org/10.1016/j.icarus.2014.09.029</a>
+</div>
+<div id="ref-Grava2020" class="csl-entry" role="listitem">
+Grava, C., Hurley, D. M., Feldman, P. D., Retherford, K. D., Greathouse, T. K., Pryor, W. R., Gladstone, G. R., Halekas, J. S., Mandt, K. E., Wyrick, D. Y., Davis, M. W., Egan, A. F., Kaufmann, D. E., Versteeg, M. H., &amp; Stern, S. A. (2020). <span>LRO</span>/<span>LAMP</span> observations of the lunar helium exosphere: Constraints on thermal accommodation and outgassing rate. <em>Monthly Notices of the Royal Astronomical Society</em>, <em>501</em>(3), 4438–4451. <a href="https://doi.org/10.1093/mnras/staa3884">https://doi.org/10.1093/mnras/staa3884</a>
+</div>
+<div id="ref-Grava2021" class="csl-entry" role="listitem">
+Grava, C., Killen, R. M., Benna, M., Berezhnoy, A. A., Halekas, J. S., Leblanc, F., Nishino, M. N., Plainaki, C., Raines, J. M., Sarantos, M., Teolis, B. D., Tucker, O. J., Vervack, R. J., &amp; Vorburger, A. (2021). Volatiles and refractories in surface-bounded exospheres in the inner solar system. <em>Space Science Reviews</em>, <em>217</em>(5). <a href="https://doi.org/10.1007/s11214-021-00833-8">https://doi.org/10.1007/s11214-021-00833-8</a>
+</div>
+<div id="ref-Hodges1973" class="csl-entry" role="listitem">
+Hodges, R. R. Jr., Hoffman, J. H., &amp; Johnson, F. S. (1973). Composition and dynamics of lunar atmosphere. <em>Proceedings of the Fourth Lunar Science Conference</em>, <em>3</em>, 2855–2864.
+</div>
+<div id="ref-Huebner1992" class="csl-entry" role="listitem">
+Huebner, W., Keady, J., &amp; Lyon, S. (1992). Solar photo rates for planetary atmospheres and atmospheric pollutants. <em>Astrophysics and Space Science</em>, <em>195</em>, 1–294.
+</div>
+<div id="ref-Hurley2016" class="csl-entry" role="listitem">
+Hurley, D. M., Cook, J. C., Benna, M., Halekas, J. S., Feldman, P. D., Retherford, K. D., Hodges, R. R., Grava, C., Mahaffy, P., Gladstone, G. R., Greathouse, T., Kaufmann, D. E., Elphic, R. C., &amp; Stern, S. A. (2016). Understanding temporal and spatial variability of the lunar helium atmosphere using simultaneous observations from <span>LRO</span>, <span>LADEE</span>, and <span>ARTEMIS</span>. <em>Icarus</em>, <em>273</em>, 45–52. <a href="https://doi.org/10.1016/j.icarus.2015.09.011">https://doi.org/10.1016/j.icarus.2015.09.011</a>
+</div>
+<div id="ref-Hurley2017" class="csl-entry" role="listitem">
+Hurley, D. M., Cook, J. C., Retherford, K. D., Greathouse, T., Gladstone, G. R., Mandt, K., Grava, C., Kaufmann, D., Hendrix, A., Feldman, P. D., Pryor, W., Stickle, A., Killen, R. M., &amp; Stern, S. A. (2017). Contributions of solar wind and micrometeoroids to molecular hydrogen in the lunar exosphere. <em>Icarus</em>, <em>283</em>, 31–37. <a href="https://doi.org/10.1016/j.icarus.2016.04.019">https://doi.org/10.1016/j.icarus.2016.04.019</a>
+</div>
+<div id="ref-Hurley2015" class="csl-entry" role="listitem">
+Hurley, D. M., Sarantos, M., Grava, C., Williams, J.-P., Retherford, K. D., Siegler, M., Greenhagen, B., &amp; Paige, D. (2015). An analytic function of lunar surface temperature for exospheric modeling. <em>Icarus</em>, <em>255</em>, 159–163. <a href="https://doi.org/10.1016/j.icarus.2014.08.043">https://doi.org/10.1016/j.icarus.2014.08.043</a>
+</div>
+<div id="ref-Jones2020" class="csl-entry" role="listitem">
+Jones, B. M., Aleksandrov, A., Dyar, M. D., Hibbitts, C. A., &amp; Orlando, T. M. (2020). Investigation of water interactions with apollo lunar regolith grains. <em>Journal of Geophysical Research: Planets</em>, <em>125</em>(6). <a href="https://doi.org/10.1029/2019je006147">https://doi.org/10.1029/2019je006147</a>
+</div>
+<div id="ref-Jones2018" class="csl-entry" role="listitem">
+Jones, B. M., Aleksandrov, A., Hibbitts, K., Dyar, M. D., &amp; Orlando, T. M. (2018). Solar wind-induced water cycle on the moon. <em>Geophysical Research Letters</em>, <em>45</em>(20). <a href="https://doi.org/10.1029/2018gl080008">https://doi.org/10.1029/2018gl080008</a>
+</div>
+<div id="ref-Jones2021" class="csl-entry" role="listitem">
+Jones, B., Aleksandrov, A., Hibbitts, C. A., &amp; Orlando, T. M. (2021). Thermal evolution of water and hydrogen from apollo lunar regolith grains. <em>Earth and Planetary Science Letters</em>, <em>571</em>. <a href="https://doi.org/10.1016/j.epsl.2021.117107">https://doi.org/10.1016/j.epsl.2021.117107</a>
+</div>
+<div id="ref-Kegerreis2020" class="csl-entry" role="listitem">
+Kegerreis, J. (2020). <em>Planetary giant impacts, simulating collisions and theirconsequences</em> [PhD thesis, Durham University, Durham, UK]. <a href="https://doi.org/10.1007/978-3-030-49958-7">https://doi.org/10.1007/978-3-030-49958-7</a>
+</div>
+<div id="ref-Kegerreis2017" class="csl-entry" role="listitem">
+Kegerreis, J. A., Eke, V. R., Massey, R. J., Beaumont, S. K., Elphic, R. C., &amp; Teodoro, L. F. (2017). Evidence for a localized source of the argon in the lunar exosphere. <em>Journal of Geophysical Research: Planets</em>, <em>122</em>(10), 2163–2181. <a href="https://doi.org/10.1002/2017je005352">https://doi.org/10.1002/2017je005352</a>
+</div>
+<div id="ref-Killen1999" class="csl-entry" role="listitem">
+Killen, R. M., &amp; Ip, W.-H. (1999). <span class="nocase">The surface-bounded atmospheres of Mercury and the Moon</span>. <em>Reviews of Geophysics</em>, <em>37</em>(3), 361–406. <a href="https://doi.org/10.1029/1999RG900001">https://doi.org/10.1029/1999RG900001</a>
+</div>
+<div id="ref-Killen2019" class="csl-entry" role="listitem">
+Killen, R. M., Williams, D. R., Park, J., Tucker, O. J., &amp; Kim, S.-J. (2019). The lunar neon exosphere seen in <span>LACE</span> data. <em>Icarus</em>, <em>329</em>, 246–250. <a href="https://doi.org/10.1016/j.icarus.2019.04.018">https://doi.org/10.1016/j.icarus.2019.04.018</a>
+</div>
+<div id="ref-Moores2016" class="csl-entry" role="listitem">
+Moores, J. E. (2016). Lunar water migration in the interval between large impacts: Heterogeneous delivery to permanently shadowed regions, fractionation, and diffusive barriers. <em>Journal of Geophysical Research: Planets</em>, <em>121</em>(1), 46–60. <a href="https://doi.org/10.1002/2015je004929">https://doi.org/10.1002/2015je004929</a>
+</div>
+<div id="ref-Morrissey2022" class="csl-entry" role="listitem">
+Morrissey, L. S., Pratt, D., Farrell, W. M., Tucker, O. J., Nakhla, S., &amp; Killen, R. M. (2022). Simulating the diffusion of hydrogen in amorphous silicates: A <span>“jumping”</span> migration process and its implications for solar wind implanted lunar volatiles. <em>Icarus</em>, <em>379</em>, 114979. <a href="https://doi.org/10.1016/j.icarus.2022.114979">https://doi.org/10.1016/j.icarus.2022.114979</a>
+</div>
+<div id="ref-Poppe2022" class="csl-entry" role="listitem">
+Poppe, A. R., Halekas, J. S., &amp; Harada, Y. (2022). A comprehensive model for pickup ion formation at the moon. <em>Journal of Geophysical Research: Planets</em>, <em>127</em>(10). <a href="https://doi.org/10.1029/2022je007422">https://doi.org/10.1029/2022je007422</a>
+</div>
+<div id="ref-Poppe2013" class="csl-entry" role="listitem">
+Poppe, A. R., Halekas, J. S., Sarantos, M., &amp; Delory, G. T. (2013). The self-sputtered contribution to the lunar exosphere. <em>Journal of Geophysical Research: Planets</em>, <em>118</em>(9), 1934–1944. <a href="https://doi.org/10.1002/jgre.20148">https://doi.org/10.1002/jgre.20148</a>
+</div>
+<div id="ref-Prem2015" class="csl-entry" role="listitem">
+Prem, P., Artemieva, N. A., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2015). Transport of water in a transient impact-generated lunar atmosphere. <em>Icarus</em>, <em>255</em>, 148–158. <a href="https://doi.org/10.1016/j.icarus.2014.10.017">https://doi.org/10.1016/j.icarus.2014.10.017</a>
+</div>
+<div id="ref-Prem2018" class="csl-entry" role="listitem">
+Prem, P., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2018). The influence of surface roughness on volatile transport on the moon. <em>Icarus</em>, <em>299</em>, 31–45. <a href="https://doi.org/10.1016/j.icarus.2017.07.010">https://doi.org/10.1016/j.icarus.2017.07.010</a>
+</div>
+<div id="ref-Prem2019" class="csl-entry" role="listitem">
+Prem, P., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2019). Coupled <span>DSMC</span>-monte carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere. <em>Icarus</em>, <em>326</em>, 88–104. <a href="https://doi.org/10.1016/j.icarus.2019.02.036">https://doi.org/10.1016/j.icarus.2019.02.036</a>
+</div>
+<div id="ref-Sarantos2021" class="csl-entry" role="listitem">
+Sarantos, M., &amp; Tsavachidis, S. (2021). Lags in desorption of lunar volatiles. <em>The Astrophysical Journal Letters</em>, <em>919</em>(2), L14. <a href="https://doi.org/10.3847/2041-8213/ac205b">https://doi.org/10.3847/2041-8213/ac205b</a>
+</div>
+<div id="ref-Schorghofer2014" class="csl-entry" role="listitem">
+Schorghofer, N. (2014). Migration calculations for water in the exosphere of the <span>M</span>oon: Dusk-dawn asymmetry, heterogeneous trapping, and d/h fractionation. <em>Geophysical Research Letters</em>, <em>41</em>(14), 4888–4893. <a href="https://doi.org/10.1002/2014gl060820">https://doi.org/10.1002/2014gl060820</a>
+</div>
+<div id="ref-Schoerghofer2020" class="csl-entry" role="listitem">
+Schörghofer, N. (2020). <em>Thermodynamics of surface-bounded exospheres</em>.
+</div>
+<div id="ref-Schoerghofer2022" class="csl-entry" role="listitem">
+Schörghofer, N. (2022). Statistical thermodynamics of surface-bounded exospheres. <em>Earth, Moon, and Planets</em>, <em>126</em>. <a href="https://doi.org/10.1007/s11038-022-09547-5">https://doi.org/10.1007/s11038-022-09547-5</a>
+</div>
+<div id="ref-Schoerghofer2021" class="csl-entry" role="listitem">
+Schörghofer, N., Benna, M., Berezhnoy, A. A., Greenhagen, B., Jones, B. M., Li, S., Orlando, T. M., Prem, P., Tucker, O. J., &amp; Wöhler, C. (2021). Water group exospheres and surface interactions on the <span>M</span>oon, <span>M</span>ercury, and <span>C</span>eres. <em>Space Science Reviews</em>, <em>217</em>(6). <a href="https://doi.org/10.1007/s11214-021-00846-3">https://doi.org/10.1007/s11214-021-00846-3</a>
+</div>
+<div id="ref-Smith1978" class="csl-entry" role="listitem">
+Smith, G., Broadfoot, A., &amp; Wallace, L. (1978). <span>M</span>onte <span>C</span>arlo modeling of exospheric bodies: <span>M</span>ercury. <em>Journal of Geophysical Research</em>, <em>83</em>(A8).
+</div>
+<div id="ref-Smolka2023" class="csl-entry" role="listitem">
+Smolka, A., Nikolić, D., Gscheidle, C., &amp; Reiss, P. (2023). Coupled <span>H</span>, <span>H2</span>, <span>OH</span>, and <span>H2O</span> lunar exosphere simulation framework and impacts of conversion reactions. <em>Icarus</em>, <em>397</em>, 115508. <a href="https://doi.org/10.1016/j.icarus.2023.115508">https://doi.org/10.1016/j.icarus.2023.115508</a>
+</div>
+<div id="ref-Teolis2023" class="csl-entry" role="listitem">
+Teolis, B., Sarantos, M., Schorghofer, N., Jones, B., Grava, C., Mura, A., Prem, P., Greenhagen, B., Capria, M. T., Cremonese, G., Lucchetti, A., &amp; Galluzzi, V. (2023). Surface exospheric interactions. <em>Space Science Reviews</em>. <a href="https://doi.org/10.1007/s11214-023-00951-5">https://doi.org/10.1007/s11214-023-00951-5</a>
+</div>
+<div id="ref-Tucker2018" class="csl-entry" role="listitem">
+Tucker, O. J., Farrell, W. M., Killen, R. M., &amp; Hurley, D. M. (2018). Solar wind implantation into the lunar regolith: Monte carlo simulations of <span>H</span> retention in a surface with defects and the <span>H</span>2 exosphere. <em>Journal of Geophysical Research: Planets</em>, <em>124</em>(2), 278–293. <a href="https://doi.org/10.1029/2018je005805">https://doi.org/10.1029/2018je005805</a>
+</div>
+<div id="ref-Tucker2021" class="csl-entry" role="listitem">
+Tucker, O. J., Farrell, W. M., &amp; Poppe, A. R. (2021). On the effect of magnetospheric shielding on the lunar hydrogen cycle. <em>Journal of Geophysical Research: Planets</em>, <em>126</em>(2). <a href="https://doi.org/10.1029/2020je006552">https://doi.org/10.1029/2020je006552</a>
+</div>
+<div id="ref-Vogel1966" class="csl-entry" role="listitem">
+Vogel, U. (1966). Molecular fluxes in the lunar atmosphere. <em>Planet. Space Sci.</em>, <em>14</em>, 1233–1252.
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
@@ -772,7 +1237,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

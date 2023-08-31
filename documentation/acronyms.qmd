@@ -43,6 +43,8 @@ citation: false
 | pdf       | probability density function                                  |
 |           |                                                               |
 | PDS       | Planetary Data System                                         |
+|           |                                                               |
+| PSR       | Permanently Shadowed Region                                   |
 +-----------+---------------------------------------------------------------+
 | rms       | root mean squared                                             |
 +-----------+---------------------------------------------------------------+
@@ -86,6 +88,7 @@ citation: false
 
 \newacronym{pdf}{pdf}{probability density function}
 \newacronym{PDS}{PDS}{Planetary Data System}
+\newacronym{PSR}{PSR}{Permanently Shadowed Region}
 
 \newacronym{rms}{rms}{root mean squared}
 
