@@ -11,7 +11,7 @@ Based on the escape velocity [$\velocity_{esc}(\radius, \mass)$](#sec-escape-vel
 {{< include ballistic_trajectories/imgs/landing_position_calc/_landing_position_calc.qmd >}}
 
 
-Based on @Schoerghofer2022a and @Butler1997, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuthAngle$ of the launch velocity. The problem is sketched in @fig-landing_position_calc, where $\overline{\latitude_0}$ and $\overline{\latitude_1}$ are the complementary angles of the latitudes, i.e., $\latitude = \frac{\pi}{2} \cdot \overline{\latitude}$. Based on the cosine-law of spherical trigonometry, the angular triangle $\left(\Delta\trueAnomaly, \overline{\latitude_0}, \overline{\latitude_1}\right)$ can be used to find
+Based on @Butler1997, @Kegerreis2020, and @Schoerghofer2022a, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuthAngle$ of the launch velocity. The problem is sketched in @fig-landing_position_calc, where $\overline{\latitude_0}$ and $\overline{\latitude_1}$ are the complementary angles of the latitudes, i.e., $\latitude = \frac{\pi}{2} \cdot \overline{\latitude}$. Based on the cosine-law of spherical trigonometry, the angular triangle $\left(\Delta\trueAnomaly, \overline{\latitude_0}, \overline{\latitude_1}\right)$ can be used to find
 \begin{equation}
     \sin\latitude_1 = \sin\latitude_0 \cdot \cos\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuthAngle
 \end{equation}
@@ -20,7 +20,7 @@ with $\cos\overline\latitude = \sin\latitude$ and $\sin\overline\latitude = \cos
     \cos\Delta\trueAnomaly &= \sin\latitude_0 \cdot \sin\latitude_1 + \cos\latitude_0 \cdot \cos\latitude_1 \cdot \cos\Delta\longitude \\[3mm]
     \Rightarrow\quad \cos\Delta\longitude &= \frac{\cos\Delta\trueAnomaly - \sin\latitude_0 \cdot \sin\latitude_1}{\cos\latitude_0 \cdot \cos\latitude_1}.
 \end{align}
-Note that numerical round-off issues could lead to sine and cosine expressions larger than one. Due to the periodicity of the cosine, two different cases have to be considered when extracting the $\Delta\longitude$:
+Note that numerical round-off issues could lead to sine and cosine expressions larger than one. What previous authors did not account for is that due to the periodicity of the cosine, two different cases have to be considered when extracting the $\Delta\longitude$:
 \begin{equation}
     \Delta\longitude = \begin{cases} \Delta\longitude & \text{if } \Delta\trueAnomaly \leq \pi, \\ 2\pi - \Delta\longitude & \text{else.} \end{cases}
 \end{equation}

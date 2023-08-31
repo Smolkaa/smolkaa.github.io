@@ -13,9 +13,9 @@ page-navigation: true
 ---
 ---
 
-The following list contains all manuals, examples, and additional material that is available for the **ExESS** documentation and software. Note that you can use the filtering and ordering tools at the top of the list to filter and order the entries. Additionally, you can filter the entries by categories, which are listed in the right siderbar of this page. Here are some important manuals to check out:
+The following list contains all manuals, examples, and additional material for the **ExESS** documentation and software. Note that you can use the filtering and ordering tools at the top of the list to filter and order the entries. Additionally, you can filter the entries by categories, which are listed on the right sidebar of this page. Here are some essential manuals to check out:
 
 * [Student Thesis: On-Boarding Checklist](/manuals/onboarding_checklist/index.qmd) is recommended for all new students to get started with their university thesis and working with the **ExESS** package 
-
+* [ExESS Package Installation](/manuals/package_installation/index.qmd) describes how to install the **ExESS** package on your computer
 
 ---

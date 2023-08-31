@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-08-30">
+<meta name="dcterms.date" content="2023-08-25">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -341,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 30, 2023</p>
+      <p class="date">August 25, 2023</p>
     </div>
   </div>
   
@@ -376,12 +376,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
 [2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
 <p>Calculates the landing position of a particle starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)), flying on a ballistic trajectory, i.e., only influenced by graviational forces.</p>
-<p>Returns the landing position in global spherical coordinate as <code>r, lon, lat</code> ([1]) or as <code>GlobalSphericalPosition(r, lon, lat)</code> ([2]).</p>
+<p>Returns the landing position in global spherical coordinates, [1]: as <code>r, lon, lat</code> or [2]: as <code>GlobalSphericalPosition(r, lon, lat)</code>.</p>
 <p><strong>Key-Word Arguments</strong></p>
 <table class="table table-sm table-striped small">
 <thead>
@@ -405,11 +405,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>calling the function with <code>&lt;:Integer</code> arguments will promote them to <code>Float64</code></li>
 </ul>
-<p><strong>References</strong></p>
-<ul>
-<li>N. Schörghofer: “USER GUIDE: Planetary-Code-Collection: Thermal and Ice Evolution Models for Planetary Surfaces”, https://github.com/nschorgh/Planetary-Code-Collection</li>
-<li>B. J. Butler, “The migration of volatiles on the surfaces of Mercury and the Moon,” Journal of Geophysical Research, vol.&nbsp;102, no. E8, pp.&nbsp;19,283–19,291, Aug.&nbsp;1997, doi: 10.1029/97JE01347.</li>
-</ul>
 </div>
 </div>
 </div>
@@ -424,7 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] trajectory(x0::AbstractVector, v0::AbstractVector, ddx::Function; kwargs...)
 [2] trajectory(x0::AbstractPosition, v0::AbstractVelocity, ddx::Function; kwargs...)</code></pre>
@@ -498,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] ddx_lunar_gravity(x::AbstractVector, [args...])</code></pre>
 <p>Acceleration function for the lunar gravity.</p>
