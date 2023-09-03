@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
-<meta name="dcterms.date" content="2023-09-01">
+<meta name="dcterms.date" content="2023-09-03">
 
 <title>ExESS - 1. Introduction</title>
 <style>
@@ -422,7 +422,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2023</p>
+      <p class="date">September 3, 2023</p>
     </div>
   </div>
   
@@ -732,7 +732,12 @@ div.csl-indent {
 <tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#ref-Grumpe2019" role="doc-biblioref">2019</a>)</span></p>
 <p><kbd>SURFACE</kbd></p></td>
-<td><strong>“Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling”</strong></td>
+<td><p><strong>“Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling”</strong></p>
+<ul>
+<li>reaction kinetics model as an extension of <span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span> &amp; <span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span> Monte-Carlo simulation</li>
+<li>investigates <span class="math inline">\(\ce{H}\)</span>, <span class="math inline">\(\ce{OH}\)</span>, and <span class="math inline">\(\ce{H2O}\)</span> concentrations, based on both solar wind and micrometeoroid influx</li>
+<li>includes a 1D lateral heat conduction model with surface roughness dependence</li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><p><span class="citation" data-cites="Killen2019">Killen et al. (<a href="#ref-Killen2019" role="doc-biblioref">2019</a>)</span></p>
@@ -741,37 +746,68 @@ div.csl-indent {
 <ul>
 <li>Monte-Carlo simulation of the lunar neon exosphere</li>
 <li>comparison with Apollo 17’s LACE data</li>
+<li>suggests that theoretical photodissociation losses are too low to reproduce <span class="math inline">\(\ce{Ne}\)</span> measurements</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Prem2019">Prem et al. (<a href="#ref-Prem2019" role="doc-biblioref">2019</a>)</span></p>
 <p><kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“Coupled DSMC-Monte Carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere”</strong></td>
+<td><p><strong>“Coupled DSMC-Monte Carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere”</strong></p>
+<ul>
+<li>extension of the Monte-Carlo model of <span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span> to include the influence of radiative heat transfer and shielding of an impact-generated atmosphere</li>
+<li>applies new model to simulate a <span class="math inline">\(\ce{H2O}\)</span> exosphere</li>
+<li>finds that gas-gas radiative transfer is playing an important role, significantly influencing water vapor transport to the night-side</li>
+<li><em>includes a chapter on numerical validations of the presented model</em></li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><p><span class="citation" data-cites="Grava2020">Grava et al. (<a href="#ref-Grava2020" role="doc-biblioref">2020</a>)</span></p>
 <p><kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“LRO/LAMP observations of the lunar helium exosphere: constraints on thermal accommodation and outgassing rate”</strong></td>
+<td><p><strong>“LRO/LAMP observations of the lunar helium exosphere: constraints on thermal accommodation and outgassing rate”</strong></p>
+<ul>
+<li>Monte-Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation</li>
+<li>compares modelled <span class="math inline">\(\ce{He}\)</span> densities with <a href="../../documentation/acronyms.html">LAMP</a> measurements</li>
+<li>suggests best description of lunar helium assuming full thermal accommodation and a <a href="../../documentation/acronyms.html">MBFD</a> distribution of kinetic energies</li>
+<li>finds that endogenic <span class="math inline">\(\ce{He}\)</span> provides about 20% of the lunar helium exosphere as compared to solar wind source</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Kegerreis2020">J. Kegerreis (<a href="#ref-Kegerreis2020" role="doc-biblioref">2020</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“Planetary giant impacts, simulating collisions and their consequences”</strong></td>
+<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td><p><strong>“Planetary giant impacts, simulating collisions and their consequences”</strong></p>
+<ul>
+<li>Monte-Carlo simulation of the lunar argon exosphere and comparison with <a href="../../documentation/acronyms.html">LADEE</a> data</li>
+<li>applied altitude fitting based on <span class="citation" data-cites="Chamberlain1963">Chamberlain (<a href="#ref-Chamberlain1963" role="doc-biblioref">1963</a>)</span> projection model to compare predicted densities with satellite data</li>
+<li>uses the landing position calculation proposed by <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2020">Schörghofer (<a href="#ref-Schoerghofer2020" role="doc-biblioref">2020</a>)</span></p>
 <p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“Thermodynamics of surface-bounded exospheres”</strong></td>
+<td><p><strong>“Thermodynamics of surface-bounded exospheres”</strong></p>
+<ul>
+<li>thermodynamical investigation of exospheric densities based on various velocity distributions</li>
+<li>provides statistical averaged and exact solutions for short ballistic flights, assuming constant gravitational acceleration</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Grava2021">Grava et al. (<a href="#ref-Grava2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“Volatiles and refractories in surface-bounded exospheres in the inner solar system”</strong></td>
+<p><kbd>REVIEW</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td><p><strong>“Volatiles and refractories in surface-bounded exospheres in the inner solar system”</strong></p>
+<ul>
+<li>review of exospheric models of surface-bounded exospheres in the inner solar system, focusing on the Moon and Mercury</li>
+<li>considers various volatiles, refractories, ions, and <a href="../../documentation/acronyms.html">ENAs</a></li>
+</ul></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><p><span class="citation" data-cites="Jones2021">B. Jones et al. (<a href="#ref-Jones2021" role="doc-biblioref">2021</a>)</span></p>
 <p><kbd>SURFACE</kbd></p></td>
-<td><strong>“Thermal evolution of water and hydrogen from Apollo lunar regolith grains”</strong></td>
+<td><p><strong>“Thermal evolution of water and hydrogen from Apollo lunar regolith grains”</strong></p>
+<ul>
+<li>simulated <a href="../../documentation/acronyms.html">TPD</a> process and comparison with TPD experiment</li>
+<li>considered several hydrogen-based species and their concentrations on the surface, in the subsurface and void space subsurface, and in gaseous form</li>
+<li>specifically discussed recombinative desorption as the main pathway of water formation</li>
+</ul></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Sarantos2021">Sarantos &amp; Tsavachidis (<a href="#ref-Sarantos2021" role="doc-biblioref">2021</a>)</span></p>
@@ -807,11 +843,16 @@ div.csl-indent {
 <td><strong>“Statistical thermodynamics of surface-bounded exospheres”</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Smolka2023">Smolka et al. (<a href="#ref-Smolka2023" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
-<td><strong>“Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions”</strong></td>
+<td style="text-align: left;"><p><span class="citation" data-cites="Wurz2022">Wurz et al. (<a href="#ref-Wurz2022" role="doc-biblioref">2022</a>)</span></p>
+<p><kbd>THEORY</kbd> <kbd>SURFACE</kbd></p></td>
+<td><strong>“Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury”</strong></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><p><span class="citation" data-cites="Smolka2023">Smolka et al. (<a href="#ref-Smolka2023" role="doc-biblioref">2023</a>)</span></p>
+<p><kbd>EXOSPHERE</kbd></p></td>
+<td><strong>“Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions”</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><p><span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#ref-Teolis2023" role="doc-biblioref">2023</a>)</span></p>
 <p><kbd>EXOSPHERE</kbd> <kbd>SURFACE</kbd></p></td>
 <td><strong>“Surface exospheric interactions”</strong></td>
@@ -933,7 +974,7 @@ Prem, P., Artemieva, N. A., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L.
 Prem, P., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2018). The influence of surface roughness on volatile transport on the moon. <em>Icarus</em>, <em>299</em>, 31–45. <a href="https://doi.org/10.1016/j.icarus.2017.07.010">https://doi.org/10.1016/j.icarus.2017.07.010</a>
 </div>
 <div id="ref-Prem2019" class="csl-entry" role="listitem">
-Prem, P., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2019). Coupled <span>DSMC</span>-monte carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere. <em>Icarus</em>, <em>326</em>, 88–104. <a href="https://doi.org/10.1016/j.icarus.2019.02.036">https://doi.org/10.1016/j.icarus.2019.02.036</a>
+Prem, P., Goldstein, D. B., Varghese, P. L., &amp; Trafton, L. M. (2019). Coupled <span>DSMC</span>-<span>M</span>onte <span>C</span>arlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere. <em>Icarus</em>, <em>326</em>, 88–104. <a href="https://doi.org/10.1016/j.icarus.2019.02.036">https://doi.org/10.1016/j.icarus.2019.02.036</a>
 </div>
 <div id="ref-Sarantos2021" class="csl-entry" role="listitem">
 Sarantos, M., &amp; Tsavachidis, S. (2021). Lags in desorption of lunar volatiles. <em>The Astrophysical Journal Letters</em>, <em>919</em>(2), L14. <a href="https://doi.org/10.3847/2041-8213/ac205b">https://doi.org/10.3847/2041-8213/ac205b</a>
@@ -967,6 +1008,9 @@ Tucker, O. J., Farrell, W. M., &amp; Poppe, A. R. (2021). On the effect of magne
 </div>
 <div id="ref-Vogel1966" class="csl-entry" role="listitem">
 Vogel, U. (1966). Molecular fluxes in the lunar atmosphere. <em>Planetary and Space Science</em>, <em>14</em>, 1233–1252.
+</div>
+<div id="ref-Wurz2022" class="csl-entry" role="listitem">
+Wurz, P., Fatemi, S., Galli, A., Halekas, J., Harada, Y., Jäggi, N., Jasinski, J., Lammer, H., Lindsay, S., Nishino, M. N., Orlando, T. M., Raines, J. M., Scherf, M., Slavin, J., Vorburger, A., &amp; Winslow, R. (2022). Particles and photons as drivers for particle release from the surfaces of the moon and mercury. <em>Space Science Reviews</em>, <em>218</em>(3). <a href="https://doi.org/10.1007/s11214-022-00875-6">https://doi.org/10.1007/s11214-022-00875-6</a>
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
   author = {Smolka, Alexander},
@@ -1240,7 +1284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":true});</script>
 
 
 

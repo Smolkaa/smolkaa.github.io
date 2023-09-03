@@ -129,7 +129,7 @@ format:
       - lightbox
     grid:
       sidebar-width: 300px
-      body-width: 900px
+      body-width: 1000px
       margin-width: 300px
     html-math-method: mathjax
     include-in-header: 

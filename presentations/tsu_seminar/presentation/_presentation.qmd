@@ -38,7 +38,9 @@ format:
 
 revealjs-plugins:
   - pointer
+
 ---
+
 # internal {visibility="hidden"}
 {{< include ../../../resources/latex/_defs.qmd >}}
 {{< include ../../../resources/latex/_symbols.qmd >}}

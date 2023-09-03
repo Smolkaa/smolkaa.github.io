@@ -18,6 +18,8 @@ citation: false
 +-----------+---------------------------------------------------------------+
 | DLRE      | Diviner Lunar Radiometer Experiment                           |
 +-----------+---------------------------------------------------------------+
+| ENA       | Energetic Neutral Atoms                                       |
+|           |                                                               |
 | ESA       | European Space Agency                                         |
 +-----------+---------------------------------------------------------------+
 | LACE      | Lunar Atmospheric Composition Experiment                      |
@@ -50,6 +52,8 @@ citation: false
 +-----------+---------------------------------------------------------------+
 | SSE       | Selenocentric Solar Ecliptic                                  |
 +-----------+---------------------------------------------------------------+
+| TPD       | Temperature Program Desorption                                |
+|           |                                                               |
 | TUM       | Technical University of Munich                                |
 +-----------+---------------------------------------------------------------+
 | UVS       | Ultraviolet Spectrometer (Apollo 17)                          |
@@ -70,6 +74,7 @@ citation: false
 
 \newacronym{DLRE}{DLRE}{Diviner Lunar Radiometer Experiment}
 
+\newacronym{ENA}{ENA}{Energetic Neutral Atoms}
 \newacronym{ESA}{ESA}{European Space Agency}
 
 \newacronym{LACE}{LACE}{Lunar Atmospheric Composition Experiment}
