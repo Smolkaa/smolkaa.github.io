@@ -224,12 +224,14 @@
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Sarantos2021       | **"Lags in desorption of lunar volatiles"**                                                                                      |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|{{< kbd SURFACE >}}  | * computer-generated lunar regolith packing to model random walks of argon and water particles to simulate gas transport         |
+|                     | * suggests subsurface diffusion and desorption-readsorption of gas particles leads to a lag in the exospheric density signature  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2021   | **"Water group exospheres and surface interactions on the Moon, Mercury, and Ceres"**                                            |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|{{< kbd SURFACE >}}  | * review of hydrogen-based exospheric particles and their interaction with their planetary surface                               |
+|{{< kbd EXOSPHERE >}}| *                                                      |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Tucker2021         | **"On the effect of magnetospheric shielding on the lunar hydrogen cycle"**                                                      |
