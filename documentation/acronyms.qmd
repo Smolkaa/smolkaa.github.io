@@ -21,6 +21,8 @@ citation: false
 | ENA       | Energetic Neutral Atoms                                       |
 |           |                                                               |
 | ESA       | European Space Agency                                         |
+|           |                                                               |
+| ESD       | Electron Stimulated Desorption                                |
 +-----------+---------------------------------------------------------------+
 | LACE      | Lunar Atmospheric Composition Experiment                      |
 |           |                                                               |
@@ -37,6 +39,8 @@ citation: false
 | MBFD      | Maxwell-Boltzmann Flux Distribution                           |
 |           |                                                               |
 | MESSENGER | MErcury Surface, Space ENvironment, GEochemistry, and Ranging |
+|           |                                                               |
+| MMIV      | Micrometeoroid Impact Vaporization                            |
 +-----------+---------------------------------------------------------------+
 | NASA      | National Aeronautics and Space Administration                 |
 |           |                                                               |
@@ -45,6 +49,8 @@ citation: false
 | pdf       | probability density function                                  |
 |           |                                                               |
 | PDS       | Planetary Data System                                         |
+|           |                                                               |
+| PSD       | Photon Stimulated Desorption                                  |
 |           |                                                               |
 | PSR       | Permanently Shadowed Region                                   |
 +-----------+---------------------------------------------------------------+
@@ -76,6 +82,7 @@ citation: false
 
 \newacronym{ENA}{ENA}{Energetic Neutral Atoms}
 \newacronym{ESA}{ESA}{European Space Agency}
+\newacronym{ESD}{ESD}{Electron Stimulated Desorption}
 
 \newacronym{LACE}{LACE}{Lunar Atmospheric Composition Experiment}
 \newacronym{LADEE}{LADEE}{Lunar Atmosphere and Dust Environment Explorer}
@@ -87,12 +94,14 @@ citation: false
 \newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}
 \newacronym{MBFD}{MBFD}{Maxwell-Boltzmann Flux Distribution}
 \newacronym{MESSENGER}{MESSENGER}{MErcury Surface, Space ENvironment, GEochemistry, and Ranging}
+\newacronym{MMIV}{MMIV}{Micrometeoroid Impact Vaporization}
 
 \newacronym{NASA}{NASA}{National Aeronautis and Space Administration}
 \newacronym{NMS}{NMS}{Neutral Mass Spectrometer}
 
 \newacronym{pdf}{pdf}{probability density function}
 \newacronym{PDS}{PDS}{Planetary Data System}
+\newacronym{PSD}{PSD}{Photon Stimulated Desorption}
 \newacronym{PSR}{PSR}{Permanently Shadowed Region}
 
 \newacronym{rms}{rms}{root mean squared}

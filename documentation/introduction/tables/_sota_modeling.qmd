@@ -231,49 +231,62 @@
 | @Schoerghofer2021   | **"Water group exospheres and surface interactions on the Moon, Mercury, and Ceres"**                                            |
 |                     |                                                                                                                                  |
 |{{< kbd SURFACE >}}  | * review of hydrogen-based exospheric particles and their interaction with their planetary surface                               |
-|{{< kbd EXOSPHERE >}}| *                                                      |
+|{{< kbd EXOSPHERE >}}| * reports on the status of observations, theory, and laboratory measurements                                                     |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Tucker2021         | **"On the effect of magnetospheric shielding on the lunar hydrogen cycle"**                                                      |
 |                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
+|{{< kbd SURFACE >}}  | * Monte-Carlo model to investigate $\ce{H}$ implantation, conversion to $\ce{OH}$, and subsequent outgassing of $\ce{H2}$        |
+|{{< kbd EXOSPHERE >}}| * simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen      |
+|                     |   both on the surface as well as in the exosphere respond quickly                                                                |
+|                     | * general model based on previous work of @Tucker2018                                                                            |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Morrissey2022      | **"Simulating the diffusion of hydrogen in amorphous silicates: a ‘jumping’ migration process and its implications for solar**   |
 |                     | **wind implanted lunar volatiles"**                                                                                              |
 |{{< kbd SURFACE >}}  |                                                                                                                                  |
-|                     | * molecular dynamics simulation                                                                                                  |
+|                     | * molecular dynamics simulation to describe the $\ce{H}$ movement in amorphous silica on an atomistic level                      |
+|                     | * uses insights to infer hydrogen diffusion in planetary regoliths                                                               |
+|                     | * examines the degassing of water group particles and its influence on the lunar exosphere                                       |
+|                     | * baseline comparison with previous models of @Farrell2015, @Farrell2017, @Jones2021, and @Tucker2021                            |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Poppe2022          | **"A comprehensive model for pickup ion formation at the Moon"**                                                                 |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|{{< kbd EXOSPHERE >}}| * two-part analytic model describing the lunar exospheric neutrals density distributions and the ionization and charged-particle | 
+|                     |   dynamics of pickup ions based on the modeled neutral distributions                                                             |
+|                     | * includes 18 different exospheric ion species                                                                                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2022   | **"Statistical thermodynamics of surface-bounded exospheres"**                                                                   |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|{{< kbd THEORY >}}   | * building on @Schoerghofer2020                                                                                                  |
+|{{< kbd EXOSPHERE >}}| * provides an analytic description of velocity distributions and exact solutions for emerging density profiles                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Wurz2022           | **"Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury"**                            |
 |                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   |                                                                                                                                  |
-| {{< kbd SURFACE >}} |                                                                                                                                  |
+|{{< kbd THEORY >}}   | * review of surface interactions of exospheric particles                                                                         |
+|{{< kbd SURFACE >}}  | * includes space weathering, thermal releases, [MMIV](/documentation/acronyms.qmd), [PSD](/documentation/acronyms.qmd) and       |
+|                     |   [ESD](/documentation/acronyms.qmd), physical and chemical sputtering, and particle reflections                                 |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Smolka2023         | **"Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions"**                    |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|{{< kbd EXOSPHERE >}}| * Monte-Carlo simulation framework to simultaneously model multiple hydrogen-based exospheric species                            |
+|                     | * includes several, uncertain conversion reactions, coupling the species with each other                                         |
+|                     | * suggests that surface reaction with hydrogen can significantly change exospheric dynamics around the terminator regions        |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Teolis2023         | **"Surface exospheric interactions"**                                                                                            |
 |                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
+|{{< kbd EXOSPHERE >}}| * review of descriptions, current developments, and issues of exosphere-surface interactions                                     |
+|{{< kbd SURFACE >}}  | * includes discussions of thermal accommodation, volatile diffusion, and cold-trapping                                           |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 
 : Caption. {#tbl-sota_modeling .hover tbl-colwidths="[8,35]"}
+
 
 # {{< fa code >}} LaTeX
 ```latex
