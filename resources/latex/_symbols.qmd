@@ -11,6 +11,7 @@
     \newcommand{\cartesianBaseVectorY}{\baseVector_\cartesianCoordinateY}
     \newcommand{\cartesianBaseVectorZ}{\baseVector_\cartesianCoordinateZ}
 \newcommand{\density}{\rho}
+\newcommand{\diffusionCoefficient}{D}
 \newcommand{\distance}{d}
 \newcommand{\eccentricity}{e}
 \newcommand{\eccentricAnomaly}{E} 
