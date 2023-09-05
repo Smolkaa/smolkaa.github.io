@@ -79,7 +79,7 @@ website:
             - documentation/trajectories/non-ballistic_trajectories.qmd
         - section: "6. Lunar Water Exosphere Simulation"
           contents:
-            - "6.X Hydrogen Surface Reaction Model"
+            - documentation/lunar_water_exosphere/conversion_model.qmd
         - documentation/referenced_value_library/referenced_value_library.qmd
 
 

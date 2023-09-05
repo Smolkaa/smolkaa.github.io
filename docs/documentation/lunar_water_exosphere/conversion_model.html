@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alexander Smolka">
+<meta name="author" content="Alexander Smolka, a.smolka@tum.de  Technical University of Munich">
+<meta name="dcterms.date" content="2023-09-05">
 
-<title>ExESS - Extraterrestrial Exosphere and Surface Simulations</title>
+<title>ExESS - 6.1 Conversion Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,28 +25,29 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./LICENSE.html" rel="next">
-<link href=".//resources/logo/exess_logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../documentation/referenced_value_library/referenced_value_library.html" rel="next">
+<link href="../../documentation/trajectories/non-ballistic_trajectories.html" rel="prev">
+<link href="../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<link rel="stylesheet" href="_styles.css">
+<link rel="stylesheet" href="../../_styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -96,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title"><strong>ExESS</strong></span>
     </a>
   </div>
@@ -107,23 +109,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page">
  <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation/documentation.html" rel="" target="">
+    <a class="nav-link" href="../../documentation/documentation.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./manuals/manuals.html" rel="" target="">
+    <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./presentations/presentations.html" rel="" target="">
+    <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./api/api.html" rel="" target="">
+    <a class="nav-link" href="../../api/api.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
   </li>  
 </ul>
@@ -144,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/lunar_water_exosphere/conversion_model.html">6. Lunar Water Exosphere Simulation</a></li><li class="breadcrumb-item"><a href="../../documentation/lunar_water_exosphere/conversion_model.html">6.1 Conversion Model</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -155,22 +157,176 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Home</span></a>
+  <a href="../../documentation/documentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./LICENSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">License</span></a>
+  <a href="../../documentation/acronyms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acronyms</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/introduction/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">2. Fundamentals</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/coordinate_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.1 Coordinate Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/numerical_grids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.2 Numerical Grids</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">2.3 ODEs and Numerical Solvers</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/stats_mc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.4 Statistics and Monte-Carlo</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/exospheres.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.5 Exospheres</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/fundamentals/moon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2.6 The Moon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">2.7 Other Exospheres in The Solar System</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">3. Planetary Measurements and Data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/planetary_measurements/missions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Missions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/planetary_measurements/lunar_exosphere_densities.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Lunar Exosphere Surface Densities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">4. Exospheres: Sources and Sinks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">4.1 Solar Wind</span>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/sources_sinks/thermal_sorption.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Thermal Sorption</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/sources_sinks/photoreactions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Photoreactions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">Photodesorption</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">MIV</span>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">5. Exospheres: Particle Trajectories</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/trajectories/ballistic_trajectories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Ballistic Trajectories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/trajectories/non-ballistic_trajectories.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.2 Non-Ballistic Trajectories</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">6. Lunar Water Exosphere Simulation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/lunar_water_exosphere/conversion_model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">6.1 Conversion Model</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/referenced_value_library/referenced_value_library.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A. Referenced Value Library</span></a>
   </div>
 </li>
     </ul>
@@ -179,25 +335,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Extraterrestrial Exosphere and Surface Simulations</h2>
-   
-  <ul>
-  <li><a href="#home" id="toc-home" class="nav-link active" data-scroll-target="#home">Home</a>
-  <ul class="collapse">
-  <li><a href="#news" id="toc-news" class="nav-link" data-scroll-target="#news">News</a></li>
-  </ul></li>
-  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
-  <li><a href="#publications" id="toc-publications" class="nav-link" data-scroll-target="#publications">Publications</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Extraterrestrial Exosphere and Surface Simulations</h1>
+<h1 class="title">6.1 Conversion Model</h1>
 </div>
 
 
@@ -207,64 +352,62 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Alexander Smolka </p>
+             <p></p><p>Alexander Smolka, <a href="mailto:a.smolka@tum.de"><code>a.smolka@tum.de</code></a> <br> Technical University of Munich</p> <p></p>
           </div>
   </div>
     
-  
     <div>
-    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 5, 2023</p>
+      <p class="date">September 5, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
 
 </header>
 
+<!-- SIUNITX WORKAROUND -->
+<!-- GLS WORKAROUND -->
 <hr>
-<p>This website is still under construction! <i class="fa-solid fa-wrench" aria-label="wrench"></i></p>
-<section id="home" class="level2">
-<h2 class="anchored" data-anchor-id="home">Home</h2>
-<p>Are you a student starting your thesis on this topic? Check out the <a href="./manuals/onboarding_checklist/index.html">Student Thesis: On-Boarding Checklist</a>!</p>
-<section id="news" class="level3">
-<h3 class="anchored" data-anchor-id="news">News</h3>
-<ul>
-<li><strong>2023-08-15:</strong>   <a href="./presentations/tsu_seminar/index.html">Presentation</a> at the Taiwan Space Union’s Mini-Moon Seminar Series.</li>
-</ul>
-</section>
-</section>
-<section id="author" class="level2">
-<h2 class="anchored" data-anchor-id="author">Author</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><br><br><br> <strong>M.Sc. Alexander Smolka</strong></p>
-<p>Professorship of Lunar and Planetary Exploration Technologies<br>
-TUM School of Engineering and Design<br>
-Technical University of Munich</p>
-<p>Phone: +49 (89) 289 - 55681<br>
-Email: <a href="mailto:a.smolka@tum.de">a.smolka@tum.de</a></p>
-</div><div class="column" style="width:40%;">
+<div class="column-page-right">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-solid fa-file-pdf" aria-label="file-pdf"></i> Poster</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./resources/imgs/me_gray.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./resources/imgs/me_gray.jpg" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<p><a href="conversion_model/Smolka2023_LPSC_Poster.pdf" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><embed src="conversion_model/Smolka2023_LPSC_Poster.pdf" style="width:100.0%" height="950"></a></p>
 </figure>
 </div>
+<p><strong>Cite as:</strong><br> A. Smolka and P. Reiss, 2023, “Modelling the Lunar Water Cycle Through Coupled Monte-Carlo Simulations of the Moon’s Surface and Exosphere”, <em>Lunar and Planetary Science Conference</em>, 54, 2023.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+
 </div>
 </div>
-</section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<ul>
-<li><strong>A. Smolka</strong>, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol.&nbsp;397, p.&nbsp;115508, Jun.&nbsp;2023, DOI: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854">10.1016/j.icarus.2023.115508.</a></li>
-</ul>
+</div>
+</div>
 
 
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
+  author = {Smolka, Alexander},
+  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
+    {Simulations}},
+  date = {2023},
+  url = {https://smolkaa.github.io},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-smolka2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Smolka, A. (2023). <em>ExESS - Extraterrestrial Exosphere and Surface
+Simulations</em>. <a href="https://smolkaa.github.io">https://smolkaa.github.io</a>
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -514,15 +657,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../documentation/trajectories/non-ballistic_trajectories.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5.2 Non-Ballistic Trajectories</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./LICENSE.html" class="pagination-link">
-        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../documentation/referenced_value_library/referenced_value_library.html" class="pagination-link">
+        <span class="nav-page-text">A. Referenced Value Library</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/lunar_water_exosphere/conversion_model.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

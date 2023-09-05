@@ -1,0 +1,27 @@
+---
+title: "6.1 Conversion Model"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+
+::: {.column-page-right}
+::: {.panel-tabset}
+
+# {{< fa file-pdf >}} Poster
+
+![](conversion_model/Smolka2023_LPSC_Poster.pdf){width=100% height=950px}
+
+**Cite as:**</br>
+A. Smolka and P. Reiss, 2023, "Modelling the Lunar Water Cycle Through Coupled Monte-Carlo Simulations of the Moon's Surface and Exosphere", *Lunar and Planetary Science Conference*, 54, 2023.
+
+# {{< fa image >}} Figure
+
+# {{< fa code >}} LaTeX
+
+:::
+:::
