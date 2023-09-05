@@ -1,7 +1,10 @@
-Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms.qmd) gathered infrared data of the lunar surface to create temperatures maps of the Moon.
+Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms.qmd) gathered infrared data of the lunar surface to create temperature maps of the Moon.
 
 
 {{< include moon/imgs/lunar_surface_temperatures/_lunar_surface_temperatures.qmd >}}
+
+
+{{< include moon/boxes/_diviner_animations.qmd >}}
 
 
 @Butler1997 proposed an analytical surface temperature distribution based on the solar zenith angle $\zenithAngle_s$ with regard to the local surface normal, assuming a perfectly spherical Moon, see @fig-lunar_surface_temperatures. Given the subsolar position $\left(\longitude_{ss}, \latitude_{ss}\right)$, longitude and latitude respectively, the cosine of the zenith angle can be calculate as $\cos\zenithAngle_s = \cos\longitude_{ss} \cdot \cos\latitude_{ss}$. All measurements of the lunar surface temperatures on the dayside suggest a $\cos^{1/4}$ shape with regard to the solar zenith angle [@Vasavada2012; @Hurley2015], though such models break down on the nightside. By introducing a cutoff at the terminators alongside a defined nightside temperature shifting the distribution up, @Butler1997 arrived at
