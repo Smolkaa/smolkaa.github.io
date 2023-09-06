@@ -3,4 +3,4 @@ The [LADEE](/documentation/acronyms.qmd) (Lunar Atmosphere and Dust Environment 
 
 ## Projected Surface Number Densities
 
-{{< include /documentation/planetary_measurements/missions/img/ladee_n0/_ladee_n0.qmd >}}
+{{< include /documentation/planetary_measurements/missions/imgs/ladee_n0/_ladee_n0.qmd >}}
