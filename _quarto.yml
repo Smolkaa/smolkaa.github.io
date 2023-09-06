@@ -80,7 +80,9 @@ website:
         - section: "6. Lunar Water Exosphere Simulation"
           contents:
             - documentation/lunar_water_exosphere/conversion_model.qmd
-        - documentation/referenced_value_library/referenced_value_library.qmd
+        - section: "Appendix"
+          contents:
+            - documentation/referenced_value_library/referenced_value_library.qmd
 
 
 

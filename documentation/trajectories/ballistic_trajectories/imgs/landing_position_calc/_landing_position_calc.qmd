@@ -3,7 +3,7 @@
 # {{< fa image >}} Figure
 
 ::: {#fig-landing_position_calc}
-![](/documentation/trajectories/ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.png){width="600px"}
+![](/documentation/trajectories/ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.png){width="500px"}
 
 Sketch the spherical trigonometry problem of the landing position calculation. The ground track distance is given as an angular distance of $\Delta\trueAnomaly$, complemented by all additional angular arguments used for the derivation of the landing position.
 :::
@@ -34,7 +34,7 @@ Sketch the spherical trigonometry problem of the landing position calculation. T
     \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=east}{$\latitude_0$}
     \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=east}{$\overline{\latitude_0}$}
 
-    %::. end point
+    %::. endpoint
     \pgfmathsetmacro{\pex}{0.045}
     \pgfmathsetmacro{\pey}{1.785}
     \pgfmathsetmacro{\pez}{2.410}
@@ -50,7 +50,7 @@ Sketch the spherical trigonometry problem of the landing position calculation. T
     \tdplotdrawarc[latex-, tdplot_rotated_coords]{(0,0,0)}{3}{\tdplotrestheta}{90}{anchor=west}{$\latitude_1$}
     \tdplotdrawarc[tdplot_rotated_coords]{(0,0,0)}{3}{0}{\tdplotrestheta}{anchor=west, xshift=4}{$\overline{\latitude_1}$}
 
-    %::. connection (cross product for 3d orientation)
+    %::. connection (cross-product for 3D orientation)
     \tdplotcrossprod(\psx,\psy,\psz)(\pex,\pey,\pez)
 
     \tdplotgetpolarcoords{\tdplotresx}{\tdplotresy}{\tdplotresz}
