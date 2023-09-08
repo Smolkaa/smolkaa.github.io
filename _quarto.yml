@@ -77,6 +77,9 @@ website:
           contents:
             - documentation/trajectories/ballistic_trajectories.qmd
             - documentation/trajectories/non-ballistic_trajectories.qmd
+        - section: "X. Surfaces: Planetary Regolith"
+          contents:
+            - "X.1 Physical and Chemical Properties"
         - section: "6. Lunar Water Exosphere Simulation"
           contents:
             - documentation/lunar_water_exosphere/conversion_model.qmd

@@ -19,3 +19,10 @@ Intro
 
 # Analytic Solution of the Landing Position {#sec-analytic_landing_position}
 {{< include ballistic_trajectories/_landing_position.qmd >}}
+
+
+# Trajectory Calculations
+## Ordinary Differential Equation of Motion
+## Numerical ODE Solver Analysis
+
+---
