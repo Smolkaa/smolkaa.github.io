@@ -1,0 +1,69 @@
+---
+title: "Trajectory Calculation"
+author: 
+  name: Alexander Smolka
+  email: a.smolka@tum.de
+  orcid: 0000-0002-4848-3473
+  affiliation: Technical University of Munich
+date: 17 07 23
+---
+
+```{julia}
+#| echo: false
+#| output: false
+path_to_exess = joinpath(@__DIR__, "..", "..", "..", "..", "exess.jl", "src", "ExESS.jl")
+```
+
+---
+
+# Preparation
+
+Firstly, the following examples were executed using the following Julia version:
+```{julia}
+versioninfo()
+```
+
+Next, the locally available ExESS package has to be loaded to access the `trajectory` function (see the [API](/api/exospheres/trajectory.qmd) page for details):
+```{julia}
+#| output: false
+include(path_to_exess)
+using .ExESS
+```
+
+# Inputs
+
+Let us define all required inputs for the trajectory calculation. If you are unsure about how the function works, you can type `julia> ?trajectory` in the REPL to get a description of the function and its arguments.
+
+Apart from the key-word arguments, the function requires the following inputs:
+
+* `x0`: Initial position vector in Cartesian coordinates (m)
+* `v0`: Initial velocity vector in Cartesian coordinates (m/s)
+* `ddx`: Acceleration function (m/s2)
+
+The docstring (see `?trajectory`) shows that these inputs can be of different types, either vectors (`AbstractVector`) or positions (`AbstractPosition`). The latter are custom types defined in the ExESS package to distinguish one three-dimensional in a certain coordinate space from another. The following example shows how to use the `GlobalCartesianPosition`.
+
+We create a `GlobalCartesianPosition` object with the initial position vector, located at `[LUNAR_RADIUS, 0, 0]`, in other words: on the surface of a sphere with radius `LUNAR_RADIUS`.
+```{julia}
+x0 = GlobalCartesianPosition(LUNAR_RADIUS, 0, 0)
+```
+
+Next, the initial velocity vector is defined. We use the `GlobalCartesianVelocity` type to define a velocity vector in the same coordinate system as the position vector. Here, we only use a velocity in the x-direction, with a magnitude of `100 m/s`.
+```{julia}
+v0 = GlobalCartesianVelocity(100, 0, 0)
+```
+
+Without letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.
+
+We can test these assumptions by using the `ddx_lunar_gravity` function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon's mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.
+```{julia}
+ddx = ddx_lunar_gravity
+```
+
+
+# Solve the Trajectory
+
+
+Finally, we have all the required inputs to calculate the trajectory. Let's call the function and save the solution in a variable called `traj`.
+```{julia}
+traj = trajectory(x0, v0, ddx)
+```

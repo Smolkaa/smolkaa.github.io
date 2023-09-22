@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ExESS - Manuals &amp; Examples</title>
+<title>ExESS - Overview</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,9 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../manuals/essentials/onboarding_checklist/index.html" rel="next">
 <link href="..//resources/logo/exess_logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -50,6 +49,12 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -63,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script>
     MathJax = { 
         tex: { 
@@ -111,8 +87,6 @@ ul.task-list li input[type="checkbox"] {
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../_styles.css">
 </head>
@@ -123,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><strong>ExESS</strong></span>
     </a>
@@ -135,36 +109,36 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" rel="" target="" aria-current="page">
- <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../documentation/documentation.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
+    <a class="nav-link" href="../documentation/documentation.html"> 
+<span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
+    <a class="nav-link" href="../manuals/manuals.html"> 
+<span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../presentations/presentations.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
+    <a class="nav-link" href="../presentations/presentations.html"> 
+<span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../api/api.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
+    <a class="nav-link" href="../api/api.html"> 
+<span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i> Code</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Smolkaa" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Smolkaa"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
@@ -172,9 +146,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuals/manuals.html"></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../manuals/manuals.html">Overview</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
@@ -192,334 +166,147 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../manuals/manuals.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"></span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Essentials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/essentials/onboarding_checklist/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Student Thesis: On-Boarding Checklist</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/essentials/julia_links/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Julia Programming Language: Links &amp; Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/essentials/git_essentials/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git Essentials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/essentials/package_installation/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ExESS Package Installation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Code Examples</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/code_examples/example_trajectory_01/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trajectory Calculation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/code_examples/2d_3d_landing_position_comparison/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparison of Landing Position Calculations: 2D vs.&nbsp;3D</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Exercises</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../manuals/exercises/exercise_fibonacci/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fibonnacci Sequence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Example">Example <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Exercise">Exercise <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Julia">Julia <span class="quarto-category-count">(5)</span></div><div class="category" data-category="On-Boarding">On-Boarding <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Overview</h2>
+   
+  <ul>
+  <li><a href="#essentials" id="toc-essentials" class="nav-link active" data-scroll-target="#essentials">Essentials</a></li>
+  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples">Code Examples</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/manuals/manuals.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Manuals &amp; Examples</h1>
+<h1 class="title">Overview</h1>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
     
   </div>
   
+
 
 </header>
 
 <hr>
-<p>The following list contains all manuals, examples, and additional material for the <strong>ExESS</strong> documentation and software. Note that you can use the filtering and ordering tools at the top of the list to filter and order the entries. Additionally, you can filter the entries by categories, which are listed on the right sidebar of this page. Here are some essential manuals to check out:</p>
+<p>The following lists contain all manuals, examples, and additional material for the <strong>ExESS</strong> documentation and software.</p>
+<section id="essentials" class="level2">
+<h2 class="anchored" data-anchor-id="essentials">Essentials</h2>
 <ul>
-<li><a href="../manuals/onboarding_checklist/index.html">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <strong>ExESS</strong> package</li>
-<li><a href="../manuals/package_installation/index.html">ExESS Package Installation</a> describes how to install the <strong>ExESS</strong> package on your computer</li>
+<li><a href="../manuals/essentials/onboarding_checklist/index.html">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <strong>ExESS</strong> package</li>
+<li><a href="../manuals/essentials/julia_links/index.html">Julia Programming Language: Links &amp; Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the <strong>ExESS</strong> package</li>
+<li><a href="../manuals/essentials/git_essentials/index.html">Git Essentials</a> lists some external links to resources for learning the Git version control system</li>
+<li><a href="../manuals/essentials/package_installation/index.html">ExESS Package Installation</a> describes how to install the <strong>ExESS</strong> package on your computer</li>
 </ul>
+</section>
+<section id="code-examples" class="level2">
+<h2 class="anchored" data-anchor-id="code-examples">Code Examples</h2>
+<ul>
+<li><a href="../manuals/code_examples/example_trajectory_01/index.html">Trajectory Calculation</a> provides an example of a purely ballistic trajectory calculation</li>
+<li><a href="../manuals/code_examples/2d_3d_landing_position_comparison/index.html">Comparison of Landing Position Calculations: 2D vs.&nbsp;3D</a></li>
+</ul>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <hr>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Julia,Example" data-listing-date-sort="1692914400000" data-listing-file-modified-sort="1692977057117" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
-<div class="thumbnail">
-<p><a href="../manuals/2d_3d_landing_position_comparison/index.html"> <p class="card-img-top"><img src="2d_3d_landing_position_comparison/compare_2d_3d.svg"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/2d_3d_landing_position_comparison/index.html">
-<h3 class="no-anchor listing-title">
-Comparison of Landing Position Calculations: 2D vs.&nbsp;3D
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
-Julia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Example'); return false;">
-Example
-</div>
-</div>
-<a href="../manuals/2d_3d_landing_position_comparison/index.html">
-<div class="listing-description">
-In this example, the landing position of a particle is calculated in two different ways: a two-dimensional approach based on spherical trigonometry proposed by <span class="citation" data-cites="Butler1997">Butler (1997)</span> and refined…<span class="citation" data-cites="Schoerghofer2022a"></span>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/2d_3d_landing_position_comparison/index.html">
-<div class="listing-date">
-Aug 25, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Julia,On-Boarding" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690545499831" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../manuals/package_installation/index.html"> <img src="../manuals/package_installation/exess_logo.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/package_installation/index.html">
-<h3 class="no-anchor listing-title">
-ExESS Package Installation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
-Julia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('On-Boarding'); return false;">
-On-Boarding
-</div>
-</div>
-<a href="../manuals/package_installation/index.html">
-<div class="listing-description">
-This simulation tool was created as a custom package for the computer language Julia. Please refer to the official guide to…<code></code><code></code>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/package_installation/index.html">
-<div class="listing-date">
-Jul 17, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Julia,Exercise" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690780157709" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="../manuals/exercise_fibonacci/index.html"> <img src="../manuals/exercise_fibonacci/image.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/exercise_fibonacci/index.html">
-<h3 class="no-anchor listing-title">
-Fibonnacci Sequence
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
-Julia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Exercise'); return false;">
-Exercise
-</div>
-</div>
-<a href="../manuals/exercise_fibonacci/index.html">
-<div class="listing-description">
-Write a Julia function that computes the last digit of the <code>n</code>-th Fibonacci number, and compute the last digit of the 10th, 100th, 1000th, and 10000th Fibonacci number.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/exercise_fibonacci/index.html">
-<div class="listing-date">
-Jul 17, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="On-Boarding" data-listing-date-sort="1690495200000" data-listing-file-modified-sort="1690545499827" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="../manuals/git_essentials/index.html"> <img src="../manuals/git_essentials/Git-Icon-Black.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/git_essentials/index.html">
-<h3 class="no-anchor listing-title">
-Git Essentials
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('On-Boarding'); return false;">
-On-Boarding
-</div>
-</div>
-<a href="../manuals/git_essentials/index.html">
-<div class="listing-description">
-Collaboration with Git and the Git workflow are essential aspects of modern software development. Git, a powerful version control system, enables seamless collaboration…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/git_essentials/index.html">
-<div class="listing-date">
-Jul 28, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Julia" data-listing-date-sort="1690754400000" data-listing-file-modified-sort="1690865952373" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="../manuals/julia_links/index.html"> <img src="../manuals/julia_links/julia-dots.svg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/julia_links/index.html">
-<h3 class="no-anchor listing-title">
-Julia Programming Language: Links &amp; Resources
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
-Julia
-</div>
-</div>
-<a href="../manuals/julia_links/index.html">
-<div class="listing-description">
-Julia is a cutting-edge, high-level programming language designed to address the unique challenges of scientific computing and data analytics. Born in 2012, Julia has quickly…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/julia_links/index.html">
-<div class="listing-date">
-Jul 31, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="On-Boarding" data-listing-date-sort="1693432800000" data-listing-file-modified-sort="1693458124019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="thumbnail">
-<p><a href="../manuals/onboarding_checklist/index.html"> <img src="../manuals/onboarding_checklist/play-solid.svg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/onboarding_checklist/index.html">
-<h3 class="no-anchor listing-title">
-Student Thesis: On-Boarding Checklist
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('On-Boarding'); return false;">
-On-Boarding
-</div>
-</div>
-<a href="../manuals/onboarding_checklist/index.html">
-<div class="listing-description">
-This page contains a checklist for students to get started working on their thesis based on the <strong>ExESS</strong> research project. While the General Checklist is applicable to students of all levels (Bachelor/Semester/Master) and all topics (theoretical/numerical/…); the other lists are only relevant for certain levels and…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/onboarding_checklist/index.html">
-<div class="listing-date">
-Aug 31, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Julia,Example" data-listing-date-sort="1689544800000" data-listing-file-modified-sort="1690521196644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="../manuals/example_trajectory_01/index.html"> <img src="../manuals/example_trajectory_01/orbit.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../manuals/example_trajectory_01/index.html">
-<h3 class="no-anchor listing-title">
-Trajectory Calculation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Julia'); return false;">
-Julia
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Example'); return false;">
-Example
-</div>
-</div>
-<a href="../manuals/example_trajectory_01/index.html">
-<div class="listing-description">
-First, the locally available ExESS package has to be loaded:
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../manuals/example_trajectory_01/index.html">
-<div class="listing-date">
-Jul 17, 2023
-</div>
-<div class="listing-author">
-Alexander Smolka
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -599,10 +386,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -612,8 +398,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -626,6 +421,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -669,6 +539,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -694,6 +565,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -757,7 +655,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -767,8 +665,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../manuals/essentials/onboarding_checklist/index.html" class="pagination-link">
+        <span class="nav-page-text">Student Thesis: On-Boarding Checklist</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/manuals/manuals.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
+
+</body></html>
