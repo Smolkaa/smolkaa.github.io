@@ -23,9 +23,13 @@ In the broader scope of planetary science, beyond the lunar realm, lies a captiv
 
 # Background and Motivation
 
-# State of the Art -- Modeling {#sec-sota_modeling}
+## State of the Art -- Modeling {#sec-sota_modeling}
 
 {{< include tables/_sota_modeling.qmd >}}
+
+## The Problem of Scales
+
+One of the most prominent problems for exosphere models is based on the enormous difference in physical scales between relevant processes. While the dimensions of the respective planetary object and its topographic features are around hundreds of kilometers, surface and subsurface processes like particle releases or diffusion are described on micro and sometimes down to atomic scales [@Milillo2023].
 
 # Research Objectives
 

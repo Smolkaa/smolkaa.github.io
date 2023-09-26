@@ -281,6 +281,14 @@
 |                     | * suggests that surface reaction with hydrogen can significantly change exospheric dynamics around the terminator regions        |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
+| @Milillo2023        | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
+|                     |                                                                                                                                  |
+|{{< kbd REVIEW >}}   |                                                                                                                                  |
+|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|                     |                                                                                                                                  |
+|{{< kbd SURFACE >}}  |                                                                                                                                  |
+|                     |                                                                                                                                  |
++---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Teolis2023         | **"Surface exospheric interactions"**                                                                                            |
 |                     |                                                                                                                                  |
 |{{< kbd REVIEW >}}   |                                                                                                                                  |
@@ -288,6 +296,10 @@
 |                     | * includes discussions of thermal accommodation, volatile diffusion, and cold-trapping                                           |
 |{{< kbd SURFACE >}}  |                                                                                                                                  |
 |                     |                                                                                                                                  |
++---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
+| @Schoerghofer2023   | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
++---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
+| @Schoerghofer2023a  | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 
 : Caption. {#tbl-sota_modeling .hover tbl-colwidths="[8,35]"}

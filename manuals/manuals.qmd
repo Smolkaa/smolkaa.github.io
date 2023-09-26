@@ -22,4 +22,6 @@ The following lists contain all manuals, examples, and additional material for t
 
 ## Exercises
 
+* [Fibonacci Sequence](/manuals/exercises/exercise_fibonacci/index.qmd)
+
 ---

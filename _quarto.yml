@@ -71,8 +71,8 @@ website:
             - "4.1 Solar Wind"
             - documentation/sources_sinks/thermal_sorption.qmd
             - documentation/sources_sinks/photoreactions.qmd
-            - "Photodesorption"
-            - "MIV"
+            - "Photon and Electron Stimulated Desorption"
+            - "Micrometeoroid Impact Vaporization"
         - section: "5. Exospheres: Particle Trajectories"
           contents:
             - documentation/trajectories/ballistic_trajectories.qmd
