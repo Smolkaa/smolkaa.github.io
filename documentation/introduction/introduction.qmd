@@ -23,7 +23,16 @@ In the broader scope of planetary science, beyond the lunar realm, lies a captiv
 
 # Background and Motivation
 
+
+
+
 ## State of the Art -- Modeling {#sec-sota_modeling}
+
+One of the first modelers of the lunar exosphere was @Hodges1973, who analysed light noble gases as well as volatile molecular hydrogen and compared their results with data from the Apollo missions. Their Monte-Carlo approach of tracking individual particles through the tenuous atmosphere until eventually lost to one of the implemented loss mechanisms was pioneering work that still inspires new models today. With @Chamberlain1963, @Armand1977, and @Huebner1992 setting the theoretical foundation of exospheric density projections, thermal velocity distributions, and lunar exospheric photoreaction rates, respectively, models became increasingly adapted to predicting number densities in surface-bounded exospheres.
+
+While previously, only single-species simulations with mostly noble gases were performed, @Crider2002 were among the first to investigate the highly reactive hydrogen exosphere, which includes reaction pathways to allow conversions from atomic hydrogen to more complex molecules like water. Their research led to a heightened interest in the role of the planetary surface in exosphere densities and compositions. @Farrell2015, @Farrell2017, @Jones2018, @Jones2021, @Tucker2018, @Tucker2021, @Grumpe2019 are among the leading researchers to investigate the proton/hydrogen interaction with lunar regolith, trying to untangle the highly complex physical and chemical reaction environment of the lunar surface.
+
+A more complete list of relevant publications about the state-of-the-art modeling approaches regarding surface-bounded exosphere, their respective surface, various involved processes, and auxiliary research can be found in @tbl-sota_modeling.
 
 {{< include tables/_sota_modeling.qmd >}}
 

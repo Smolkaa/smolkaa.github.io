@@ -101,6 +101,7 @@ website:
             - manuals/essentials/package_installation/index.qmd
         - section: "Code Examples"
           contents:
+            - manuals/code_examples/mc_simulation/index.qmd
             - manuals/code_examples/example_trajectory_01/index.qmd
             - manuals/code_examples/2d_3d_landing_position_comparison/index.qmd
         - section: "Exercises"

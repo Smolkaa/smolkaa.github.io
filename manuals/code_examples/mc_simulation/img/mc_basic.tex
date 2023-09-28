@@ -1,0 +1,50 @@
+\documentclass[crop,tikz,10pt]{standalone}
+\usepackage{tikz}
+	\usetikzlibrary{shapes}
+	\usetikzlibrary{automata}
+	\usetikzlibrary{arrows}
+	\usetikzlibrary{backgrounds}
+	\usetikzlibrary{calc}
+	\usetikzlibrary{positioning}
+	\usetikzlibrary{patterns}
+	\usetikzlibrary{decorations.pathmorphing}
+	\usetikzlibrary{decorations.pathreplacing}
+
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{xcolor}
+    \definecolor{TUMOrange}{RGB}{227, 114, 34}
+    \definecolor{TUMBlueDark}{RGB}{0, 82, 147}
+
+\input{../../../../resources/latex/_symbols.qmd}
+
+\begin{document}
+
+\newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
+\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
+    
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+
+\begin{tikzpicture}[
+    main/.style={draw, thick, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},
+    decision/.style={draw, diamond, aspect=2, thick, rounded corners=2pt, inner sep=3pt, minimum size=20pt, minimum width=25pt, fill=white},
+]
+
+    %::. main nodes
+    \node[main] (START) at (0,0) {Start Monte-Carlo Simulation};
+    
+    \node[main, below = 2 of START] (INIT) at (0,0) {\n{Initialization of Monte-Carlo \\ Simulation (e.g. setting of \\ global parameters)}};
+
+    \node[decision, below = 2 of INIT] (CHECKSTEP) {};
+
+    \node[main, below = 2 of CHECKSTEP, minimum width=7cm, minimum height=14cm] (STEP) {};
+        \node[anchor=north west] at ($(STEP.north west)$) {Monte-Carlo Step};
+    
+\end{tikzpicture}
+
+\end{document}

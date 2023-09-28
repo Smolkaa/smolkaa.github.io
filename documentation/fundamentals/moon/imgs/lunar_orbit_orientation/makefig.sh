@@ -1,5 +1,5 @@
-latex lunar_orbit_orientation.tex
-dvisvgm lunar_orbit_orientation.dvi
+pdflatex lunar_orbit_orientation.tex
+pdftocairo -svg lunar_orbit_orientation.pdf
 
 rm *.aux
 rm *.dvi

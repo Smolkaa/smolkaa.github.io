@@ -1,0 +1,29 @@
+---
+title: "Monte-Carlo Simulation"
+author: 
+  name: Alexander Smolka
+  email: a.smolka@tum.de
+  orcid: 0000-0002-4848-3473
+  affiliation: Technical University of Munich
+date: 28 09 2023
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+For additional information about the use of the Monte-Carlo method in the **ExESS** research project, please refer to respective parts in the [documentation]().
+
+# Basic Monte-Carlo Simulation
+
+## Structure
+
+## Code
+
+
+# Exosphere Simulation with Monte-Carlo
+
+## Structure
+
+## Code
