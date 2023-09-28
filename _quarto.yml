@@ -9,7 +9,7 @@ csl: _apa.csl
 
 website:
   # site-url: https://smolkaa.github.io
-  title: "**ExESS**"
+  title: "ExESS"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
   repo-actions: [edit]
   favicon: "/resources/logo/exess_logo.png"
@@ -17,8 +17,7 @@ website:
   page-navigation: true
 
   navbar:
-    background: primary
-    pinned: true
+    background: dark
     # logo: /resources/logo/exess_logo.svg
     logo-href: /index.qmd
     left:
@@ -26,8 +25,8 @@ website:
         href: index.qmd
       - text: "{{< fa book >}} Documentation"
         href: documentation/documentation.qmd
-      - text: "{{< fa bookmark >}} Manuals & Examples"
-        href: manuals/manuals.qmd
+      - text: "{{< fa globe >}} Guide"
+        href: guide/guide.qmd
       - text: "{{< fa tv >}} Presentations & Videos"
         href: presentations/presentations.qmd
       - text: "{{< fa code >}} Code"
@@ -41,7 +40,7 @@ website:
       border: true
       logo: /resources/logo/exess_logo.svg
       collapse-level: 1
-      style: "floating"
+      style: "docked"
       contents:
         - text: "Home"
           href: index.qmd
@@ -89,24 +88,24 @@ website:
 
 
 
-    - title: "Manuals & Examples"
+    - title: "Guide"
       contents:
         - text: "Overview"
-          href: manuals/manuals.qmd
+          href: guide/guide.qmd
         - section: "Essentials"
           contents:
-            - manuals/essentials/onboarding_checklist/index.qmd
-            - manuals/essentials/julia_links/index.qmd
-            - manuals/essentials/git_essentials/index.qmd
-            - manuals/essentials/package_installation/index.qmd
+            - guide/essentials/onboarding_checklist/index.qmd
+            - guide/essentials/julia_links/index.qmd
+            - guide/essentials/git_essentials/index.qmd
+            - guide/essentials/package_installation/index.qmd
         - section: "Code Examples"
           contents:
-            - manuals/code_examples/mc_simulation/index.qmd
-            - manuals/code_examples/example_trajectory_01/index.qmd
-            - manuals/code_examples/2d_3d_landing_position_comparison/index.qmd
+            - guide/code_examples/mc_simulation/index.qmd
+            - guide/code_examples/example_trajectory_01/index.qmd
+            - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
         - section: "Exercises"
           contents:
-            - manuals/exercises/exercise_fibonacci/index.qmd
+            - guide/exercises/exercise_fibonacci/index.qmd
 
 
     - title: "Presentations & Videos"
@@ -147,7 +146,7 @@ format:
     # filters:
     #   - lightbox
     grid:
-      sidebar-width: 300px
+      sidebar-width: 350px
       body-width: 1000px
       margin-width: 300px
     html-math-method: mathjax
@@ -156,9 +155,13 @@ format:
       - resources/head.html
     lightbox: auto
     link-external-newwindow: true
-    mainfont: "'Roboto', sans-serif"
-    monofont: "'Roboto Mono', monospace"
-    theme: [flatly, _mystyle.scss]
+    # mainfont: "'Roboto', sans-serif"
+    # monofont: "'Roboto Mono', monospace"
+    linestretch: 1.5
+    # theme: [flatly, _mystyle.scss]
+    theme:
+      - lumen
+      - mystyle.scss
     title-block-style: default
     toc: true
     toc-title: "{{< meta title >}}"

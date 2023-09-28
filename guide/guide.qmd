@@ -1,0 +1,42 @@
+---
+title: "Overview"
+author:
+  - id: asmolka
+    name: Alexander Smolka
+    email: a.smolka@tum.de
+    orcid: 0000-0002-4848-3473
+    affiliation: Technical University of Munich
+---
+
+---
+
+The following lists contain guides, manuals, examples, and additional material for the **ExESS** documentation and software.
+
+:::: {.columns}
+
+::: {.column}
+
+## Essentials
+
+* [Student Thesis: On-Boarding Checklist](/guide/essentials/onboarding_checklist/index.qmd) is recommended for all new students to get started with their university thesis and working with the **ExESS** package 
+* [Julia Programming Language: Links & Resources](/guide/essentials/julia_links/index.qmd) contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the **ExESS** package
+* [Git Essentials](/guide/essentials/git_essentials/index.qmd) lists some external links to resources for learning the Git version control system
+* [ExESS Package Installation](/guide/essentials/package_installation/index.qmd) describes how to install the **ExESS** package on your computer
+
+:::
+
+::: {.column}
+
+## Code Examples
+
+* [Monte-Carlo Simulation](/guide/code_examples/mc_simulation/index.qmd)
+* [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 
+
+:::
+::::
+
+## Exercises
+
+* [Fibonacci Sequence](/guide/exercises/exercise_fibonacci/index.qmd)
+
+---

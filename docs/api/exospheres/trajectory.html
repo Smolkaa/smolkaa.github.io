@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-09-28">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -122,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -130,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title"><strong>ExESS</strong></span>
+    <span class="navbar-title">ExESS</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -148,8 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../manuals/manuals.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-bookmark" aria-label="bookmark"></i> Manuals &amp; Examples</span></a>
+    <a class="nav-link" href="../../guide/guide.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-globe" aria-label="globe"></i> Guide</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
@@ -186,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -315,6 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/exospheres/trajectory.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -348,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">September 28, 2023</p>
     </div>
   </div>
   
@@ -371,6 +373,107 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_lunar_gravity</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>traj <span class="op">=</span> <span class="fu">trajectory</span>(x0, v0, ddx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-solid fa-shapes" aria-label="shapes"></i>   3D Ballistic Trajectory Calculation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="preparation" class="level2">
+<h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
+<p>Firstly, the following examples were executed using the following Julia version:</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">versioninfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Julia Version 1.9.0
+Commit 8e63055292 (2023-05-07 11:25 UTC)
+Platform Info:
+  OS: Windows (x86_64-w64-mingw32)
+  CPU: 12 × Intel(R) Xeon(R) W-2235 CPU @ 3.80GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-14.0.6 (ORCJIT, cascadelake)
+  Threads: 2 on 12 virtual cores</code></pre>
+</div>
+</div>
+<p>Next, the locally available ExESS package has to be loaded to access the <code>trajectory</code> function:</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(path_to_exess)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">.ExESS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<p>Let us define all required inputs for the trajectory calculation. If you are unsure about how the function works, you can type <code>julia&gt; ?trajectory</code> in the REPL to get a description of the function and its arguments.</p>
+<p>Apart from the key-word arguments, the function requires the following inputs:</p>
+<ul>
+<li><code>x0</code>: Initial position vector in Cartesian coordinates (m)</li>
+<li><code>v0</code>: Initial velocity vector in Cartesian coordinates (m/s)</li>
+<li><code>ddx</code>: Acceleration function (m/s2)</li>
+</ul>
+<p>The docstring (see <code>?trajectory</code>) shows that these inputs can be of different types, either vectors (<code>AbstractVector</code>) or positions (<code>AbstractPosition</code>). The latter are custom types defined in the ExESS package to distinguish one three-dimensional in a certain coordinate space from another. The following example shows how to use the <code>GlobalCartesianPosition</code>.</p>
+<p>We create a <code>GlobalCartesianPosition</code> object with the initial position vector, located at <code>[LUNAR_RADIUS, 0, 0]</code>, in other words: on the surface of a sphere with radius <code>LUNAR_RADIUS</code>.</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fu">GlobalCartesianPosition</span>(LUNAR_RADIUS, <span class="fl">0</span>, <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>GlobalCartesianPosition{Float64}(1.7374e6, 0.0, 0.0)</code></pre>
+</div>
+</div>
+<p>Next, the initial velocity vector is defined. We use the <code>GlobalCartesianVelocity</code> type to define a velocity vector in the same coordinate system as the position vector. Here, we only use a velocity in the x-direction, with a magnitude of <code>100 m/s</code>.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="fu">GlobalCartesianVelocity</span>(<span class="fl">100</span>, <span class="fl">0</span>, <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>GlobalCartesianVelocity{Int64}(100, 0, 0)</code></pre>
+</div>
+</div>
+<p>Without letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.</p>
+<p>We can test these assumptions by using the <code>ddx_lunar_gravity</code> function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon’s mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_lunar_gravity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>ddx_lunar_gravity (generic function with 2 methods)</code></pre>
+</div>
+</div>
+</section>
+<section id="solve-the-trajectory" class="level2">
+<h2 class="anchored" data-anchor-id="solve-the-trajectory">Solve the Trajectory</h2>
+<p>Finally, we have all the required inputs to calculate the trajectory. Let’s call the function and save the solution in a variable called <code>traj</code>.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>traj <span class="op">=</span> <span class="fu">trajectory</span>(x0, v0, ddx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>retcode: Terminated
+Interpolation: specialized 4th order "free" interpolation
+t: 7-element Vector{Float32}:
+   0.0
+   0.17253026
+   1.897833
+  19.15086
+  89.02362
+ 125.11684
+ 125.11684
+u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Float64}, Vector{Float64}}}}:
+ ([100.0, 0.0, 0.0], [1.737401e6, 0.0, 0.0])
+ ([99.72352819548777, 0.0, 0.0], [1.7374182291764107e6, 0.0, 0.0])
+ ([96.95910868428572, 0.0, 0.0], [1.737587897640642e6, 0.0, 0.0])
+ ([69.34166361242546, 0.0, 0.0], [1.7390224279588673e6, 0.0, 0.0])
+ ([-42.27453422294352, 0.0, 0.0], [1.739967349345177e6, 0.0, 0.0])
+ ([-100.01604689213914, 0.0, 0.0], [1.7374000000000002e6, 0.0, 0.0])
+ ([-100.01604689213914, 0.0, 0.0], [1.7374000000000002e6, 0.0, 0.0])</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
 <section id="api" class="level2">
 <h2 class="anchored" data-anchor-id="api">API</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
@@ -383,8 +486,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
 [2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
 <p>Calculates the landing position of a particle starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)), flying on a ballistic trajectory, i.e., only influenced by graviational forces.</p>
@@ -431,8 +534,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>[1] trajectory(x0::AbstractVector, v0::AbstractVector, ddx::Function; kwargs...)
 [2] trajectory(x0::AbstractPosition, v0::AbstractVelocity, ddx::Function; kwargs...)</code></pre>
 <p>Calculate the trajectory of a particle starting at position <code>x0</code> (global cartesian coordinates), with initial velocity <code>v0</code> (global cartesian coordinates), given the acceleration function <code>ddx</code> (global cartesian coordinates).</p>
@@ -505,8 +608,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>[1] ddx_lunar_gravity(x::AbstractVector, [args...])</code></pre>
 <p>Acceleration function for the lunar gravity.</p>
 </div>
