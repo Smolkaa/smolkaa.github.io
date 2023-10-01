@@ -65,11 +65,11 @@ website:
           contents:
             - documentation/planetary_measurements/missions.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
-        - section: "4. Exospheres: Sources and Sinks"
+        - section: "4. Drivers of Exospheres"
           contents:
-            - "4.1 Solar Wind"
-            - documentation/sources_sinks/thermal_sorption.qmd
-            - documentation/sources_sinks/photoreactions.qmd
+            - documentation/drivers/solar_wind.qmd
+            - documentation/drivers/thermal_sorption.qmd
+            - documentation/drivers/photoreactions.qmd
             - "Photon and Electron Stimulated Desorption"
             - "Micrometeoroid Impact Vaporization"
         - section: "5. Exospheres: Particle Trajectories"
@@ -143,8 +143,6 @@ format:
     code-copy: true
     code-link: true
     css: _styles.css
-    # filters:
-    #   - lightbox
     grid:
       sidebar-width: 350px
       body-width: 1000px
@@ -155,10 +153,6 @@ format:
       - resources/head.html
     lightbox: auto
     link-external-newwindow: true
-    # mainfont: "'Roboto', sans-serif"
-    # monofont: "'Roboto Mono', monospace"
-    linestretch: 1.5
-    # theme: [flatly, _mystyle.scss]
     theme:
       - lumen
       - mystyle.scss

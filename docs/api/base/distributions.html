@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-07-27">
+<meta name="dcterms.date" content="2023-10-01">
 
 <title>ExESS - Distributions</title>
 <style>
@@ -357,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 27, 2023</p>
+      <p class="date">October 1, 2023</p>
     </div>
   </div>
   
@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 <section id="velocity-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="velocity-distributions">Velocity Distributions</h3>
-<p>For the theoretical description of the velocity distributions, please read the <a href="../../documentation/fundamentals/thermal_sorption.qmd#sec-velocity-distributions">documentation</a>.</p>
+<p>For the theoretical description of the velocity distributions, please read the <a href="../../documentation/drivers/thermal_sorption.html#sec-velocity-distributions">documentation</a>.</p>
 </section>
 </section>
 <section id="api" class="level2">
@@ -438,8 +438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>[1] cdf(vd::AbstractDistribution, v::Tuple{Real, Real}, T::Real, m::Real; N=1000)
-[2] cdf(vd::AbstractDistribution, v::Real, T::Real, m::Real; kwargs...)</code></pre>
+<pre><code>[1] cdf([S::Type], vd::AbstractVelocityDistribution, v::Tuple{Real, Real}, T::Real, m::Real; N=1000)
+[2] cdf([S::Type], vd::AbstractVelocityDistribution, v::Real, T::Real, m::Real; kwargs...)</code></pre>
 <p>Computes the cumulative distribution function of the velocity distribution <code>vd</code> based on numerical integration of the respective probability density function between the upper and lower speed given in <code>v</code> (in [m s-1]) (if <code>v</code> is scalar, the lower boundary is zero). Takes the temperature <code>T</code> (in [K]) and the mass <code>m</code> (in [kg]) as arguments to evaluate the MB(F) distributions. The keyword argument <code>N</code> controls the number of numerical integration steps.</p>
 </div>
 </div>
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>[1] pdf(::AbstractDistribution, v::Real, T::Real, m::Real)</code></pre>
+<pre><code>[1] pdf([S::Type], ::AbstractVelocityDistribution, v::Real, T::Real, m::Real)</code></pre>
 <p>Calculates the probability density of MB(F) speed distributions, at the speed <code>v</code> (in [m s-1]), given the temperature <code>T</code> (in [K]), and the mass <code>m</code> (in [kg]).</p>
 </div>
 </div>
@@ -475,8 +475,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>[1] sample([S::Type], ::AbstractDistribution, T::Real, m::Real; dims=3)</code></pre>
-<p>Samples the <code>dims</code>-dimensional velocity distribtion, given the temperature <code>T</code> in [K], and the mass <code>m</code> in [kg]. Returns the vector as a type <code>S</code>, if specified.</p>
+<pre><code>[1] sample([S::Type], ::MaxwellBoltzmannVelocityDistribution, T::Real, m::Real; dims=3)
+[2] sample([S::Type], ::MaxwellBoltzmannFluxVelocityDistribution, T::Real, m::Real)</code></pre>
+<p>Samples the distribtion, given the temperature <code>T</code> in [K], and the mass <code>m</code> in [kg]. For Maxwell-Boltzmann distributions, an optional keyword argument <code>dims</code> can be passed to control the dimensionality of the output vector. An optional type <code>S</code> can also be passed to control the type of the output vector.</p>
 </div>
 </div>
 </div>

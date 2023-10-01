@@ -10,11 +10,16 @@ citation: false
 # {{< meta title >}} {.unnumbered}
 :::
 
+::: {.panel-tabset}
+
+# {{< fa table >}} Table
 
 +-----------+---------------------------------------------------------------+
 | ALSEP     | Apollo Lunar Surface Experiments Package                      |
 +-----------+---------------------------------------------------------------+
 | cdf       | cumulative distribution function                              |
+|           |                                                               |
+| CME       | Coronal Mass Ejection                                         |
 +-----------+---------------------------------------------------------------+
 | DLRE      | Diviner Lunar Radiometer Experiment                           |
 +-----------+---------------------------------------------------------------+
@@ -33,6 +38,8 @@ citation: false
 | LROC      | Lunar Reconnaissance Orbiter Camera                           |
 +-----------+---------------------------------------------------------------+
 | HEALPix   | Hierarchical Equal Area iso-Latitude Pixelization             |
++-----------+---------------------------------------------------------------+
+| IMF       | Interplanetary Magnetic Field                                 |
 +-----------+---------------------------------------------------------------+
 | MBD       | Maxwell-Boltzmann Distribution                                |
 |           |                                                               |
@@ -70,13 +77,13 @@ citation: false
 : {.hover}
 
 
-::: {.callout-note collapse=true}
-# LaTeX - Glossary Acronyms Definition {.unnumbered}
+# {{< fa code >}} $\LaTeX$
 
 ```latex
 \newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}
 
 \newacronym{cdf}{cdf}{cumulative distribution function}
+\newacronym{CME}{CME}{Coronal Mass Ejection}
 
 \newacronym{DLRE}{DLRE}{Diviner Lunar Radiometer Experiment}
 
@@ -90,6 +97,8 @@ citation: false
 \newacronym{LROC}{LROC}{Lunar Reconnaissance Orbiter Camera}
 
 \newacronym{HEALPix}{HEALPix}{Hierarchical Equal Area iso-Latitude Pixelization}
+
+\newacronym{IMF}{IMF}{Interplanetary Magnetic Field}
 
 \newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}
 \newacronym{MBFD}{MBFD}{Maxwell-Boltzmann Flux Distribution}

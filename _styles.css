@@ -5,6 +5,13 @@
   padding-left: 15%;
 } */
 
+/* adjust navbar */
+.navbar {
+  border:         none;
+  padding-top:    .2rem;
+  padding-bottom: .2rem;
+}
+
 .nav-item {
   padding-left: 25px;
   padding-right: 15px;

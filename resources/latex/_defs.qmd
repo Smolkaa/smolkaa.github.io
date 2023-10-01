@@ -13,19 +13,22 @@
 
 \newcommand{\per}{/}
 
-\newcommand{\metre}{m}
-\newcommand{\second}{s}
-\newcommand{\minute}{min}
-\newcommand{\hour}{h}
 \newcommand{\day}{d}
-\newcommand{\kelvin}{K}
-\newcommand{\joule}{J}
-\newcommand{\gram}{g}
-\newcommand{\watt}{W}
-\newcommand{\percent}{\%}
 \newcommand{\electronvolt}{eV}
+\newcommand{\gram}{g}
+\newcommand{\hour}{h}
+\newcommand{\joule}{J}
+\newcommand{\kelvin}{K}
+\newcommand{\metre}{m}
 \newcommand{\mole}{mol}
+\newcommand{\minute}{min}
+\newcommand{\percent}{\%}
+\newcommand{\second}{s}
+\newcommand{\tesla}{T}
+\newcommand{\volt}{V}
+\newcommand{\watt}{W}
 
+\newcommand{\nano}{n}
 \newcommand{\centi}{c}
 \newcommand{\kilo}{k}
 

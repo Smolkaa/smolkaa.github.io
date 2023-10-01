@@ -1,0 +1,9 @@
+## Interplanetary Magnetic Field
+
+## Electric Surface Potential
+
+In space, objects typically charge to a potential where the total current is zero, mainly from ambient electrons, ions, and photoelectron emission. In the case of the Moon, this implies that the lunar surface typically attains a negative potential in shadow, roughly equivalent to the electron temperature, and a positive potential in sunlight, approximately matching the photoelectron temperature (a few $\si{\electronvolt}$). [@Halekas2005]
+
+According to @Futaana2012, the Moon's absence of a considerable atmosphere and global magnetic field fosters direct interaction between its surface and the solar wind, resulting in the accumulation of electrostatic charges. The lunar surface potential varies based on factors like location, time of day, and prevailing solar wind conditions. Due to the majority of incoming plasma impacting the sunlit side of the Moon and getting adsorbed or neutralized, a plasma void wake structure forms downstream on the lunar night side. Through photoelectrons, the lunar dayside typically maintains a positive electrostatic potential of around +20 V, while the absence of photons on the opposite side leads to pronounced negative charges, reaching as low as -200 V. [@Halekas2005; @Wurz2022]
+
+## Magnetic Anomalies

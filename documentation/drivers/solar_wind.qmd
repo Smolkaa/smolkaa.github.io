@@ -1,0 +1,49 @@
+---
+title: "4.1 Solar Wind"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+# Origin
+
+Parker Spirals of the Sun because of the solar rotation [@Bittencourt2004].
+
+The rotation axis of the Sun is inclined by $\SI{7.25}{\degree}$ with respect to the ecliptic plane [@Russell2013].
+
+
+$\SI{400}{\kilo\metre\per\second}$ [@Russell2013]
+
+$\left(\num{400} - \num{500}\right)\si{\kilo\metre\per\second}$ nominal speed [@Bennett2013; @Farrell2015]
+
+Drift velocity of electrons: $\SI{300}{\kilo\metre\per\second}$ [@Bittencourt2004]
+
+Mariner 2 measurements of the velocity at the near-Earth rotation: $\left(\num{400} - \num{700}\right)\si{\kilo\metre\per\second}$ based on a roughly $\SI{27}{\day}$ cycle [@Neugebauer1966].
+
+# Composition
+
+The solar wind is a magnetized and highly conducting plasma consisting of electrons, protons, and heavier ions. At Earth's distance to the Sun, its nominal density is about $\SI{5}{\centi\metre\tothe{-3}}$ electrons and ions [@Russell2013]. For the Moon, this density can vary greatly based on transient events like [CME](/documentation/acronyms.qmd){.abbr title="Coronal Mass Ejection"} or the Moon's passage through Earth's magnetotail.
+
+With the solar wind propagating in all directions, the density decreases inversely proportional to the square of the distance from the Sun. 
+
+## Protons and Electrons
+
+About $\SI{96}{\percent}$ of all ions are protons [@Futaana2012].
+
+Proton density of the solar wind measured by Mariner 2 varied between $\left(\num{1} - \num{50}\right)\si{\centi\metre\tothe{-3}}$, with an average daily average of $\SI{5}{\centi\metre\tothe{-3}}$ protons [@Neugebauer1966].
+
+## Ions and Heavier Elements
+
+The majority of the remaining ions are alpha particles, i.e., helium nuclei $\ce{He++}$, making up about $\SI{4}{\percent}$ of the solar wind ion particles [@Futaana2012].
+
+# Interplanetary Magnetic Field
+
+The solar wind exerts a magnetic field, called the Interplanetary Magnetic Field ([IMF](/documentation/acronyms.qmd){.abbr title="Interplanetary Magnetic Field"}), of roughly $\SI{5}{\nano\tesla}$ in the ecliptic plane at $\SI{1}{AU}$, though its orientation is highly variable [@Russell2013]. @Zhao1995 reported that in situ observations round that the horizontal component of the IMF, while being generally less than $\SI{5}{\nano\tesla}$ in strength, "jumps from one finite value to another with opposite polarity".
+
+
+{{< include solar_wind/imgs/imf_bx_jumping/_imf_bx_jumping.qmd >}}
+
+
+Due to its high conductivity, the solar wind's magnetic field tends to be relatively frozen inside the streaming plasma [@Bittencourt2004].
