@@ -12,9 +12,8 @@ author:
 
 The following lists contain guides, manuals, examples, and additional material for the **ExESS** documentation and software.
 
-:::: {.columns}
-
-::: {.column}
+::: {.grid}
+::: {.g-col-6}
 
 ## Essentials
 
@@ -25,7 +24,7 @@ The following lists contain guides, manuals, examples, and additional material f
 
 :::
 
-::: {.column}
+::: {.g-col-6}
 
 ## Code Examples
 
@@ -33,7 +32,24 @@ The following lists contain guides, manuals, examples, and additional material f
 * [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 
 
 :::
-::::
+:::
+
+
+::: {.grid}
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+<img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:80%; margin-left:auto; margin-right:auto; margin-top:10px" >
+<div class="container">
+  <h4><b>Julia Links</b></h4>
+  <p>Julia Programming Language: Links & Resources</p>
+</div>
+</div> 
+```
+
+:::
+:::
 
 ## Exercises
 
