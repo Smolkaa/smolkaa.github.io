@@ -83,8 +83,6 @@ website:
           contents:
             - documentation/lunar_water_exosphere/conversion_model.qmd
         - section: "Appendix"
-          contents:
-            - documentation/referenced_value_library/referenced_value_library.qmd
 
 
 

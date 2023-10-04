@@ -1,3 +1,7 @@
+One of the main drivers of any thermodynamic process is its available energy, given by its temperature.
+
+## Measurements and Modeling
+
 Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms.qmd) gathered infrared data of the lunar surface to create temperature maps of the Moon.
 
 
@@ -47,4 +51,9 @@ To further investigate the two models, the [rms](/documentation/acronyms.qmd) va
 \begin{equation}
     \Delta\temperature_{\text{rms}, i} = \sqrt{\frac{1}{N_j} \cdot \sum_j^{N_j} \left(\Delta\temperature_{i,j}\right)^2},
 \end{equation}
-for $N_j$ applicable positions $j$ is shown on the right side of @fig-lunar_surface_temperatures_comparison. In comparison with the previously shown statistical mean, the [rms](/documentation/acronyms.qmd) shows the spread of the temperatures around the mean. For all cases, globally, dayside, and nightside, the @Hurley2015 model has lower [rms](/documentation/acronyms.qmd) values, which are less than $\SI{10}{\kelvin}$ for latitude uo to $\SI{60}{\degree}$. Closer to the poles and similar to the mean value, the dayside temperatures tend to deviate the most, peaking at $\SI{43}{\kelvin}$ at $\SI{80}{\degree}$. Generally, a steadily increasing behaviour with higher latitudes can be observed. For the @Butler1997 model, the [rms](/documentation/acronyms.qmd) values start out considerably higher with the worst deviations on the dayside of the Moon. For roughly $\SI{50}{\degree}$ from the equator, the values decrease to the lowest value of $\SI{17}{\kelvin}$ before sharply increasing polewards of it.
+for $N_j$ applicable positions $j$ is shown on the right side of @fig-lunar_surface_temperatures_comparison. In comparison with the previously shown statistical mean, the [rms](/documentation/acronyms.qmd) shows the spread of the temperatures around the mean. For all cases, globally, dayside, and nightside, the @Hurley2015 model has lower [rms](/documentation/acronyms.qmd) values, which are less than $\SI{10}{\kelvin}$ for latitude uo to $\SI{60}{\degree}$. Closer to the poles and similar to the mean value, the dayside temperatures tend to deviate the most, peaking at $\SI{43}{\kelvin}$ at $\SI{80}{\degree}$. Generally, a steadily increasing behaviour with higher latitudes can be observed. For the @Butler1997 model, the [rms](/documentation/acronyms.qmd) values start considerably higher with the worst deviations on the dayside of the Moon. For roughly $\SI{50}{\degree}$ from the equator, the values decrease to the lowest value of $\SI{17}{\kelvin}$ before sharply increasing polewards of it.
+
+
+## Permanently Shadowed Regions
+
+@Schoerghofer2021 investigated the sizes of [PSRs](/documentation/acronyms.qmd) and found that their total area in the northern polar region (poleward of $\SI{80}{\degree}$) is around $\SI{1.3\times 10\tothe{4}}{\kilo\metre\tothe{2}}$, while the southern polar region has a total area of $\SI{1.6\times 10\tothe{4}}{\kilo\metre\tothe{2}}$. 
