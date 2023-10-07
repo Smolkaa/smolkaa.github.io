@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-28">
+<meta name="dcterms.date" content="2023-10-06">
 
 <title>ExESS - Monte-Carlo Simulation</title>
 <style>
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -85,6 +119,8 @@ ul.task-list li input[type="checkbox"] {
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../_styles.css">
 </head>
@@ -255,7 +291,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#basic-monte-carlo-simulation" id="toc-basic-monte-carlo-simulation" class="nav-link active" data-scroll-target="#basic-monte-carlo-simulation">Basic Monte-Carlo Simulation</a>
   <ul class="collapse">
   <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure">Structure</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
+  <ul class="collapse">
+  <li><a href="#example-estimating-pi" id="toc-example-estimating-pi" class="nav-link" data-scroll-target="#example-estimating-pi">Example – Estimating Pi</a></li>
+  <li><a href="#additional-packages" id="toc-additional-packages" class="nav-link" data-scroll-target="#additional-packages">Additional Packages</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#exosphere-simulation-with-monte-carlo" id="toc-exosphere-simulation-with-monte-carlo" class="nav-link" data-scroll-target="#exosphere-simulation-with-monte-carlo">Exosphere Simulation with Monte-Carlo</a>
   <ul class="collapse">
@@ -294,7 +334,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 28, 2023</p>
+      <p class="date">October 6, 2023</p>
     </div>
   </div>
   
@@ -312,9 +352,169 @@ ul.task-list li input[type="checkbox"] {
 <h1>Basic Monte-Carlo Simulation</h1>
 <section id="structure" class="level2">
 <h2 class="anchored" data-anchor-id="structure">Structure</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="fig-basic_mc" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/diagrams/mc_basic.svg" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Basic Monte-Carlo model structure.</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newcommand</span>{<span class="ex">\n</span>}[1]{<span class="kw">\begin</span>{<span class="ex">tabular</span>}{c}#1<span class="kw">\end</span>{<span class="ex">tabular</span>}}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\renewcommand</span>{<span class="ex">\vec</span>}[1]{<span class="fu">\boldsymbol</span>{<span class="fu">\mathbf</span>{#1}}}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\pgfdeclarelayer</span>{background}</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\pgfdeclarelayer</span>{foreground}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    main/.style={draw, thick, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    decision/.style={draw, diamond, aspect=2, thick, rounded corners=2pt, inner sep=3pt, minimum size=20pt, minimum width=25pt, fill=white},</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">%::. main nodes</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\node</span>[main] (START) at (0,0) {Start of Monte-Carlo Simulation};    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\node</span>[main, below = 1 of START] (INIT) {<span class="fu">\n</span>{Initialization of Monte-Carlo <span class="fu">\\</span> Simulation (e.g. setting of <span class="fu">\\</span> global parameters)}};</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\node</span>[decision, below = 1 of INIT] (CHECKSTEP) {};</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\node</span>[main, below = 1 of CHECKSTEP, very thick] (STEP) {<span class="fu">\n</span>{<span class="fu">\vspace</span>{5mm}<span class="fu">\\\textbf</span>{Monte-Carlo Step}<span class="fu">\\\vspace</span>{5mm}}};</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\node</span>[main, right = 1 of STEP] (END) {<span class="fu">\n</span>{End of<span class="fu">\\</span>Monte-Carlo Simulation}};</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">%::. connections</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (START) -- (INIT);</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (INIT) -- node[midway, right] {<span class="ss">$i=1$</span>} (CHECKSTEP);</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (CHECKSTEP) -- node [midway, right] {<span class="ss">$i</span><span class="sc">\leq</span><span class="ss"> N$</span>} (STEP);</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (STEP.250) |- (<span class="ss">$(STEP.250) + (-2, -1)$</span>) |- node[near start, left] {<span class="ss">$i</span><span class="sc">\mapsto</span><span class="ss"> i+1$</span>} (CHECKSTEP.180);</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (STEP.290) -- (<span class="ss">$(STEP.290) + (0, -1.3)$</span>) node[at end, below] {<span class="fu">\n</span>{<span class="fu">\emph</span>{save step }<span class="fu">\\\emph</span>{results in file}}};</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[-latex, thick] (CHECKSTEP.0) -| node[near start, above] {<span class="ss">$i&gt;N$</span>} (END.90);</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">solvemontecarlo</span>(step<span class="op">::</span><span class="dt">Function</span>, N<span class="op">::</span><span class="dt">Int</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> []</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">push!</span>(results, <span class="fu">step</span>())</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> results</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>solvemontecarlo (generic function with 1 method)</code></pre>
+</div>
+</div>
+<section id="example-estimating-pi" class="level3">
+<h3 class="anchored" data-anchor-id="example-estimating-pi">Example – Estimating Pi</h3>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">step</span>()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">2</span>)<span class="op">*</span><span class="fl">2</span> <span class="op">.-</span> <span class="fl">1</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> y<span class="op">^</span><span class="fl">2</span> <span class="op">&lt;=</span> <span class="fl">1</span> ? <span class="fl">1</span> <span class="op">:</span> <span class="fl">0</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>step (generic function with 1 method)</code></pre>
+</div>
+</div>
+<p>What does this specific stepping function do? It draws two positional arguments, <code>x</code> and <code>y</code>, from a uniform distribution between -1 and 1. Then it checks whether the point is inside the unit circle. If so, it returns 1, otherwise 0. The result is a vector of 1s and 0s, which can be interpreted as a Bernoulli distribution. The results look something like this:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> Julia</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="fig-mc-pi-estimation" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="code/../img/mc/0000100.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>N=100</code></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="code/../img/mc/0001000.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>N=1000</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="code/../img/mc/0010000.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>N=10000</code></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="code/../img/mc/0100000.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><code>N=100000</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Green points are inside the unit circle, red points are outside.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">CairoMakie</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">plotMC</span>(N<span class="op">::</span><span class="dt">Integer</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> <span class="fu">Figure</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> <span class="fu">Axis</span>(fig[<span class="fl">1</span>,<span class="fl">1</span>];</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        aspect<span class="op">=</span><span class="fu">DataAspect</span>())</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        x, y <span class="op">=</span> <span class="fu">rand</span>(<span class="fl">2</span>)<span class="op">*</span><span class="fl">2</span> <span class="op">.-</span> <span class="fl">1</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> x<span class="op">^</span><span class="fl">2</span> <span class="op">+</span> y<span class="op">^</span><span class="fl">2</span> <span class="op">&lt;=</span> <span class="fl">1</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">scatter!</span>(ax, x, y, color<span class="op">=:</span>green)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">scatter!</span>(ax, x, y, color<span class="op">=:</span>red)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">end</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">end</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlims!</span>(ax, (<span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span>))</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylims!</span>(ax, (<span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span>))</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">save</span>(<span class="fu">joinpath</span>(<span class="pp">@__DIR__</span>, <span class="pp">@sprintf</span>(<span class="st">"%07i.png"</span>, N)), fig, px_per_unit<span class="op">=</span><span class="fl">4</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="cn">nothing</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plotMC</span>.([<span class="fl">100</span>,<span class="fl">1000</span>,<span class="fl">10000</span>,<span class="fl">100000</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the code above uses a custom theme loaded in the preamble of the document.</p>
+</div>
+</div>
+</div>
+<p>We can now use the results to estimate the value of <span class="math inline">\(\pi\)</span>. The area of the unit circle is <span class="math inline">\(\pi\)</span>, the area of the square is 4. The ratio of the areas is thus <span class="math inline">\(\pi/4\)</span>. The ratio of the number of points inside the circle to the total number of points is an estimate of the ratio of the areas. We can thus estimate <span class="math inline">\(\pi\)</span> as follows:</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Statistics</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="fu">solvemontecarlo</span>(step, <span class="fl">1_000_000</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>µ <span class="op">=</span> <span class="fu">mean</span>(res)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>pi_estimation <span class="op">=</span> µ <span class="op">*</span> <span class="fl">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>3.14146</code></pre>
+</div>
+</div>
+</section>
+<section id="additional-packages" class="level3">
+<h3 class="anchored" data-anchor-id="additional-packages">Additional Packages</h3>
+<p>Two important packages that can improve the workflow with Monte-Carlo simulations are <code>ProgressMeter</code> and <code>Distributed</code>. The former allows to display of a progress bar, the latter allows simulating in parallel on multiple cores/workers. Both packages offer a simple interface that can be used through a macro that can be placed in front of the <code>for</code>-loop inside of the Monte-Carlo solving function:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># progress meter and parallel computing</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@showprogress</span> <span class="pp">@distributed</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># only progress meter</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@showprogress</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># only parallel computing</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="pp">@distributed</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>N</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 </section>
 <section id="exosphere-simulation-with-monte-carlo" class="level1">

@@ -20,7 +20,7 @@
     \definecolor{TUMOrange}{RGB}{227, 114, 34}
     \definecolor{TUMBlueDark}{RGB}{0, 82, 147}
 
-\input{../../../../resources/latex/_symbols.qmd}
+\input{../../../../../resources/latex/_symbols.qmd}
 
 \begin{document}
 
@@ -36,15 +36,21 @@
 ]
 
     %::. main nodes
-    \node[main] (START) at (0,0) {Start Monte-Carlo Simulation};
-    
-    \node[main, below = 2 of START] (INIT) at (0,0) {\n{Initialization of Monte-Carlo \\ Simulation (e.g. setting of \\ global parameters)}};
+    \node[main] (START) at (0,0) {\n{Start of\\Monte Carlo Simulation}};    
+    \node[main, below = 1 of START] (INIT) {\n{Initialization of Monte Carlo \\ Simulation (e.g. setting of \\ global parameters)}};
+    \node[decision, below = 1 of INIT] (CHECKSTEP) {};
+    \node[main, below = 1 of CHECKSTEP, very thick, double] (STEP) {\n{\vspace{5mm}\\\textbf{Monte Carlo Step}\\\vspace{5mm}}};
+    \node[main, right = 1 of STEP] (END) {\n{End of\\Monte Carlo Simulation}};
 
-    \node[decision, below = 2 of INIT] (CHECKSTEP) {};
 
-    \node[main, below = 2 of CHECKSTEP, minimum width=7cm, minimum height=14cm] (STEP) {};
-        \node[anchor=north west] at ($(STEP.north west)$) {Monte-Carlo Step};
-    
+    %::. connections
+    \draw[-latex, thick] (START) -- (INIT);
+    \draw[-latex, thick] (INIT) -- node[midway, right] {$i=1$} (CHECKSTEP);
+    \draw[-latex, thick] (CHECKSTEP) -- node [midway, right] {$i\leq N$} (STEP);
+    \draw[-latex, thick] (STEP.250) |- ($(STEP.250) + (-2, -1)$) |- node[near start, left] {$i\mapsto i+1$} (CHECKSTEP.180);
+    \draw[-latex, thick] (STEP.290) -- ($(STEP.290) + (0, -1.3)$) node[at end, below] {\n{\emph{save step }\\\emph{results in file}}};
+    \draw[-latex, thick] (CHECKSTEP.0) -| node[near start, above] {$i>N$} (END.90);
+
 \end{tikzpicture}
 
 \end{document}

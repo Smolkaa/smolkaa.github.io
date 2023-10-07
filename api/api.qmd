@@ -9,6 +9,9 @@ The `ExESS` package is structured into four main parts, which are the four main 
 
 ## Repository Structure
 
+::: {.grid}
+::: {.g-col-6}
+
 ```jl
 ExESS/  
 ├── data/  
@@ -24,7 +27,15 @@ ExESS/
 └── README.md  
 ```
 
+:::
+::: {.g-col-6}
+:::
+:::
+
 ## Source Files
+
+::: {.grid}
+::: {.g-col-6}
 
 ### Base Functionalities -- `base/` 
 `ExESS/src/base/` contains basic functionality that is used at multiple places in the code, e.g., physical constants, coordinate system definitions, utility functions, and some probability distributions.
@@ -34,12 +45,19 @@ ExESS/
 * [`distributions.jl`](/api/base/distributions.qmd)
 * [`utils.jl`](/api/base/utility.qmd)
 
+:::
+::: {.g-col-6}
+
 ### Exospheres -- `exospheres/`
 `ExESS/src/exospheres/` contains all scripts that define functions that have something to do with simulating the exosphere. Due to the assumption of surface-bounded exospheres, [Monte-Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) are the preferred simulation tool as each individual particle of the exosphere can be simulated independently. Implemented functionalities are mostly based on ballistic trajectory calculations.
 
 * [`orbital_mechanics.jl`](/api/exospheres/orbital_mechanics.qmd)
 * [`trajectories.jl`](/api/exospheres/trajectory.qmd)
 * [`utils.jl`]()
+
+
+:::
+::: {.g-col-6}
 
 ### Numerical Grids -- `grids/`
 `ExESS/src/grids/` contains all numerical discretization methods used in this package. While most functions can be called with `AbstractVector` inputs, their main use is meant to be in conjunction with the previously defined custom coordinate systems.
@@ -51,6 +69,9 @@ ExESS/
 * [`types.jl`]()  
 * [`utils.jl`]()  
 
+:::
+::: {.g-col-6}
+
 ### Surfaces -- `surfaces/`
 `ExESS/src/surfaces/` contains all functions that are used to calculate surface properties, e.g., surface temperatures, reaction kinetics, thermal conductivities, and diffusion coefficients.
 
@@ -61,3 +82,6 @@ ExESS/
 * [`temperature.jl`](/api/surfaces/temperature.qmd)  
 * [`thermal_conductivity_parzinger2014.jl`]()  
 * [`utils.jl`]()  
+
+:::
+:::

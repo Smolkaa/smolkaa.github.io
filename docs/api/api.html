@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-10-06">
 
 <title>ExESS - Code</title>
 <style>
@@ -315,13 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#repository-structure" id="toc-repository-structure" class="nav-link active" data-scroll-target="#repository-structure">Repository Structure</a></li>
-  <li><a href="#source-files" id="toc-source-files" class="nav-link" data-scroll-target="#source-files">Source Files</a>
-  <ul class="collapse">
-  <li><a href="#base-functionalities-base" id="toc-base-functionalities-base" class="nav-link" data-scroll-target="#base-functionalities-base">Base Functionalities – <code>base/</code></a></li>
-  <li><a href="#exospheres-exospheres" id="toc-exospheres-exospheres" class="nav-link" data-scroll-target="#exospheres-exospheres">Exospheres – <code>exospheres/</code></a></li>
-  <li><a href="#numerical-grids-grids" id="toc-numerical-grids-grids" class="nav-link" data-scroll-target="#numerical-grids-grids">Numerical Grids – <code>grids/</code></a></li>
-  <li><a href="#surfaces-surfaces" id="toc-surfaces-surfaces" class="nav-link" data-scroll-target="#surfaces-surfaces">Surfaces – <code>surfaces/</code></a></li>
-  </ul></li>
+  <li><a href="#source-files" id="toc-source-files" class="nav-link" data-scroll-target="#source-files">Source Files</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/api.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -354,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">October 6, 2023</p>
     </div>
   </div>
   
@@ -368,6 +362,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>ExESS</code> package is structured into four main parts, which are the four main folders in the <code>/src</code> directory:</p>
 <section id="repository-structure" class="level2">
 <h2 class="anchored" data-anchor-id="repository-structure">Repository Structure</h2>
+<div class="grid">
+<div class="g-col-6">
 <div class="sourceCode" id="cb1"><pre class="sourceCode jl code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ExESS<span class="op">/</span>  </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── data<span class="op">/</span>  </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>├── res<span class="op">/</span>  </span>
@@ -380,10 +376,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>├── test<span class="op">/</span>  </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>├── . . .  </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>└── README.md  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="g-col-6">
+
+</div>
+</div>
 </section>
 <section id="source-files" class="level2">
 <h2 class="anchored" data-anchor-id="source-files">Source Files</h2>
-<section id="base-functionalities-base" class="level3">
+<div class="grid">
+<section id="base-functionalities-base" class="level3 g-col-6">
 <h3 class="anchored" data-anchor-id="base-functionalities-base">Base Functionalities – <code>base/</code></h3>
 <p><code>ExESS/src/base/</code> contains basic functionality that is used at multiple places in the code, e.g., physical constants, coordinate system definitions, utility functions, and some probability distributions.</p>
 <ul>
@@ -394,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="../api/base/utility.html"><code>utils.jl</code></a></li>
 </ul>
 </section>
-<section id="exospheres-exospheres" class="level3">
+<section id="exospheres-exospheres" class="level3 g-col-6">
 <h3 class="anchored" data-anchor-id="exospheres-exospheres">Exospheres – <code>exospheres/</code></h3>
 <p><code>ExESS/src/exospheres/</code> contains all scripts that define functions that have something to do with simulating the exosphere. Due to the assumption of surface-bounded exospheres, <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte-Carlo methods</a> are the preferred simulation tool as each individual particle of the exosphere can be simulated independently. Implemented functionalities are mostly based on ballistic trajectory calculations.</p>
 <ul>
@@ -403,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href=""><code>utils.jl</code></a></li>
 </ul>
 </section>
-<section id="numerical-grids-grids" class="level3">
+<section id="numerical-grids-grids" class="level3 g-col-6">
 <h3 class="anchored" data-anchor-id="numerical-grids-grids">Numerical Grids – <code>grids/</code></h3>
 <p><code>ExESS/src/grids/</code> contains all numerical discretization methods used in this package. While most functions can be called with <code>AbstractVector</code> inputs, their main use is meant to be in conjunction with the previously defined custom coordinate systems.</p>
 <ul>
@@ -420,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href=""><code>utils.jl</code></a></li>
 </ul>
 </section>
-<section id="surfaces-surfaces" class="level3">
+<section id="surfaces-surfaces" class="level3 g-col-6">
 <h3 class="anchored" data-anchor-id="surfaces-surfaces">Surfaces – <code>surfaces/</code></h3>
 <p><code>ExESS/src/surfaces/</code> contains all functions that are used to calculate surface properties, e.g., surface temperatures, reaction kinetics, thermal conductivities, and diffusion coefficients.</p>
 <ul>
@@ -438,9 +440,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><a href=""><code>utils.jl</code></a></li>
 </ul>
-
-
 </section>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

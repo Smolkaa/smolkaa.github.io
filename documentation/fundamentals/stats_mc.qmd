@@ -1,5 +1,5 @@
 ---
-title: "2.4 Statistics and Monte-Carlo"
+title: "2.4 Statistics and Monte Carlo"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
@@ -7,6 +7,18 @@ title: "2.4 Statistics and Monte-Carlo"
 
 ---
 
+
+# The Monte Carlo Method
+
+The Monte Carlo method, a pivotal computational technique in various fields, traces its origins to the mid-20th century. It was developed by scientists, notably Stanislaw Ulam and John von Neumann, at the Los Alamos National Laboratory during the Manhattan Project in the 1940s. The name "Monte Carlo" was inspired by the Monte Carlo Casino in Monaco, known for its games of chance and randomness, reflecting the method's reliance on random sampling and probabilistic principles. Initially applied to solve complex mathematical and physical problems related to nuclear physics and neutron diffusion, the Monte Carlo method rapidly expanded its utility to diverse scientific and engineering domains. Its historical significance lies not only in its role during the development of the atomic bomb but also in its enduring impact on modern computational science, enabling the simulation and analysis of intricate systems and processes. [@Barbu2020; @Lemieux2009]
+
+The Monte Carlo method's applicability has transcended its origins and found widespread use across numerous disciplines, including physics, chemistry, engineering, finance, biology, computer graphics, and operations research. In these fields, realistic models often incorporate the assumption that specific components within systems show random behavior. The Monte Carlo simulation method addresses this by leveraging random sampling techniques to study the properties of systems characterized by stochastic components. Specifically, it involves the computer-based simulation of such systems by generating random variables that describe the behavior of their components. Subsequently, samples of the quantities of interest are obtained through this simulated randomness, facilitating statistical inference and analysis. This versatile and probabilistic approach has made the Monte Carlo method an indispensable tool for addressing complex and stochastic problems in various scientific and practical domains. [@Lemieux2009]
+
+
+## Basics
+
+
+# Statistics
 
 ## Ensemble Averages
 {{< include /documentation/fundamentals/stats_mc/_ensemble_averages.qmd >}}
