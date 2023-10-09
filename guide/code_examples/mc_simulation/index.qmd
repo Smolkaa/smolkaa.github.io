@@ -23,7 +23,7 @@ For additional information about the use of the Monte-Carlo method in the **ExES
 
 # {{< fa image >}} Figure
 
-![Basic Monte-Carlo model structure.](img/diagrams/mc_basic.svg){#fig-basic_mc width="600px"}
+![Basic Monte-Carlo model structure.](/documentation/fundamentals/stats_mc/imgs/mc_basic/mc_basic.svg){#fig-basic_mc width="600px"}
 
 # {{< fa code >}} LaTeX
 

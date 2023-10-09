@@ -1,5 +1,5 @@
 ---
-title: "2.4 Statistics and Monte Carlo"
+title: "2.4 Statistics and the Monte Carlo Method"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
@@ -15,10 +15,22 @@ The Monte Carlo method, a pivotal computational technique in various fields, tra
 The Monte Carlo method's applicability has transcended its origins and found widespread use across numerous disciplines, including physics, chemistry, engineering, finance, biology, computer graphics, and operations research. In these fields, realistic models often incorporate the assumption that specific components within systems show random behavior. The Monte Carlo simulation method addresses this by leveraging random sampling techniques to study the properties of systems characterized by stochastic components. Specifically, it involves the computer-based simulation of such systems by generating random variables that describe the behavior of their components. Subsequently, samples of the quantities of interest are obtained through this simulated randomness, facilitating statistical inference and analysis. This versatile and probabilistic approach has made the Monte Carlo method an indispensable tool for addressing complex and stochastic problems in various scientific and practical domains. [@Lemieux2009]
 
 
-## Basics
+## Basics Simulation Setup
 
+Generally speaking, a Monte Carlo simulation is not restricted to any fixed physical system or model but rather describes the method used to simulate the individual problem. Its general structure is presented in @fig-mc_basic, showing that a Monte Carlo simulation only consists of an initialization and a loop. The initialization step involves setting up the system and its components, including the specification of the system's state, the random number generator seed, and setting global parameters, most importantly the number of Monte Carlo steps $N$. The loop then iterates over the $N$ Monte Carlo steps.
+
+{{< include stats_mc/imgs/mc_basic/_mc_basic.qmd >}}
+
+In the context of Monte Carlo simulations, the system under examination is exclusively represented within the iterative process, specifically encapsulated within the Monte Carlo step. This step encompasses various deterministic and probabilistic subsystems, emphasizing the probabilistic aspect inherent to Monte Carlo simulations. While it is unquestionably preferable to solve both the deterministic and probabilistic components of the system analytically, their combination becomes exceedingly complex quite rapidly, necessitating numerical methods. Each Monte Carlo step effectively addresses the system employing probabilistic sampling, engendering not a definitive solution but rather a singular realization of the probabilistic system. As the number of Monte Carlo steps increases, a correspondingly growing quantity of samples is generated. Therefore, collecting these samples enables a comprehensive analysis of the system's statistical properties, and based on the assumptions of the [central limit theorem (see the following section)](#sec-central_limit_theorem), the expected value of the entire system can be calculated as the empirical average of all samples $\{\sample_1, \sample_2, \dots, \sample_N\}$:
+\begin{equation}
+    \overline{\sample_N} = \frac{\sum_{i=1}^N \sample_i}{N}.
+\end{equation}
 
 # Statistics
 
+## The Central Limit Theorem {#sec-central_limit_theorem}
+
+independent and identically distributed (i.i.d.)
+
 ## Ensemble Averages
-{{< include /documentation/fundamentals/stats_mc/_ensemble_averages.qmd >}}
+{{< include stats_mc/_ensemble_averages.qmd >}}

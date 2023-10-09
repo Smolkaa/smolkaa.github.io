@@ -42,6 +42,7 @@
 \newcommand{\radius}{r}
 \newcommand{\rate}{k}
 \newcommand{\residenceTime}{\tau}
+\newcommand{\sample}{X}
 \newcommand{\semiLatusRectum}{p}
 \newcommand{\semiMajorAxis}{a}
 \newcommand{\source}{s}
