@@ -133,7 +133,7 @@ function plot_compare_2d_3d(v, elev, e)
         xlabel="Velocity [m/s]",
         ylabel="Elevation Angle [rad]")
 
-    hm = heatmap!(ax, v, rad2deg.(elev), e .* 1e5, colormap=lipari)
+    hm = heatmap!(ax, v, rad2deg.(elev), e .* 1e5, colormap=ColorSchemes.lipari)
     Colorbar(fig[1,2], hm, label="Absolute Error, [10⁻⁵ Lunar Radius]")
     save(joinpath(@__DIR__, "compare_2d_3d.pdf"), fig, pt_per_unit=4)
     save(joinpath(@__DIR__, "compare_2d_3d.svg"), fig, pt_per_unit=4)

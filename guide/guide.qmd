@@ -12,46 +12,66 @@ author:
 
 The following lists contain guides, manuals, examples, and additional material for the **ExESS** documentation and software.
 
-::: {.grid}
-::: {.g-col-6}
-
-## Essentials
-
-* [Student Thesis: On-Boarding Checklist](/guide/essentials/onboarding_checklist/index.qmd) is recommended for all new students to get started with their university thesis and working with the **ExESS** package 
-* [Julia Programming Language: Links & Resources](/guide/essentials/julia_links/index.qmd) contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the **ExESS** package
-* [Git Essentials](/guide/essentials/git_essentials/index.qmd) lists some external links to resources for learning the Git version control system
-* [ExESS Package Installation](/guide/essentials/package_installation/index.qmd) describes how to install the **ExESS** package on your computer
-
-:::
-
-::: {.g-col-6}
-
-## Code Examples
-
-* [Monte-Carlo Simulation](/guide/code_examples/mc_simulation/index.qmd)
-* [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 
-
-:::
-:::
-
+# Essentials
 
 ::: {.grid}
 ::: {.g-col-4}
 
 ```{=html}
 <div class="card">
-<img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:80%; margin-left:auto; margin-right:auto; margin-top:10px" >
-<div class="container">
-  <h4><b>Julia Links</b></h4>
-  <p>Julia Programming Language: Links & Resources</p>
-</div>
+  <img src="/guide/essentials/onboarding_checklist/play-solid.svg" alt="a" style="width:45%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <b>ExESS</b> package
+  </div>
+</div> 
+
+</br>
+
+<div class="card">
+  <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:65%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:65%; margin-left:auto; margin-right:auto; margin-top:10px">
+  <div class="card-body">
+    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Julia Programming Language: Links & Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the <b>ExESS</b> package
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/git_essentials/Git-Icon-Black.png" alt="a" style="width:60%; margin-left:auto; margin-right:auto; margin-top:10px">
+  <div class="card-body">
+    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Git Essentials</a> lists some external links to resources for learning the Git version control system
+  </div>
 </div> 
 ```
 
 :::
 :::
 
-## Exercises
+
+
+# Code Examples
+
+* [Monte-Carlo Simulation](/guide/code_examples/mc_simulation/index.qmd)
+* [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 
+
+# Exercises
 
 * [Fibonacci Sequence](/guide/exercises/exercise_fibonacci/index.qmd)
 
