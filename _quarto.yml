@@ -71,6 +71,7 @@ website:
             - documentation/drivers/thermal_sorption.qmd
             - documentation/drivers/photoreactions.qmd
             - "Photon and Electron Stimulated Desorption"
+            - "Sputtering"
             - "Micrometeoroid Impact Vaporization"
         - section: "5. Exospheres: Particle Trajectories"
           contents:

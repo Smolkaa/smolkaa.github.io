@@ -39,6 +39,8 @@ citation: false
 +-----------+---------------------------------------------------------------+
 | HEALPix   | Hierarchical Equal Area iso-Latitude Pixelization             |
 +-----------+---------------------------------------------------------------+
+| IID       | Independent and Identically Distributed                       |
+|           |                                                               |
 | IMF       | Interplanetary Magnetic Field                                 |
 +-----------+---------------------------------------------------------------+
 | MBD       | Maxwell-Boltzmann Distribution                                |
@@ -98,6 +100,7 @@ citation: false
 
 \newacronym{HEALPix}{HEALPix}{Hierarchical Equal Area iso-Latitude Pixelization}
 
+\newacronym{IID}{IID}{Independent and Identically Distributed}
 \newacronym{IMF}{IMF}{Interplanetary Magnetic Field}
 
 \newacronym{MBD}{MBD}{Maxwell-Boltzmann Distribution}

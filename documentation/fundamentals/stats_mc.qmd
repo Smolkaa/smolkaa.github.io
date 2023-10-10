@@ -21,16 +21,25 @@ Generally speaking, a Monte Carlo simulation is not restricted to any fixed phys
 
 {{< include stats_mc/imgs/mc_basic/_mc_basic.qmd >}}
 
-In the context of Monte Carlo simulations, the system under examination is exclusively represented within the iterative process, specifically encapsulated within the Monte Carlo step. This step encompasses various deterministic and probabilistic subsystems, emphasizing the probabilistic aspect inherent to Monte Carlo simulations. While it is unquestionably preferable to solve both the deterministic and probabilistic components of the system analytically, their combination becomes exceedingly complex quite rapidly, necessitating numerical methods. Each Monte Carlo step effectively addresses the system employing probabilistic sampling, engendering not a definitive solution but rather a singular realization of the probabilistic system. As the number of Monte Carlo steps increases, a correspondingly growing quantity of samples is generated. Therefore, collecting these samples enables a comprehensive analysis of the system's statistical properties, and based on the assumptions of the [central limit theorem (see the following section)](#sec-central_limit_theorem), the expected value of the entire system can be calculated as the empirical average of all samples $\{\sample_1, \sample_2, \dots, \sample_N\}$:
-\begin{equation}
-    \overline{\sample_N} = \frac{\sum_{i=1}^N \sample_i}{N}.
-\end{equation}
+In the context of Monte Carlo simulations, the system under examination is exclusively represented within the iterative process, specifically encapsulated within the Monte Carlo step. This step encompasses various deterministic and probabilistic subsystems, emphasizing the probabilistic aspect inherent to Monte Carlo simulations. While it is unquestionably preferable to solve both the deterministic and probabilistic components of the system analytically, their combination becomes exceedingly complex quite rapidly, necessitating numerical methods. Each Monte Carlo step effectively addresses the system employing probabilistic sampling, engendering not a definitive solution but rather a singular realization of the probabilistic system. As the number of Monte Carlo steps increases, a correspondingly growing quantity of samples is generated. Therefore, collecting these samples enables a comprehensive analysis of the system's statistical properties.
+
+In the context of this work, examples of probabilistic subsystems can be found in many of the underlying physical processes like the energy, velocity, and angle distributions of the various mechanisms in the exosphere and during surface interactions, for example, the section about [Thermal Sorption](/documentation/drivers/thermal_sorption.qmd), as well as the handling of probabilistic events like [photoionization and -dissociation](/documentation/drivers/photoreactions.qmd), [sputtering](), and [Photon and Electron Stimulated Desorption](/documentation/drivers/), to just name a few. Additionally, some parameters of the system are either inherently stochastic (like binding energies) or are implemented as such to either account for their uncertainty or to allow for a more realistic simulation. Examples of the latter are the [surface geometry]() and the [surface temperatures](/documentation/fundamentals/moon.qmd), which are both modeled as random variables. Examples of deterministic systems are all those calculations that can be performed analytically, like the [landing position calculations](/documentation/trajectories/ballistic_trajectories.qmd) of purely ballistic trajectories.
+
+
 
 # Statistics
 
 ## The Central Limit Theorem {#sec-central_limit_theorem}
 
-independent and identically distributed (i.i.d.)
+The expected value of the entire system can be calculated as the empirical average of all [independent and identically distributed (IID)](/documentation/acronyms.qmd) samples $\{\sample_1, \sample_2, \dots, \sample_N\}$:
+\begin{equation}
+    \overline{\sample_N} = \frac{\sum_{i=1}^N \sample_i}{N}.
+\end{equation}
 
 ## Ensemble Averages
 {{< include stats_mc/_ensemble_averages.qmd >}}
+
+
+## Randomness
+
+The randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method `xoshiro256++` implemented in the Julia Programming Language has been used [@Blackman2021].
