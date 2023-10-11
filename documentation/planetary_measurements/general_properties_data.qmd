@@ -1,0 +1,14 @@
+---
+title: "3.1 General Properties and Data"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+# Physical Constants
+
+# Particles
+{{< include general_properties_data/_particles.qmd >}}

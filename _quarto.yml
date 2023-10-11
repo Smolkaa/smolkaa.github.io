@@ -58,12 +58,10 @@ website:
             - documentation/fundamentals/numerical_grids.qmd
             - "2.3 ODEs and Numerical Solvers"
             - documentation/fundamentals/stats_mc.qmd
-            - documentation/fundamentals/exospheres.qmd
             - documentation/fundamentals/moon.qmd
-            - "2.7 Other Exospheres in The Solar System"
         - section: "3. Planetary Measurements and Data"
           contents:
-            - documentation/planetary_measurements/missions.qmd
+            - documentation/planetary_measurements/general_properties_data.qmd
             - documentation/planetary_measurements/lunar_exosphere_densities.qmd
         - section: "4. Drivers of Exospheres"
           contents:
@@ -89,6 +87,9 @@ website:
         - section: "10. Lunar Water Exosphere Simulation"
           contents:
             - documentation/lunar_water_exosphere/conversion_model.qmd
+        - section: 11. Outlook and Conclusion
+          contents:
+            - "11.X Other Exospheres in The Solar System"
         - section: "Appendix"
 
 

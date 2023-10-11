@@ -8,29 +8,39 @@ tbl-colwidths: [45,23,32]
 
 ---
 
-This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in $\left[\si{\centi\metre\tothe{-3}}\right]$. Some references are providing their values in terms of a column density in $\left[\si{\centi\metre\tothe{-2}}\right]$, which includes the respectives measurements coulumn height, i.e., the illuminated line of sight of brightness measurements like LAMP.
+# Missions
+{{< include lunar_exosphere_densities/_missions.qmd >}}
 
-See the additional information section on this section's appendix to find details about some sources, their assumptions, and their measurement methods.
 
-# Atomic Hydrogen -- $\ce{H}$
+# Data Processing
+{{< include lunar_exosphere_densities/_data_processing.qmd >}}
+
+
+# Densities by Exospheric Species
+
+This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in $\left[\si{\centi\metre\tothe{-3}}\right]$. Some references provide their values in terms of a column density in $\left[\si{\centi\metre\tothe{-2}}\right]$, which includes the respective measurements column height, i.e., the illuminated line of sight of brightness measurements like LAMP.
+
+See the additional information section in this section's appendix to find details about some sources, their assumptions, and their measurement methods.
+
+## Atomic Hydrogen -- $\ce{H}$
 {{< include lunar_exosphere_densities/_H.qmd >}}
 
-# Molecular Hydrogen -- $\ce{H2}$
+## Molecular Hydrogen -- $\ce{H2}$
 {{< include lunar_exosphere_densities/_H2.qmd >}}
 
-# Helium -- $\ce{He}$
+## Helium -- $\ce{He}$
 {{< include lunar_exosphere_densities/_He.qmd >}}
 
-# Hydroxyl -- $\ce{OH}$
+## Hydroxyl -- $\ce{OH}$
 {{< include lunar_exosphere_densities/_OH.qmd >}}
 
-# Water -- $\ce{H2O}$
+## Water -- $\ce{H2O}$
 {{< include lunar_exosphere_densities/_H2O.qmd >}}
 
-# Neon -- $\ce{Ne}$
+## Neon -- $\ce{Ne}$
 {{< include lunar_exosphere_densities/_Ne.qmd >}}
 
-# Argon -- $\ce{Ar}$
+## Argon -- $\ce{Ar}$
 
 
 # Additional Information {.appendix .unnumbered}

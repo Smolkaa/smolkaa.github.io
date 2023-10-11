@@ -1,0 +1,4 @@
+Weights, charge, electronegativity, activation energies, and more.
+
+## Atomic Weights
+{{< include general_properties_data/tables/_atomic_weights.qmd >}}
