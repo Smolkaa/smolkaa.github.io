@@ -1,9 +1,12 @@
 /* css styles */
 
-/* .sidebar-logo {
-  max-width: 80%;
-  padding-left: 15%;
-} */
+/* adjust box size and position of the sidebar logo */
+div.mt-2 {margin-top: 0rem !important;}
+div.pt-lg-2 {padding-top: 0rem !important;}
+.sidebar-logo {
+  max-width: 100%;
+  padding-left: 0%;
+}
 
 /* adjust navbar */
 .navbar {
@@ -12,13 +15,10 @@
   padding-bottom: .2rem;
 }
 
+/* adjust item separation */
 .nav-item {
-  padding-left: 25px;
-  padding-right: 15px;
-}
-
-#quarto-header>nav {
-  padding-left: 80px;
+  padding-left: 1rem;
+  /* padding-right: 5rem; */
 }
 
 div.callout-tip.callout-titled .callout-icon::before {
@@ -37,8 +37,6 @@ iframe.reveal-demo {
 .border {
   border: 1px solid #dee2e6;
 }
-
-
 
 
 

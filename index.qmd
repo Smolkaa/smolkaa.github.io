@@ -5,22 +5,10 @@ author: "Alexander Smolka"
 ---
 ---
 
-This website is still under construction! {{< fa wrench >}}
-
-
-## Home
-
-Are you a student starting your thesis on this topic? Check out the [Student Thesis: On-Boarding Checklist](/guide/essentials/onboarding_checklist/index.qmd)!
-
-### News
-
-* **2023-08-15:** &ensp; [Presentation](/presentations/tsu_seminar/index.qmd) at the Taiwan Space Union's Mini-Moon Seminar Series.
-
-## Author
+# Author
 
 :::: {.columns}
-::: {.column width=60%}
-</br></br></br>
+::: {.column width=65%}
 **M.Sc. Alexander Smolka**
 
 Professorship of Lunar and Planetary Exploration Technologies  
@@ -29,15 +17,24 @@ Technical University of Munich
 
 Phone: +49 (89) 289 - 55681  
 Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
+
+</br>
+
+**Publications**
+
+* **A. Smolka**, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: [10.1016/j.icarus.2023.115508.](https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854)
+
 :::
 
-::: {.column width=40%}
-![](/resources/imgs/me_gray.jpg){width=80%}
+::: {.column width=5%}
+:::
+
+::: {.column width=30%}
+![](/resources/imgs/me_gray.jpg){width=100%}
 :::
 
 ::::
 
+---
 
-## Publications
-
-* **A. Smolka**, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: [10.1016/j.icarus.2023.115508.](https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854)
+# Guides

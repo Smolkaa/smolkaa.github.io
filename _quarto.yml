@@ -18,19 +18,21 @@ website:
 
   navbar:
     background: dark
-    # logo: /resources/logo/exess_logo.svg
-    logo-href: /index.qmd
+    logo: /resources/logo/exess_logo_dark.svg
     left:
-      - text: "{{< fa house >}} Home"
+      - text: "Home"
         href: index.qmd
-      - text: "{{< fa book >}} Documentation"
+        icon: house
+      - text: "Documentation"
         href: documentation/documentation.qmd
+        icon: book
       - text: "{{< fa globe >}} Guide"
         href: guide/guide.qmd
       - text: "{{< fa tv >}} Presentations & Videos"
         href: presentations/presentations.qmd
-      - text: "{{< fa code >}} Code"
+      - text: "Code"
         href: api/api.qmd
+        icon: journal-code
     right:
       - icon: github
         href: https://github.com/Smolkaa
@@ -38,9 +40,11 @@ website:
   sidebar:
     - title: "Home"
       border: true
+      # logo: /resources/logo/exess_logo_dark.svg
       logo: /resources/logo/exess_logo.svg
       collapse-level: 1
       style: "docked"
+      background: secondary
       contents:
         - text: "Home"
           href: index.qmd

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Extraterrestrial Exosphere and Surface Simulations",
     "section": "",
-    "text": "This website is still under construction!"
+    "text": "Author\n\n\nM.Sc. Alexander Smolka\nProfessorship of Lunar and Planetary Exploration Technologies\nTUM School of Engineering and Design\nTechnical University of Munich\nPhone: +49 (89) 289 - 55681\nEmail: a.smolka@tum.de\n\nPublications\n\nA. Smolka, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: 10.1016/j.icarus.2023.115508.\n\n\n\n\n\n\n\n\n\n\nGuides"
   },
   {
     "objectID": "index.html#home",
@@ -18,7 +18,7 @@
     "href": "index.html#author",
     "title": "Extraterrestrial Exosphere and Surface Simulations",
     "section": "Author",
-    "text": "Author\n\n\n M.Sc. Alexander Smolka\nProfessorship of Lunar and Planetary Exploration Technologies\nTUM School of Engineering and Design\nTechnical University of Munich\nPhone: +49 (89) 289 - 55681\nEmail: a.smolka@tum.de"
+    "text": "Author\n\n\nM.Sc. Alexander Smolka\nProfessorship of Lunar and Planetary Exploration Technologies\nTUM School of Engineering and Design\nTechnical University of Munich\nPhone: +49 (89) 289 - 55681\nEmail: a.smolka@tum.de\n\nPublications\n\nA. Smolka, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: 10.1016/j.icarus.2023.115508."
   },
   {
     "objectID": "index.html#publications",
@@ -305,7 +305,7 @@
     "href": "documentation/fundamentals/stats_mc.html#randomness",
     "title": "2.4 Statistics and the Monte Carlo Method",
     "section": "Randomness",
-    "text": "Randomness\nThe randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method xoshiro256++ implemented in the Julia Programming Language has been used (Blackman & Vigna, 2021)."
+    "text": "Randomness\nThe randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method xoshiro256++ implemented in the Julia Programming Language has been used (Blackman2021?)."
   },
   {
     "objectID": "documentation/documentation.html",
@@ -978,5 +978,12 @@
     "title": "3.2 Lunar Exosphere Surface Densities",
     "section": "Argon – \\(\\ce{Ar}\\)",
     "text": "Argon – \\(\\ce{Ar}\\)"
+  },
+  {
+    "objectID": "index.html#publications-1",
+    "href": "index.html#publications-1",
+    "title": "Extraterrestrial Exosphere and Surface Simulations",
+    "section": "Publications",
+    "text": "Publications\n\nA. Smolka, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: 10.1016/j.icarus.2023.115508."
   }
 ]

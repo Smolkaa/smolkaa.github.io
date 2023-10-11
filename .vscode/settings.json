@@ -4,5 +4,6 @@
             "language": "quarto",
             "scheme": "file"
         }
-    ]
+    ],
+    "svg.preview.background": "dark-transparent"
 }
