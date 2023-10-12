@@ -5,11 +5,10 @@ author: "Alexander Smolka"
 ---
 ---
 
-# Author
+## M.Sc. Alexander Smolka
 
 :::: {.columns}
 ::: {.column width=65%}
-**M.Sc. Alexander Smolka**
 
 Professorship of Lunar and Planetary Exploration Technologies  
 TUM School of Engineering and Design  
@@ -18,11 +17,13 @@ Technical University of Munich
 Phone: +49 (89) 289 - 55681  
 Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
-</br>
 
 **Publications**
 
-* **A. Smolka**, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: [10.1016/j.icarus.2023.115508.](https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854)
+::: {.card style="padding:1rem; padding-bottom:0rem;"}
+**A. Smolka**, D. Nikolić, C. Gscheidle, and P. Reiss, “Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions,” Icarus, vol. 397, p. 115508, Jun. 2023, DOI: [10.1016/j.icarus.2023.115508.](https://www.sciencedirect.com/science/article/abs/pii/S0019103523000854){.stretched-link}
+:::
+
 
 :::
 
@@ -35,6 +36,62 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 ::::
 
----
 
-# Guides
+
+## Guides
+
+::: {.grid}
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/onboarding_checklist/play-solid.svg" alt="a" style="width:35%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <b>ExESS</b> package
+  </div>
+</div> 
+
+</br>
+
+<div class="card">
+  <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Julia Programming Language: Links & Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the <b>ExESS</b> package
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-4}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/git_essentials/Git-Icon-Black.png" alt="a" style="width:50%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Git Essentials</a> lists some external links to resources for learning the Git version control system
+  </div>
+</div> 
+```
+
+:::
+:::
+
+
+## Code Examples
+
+* [Monte-Carlo Simulation](/guide/code_examples/mc_simulation/index.qmd)
+* [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 

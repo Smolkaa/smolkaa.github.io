@@ -1,5 +1,5 @@
 ---
-title: "4.1 Solar Wind"
+title: "3.1 Solar Wind"
 ---
 
 {{< include /resources/latex/_defs.qmd >}}

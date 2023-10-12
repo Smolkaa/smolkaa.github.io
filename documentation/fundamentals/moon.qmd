@@ -1,5 +1,6 @@
 ---
 title: "2.6 The Moon"
+tbl-colwidths: [45,23,32]
 ---
 
 {{< include /resources/latex/_defs.qmd >}}
@@ -21,4 +22,6 @@ Some intro text
 {{< include /documentation/fundamentals/moon/_em_environment.qmd >}}
 
 
----
+# The Lunar Surface-Bounded Exosphere
+{{< include /documentation/fundamentals/moon/_lunar_exosphere.qmd >}}
+

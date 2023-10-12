@@ -38,6 +38,7 @@
 \newcommand{\poissonRatio}{\nu}
 \newcommand{\porosity}{\Psi}
 \newcommand{\potential}{U}
+\newcommand{\preExpFactor}{\nu}
 \newcommand{\pressure}{p}
 \newcommand{\radius}{r}
 \newcommand{\rate}{k}
@@ -56,6 +57,7 @@
     \newcommand{\sphericalBaseVectorElevation}{\baseVector_\sphericalCoordinateElevation}
 \newcommand{\standardDeviation}{\sigma}
 \newcommand{\sublimationFlux}{\Phi}
+\newcommand{\surfaceConcentration}{\theta}
 \newcommand{\temperature}{T}
 \newcommand{\thermalAccommodationCoefficient}{\alpha}
 \newcommand{\thermalConductivity}{\lambda}

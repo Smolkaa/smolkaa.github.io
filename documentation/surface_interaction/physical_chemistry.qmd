@@ -1,0 +1,30 @@
+---
+title: "6.1 Physical Chemistry"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+From @Schoerghofer2023a:
+
+- Adsorption is a surface phenomenon.
+- θ denotes the number of adsorbed particles per area.
+- For water ice, the number of molecules in a monolayer can be calculated from the density and molecular mass as θm = 10^19 molecules m^-2, i.e., 10 H2O molecules per nm^2.
+- The areal concentration of Si atoms in silica (SiO2) is nearly as high when calculated in the same manner (nine Si atoms per nm^2 for α-quartz, but not all nine atoms have the same distance from the surface).
+
+Polanyi-Wigner equation: [@Schoerghofer2023a]
+\begin{equation}
+    \frac{d\surfaceConcentration}{d\Time} = - \preExpFactor \surfaceConcentration \exp\left(-\frac{\activationEnergy}{\BoltzmannConstant\temperature}\right)
+\end{equation}
+which describes a first-order process.
+
+Pre-exponential factor $\preExpFactor$ for monolayer adsorbates usually in the order of $\SI{10\tothe{-13}}{\second\tothe{-1}}$ for atoms (close to their respective oscillation frequency), can be much higher for molecules [@Minissale2023].
+
+
+::: {.callout-note}
+# Definition: Monolayer 
+A monolayer of particles refers to a single layer of adsorbed molecules or atoms on a surface. This term is essential in understanding the capacity and behavior of a surface to adsorb volatile substances. Specifically, for water ice, the number of molecules in a monolayer can be calculated from the density and molecular mass as $\surfaceConcentration_m = \SI{10\tothe{19}}{\metre\tothe{-2}}$, or, $\SI{10}{\nano\metre\tothe{-2}}$. [@Schoerghofer2023a]
+:::

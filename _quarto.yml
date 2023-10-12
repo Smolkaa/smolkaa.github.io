@@ -26,8 +26,6 @@ website:
       - text: "Documentation"
         href: documentation/documentation.qmd
         icon: book
-      - text: "{{< fa globe >}} Guide"
-        href: guide/guide.qmd
       - text: "{{< fa tv >}} Presentations & Videos"
         href: presentations/presentations.qmd
       - text: "Code"
@@ -48,8 +46,20 @@ website:
       contents:
         - text: "Home"
           href: index.qmd
+        - section: "Guides"
+          contents:
+            - guide/essentials/onboarding_checklist/index.qmd
+            - guide/essentials/julia_links/index.qmd
+            - guide/essentials/git_essentials/index.qmd
+            - guide/essentials/package_installation/index.qmd
+        - section: "Code Examples"
+          contents:
+            - guide/code_examples/mc_simulation/index.qmd
+            - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
         - text: License
           href: LICENSE.md
+
+
 
     - title: "Documentation"
       contents:
@@ -63,11 +73,8 @@ website:
             - "2.3 ODEs and Numerical Solvers"
             - documentation/fundamentals/stats_mc.qmd
             - documentation/fundamentals/moon.qmd
-        - section: "3. Planetary Measurements and Data"
-          contents:
-            - documentation/planetary_measurements/general_properties_data.qmd
-            - documentation/planetary_measurements/lunar_exosphere_densities.qmd
-        - section: "4. Drivers of Exospheres"
+            - documentation/fundamentals/properties_data.qmd
+        - section: "3. Drivers of Exospheres"
           contents:
             - documentation/drivers/solar_wind.qmd
             - documentation/drivers/thermal_sorption.qmd
@@ -75,46 +82,29 @@ website:
             - "Photon and Electron Stimulated Desorption"
             - "Sputtering"
             - "Micrometeoroid Impact Vaporization"
-        - section: "5. Exospheres: Particle Trajectories"
+        - section: "4. Exospheres: Particle Trajectories"
           contents:
             - documentation/trajectories/ballistic_trajectories.qmd
             - documentation/trajectories/non-ballistic_trajectories.qmd
-        - section: "7. Surfaces: Planetary Regolith"
+        - section: "5. Surfaces: Planetary Regolith"
           contents:
-            - "7.1 Physical and Chemical Properties"
-        - section: "8. Surfaces: Reaction Kinetics"
-        - section: "9. Investigation of Model Influences"
+            - "5.1 Physical and Chemical Properties"
+        - section: "6. Particle-Surface Interactions"
           contents:
-            - "9.1 Topography and Roughness"
-            - "9.2 Transient"
-            - "9.3 Ion Exosphere and Recycling"
-        - section: "10. Lunar Water Exosphere Simulation"
+            - documentation/surface_interaction/physical_chemistry.qmd
+        - section: "7. Investigation of Model Influences"
+          contents:
+            - "7.1 Topography and Roughness"
+            - "7.2 Transient"
+            - "7.3 Ion Exosphere and Recycling"
+        - section: "8. Lunar Water Exosphere Simulation"
           contents:
             - documentation/lunar_water_exosphere/conversion_model.qmd
-        - section: 11. Outlook and Conclusion
+        - section: 9. Outlook and Conclusion
           contents:
-            - "11.X Other Exospheres in The Solar System"
+            - "9.X Other Exospheres in The Solar System"
         - section: "Appendix"
 
-
-
-    - title: "Guide"
-      contents:
-        - text: "Overview"
-          href: guide/guide.qmd
-        - section: "Essentials"
-          contents:
-            - guide/essentials/onboarding_checklist/index.qmd
-            - guide/essentials/julia_links/index.qmd
-            - guide/essentials/git_essentials/index.qmd
-            - guide/essentials/package_installation/index.qmd
-        - section: "Code Examples"
-          contents:
-            - guide/code_examples/mc_simulation/index.qmd
-            - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
-        - section: "Exercises"
-          contents:
-            - guide/exercises/exercise_fibonacci/index.qmd
 
 
     - title: "Presentations & Videos"
