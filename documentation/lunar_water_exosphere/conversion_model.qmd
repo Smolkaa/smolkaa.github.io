@@ -19,11 +19,11 @@ title: "8.1 Conversion Model"
 **Cite as:**</br>
 Smolka, A. and Reiss, P. (2023). _Modelling the Lunar Water Cycle Through Coupled Monte-Carlo Simulations of the Moon's Surface and Exosphere_, Lunar and Planetary Science Conference, 54, 2023.
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ![](conversion_model/imgs/lwcm/lwcm.svg){width=100%}
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 
 ```latex
 \documentclass[tikz,landscape]{standalone}
@@ -449,7 +449,7 @@ Smolka, A. and Reiss, P. (2023). _Modelling the Lunar Water Cycle Through Couple
 \end{document}
 ```
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis conversion_model/Smolka2023_LPSC_Poster.pdf label="Smolka2023_LPSC_Poster.pdf" type="light" dname="Smolka2023_LPSC_Poster" >}} 
 * {{< downloadthis conversion_model/imgs/lwcm/lwcm.pdf label="lwcm.pdf" type="light" dname="lwcm" >}}  {{< downloadthis conversion_model/imgs/lwcm/lwcm.svg label="lwcm.svg" type="light" dname="lwcm" >}} 

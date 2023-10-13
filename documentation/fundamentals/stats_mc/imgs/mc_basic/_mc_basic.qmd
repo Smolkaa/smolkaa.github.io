@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-mc_basic}
 ![](stats_mc/imgs/mc_basic/mc_basic.svg){width="500px"}
@@ -9,7 +9,7 @@ Basic Monte Carlo simulation structure. The central piece, the "Monte Carlo Step
 :::
 
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 
 ```latex
 \begin{tikzpicture}[
@@ -48,7 +48,7 @@ Basic Monte Carlo simulation structure. The central piece, the "Monte Carlo Step
 ```
 
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis stats_mc/imgs/mc_basic/mc_basic.pdf label="mc_basic.pdf" type="light" dname="mc_basic" >}} 
 * {{< downloadthis stats_mc/imgs/mc_basic/mc_basic.svg label="mc_basic.svg" type="light" dname="mc_basic" >}} 

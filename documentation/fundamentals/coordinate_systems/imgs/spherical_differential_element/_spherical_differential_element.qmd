@@ -1,6 +1,6 @@
 ::: {.panel-tabset .column-page-right}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-spherical_differential_element }
 ![](/documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg){width="600px"}
@@ -8,7 +8,7 @@
 Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 % based on: https://tikz.net/spherical_volume/
 

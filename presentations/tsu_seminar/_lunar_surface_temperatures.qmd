@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-lunar_surface_temperatures layout-ncol=2}
 ![Selenographic coordinate system.](imgs/temperature_animations/anim_raw_diviner/anim.gif){#fig-diviner-selenographic width=600px}
@@ -14,7 +14,7 @@
 Diviner lunar surface temperature measurements and analytic surface temperature model predictions in selenographic and subsolar (local time) coordinate systems. The static figures include a contour line at $\SI{100}{\kelvin}$ for an improved comparison.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using Printf
 using .ExESS
@@ -107,7 +107,7 @@ end
 
 Note that for the animations the generated images have to be converted into an animated `.gif` image.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis imgs/temperature_animations/anim_raw_diviner/anim.gif label="diviner.gif" type="light" dname="diviner" >}}
 * {{< downloadthis imgs/temperature_animations/anim_raw_diviner_fixed/anim.gif label="diviner_fixed.gif" type="light" dname="diviner_fixed" >}}

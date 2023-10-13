@@ -78,6 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/bootstrap-icons-1.9.1/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -332,6 +333,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../documentation/regolith/composition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5.1 Regolith Composition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
  <span class="menu-text">5.1 Physical and Chemical Properties</span>
   </li>
       </ul>
@@ -480,8 +487,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span>:</p>
-<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a></p>
-<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a></p>
+<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a></p>
+<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a></p>
 </div></div><p>The same vector in the same coordinate system and, thus, the same domain can also be expressed using spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{x}}_s = \begin{bmatrix}
         r\cos\vartheta\cos\varphi\\
@@ -502,8 +509,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="no-row-height column-margin column-container"><div class="">
 <p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span>:</p>
-<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a></p>
-<p><i class="fa-solid fa-code" aria-label="code"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a></p>
+<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a></p>
+<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a></p>
 </div></div><p>Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences between these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
 <p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
     \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
@@ -633,7 +640,7 @@ Derivation of spherical Laplace operator.
     d^3\boldsymbol{\mathbf{x}}= \left|\frac{\partial\boldsymbol{\mathbf{x}}}{\partial\boldsymbol{\mathbf{r}}}\right| d^3\boldsymbol{\mathbf{r}}= r^2\cos\varphi drd\vartheta d\varphi.
 \end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;1</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset column-page-right page-columns page-full">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="fa-solid fa-image" aria-label="image"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="fa-solid fa-code" aria-label="code"></i> LaTeX</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content column-page-right">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">

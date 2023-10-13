@@ -1,7 +1,7 @@
 The [MBD](/documentation/acronyms.qmd)  (Maxwell-Boltzmann velocity distribution) is a probability distribution function that describes the distribution of velocities and speeds of particles in a gas or liquid. It is intimately connected to the kinetic gas theory, which explains the behavior of gases in terms of the motion of their constituent particles, which is proportional to their temperature. 
 
 ::: {.column-margin}
-{{< fa code >}} [`MaxwellBoltzmannVelocityDistribution`](/api/base/distributions.qmd)
+{{< bi code >}} [`MaxwellBoltzmannVelocityDistribution`](/api/base/distributions.qmd)
 :::
 
 
@@ -24,7 +24,7 @@ with the speed $\velocity=\sqrt{\vec\velocity ^T\vec\velocity}$. Identical to th
 \end{equation}
 
 ::: {.column-margin}
-{{< fa code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< fa code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d}
+{{< bi code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< bi code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d}
 :::
 
 {{< include thermal_sorption/boxes/_mbd_components.qmd >}}
@@ -105,5 +105,5 @@ where the speed distribution is equal to Eq. \eqref{eq:mbd_speed_3d}. With the l
 Due to the combination of the Gaussian error function $\erf$ and an exponential function $\exp$, there is no elementary analytical expression of $\velocity$ as a function of $r_\velocity$. Thus, for numerical implementations Eq. \eqref{eq:mbd_speed_random_evaluated} is usually pre-evaluated several times to build up an interpolation table that maps any uniform random $r_\velocity$ to a speific [MBD](/documentation/acronyms.qmd) speed. The other two components, see Eqs. \eqref{eq:mbd_elevation_random}, \eqref{eq:mbd_azimuth_random}, show that the elevation angle $\sphericalCoordinateElevation$ is $\sin$-distributed, while the azimuth angle $\sphericalCoordinateAzimuth$ is uniformly distributed.
 
 ::: {.column-margin}
-{{< fa code >}} [`sample`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
+{{< bi code >}} [`sample`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
 :::

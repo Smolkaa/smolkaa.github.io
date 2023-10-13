@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-mbd}
 ![](/documentation/drivers/thermal_sorption/imgs/mbd/mbd.svg){width="600px"}
@@ -9,7 +9,7 @@
 Normalized Maxwell-Boltzmann velocity and speed distributions according to Eqs. \eqref{eq:mbd_1d}, \eqref{eq:mbd_speed_3d}. For the distribution of speeds, the typical speeds according to Eqs. \eqref{eq:mbd_most_probable_speed}, \eqref{eq:mbd_mean_speed}, \eqref{eq:mbd_rms} are shown. The velocities and speeds have been normalized according with $\sqrt{\mass /\BoltzmannConstant\temperature} = \SI{1}{\second\per\metre}$.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using CairoMakie, Colors, ColorSchemes
 
@@ -74,7 +74,7 @@ function mbd(name="mbd"; txt=true)
 end
 ```
 
-# {{< fa download >}}  Downloads
+# {{< bi download >}}  Downloads
 
 * {{< downloadthis thermal_sorption/imgs/mbd/mbd.pdf label="mbd.pdf" type="light" dname="mbd" >}} {{< downloadthis thermal_sorption/imgs/mbd/mbd.svg label="mbd.svg" type="light" dname="mbd" >}} {{< downloadthis thermal_sorption/imgs/mbd/mbd.png label="mbd.png" type="light" dname="mbd" >}}
 

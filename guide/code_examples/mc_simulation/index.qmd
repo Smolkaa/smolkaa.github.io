@@ -21,11 +21,11 @@ For additional information about the use of the Monte-Carlo method in the **ExES
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ![Basic Monte-Carlo model structure.](/documentation/fundamentals/stats_mc/imgs/mc_basic/mc_basic.svg){#fig-basic_mc width="600px"}
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 
 ```latex
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
@@ -86,7 +86,7 @@ What does this specific stepping function do? It draws two positional arguments,
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-mc-pi-estimation layout-ncol=2}
 
@@ -101,7 +101,7 @@ What does this specific stepping function do? It draws two positional arguments,
 Green points are inside the unit circle, red points are outside.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 
 ```julia
 using CairoMakie

@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-photoionization-rates-BOCHSLER}
 ![](/documentation/drivers/photoreactions/imgs/photoionization_rates/photoionization_rates_BOCHSLER2013.png){width="1200px"}
@@ -9,7 +9,7 @@
 Photoionization rates for Hydrogen, Helium, Oxygen, and Neon during the period between 1978 and 2012, derived by a multilinear model of @Bochsler2013. The data is displayed as daily and yearly averages, with the extreme values of the yearly averages highlighted by dashed horizontal lines.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 
 ```julia
 using DelimitedFiles, Statistics
@@ -121,7 +121,7 @@ function plot_k_all(name::String="photoionization_rates_BOCHSLER2013"; n=5)
 end
 ```
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis photoreactions/imgs/photoionization_rates/photoionization_rates_BOCHSLER2013.png label="photoionization_rates_BOCHSLER.png" type="light" dname="photoionization_rates_BOCHSLER" >}}  {{< downloadthis photoreactions/imgs/photoionization_rates/photoionization_rates_BOCHSLER2013.pdf label="photoionization_rates_BOCHSLER.pdf" type="light" dname="photoionization_rates_BOCHSLER" >}} 
 

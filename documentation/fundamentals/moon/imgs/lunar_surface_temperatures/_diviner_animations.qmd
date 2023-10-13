@@ -4,7 +4,7 @@
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Animations
+# {{< bi image >}} Animations
 
 ::: {#fig-lunar_surface_temperatures_diviner_animations layout-ncol=2}
 
@@ -15,7 +15,7 @@
 Animations of Diviner lunar surface temperature measurements in a Moon-centered (selenographic) and a "fixed", solar-based (subsolar) coordinate system. Both animations contain the identical 18 individual snapshots. Note that (a) does not have a local time x-axis, but a selenographic one, which has been omitted for clarity.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using .ExESS
 using CairoMakie, ColorSchemes, Printf
@@ -76,7 +76,7 @@ end
 
 The code above creates individual `.png` files which are subsequently converted into animated `.gif`s.
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis moon/imgs/lunar_surface_temperatures/animations/anim_raw_diviner/anim_raw_diviner.gif label="anim_raw_diviner.gif" type="light" dname="anim_raw_diviner" >}}
 * {{< downloadthis moon/imgs/lunar_surface_temperatures/animations/anim_raw_diviner_fixed/anim_raw_diviner_fixed.gif label="anim_raw_diviner_fixed.gif" type="light" dname="anim_raw_diviner_fixed" >}}

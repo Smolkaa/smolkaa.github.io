@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-loop-I }
 ![](imgs/model_architecture/loop_I.svg){width="689px"}
@@ -8,7 +8,7 @@
 The innermost loop of the model architecture handles the individual ballistic transport of exospheric particles. "Escape" and "Cold Trapping" indicate pure loss mechanisms, which remove the respective particles from the simulation. The orange highlighted paths indicate conversion reactions, which act as loss mechanisms for one exospheric species as well as a source mechanism for one or more other species, e.g. the photodissociation of water into atomic hydrogen and hydroxyl.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
@@ -77,7 +77,7 @@ The innermost loop of the model architecture handles the individual ballistic tr
 
 Note that the used mathematical symbols and colors are defined in the preamble of the document, e.g. `\newcommand{\velocity}{v}`.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis imgs/model_architecture/loop_I.pdf label="loop_I.pdf" type="light" dname="loop_I" >}} {{< downloadthis imgs/model_architecture/loop_I.svg label="loop_I.svg" type="light" dname="loop_I" >}}  {{< downloadthis imgs/model_architecture/loop_I.png label="loop_I.png" type="light" dname="loop_I" >}}
 
@@ -88,7 +88,7 @@ Note that the used mathematical symbols and colors are defined in the preamble o
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-loop-II }
 ![](imgs/model_architecture/loop_II.svg){width="643px"}
@@ -96,7 +96,7 @@ Note that the used mathematical symbols and colors are defined in the preamble o
 The second inner loop of the model architecture is iterating new particle launches over every grid element with an individual and grid element area-dependent weight. The orange highlighted path indicates the conversion of the exospheric species into other species, e.g. the photodissociation of water into atomic hydrogen and hydroxyl, which has been carried over from the inner loop, see @fig-loop-I.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
@@ -139,7 +139,7 @@ The second inner loop of the model architecture is iterating new particle launch
 
 Note that the used mathematical symbols and colors are defined in the preamble of the document, e.g. `\newcommand{\velocity}{v}`.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis imgs/model_architecture/loop_II.pdf label="loop_II.pdf" type="light" dname="loop_II" >}} {{< downloadthis imgs/model_architecture/loop_II.svg label="loop_II.svg" type="light" dname="loop_II" >}}  {{< downloadthis imgs/model_architecture/loop_II.png label="loop_II.png" type="light" dname="loop_II" >}}
 
@@ -150,7 +150,7 @@ Note that the used mathematical symbols and colors are defined in the preamble o
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-loop-II }
 ![](imgs/model_architecture/loop_III.svg){width="630px"}
@@ -158,7 +158,7 @@ Note that the used mathematical symbols and colors are defined in the preamble o
 The third loop of the model architecture is iterating over all elements and all iterations of the second loop. The orange highlighted path indicates the conversion of the exospheric species into other species, which has been carried over from the innermost loop, see @fig-loop-I. These converted particles act as a new input of source rates $\dot\source$ for subsequent iterations. Each result of the second loop is summed up to a single result for each element.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
@@ -206,7 +206,7 @@ The third loop of the model architecture is iterating over all elements and all 
 
 Note that the used mathematical symbols and colors are defined in the document's preamble, e.g., `\newcommand{\velocity}{v}`.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis imgs/model_architecture/loop_III.pdf label="loop_III.pdf" type="light" dname="loop_III" >}} {{< downloadthis imgs/model_architecture/loop_III.svg label="loop_III.svg" type="light" dname="loop_III" >}}  {{< downloadthis imgs/model_architecture/loop_III.png label="loop_III.png" type="light" dname="loop_III" >}}
 
@@ -216,7 +216,7 @@ Note that the used mathematical symbols and colors are defined in the document's
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-loop-II }
 ![](imgs/model_architecture/loop_IV.svg){width="549px"}
@@ -225,7 +225,7 @@ Note that the used mathematical symbols and colors are defined in the document's
 Fourth and outermost loop of the model architecture. This loop handles the actual Monte-Carlo simulation by iterating over all $N_{MC}$ steps, each with an identical setup, and saving the outcome of each step separately to perform any statistical analyses and post-processing afterwards.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
@@ -276,7 +276,7 @@ Fourth and outermost loop of the model architecture. This loop handles the actua
 
 Note that the used mathematical symbols and colors are defined in the preamble of the document, e.g. `\newcommand{\velocity}{v}`.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis imgs/model_architecture/loop_IV.pdf label="loop_IV.pdf" type="light" dname="loop_IV" >}} {{< downloadthis imgs/model_architecture/loop_IV.svg label="loop_IV.svg" type="light" dname="loop_IV" >}}  {{< downloadthis imgs/model_architecture/loop_IV.png label="loop_IV.png" type="light" dname="loop_IV" >}}
 

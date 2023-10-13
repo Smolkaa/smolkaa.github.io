@@ -12,7 +12,7 @@ citation: false
 
 ::: {.panel-tabset}
 
-# {{< fa table >}} Table
+# {{< bi table >}} Table
 
 +-----------+---------------------------------------------------------------+
 | ALSEP     | Apollo Lunar Surface Experiments Package                      |
@@ -79,7 +79,7 @@ citation: false
 : {.hover}
 
 
-# {{< fa code >}} $\LaTeX$
+# {{< bi code >}} $\LaTeX$
 
 ```latex
 \newacronym{ALSEP}{ALSEP}{Apollo Lunar Surface Experiments Package}

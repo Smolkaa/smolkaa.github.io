@@ -1,0 +1,48 @@
+---
+title: "5.1 Regolith Composition"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+# Atomic vs. Mass vs. Mineralogic Composition
+
+
+
+::: {.panel-tabset}
+
+# {{< bi table >}} Table
+
+| Element / </br>Oxide | Atomic Mass / </br>Molecular Mass | Maria</br>$\left[\si{atom.\percent}\right]$ | Maria</br>$\left[\si{wt. \percent}\right]$ | Highlands</br>$\left[\si{atom.\percent}\right]$ | Highlands</br>$\left[\si{wt. \percent}\right]$ | 
+| --- |:--- | ---:| ---:| ---:| ---:|
+| $\ce{O}$     | $\num{15.999}$  | $\num{60.3}$ | $\num{43.2}$ | $\num{61.1}$ | $\num{45.1}$ |
+| $\ce{Si}$    | $\num{28.085}$  | $\num{16.9}$ | $\num{21.2}$ | $\num{16.3}$ | $\num{21.1}$ |
+| $\ce{Al}$    | $\num{26.982}$  | $\num{6.5}$  | $\num{7.8}$  | $\num{10.1}$ | $\num{12.6}$ |
+| $\ce{Mg}$    | $\num{24.305}$  | $\num{5.1}$  | $\num{5.5}$  | $\num{4.0}$  | $\num{4.5}$ |
+| $\ce{Ca}$    | $\num{40.078}$  | $\num{4.7}$  | $\num{8.4}$  | $\num{6.1}$  | $\num{11.3}$ |
+| $\ce{Fe}$    | $\num{55.845}$  | $\num{4.4}$  | $\num{11.0}$ | $\num{1.8}$  | $\num{4.6}$ |
+| $\ce{Ti}$    | $\num{47.867}$  | $\num{1.1}$  | $\num{2.4}$  | $\num{0.15}$ | $\num{0.3}$ |
+| $\ce{Na}$    | $\num{22.990}$  | $\num{0.4}$  | $\num{0.4}$  | $\num{0.4}$  | $\num{0.4}$ |
+| $\ce{SiO2}$  | $\num{60.083}$  | | $\num{45.4}$ | | $\num{45.5}$ |
+| $\ce{Al2O3}$ | $\num{101.961}$ | | $\num{14.9}$ | | $\num{24.0}$ | 
+| $\ce{FeO}$   | $\num{71.844}$  | | $\num{14.1}$ | | $\num{5.9}$  | 
+| $\ce{CaO}$   | $\num{56.077}$  | | $\num{11.8}$ | | $\num{15.9}$ |
+| $\ce{MgO}$   | $\num{40.304}$  | | $\num{9.2}$  | | $\num{7.5}$  |
+| $\ce{TiO2}$  | $\num{79.865}$  | | $\num{3.9}$  | | $\num{0.6}$  |
+| $\ce{Na2O}$  | $\num{61.979}$  | | $\num{0.6}$  | | $\num{0.6}$  |
+
+: Average chemical compositions of surficial lunar regolith [@Taylor1975]. Elements are sorted by descending Maria atomic composition, and oxides are sorted by descending Maria weight composition. {#tbl-regolith_composition .borderless .hover}
+
+# {{< bi code >}} LaTeX
+
+```latex
+```
+
+:::
+
+
+[@Taylor1975, p.62--64]
+
+{{< include composition/imgs/composition_pg/_composition_pg.qmd >}}

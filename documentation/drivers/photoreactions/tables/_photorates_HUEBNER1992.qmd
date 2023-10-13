@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa table >}} Table
+# {{< bi table >}} Table
 
 +----+-------------------------------------------+------------------------------+----------------------------+------------------------------+----------------------------+
 |    | Reaction                                  | Quiet Sun </br>              | Quiet Sun </br>            | Active Sun </br>             | Active Sun </br>           |
@@ -60,7 +60,7 @@
 
 : Photoreaction rates and excess energies of selected exospheric species for quiet and active Sun conditions at $\SI{1}{AU}$ heliocentric distance, based on @Huebner1992. Values in brakets indicate the use of experimental data for particle cross-sections. {#tbl-photorates-HUEBNER1992 .hover tbl-colwidths="[2,15,20,20,20,20]"}
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \begin{table}

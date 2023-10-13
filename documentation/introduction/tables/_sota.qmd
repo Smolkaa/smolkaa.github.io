@@ -3,7 +3,7 @@
 # State-of-the-Art - @tbl-sota
 ::: {.panel-tabset}
 
-# {{< fa table >}} Table
+# {{< bi table >}} Table
 
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | Reference           | Description / Highlights                                                                                                         |
@@ -307,7 +307,7 @@
 : List of relevant publications about modeling of surface-bounded exospheres, their respective surfaces, or auxiliary research. {#tbl-sota .hover tbl-colwidths="[8,35]"}
 
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}

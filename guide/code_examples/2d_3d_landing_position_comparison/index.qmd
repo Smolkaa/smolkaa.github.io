@@ -150,10 +150,10 @@ plot_compare_2d_3d(vel, elev, e)
 
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 ![Absolute error of landing position calculations based on two- and three-dimensional approaches, given varying speeds and elevation angles of the launch velocities.](./compare_2d_3d.svg){width="600px"}
 
-# {{< fa code >}} Code
+# {{< bi code >}} Code
 ```julia
 using CairoMakie
 include(joinpath(@__DIR__, "..", "..", "resources", "julia", "theme.jl"))
@@ -177,7 +177,7 @@ e = compare_2d_3d(vel, elev; N=100)
 plot_compare_2d_3d(vel, elev, e)
 ```
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis compare_2d_3d.pdf label="compare_2d_3d.pdf" type="light" dname="compare_2d_3d" >}} 
 * {{< downloadthis compare_2d_3d.svg label="compare_2d_3d.svg" type="light" dname="compare_2d_3d" >}} 

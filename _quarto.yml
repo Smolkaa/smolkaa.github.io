@@ -88,6 +88,7 @@ website:
             - documentation/trajectories/non-ballistic_trajectories.qmd
         - section: "5. Surfaces: Planetary Regolith"
           contents:
+            - documentation/regolith/composition.qmd
             - "5.1 Physical and Chemical Properties"
         - section: "6. Particle-Surface Interactions"
           contents:

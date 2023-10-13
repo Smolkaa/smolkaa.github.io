@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-gs2dgrid_reduced}
 ![](/documentation/fundamentals/numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.svg){width="1200px"}
@@ -9,7 +9,7 @@
 Global, structured, reduced, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e., radius $\sphericalCoordinateRadius$.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using .ExESS
 using CairoMakie, GeoMakie
@@ -151,7 +151,7 @@ function run_all(N=10)
 end
 ```
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 
 For standalone figures to produce `.svg` files, use the following code:
 
@@ -203,7 +203,7 @@ For both versions, please ensure that the used `.pdf` files are at the correct l
 
 
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.svg label="figure.svg" type="light" dname="figure" >}} 
 

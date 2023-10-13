@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-lunar_surface_temperatures layout-nrow=2}
 ![Based on a Diviner measurement snapshot.](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner.png){#fig-lunar-surface-temperatures-diviner width="600px"}
@@ -15,7 +15,7 @@
 Global, stationary lunar surface temperature maps. Coordinates given with respect to the subsolar point at $(\longitude_{ss}, \latitude_{ss}) = (0,0)$, presented in local time and subsolar latitude.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using .ExESS
 using CairoMakie, ColorSchemes
@@ -104,7 +104,7 @@ end
 
 For the exact design, a custom theme was loaded in the preamble of the document.
 
-# {{< fa download >}}  Downloads
+# {{< bi download >}}  Downloads
 
 * {{< downloadthis moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner.png label="diviner.png" type="light" dname="diviner" >}}
 

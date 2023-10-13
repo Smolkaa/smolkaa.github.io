@@ -12,9 +12,9 @@ A clear distinction has been made between cartesian and spherical coordinates an
 Vectors defining a position or a velocity in a **cartesian** coordinate system and in **cartesian** 
 elements, like the one shown in Eq. \eqref{eq:cartesian_coordinate}: 
 
-{{< fa code >}} [`GlobalCartesianPosition`](/api/base/cs.qmd)
+{{< bi code >}} [`GlobalCartesianPosition`](/api/base/cs.qmd)
 
-{{< fa code >}} [`GlobalCartesianVelocity`](/api/base/cs.qmd)
+{{< bi code >}} [`GlobalCartesianVelocity`](/api/base/cs.qmd)
 :::
 
 
@@ -46,9 +46,9 @@ The same coordinate can also be expressed in cartesian elements $\left(\cartesia
 Vectors defining a position or a velocity in a **spherical** coordinate system and in **spherical** 
 elements, like the one shown in Eq. \eqref{eq:spherical_coordinate}: 
 
-{{< fa code >}} [`GlobalSphericalPosition`](/api/base/cs.qmd)
+{{< bi code >}} [`GlobalSphericalPosition`](/api/base/cs.qmd)
 
-{{< fa code >}} [`GlobalSphericalVelocity`](/api/base/cs.qmd)
+{{< bi code >}} [`GlobalSphericalVelocity`](/api/base/cs.qmd)
 :::
 
 

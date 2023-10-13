@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-lunar_orbit_orientation}
 ![](/documentation/fundamentals/moon/imgs/lunar_orbit_orientation/lunar_orbit_orientation.svg){width="1200px"}
@@ -9,7 +9,7 @@
 Lunar orbit orientation sketch with the Earth as well as the ecliptic plane as a reference.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \begin{tikzpicture}
 
@@ -56,7 +56,7 @@ Lunar orbit orientation sketch with the Earth as well as the ecliptic plane as a
 \end{tikzpicture}
 ```
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis moon/imgs/lunar_orbit_orientation/lunar_orbit_orientation.svg label="lunar_orbit_orientation.svg" type="light" dname="lunar_orbit_orientation" >}}
 

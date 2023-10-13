@@ -5,7 +5,7 @@ The [MBFD](/documentation/acronyms.qmd) (Maxwell-Boltzmann flux velocity distrib
 \end{equation}
 
 ::: {.column-margin}
-{{< fa code >}} [`MaxwellBoltzmannFluxVelocityDistribution`](/api/base/distributions.qmd)
+{{< bi code >}} [`MaxwellBoltzmannFluxVelocityDistribution`](/api/base/distributions.qmd)
 :::
 
 
@@ -27,7 +27,7 @@ in cartesian coordinates with $d^3\vec\velocity = d\velocity_x \, d\velocity_y \
 in spherical coordinates with $d^3\vec\velocity = \velocity^2 \cos\sphericalCoordinateElevation \, d\velocity \, d\sphericalCoordinateElevation \, d\sphericalCoordinateAzimuth$ [@Brinkmann1970; @Armand1977; @Smith1978; @Schoerghofer2022].
 
 ::: {.column-margin}
-{{< fa code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_speed} </br> {{< fa code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_speed}
+{{< bi code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_speed} </br> {{< bi code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_speed}
 :::
 
 
@@ -122,6 +122,6 @@ While the latter two integrals are trivial, leading to a cosine-squared dependen
 only $\sphericalCoordinateElevation=\cos^{-1}\left(1-r_\sphericalCoordinateElevation\right)$ and $\sphericalCoordinateAzimuth = 2\pi r_\sphericalCoordinateAzimuth - \pi$ can both be directly calculated from their respective realization of the uniform unit random variable, as there is no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
 
 ::: {.column-margin}
-{{< fa code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}
+{{< bi code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}
 :::
 

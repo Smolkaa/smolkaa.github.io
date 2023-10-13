@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-ladee-n0 layout-nrow=3}
 ![Helium surface number densities.](/documentation/planetary_measurements/lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_He_proj.png){#fig-ladee-n0-he width="1200px"}
@@ -13,7 +13,7 @@
 Helium (a), neon (b), and argon (c) surface number densities, based on derived data of the LADEE mission and projected to the surface based on @Chamberlain1963 barometric model. Maximum densities are highlighted with a red marker and the respective numeric value of the surface number density. The data was taken from the PDS [@LADEE2014]. Gray areas indicate lunar nighttime.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 
 ```julia
 using .ExESS
@@ -132,7 +132,7 @@ function run_all(dfHe, dfNe, dfAr; T=250, kwargs...)
 end
 ```
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_He_proj.png label="LADEE_n0_Helium.png" type="light" dname="LADEE_n0_Helium" >}} 
 

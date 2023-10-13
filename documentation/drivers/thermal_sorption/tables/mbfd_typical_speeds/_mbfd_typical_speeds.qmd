@@ -1,13 +1,13 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa table >}} Table
+# {{< bi table >}} Table
 
 {{< include /documentation/drivers/thermal_sorption/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.md >}}
 
 : Overview of normalized speeds $\velocity$ of the [MBFD](/documentation/acronyms.qmd), according to Eq. \refeq{eq:mbfd_speed}, including a comparison with its typical speeds, the most probable speed, $\velocity_p$, the mean speed, $\meanof{\velocity}$, and the root mean squared speed, $\velocity_\text{rms}$. {#tbl-mbfd_typical_speeds .hover}
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 
 ```julia
 using PrettyTables
@@ -98,7 +98,7 @@ function writetable()
 end
 ```
 
-# {{< fa download >}} Downloads
+# {{< bi download >}} Downloads
 
 * {{< downloadthis thermal_sorption/tables/mbfd_typical_speeds/raw_mbfd_typical_speeds.md label="raw.md" type="light" dname="table" >}}
 

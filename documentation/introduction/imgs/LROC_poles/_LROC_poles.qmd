@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-LROC_poles layout-ncol=2}
 ![Lunar north pole.](imgs/LROC_poles/LROC_north_pole.jpg){#fig-LROC_north_pole}
@@ -11,7 +11,7 @@
 [LROC](/documentation/acronyms.qmd) Wide Angle Camera ([WAC](/documentation/acronyms.qmd)) mosaic of the lunar north and south pole region. With a resolution of 400m/pixel, the total width of each image extends to ~600km, ranging from 80° to 90° latitude, north and south, respectively. The names of major craters are indicated at their respective location. _Image Credit: NASA/GSFC/Arizona State University: [North Pole](http://lroc.sese.asu.edu/posts/242), [South Pole](http://lroc.sese.asu.edu/posts/237>)_.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \begin{figure}[tb]
     \centering

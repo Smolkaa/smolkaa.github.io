@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-landing_position_calc}
 ![](/documentation/trajectories/ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.png){width="500px"}
@@ -8,7 +8,7 @@
 Sketch the spherical trigonometry problem of the landing position calculation. The ground track distance is given as an angular distance of $\Delta\trueAnomaly$, complemented by all additional angular arguments used for the derivation of the landing position.
 :::
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 ```latex
 \tdplotsetmaincoords{70}{135}
 \begin{tikzpicture}[tdplot_main_coords, scale=1.25]
@@ -70,7 +70,7 @@ Sketch the spherical trigonometry problem of the landing position calculation. T
 
 Note that the code above requires the TikZ package `tikz-3dplot`. Additionally, the code relies on further definitions, for example of the gray-color: `\definecolor{TUMGrayLight}  {RGB}{204, 204, 204}` based on the `xcolor` package.
 
-# {{< fa download >}} Download
+# {{< bi download >}} Download
 
 * {{< downloadthis ballistic_trajectories/imgs/landing_position_calc/landing_position_calc.svg label="landing_position_calc.svg" type="light" dname="landing_position_calc" >}}
 

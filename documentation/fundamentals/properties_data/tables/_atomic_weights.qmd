@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa table >}} Table
+# {{< bi table >}} Table
 
 +----+-----------------+--------+------------+-----+--------------+
 | \# | Element         | Symbol | Value      |     |              |
@@ -20,7 +20,7 @@
 
 : Subset of standard atomic weights by @Prohaska2022 relevant to this work. The values are provided either as an interval (indicated with _to_) or as a single value with some measurement uncertainty and natural variation (indicated with _+/-_). {#tbl-atomic_weights tbl-colwidths=[6,32,25,15,7,15] .borderless .hover}
 
-# {{< fa code >}} LaTeX
+# {{< bi code >}} LaTeX
 
 ```latex
 \begin{table}[tb]

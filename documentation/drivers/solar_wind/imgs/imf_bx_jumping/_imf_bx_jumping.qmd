@@ -1,6 +1,6 @@
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-imf_polarity_jumping_zhao1995}
 ![](/documentation/drivers/solar_wind/imgs/imf_bx_jumping/Zhao_Bx_jumping.png){width="1000px"}
@@ -8,7 +8,7 @@
 Hourly averaged radial interplanetary magnetic field component of the heliospheric current sheet during ten "quiet" Sun condition intervals, to reflect an ambient IMF. Small dots show hourly averages, circles show daily averages with no values for days with fewer than 12 hourly samples. Copied from @Zhao1995.
 :::
 
-# {{< fa download >}}  Downloads
+# {{< bi download >}}  Downloads
 
 * {{< downloadthis solar_wind/imgs/imf_bx_jumping/Zhao_Bx_jumping.png label="imf_jumping.png" type="light" dname="imf_jumping" >}} 
 :::

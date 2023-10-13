@@ -1,7 +1,7 @@
 ::: {.column-page-right}
 ::: {.panel-tabset}
 
-# {{< fa image >}} Figure
+# {{< bi image >}} Figure
 
 ::: {#fig-mbfd}
 ![](/documentation/drivers/thermal_sorption/imgs/mbfd/mbfd.svg){width="600px"}
@@ -9,7 +9,7 @@
 Normalized Maxwell-Boltzmann flux velocity and speed distributions according to Eq. \eqref{eq:mbfd_speed}. The <tt>1D-MBFD</tt> distribution is perpendicular to the flux direction, <tt>1D-MBFD, flux</tt> is parallel to the flux direction. For the distribution of speeds, the typical speeds according to Eqs. \eqref{eq:mbfd_most_probable_speed}, \eqref{eq:mbfd_mean_speed}, \eqref{eq:mbfd_rms_speed} are shown. The velocities and speeds have been normalized according with $\sqrt{\mass /\BoltzmannConstant\temperature} = \SI{1}{\second\per\metre}$.
 :::
 
-# {{< fa code >}} Julia
+# {{< bi code >}} Julia
 ```julia
 using CairoMakie, Colors, ColorSchemes
 
@@ -76,7 +76,7 @@ function mbfd(name="mbfd"; txt=true)
 end
 ```
 
-# {{< fa download >}}  Downloads
+# {{< bi download >}}  Downloads
 
 * {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.pdf label="mbfd.pdf" type="light" dname="mbfd" >}} {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.svg label="mbfd.svg" type="light" dname="mbfd" >}} {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.png label="mbfd.png" type="light" dname="mbfd" >}}
 

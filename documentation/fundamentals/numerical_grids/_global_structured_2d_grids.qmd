@@ -1,7 +1,7 @@
 The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$; see the section [Cartesian and Spherical Coordinates](/documentation/fundamentals/coordinate_systems.qmd).
 
 ::: {.column-margin}
-{{< fa code >}} [`GlobalStructuredGrid`](/api/grids/global_structured_2d_grids.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth} - \eqref{eq:gs2dgrid_coord2idx_elevation}
+{{< bi code >}} [`GlobalStructuredGrid`](/api/grids/global_structured_2d_grids.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth} - \eqref{eq:gs2dgrid_coord2idx_elevation}
 :::
 
 
@@ -15,7 +15,7 @@ The spherical coordinates, the azimuth $\sphericalCoordinateAzimuth$ and elevati
 where $N_\sphericalCoordinateAzimuth$ and $N_\sphericalCoordinateElevation$ define the number of elements in the azimuth and elevation direction, respectively. The created points of the grid are located in the center of each rectangular grid cell, i.e., at $\Delta\sphericalCoordinateAzimuth / 2 = \pi /N_\sphericalCoordinateAzimuth$ and $\Delta\sphericalCoordinateElevation / 2 = \pi / \left(2N_\sphericalCoordinateElevation\right)$ of each elements sides. Let $k$ be a common index with $k = (i-1)N_\sphericalCoordinateElevation + j$, then every grid element's coordinate can be written as $\sphericalCoordinate_k = \left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right)$.
 
 ::: {.column-margin}
-{{< fa code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_elevation} </br> {{< fa code >}} [`surfacecoords`](/api/grids/utility.qmd): identical to `coords`
+{{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_elevation} </br> {{< bi code >}} [`surfacecoords`](/api/grids/utility.qmd): identical to `coords`
 :::
 
 
@@ -43,7 +43,7 @@ With the same index notation, the area of each spherical grid element can be cal
 Note that the definition for the area is independent of the azimuth angle $\sphericalCoordinateAzimuth$, thus equal across all $N_\sphericalCoordinateAzimuth$ elements in the azimuth direction.
 
 ::: {.column-margin}
-{{< fa code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid}
+{{< bi code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid}
 :::
 
 
@@ -76,8 +76,8 @@ Taking the absolute value of the elevation angle in the equation above ensures t
 
 
 ::: {.column-margin}
-{{< fa code >}} [`GlobalStructuredGrid_EqSim`](/api/grids/global_structured_2d_grids.qmd) Eqs. \eqref{eq:gs2dgrid_eqsim_elevation} - \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation} </br>
-{{< fa code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid} </br>
-{{< fa code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_eqsim_elevation} </br>
-{{< fa code >}} [`coord2idx`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_coord2idx_azimuth}, \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}
+{{< bi code >}} [`GlobalStructuredGrid_EqSim`](/api/grids/global_structured_2d_grids.qmd) Eqs. \eqref{eq:gs2dgrid_eqsim_elevation} - \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation} </br>
+{{< bi code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid} </br>
+{{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_eqsim_elevation} </br>
+{{< bi code >}} [`coord2idx`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_coord2idx_azimuth}, \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation}
 :::
