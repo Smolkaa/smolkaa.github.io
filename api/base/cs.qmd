@@ -2,10 +2,6 @@
 title: "Coordinate Systems"
 ---
 
-::: {.hidden }
-# {{< meta title >}}
-:::
-
 ---
 
 Coordinates in `ExESS` are implemented as their custom, three-dimensional vectors, which
@@ -16,7 +12,7 @@ or `[...]Spherical[...]`, which is referring to a Cartesian or spherical coordin
 respectively. The physical type is either `[...]Position` or `[...]Velocity`, which is referring 
 to a position or velocity vector, respectively. 
 
-## Type Structure
+# Type Structure
 
 The following structure shows all currently implemented coordinates in `ExESS`:
 
@@ -26,6 +22,7 @@ ExESS
     │
     ├─ AbstractPosition
     │  ├─ GlobalCartesianPosition{T<:Real}
+    │  ├─ LocalCartesianPosition{T<:Real}
     │  └─ GlobalSphericalPosition{T<:Real}
     │
     └─ AbstractVelocity
@@ -37,9 +34,15 @@ ExESS
 More information on the mathematical description of the different coordinate vectors and the mathematical foundation for the conversion functions are presented in [Cartesian and Spherical Coordinates](/documentation/fundamentals/coordinate_systems.qmd).
 
 
-## Usage
+# Usage
 
-## API
+## Conversions
+
+### Local-to-Global
+In general, local-to-global conversions are not possible without providing additional information. The main problem is that local coordinates inherently convey less information (i.e., where in the "global world" the local reference frame is located).
+
+
+# API
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``GlobalCartesianPosition`` -- Struct
@@ -50,6 +53,18 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.GlobalCartesianPosition
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``LocalCartesianPosition`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.LocalCartesianPosition
 ```
 :::
 

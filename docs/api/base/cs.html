@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-10-16">
 
 <title>ExESS - Coordinate Systems</title>
 <style>
@@ -317,9 +317,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Coordinate Systems</h2>
    
   <ul>
-  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Coordinate Systems</a></li>
-  <li><a href="#type-structure" id="toc-type-structure" class="nav-link" data-scroll-target="#type-structure">Type Structure</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#type-structure" id="toc-type-structure" class="nav-link active" data-scroll-target="#type-structure">Type Structure</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
+  <ul class="collapse">
+  <li><a href="#conversions" id="toc-conversions" class="nav-link" data-scroll-target="#conversions">Conversions</a>
+  <ul class="collapse">
+  <li><a href="#local-to-global" id="toc-local-to-global" class="nav-link" data-scroll-target="#local-to-global">Local-to-Global</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/base/cs.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -353,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">October 16, 2023</p>
     </div>
   </div>
   
@@ -363,32 +368,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="meta-title" class="level1 hidden">
-<h1>Coordinate Systems</h1>
-</section>
 <hr>
 <p>Coordinates in <code>ExESS</code> are implemented as their custom, three-dimensional vectors, which are based on their scope, the coordinate system, and their physical type. The scope can either be <code>Global[...]</code> or <code>Local[...]</code>, which is referring to a fixed planetary system or a local reference frame, respectively. The coordinate system is either <code>[...]Cartesian[...]</code> or <code>[...]Spherical[...]</code>, which is referring to a Cartesian or spherical coordinate system, respectively. The physical type is either <code>[...]Position</code> or <code>[...]Velocity</code>, which is referring to a position or velocity vector, respectively.</p>
-<section id="type-structure" class="level2">
-<h2 class="anchored" data-anchor-id="type-structure">Type Structure</h2>
+<section id="type-structure" class="level1">
+<h1>Type Structure</h1>
 <p>The following structure shows all currently implemented coordinates in <code>ExESS</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ExESS</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>└─ AbstractCoordinates</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    │</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    ├─ AbstractPosition</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    │  ├─ GlobalCartesianPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    │  └─ GlobalSphericalPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    │</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    └─ AbstractVelocity</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>       ├─ GlobalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       ├─ LocalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>       └─ GlobalSphericalVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    │  ├─ LocalCartesianPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    │  └─ GlobalSphericalPosition{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    │</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    └─ AbstractVelocity</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>       ├─ GlobalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>       ├─ LocalCartesianVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>       └─ GlobalSphericalVelocity{T<span class="op">&lt;:</span><span class="dt">Real</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>More information on the mathematical description of the different coordinate vectors and the mathematical foundation for the conversion functions are presented in <a href="../../documentation/fundamentals/coordinate_systems.html">Cartesian and Spherical Coordinates</a>.</p>
 </section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<section id="usage" class="level1">
+<h1>Usage</h1>
+<section id="conversions" class="level2">
+<h2 class="anchored" data-anchor-id="conversions">Conversions</h2>
+<section id="local-to-global" class="level3">
+<h3 class="anchored" data-anchor-id="local-to-global">Local-to-Global</h3>
+<p>In general, local-to-global conversions are not possible without providing additional information. The main problem is that local coordinates inherently convey less information (i.e., where in the “global world” the local reference frame is located).</p>
 </section>
-<section id="api" class="level2">
-<h2 class="anchored" data-anchor-id="api">API</h2>
+</section>
+</section>
+<section id="api" class="level1">
+<h1>API</h1>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -403,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] GlobalCartesianPosition(x::Real, y::Real, z::Real)
 [2] GlobalCartesianPosition(X::AbstractVector)
-[3] GlobalCartesianPosition(x::AbstractPosition)</code></pre>
+[3] GlobalCartesianPosition(x::AbstractGlobalPosition)</code></pre>
 <p>Three dimensional, global, cartesian position vector [1]. Converts vector or other position type into <code>GlobalCartesianPosition</code> [2,3].</p>
 <pre><code>[1] GlobalCartesianPosition(sol::ODESolution, [idx::Integer])
 [2] GlobalCartesianPosition(sol::ODESolution, t::Real)
@@ -419,15 +429,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>GlobalSphericalPosition</code> – Struct
+<code>LocalCartesianPosition</code> – Struct
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>[1] LocalCartesianPosition(x::Real, y::Real, z::Real)
+[2] LocalCartesianPosition(X::AbstractVector)
+[3] LocalCartesianPosition(x::AbstractLocalPosition)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>GlobalSphericalPosition</code> – Struct
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] GlobalSphericalPosition(r::Real, theta::Real, phi::Real)
 [2] GlobalSphericalPosition(X::AbstractVector)
-[3] GlobalSphericalPosition(x::AbstractPosition)</code></pre>
+[3] GlobalSphericalPosition(x::AbstractGlobalPosition)</code></pre>
 </div>
 </div>
 </div>
