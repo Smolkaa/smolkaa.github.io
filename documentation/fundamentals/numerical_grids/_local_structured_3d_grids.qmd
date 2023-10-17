@@ -1,15 +1,22 @@
+The horizontal discretization of the local structured grid is simply dividing the surface into $N_\cartesianCoordinateX$ and $N_\cartesianCoordinateY$ equal, rectangular elements. With the grid points of each element being centered in the horizontal plane, the individual coordinates can be calculated as
+\begin{alignat}{3}
+    \cartesianCoordinateX_i &= \cartesianCoordinateX_{min} + \frac{\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min}}{N_\cartesianCoordinateX} \cdot \left(i - \frac{1}{2}\right) & \quad\text{for } i \in \{1, \dots, N_\cartesianCoordinateX\} \label{eq:local_structure_3d_grid_x}\\
+    \cartesianCoordinateY_j &= \cartesianCoordinateY_{min} + \frac{\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min}}{N_\cartesianCoordinateY} \cdot \left(j - \frac{1}{2}\right) & \quad\text{for } j \in \{1, \dots, N_\cartesianCoordinateY\}. \label{eq:local_structure_3d_grid_y}
+\end{alignat}
 
 
-The heights of the local structured grid are increasing exponentially. To derivate the height of the $i$-th grid element $\cartesianCoordinateZ_i$, start at the basic 3-free-parameter exponential function:
+The heights of the local structured grid are increasing exponentially. To derivate the height of the $k$-th vertical grid element $\cartesianCoordinateZ_k$, start at the basic 3-free-parameter exponential function:
 \begin{equation}
-    \cartesianCoordinateZ_i = a + b \exp\left(c\right)^i.
+    \cartesianCoordinateZ_k = a + b \exp\left(c\right)^k.
 \end{equation}
-We can now add two constraints to this function: first, the bottom of the local grid, which is the zeroth element of the grid, is $\cartesianCoordinateZ_0=0$, and the last element of the grid at the $i = N_\cartesianCoordinateZ$ index has to be at the maximum height of the grid, $\cartesianCoordinateZ_{N_\cartesianCoordinateZ} = \cartesianCoordinateZ_{max}$. With these two conditions, two of the three free parameters can be solved, leaving only the exponential shape parameter $c$:
+We can now add two constraints to this function: first, the bottom of the local grid, which is the zeroth element of the grid, is $\cartesianCoordinateZ_0=0$, and the last element of the grid at the $k = N_\cartesianCoordinateZ$ index has to be at the maximum height of the grid, $\cartesianCoordinateZ_{N_\cartesianCoordinateZ} = \cartesianCoordinateZ_{max}$. With these two conditions, two of the three free parameters can be solved, leaving only the exponential shape parameter $c$:
 \begin{equation}
-    \cartesianCoordinateZ_i = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(c\right)^i - 1}{\exp\left(c\right)^{N_\cartesianCoordinateZ} - 1}.
+    \cartesianCoordinateZ_k = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(c\right)^k - 1}{\exp\left(c\right)^{N_\cartesianCoordinateZ} - 1}.
 \end{equation}
 The local structured grids in this work add another condition to the function to further simplify it and to ensure similar spacings for varying grid sizes, which is $c = 1/N_\cartesianCoordinateZ$, which further reduces the equation to
 \begin{equation}
-    \cartesianCoordinateZ_i = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(\frac{1}{N_\cartesianCoordinateZ}\right)^i - 1}{e - 1},
+    \cartesianCoordinateZ_k = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(\frac{1}{N_\cartesianCoordinateZ}\right)^k - 1}{e - 1}  \quad\text{for } k \in \{1, \dots, N_\cartesianCoordinateZ\},  \label{eq:local_structure_3d_grid_z}
 \end{equation}
-with Euler's constant $e$. This addition leads to an equal ratio between the maximum grid height and the first element, invariant of the number of vertical grid elements.
+with Euler's constant $e$. This addition leads to an equal ratio between the maximum grid height and the first element, invariant of the number of vertical grid elements. If more control over the slope of the exponential function is necessary, other simplifications for the parameter $c$ can also be chosen like $c=\frac{2}{N_\cartesianCoordinateZ}$. Note that for increasing values of $c$, the "curviness" of the distribution of $\cartesianCoordinateZ_k$ increases, which leads to smaller elements close to the bottom and bigger elements close to the top of the grid. The total of Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z} define the local structured grid in three dimensions.
+
+{{< include numerical_grids/imgs/exponential_heights/_exponential_heights.qmd >}}
