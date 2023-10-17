@@ -12,6 +12,8 @@ Basic Monte Carlo simulation structure. The central piece, the "Monte Carlo Step
 # {{< bi code >}} LaTeX
 
 ```latex
+\newcommand{\n}[1]{\begin{tabular}{c}#1\end{tabular}}
+
 \begin{tikzpicture}[
     main/.style={draw, thick, rounded corners=4pt, inner sep=2pt, minimum size=20pt, minimum width=25pt, fill=white},
     connector/.style={draw, circle, thick, minimum size=12pt, fill=white},
@@ -46,7 +48,7 @@ Basic Monte Carlo simulation structure. The central piece, the "Monte Carlo Step
     \draw[-latex, thick] (DEC1.270) -- node[near start, right] {$i>N$} (END);
 \end{tikzpicture}
 ```
-
+Note that the code above requires the `TikZ` package alongside the `positioning` and `shadows` libraries. Additionally, the variables like `\sample` need to be defined in the preamble (i.e. $\newcommand{\sample}{X}$).
 
 # {{< bi download >}} Downloads
 

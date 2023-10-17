@@ -1,0 +1,51 @@
+Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations.
+
+
+## Global Reference Frames
+Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun's position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.
+
+### Global Cartesian Coordinate Systems
+Positional vectors of the global cartesian coordinate system are defined as
+\begin{equation}
+    \cartesianCoordinate = \begin{bmatrix}
+        \cartesianCoordinateX \\ 
+        \cartesianCoordinateY \\ 
+        \cartesianCoordinateZ 
+    \end{bmatrix} \qquad\text{with } \cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R},
+\end{equation}
+while velocities are defined as their first temporal derivative, and since all global base vectors $\baseVector_i$ are time-invariant, it resolves to
+\begin{align}
+    \dot{\cartesianCoordinate} = \frac{d}{d\Time} \left( \cartesianCoordinate \right) &= \frac{d}{d\Time} \left( \cartesianCoordinateX \cartesianBaseVectorX + \cartesianCoordinateY \cartesianBaseVectorY + \cartesianCoordinateZ \cartesianBaseVectorZ \right) = \dot\cartesianCoordinateX \cartesianBaseVectorX + \dot\cartesianCoordinateY \cartesianBaseVectorY + \dot\cartesianCoordinateZ \cartesianBaseVectorZ = \begin{bmatrix}
+        \dot\cartesianCoordinateX \\ 
+        \dot\cartesianCoordinateY \\ 
+        \dot\cartesianCoordinateZ 
+    \end{bmatrix}
+    \\ & \text{with } \dot\cartesianCoordinateX\in\Set{R},\;\dot\cartesianCoordinateY\in\Set{R},\;\dot\cartesianCoordinateZ\in\Set{R}. \label{eq:global_cartesian_velocity} \nonumber
+\end{align}
+
+The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes. The base vectors are defined as $\cartesianBaseVectorX$ pointing towards the Sun, $\cartesianBaseVectorY$ pointing towards positive longitude (east), and $\cartesianBaseVectorZ$ pointing towards positive latitude (north). The base vectors are orthogonal to each other. 
+
+### Global Spherical Coordinate Systems
+
+## Local Reference Frames
+Local reference frames are used for calculations on a smaller scale. One example is the calculation of thermal desorption velocities (see [Thermal Sorption](/documentation/drivers/thermal_sorption.qmd)), which only depends on the local surface temperature.
+
+### Local Cartesian Coordinate Systems
+
+### Local Spherical Coordinate Systems
+
+## Transformations
+Often it is useful to describe one problem in a different reference frame than another, requiring a transformation between the two.
+
+### To Global Cartesian Positions
+
+### To Global Cartesian Velocities
+
+### To Global Spherical Positions
+
+### To Global Spherical Velocities
+
+### To Local Cartesian Positions
+
+### To Local Cartesian Velocities
+

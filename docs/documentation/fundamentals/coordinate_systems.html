@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-10-16">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -425,9 +425,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">2.1 Coordinate Systems</h2>
    
   <ul>
-  <li><a href="#cartesian-and-spherical-coordinates" id="toc-cartesian-and-spherical-coordinates" class="nav-link active" data-scroll-target="#cartesian-and-spherical-coordinates">Cartesian and Spherical Coordinates</a></li>
+  <li><a href="#cartesian-and-spherical-coordinates" id="toc-cartesian-and-spherical-coordinates" class="nav-link active" data-scroll-target="#cartesian-and-spherical-coordinates">Cartesian and Spherical Coordinates</a>
+  <ul class="collapse">
   <li><a href="#spacial-differentials" id="toc-spacial-differentials" class="nav-link" data-scroll-target="#spacial-differentials">Spacial Differentials</a></li>
   <li><a href="#temporal-differentials" id="toc-temporal-differentials" class="nav-link" data-scroll-target="#temporal-differentials">Temporal Differentials</a></li>
+  </ul></li>
+  <li><a href="#sec-reference_frames" id="toc-sec-reference_frames" class="nav-link" data-scroll-target="#sec-reference_frames">Reference Frames</a>
+  <ul class="collapse">
+  <li><a href="#global-reference-frames" id="toc-global-reference-frames" class="nav-link" data-scroll-target="#global-reference-frames">Global Reference Frames</a>
+  <ul class="collapse">
+  <li><a href="#global-cartesian-coordinate-systems" id="toc-global-cartesian-coordinate-systems" class="nav-link" data-scroll-target="#global-cartesian-coordinate-systems">Global Cartesian Coordinate Systems</a></li>
+  <li><a href="#global-spherical-coordinate-systems" id="toc-global-spherical-coordinate-systems" class="nav-link" data-scroll-target="#global-spherical-coordinate-systems">Global Spherical Coordinate Systems</a></li>
+  </ul></li>
+  <li><a href="#local-reference-frames" id="toc-local-reference-frames" class="nav-link" data-scroll-target="#local-reference-frames">Local Reference Frames</a>
+  <ul class="collapse">
+  <li><a href="#local-cartesian-coordinate-systems" id="toc-local-cartesian-coordinate-systems" class="nav-link" data-scroll-target="#local-cartesian-coordinate-systems">Local Cartesian Coordinate Systems</a></li>
+  <li><a href="#local-spherical-coordinate-systems" id="toc-local-spherical-coordinate-systems" class="nav-link" data-scroll-target="#local-spherical-coordinate-systems">Local Spherical Coordinate Systems</a></li>
+  </ul></li>
+  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations">Transformations</a>
+  <ul class="collapse">
+  <li><a href="#to-global-cartesian-positions" id="toc-to-global-cartesian-positions" class="nav-link" data-scroll-target="#to-global-cartesian-positions">To Global Cartesian Positions</a></li>
+  <li><a href="#to-global-cartesian-velocities" id="toc-to-global-cartesian-velocities" class="nav-link" data-scroll-target="#to-global-cartesian-velocities">To Global Cartesian Velocities</a></li>
+  <li><a href="#to-global-spherical-positions" id="toc-to-global-spherical-positions" class="nav-link" data-scroll-target="#to-global-spherical-positions">To Global Spherical Positions</a></li>
+  <li><a href="#to-global-spherical-velocities" id="toc-to-global-spherical-velocities" class="nav-link" data-scroll-target="#to-global-spherical-velocities">To Global Spherical Velocities</a></li>
+  <li><a href="#to-local-cartesian-positions" id="toc-to-local-cartesian-positions" class="nav-link" data-scroll-target="#to-local-cartesian-positions">To Local Cartesian Positions</a></li>
+  <li><a href="#to-local-cartesian-velocities" id="toc-to-local-cartesian-velocities" class="nav-link" data-scroll-target="#to-local-cartesian-velocities">To Local Cartesian Velocities</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/fundamentals/coordinate_systems.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -460,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">October 16, 2023</p>
     </div>
   </div>
   
@@ -531,9 +555,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     &amp;= \boldsymbol{\mathbf{r}}_c.\nonumber
 \end{align}\]</span></p>
 <p>Due to the equalities of the vectors in their respective same coordinate system, the rest of this work will only use <span class="math inline">\(\boldsymbol{\mathbf{x}}\)</span> and <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span> without their indexed counterparts. The element type will be indicated by the context of the equation.</p>
-</section>
-<section id="spacial-differentials" class="level1 page-columns page-full">
-<h1>Spacial Differentials</h1>
+<section id="spacial-differentials" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="spacial-differentials">Spacial Differentials</h2>
 <p>This work regularly relies on vector calculus, including substantial use of differentials and derivatives. The former uses two kinds of notations, depending on the use case of the differential. First, mathematical differentials of vectors are the vectorized form of the differentials of the vector components. In the following, the differentials will be set up for stationary conditions with constant base vectors, i.e.</p>
 <p><span class="math display">\[\begin{align}
     \frac{\partial}{\partial t} &amp;= 0, \\
@@ -793,10 +816,72 @@ Derivation of spherical Laplace operator.
 </div>
 </div>
 </section>
-<section id="temporal-differentials" class="level1">
-<h1>Temporal Differentials</h1>
+<section id="temporal-differentials" class="level2">
+<h2 class="anchored" data-anchor-id="temporal-differentials">Temporal Differentials</h2>
+</section>
+</section>
+<section id="sec-reference_frames" class="level1">
+<h1>Reference Frames</h1>
+<p>Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations.</p>
+<section id="global-reference-frames" class="level2">
+<h2 class="anchored" data-anchor-id="global-reference-frames">Global Reference Frames</h2>
+<p>Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun’s position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.</p>
+<section id="global-cartesian-coordinate-systems" class="level3">
+<h3 class="anchored" data-anchor-id="global-cartesian-coordinate-systems">Global Cartesian Coordinate Systems</h3>
+<p>Positional vectors of the global cartesian coordinate system are defined as <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
+        x\\
+        y\\
+        z
+    \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R},
+\end{equation}\]</span> while velocities are defined as their first temporal derivative, and since all global base vectors <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_i\)</span> are time-invariant, it resolves to <span class="math display">\[\begin{align}
+    \dot{\boldsymbol{\mathbf{x}}} = \frac{d}{dt} \left( \boldsymbol{\mathbf{x}}\right) &amp;= \frac{d}{dt} \left( x\hat{\boldsymbol{\mathbf{e}}}_x+ y\hat{\boldsymbol{\mathbf{e}}}_y+ z\hat{\boldsymbol{\mathbf{e}}}_z\right) = \dot x\hat{\boldsymbol{\mathbf{e}}}_x+ \dot y\hat{\boldsymbol{\mathbf{e}}}_y+ \dot z\hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}
+        \dot x\\
+        \dot y\\
+        \dot z
+    \end{bmatrix}
+    \\ &amp; \text{with } \dot x\in\mathbb{R},\;\dot y\in\mathbb{R},\;\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
+\end{align}\]</span></p>
+<p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other.</p>
+</section>
+<section id="global-spherical-coordinate-systems" class="level3">
+<h3 class="anchored" data-anchor-id="global-spherical-coordinate-systems">Global Spherical Coordinate Systems</h3>
+</section>
+</section>
+<section id="local-reference-frames" class="level2">
+<h2 class="anchored" data-anchor-id="local-reference-frames">Local Reference Frames</h2>
+<p>Local reference frames are used for calculations on a smaller scale. One example is the calculation of thermal desorption velocities (see <a href="../../documentation/drivers/thermal_sorption.html">Thermal Sorption</a>), which only depends on the local surface temperature.</p>
+<section id="local-cartesian-coordinate-systems" class="level3">
+<h3 class="anchored" data-anchor-id="local-cartesian-coordinate-systems">Local Cartesian Coordinate Systems</h3>
+</section>
+<section id="local-spherical-coordinate-systems" class="level3">
+<h3 class="anchored" data-anchor-id="local-spherical-coordinate-systems">Local Spherical Coordinate Systems</h3>
+</section>
+</section>
+<section id="transformations" class="level2">
+<h2 class="anchored" data-anchor-id="transformations">Transformations</h2>
+<p>Often it is useful to describe one problem in a different reference frame than another, requiring a transformation between the two.</p>
+<section id="to-global-cartesian-positions" class="level3">
+<h3 class="anchored" data-anchor-id="to-global-cartesian-positions">To Global Cartesian Positions</h3>
+</section>
+<section id="to-global-cartesian-velocities" class="level3">
+<h3 class="anchored" data-anchor-id="to-global-cartesian-velocities">To Global Cartesian Velocities</h3>
+</section>
+<section id="to-global-spherical-positions" class="level3">
+<h3 class="anchored" data-anchor-id="to-global-spherical-positions">To Global Spherical Positions</h3>
+</section>
+<section id="to-global-spherical-velocities" class="level3">
+<h3 class="anchored" data-anchor-id="to-global-spherical-velocities">To Global Spherical Velocities</h3>
+</section>
+<section id="to-local-cartesian-positions" class="level3">
+<h3 class="anchored" data-anchor-id="to-local-cartesian-positions">To Local Cartesian Positions</h3>
+</section>
+<section id="to-local-cartesian-velocities" class="level3">
+<h3 class="anchored" data-anchor-id="to-local-cartesian-velocities">To Local Cartesian Velocities</h3>
 
 
+</section>
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2023,
