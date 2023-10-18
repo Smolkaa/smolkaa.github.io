@@ -25,6 +25,8 @@ while velocities are defined as their first temporal derivative, and since all g
 
 The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes. The base vectors are defined as $\cartesianBaseVectorX$ pointing towards the Sun, $\cartesianBaseVectorY$ pointing towards positive longitude (east), and $\cartesianBaseVectorZ$ pointing towards positive latitude (north). The base vectors are orthogonal to each other. 
 
+{{< include coordinate_systems/imgs/reference_frames/_global_cartesian.qmd >}}
+
 ### Global Spherical Coordinate Systems
 
 ## Local Reference Frames

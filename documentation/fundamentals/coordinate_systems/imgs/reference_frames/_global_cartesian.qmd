@@ -1,0 +1,16 @@
+::: {.panel-tabset}
+
+# {{< bi image >}} Figure
+
+::: {#fig-spherical_differential_element }
+<!-- ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.svg){width="600px"} -->
+![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png){width="600px"}
+
+Minimal and simplified sketch of the global, cartesian, subsolar, selenocentric coordinate system. The dashed lines indicate the Moon's orbit around the Sun. All sizes and distances are not to scale. 
+:::
+
+# {{< bi code >}} LaTeX
+```latex
+```
+
+:::

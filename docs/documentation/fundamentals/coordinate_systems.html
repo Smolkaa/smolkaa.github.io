@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-17">
+<meta name="dcterms.date" content="2023-10-18">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -484,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2023</p>
+      <p class="date">October 18, 2023</p>
     </div>
   </div>
   
@@ -661,7 +661,7 @@ Derivation of spherical Laplace operator.
     \int_X \int_Y \int_Z f dzdydx= \int_Vf d^3\boldsymbol{\mathbf{x}},
 \end{equation}\]</span> where <span class="math inline">\(V\)</span> is the volume of the integration domain, with the infinitesimal volume element <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\in V= \left\{dx\, dy\, dz\; | \; dx\in X, dy\in Y, dz\in Z \right\}\)</span>. The superscript <span class="math inline">\(\bullet^3\)</span> in the differentials indicates that the differential is a vector but a scalar representation of the element’s size created by the vector elements. As before, the differential <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\)</span> can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq. <span class="math inline">\(\eqref{eq:total_cartesian_spherical_differential_matrix}\)</span>, of the transformation: <span class="math display">\[\begin{equation}
     d^3\boldsymbol{\mathbf{x}}= \left|\frac{\partial\boldsymbol{\mathbf{x}}}{\partial\boldsymbol{\mathbf{r}}}\right| d^3\boldsymbol{\mathbf{r}}= r^2\cos\varphi drd\vartheta d\varphi.
-\end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;1</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
+\end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;2</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset column-page-right page-columns page-full">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content column-page-right">
@@ -843,6 +843,23 @@ Derivation of spherical Laplace operator.
     \\ &amp; \text{with } \dot x\in\mathbb{R},\;\dot y\in\mathbb{R},\;\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
 \end{align}\]</span></p>
 <p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<!-- ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.svg){width="600px"} -->
+<p><img src="../..\documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png" class="img-fluid figure-img" width="600"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Minimal and simplified sketch of the global, cartesian, subsolar, selenocentric coordinate system. All sizes and distances are not to scale.</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="global-spherical-coordinate-systems" class="level3">
 <h3 class="anchored" data-anchor-id="global-spherical-coordinate-systems">Global Spherical Coordinate Systems</h3>
