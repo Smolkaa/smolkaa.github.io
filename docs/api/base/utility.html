@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-10">
+<meta name="dcterms.date" content="2023-09-22">
 
 <title>ExESS - Utility</title>
 <style>
@@ -356,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
+      <p class="date">September 22, 2023</p>
     </div>
   </div>
   
@@ -402,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In the following, we will go through this example step-by-step. The first line of code defines the masses of hydrogen, molecular hydrogen, hydroxyl, and water in kilograms and saves their values in a vector <code>masses</code>. It uses the <code>amu2kg</code> function to turn the <a href="../../api/base/constants.html">constants</a> <code>AMU_H</code>, <code>AMU_H2</code>, <code>AMU_OH</code>, and <code>AMU_H2O</code> from atomic mass units to kilograms (note the <code>amu2kg.(...)</code> dot-notation to broadcast the function which is only defined for scalar inputs, to work with arrays):</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>masses <span class="op">=</span> <span class="fu">amu2kg</span>.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output is a vector of four elements, each corresponding to the mass of one of the particles in kilograms:</p>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>4-element Vector{Float64}:
  1.673781838440757e-27
@@ -414,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The next line calculates the velocity that each particle would need to escape the lunar gravity field, i.e., the <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity">escape velocity</a>, for which the orbital mechanics function <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity"><code>escape_velocity_r_m</code></a> is used. Note that, as the name of the function suggests, it requires the radius and mass of the respective body for which the escape velocity shall be calculated as inputs, which are provided as the constants <code>LUNAR_RADIUS</code> and <code>LUNAR_MASS</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v_esc <span class="op">=</span> <span class="fu">escape_velocity_r_m</span>(LUNAR_RADIUS, LUNAR_MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It results in the following scalar value:</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>2359.7179236582847</code></pre>
 </div>
@@ -424,7 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, the function <code>E_kin</code> can be used to calculate the kinetic energy of particles with masses saved in <code>masses</code>, again, by broadcasting over the function with the dot notation. In order to provide the result in a more convenient unit, the function <code>J2eV</code> is applied to the result, which converts the energy from Joules to electronvolts:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fu">J2eV</span>.(<span class="fu">E_kin</span>.(masses))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which leads to the final output vector:</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>4-element Vector{Float64}:
  0.029085641336536464
@@ -447,7 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[1] amu2kg(amu::Real)</code></pre>
 <p>Converts atomic mass unit <code>amu</code> into kilo gram.</p>
@@ -465,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>[1] eV2J(eV::Real)</code></pre>
 <p>Converts energy in electron volt <code>eV</code> to joule.</p>
@@ -483,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>[1] J2eV(J::Real)</code></pre>
 <p>Converts energy in joule <code>J</code> to electron volt.</p>
@@ -501,7 +501,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>[1] limit_acos(x::Real)</code></pre>
 <p>Extends the <code>acos</code> function for input outside of <code>[-1,1]</code> through clipping.</p>
@@ -519,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[1] sgn(x::Real)</code></pre>
 <p>Returns the sign of <code>x</code> with the custom definition <code>sgn(0) = 1</code>.</p>

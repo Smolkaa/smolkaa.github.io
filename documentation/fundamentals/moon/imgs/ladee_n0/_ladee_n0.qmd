@@ -1,14 +1,13 @@
-::: {.column-page-right}
-::: {.panel-tabset}
+::: {.panel-tabset .column-page-right}
 
 # {{< bi image >}} Figure
 
 ::: {#fig-ladee-n0 layout-nrow=3}
-![Helium surface number densities.](/documentation/planetary_measurements/lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_He_proj.png){#fig-ladee-n0-he width="1200px"}
+![Helium surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_He_proj.png){#fig-ladee-n0-he width="1200px"}
 
-![Neon surface number densities.](/documentation/planetary_measurements/lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_Ne_proj.png){#fig-ladee-n0-ne width="1200px"}
+![Neon surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_Ne_proj.png){#fig-ladee-n0-ne width="1200px"}
 
-![Argon surface number densities.](/documentation/planetary_measurements/lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_Ar_proj.png){#fig-ladee-n0-ar width="1200px"}
+![Argon surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_Ar_proj.png){#fig-ladee-n0-ar width="1200px"}
 
 Helium (a), neon (b), and argon (c) surface number densities, based on derived data of the LADEE mission and projected to the surface based on @Chamberlain1963 barometric model. Maximum densities are highlighted with a red marker and the respective numeric value of the surface number density. The data was taken from the PDS [@LADEE2014]. Gray areas indicate lunar nighttime.
 :::
@@ -134,11 +133,10 @@ end
 
 # {{< bi download >}} Download
 
-* {{< downloadthis lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_He_proj.png label="LADEE_n0_Helium.png" type="light" dname="LADEE_n0_Helium" >}} 
+* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_He_proj.png label="LADEE_n0_Helium.png" type="light" dname="LADEE_n0_Helium" >}} 
 
-* {{< downloadthis lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_Ne_proj.png label="LADEE_n0_Neon.png" type="light" dname="LADEE_n0_Neon" >}} 
+* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_Ne_proj.png label="LADEE_n0_Neon.png" type="light" dname="LADEE_n0_Neon" >}} 
 
-* {{< downloadthis lunar_exosphere_densities/imgs/ladee_n0/ladee_n0_Ar_proj.png label="LADEE_n0_Argon.png" type="light" dname="LADEE_n0_Argon" >}} 
+* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_Ar_proj.png label="LADEE_n0_Argon.png" type="light" dname="LADEE_n0_Argon" >}} 
 
-:::
 :::

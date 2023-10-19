@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-10">
+<meta name="dcterms.date" content="2023-09-29">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -352,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
+      <p class="date">September 29, 2023</p>
     </div>
   </div>
   
@@ -392,24 +392,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="preparation" class="level2">
 <h2 class="anchored" data-anchor-id="preparation">Preparation</h2>
 <p>Firstly, the following examples were executed using the following Julia version:</p>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">versioninfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Julia Version 1.9.3
-Commit bed2cd540a (2023-08-24 14:43 UTC)
+Commit bed2cd540a1 (2023-08-24 14:43 UTC)
 Build Info:
   Official https://julialang.org/ release
 Platform Info:
-  OS: Windows (x86_64-w64-mingw32)
-  CPU: 16 × 13th Gen Intel(R) Core(TM) i7-1360P
+  OS: Linux (x86_64-linux-gnu)
+  CPU: 8 × Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-14.0.6 (ORCJIT, goldmont)
-  Threads: 2 on 16 virtual cores</code></pre>
+  LLVM: libLLVM-14.0.6 (ORCJIT, skylake)
+  Threads: 2 on 8 virtual cores</code></pre>
 </div>
 </div>
 <p>Next, the locally available ExESS package has to be loaded to access the <code>trajectory</code> function:</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include</span>(path_to_exess)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">.ExESS</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -425,14 +425,14 @@ Platform Info:
 </ul>
 <p>The docstring (see <code>?trajectory</code>) shows that these inputs can be of different types, either vectors (<code>AbstractVector</code>) or positions (<code>AbstractPosition</code>). The latter are custom types defined in the ExESS package to distinguish one three-dimensional in a certain coordinate space from another. The following example shows how to use the <code>GlobalCartesianPosition</code>.</p>
 <p>We create a <code>GlobalCartesianPosition</code> object with the initial position vector, located at <code>[LUNAR_RADIUS, 0, 0]</code>, in other words: on the surface of a sphere with radius <code>LUNAR_RADIUS</code>.</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fu">GlobalCartesianPosition</span>(LUNAR_RADIUS, <span class="fl">0</span>, <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>GlobalCartesianPosition{Float64}(1.7374e6, 0.0, 0.0)</code></pre>
 </div>
 </div>
 <p>Next, the initial velocity vector is defined. We use the <code>GlobalCartesianVelocity</code> type to define a velocity vector in the same coordinate system as the position vector. Here, we only use a velocity in the x-direction, with a magnitude of <code>100 m/s</code>.</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="fu">GlobalCartesianVelocity</span>(<span class="fl">100</span>, <span class="fl">0</span>, <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>GlobalCartesianVelocity{Int64}(100, 0, 0)</code></pre>
@@ -440,7 +440,7 @@ Platform Info:
 </div>
 <p>Without letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.</p>
 <p>We can test these assumptions by using the <code>ddx_lunar_gravity</code> function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon’s mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_lunar_gravity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>ddx_lunar_gravity (generic function with 2 methods)</code></pre>
@@ -450,7 +450,7 @@ Platform Info:
 <section id="solve-the-trajectory" class="level2">
 <h2 class="anchored" data-anchor-id="solve-the-trajectory">Solve the Trajectory</h2>
 <p>Finally, we have all the required inputs to calculate the trajectory. Let’s call the function and save the solution in a variable called <code>traj</code>.</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>traj <span class="op">=</span> <span class="fu">trajectory</span>(x0, v0, ddx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>retcode: Terminated
@@ -490,7 +490,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
 [2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
@@ -538,7 +538,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[1] trajectory(x0::AbstractVector, v0::AbstractVector, ddx::Function; kwargs...)
 [2] trajectory(x0::AbstractPosition, v0::AbstractVelocity, ddx::Function; kwargs...)</code></pre>
@@ -612,7 +612,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[1] ddx_lunar_gravity(x::AbstractVector, [args...])</code></pre>
 <p>Acceleration function for the lunar gravity.</p>
