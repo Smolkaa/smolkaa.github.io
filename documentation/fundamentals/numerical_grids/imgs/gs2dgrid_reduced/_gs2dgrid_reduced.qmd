@@ -4,7 +4,7 @@
 # {{< bi image >}} Figure
 
 ::: {#fig-gs2dgrid_reduced}
-![](/documentation/fundamentals/numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.svg){width="1200px"}
+![](/documentation/fundamentals/numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.png){width="1200px"}
 
 Global, structured, reduced, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e., radius $\sphericalCoordinateRadius$.
 :::
@@ -153,43 +153,18 @@ end
 
 # {{< bi code >}} LaTeX
 
-For standalone figures to produce `.svg` files, use the following code:
-
-```latex
-\begin{tikzpicture}
-
-	\pgfdeclarelayer{background layer}
-	\pgfdeclarelayer{foreground layer}
-	\pgfsetlayers{background layer,main,foreground layer}
-
-	\node (2d) at (0,0) {\includegraphics[natwidth=600px, natheight=300px]{./gs2dgrid_reduced_2d.pdf}};
-	\node[below right = -2 and -14 of 2d] (proj) {\includegraphics[natwidth=600px, natheight=300px]{./gs2dgrid_reduced_proj.pdf}};
-	
-	\begin{pgfonlayer}{background layer}
-		\node[below right = -5.5 and -10 of proj] (3d) {\includegraphics[natwidth=400px, natheight=400px, trim={0 30pt 0 0}, clip]{./gs2dgrid_reduced_3d.pdf}};
-	\end{pgfonlayer}
-
-	\draw[-latex, very thick] ($(3d.90)+(0,-3)$) to [in=0, out=90] node[near end, above, yshift=40px]{\LARGE{spherical projection}} ($(2d.0)+(-4,0)$);
-	
-	\draw[-latex, very thick] (2d.220) to [in=180, out=270] node[near end, below, yshift=-30px]{\LARGE{cartesian projection}} (3d.190);
-
-\end{tikzpicture}
-```
-
-For the use in a document, use the following code:
-
 ```latex
 \begin{tikzpicture}
 
     \pgfdeclarelayer{background layer}
     \pgfdeclarelayer{foreground layer}
-    \pgfsetlayers{background layer,main,foreground layer}
+    \pgfsetlayers{background layer, main, foreground layer}
 
-    \node (2d) at (0pt,0pt) {\includegraphics[width=0.5\textwidth]{imgs/gs2dgrid_reduced_2d.pdf}};
-    \node[below right = 0 and -5 of 2d] (proj) {\includegraphics[width=0.5\textwidth]{imgs/gs2dgrid_reduced_proj.pdf}};
+    \node (2d) at (0pt,0pt) {\includegraphics[width=0.5\textwidth]{./gs2dgrid_reduced_2d.pdf}};
+    \node[below right = 0 and -3.7 of 2d] (proj) {\includegraphics[width=0.5\textwidth]{./gs2dgrid_reduced_proj.pdf}};
     
     \begin{pgfonlayer}{background layer}
-        \node[below right = -1.4 and -3 of proj] (3d) {\includegraphics[width=0.4\textwidth, trim={0 30pt 0 0}, clip]{imgs/gs2dgrid_reduced_3d.pdf}};
+        \node[below right = -1.4 and -1.5 of proj] (3d) {\includegraphics[width=0.4\textwidth, trim={0 30pt 0 0}, clip]{./gs2dgrid_reduced_3d.pdf}};
     \end{pgfonlayer}
 
     \draw[-latex, very thick] (3d.70) to [in=0, out=90] node[near end, xshift=-20, yshift=25]{\footnotesize{spherical projection}} (2d.15);
@@ -199,13 +174,13 @@ For the use in a document, use the following code:
 \end{tikzpicture}
 ```
 
-For both versions, please ensure that the used `.pdf` files are at the correct location.
+Please ensure that the used `.pdf` files are at the correct location.
 
 
 
 # {{< bi download >}} Downloads
 
-* {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.svg label="figure.svg" type="light" dname="figure" >}} 
+* {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.pdf label="figure.pdf" type="light" dname="figure" >}} {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced.png label="figure.png" type="light" dname="figure" >}} 
 
 * {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced_2d.svg label="2d.svg" type="light" dname="2d" >}} {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced_2d.pdf label="2d.pdf" type="light" dname="2d" >}} {{< downloadthis numerical_grids/imgs/gs2dgrid_reduced/gs2dgrid_reduced_2d.png label="2d.png" type="light" dname="2d" >}} 
 

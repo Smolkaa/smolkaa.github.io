@@ -32,6 +32,16 @@ default = Theme(
 		yticklabelfont  = JM_REG,
 	),
 
+	Axis3 = (
+		backgroundcolor = :white,
+	    titlefont       = JM_BOLD, 
+		titlesize       = FONTSIZE_BIG,
+		xlabelfont      = JM_REG,
+		xticklabelfont  = JM_REG,
+		ylabelfont      = JM_REG,
+		yticklabelfont  = JM_REG,
+	),
+
 	Colorbar = (
 		labelfont       = JM_REG,
 		labelsize       = FONTSIZE_MAIN,

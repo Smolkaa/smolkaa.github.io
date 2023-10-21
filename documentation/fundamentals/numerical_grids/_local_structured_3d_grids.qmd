@@ -4,8 +4,13 @@ The horizontal discretization of the local structured grid is simply dividing th
     \cartesianCoordinateY_j &= \cartesianCoordinateY_{min} + \frac{\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min}}{N_\cartesianCoordinateY} \cdot \left(j - \frac{1}{2}\right) & \quad\text{for } j \in \{1, \dots, N_\cartesianCoordinateY\}. \label{eq:local_structure_3d_grid_y}
 \end{alignat}
 
+The heights of the local structured grid can either be regularly distributed like the horizontal discretization shown in Eqs. \eqref{eq:local_structure_3d_grid_x} and \eqref{eq:local_structure_3d_grid_y} or be distributed exponentially. The former results in the definition of the $N_\cartesianCoordinateZ$ vertical grid elements as
+\begin{equation}
+    \cartesianCoordinateZ_k = \cartesianCoordinateZ_{min} + \frac{\cartesianCoordinateZ_{max} - \cartesianCoordinateZ_{min}}{N_\cartesianCoordinateZ} \cdot k \quad\text{for } k \in \{1, \dots, N_\cartesianCoordinateZ\}. \label{eq:local_structure_3d_grid_z_regular}
+\end{equation}
+Note that the $\cartesianCoordinateZ_k$ grid points are not vertically centered in their respective grid element but placed at their upper border. Nonetheless, Eq. \eqref{eq:local_structure_3d_grid_z_regular} creates an equal spacing between the grid elements.
 
-The heights of the local structured grid are increasing exponentially. To derivate the height of the $k$-th vertical grid element $\cartesianCoordinateZ_k$, start at the basic 3-free-parameter exponential function:
+The second option distributes the heights of the local structured grid exponentially. To derivate the height of the $k$-th vertical grid element $\cartesianCoordinateZ_k$, we start at the basic 3-free-parameter exponential function:
 \begin{equation}
     \cartesianCoordinateZ_k = a + b \exp\left(c\right)^k.
 \end{equation}
@@ -15,8 +20,12 @@ We can now add two constraints to this function: first, the bottom of the local 
 \end{equation}
 The local structured grids in this work add another condition to the function to further simplify it and to ensure similar spacings for varying grid sizes, which is $c = 1/N_\cartesianCoordinateZ$, which further reduces the equation to
 \begin{equation}
-    \cartesianCoordinateZ_k = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(\frac{1}{N_\cartesianCoordinateZ}\right)^k - 1}{e - 1}  \quad\text{for } k \in \{1, \dots, N_\cartesianCoordinateZ\},  \label{eq:local_structure_3d_grid_z}
+    \cartesianCoordinateZ_k = \cartesianCoordinateZ_{max} \cdot \frac{\exp\left(\frac{1}{N_\cartesianCoordinateZ}\right)^k - 1}{e - 1}  \quad\text{for } k \in \{1, \dots, N_\cartesianCoordinateZ\},  \label{eq:local_structure_3d_grid_z_exp}
 \end{equation}
-with Euler's constant $e$. This addition leads to an equal ratio between the maximum grid height and the first element, invariant of the number of vertical grid elements. If more control over the slope of the exponential function is necessary, other simplifications for the parameter $c$ can also be chosen like $c=\frac{2}{N_\cartesianCoordinateZ}$. Note that for increasing values of $c$, the "curviness" of the distribution of $\cartesianCoordinateZ_k$ increases, which leads to smaller elements close to the bottom and bigger elements close to the top of the grid. The total of Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z} define the local structured grid in three dimensions.
+with Euler's constant $e$. This addition leads to an equal ratio between the maximum grid height and the first element, invariant of the number of vertical grid elements. If more control over the slope of the exponential function is necessary, other simplifications for the parameter $c$ can also be chosen like $c=2/N_\cartesianCoordinateZ$. Note that for increasing values of $c$, the "curviness" of the distribution of $\cartesianCoordinateZ_k$ increases, which leads to smaller elements close to the bottom and bigger elements close to the top of the grid. @fig-exponential_heights shows the exponential distribution of heigh elements using the approach described above. @fig-exponential_heights_N displays the influence of varying numbers of vertical grid elements from the bottom to the top, while @fig-exponential_heights_c presents its dependence on the shape factor $c$.
 
 {{< include numerical_grids/imgs/exponential_heights/_exponential_heights.qmd >}}
+
+The total of Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp} define the local structured grid in three dimensions. @fig-ls3dgrid shows two examples of these discretization schemes, @fig-ls3dgrid_regular with a regular distribution of the vertical grid elements and @fig-ls3dgrid_exponential with an exponential distribution of the vertical grid elements. 
+
+{{< include numerical_grids/imgs/ls3dgrid/_ls3dgrid.qmd >}}

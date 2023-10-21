@@ -56,7 +56,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 <div class="card">
   <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
   <div class="card-body">
-    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
+    <a href="/guide/essentials/package_installation/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
   </div>
 </div> 
 ```
@@ -82,7 +82,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 <div class="card">
   <img src="/guide/essentials/git_essentials/Git-Icon-Black.png" alt="a" style="width:50%; margin-left:auto; margin-right:auto; margin-top:1rem">
   <div class="card-body">
-    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Git Essentials</a> lists some external links to resources for learning the Git version control system
+    <a href="/guide/essentials/git_essentials/index.qmd" class="stretched-link">Git Essentials</a> lists some external links to resources for learning the Git version control system
   </div>
 </div> 
 ```

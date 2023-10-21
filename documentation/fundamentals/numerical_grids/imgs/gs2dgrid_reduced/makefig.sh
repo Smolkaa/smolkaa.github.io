@@ -1,5 +1,6 @@
-latex gs2dgrid_reduced.tex
-dvisvgm gs2dgrid_reduced.dvi
+pdflatex gs2dgrid_reduced.tex
+pdftocairo -png -r 600 gs2dgrid_reduced.pdf
+mv gs2dgrid_reduced-1.png gs2dgrid_reduced.png
 
 rm *.aux
 rm *.dvi

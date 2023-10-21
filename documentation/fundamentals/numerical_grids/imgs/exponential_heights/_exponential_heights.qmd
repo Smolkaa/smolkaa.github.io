@@ -2,7 +2,7 @@
 
 # {{< bi image >}} Figure
 
-::: {#fig-local_3d_grid_exponential_heights layout-ncol=2}
+::: {#fig-exponential_heights layout-ncol=2}
 ![Exponential distribution of grid elements for varying number of grid points $N_\cartesianCoordinateZ$.](/documentation/fundamentals/numerical_grids/imgs/exponential_heights/exponential_heights.svg){#fig-exponential_heights_N width="600px"}
 
 ![Exponential distribution of grid elements for varying shape factors $c$.](/documentation/fundamentals/numerical_grids/imgs/exponential_heights/slope_factor.svg){#fig-exponential_heights_c width="600px"}
