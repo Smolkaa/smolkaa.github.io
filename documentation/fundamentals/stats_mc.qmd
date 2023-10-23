@@ -29,17 +29,12 @@ In the context of this work, examples of probabilistic subsystems can be found i
 
 # Statistics
 
-## The Central Limit Theorem {#sec-central_limit_theorem}
-
-The expected value of the entire system can be calculated as the empirical average of all [independent and identically distributed (IID)](/documentation/acronyms.qmd) samples $\{\sample_1, \sample_2, \dots, \sample_N\}$:
-\begin{equation}
-    \overline{\sample_N} = \frac{\sum_{i=1}^N \sample_i}{N}.
-\end{equation}
+{{< include stats_mc/_statistics.qmd >}}
 
 ## Ensemble Averages
 {{< include stats_mc/_ensemble_averages.qmd >}}
 
 
-## Randomness
+# Randomness
 
 The randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method `xoshiro256++` implemented in the Julia Programming Language has been used [@Blackman2021].

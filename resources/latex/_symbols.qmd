@@ -41,6 +41,10 @@
 \newcommand{\preExpFactor}{\nu}
 \newcommand{\pressure}{p}
 \newcommand{\radius}{r}
+\newcommand{\randomVariable}{X}
+    \newcommand{\randomValue}{x}
+    \newcommand{\randomVariableY}{Y}
+    \newcommand{\randomValueY}{y}
 \newcommand{\rate}{k}
 \newcommand{\residenceTime}{\tau}
 \newcommand{\sample}{X}
@@ -65,6 +69,7 @@
     \newcommand{\flightTime}{\Time_{flight}}
 \newcommand{\trueAnomaly}{\theta}
 \newcommand{\variance}{\standardDeviation^2}
+    \newcommand{\Variance}[1]{\text{Var}\left( #1 \right)}
 \newcommand{\velocity}{v}
     \newcommand{\Velocity}{V}
 \newcommand{\volume}{V}

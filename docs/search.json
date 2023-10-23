@@ -606,7 +606,7 @@
     "href": "documentation/fundamentals/stats_mc.html#sec-central_limit_theorem",
     "title": "2.4 Statistics and the Monte Carlo Method",
     "section": "The Central Limit Theorem",
-    "text": "The Central Limit Theorem\nThe expected value of the entire system can be calculated as the empirical average of all independent and identically distributed (IID) samples \\(\\{X_1, X_2, \\dots, X_N\\}\\): \\[\\begin{equation}\n    \\overline{X_N} = \\frac{\\sum_{i=1}^N X_i}{N}.\n\\end{equation}\\]"
+    "text": "The Central Limit Theorem\nLet \\(X_1, X_2, \\dots, X_N\\) be independent random variables which are independent and identically distributed (IID), i.e., identical PDFs \\(w\\left(X_1\\right) = w\\left(X_2\\right) = \\dots = w\\left(X_N\\right)\\). The central limit theorem describes the behavior of the sum of these random variables \\[\\begin{equation}\n    Y= X_1 + X_2 + \\dots + X_N\n\\end{equation}\\] for a large number \\(N\\). An example close to this work is the system of independent particles flying through the lunar exosphere, where the random variable \\(X\\) describes the trajectories of each individual particle and its influence on the exospheric number densities, while the sum \\(Y\\) describes the global exospheric densities of the entire system. While it is by no means a prerequisite that each individual PDF is a Gaussian distribution, the central limit theorem shows that the resulting PDF \\(w\\left(Y\\right)\\) approaches a Gaussian distribution for large \\(N\\), with the means \\(\\langle Y \\rangle = N \\langle X \\rangle\\), and the standard deviations \\(\\sigma_Y= \\sqrt{N} \\sigma_X\\), leading to relative deviations of \\[\\begin{equation}\n    \\frac{\\sigma_Y}{\\langle Y \\rangle} = \\frac{\\sigma_X}{\\sqrt{N}\\langle X \\rangle},\n\\end{equation}\\] which approaches zero for the big \\(N\\). Thus, \\(Y\\) becomes “sharper” with increasing \\(N\\), while being Gaussian distributed: \\[\\begin{equation}\n    w\\left(y\\right) = \\frac{1}{\\sqrt{2 \\pi N \\sigma^2_X}} \\cdot \\exp\\left( -\\frac{\\left( y- \\langle X \\rangle N\\right)^2}{2 \\sigma^2_XN} \\right).\n\\end{equation}\\]"
   },
   {
     "objectID": "documentation/fundamentals/stats_mc.html#ensemble-averages",
@@ -614,13 +614,6 @@
     "title": "2.4 Statistics and the Monte Carlo Method",
     "section": "Ensemble Averages",
     "text": "Ensemble Averages\nThe analyses of this work will regularly include statements about a statistical ensemble of samples, i.e. of thermodynamic particles in equilibrium. Following Schörghofer (2022) derivation and notation, given any , \\(f(x)\\), the ensemble average of a quantity \\(Y\\) is \\[\\begin{equation}\n    \\langle Y \\rangle = \\int Yf(x)dx. \\label{eq:ensemble_average}\n\\end{equation}\\]"
-  },
-  {
-    "objectID": "documentation/fundamentals/stats_mc.html#randomness",
-    "href": "documentation/fundamentals/stats_mc.html#randomness",
-    "title": "2.4 Statistics and the Monte Carlo Method",
-    "section": "Randomness",
-    "text": "Randomness\nThe randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method xoshiro256++ implemented in the Julia Programming Language has been used (Blackman & Vigna, 2021)."
   },
   {
     "objectID": "documentation/fundamentals/numerical_grids.html",

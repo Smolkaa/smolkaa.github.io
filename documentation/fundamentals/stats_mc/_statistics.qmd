@@ -1,0 +1,39 @@
+Let $\randomVariable$ be a random variable that can assume values $\randomValue$ based on the probability density function ([PDF](/documentation/acronyms.qmd)) $\weight\left(\randomValue\right)$ (assuming continuous values of $\randomValue$ and $\weight\left(\randomValue\right) \geq 0$ is real ). This definition implies that $\weight\left(\randomValue\right)d\randomValue$ describes the probability that $\randomVariable$ will realize a value in the intervall $\left[\randomValue, \randomValue+d\randomValue\right]$. For normed PDFs, the total probability is one:
+\begin{equation}
+    \int_{-\infty}^{\infty}\weight\left(\randomValue\right)d\randomValue = 1.
+\end{equation}
+
+The mean of a random variable $\randomVariable$ is given through its PDF. For continuously distributed values it can be calculated 
+\begin{equation}
+    \meanof{\randomVariable} = \int_{-\infty}^{\infty}\randomValue\weight\left(\randomValue\right)d\randomValue,
+\end{equation}
+while for discrete samples it is
+\begin{equation}
+    \meanof{\randomVariable} = \sum_{i=1}^{N}\randomValue_i\weight\left(\randomValue_i\right).
+\end{equation}
+The same can be done for any random function $F\left(\randomVariable\right)$ to evaluate its mean value
+\begin{equation}
+    \meanof{F\left(\randomVariable\right)} = \int_{-\infty}^{\infty}F\left(\randomValue\right)\weight\left(\randomValue\right)d\randomValue,
+\end{equation}
+which is also called the first moment of $\weight\left(\randomValue\right)$. Higher moments, like the $n$-th moment, are described through higher exponents, like $\randomVariable^n$. The second moment can for example be used to calculate the variance of $\randomVariable$
+\begin{equation}
+    \Variance{\randomVariable} = \meanof{\randomVariable^2} - \meanof{\randomVariable}^2 = \meanof{\left(\randomVariable - \meanof{\randomVariable}\right)^2}.
+\end{equation}
+
+
+
+
+## The Central Limit Theorem {#sec-central_limit_theorem}
+
+Let $\randomVariable_1, \randomVariable_2, \dots, \randomVariable_N$ be independent random variables which are [independent and identically distributed (IID)](/documentation/acronyms.qmd), i.e., identical [PDFs](/documentation/acronyms.qmd) $\weight\left(\randomVariable_1\right) = \weight\left(\randomVariable_2\right) = \dots = \weight\left(\randomVariable_N\right)$. The central limit theorem describes the behavior of the sum of these random variables
+\begin{equation}
+    \randomVariableY = \randomVariable_1 + \randomVariable_2 + \dots + \randomVariable_N
+\end{equation}
+for a large number $N$. An example close to this work is the system of independent particles flying through the lunar exosphere, where the random variable $\randomVariable$ describes the trajectories of each individual particle and its influence on the exospheric number densities, while the sum $\randomVariableY$ describes the global exospheric densities of the entire system. While it is by no means a prerequisite that each individual [PDF](/documentation/acronyms.qmd) is a Gaussian distribution, the central limit theorem shows that the resulting [PDF](/documentation/acronyms.qmd) $\weight\left(\randomVariableY\right)$ approaches a Gaussian distribution for large $N$, with the means $\meanof{\randomVariableY} = N \meanof{\randomVariable}$, and the standard deviations $\standardDeviation_\randomVariableY = \sqrt{N} \standardDeviation_\randomVariable$, leading to relative deviations of
+\begin{equation}
+    \frac{\standardDeviation_\randomVariableY}{\meanof{\randomVariableY}} = \frac{\standardDeviation_\randomVariable}{\sqrt{N}\meanof{\randomVariable}},
+\end{equation}
+which approaches zero for the big $N$. Thus, $\randomVariableY$ becomes "sharper" with increasing $N$, while being Gaussian distributed:
+\begin{equation}
+    \weight\left(\randomValueY\right) = \frac{1}{\sqrt{2 \pi N \variance_\randomVariable}} \cdot \exp\left( -\frac{\left( \randomValueY - \meanof{\randomVariable}N\right)^2}{2 \variance_\randomVariable N} \right).
+\end{equation}
