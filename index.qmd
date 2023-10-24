@@ -40,8 +40,8 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 ## Guides
 
-::: {.grid}
-::: {.g-col-4}
+::: {.grid style="font-size:0.85rem;"}
+::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
 
 ```{=html}
 <div class="card">
@@ -50,11 +50,28 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
     <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <b>ExESS</b> package
   </div>
 </div> 
+```
 
-</br>
+:::
 
+::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
+
+```{=html}
 <div class="card">
-  <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
+  <div class="card-body">
+    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Julia Programming Language: Links & Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
+
+```{=html}
+<div class="card">
+  <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:65%; margin-left:auto; margin-right:auto; margin-top:1rem">
   <div class="card-body">
     <a href="/guide/essentials/package_installation/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
   </div>
@@ -63,20 +80,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 :::
 
-::: {.g-col-4}
-
-```{=html}
-<div class="card">
-  <img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
-  <div class="card-body">
-    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Julia Programming Language: Links & Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing, used in and together with the <b>ExESS</b> package
-  </div>
-</div> 
-```
-
-:::
-
-::: {.g-col-4}
+::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
 
 ```{=html}
 <div class="card">
