@@ -66,6 +66,7 @@ ExESS/
 * [`global_spiral_2d_grids.jl`]()  
 * [`global_structured_2d_grids.jl`](/api/grids/global_structured_2d_grids.qmd)  
 * [`global_structured_3d_grids.jl`](/api/grids/global_structured_3d_grids.qmd)  
+* [`local_structured_3d_grids.jl`](/api/grids/local_structured_3d_grids.qmd)  
 * [`types.jl`]()  
 * [`utils.jl`]()  
 

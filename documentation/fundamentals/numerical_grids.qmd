@@ -40,3 +40,7 @@ $\mathbb{S}^2$
 ## Structured
 {{< include numerical_grids/_local_structured_3d_grids.qmd >}}
 
+## Structured, Topography
+
+_placeholder_
+

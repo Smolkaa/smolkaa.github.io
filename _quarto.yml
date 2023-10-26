@@ -132,6 +132,7 @@ website:
           contents:
             - api/grids/global_structured_2d_grids.qmd
             - api/grids/global_structured_3d_grids.qmd
+            - api/grids/local_structured_3d_grids.qmd
             - api/grids/utility.qmd
         - section: "Surfaces"
           contents:

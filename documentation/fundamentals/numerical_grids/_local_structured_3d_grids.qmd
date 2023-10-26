@@ -1,3 +1,16 @@
+The local, structured, three-dimensional grid is discretizing the volume of a rectangular domain into $N_\cartesianCoordinateX \times N_\cartesianCoordinateY \times N_\cartesianCoordinateZ$ grid elements. If not otherwise specified, the horizontal resolution is constant over the entire domain, being
+\begin{equation}
+    \frac{\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min}}{N_\cartesianCoordinateX} \times \frac{\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min}}{N_\cartesianCoordinateY}.
+\end{equation}
+The vertical resolution can either be constant over the entire domain or be distributed exponentially. Due to its structured, rectangular nature, the local structured grid is defined in [cartesian coordinates](/documentation/fundamentals/coordinate_systems.qmd) in cartesian elements: $\cartesianCoordinate = \cartesianCoordinateDef$.
+
+::: {.column-margin}
+{{< bi code >}} [`LocalStructured3DGrid`](/api/grids/local_structured_3d_grids.qmd): Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp}
+:::
+
+
+### Coordinate Calculation
+
 The horizontal discretization of the local structured grid is simply dividing the surface into $N_\cartesianCoordinateX$ and $N_\cartesianCoordinateY$ equal, rectangular elements. With the grid points of each element being centered in the horizontal plane, the individual coordinates can be calculated as
 \begin{alignat}{3}
     \cartesianCoordinateX_i &= \cartesianCoordinateX_{min} + \frac{\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min}}{N_\cartesianCoordinateX} \cdot \left(i - \frac{1}{2}\right) & \quad\text{for } i \in \{1, \dots, N_\cartesianCoordinateX\} \label{eq:local_structure_3d_grid_x}\\
@@ -28,8 +41,45 @@ with Euler's constant $e$. This addition leads to an equal ratio between the max
 \end{equation}
 @fig-exponential_heights shows the exponential distribution of heigh elements using the approach described above. @fig-exponential_heights_N displays the influence of varying numbers of vertical grid elements from the bottom to the top, while @fig-exponential_heights_c presents its dependence on the shape factor $c$.
 
+::: {.column-margin}
+{{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp} </br> {{< bi code >}} [`surfacecoords`](/api/grids/utility.qmd): identical to the first two Eqs. used in `coords`, at $\cartesianCoordinateZ = \cartesianCoordinateZ_{min}$
+:::
+
 {{< include numerical_grids/imgs/exponential_heights/_exponential_heights.qmd >}}
 
 The total of Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp} define the local structured grid in three dimensions. @fig-ls3dgrid shows two examples of these discretization schemes, @fig-ls3dgrid_regular with a regular distribution of the vertical grid elements and @fig-ls3dgrid_exponential with an exponential distribution of the vertical grid elements. 
 
 {{< include numerical_grids/imgs/ls3dgrid/_ls3dgrid.qmd >}}
+
+As with the grids introduced before, it is helpful to introduce another index, which combines the three indices $i$, $j$, and $k$ into a single index $l \in \left\{ 1, \dots, N_\cartesianCoordinateX \cdot N_\cartesianCoordinateY \cdot N_\cartesianCoordinateZ \right\}$, since it closer represents the way the grid is stored and used numerically. The mapping from the three-dimensional index $l$ to the three-dimensional indices $i$, $j$, and $k$ is:
+\begin{equation}
+    l = (k - 1) \cdot N_\cartesianCoordinateX \cdot N_\cartesianCoordinateY + (j - 1) \cdot N_\cartesianCoordinateX + i.
+\end{equation}
+In the example above in @fig-ls3dgrid, a total number of $\num{70}$ grid points are created in the local, structured, three-dimensional grid as $\cartesianCoordinate_l$ for $l \in \in \left\{ 1, \dots, \num{70} \right\}$.
+
+
+### Area and Volume Calculation
+
+The area and volume calculations are making use of the above introduced common index, $l$:
+\begin{align}
+    \Delta\cartesianCoordinateX_i &= \begin{cases}
+        \cartesianCoordinateX_2 - \cartesianCoordinateX_1 & \text{for } i = 1 \\
+        \frac{\cartesianCoordinateX_{i + 1} - \cartesianCoordinateX_{i - 1}}{2} & \text{for } i \in \{2, \dots, N_\cartesianCoordinateX - 1\} \\
+        \cartesianCoordinateX_{N_\cartesianCoordinateX} - \cartesianCoordinateX_{N_\cartesianCoordinateX - 1} & \text{for } i = N_\cartesianCoordinateX
+    \end{cases} \\[2mm]
+    \Delta\cartesianCoordinateY_j &= \begin{cases}
+        \cartesianCoordinateY_2 - \cartesianCoordinateY_1 & \text{for } j = 1 \\
+        \frac{\cartesianCoordinateY_{j + 1} - \cartesianCoordinateY_{j - 1}}{2} & \text{for } j \in \{2, \dots, N_\cartesianCoordinateY - 1\} \\
+        \cartesianCoordinateY_{N_\cartesianCoordinateY} - \cartesianCoordinateY_{N_\cartesianCoordinateY - 1} & \text{for } j = N_\cartesianCoordinateY
+    \end{cases} \\[2mm]
+    \Delta\cartesianCoordinateZ_k &= \begin{cases}
+        \cartesianCoordinateZ_2 - \cartesianCoordinateZ_1 & \text{for } k = 1 \\
+        \frac{\cartesianCoordinateZ_{k + 1} - \cartesianCoordinateZ_{k - 1}}{2} & \text{for } k \in \{2, \dots, N_\cartesianCoordinateZ - 1\} \\
+        \cartesianCoordinateZ_{N_\cartesianCoordinateZ} - \cartesianCoordinateZ_{N_\cartesianCoordinateZ - 1} & \text{for } k = N_\cartesianCoordinateZ
+    \end{cases} \\[2mm]
+    \Rightarrow\quad \area_l &= \Delta\cartesianCoordinateX_i \cdot \Delta\cartesianCoordinateY_j \\
+    \Rightarrow\quad \volume_l &= \area_l \cdot \Delta\cartesianCoordinateZ_k
+\end{align}
+
+### Continuous to Discrete Mapping
+

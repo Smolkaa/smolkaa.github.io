@@ -1,7 +1,7 @@
 The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$; see the section [Cartesian and Spherical Coordinates](/documentation/fundamentals/coordinate_systems.qmd).
 
 ::: {.column-margin}
-{{< bi code >}} [`GlobalStructuredGrid`](/api/grids/global_structured_2d_grids.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth} - \eqref{eq:gs2dgrid_coord2idx_elevation}
+{{< bi code >}} [`GlobalStructured2DGrid`](/api/grids/global_structured_2d_grids.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth} - \eqref{eq:gs2dgrid_coord2idx_elevation}
 :::
 
 

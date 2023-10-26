@@ -1,0 +1,22 @@
+---
+title: "Local, Structured, 3D Grids"
+---
+---
+
+## Type Structure
+
+## Usage
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``LocalStructured3DGrid`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.LocalStructured3DGrid
+```
+:::
