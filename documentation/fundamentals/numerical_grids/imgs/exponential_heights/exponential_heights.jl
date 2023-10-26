@@ -7,7 +7,7 @@ if !isdefined(Main, :ExESS)
 end
 
 #::. define relevant exponential function
-z_by_zmax(k; c=1, N=10) = (exp(c/N)^k - 1) / (exp(c)-1)
+z_by_zmax(k; c=1, N=10) = (exp(c/N)^(k-0.5) - 1) / (exp(c)-1)
 
 
 #::. plotting function
@@ -27,14 +27,16 @@ function plot_exponential_heights(N::Vector{<:Real})
     #::. plot exponential heights
     for i in eachindex(N)
         n = N[i]
-        z = z_by_zmax.(1:n; c=2, N=n)
-        lines!(ax, repeat([i], n+1), vcat(0, z); color=:black)
-        scatter!(ax, repeat([i], n), z; color=:black, markersize=12)
+        z_lines = z_by_zmax.(1+0.5:n+0.5; c=2, N=n)
+        lines!(ax, repeat([i], n+1), vcat(0, z_lines); color=:black)
+
+        z_scatter = z_by_zmax.(1:n; c=2, N=n)
+        scatter!(ax, repeat([i], n), z_scatter; color=:black, markersize=12)
 
         # add horizontal lines
         lines!(ax, [i-0.2, i+0.2], [0,0]; color=:black)
         for j in 1:n
-            lines!(ax, [i-0.2, i+0.2], [z[j], z[j]]; color=:black)
+            lines!(ax, [i-0.2, i+0.2], [z_lines[j], z_lines[j]]; color=:black)
         end
     end
 
@@ -60,10 +62,10 @@ function plot_slope_factor()
 
     #::. plot slope factor
     N = 10
-    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1:N; c=1, N=N)); color=:black, label="c =  1/N", marker=:circle)
-    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1:N; c=2, N=N)); color=:black, label="c =  2/N", marker=:rect)
-    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1:N; c=5, N=N)); color=:black, label="c =  5/N", marker=:diamond)
-    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1:N; c=10, N=N)); color=:black, label="c = 10/N", marker=:xcross)
+    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1.5:N+0.5; c=1, N=N)); color=:black, label="c =  1/N", marker=:circle)
+    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1.5:N+0.5; c=2, N=N)); color=:black, label="c =  2/N", marker=:rect)
+    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1.5:N+0.5; c=5, N=N)); color=:black, label="c =  5/N", marker=:diamond)
+    scatterlines!(ax, collect(0:N)/N, vcat(0,z_by_zmax.(1.5:N+0.5; c=10, N=N)); color=:black, label="c = 10/N", marker=:xcross)
 
     #::. add legend
     axislegend(ax; position=:lt)
@@ -73,3 +75,6 @@ function plot_slope_factor()
     save(joinpath(@__DIR__, "slope_factor.pdf"), fig)
     save(joinpath(@__DIR__, "slope_factor.png"), fig, px_per_unit=4)
 end
+
+plot_exponential_heights([2,5,10,20,50])
+plot_slope_factor()
