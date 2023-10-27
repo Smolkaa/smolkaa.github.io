@@ -59,7 +59,7 @@ function ls3dgrid_exp(;xrange=(0,10), yrange=(0,10), zrange=(0,10), N_x=5, N_y=5
     ylims!(ax, -2, 10)
 
     # create grid and get grid points
-    grid = LocalStructured3DGrid_exp(xrange, yrange, zrange, N_x, N_y, N_z; c=c)
+    grid = LocalStructured3DGrid_Exponential(xrange, yrange, zrange, N_x, N_y, N_z; c=c)
     X = hcat(vec.(grid.coords)...)'
 
     # grid points
