@@ -1,0 +1,92 @@
+::: {.panel-tabset}
+
+# {{< bi image >}} Figure
+
+::: {#fig-mbd}
+![](/documentation/drivers/thermal_sorption/imgs/mbd_elevation/mbd_elevation.svg){width="600px"}
+
+Density plot of $\num{10^{6}}$ normalized samples of a one-directional [MBD](/documentation/acronyms.qmd) distributed velocities, shown in 2D without the uniform azimuth component. The line shows the mean elevation angle $\meanof{\sphericalCoordinateElevation}$.
+:::
+
+# {{< bi code >}} Julia
+
+```julia
+using .ExESS
+
+using CairoMakie, ColorSchemes
+using LinearAlgebra
+using Makie.StructArrays
+
+
+function get_data(N=100)
+    # get velocity distribution
+    mb = MaxwellBoltzmannVelocityDistribution()
+
+    # create and norm samples 
+    samples = [sample(mb, 1, amu2kg(1)) for _ in 1:N]
+    samples_normed = samples ./ max(norm.(samples)...)
+
+    # 3D -> 2D
+    S = [[sqrt(s[1]^2 + s[2]^2), abs.(s[3])] for s in samples_normed]
+
+    # filter outliers
+    S_filtered = []
+    for i in eachindex(S)
+        if norm(S[i]) < 0.8
+            push!(S_filtered, S[i])
+        end
+    end
+
+    return S_filtered
+end
+
+
+function plot_data(s)
+    # figure & axis setup
+    fig = Figure(; resolution=(600,500), figure_padding=(-25,10,10,-10))
+    ax = Axis(fig[1,1]; aspect=DataAspect())
+    hidedecorations!(ax)
+    hidespines!(ax)
+
+    # turn data to points for plotting recipe
+    points = hcat(s...)'
+    P = [Point2f(points[i,1], points[i,2]) for i in 1:size(points)[1]]
+
+    # create colormap (white background)
+    cmap = to_colormap(ColorSchemes.dense)
+    cmap[1] = RGBAf(1, 1, 1, 1)
+
+    # plot data
+    ds = datashader!(ax, P; async=false, colormap=cmap)
+
+    lines!(ax, 0.8.*[0,0.84147], 0.8.*[0,0.540302]; color=:black) # MB
+    lines!(ax, 0.4*cos.(0:0.01:(pi-2)/2), 0.4*sin.(0:0.01:(pi-2)/2); color=:black)
+
+    save(joinpath(@__DIR__, "mbd_elevation.png"), fig, px_per_unit=8)
+end
+
+plot_data(get_data(1_000_000))
+```
+
+# {{< bi code >}} LaTeX
+
+```latex
+\begin{tikzpicture}[]
+
+    \node[anchor=south west] at (0,0) {\includegraphics[width=300px]{mbd_elevation.png}};
+
+    \node[anchor=west] at (5.25, 2) {$\meanof{\sphericalCoordinateElevation} = \frac{\pi - 2}{2} \approx 0.5708$};
+
+    \draw[thick, -latex] (0.9,0.55) -- +(8,0) node[midway, below] {Horizontal Velocity};
+    \draw[thick, -latex] (0.9,0.55) -- +(0,8) node[midway, above, sloped] {Vertical Velocity};
+
+\end{tikzpicture}
+```
+
+Note that the code relies on custom-defined variables, like `\sphericalCoordinateElevation`, and commands, like `\meanof{}`, loaded into the preamble of the document.
+
+# {{< bi download >}}  Downloads
+
+* {{< downloadthis thermal_sorption/imgs/mbd_elevation/mbd_elevation.pdf label="mbd_elevation.pdf" type="light" dname="mbd_elevation" >}} {{< downloadthis thermal_sorption/imgs/mbd_elevation/mbd_elevation.svg label="mbd_elevation.svg" type="light" dname="mbd_elevation" >}} 
+
+:::

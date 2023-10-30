@@ -1,4 +1,3 @@
-::: {.column-page-right}
 ::: {.panel-tabset}
 
 # {{< bi image >}} Figure
@@ -80,5 +79,4 @@ end
 
 * {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.pdf label="mbfd.pdf" type="light" dname="mbfd" >}} {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.svg label="mbfd.svg" type="light" dname="mbfd" >}} {{< downloadthis thermal_sorption/imgs/mbfd/mbfd.png label="mbfd.png" type="light" dname="mbfd" >}}
 
-:::
 :::

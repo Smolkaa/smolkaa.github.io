@@ -53,6 +53,9 @@ Note that the scaling factor $2$ is a result from the integration over half the 
 Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following. Note that, contrary to the [MBD](/documentation/acronyms.qmd), the root mean squared speed is lower than the other two typical speeds due to its additional speed dependency, which shifts the entire distribution to higher values and, thus, to $f(\velocity \approx 0.0) \approx 0.0$.
 
 
+
+
+
 ### Typical Speeds
 
 The most probable speed occurs at the maximum likelihood of the Eq. \eqref{eq:mbfd_speed}:
@@ -119,7 +122,7 @@ While the latter two integrals are trivial, leading to a cosine-squared dependen
     r_\velocity = 1 - \exp \left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature} \right) \cdot \left( \frac{\mass\velocity^2}{2\BoltzmannConstant\temperature} + 1\right).
     \label{eq:mbfd_random_speed}
 \end{equation}
-only $\sphericalCoordinateElevation=\cos^{-1}\left(1-r_\sphericalCoordinateElevation\right)$ and $\sphericalCoordinateAzimuth = 2\pi r_\sphericalCoordinateAzimuth - \pi$ can both be directly calculated from their respective realization of the uniform unit random variable, as there is no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
+with no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
 
 ::: {.column-margin}
 {{< bi code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}
