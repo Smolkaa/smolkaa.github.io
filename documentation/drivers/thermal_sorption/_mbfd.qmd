@@ -50,10 +50,16 @@ Note that the scaling factor $2$ is a result from the integration over half the 
     f_\parallel (\velocity) d\velocity = 2\velocity \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right) \cdot \exp\left(-\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity.
     \label{eq:mbfd_1d_parallel}
 \end{equation}
-Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following. Note that, contrary to the [MBD](/documentation/acronyms.qmd), the root mean squared speed is lower than the other two typical speeds due to its additional speed dependency, which shifts the entire distribution to higher values and, thus, to $f(\velocity \approx 0.0) \approx 0.0$.
+Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following section.
 
-
-
+Note that, as with the speed, the angular components, the azimuth $\sphericalCoordinateAzimuth$ and elevation $\sphericalCoordinateElevation$, also have distinct probability distributions that can be analyzed. Similar to the Maxwell-Boltzmann velocity distribution, the azimuth angle is uniformly distributed which results in no favoured direction of the horizontal velocity components. The vertical component is governed by the elevation angle, which is distributed according to its PDF
+\begin{equation}
+    f(\sphericalCoordinateElevation)d\sphericalCoordinateElevation = 2\sin\sphericalCoordinateElevation\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation. \label{eq:mbfd_elevation}
+\end{equation}
+This leads to a mean elevation angle for the Maxwell-Boltzmann flux velocity distribution of
+\begin{equation}
+        \meanof{\sphericalCoordinateElevation} = \int_0^{\pi/2} 2\sphericalCoordinateElevation\sin\sphericalCoordinateElevation\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation = \sphericalCoordinateElevation \sin^2\sphericalCoordinateElevation \Big|_0^{\pi/2} - \int_0^{\pi/2} \sin^2\sphericalCoordinateElevation d\sphericalCoordinateElevation = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
+\end{equation}
 
 
 ### Typical Speeds
@@ -74,7 +80,7 @@ The expected value of the speed distribution, the mean speed $\meanof{\velocity}
 
 Lastly, the \gls{rms} speed is calculated as
 \begin{equation}
-    \velocity_\text{rms} = \sqrt{\meanof{\velocity^2}} = \left( \int_0^\infty \velocity^2 f(\velocity)d\velocity\right)^{1/2} = \sqrt{\frac{2\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{2}{3}}\,\cdot \velocity_p.
+    \velocity_\text{rms} = \sqrt{\meanof{\velocity^2}} = \left( \int_0^\infty \velocity^2 f(\velocity)d\velocity\right)^{1/2} = \sqrt{\frac{4\BoltzmannConstant\temperature}{\mass}} = \sqrt{\frac{4}{3}}\,\cdot \velocity_p.
     \label{eq:mbfd_rms_speed}
 \end{equation}
 

@@ -187,7 +187,7 @@ Rates by @Huebner1992
 ::: {.callout-note appearance="minimal" icon=false}
 # Photoreactions of Adsorbate Species
 The same base rates were used for the photoreactions of absorbed species, scaled with the cosine of the solar zenith angle:
-$$ \rate_{ads} = \begin{cases}\cos \zenithAngle \cdot \rate & \text{for: } \zenithAngle \leq \pi/2 \\ 0 & \text{else.}\end{cases}$$
+$$ \rate_{ads} = \begin{cases}\cos \zenith \cdot \rate & \text{for: } \zenith \leq \pi/2 \\ 0 & \text{else.}\end{cases}$$
 :::
 :::
 

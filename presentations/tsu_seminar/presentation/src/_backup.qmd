@@ -236,7 +236,7 @@ end
   - $\weight_0$: initial weight at launch
   - First iteration: solar wind as only source
     + $\weight_0 = 0$ on the lunar night-side
-    + $\weight_0 = \dot\source \cdot A \cdot \cos\zenithAngle$ on the day-side
+    + $\weight_0 = \dot\source \cdot A \cdot \cos\zenith$ on the day-side
     + $\dot\source$ source rate of the solar wind (acts as a linear scaling factor of the entire simulation, usually $\approx \SI{2 \times 10^8}{\second\tothe{-1}\centi\metre\tothe{-1}}$)
   - Second+ iteration: source rate from conversions of previous iteration
 * sum up all $\left(\surfaceNumberDensity\right)_k^{i,j}$ from all $k$ launches at all positions $\,\Rightarrow\left(\vec{\surfaceNumberDensity}\right)^{i,j}$

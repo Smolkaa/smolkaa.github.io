@@ -10,18 +10,6 @@ The mathematical definition of the implemented functions is presented in the doc
 ## API
 
 ::: {.callout-note appearance="simple" icon=false}
-# ``azimuth_angle_v`` -- Function
-```{julia}
-#| echo: false
-if !isdefined(Main, :ExESS)
-include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
-using .ExESS
-end
-@doc ExESS.azimuth_angle_v
-```
-:::
-
-::: {.callout-note appearance="simple" icon=false}
 # ``eccentric_anomaly_e_M`` -- Function
 ```{julia}
 #| echo: false
@@ -390,17 +378,5 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.true_anomaly_epskin_v
-```
-:::
-
-::: {.callout-note appearance="simple" icon=false}
-# ``zenith_angle_v`` -- Function
-```{julia}
-#| echo: false
-if !isdefined(Main, :ExESS)
-include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
-using .ExESS
-end
-@doc ExESS.zenith_angle_v
 ```
 :::

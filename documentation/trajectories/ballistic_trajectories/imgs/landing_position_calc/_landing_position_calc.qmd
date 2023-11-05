@@ -64,7 +64,7 @@ Sketch the spherical trigonometry problem of the landing position calculation. T
     %::. launch azimuth angle
     \tdplotgetpolarcoords{\psx}{\psy}{\psz}
     \tdplotsetrotatedcoords{\tdplotresphi}{\tdplotrestheta}{0}
-    \tdplotdrawarc[-latex, thin, tdplot_rotated_coords]{(0,0,3)}{0.6}{93}{135}{anchor=west}{$\azimuthAngle$}
+    \tdplotdrawarc[-latex, thin, tdplot_rotated_coords]{(0,0,3)}{0.6}{93}{135}{anchor=west}{$\azimuth$}
 \end{tikzpicture}
 ```
 

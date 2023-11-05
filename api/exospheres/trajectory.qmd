@@ -70,13 +70,12 @@ v0 = GlobalCartesianVelocity(100, 0, 0)
 Without letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.
 
 We can test these assumptions by using the `ddx_lunar_gravity` function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon's mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.
+
 ```{julia}
 ddx = ddx_lunar_gravity
 ```
 
-
 ## Solve the Trajectory
-
 
 Finally, we have all the required inputs to calculate the trajectory. Let's call the function and save the solution in a variable called `traj`.
 ```{julia}

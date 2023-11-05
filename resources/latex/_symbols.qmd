@@ -1,6 +1,6 @@
 \newcommand{\activationEnergy}{E_a}
 \newcommand{\area}{A}
-\newcommand{\azimuthAngle}{\alpha}
+\newcommand{\azimuth}{\alpha}
 \newcommand{\baseVector}{\hat{\vec{e}}}
 \newcommand{\cartesianCoordinate}{\vec{x}}
     \newcommand{\cartesianCoordinateX}{x}
@@ -15,6 +15,7 @@
 \newcommand{\distance}{d}
 \newcommand{\eccentricity}{e}
 \newcommand{\eccentricAnomaly}{E} 
+\newcommand{\elevation}{\varphi}
 \newcommand{\energy}{E}
     \newcommand{\kineticEnergy}{\energy_{kin}}
     \newcommand{\relativeEnergy}{\epsilon}
@@ -54,7 +55,7 @@
 \newcommand{\sphericalCoordinate}{\vec{r}}
     \newcommand{\sphericalCoordinateRadius}{r}
     \newcommand{\sphericalCoordinateAzimuth}{\vartheta}
-    \newcommand{\sphericalCoordinateElevation}{\varphi}
+    \newcommand{\sphericalCoordinateElevation}{\elevation}
     \newcommand{\sphericalCoordinateDef}{\left[\sphericalCoordinateRadius, \sphericalCoordinateAzimuth, \sphericalCoordinateElevation\right]^T}
     \newcommand{\sphericalBaseVectorRadius}{\baseVector_\sphericalCoordinateRadius}
     \newcommand{\sphericalBaseVectorAzimuth}{\baseVector_\sphericalCoordinateAzimuth}
@@ -75,7 +76,7 @@
 \newcommand{\volume}{V}
 \newcommand{\weight}{w}
 \newcommand{\youngsModulus}{Y}
-\newcommand{\zenithAngle}{\psi}
+\newcommand{\zenith}{\psi}
 
 
 \newcommand{\BoltzmannConstant}{k_B}
