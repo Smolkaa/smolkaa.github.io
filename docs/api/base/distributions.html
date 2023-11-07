@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-05">
+<meta name="dcterms.date" content="2023-11-07">
 
 <title>ExESS - Distributions</title>
 <style>
@@ -325,8 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Distributions</h2>
    
   <ul>
-  <li><a href="#meta-title" id="toc-meta-title" class="nav-link active" data-scroll-target="#meta-title">Distributions</a></li>
-  <li><a href="#type-structure" id="toc-type-structure" class="nav-link" data-scroll-target="#type-structure">Type Structure</a></li>
+  <li><a href="#type-structure" id="toc-type-structure" class="nav-link active" data-scroll-target="#type-structure">Type Structure</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a>
   <ul class="collapse">
   <li><a href="#velocity-distributions" id="toc-velocity-distributions" class="nav-link" data-scroll-target="#velocity-distributions">Velocity Distributions</a></li>
@@ -367,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 5, 2023</p>
+      <p class="date">November 7, 2023</p>
     </div>
   </div>
   
@@ -377,9 +376,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="meta-title" class="level1 hidden">
-<h1>Distributions</h1>
-</section>
+<!-- SIUNITX WORKAROUND -->
+<!-- GLS WORKAROUND -->
 <hr>
 <section id="type-structure" class="level2">
 <h2 class="anchored" data-anchor-id="type-structure">Type Structure</h2>
@@ -412,42 +410,42 @@ Sampling
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distributions to obtain a velocity vector (<code>velocity</code>),</p>
+<p>The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distribution to obtain a velocity vector (<code>velocity</code>),</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">velocity</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>3-element Vector{Float64}:
-   47.18263936675507
-  490.55698389907906
- -527.2139590239719</code></pre>
+ 1291.3489313390633
+ -952.8610817393512
+  205.13179237252743</code></pre>
 </div>
 </div>
 <p>a speed (<code>speed</code>),</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">speed</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>1196.530423145829</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>2259.7360766191214</code></pre>
 </div>
 </div>
 <p>an azimuth angle (<code>azimuth</code>),</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">azimuth</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>-2.580925396590482</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>1.4062035809721563</code></pre>
 </div>
 </div>
 <p>an elevation angle (<code>elevation</code>),</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">elevation</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>-1.0748144680448353</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<pre><code>-0.2664406854304329</code></pre>
 </div>
 </div>
 <p>and a zenith angle (<code>zenith</code>).</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zenith</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>-1.1448828145250003</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>1.4452294396714378</code></pre>
 </div>
 </div>
 </div>
@@ -475,17 +473,17 @@ Cumulative Distribution Functions
 <p>Now the respective CDFs can be computed. The following examples use the Maxwell-Boltzmann Flux velocity distribution <code>vd_mbf</code>:</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">speed_cdf</span>(vd_mbf, v1, v2), <span class="fu">azimuth_cdf</span>(vd_mbf, az1, az2), <span class="fu">elevation_cdf</span>(vd_mbf, el1, el2), <span class="fu">zenith_cdf</span>(vd_mbf, ze1, ze2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>(0.0006760328420158297, 0.375, 0.25, 0.24999999999999992)</code></pre>
 </div>
 </div>
-<p>Note that, disregarding the numerical inaccuracies, the zenith and elevation angle CDF is evaluating to the same probability, since the two angles are inherently connected through <span class="math display">\[\begin{equation}
-    \zenith = \begin{cases}
-        \frac{\pi}{2} - \elevation &amp; \;\text{for } \elevation \geq 0 \\
-        -\frac{\pi}{2} - \elevation &amp; \;\text{for } \elevation &lt; 0
+<p>Note that, disregarding the numerical inaccuracies, the zenith and elevation angle CDF are evaluated to the same probability since the two angles are inherently connected through <span class="math display">\[\begin{equation}
+    \psi= \begin{cases}
+        \frac{\pi}{2} - \varphi&amp; \;\text{for } \varphi\geq 0 \\
+        -\frac{\pi}{2} - \varphi&amp; \;\text{for } \varphi&lt; 0
     \end{cases}
 \end{equation}\]</span></p>
-<p>Additionally, the CDF can also be calculated for two velocity vectors, <span class="math inline">\(\vec\velocity_1\)</span> (<code>v1</code>) and <span class="math inline">\(\vec\velocity_2\)</span> (<code>v2</code>). In this case, the two vectors are used to calculate the corresponding speed, azimuth, and elevation angle, and then multiply each individual CDF together. Thus the following CDF</p>
+<p>Additionally, the CDF can also be calculated for two velocity vectors, <span class="math inline">\(\boldsymbol{\mathbf{v}}_1\)</span> (<code>v1</code>) and <span class="math inline">\(\boldsymbol{\mathbf{v}}_2\)</span> (<code>v2</code>). In this case, the two vectors are used to calculate the corresponding speed, azimuth, and elevation angle, and then multiply each individual CDF together. Thus the following CDF</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>v1_mbf, v2_mbf <span class="op">=</span> <span class="fu">velocity</span>(<span class="fu">MaxwellBoltzmannFluxVelocityDistribution</span>(T, m)), <span class="fu">velocity</span>(<span class="fu">MaxwellBoltzmannFluxVelocityDistribution</span>(T, m))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>v1, v2 <span class="op">=</span> <span class="fu">speed</span>(v1_mbf), <span class="fu">speed</span>(v2_mbf)</span>
@@ -494,8 +492,15 @@ Cumulative Distribution Functions
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">velocity_cdf</span>(vd_mbf, v1_mbf, v2_mbf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="11">
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>0.03355295355649362</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>0.008255912739929193</code></pre>
+</div>
+</div>
+<p>will evaluate to the same likelihood as the CDFs of the three spherical components investigated individually</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">speed_cdf</span>(vd_mbf, v1, v2)) <span class="op">*</span> <span class="fu">abs</span>(<span class="fu">azimuth_cdf</span>(vd_mbf, az1, az2)) <span class="op">*</span> <span class="fu">abs</span>(<span class="fu">elevation_cdf</span>(vd_mbf, el1, el2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>0.008255912739929192</code></pre>
 </div>
 </div>
 </div>
@@ -515,8 +520,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>[1] MaxwellBoltzmannVelocityDistribution{S&lt;:AbstractFloat} &lt;: AbstractVelocityDistribution{S}
 [2] MaxwellBoltzmannVelocityDistribution(T::Real, m::Real)</code></pre>
 <p>Custom struct defining a (3D) Maxwell-Boltzmann velocity distribution. Uses the temperature <code>T</code> in Kelvin and the mass <code>m</code> in kg as inputs.</p>
@@ -534,8 +539,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="13">
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>[1] MaxwellBoltzmannFluxVelocityDistribution{S&lt;:AbstractFloat} &lt;: AbstractVelocityDistribution{S}
 [2] MaxwellBoltzmannFluxVelocityDistribution(T::Real, m::Real)</code></pre>
 <p>Custom struct defining a (3D) Maxwell-Boltzmann flux velocity distribution. Uses the temperature <code>T</code> in Kelvin and the mass <code>m</code> in kg as inputs.</p>
@@ -555,8 +560,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="14">
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="45">
 <pre><code>[1] azimuth([S::Type], vd::AbstractVelocityDistribution)
 [2] azimuth([S::Type], v::Vector{&lt;:Real})
 [3] azimuth([S::Type], v::LocalCartesianVelocity)</code></pre>
@@ -576,8 +581,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="15">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>[1] azimuth_cdf([S::Type], vd::AbstractVelocityDistribution, theta::Tuple{Real, Real})
 [2] azimuth_cdf([S::Type], vd::AbstractVelocityDistribution, theta1::Real, theta2::Real)
 [3] azimuth_cdf([S::Type], vd::AbstractVelocityDistribution, theta::Real)
@@ -601,8 +606,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="16">
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>[1] azimuth_pdf([S::Type], vd::AbstractVelocityDistribution, theta::Real)
 [2] azimuth_pdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [3] azimuth_pdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>
@@ -621,8 +626,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="17">
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>[1] elevation([S::Type], vd::AbstractVelocityDistribution)
 [2] elevation([S::Type], v::AbstractVector)
 [3] elevation([S::Type], v::LocalCartesianVelocity)</code></pre>
@@ -647,8 +652,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="18">
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>[1] elevation_cdf([S::Type], vd::AbstractVelocityDistribution, phi::Tuple{Real, Real})
 [2] elevation_cdf([S::Type], vd::AbstractVelocityDistribution, phi1::Real, phi2::Real)
 [3] elevation_cdf([S::Type], vd::AbstractVelocityDistribution, phi::Real)
@@ -677,8 +682,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="19">
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="50">
 <pre><code>[1] elevation_pdf([S::Type], vd::AbstractVelocityDistribution, phi::Real)
 [2] elevation_pdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [3] elevation_pdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>
@@ -697,8 +702,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="20">
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>[1] speed([S::Type], vd::AbstractVelocityDistribution)
 [2] speed([S::Type], v::AbstractVector)
 [3] speed([S::Type], v::LocalCartesianVelocity)
@@ -725,8 +730,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="21">
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="52">
 <pre><code>[1] speed_cdf([S::Type], vd::AbstractVelocityDistribution, v::Tuple{Real, Real}; N=1000)
 [2] speed_cdf([S::Type], vd::AbstractVelocityDistribution, v::Tuple{Integer, Integer}; kwargs...)
 [3] speed_cdf([S::Type], vd::AbstractVelocityDistribution, v::Real; kwargs...)
@@ -750,8 +755,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="22">
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>[1] speed_pdf([S::Type], vd::AbstractVelocityDistribution, v::Real)
 [2] speed_pdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [3] speed_pdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>
@@ -770,8 +775,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="23">
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>[1] velocity([S::Type], vd::AbstractVelocityDistribution)</code></pre>
 <p>Draw a random, trhee-dimensional velocity vector (in [m s-1]) from the velocity distribution <code>vd</code>.</p>
 <p><strong>Notes</strong></p>
@@ -792,8 +797,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="24">
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="55">
 <pre><code>[1] velocity_cdf([S::Type], vd::AbstractVelocityDistribution, v1::AbstractVector, v2::AbstractVector)
 [2] velocity_cdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [3] velocity_cdf([S::Type], vd::AbstractVelocityDistribution, v1::LocalCartesianVelocity, v2::LocalCartesianVelocity)
@@ -814,8 +819,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="25">
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>[1] velocity_pdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [2] velocity_pdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>
 <p>Calculates the probability density of the velocity vector <code>v</code> (in [m s-1]) of the velocity distribution <code>vd</code>.</p>
@@ -833,8 +838,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="26">
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>[1] zenith([S::Type], vd::AbstractVelocityDistribution)
 [2] zenith([S::Type], v::Vector{&lt;:Real})
 [3] zenith([S::Type], v::LocalCartesianVelocity)</code></pre>
@@ -858,8 +863,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="27">
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>[1] zenith_cdf([S::Type], vd::AbstractVelocityDistribution, psi::Tuple{Real, Real})
 [2] zenith_cdf([S::Type], vd::AbstractVelocityDistribution, psi1::Real, psi2::Real)
 [3] zenith_cdf([S::Type], vd::AbstractVelocityDistribution, psi::Real)
@@ -887,8 +892,8 @@ Cumulative Distribution Functions
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="28">
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>[1] zenith_pdf([S::Type], vd::AbstractVelocityDistribution, psi::Real)
 [2] zenith_pdf([S::Type], vd::AbstractVelocityDistribution, v::AbstractVector)
 [3] zenith_pdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>

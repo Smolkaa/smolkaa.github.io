@@ -61,14 +61,14 @@
     \draw[main] ($(0, -6.066)  - (0, \a)$) to[in=180, out=0] 
                 ($(\d, -4.324) - (0, \a)$) -- node[nmain,right] {\SI{21.2}{\percent}}
                 ($(\d, -6.445) - (0, \a)$) to[in=0, out=180] 
-                ($(0, -7.766)  - (0, \a)$) -- node[nel, right] {Silicon} node[nmain,left] {\SI{16.9}{\percent}} cycle;
+                ($(0, -7.766)  - (0, \a)$) -- node[nel, right] {Si} node[nmain,left] {\SI{16.9}{\percent}} cycle;
 
     
     % Al 6.5% (3) >> 7.8% (5)
     \draw[main] ($(0, -7.766) - (0, 2*\a)$) to[in=180, out=0] 
                 ($(\d, -8.39) - (0, 4*\a)$) -- node[nmain,right] {\SI{7.8}{\percent}}
                 ($(\d, -9.17) - (0, 4*\a)$) to[in=0, out=180] 
-                ($(0, -8.42)  - (0, 2*\a)$) -- node[nel, right] {Aluminium} node[nmain,left] {\SI{6.5}{\percent}} cycle;
+                ($(0, -8.42)  - (0, 2*\a)$) -- node[nel, right] {Al} node[nmain,left] {\SI{6.5}{\percent}} cycle;
                               
     
     % Mg 5.1% (4) >> 5.5% (6)
@@ -108,12 +108,12 @@
     \draw[main, left color=TUMBlue] ($(\d+\m, 0.0)$)     to[in=180, out=0]
                 ($(2*\d+\m, 0.0)$)   -- 
                 ($(2*\d+\m, -2.42)$) to[in=0, out=180]
-                ($(\d+\m, -2.42)$)   -- node[nmain,left] {\SI{24.2}{\percent}} cycle;
+                ($(\d+\m, -2.42)$)   -- node[nmain,left] {\SI{24.2}{\percent}} node[nel,right] {Oxygen} cycle;
 
     \draw[main] ($(\d+\m, -4.324)  - (0, \a)$) to[in=180, out=0] node[nmain,right,at end] {\mycell{SiO2}{45.4}}
                 ($(2*\d+\m, -2.42)$)           -- 
                 ($(2*\d+\m, -4.54)$)            to[in=0, out=180]
-                ($(\d+\m, -6.445)  - (0, \a)$) -- cycle;
+                ($(\d+\m, -6.445)  - (0, \a)$) -- node[nel,right] {Si} cycle;
                 
     % Al2O3 14.9% >> 7.01% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -2.42)$)              to[in=180, out=0]
@@ -124,7 +124,7 @@
     \draw[main] ($(\d+\m, -8.39)    - (0, 4*\a)$) to[in=180, out=0] node[nmain,right,at end] {\mycell{Al2O3}{14.9}}
                 ($(2*\d+\m, -5.241) - (0, \a)$)   -- 
                 ($(2*\d+\m, -6.03)  - (0,\a)$)    to[in=0, out=180]
-                ($(\d+\m, -9.17)    - (0, 4*\a)$) -- cycle;
+                ($(\d+\m, -9.17)    - (0, 4*\a)$) -- node[nel,right] {Al} cycle;
                 
     % FeO 14.1% >> 3.14% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -3.121)$)               to[in=180, out=0]
@@ -135,7 +135,7 @@
     \draw[main] ($(\d+\m, -6.344)    - (0, 2*\a)$)  to[in=180, out=0] node[nmain,right,at end,yshift=-18px] {\mycell{FeO}{14.1}}
                 ($(2*\d+\m, -6.344) - (0, 2*\a)$)  -- 
                 ($(2*\d+\m, -7.44)    - (0, 2*\a)$) to[in=0, out=180]
-                ($(\d+\m, -7.547)    - (0, 2*\a)$)  -- cycle;
+                ($(\d+\m, -7.547)    - (0, 2*\a)$)  -- node[nel,right] {Fe} cycle;
 
     % CaO 11.8% >> 3.652% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -3.435)$)                to[in=180, out=0]
@@ -146,7 +146,7 @@
     \draw[main] ($(\d+\m, -7.547)    - (0, 3*\a)$)  to[in=180, out=0] node[nmain,right,at end,yshift=-10px] {\mycell{CaO}{11.8}}
                 ($(2*\d+\m, -7.8052) - (0, 3*\a)$)  -- 
                 ($(2*\d+\m, -8.62)   - (0, 3*\a)$)  to[in=0, out=180]
-                ($(\d+\m, -8.39)     - (0, 3*\a)$)  -- cycle;
+                ($(\d+\m, -8.39)     - (0, 3*\a)$)  -- node[nel,right] {Ca} cycle;
 
     % MgO 9.2% >> 3.367% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -3.8002)$)                to[in=180, out=0]
@@ -157,7 +157,7 @@
     \draw[main] ($(\d+\m, -9.17)     - (0, 5*\a)$)  to[in=180, out=0] node[nmain,right,at end,yshift=-5px] {\mycell{MgO}{9.2}}
                 ($(2*\d+\m, -8.9567) - (0, 4*\a)$)  -- 
                 ($(2*\d+\m, -9.54)   - (0, 4*\a)$)  to[in=0, out=180]
-                ($(\d+\m, -9.72)     - (0, 5*\a)$)  -- cycle;
+                ($(\d+\m, -9.72)     - (0, 5*\a)$)  -- node[nel,right] {Mg} cycle;
 
     % TiO2 3.9% >> 1.562% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -4.1369)$)                to[in=180, out=0, looseness=0.95]
@@ -168,7 +168,7 @@
     \draw[main] ($(\d+\m, -9.72)     - (0, 6*\a)$)  to[in=180, out=0] node[nmain,right,at end,yshift=-3px] {\mycell{TiO2}{3.9}}
                 ($(2*\d+\m, -9.6962) - (0, 5*\a)$)  -- 
                 ($(2*\d+\m, -9.93)   - (0, 5*\a)$)  to[in=0, out=180]
-                ($(\d+\m, -9.96)     - (0, 6*\a)$)  -- cycle;
+                ($(\d+\m, -9.96)     - (0, 6*\a)$)  -- node[nel,right] {Ti} cycle;
 
     % Na2O 0.6% >> 0.1549% O
     \draw[main, left color=TUMBlue] ($(\d+\m, -4.2931)$)               to[in=180, out=0, looseness=0.9]
@@ -179,7 +179,7 @@
     \draw[main] ($(\d+\m, -9.96)     - (0, 7*\a)$) to[in=180, out=0] node[nmain,right,at end,yshift=-6px] {\mycell{Na2O}{0.6}}
                 ($(2*\d+\m, -9.9455) - (0, 6*\a)$) -- 
                 ($(2*\d+\m, -9.99)   - (0, 6*\a)$) to[in=0, out=180]
-                ($(\d+\m, -10.0)     - (0, 7*\a)$) -- cycle;
+                ($(\d+\m, -10.0)     - (0, 7*\a)$) -- node[nel,right, black, yshift=-5px] {Na} cycle;
 
 \end{tikzpicture}
 

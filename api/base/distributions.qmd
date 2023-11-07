@@ -2,9 +2,8 @@
 title: "Distributions"
 ---
 
-::: {.hidden }
-# {{< meta title >}}
-:::
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
 
 ---
 
@@ -52,7 +51,7 @@ vd_mbf = MaxwellBoltzmannFluxVelocityDistribution(T, m)
 
 # Sampling
 
-The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distributions to obtain a velocity vector (`velocity`),
+The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distribution to obtain a velocity vector (`velocity`),
 
 ```{julia}
 velocity(vd_mb)
@@ -104,7 +103,7 @@ Now the respective CDFs can be computed. The following examples use the Maxwell-
 speed_cdf(vd_mbf, v1, v2), azimuth_cdf(vd_mbf, az1, az2), elevation_cdf(vd_mbf, el1, el2), zenith_cdf(vd_mbf, ze1, ze2)
 ```
 
-Note that, disregarding the numerical inaccuracies, the zenith and elevation angle CDF is evaluating to the same probability, since the two angles are inherently connected through
+Note that, disregarding the numerical inaccuracies, the zenith and elevation angle CDF are evaluated to the same probability since the two angles are inherently connected through
 \begin{equation}
     \zenith = \begin{cases} 
         \frac{\pi}{2} - \elevation & \;\text{for } \elevation \geq 0 \\
@@ -124,8 +123,14 @@ velocity_cdf(vd_mbf, v1_mbf, v2_mbf)
 ```
 ```{julia}
 #| echo: false
-abs.(velocity_cdf(vd_mbf, v1_mbf, v2_mbf))
+abs(velocity_cdf(vd_mbf, v1_mbf, v2_mbf))
 ```
+
+will evaluate to the same likelihood as the CDFs of the three spherical components investigated individually
+```{julia}
+abs(speed_cdf(vd_mbf, v1, v2)) * abs(azimuth_cdf(vd_mbf, az1, az2)) * abs(elevation_cdf(vd_mbf, el1, el2))
+```
+
 :::
 
 

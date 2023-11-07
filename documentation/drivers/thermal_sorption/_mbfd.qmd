@@ -26,10 +26,6 @@ in cartesian coordinates with $d^3\vec\velocity = d\velocity_x \, d\velocity_y \
 \end{equation}
 in spherical coordinates with $d^3\vec\velocity = \velocity^2 \cos\sphericalCoordinateElevation \, d\velocity \, d\sphericalCoordinateElevation \, d\sphericalCoordinateAzimuth$ [@Brinkmann1970; @Armand1977; @Smith1978; @Schoerghofer2022].
 
-::: {.column-margin}
-{{< bi code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_speed} </br> {{< bi code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_speed}
-:::
-
 
 {{< include thermal_sorption/boxes/_mbfd_components.qmd >}}
 
@@ -39,7 +35,14 @@ Through integration over the solid angles of Eq. \eqref{eq:mbfd_spherical}, the 
     f(\velocity)d\velocity =  2 \cdot \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right)^2 \cdot \velocity^3 \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity.
     \label{eq:mbfd_speed}
 \end{equation}
-Note that the scaling factor $2$ is a result from the integration over half the sphere through $\sphericalCoordinateElevation\in\left(0,\pi/2\right)$. As before, this speed distribution can be analyzed to extract typical speeds.
+Note that the scaling factor $2$ is a result of the integration over half the sphere through $\sphericalCoordinateElevation\in\left(0,\pi/2\right)$. As before, this speed distribution can be analyzed to extract typical speeds.
+
+
+::: {.column-margin}
+{{< bi code >}} [`velocity_cdf`](/api/base/distributions.qmd): integrated Eqs. \eqref{eq:mbfd}, \eqref{eq:mbfd_spherical} </br> {{< bi code >}} [`velocity_pdf`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbfd}, \eqref{eq:mbfd_spherical}
+</br> </br> </br> </br>
+{{< bi code >}} [`speed_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_speed} </br> {{< bi code >}} [`speed_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_speed} 
+:::
 
 
 {{< include thermal_sorption/imgs/mbfd/_mbfd.qmd >}}
@@ -52,14 +55,24 @@ Note that the scaling factor $2$ is a result from the integration over half the 
 \end{equation}
 Last, the graph <tt>3D-MBFD, speed</tt> shows the distribution of speeds of the three-dimensional form, given in Eq. \eqref{eq:mbfd_speed}. For the latter, the three typical speeds, the most probable speed $\velocity_p$, the mean speed $\meanof{\velocity}$ or the expected speed, and the root mean squared speed $\velocity_\text{rms}$, which are derived in the following section.
 
-Note that, as with the speed, the angular components, the azimuth $\sphericalCoordinateAzimuth$ and elevation $\sphericalCoordinateElevation$, also have distinct probability distributions that can be analyzed. Similar to the Maxwell-Boltzmann velocity distribution, the azimuth angle is uniformly distributed which results in no favoured direction of the horizontal velocity components. The vertical component is governed by the elevation angle, which is distributed according to its PDF
+Note that, as with the speed, the angular components, the azimuth $\sphericalCoordinateAzimuth$ and elevation $\sphericalCoordinateElevation$, also have distinct probability distributions that can be analyzed. Similar to the Maxwell-Boltzmann velocity distribution, the azimuth angle is uniformly distributed which results in no favored direction of the horizontal velocity components. The vertical component is governed by the elevation angle, which is distributed according to its PDF
 \begin{equation}
     f(\sphericalCoordinateElevation)d\sphericalCoordinateElevation = 2\sin\sphericalCoordinateElevation\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation. \label{eq:mbfd_elevation}
 \end{equation}
 This leads to a mean elevation angle for the Maxwell-Boltzmann flux velocity distribution of
-\begin{equation}
-        \meanof{\sphericalCoordinateElevation} = \int_0^{\pi/2} 2\sphericalCoordinateElevation\sin\sphericalCoordinateElevation\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation = \sphericalCoordinateElevation \sin^2\sphericalCoordinateElevation \Big|_0^{\pi/2} - \int_0^{\pi/2} \sin^2\sphericalCoordinateElevation d\sphericalCoordinateElevation = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
-\end{equation}
+\begin{align}
+        \meanof{\sphericalCoordinateElevation} &= \int_0^{\pi/2} 2\sphericalCoordinateElevation\sin\sphericalCoordinateElevation\cos\sphericalCoordinateElevation d\sphericalCoordinateElevation \nonumber \\
+        &= \sphericalCoordinateElevation \sin^2\sphericalCoordinateElevation \Big|_0^{\pi/2} - \int_0^{\pi/2} \sin^2\sphericalCoordinateElevation d\sphericalCoordinateElevation = \frac{\pi}{2} - \frac{\pi}{4} = \frac{\pi}{4}.
+\end{align}
+@fig-mbfd_elevation shows the density plot of $\num{10^6}$ normalized samples of velocities of the [MBD](/documentation/acronyms.qmd) in a 2D plot with the vertical velocity $\velocity_3$ is plotted against the horizontal velocity $\sqrt{\velocity_1^2 + \velocity_2^2}$. For each sample, the angle between the x-axis and the velocity vector is the elevation angle, with the mean value $\meanof{\sphericalCoordinateElevation}$ included in the plot.
+
+
+::: {.column-margin}
+{{< bi code >}} [`elevation_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_elevation} </br> {{< bi code >}} [`elevation_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_elevation} 
+:::
+
+
+{{< include thermal_sorption/imgs/elevation/_mbfd_elevation.qmd >}}
 
 
 ### Typical Speeds
@@ -69,6 +82,11 @@ The most probable speed occurs at the maximum likelihood of the Eq. \eqref{eq:mb
     \left. \frac{df(\velocity)}{d\velocity}\right|_{\velocity_p} = 0 \qquad \Rightarrow \qquad \velocity_p = \sqrt{\frac{3\BoltzmannConstant\temperature}{\mass}}.
     \label{eq:mbfd_most_probable_speed}
 \end{equation}
+
+
+::: {.column-margin}
+{{< bi code >}} [`speed`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbfd_most_probable_speed}, \eqref{eq:mbfd_mean_speed}, \eqref{eq:mbfd_rms}
+:::
 
 
 The expected value of the speed distribution, the mean speed $\meanof{\velocity}$ is calculated by using the ensemble average equation, shown in Eq. \eqref{eq:ensemble_average}:
@@ -111,6 +129,12 @@ In cartesian coordinates, with $\vec\Velocity = \left(\Velocity_x, \Velocity_y, 
 \end{align}
 
 
+::: {.column-margin}
+{{< bi code >}} [`velocity`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_cartesian_component}
+:::
+
+
+
 $\vec\Velocity$ can also be expressed in spherical coordinates as $\vec\Velocity=\left(\Velocity_\velocity, \Velocity_\sphericalCoordinateElevation, \Velocity_\sphericalCoordinateAzimuth \right)$ with the differential $d^3\vec\velocity=\velocity^2 \, \cos\sphericalCoordinateElevation \, d\velocity d\sphericalCoordinateElevation d\sphericalCoordinateAzimuth$. The additional terms are distributed to the respective random variable:
 \begin{alignat}{3}
     \Velocity_\velocity &\sim f(\velocity) && \qquad\text{with realization }\velocity, \\    
@@ -120,8 +144,8 @@ $\vec\Velocity$ can also be expressed in spherical coordinates as $\vec\Velocity
 As before, the [cdf](/documentation/acronyms.qmd) of the random variables can be set to equal the [cdf](/documentation/acronyms.qmd) of the unit uniform distribution:
 \begin{alignat}{3}
     r_\velocity &= \int_0^{r_\velocity} f(r_u) dr_u = \int_0^\velocity f(\tilde\velocity)d\tilde\velocity, \\
-    r_\sphericalCoordinateElevation &= \int_0^{r_\sphericalCoordinateElevation} f(r_u) dr_u = \int_0^\sphericalCoordinateElevation f(\tilde\sphericalCoordinateElevation)d\tilde\sphericalCoordinateElevation &&= 1 - \cos^2\sphericalCoordinateElevation, \\
-    r_\sphericalCoordinateAzimuth &= \int_0^{r_\sphericalCoordinateAzimuth} f(r_u) dr_u = \int_{-\pi}^\sphericalCoordinateAzimuth f(\tilde\sphericalCoordinateAzimuth)d\tilde\sphericalCoordinateAzimuth &&= \frac{\sphericalCoordinateAzimuth+\pi}{2\pi}.
+    r_\sphericalCoordinateElevation &= \int_0^{r_\sphericalCoordinateElevation} f(r_u) dr_u = \int_0^\sphericalCoordinateElevation f(\tilde\sphericalCoordinateElevation)d\tilde\sphericalCoordinateElevation &&= 1 - \cos^2\sphericalCoordinateElevation, \label{eq:mbfd_random_elevation} \\
+    r_\sphericalCoordinateAzimuth &= \int_0^{r_\sphericalCoordinateAzimuth} f(r_u) dr_u = \int_{-\pi}^\sphericalCoordinateAzimuth f(\tilde\sphericalCoordinateAzimuth)d\tilde\sphericalCoordinateAzimuth &&= \frac{\sphericalCoordinateAzimuth+\pi}{2\pi}. \label{eq:mbfd_random_azimuth} 
 \end{alignat}
 While the latter two integrals are trivial, leading to a cosine-squared dependence of the elevation angle $\sphericalCoordinateElevation$ and a uniform dependence on the azimuth angle $\sphericalCoordinateAzimuth$, the speed integral evaluates to
 \begin{equation}
@@ -131,6 +155,6 @@ While the latter two integrals are trivial, leading to a cosine-squared dependen
 with no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
 
 ::: {.column-margin}
-{{< bi code >}} [`sample`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_random_cartesian_component}, \eqref{eq:mbfd_random_cartesian_component}
+{{< bi code >}} [`speed`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_speed} </br> {{< bi code >}} [`elevation`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_elevation} </br> {{< bi code >}} [`azimuth`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_azimuth}
 :::
 

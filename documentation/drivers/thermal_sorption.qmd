@@ -11,6 +11,8 @@ title: "3.2 Thermal Sorption"
 
 # Velocity Distributions {#sec-velocity-distributions}
 
+The following sections cover the theoretical description of velocity distributions used to describe the thermal sorption mechanics. Note that the velocities are generally given either in their spherical form, i.e. their speed $\velocity$, the azimuth angle $\sphericalCoordinateAzimuth$, and the elevation angle $\sphericalCoordinateElevation$, or in their cartesian form, i.e. the velocity components $\velocity_\cartesianCoordinateX$, $\velocity_\cartesianCoordinateY$, and $\velocity_\cartesianCoordinateZ$. In the spherical expression, the angles are based on the local surface, i.e. the azimuth describes the horizontal angle and the elevation describes the vertical angle. For the cartesian description, a local reference frame is used (see [Coordinate Systems, Reference Frames](/documentation/fundamentals/coordinate_systems.qmd#sec-reference_frames)), which means that the $\cartesianCoordinateX$ and $\cartesianCoordinateY$ direction describe the horizontal towards the local surface, and the $\cartesianCoordinateZ$ describes the vertical velocity.
+
 ## Maxwell-Boltzmann Distribution
 {{< include /documentation/drivers/thermal_sorption/_mbd.qmd >}}
 

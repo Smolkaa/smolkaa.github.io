@@ -24,7 +24,9 @@ with the speed $\velocity=\sqrt{\vec\velocity ^T\vec\velocity}$. Identical to th
 \end{equation}
 
 ::: {.column-margin}
-{{< bi code >}} [`cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< bi code >}} [`pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d}
+{{< bi code >}} [`velocity_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_3d} </br> {{< bi code >}} [`velocity_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_3d} 
+</br> </br> </br> </br>
+{{< bi code >}} [`speed_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< bi code >}} [`speed_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d} 
 :::
 
 {{< include thermal_sorption/boxes/_mbd_components.qmd >}}
@@ -53,9 +55,15 @@ While the azimuth is uniformly distributed with no preferred direction, the elev
 \begin{equation}
     \meanof{\sphericalCoordinateElevation} = 2 \int_0^{\pi/2} \frac{1}{2} \sphericalCoordinateElevation \cos\sphericalCoordinateElevation d\sphericalCoordinateElevation = \frac{\pi - 2}{2}.
 \end{equation}
+Note that the factor $2$ in front of the integral is used since the integration boundaries are only half of the full domain. Alternatively, the full domain $\sphericalCoordinateElevation \in \left(-\pi/2, \pi/2\right)$ can be used if one only takes the absolute value of the function. @fig-mbd_elevation shows the density plot of $\num{10^6}$ normalized samples of velocities of the [MBD](/documentation/acronyms.qmd) in a 2D plot with the vertical velocity $\velocity_3$ is plotted against the horizontal velocity $\sqrt{\velocity_1^2 + \velocity_2^2}$. For each sample, the angle between the x-axis and the velocity vector is the elevation angle, with the mean value $\meanof{\sphericalCoordinateElevation}$ included in the plot.
 
 
-{{< include thermal_sorption/imgs/mbd_elevation/_mbd_elevation.qmd >}}
+::: {.column-margin}
+{{< bi code >}} [`elevation_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_elevation} </br> {{< bi code >}} [`elevation_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_elevation} 
+:::
+
+
+{{< include thermal_sorption/imgs/elevation/_mbd_elevation.qmd >}}
 
 
 ### Typical Speeds
@@ -65,6 +73,10 @@ One of those typical speeds obtained from properties of the [MBD](/documentation
    \left. \frac{df(\velocity)}{d\velocity}\right|_{\velocity_p} = 0 \qquad\Rightarrow\qquad \velocity_p = \sqrt{\frac{2\BoltzmannConstant\temperature}{\mass}}. 
     \label{eq:mbd_most_probable_speed}
 \end{equation}
+
+::: {.column-margin}
+{{< bi code >}} [`speed`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_most_probable_speed}, \eqref{eq:mbd_mean_speed}, \eqref{eq:mbd_rms}
+:::
 
 
 Another typical value that can be drawn from a distribution is the mean speed $\meanof{\velocity}$. For the speed distribution, the expected value can be calculated by the speed-weighted average of the distribution:
@@ -101,7 +113,11 @@ Numerically speaking, to draw any realization from a randomly distributed variab
     \Rightarrow\qquad \velocity_i &= r_n \cdot \sqrt{\frac{\BoltzmannConstant\temperature}{\mass}} \qquad &&\forall i \in \{x,y,z\}. 
     \label{eq:mbd_random_cartesian_component}
 \end{alignat}
-Should one dimension be one-directional, the absolute value $|r_n|$ can be used iun Eq. \eqref{eq:mbd_random_cartesian_component} instead.
+Should one dimension be one-directional, the absolute value $|r_n|$ can be used in Eq. \eqref{eq:mbd_random_cartesian_component} instead.
+
+::: {.column-margin}
+{{< bi code >}} [`velocity`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
+:::
 
 
 The random variable $\vec\Velocity$ can also be expressed in its spherical form, with its three components the speed $\Velocity_\velocity \in \left[0,\infty\right)$ with realization $\velocity$ of $\Velocity_\velocity \sim f(\velocity)$, the elevation angle $\Velocity_\sphericalCoordinateElevation \in \left[-\pi/2, \pi/2\right]$ with realization $\sphericalCoordinateElevation$ of $\Velocity_\sphericalCoordinateElevation \sim f(\sphericalCoordinateElevation) = 1/2 \cdot \cos\sphericalCoordinateElevation$, and the azimuth angle $\Velocity_\sphericalCoordinateAzimuth \in \left[-\pi,\pi\right)$ with realization $\sphericalCoordinateAzimuth$ of $\Velocity_\sphericalCoordinateAzimuth \sim f(\sphericalCoordinateAzimuth) = 1/2\pi$. Similar to the cartesian description above, these three random variables can be mathed to one of the numerically implemented distributions. Because all three [pdf](/documentation/acronyms.qmd)s of the random variables are normalized, their [cdf](/documentation/acronyms.qmd) can be set equal to the [cdf](/documentation/acronyms.qmd) of the uniform unit distribution $R_u \sim f(r_u) = 1$:
@@ -117,6 +133,7 @@ where the speed distribution is equal to Eq. \eqref{eq:mbd_speed_3d}. With the l
 \end{equation}
 Due to the combination of the Gaussian error function $\erf$ and an exponential function $\exp$, there is no elementary analytical expression of $\velocity$ as a function of $r_\velocity$. Thus, for numerical implementations Eq. \eqref{eq:mbd_speed_random_evaluated} is usually pre-evaluated several times to build up an interpolation table that maps any uniform random $r_\velocity$ to a specific [MBD](/documentation/acronyms.qmd) speed. The other two components, see Eqs. \eqref{eq:mbd_elevation_random}, \eqref{eq:mbd_azimuth_random}, show that the elevation angle $\sphericalCoordinateElevation$ is $\sin$-distributed, while the azimuth angle $\sphericalCoordinateAzimuth$ is uniformly distributed.
 
+
 ::: {.column-margin}
-{{< bi code >}} [`sample`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
+{{< bi code >}} [`speed`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_random} </br> {{< bi code >}} [`elevation`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_elevation_random} </br> {{< bi code >}} [`azimuth`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_azimuth_random}
 :::
