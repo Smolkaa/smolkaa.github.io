@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-27">
+<meta name="dcterms.date" content="2023-10-26">
 
 <title>ExESS - Local, Structured, 3D Grids</title>
 <style>
@@ -324,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 27, 2023</p>
+      <p class="date">October 26, 2023</p>
     </div>
   </div>
   
@@ -355,73 +355,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] struct LocalStructured3DGrid{T&lt;:Real} &lt;: AbstractLocalStructured3DGrid
-[2] LocalStructured3DGrid([T::Type,] xrange::Tuple, yrange::Tuple, zrange::Tuple, N_x::Int64, N_y::Int64, N_z::Int64)
-[3] LocalStructured3DGrid([T::Type,] xrange::Tuple, yrange::Tuple, z2::Real, N_x::Int64, N_y::Int64, N_z::Int64)</code></pre>
-<p>Local structured volume grid (3D) of type <code>LocalStructured3DGrid{T}</code> over a rectangular domain. The domain is defined by tuples of the form <code>xrange=(x1, x2)</code>, <code>yrange=(y1, y2)</code>, and <code>zrange=(z1, z2)</code>. The number of grid points in each direction is given by <code>N_x</code>, <code>N_y</code>, and <code>N_z</code>.</p>
-<table class="table table-sm table-striped small">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 43%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Field</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>xrange</code></td>
-<td style="text-align: left;"><code>Tuple{T, T}</code></td>
-<td style="text-align: left;">x domain limits</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>yrange</code></td>
-<td style="text-align: left;"><code>Tuple{T, T}</code></td>
-<td style="text-align: left;">y domain limits</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>zrange</code></td>
-<td style="text-align: left;"><code>Tuple{T, T}</code></td>
-<td style="text-align: left;">z domain limits</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>N_x</code></td>
-<td style="text-align: left;"><code>Int64</code></td>
-<td style="text-align: left;">number of grid points in x-direction</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>N_y</code></td>
-<td style="text-align: left;"><code>Int64</code></td>
-<td style="text-align: left;">number of grid points in y-direction</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>N_z</code></td>
-<td style="text-align: left;"><code>Int64</code></td>
-<td style="text-align: left;">number of grid points in z-direction</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>coords</code></td>
-<td style="text-align: left;"><code>Vector{LocalCartesianPosition{T}}</code></td>
-<td style="text-align: left;">coordinates</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>area</code></td>
-<td style="text-align: left;"><code>T</code></td>
-<td style="text-align: left;">grid-element surface areas (xy-plane)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>volume</code></td>
-<td style="text-align: left;"><code>T</code></td>
-<td style="text-align: left;">grid-element volume</td>
-</tr>
-</tbody>
-</table>
-<p>Note that the fields <code>area</code> and <code>volume</code> are scalar values, aplying to all grid elements. For a correct, vectorized output, please use the grid-utility-methods <code>areas(grid)</code> and <code>volumes(grid)</code>.</p>
-<p>To ensure expected behavior, the grid object should generally be created with the outer constructors [2] to [3].</p>
+<pre><code>[1] LocalStructured3DGrid(T::Type, xrange::Tuple, yrange::Tuple, zrange::Tuple, N_x::Int64, N_y::Int64, N_z::Int64)
+[2] LocalStructured3DGrid(xrange::Tuple, yrange::Tuple, zrange::Tuple, N_x::Int64, N_y::Int64, N_z::Int64)
+[3] LocalStructured3DGrid(xrange::Tuple, yrange::Tuple, z2::Real, N_x::Int64, N_y::Int64, N_z::Int64)</code></pre>
+<p>Local structured volume grid (3D) of type <code>LocalStructured3DGrid{T}</code> over a rectangular domain.</p>
 </div>
 </div>
 </div>
