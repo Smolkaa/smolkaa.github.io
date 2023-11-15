@@ -23,7 +23,7 @@ traj = trajectory(x0, v0, ddx)
 
 ::: {.callout-note collapse="true" icon=false}
 
-# {{< fa shapes >}} &ensp; 3D Ballistic Trajectory Calculation
+# 3D Ballistic Trajectory Calculation
 
 ```{julia}
 #| echo: false

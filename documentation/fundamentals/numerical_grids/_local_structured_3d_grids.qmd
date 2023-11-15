@@ -55,31 +55,43 @@ As with the grids introduced before, it is helpful to introduce another index, w
 \begin{equation}
     l = (k - 1) \cdot N_\cartesianCoordinateX \cdot N_\cartesianCoordinateY + (j - 1) \cdot N_\cartesianCoordinateX + i.
 \end{equation}
-In the example above in @fig-ls3dgrid, a total number of $\num{70}$ grid points are created in the local, structured, three-dimensional grid as $\cartesianCoordinate_l$ for $l \in \in \left\{ 1, \dots, \num{70} \right\}$.
+In the example above in @fig-ls3dgrid, a total number of $\num{70}$ grid points are created in the local, structured, three-dimensional grid as $\cartesianCoordinate_l$ for $l \in \left\{ 1, \dots, \num{70} \right\}$.
 
 
 ### Area and Volume Calculation
 
-The area and volume calculations are making use of the above introduced common index, $l$:
+The area and volume calculations make use of the above-introduced common index, $l$:
 \begin{align}
-    \Delta\cartesianCoordinateX_i &= \begin{cases}
-        \cartesianCoordinateX_2 - \cartesianCoordinateX_1 & \text{for } i = 1 \\
-        \frac{\cartesianCoordinateX_{i + 1} - \cartesianCoordinateX_{i - 1}}{2} & \text{for } i \in \{2, \dots, N_\cartesianCoordinateX - 1\} \\
-        \cartesianCoordinateX_{N_\cartesianCoordinateX} - \cartesianCoordinateX_{N_\cartesianCoordinateX - 1} & \text{for } i = N_\cartesianCoordinateX
-    \end{cases} \\[2mm]
-    \Delta\cartesianCoordinateY_j &= \begin{cases}
-        \cartesianCoordinateY_2 - \cartesianCoordinateY_1 & \text{for } j = 1 \\
-        \frac{\cartesianCoordinateY_{j + 1} - \cartesianCoordinateY_{j - 1}}{2} & \text{for } j \in \{2, \dots, N_\cartesianCoordinateY - 1\} \\
-        \cartesianCoordinateY_{N_\cartesianCoordinateY} - \cartesianCoordinateY_{N_\cartesianCoordinateY - 1} & \text{for } j = N_\cartesianCoordinateY
-    \end{cases} \\[2mm]
+    \Delta\cartesianCoordinateX_i &= \frac{\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min}}{N_\cartesianCoordinateX} \qquad \text{for } i \in \left\{1, \dots, N_\cartesianCoordinateX \right\} \label{eq:ls3dgrid_dx} \\[2mm]
+    \Delta\cartesianCoordinateY_j &= \frac{\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min}}{N_\cartesianCoordinateY}  \qquad \text{for } j \in \left\{1, \dots, N_\cartesianCoordinateY \right\} \label{eq:ls3dgrid_dy} \\[2mm]
     \Delta\cartesianCoordinateZ_k &= \begin{cases}
-        \cartesianCoordinateZ_2 - \cartesianCoordinateZ_1 & \text{for } k = 1 \\
+        \frac{\cartesianCoordinateZ_2 - \cartesianCoordinateZ_1}{2} + \left(\cartesianCoordinateZ_1 - \cartesianCoordinateZ_{min} \right) & \text{for } k = 1 \\
         \frac{\cartesianCoordinateZ_{k + 1} - \cartesianCoordinateZ_{k - 1}}{2} & \text{for } k \in \{2, \dots, N_\cartesianCoordinateZ - 1\} \\
-        \cartesianCoordinateZ_{N_\cartesianCoordinateZ} - \cartesianCoordinateZ_{N_\cartesianCoordinateZ - 1} & \text{for } k = N_\cartesianCoordinateZ
-    \end{cases} \\[2mm]
-    \Rightarrow\quad \area_l &= \Delta\cartesianCoordinateX_i \cdot \Delta\cartesianCoordinateY_j \\
-    \Rightarrow\quad \volume_l &= \area_l \cdot \Delta\cartesianCoordinateZ_k
+        \frac{\cartesianCoordinateZ_{N_\cartesianCoordinateZ} - \cartesianCoordinateZ_{N_\cartesianCoordinateZ - 1}}{2} + \left( \cartesianCoordinateZ_{max} - \cartesianCoordinateZ_{N_\cartesianCoordinateZ} \right) & \text{for } k = N_\cartesianCoordinateZ
+    \end{cases} \label{eq:ls3dgrid_dz} \\[2mm]
+    \Rightarrow\quad \area_l &= \Delta\cartesianCoordinateX_i \cdot \Delta\cartesianCoordinateY_j \label{eq:ls3dgrid_area} \\
+    \Rightarrow\quad \volume_l &= \area_l \cdot \Delta\cartesianCoordinateZ_k \label{eq:ls3dgrid_volume}
 \end{align}
+
+::: {.callout-note collapse=true}
+
+# Volume-Closure
+
+One can easily check that the volume calculation presented in Eqs. \eqref{eq:ls3dgrid_dx} to \eqref{eq:ls3dgrid_volume} are indeed covering the entire volume defined by the coordinate boundaries $\cartesianCoordinateX_{min}$, $\cartesianCoordinateX_{max}$, $\cartesianCoordinateY_{min}$, $\cartesianCoordinateY_{max}$, $\cartesianCoordinateZ_{min}$, and $\cartesianCoordinateZ_{max}$ by summing up all volumes $\volume_l$:
+
+\begin{align*}
+    V &= \sum_{l = 1}^{N_\cartesianCoordinateX \cdot N_\cartesianCoordinateY \cdot N_\cartesianCoordinateZ} \volume_l \\
+    &= \sum_{i = 1}^{N_\cartesianCoordinateX} \sum_{j = 1}^{N_\cartesianCoordinateY} \sum_{k = 1}^{N_\cartesianCoordinateZ} \Delta\cartesianCoordinateX_i \cdot \Delta\cartesianCoordinateY_j \cdot \Delta\cartesianCoordinateZ_k \\
+    &= \left(\frac{\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min}}{N_\cartesianCoordinateX} \cdot N_\cartesianCoordinateX \right) \cdot \left(\frac{\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min}}{N_\cartesianCoordinateY} \cdot N_\cartesianCoordinateY \right) \cdot \sum_{k = 1}^{N_\cartesianCoordinateZ} \Delta\cartesianCoordinateZ_k \\
+\end{align*}
+
+While the first two sums are trivial, the third can also be expanded by including all terms from the cases of Eq. \eqref{eq:ls3dgrid_dz}, which conveniently cancels out all grid points $\cartesianCoordinateZ_k$ and leaves only the boundaries: $\cartesianCoordinateZ_{max} - \cartesianCoordinateZ_{min}$:
+
+\begin{equation*}
+    V = \left(\cartesianCoordinateX_{max} - \cartesianCoordinateX_{min} \right) \cdot \left(\cartesianCoordinateY_{max} - \cartesianCoordinateY_{min} \right) \cdot \left(\cartesianCoordinateZ_{max} - \cartesianCoordinateZ_{min} \right).
+\end{equation*}
+:::
+
 
 ### Continuous to Discrete Mapping
 

@@ -47,93 +47,9 @@ vd_mb = MaxwellBoltzmannVelocityDistribution(T, m)
 vd_mbf = MaxwellBoltzmannFluxVelocityDistribution(T, m)
 ```
 
-::: {.callout-note collapse="true" icon=false}
+{{< include examples/_distribution_sampling.qmd >}}
 
-# Sampling
-
-The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distribution to obtain a velocity vector (`velocity`),
-
-```{julia}
-velocity(vd_mb)
-```
-
-a speed (`speed`),
-
-```{julia}
-speed(vd_mb)
-```
-
- an azimuth angle (`azimuth`),
-
-```{julia}
-azimuth(vd_mb)
-```
-
-an elevation angle (`elevation`),
-
-```{julia}
-elevation(vd_mb)
-```
-
- and a zenith angle (`zenith`).
-
-```{julia}
-zenith(vd_mb)
-```
-
-:::
-
-::: {.callout-note collapse="true" icon=false}
-
-# Cumulative Distribution Functions
-
-Additionally, the cumulative distribution (CDF) of an existing distribution, in this case, the Maxwell-Boltzmann Flux velocity distribution, can be analyzed. Note that this also works for the velocity vector, as well as for each individual, spherical component, i.e. the azimuth, elevation, speed, and zenith. The CDF computes the accumulated likelihood that a given value falls into a range provided in the function call. For the example usage, firstly the ranges will be defined:
-
-```{julia}
-#| output: false
-v1, v2 = 100.0, 200.0   # speed [m s-1]
-az1, az2 = -pi/4, pi/2  # azimuth [rad]
-el1, el2 = pi/6, pi/4   # elevation [ad]
-ze1, ze2 = pi/4, pi/3   # zenith [rad]
-```
-
-Now the respective CDFs can be computed. The following examples use the Maxwell-Boltzmann Flux velocity distribution `vd_mbf`:
-
-```{julia}
-speed_cdf(vd_mbf, v1, v2), azimuth_cdf(vd_mbf, az1, az2), elevation_cdf(vd_mbf, el1, el2), zenith_cdf(vd_mbf, ze1, ze2)
-```
-
-Note that, disregarding the numerical inaccuracies, the zenith and elevation angle CDF are evaluated to the same probability since the two angles are inherently connected through
-\begin{equation}
-    \zenith = \begin{cases} 
-        \frac{\pi}{2} - \elevation & \;\text{for } \elevation \geq 0 \\
-        -\frac{\pi}{2} - \elevation & \;\text{for } \elevation < 0
-    \end{cases}
-\end{equation}
-
-Additionally, the CDF can also be calculated for two velocity vectors, $\vec\velocity_1$ (`v1`) and $\vec\velocity_2$ (`v2`). In this case, the two vectors are used to calculate the corresponding speed, azimuth, and elevation angle, and then multiply each individual CDF together. Thus the following CDF 
-
-```{julia}
-#| output: false
-v1_mbf, v2_mbf = velocity(MaxwellBoltzmannFluxVelocityDistribution(T, m)), velocity(MaxwellBoltzmannFluxVelocityDistribution(T, m))
-v1, v2 = speed(v1_mbf), speed(v2_mbf)
-az1, az2 = azimuth(v1_mbf), azimuth(v2_mbf)
-el1, el2 = elevation(v1_mbf), elevation(v2_mbf)
-velocity_cdf(vd_mbf, v1_mbf, v2_mbf)
-```
-```{julia}
-#| echo: false
-abs(velocity_cdf(vd_mbf, v1_mbf, v2_mbf))
-```
-
-will evaluate to the same likelihood as the CDFs of the three spherical components investigated individually
-```{julia}
-abs(speed_cdf(vd_mbf, v1, v2)) * abs(azimuth_cdf(vd_mbf, az1, az2)) * abs(elevation_cdf(vd_mbf, el1, el2))
-```
-
-:::
-
-
+{{< include examples/_distribution_cdf.qmd >}}
 
 ## API
 

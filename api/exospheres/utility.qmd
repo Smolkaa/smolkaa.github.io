@@ -1,0 +1,35 @@
+---
+title: "Utility"
+---
+---
+
+
+## Usage
+
+## Examples
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``scale_height`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.scale_height
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``projection_CHAMBERLAIN1963`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.projection_CHAMBERLAIN1963
+```
+:::

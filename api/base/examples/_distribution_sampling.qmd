@@ -1,0 +1,35 @@
+::: {.callout-note collapse="true" icon=false}
+
+# Sampling
+
+The distributions in themselves are only placeholders to be used in statistical calculations. The following code shows how one can sample a Maxwell-Boltzmann velocity distribution to obtain a velocity vector (`velocity`),
+
+```{julia}
+velocity(vd_mb)
+```
+
+a speed (`speed`),
+
+```{julia}
+speed(vd_mb)
+```
+
+ an azimuth angle (`azimuth`),
+
+```{julia}
+azimuth(vd_mb)
+```
+
+an elevation angle (`elevation`),
+
+```{julia}
+elevation(vd_mb)
+```
+
+ and a zenith angle (`zenith`).
+
+```{julia}
+zenith(vd_mb)
+```
+
+:::

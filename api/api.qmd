@@ -53,7 +53,7 @@ ExESS/
 
 * [`orbital_mechanics.jl`](/api/exospheres/orbital_mechanics.qmd)
 * [`trajectories.jl`](/api/exospheres/trajectory.qmd)
-* [`utils.jl`]()
+* [`utils.jl`](/api/exospheres/utility.qmd)
 
 
 :::
