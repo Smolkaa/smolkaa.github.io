@@ -1,12 +1,55 @@
-The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation [@Walter2018; @Schoerghofer2022a]. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector $\vec\velocity\in\Set{R}^3$, the mass of the planetary object $\mass\in\Set{R}^+$, and the current radial position $\radius\in\Set{R}^+$. Note that the velocity vector has to be provided in a [local cartesian coordinate system](/documentation/fundamentals/coordinate_systems.qmd) with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. The physical parameters are usually defined for all or all positive real numbers, $\Set{R}$ or $\Set{R}^+$, with the exception of the azimuth and zenith angle, $\azimuth, \zenith\in\left[-\pi, \pi\right)$, and the true anomaly, eccentric anomaly, and mean anomaly, $\trueAnomaly, \eccentricAnomaly, \meanAnomaly\in\left[0, 2\pi\right)$, respectively.
+::: {.callout-note collapse="true"}
+# Orbital Mechanics Function Library
+
+The functions below derive various orbital parameters, such as the eccentricity, the semi-major axis, or the true anomaly, from the given input parameters, used for the spherical, two-dimensional trajectory calculation [@Walter2018; @Schoerghofer2022a]. While there are multiple ways of rewriting these equations, for example, by simply inserting the definition of one of the input parameters into the equation, the primary inputs necessary to solve these functions are the current velocity vector $\vec\velocity\in\Set{R}^3$, the mass of the planetary object $\mass\in\Set{R}^+$, and the current radial position $\radius\in\Set{R}^+$. Note that the velocity vector has to be provided in a [local cartesian coordinate system](/documentation/fundamentals/coordinate_systems.qmd) with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. 
+
+::: {.panel-tabset}
+
+# {{< bi table >}} Table
+
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+| Name                | Function(s)                                                                                                                                                                  |
++:====================+:============================================================================================================================================================================:+
+| Azimuth Angle       | \begin{equation*}                                                                                                                                                            |
+|                     |    \azimuth\left(\vec\velocity \right) = \begin{cases}                                                                                                                       |
+|                     |        \cos^{-1}\left(\velocity_1/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2\geq0\\                                                               |
+|                     |        -\cos^{-1}\left(\velocity_1/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2<0                                                                   |
+|                     |    \end{cases}                                                                                                                                                               |
+|                     | \end{equation*}                                                                                                                                                              |
+|                     |                                                                                                                                                                              |
+|                     | \begin{equation*}                                                                                                                                                            |
+|                     |     \cos\azimuth = \frac{\velocity_1}{\sqrt{\velocity_1^2+\velocity_2^2}}                                                                                                    |
+|                     | \end{equation*}                                                                                                                                                              |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+| Eccentric Anomaly   | \begin{align*}                                                                                                                                                               |
+|                     |     \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right) &= \begin{cases}                                                                                               |
+|                     |         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) & \text{for } 0\leq\trueAnomaly<\pi\\         |
+|                     |         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) + 2\pi & \text{for } \pi\leq\trueAnomaly<2\pi |
+|                     |     \end{cases}\\[3mm]                                                                                                                                                       |
+|                     |     \eccentricAnomaly_{i+1}\left(\eccentricity, \meanAnomaly, \eccentricAnomaly_i\right) &= \meanAnomaly + \eccentricity\sin \eccentricAnomaly_i                             |
+|                     |     \quad\text{ with }\quad \eccentricAnomaly_0 = \meanAnomaly \\[3mm]                                                                                                       |
+|                     |     \tan\left(\eccentricAnomaly/2\right) &= \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\trueAnomaly/2\right)                                             |
+|                     | \end{align*}                                                                                                                                                                 |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+| Eccentricity        | \begin{align*}                                                                                                                                                               |
+|                     |     \eccentricity\left(\relativeKineticEnergy, \zenith\right) &= \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenith}\\               |
+|                     |     \eccentricity\left(\semiMajorAxis, \semiLatusRectum\right) &= \sqrt{1 - \frac{\semiLatusRectum}{\semiMajorAxis}} \\                                                      |
+|                     |     \eccentricity\left(\radius, \semiLatusRectum, \trueAnomaly\right) &= \frac{1}{\cos\trueAnomaly}\cdot\left(\frac{\semiLatusRectum}{\radius} - 1\right) \\                 |
+|                     |     \eccentricity\left(\eccentricAnomaly, \meanAnomaly\right) &= \frac{\eccentricAnomaly - \meanAnomaly}{\sin \eccentricAnomaly}                                             |  
+|                     | \end{align*}                                                                                                                                                                 |
++---------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
+
+: Orbital mechanics functions. {#tbl-orbital_mechanics_functions .hover tbl-colwidths="[20,80]"}
+
+# {{< bi code >}} LaTeX
+```latex
+```
+
+:::
 
 
 
-Every function below can be solved analytically, except for Eq. \eqref{eq:eccentric_anomaly_e_M}. This equation is the iterative solution of Kepler's equation, based on the definition of the mean anomaly, see Eq. \eqref{eq:mean_anomaly_e_E}. Nonetheless, one can solve for the eccentric anomaly numerically using stationary iterative methods. The starting point $\eccentricAnomaly_0=\meanAnomaly$ given in the Table could also be substituted with $\eccentricAnomaly_0=0$, where $\eccentricAnomaly_1=\meanAnomaly$ leads to the same numerical solution after just one more iteration step.
-
-
-
-## Azimuth Angle -- $\azimuth$ {#sec-azimuth-angle}
+### Azimuth Angle -- $\azimuth$ {#sec-azimuth-angle}
 The azimuth angle $\azimuth$, measured mathematically positive from $\cartesianCoordinateX$, i.e., north from true east, can be calculated using the following multi-case definition:
 \begin{equation}
     \azimuth\left(\vec\velocity \right) = \begin{cases}
@@ -14,17 +57,19 @@ The azimuth angle $\azimuth$, measured mathematically positive from $\cartesianC
         -\cos^{-1}\left(\velocity_1/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2<0
     \end{cases} \label{eq:azimuth_angle_v}
 \end{equation}
-with a [local cartesian](/documentation/fundamentals/coordinate_systems.qmd) velocity vector $\vec\velocity = \left[\velocity_1, \velocity_2, \velocity_3\right]^T$. The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression:
+The equation can be rewritten as a single-case equation, avoiding the inverse cosine expression:
 \begin{equation}
     \cos\azimuth = \frac{\velocity_1}{\sqrt{\velocity_1^2+\velocity_2^2}}.
 \end{equation} 
-[{{< bi code >}} [`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\azimuth\left(\vec\velocity\right)$: Eq. \eqref{eq:azimuth_angle_v}]{.aside}
+{{< bi code >}} [`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:azimuth_angle_v}
+
+[{{< bi code >}} [`azimuth_angle_v`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:azimuth_angle_v}]{.aside}
 
 
 
 
-## Eccentric Anomaly -- $\eccentricAnomaly$ {#sec-eccentric-anomaly}
-The eccentric anomaly $\eccentricAnomaly$ has two distinctly different definitions, depending on the input parameters. The first, shown in Eq. \eqref{eq:eccentric_anomaly_e_theta}, is based on a given eccentricity $\eccentricity$ and true anomaly $\trueAnomaly$, while the second one, shown in Eq. \eqref{eq:eccentric_anomaly_e_M}, is a iterative approach on solving for the eccentric anomaly based on the mean anomaly $\meanAnomaly$ and eccentricity $\eccentricity$. 
+### Eccentric Anomaly -- $\eccentricAnomaly$ {#sec-eccentric-anomaly}
+The eccentric anomaly $\eccentricAnomaly$ has two distinctly different definitions, depending on the input parameters. The first, shown in Eq. \eqref{eq:eccentric_anomaly_e_theta}, is based on a given eccentricity $\eccentricity$ and true anomaly $\trueAnomaly$, while the second one, shown in Eq. \eqref{eq:eccentric_anomaly_e_M}, is an iterative approach on solving for the eccentric anomaly based on the mean anomaly $\meanAnomaly$ and eccentricity $\eccentricity$. 
 \begin{align}
     \eccentricAnomaly\left(\eccentricity, \trueAnomaly\right) &= \begin{cases}
         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) & \text{for } 0\leq\trueAnomaly<\pi\\
@@ -36,13 +81,13 @@ Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} ca
 \begin{equation}
     \tan\left(\eccentricAnomaly/2\right) = \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\trueAnomaly/2\right).
 \end{equation}
-[{{< bi code >}} [`eccentric_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): $\eccentricAnomaly\left(\eccentricity, \trueAnomaly\right)$: Eq. \eqref{eq:eccentric_anomaly_e_theta} </br> {{< bi code >}} [`eccentric_anomaly_e_M`](/api/exospheres/orbital_mechanics.qmd): $\eccentricAnomaly\left(\eccentricity, \meanAnomaly\right)$: Eq. \eqref{eq:eccentric_anomaly_e_M}]{.aside}
+[{{< bi code >}} [`eccentric_anomaly_e_theta`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:eccentric_anomaly_e_theta} </br> {{< bi code >}} [`eccentric_anomaly_e_M`](/api/exospheres/orbital_mechanics.qmd): Eq. \eqref{eq:eccentric_anomaly_e_M}]{.aside}
 
 
 
 
-## Eccentricity -- $\eccentricity$ {#sec-eccentricity}
-The eccentricity $\eccentricity$ 
+### Eccentricity -- $\eccentricity$ {#sec-eccentricity}
+The eccentricity $\eccentricity$ can be computed in a variety of different way, depending on the known input.
 \begin{align}
     \eccentricity\left(\relativeKineticEnergy, \zenith\right) &= \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenith}  \label{eq:eccentricity_epskin_psi} \\
     \eccentricity\left(\semiMajorAxis, \semiLatusRectum\right) &= \sqrt{1 - \frac{\semiLatusRectum}{\semiMajorAxis}}  \label{eq:eccentricity_a_p} \\
@@ -60,7 +105,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Escape Velocity -- $\velocity_{esc}$ {#sec-escape-velocity}
+### Escape Velocity -- $\velocity_{esc}$ {#sec-escape-velocity}
 \begin{equation}
     \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity_r_m}
 \end{equation}
@@ -71,7 +116,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Ground Track Distance -- $\distance$ {#sec-ground-track-distance}
+### Ground Track Distance -- $\distance$ {#sec-ground-track-distance}
 \begin{equation}
     \distance\left(\radius, \Delta\trueAnomaly\right) = \radius \cdot \Delta\trueAnomaly  \label{eq:ground_track_distance_r_dtheta}
 \end{equation}
@@ -85,7 +130,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Mean Anomaly  -- $\meanAnomaly$ {#sec-mean-anomaly}
+### Mean Anomaly  -- $\meanAnomaly$ {#sec-mean-anomaly}
 \begin{equation}
     \meanAnomaly\left(\eccentricity, \eccentricAnomaly\right) = \eccentricAnomaly - \eccentricity\sin \eccentricAnomaly  \label{eq:mean_anomaly_e_E}
 \end{equation}
@@ -99,7 +144,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Orbit Period -- $\period$ {#sec-orbit-period}
+### Orbit Period -- $\period$ {#sec-orbit-period}
 \begin{equation}
     \period\left(\semiMajorAxis, \mass\right) = 2\pi\sqrt{\frac{\semiMajorAxis^3}{\GravitationalConstant \mass}}  \label{eq:orbit_period_a_m}
 \end{equation}
@@ -111,7 +156,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Orbit Time -- $\Time$ {#sec-orbit-time}
+### Orbit Time -- $\Time$ {#sec-orbit-time}
 \begin{equation}
     \Time\left(\meanAnomaly, \period\right) = \frac{\meanAnomaly}{2\pi} \cdot \period  \label{eq:orbit_time_M_P}
 \end{equation}
@@ -127,7 +172,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Relative Kinetic Energy -- $\relativeKineticEnergy$ {#sec-relative-kinetic-energy}
+### Relative Kinetic Energy -- $\relativeKineticEnergy$ {#sec-relative-kinetic-energy}
 \begin{align}
     \relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right) &= \left(\frac{|\vec\velocity|}{\velocity_{esc}}\right)^2  \label{eq:relative_Ekin_v_vesc} \\
     \relativeKineticEnergy\left(\radius, \semiMajorAxis\right) &= 1 - \frac{\radius}{2\semiMajorAxis}  \label{eq:relative_Ekin_r_a} \\
@@ -147,7 +192,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Semi-Latus Rectum -- $\semiLatusRectum$ {#sec-semi-latus-rectum}
+### Semi-Latus Rectum -- $\semiLatusRectum$ {#sec-semi-latus-rectum}
 \begin{align}
     \semiLatusRectum\left(\semiMajorAxis, \eccentricity\right) &= \semiMajorAxis \cdot (1 - \eccentricity^2)  \label{eq:semi_latus_rectum_a_e} \\
     \semiLatusRectum\left(\radius, \eccentricity, \trueAnomaly\right) &= \radius \cdot \left(1 + \eccentricity \cdot \cos \trueAnomaly\right)  \label{eq:semi_latus_rectum_r_e_theta}
@@ -162,7 +207,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Semi-Major Axis -- $\semiMajorAxis$ {#sec-semi-major-axis}
+### Semi-Major Axis -- $\semiMajorAxis$ {#sec-semi-major-axis}
 \begin{align}
     \semiMajorAxis\left(\radius, \relativeKineticEnergy\right) &= \frac{\radius}{2 \cdot \left(1 - \relativeKineticEnergy \right)}  \label{eq:semi_major_axis_r_epskin} \\
     \semiMajorAxis\left(\semiLatusRectum, \eccentricity\right) &= \frac{\semiLatusRectum}{1 - \eccentricity^2}  \label{eq:semi_major_axis_p_e}
@@ -180,7 +225,7 @@ The eccentricity $\eccentricity$
 
 
 
-## True Anomaly -- $\trueAnomaly$ {#sec-true-anomaly}
+### True Anomaly -- $\trueAnomaly$ {#sec-true-anomaly}
 \begin{align}
     \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{\semiMajorAxis}{\radius} \left( 1 - \eccentricity^2 \right) -1 \right)\right)  \label{eq:true_anomaly_r_a_e} \\
     \trueAnomaly\left(\eccentricity, \relativeKineticEnergy\right) &= \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{1 - \eccentricity^2}{2-2 \relativeKineticEnergy} -1 \right)\right)  \label{eq:true_anomaly_e_epskin}
@@ -196,7 +241,7 @@ The eccentricity $\eccentricity$
 
 
 
-## Zenith Angle -- $\zenith$ {#sec-zenith-angle}
+### Zenith Angle -- $\zenith$ {#sec-zenith-angle}
 \begin{equation}
     \zenith\left(\vec\velocity\right) = \tan^{-1}\left(\frac{\sqrt{\velocity_1^2 + \velocity_2^2}}{\velocity_3}\right)  \label{eq:zenith_angle_v}
 \end{equation}
@@ -205,3 +250,5 @@ The eccentricity $\eccentricity$
 {{< bi code >}} [`zenith_angle_v`](/api/exospheres/orbital_mechanics.qmd): $\zenith\left(\vec\velocity\right)$: Eq. \eqref{eq:zenith_angle_v}  
 :::
 
+
+:::

@@ -1,17 +1,48 @@
 For purely ballistic trajectories, the landing position of a particle can be analytically calculated.
 
+<!-- {{< include ballistic_trajectories/_orbital_mechanics_functions.qmd >}} -->
+
+
 ## General Solution
 
-The following calculations are based on the orbital mechanics functions introduced above to calculate the landing position $\left(\longitude_1, \latitude_1\right)$. Note that this approach is quasi-two-dimensional as the radial dimension of the spherical three-dimensional coordinate system is neglected, assuming a perfectly spherical central body with radius $\radius$. The trajectory starts, and the launch position $\left(\longitude_0, \latitude_0\right)$ and, as mentioned above, requires knowledge about the mass and radius of the planetary body, $\mass$ and $\radius$, as well as the launch, or initial, velocity vector $\vec\velocity$.
-
-
-Based on the escape velocity [$\velocity_{esc}(\radius, \mass)$](#sec-escape-velocity), the relative kinetic energy fraction [$\relativeKineticEnergy(\vec\velocity, \velocity_{esc})$](#sec-relative-kinetic-energy), can be determined, which in turn is used to calculate the semi-major axis of the trajectory, [$\semiMajorAxis(\radius, \relativeKineticEnergy)$](#sec-semi-major-axis). Since the launch velocity vector is given in local cartesian coordinates, both its zenith angle [$\zenith(\vec\velocity)$](#sec-zenith-angle) and its azimuth angle [$\azimuth\left(\vec\velocity\right)$](#sec-azimuth-angle) can be directly extracted. The former is subsequently used for the determination of the eccentricity [$\eccentricity\left(\relativeKineticEnergy, \zenith\right)$](#sec-eccentricity). With both $\semiMajorAxis$ and $\eccentricity$ known, the true anomaly at launch $\trueAnomaly_0(\radius, \semiMajorAxis, \eccentricity)$, and due to symmetry conditions, also the landing position [$\trueAnomaly_1 = 2\pi - \trueAnomaly_0$](#sec-true-anomaly), can be calculated, leading to the angular difference between the landing and launch true anomaly $\trueAnomaly_1 - \trueAnomaly_0 = 2\pi - 2\trueAnomaly = \Delta\trueAnomaly$.
+The following equations, mostly based on orbital mechanics functions presented in @Kegerreis2017, @Walter2018, and @Schoerghofer2022a, assume a perfectly spherical central body with radius $\radius$ and of mass $\mass$. Based on the launch velocity vector $\vec\velocity\in\Set{R}^3$ at the launch position $\left(\longitude_0, \latitude_0\right)$, the landing coordinates $\left(\longitude_1, \latitude_1\right)$ of the ballistic trajectory can be calculated using spherical trigonometry. The velocity vector is assumed to be in local cartesian coordinates, i.e. with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. Starting with the escape velocity
+\begin{equation}
+  \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity_r_m}
+\end{equation}
+the relative kinetic energy fraction
+\begin{equation}
+  \relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right) = \left(\frac{|\vec\velocity|}{\velocity_{esc}}\right)^2  \label{eq:relative_Ekin_v_vesc}
+\end{equation}
+can be determined, which in turn is used to calculate the semi-major axis of the trajectory
+\begin{equation}
+  \semiMajorAxis\left(\radius, \relativeKineticEnergy\right) = \frac{\radius}{2 \cdot \left(1 - \relativeKineticEnergy \right)}.  \label{eq:semi_major_axis_r_epskin}
+\end{equation}
+From the known launch velocity vector, the azimuth angle
+\begin{equation}
+  \azimuth\left(\vec\velocity \right) = \begin{cases}
+      \cos^{-1}\left(\velocity_1/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2\geq0\\
+      -\cos^{-1}\left(\velocity_1/\sqrt{\velocity_1^2 + \velocity_2^2}\right) & \text{for } \velocity_2<0
+    \end{cases} \label{eq:azimuth_angle_v}
+\end{equation}
+and the zenith angle
+\begin{equation}
+  \zenith\left(\vec\velocity\right) = \tan^{-1}\left(\frac{\sqrt{\velocity_1^2 + \velocity_2^2}}{\velocity_3}\right)  \label{eq:zenith_angle_v} 
+\end{equation}
+can be extracted. The latter is subsequently used for the determination of the eccentricity
+\begin{equation}
+  \eccentricity\left(\relativeKineticEnergy, \zenith\right) = \sqrt{1 - 4 \relativeKineticEnergy \cdot (1 - \relativeKineticEnergy) \cdot \sin^2 \zenith}.  \label{eq:eccentricity_epskin_psi}
+\end{equation} 
+With both $\semiMajorAxis$ and $\eccentricity$ known, the true anomaly at launch
+\begin{equation}
+  \trueAnomaly_0 = \trueAnomaly\left(\radius, \semiMajorAxis, \eccentricity\right) = \cos^{-1}\left(\frac{1}{\eccentricity} \cdot \left(\frac{\semiMajorAxis}{\radius} \left( 1 - \eccentricity^2 \right) -1 \right)\right)  \label{eq:true_anomaly_r_a_e}  
+\end{equation}
+as well as the landing position $\trueAnomaly_1 = 2\pi - \trueAnomaly_0$, can be calculated, leading to the angular difference between the landing and launch true anomaly $\trueAnomaly_1 - \trueAnomaly_0 = 2\pi - 2\trueAnomaly = \Delta\trueAnomaly$.
 
 
 {{< include ballistic_trajectories/imgs/landing_position_calc/_landing_position_calc.qmd >}}
 
 
-Based on @Butler1997, @Kegerreis2020, and @Schoerghofer2022a, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuth$ of the launch velocity. The problem is sketched in @fig-landing_position_calc, where $\overline{\latitude_0}$ and $\overline{\latitude_1}$ are the complementary angles of the latitudes, i.e., $\latitude = \frac{\pi}{2} \cdot \overline{\latitude}$. Based on the cosine-law of spherical trigonometry, the angular triangle $\left(\Delta\trueAnomaly, \overline{\latitude_0}, \overline{\latitude_1}\right)$ can be used to find
+Based on @Butler1997, @Kegerreis2020, and @Schoerghofer2022a, the landing position $\left(\longitude_1, \latitude_1\right)$ can now be calculated using the launch position $\left(\longitude_0, \latitude_0\right)$, the traveled true anomaly $\Delta\trueAnomaly$, and the azimuth angle $\azimuth$ of the launch velocity. The problem is sketched in Fig.~\ref{fig:landing_position_calc}, where $\overline{\latitude_0}$ and $\overline{\latitude_1}$ are the complementary angles of the latitudes, i.e., $\latitude = \frac{\pi}{2} - \overline{\latitude}$. Based on the cosine-law of spherical trigonometry, the angular triangle $\left(\Delta\trueAnomaly, \overline{\latitude_0}, \overline{\latitude_1}\right)$ can be used to find
 \begin{equation}
     \sin\latitude_1 = \sin\latitude_0 \cdot \cos\Delta\trueAnomaly + \cos\latitude_0 \cdot \sin\Delta\trueAnomaly \cdot \sin\azimuth
 \end{equation}
@@ -31,8 +62,22 @@ Finally, the landing longitude $\longitude_1$ can be calculated based on the dir
 with the signum function $\sgn\left(\velocity_1\right) = 1$ for $\velocity_1\geq0$ and $\sgn\left(\velocity_1\right) = -1$ for $\velocity_1<0$.
 
 
+Calculating the time of flight $\flightTime = \Time_1 - \Time_0 = \period - 2\Time_0$ requires the orbital period
+\begin{equation}
+  \period\left(\semiMajorAxis, \mass\right) = 2\pi\sqrt{\frac{\semiMajorAxis^3}{\GravitationalConstant \mass}}  \label{eq:orbit_period_a_m}
+\end{equation}
+as well as the orbit time
+\begin{equation}
+  \Time\left(\meanAnomaly, \period\right) = \frac{\meanAnomaly}{2\pi} \cdot \period  \label{eq:orbit_time_M_P}
+\end{equation}
+where $\Time_0$ and $\Time_1$ are the orbit times at the launch and landing, respectively, with $\Time_1 = \period-\Time_0$ for symmetry reasons. The mean anomaly
+\begin{equation}
+  \meanAnomaly\left(\eccentricity, \eccentricAnomaly\right) = \eccentricAnomaly - \eccentricity\sin \eccentricAnomaly  \label{eq:mean_anomaly_e_E}
+\end{equation}
+at launch can be calculated using the previously calculated eccentric anomaly $\eccentricAnomaly_0$ at launch and the eccentricity $\eccentricity$.
 
-Calculating the time of flight $\flightTime = \Time_1 - \Time_0 = \period - 2\Time_0$ requires the orbital period [$\period\left(\semiMajorAxis, \mass\right)$](#sec-orbit-period) as well as the orbit time [$\Time(\meanAnomaly, \period)$](#sec-orbit-time), where $\Time_0$ and $\Time_1$ are the orbit times at the launch and landing, respectively, with $\Time_1 = \period-\Time_0$ for symmetry reasons. The mean anomaly [$\meanAnomaly_0$](#sec-mean-anomaly) at launch can be calculated using the eccentric anomaly [$\eccentricAnomaly_0$](#sec-eccentric-anomaly) and the eccentricity $\eccentricity$.
+
+
 
 
 ## Simplification for Uniform Gravity
