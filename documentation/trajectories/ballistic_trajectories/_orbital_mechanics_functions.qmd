@@ -75,7 +75,7 @@ The eccentric anomaly $\eccentricAnomaly$ has two distinctly different definitio
         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) & \text{for } 0\leq\trueAnomaly<\pi\\
         2 \tan^{-1}\left( \sqrt{\frac{1-\eccentricity}{1+\eccentricity}} \cdot \tan\left(\frac{\trueAnomaly}{2}\right) \right) + 2\pi & \text{for } \pi\leq\trueAnomaly<2\pi
     \end{cases}  \label{eq:eccentric_anomaly_e_theta} \\[3mm]
-     \eccentricAnomaly_{i+1}\left(\eccentricity, \meanAnomaly, \eccentricAnomaly_i\right) &= \meanAnomaly + \eccentricity\sin \eccentricAnomaly_i \quad\text{ with }\quad \eccentricAnomaly_0 = \meanAnomaly  \label{eq:eccentric_anomaly_e_M}
+    \eccentricAnomaly_{i+1}\left(\eccentricity, \meanAnomaly, \eccentricAnomaly_i\right) &= \meanAnomaly + \eccentricity\sin \eccentricAnomaly_i \quad\text{ with }\quad \eccentricAnomaly_0 = \meanAnomaly  \label{eq:eccentric_anomaly_e_M}
 \end{align}
 Similar to the azimuth angle before, Eq. \eqref{eq:eccentric_anomaly_e_theta} can be rewritten as a single-case equation, avoiding the inverse tangent expression:
 \begin{equation}

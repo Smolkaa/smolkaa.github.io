@@ -46,3 +46,9 @@ title: "5.1 Regolith Composition"
 [@Taylor1975, p.62--64]
 
 {{< include composition/imgs/composition_pg/_composition_pg.qmd >}}
+
+
+
+
+
+[ ]{.aside}

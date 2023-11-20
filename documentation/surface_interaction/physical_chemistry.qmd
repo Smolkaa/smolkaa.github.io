@@ -28,3 +28,8 @@ Pre-exponential factor $\preExpFactor$ for monolayer adsorbates usually in the o
 # Definition: Monolayer 
 A monolayer of particles refers to a single layer of adsorbed molecules or atoms on a surface. This term is essential in understanding the capacity and behavior of a surface to adsorb volatile substances. Specifically, for water ice, the number of molecules in a monolayer can be calculated from the density and molecular mass as $\surfaceConcentration_m = \SI{10\tothe{19}}{\metre\tothe{-2}}$, or, $\SI{10}{\nano\metre\tothe{-2}}$. [@Schoerghofer2023a]
 :::
+
+
+
+
+[ ]{.aside}

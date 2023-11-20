@@ -6,3 +6,8 @@ title: "5.2 Non-Ballistic Trajectories"
 {{< include /resources/latex/_symbols.qmd >}}
 
 ---
+
+
+
+
+[ ]{.aside}

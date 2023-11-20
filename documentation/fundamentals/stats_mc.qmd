@@ -38,3 +38,9 @@ In the context of this work, examples of probabilistic subsystems can be found i
 # Randomness
 
 The randomness of numerical simulations is usually achieved through one (or more) of the implemented random number generators, which are based on deterministic algorithms. These algorithms are designed to produce a sequence of numbers that appear to be random, but are in fact completely determined by the initial value, called the seed. In this work, the standard generator method `xoshiro256++` implemented in the Julia Programming Language has been used [@Blackman2021].
+
+
+
+
+
+[ ]{.aside}

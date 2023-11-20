@@ -47,3 +47,8 @@ The solar wind exerts a magnetic field, called the Interplanetary Magnetic Field
 
 
 Due to its high conductivity, the solar wind's magnetic field tends to be relatively frozen inside the streaming plasma [@Bittencourt2004].
+
+
+
+
+[ ]{.aside}

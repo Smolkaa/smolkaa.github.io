@@ -22,3 +22,8 @@ Intro
 ## Numerical ODE Solver Analysis
 
 ---
+
+
+
+
+[ ]{.aside}

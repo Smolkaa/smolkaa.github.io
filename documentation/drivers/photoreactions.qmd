@@ -35,3 +35,7 @@ Collection of ten atomic hydrogen-like single-electron orbitals showing 1s, 2s, 
 
 See original source [here](https://commons.wikimedia.org/wiki/File:Atomic-orbital-clouds_spdf_m0.png) _(last visited: 09/08/2023)_.
 :::
+
+
+
+[ ]{.aside}

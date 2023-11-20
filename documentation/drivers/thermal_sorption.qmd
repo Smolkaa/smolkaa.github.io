@@ -19,3 +19,8 @@ The following sections cover the theoretical description of velocity distributio
 
 ## Maxwell-Boltzmann Flux Distribution
 {{< include /documentation/drivers/thermal_sorption/_mbfd.qmd >}}
+
+
+
+
+[ ]{.aside}

@@ -12,3 +12,7 @@ title: "2.7 General Properties and Data"
 
 # Particles
 {{< include properties_data/_particles.qmd >}}
+
+
+
+[ ]{.aside}

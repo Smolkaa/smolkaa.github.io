@@ -25,3 +25,6 @@ Some intro text
 # The Lunar Surface-Bounded Exosphere
 {{< include /documentation/fundamentals/moon/_lunar_exosphere.qmd >}}
 
+
+
+[ ]{.aside}
