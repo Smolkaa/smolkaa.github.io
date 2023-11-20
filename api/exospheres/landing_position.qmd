@@ -1,0 +1,46 @@
+---
+title: "Trajectory"
+---
+---
+
+A more in-depth description of the implemented functions listed below can be found in the following sections:
+
+* [Ballistic Trajectories](/documentation/trajectories/ballistic_trajectories.qmd)
+
+
+## Usage
+
+```julia
+x0 = GlobalSphericalPosition(LUNAR_RADIUS, 0, 0)
+v0 = LocalCartesianVelocity(100, 100, 0)
+x1 = landing_position(x0, v0)
+t  = time_of_flight(x0, v0)
+```
+
+## Examples
+
+## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``landing_position`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.landing_position
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``time_of_flight`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.time_of_flight
+```
+:::

@@ -29,7 +29,7 @@
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Armand1977         | **"Classical theory of desorption rate velocity distribution of desorbed atoms; Possibility of a compensation effect"**          |
 |                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * proposed the theory of desorption [velocity distributions](/documentation/drivers/thermal_sorption.qmd)                  |
+|{{< kbd THEORY >}}   | * proposed the theory of desorption [velocity distributions](/documentation/drivers/thermal_sorption.qmd)                        |
 |                     |  (Maxwell-Boltzmann Flux Distribution, [MBFD](/documentation/acronyms.qmd))                                                      |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
@@ -171,7 +171,7 @@
 |                     | * includes a 1D lateral heat conduction model with surface roughness dependence                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
-| @Killen2019         | **"The lunar neon exosphere seen in LACE data"**                                                                                 |
+| @Killen2019         | **"The Lunar Neon Exosphere Seen in LACE data"**                                                                                 |
 |                     |                                                                                                                                  |
 |{{< kbd EXOSPHERE >}}| * Monte-Carlo simulation of the lunar neon exosphere                                                                             |
 |                     | * comparison with Apollo 17's LACE data                                                                                          |
@@ -192,7 +192,7 @@
 |                     |                                                                                                                                  |
 |{{< kbd EXOSPHERE >}}| * Monte-Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation                        |
 |                     | * compares modelled $\ce{He}$ densities with [LAMP](/documentation/acronyms.qmd) measurements                                    |
-|                     | * suggests best description of lunar helium assuming full thermal accommodation and a [MBFD](/documentation/acronyms.qmd)        |
+|                     | * suggests the best description of lunar helium assuming full thermal accommodation and an [MBFD](/documentation/acronyms.qmd)   |
 |                     |   distribution of kinetic energies                                                                                               |
 |                     | * finds that endogenic $\ce{He}$ provides about 20% of the lunar helium exosphere as compared to solar wind source               |
 |                     |                                                                                                                                  |
@@ -242,7 +242,7 @@
 |                     |                                                                                                                                  |
 |{{< kbd SURFACE >}}  | * Monte-Carlo model to investigate $\ce{H}$ implantation, conversion to $\ce{OH}$, and subsequent outgassing of $\ce{H2}$        |
 |{{< kbd EXOSPHERE >}}| * simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen      |
-|                     |   both on the surface as well as in the exosphere respond quickly                                                                |
+|                     |   both on the surface as well as in the exosphere responds quickly                                                               |
 |                     | * general model based on previous work of @Tucker2018                                                                            |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
@@ -494,7 +494,7 @@
     \begin{itemize}\setlength\itemsep{-0.7em}
         \item Monte-Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation
         \item compares modelled $\ce{He}$ densities with LAMP measurements
-        \item suggests best description of lunar helium assuming full thermal accommodation and a MBF distribution of kinetic energies
+        \item suggests the best description of lunar helium assuming full thermal accommodation and an MBF distribution of kinetic energies
         \item finds that endogenic $\ce{He}$ provides about $\SI{20}{\percent}$ of the lunar helium exosphere as compared to solar wind source
     \end{itemize} \\ \midrule
 
@@ -539,7 +539,7 @@
     \citet{Tucker2021}\newline\emph{Surface}\newline\emph{Exosphere} & \textbf{"On the effect of magnetospheric shielding on the lunar hydrogen cycle"}
     \begin{itemize}\setlength\itemsep{-0.7em}
         \item Monte-Carlo model to investigate $\ce{H}$ implantation, conversion to $\ce{OH}$, and subsequent outgassing of $\ce{H2}$
-        \item simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen both on the surface as well as in the exosphere respond quickly
+        \item simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen both on the surface as well as in the exosphere responds quickly
         \item general model based on previous work of \citet{Tucker2018}
     \end{itemize} \\ \midrule
 
