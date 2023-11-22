@@ -5,6 +5,8 @@ For purely ballistic trajectories, the landing position of a particle can be ana
 
 ## General Solution
 
+[{{< bi code >}} [`landing_position`](/api/exospheres/landing_position.qmd)]{.aside}
+
 The following equations, mostly based on orbital mechanics functions presented in @Kegerreis2017, @Walter2018, and @Schoerghofer2022a, assume a perfectly spherical central body with radius $\radius$ and of mass $\mass$. Based on the launch velocity vector $\vec\velocity\in\Set{R}^3$ at the launch position $\left(\longitude_0, \latitude_0\right)$, the landing coordinates $\left(\longitude_1, \latitude_1\right)$ of the ballistic trajectory can be calculated using spherical trigonometry. The velocity vector is assumed to be in local cartesian coordinates, i.e. with $\velocity_1$ and $\velocity_2$ being the components in the horizontal plane and $\velocity_3$ being the vertical component. Starting with the escape velocity
 \begin{equation}
   \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity}
