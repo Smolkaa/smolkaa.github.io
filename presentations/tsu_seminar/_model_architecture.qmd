@@ -193,7 +193,7 @@ The third loop of the model architecture is iterating over all elements and all 
     \draw[-latex, thick] (LOOPII.0) -- (SUM.180);
 
     %::. input connection
-    \draw[latex-, thick] (ITERATION.90) -- +(0,2) node[midway, right, yshift=-7px]{$j=1$} node[at end, above] {\n{Next $i$-th \\ Monte-Carlo step}};
+    \draw[latex-, thick] (ITERATION.90) -- +(0,2) node[midway, right, yshift=-7px]{$j=1$} node[at end, above] {\n{Next $i$-th \\ Monte Carlo step}};
 
 
     %::. background loop node
@@ -222,7 +222,7 @@ Note that the used mathematical symbols and colors are defined in the document's
 ![](imgs/model_architecture/loop_IV.svg){width="549px"}
 
 
-Fourth and outermost loop of the model architecture. This loop handles the actual Monte-Carlo simulation by iterating over all $N_{MC}$ steps, each with an identical setup, and saving the outcome of each step separately to perform any statistical analyses and post-processing afterwards.
+Fourth and outermost loop of the model architecture. This loop handles the actual Monte Carlo simulation by iterating over all $N_{MC}$ steps, each with an identical setup, and saving the outcome of each step separately to perform any statistical analyses and post-processing afterwards.
 :::
 
 # {{< bi code >}} LaTeX
@@ -239,7 +239,7 @@ Fourth and outermost loop of the model architecture. This loop handles the actua
 
     %::. main nodes
     \node[main] (LOOPIII) at (0,0) {\n{\textbf{Loop III} \\ Iterations and Elements}};
-    \node[main, above = of LOOPIII] (STEP) {\n{Start $i$-th \\ Monte-Carlo step}};
+    \node[main, above = of LOOPIII] (STEP) {\n{Start $i$-th \\ Monte Carlo step}};
     \node[above = 1.5 of STEP] (START) {Start simulation};
 
     %::. main connections
@@ -248,7 +248,7 @@ Fourth and outermost loop of the model architecture. This loop handles the actua
     \draw[-latex, thick] (LOOPIII.240) |- +(-1,-0.5) -| node[near end, left, above, rotate=90] {sum the results of all iterations} ($(STEP.120) + (-2.1, 0.5)$) -| (STEP.120)  node[near start, above] {$i\mapsto i+1$};
 
     %::. save node
-    \node[below = 1.5 of LOOPIII] (SAVE) {\n{Save $\surfaceNumberDensity$ results \\ of $i$-th Monte-Carlo step}};
+    \node[below = 1.5 of LOOPIII] (SAVE) {\n{Save $\surfaceNumberDensity$ results \\ of $i$-th Monte Carlo step}};
 
     %:: save node connection
     \draw[-latex, thick] (LOOPIII.290) -- (SAVE.70);
@@ -269,7 +269,7 @@ Fourth and outermost loop of the model architecture. This loop handles the actua
     %::. background loop node
     \begin{pgfonlayer}{background}
         \draw[thick, fill=white!95!black, rounded corners=4pt] ($(STEP.90) + (0,1)$) -| ($(STEP.0) + (3.2,0.3)$) -| ($(LOOPIII.0) + (0.25,0)$) |- ($(LOOPIII.270) + (0,-1)$) -| ($(STEP.180) + (-1.5,0)$) |- ($(STEP.90) + (-1,1)$) -- cycle;
-        \node[anchor=north east, text=TUMBlueDark] at ($(STEP.90) + (4.7, 1)$) {\n{\textbf{Loop IV} \\ Monte-Carlo Steps}};
+        \node[anchor=north east, text=TUMBlueDark] at ($(STEP.90) + (4.7, 1)$) {\n{\textbf{Loop IV} \\ Monte Carlo Steps}};
     \end{pgfonlayer}
 \end{tikzpicture}
 ```

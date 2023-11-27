@@ -118,12 +118,12 @@ Let $\vec\Velocity$ be the random variable of the [MBFD](/documentation/acronyms
 \begin{equation}
     \vec\Velocity \sim f(\vec\velocity) = \frac{2}{\pi} \cdot \left(\frac{\mass}{2\BoltzmannConstant\temperature}\right)^2 \cdot \velocity_z \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right)
 \end{equation}
-given in cartesian coordinates, see Eq. \eqref{eq:mbfd} and Eq. \eqref{eq:mbfd_spherical} for the function in spherical coordinates. Similar to the [MBD](/documentation/acronyms.qmd), the numerical sampling of the random variable can be performed by mapping each random component to one implemented numerical distribution. As a reminder, the most basic numerical distributions are the uniform distribution with random variable $R_u\in\left[0,1\right]$ with realization $r_u$ of $R_u\sim f(r_u)=1$ and a normal distribution with random variable $R_n\in\left(-\infty, \infty\right)$ with realization $r_n$ of $R_n\sim f(r_n) = \mathcal{N}\left(r_n | 0, 1 \right)$ with zero mean and unit variance.
+given in cartesian coordinates, see Eq. \eqref{eq:mbfd} and Eq. \eqref{eq:mbfd_spherical} for the function in spherical coordinates. Similar to the [MBD](/documentation/acronyms.qmd), the numerical sampling of the random variable can be performed by mapping each random component to one implemented numerical distribution. As a reminder, the most basic numerical distributions are the uniform distribution with random variable $\randomVariableUniform\in\left[0,1\right]$ with realization $\randomValueUniform$ of $\randomVariableUniform\sim f(\randomValueUniform)=1$ and a normal distribution with random variable $\randomVariableNormal\in\left(-\infty, \infty\right)$ with realization $\randomValueNormal$ of $\randomVariableNormal\sim f(\randomValueNormal) = \mathcal{N}\left(\randomValueNormal | 0, 1 \right)$ with zero mean and unit variance.
 
 
 In cartesian coordinates, with $\vec\Velocity = \left(\Velocity_x, \Velocity_y, \Velocity_z\right)$, the first two directions are assumed to be perpendicular to the flux, while the z-direction is parallel to the flux. Thus, both the x- and the y-component, $\velocity_x$, and $\velocity_y$, can be numerically sampled like in the [MBD](/documentation/acronyms.qmd), which is with scaled normal distributions, see Eqs. \eqref{eq:mbd_random_cartesian_component_2}, \eqref{eq:mbd_random_cartesian_component}. The flux direction is drawn from the $f_\parallel$ [pdf](/documentation/acronyms.qmd), see Eq. \eqref{eq:mbfd_1d_parallel}, which can not be directly translated in either a uniform or a normal distribution. Therefore, the respective [cdf](/documentation/acronyms.qmd), $F_\parallel\left(\velocity_z\right)$,  must be matched with the uniform [cdf](/documentation/acronyms.qmd):
 \begin{align}
-    r_{\velocity_z} &= \int_0^{r_{\velocity_z}} f(r_u) dr_u = \int_0^{\velocity_z} f_\parallel(\velocity) d\velocity = F_\parallel\left(\velocity_z\right) = 1 - \exp\left(-\frac{\mass\velocity_z^2}{2\BoltzmannConstant\temperature}\right) \\
+    r_{\velocity_z} &= \int_0^{r_{\velocity_z}} f(\randomValueUniform) dr_u = \int_0^{\velocity_z} f_\parallel(\velocity) d\velocity = F_\parallel\left(\velocity_z\right) = 1 - \exp\left(-\frac{\mass\velocity_z^2}{2\BoltzmannConstant\temperature}\right) \\
     \Rightarrow\qquad \velocity_z &= \sqrt{-\ln\left(1-r_{\velocity_z}\right)\frac{2\BoltzmannConstant\temperature}{\mass}}.
     \label{eq:mbfd_random_cartesian_component}
 \end{align}
@@ -143,9 +143,9 @@ $\vec\Velocity$ can also be expressed in spherical coordinates as $\vec\Velocity
 \end{alignat}
 As before, the [cdf](/documentation/acronyms.qmd) of the random variables can be set to equal the [cdf](/documentation/acronyms.qmd) of the unit uniform distribution:
 \begin{alignat}{3}
-    r_\velocity &= \int_0^{r_\velocity} f(r_u) dr_u = \int_0^\velocity f(\tilde\velocity)d\tilde\velocity, \\
-    r_\sphericalCoordinateElevation &= \int_0^{r_\sphericalCoordinateElevation} f(r_u) dr_u = \int_0^\sphericalCoordinateElevation f(\tilde\sphericalCoordinateElevation)d\tilde\sphericalCoordinateElevation &&= 1 - \cos^2\sphericalCoordinateElevation, \label{eq:mbfd_random_elevation} \\
-    r_\sphericalCoordinateAzimuth &= \int_0^{r_\sphericalCoordinateAzimuth} f(r_u) dr_u = \int_{-\pi}^\sphericalCoordinateAzimuth f(\tilde\sphericalCoordinateAzimuth)d\tilde\sphericalCoordinateAzimuth &&= \frac{\sphericalCoordinateAzimuth+\pi}{2\pi}. \label{eq:mbfd_random_azimuth} 
+    r_\velocity &= \int_0^{r_\velocity} f(\randomValueUniform) dr_u = \int_0^\velocity f(\tilde\velocity)d\tilde\velocity, \\
+    r_\sphericalCoordinateElevation &= \int_0^{r_\sphericalCoordinateElevation} f(\randomValueUniform) dr_u = \int_0^\sphericalCoordinateElevation f(\tilde\sphericalCoordinateElevation)d\tilde\sphericalCoordinateElevation &&= 1 - \cos^2\sphericalCoordinateElevation, \label{eq:mbfd_random_elevation} \\
+    r_\sphericalCoordinateAzimuth &= \int_0^{r_\sphericalCoordinateAzimuth} f(\randomValueUniform) dr_u = \int_{-\pi}^\sphericalCoordinateAzimuth f(\tilde\sphericalCoordinateAzimuth)d\tilde\sphericalCoordinateAzimuth &&= \frac{\sphericalCoordinateAzimuth+\pi}{2\pi}. \label{eq:mbfd_random_azimuth} 
 \end{alignat}
 While the latter two integrals are trivial, leading to a cosine-squared dependence of the elevation angle $\sphericalCoordinateElevation$ and a uniform dependence on the azimuth angle $\sphericalCoordinateAzimuth$, the speed integral evaluates to
 \begin{equation}

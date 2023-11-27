@@ -46,9 +46,12 @@
     \newcommand{\randomValue}{x}
     \newcommand{\randomVariableY}{Y}
     \newcommand{\randomValueY}{y}
+    \newcommand{\randomVariableUniform}{R_u}
+    \newcommand{\randomValueUniform}{r_u}
+    \newcommand{\randomVariableNormal}{R_n}
+    \newcommand{\randomValueNormal}{r_n}
 \newcommand{\rate}{k}
 \newcommand{\residenceTime}{\tau}
-\newcommand{\sample}{X}
 \newcommand{\semiLatusRectum}{p}
 \newcommand{\semiMajorAxis}{a}
 \newcommand{\source}{s}

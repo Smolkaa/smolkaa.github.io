@@ -18,21 +18,28 @@ In the context of this work, examples of probabilistic subsystems can be found i
 
 One of the most important tasks of any Monte Carlo method is to sample from known probability distributions. This important step can be either done by using a predefined method, like `rand` (a uniform distribution with the domain $\left[0, 1\right]$) and `randn` (a normal distribution with the domain $\left(-\infty, \infty \right)$) for the Julia Programming language, or by using more complex methods like inversion [@Lemieux2009]. The latter is especially useful when any kind of known, but more complex distribution than a uniform or normal distribution shall be sampled. The main process involves mapping the random number sampled from a uniform distribution between $\num{0}$ and $\num{1}$ to the CDF of the desired distribution. 
 
-Let $R_u\in\left[0,1\right]$ be the random variable of a uniform distribution with realization $r_u$ of $R_u \sim f(r_u) = 1$, and let $X$ be the random variable of the desired distribution with realization $x$ of $X \sim f(x)$. The CDF of $X$, defined as $F(X)$, already matches the domain of $R_u$ and can directly be mapped to it by $R_u = F(X)$. Inversion now inverts the statement to $X = F^{-1}(R_u)$ to obtain the realization $x$ of $X$ from the realization $r_u$ of $R_u$. 
+Let $\randomVariableUniform\in\left[0,1\right]$ be the random variable of a uniform distribution with realization $\randomValueUniform$ of $\randomVariableUniform \sim f(\randomValueUniform) = 1$, and let $\randomVariable$ be the random variable of the desired distribution with realization $\randomValue$ of $\randomVariable \sim f(\randomValue)$. The CDF of $\randomVariable$, defined as $F(\randomVariable)$, already matches the domain of $\randomVariableUniform$ and can directly be mapped to it by $\randomVariableUniform = F(\randomVariable)$. Inversion now inverts the statement to $\randomVariable = F^{-1}(\randomVariableUniform)$ to obtain the realization $\randomValue$ of $\randomVariable$ from the realization $\randomValueUniform$ of $\randomVariableUniform$. 
 
-While this approach appears to be quite simple, it greatly depends on the difficulty to derive the CDF's inverse $F^{-1}$. For example, let the PDF of a distribution be given by 
+::: {.callout-note collapse="true"}
+
+# Inversion example: $f(x) = \frac{1}{2}\cos x$
+
+While this approach appears to be quite simple, it greatly depends on the difficulty to derive the CDF's inverse $F^{-1}$. For example, let the PDF of the random variable $\randomVariable\in\left[-\pi / 2, \pi / 2 \right]$ be given by 
 \begin{equation}
-    f(x) = \frac{1}{2}\cos x \quad\text{with}\quad x\in\left[-\pi / 2, \pi / 2 \right]
+    \randomValue \sim f(\randomValue) = \frac{1}{2}\cos \randomValue
 \end{equation}
 (which is the elevation angle distribution of the [Maxwell-Boltzmann velocity distribution](/documentation/drivers/thermal_sorption.qmd)). The CDF can easily be derived as 
 \begin{equation}
-    F(x) = \frac{1}{2} \left( \sin x + 1 \right).
+    F(\randomValue) = \frac{1}{2} \left( \sin \randomValue + 1 \right).
 \end{equation}
-We can now draw a random uniform number $r_u$, set this equal to $F(x)$, and solve for $x$ to obtain the inverse CDF $F^{-1}(r_u)$:
+We can now draw a random uniform number $\randomValueUniform$ of $\randomVariableUniform\in\left[0, 1\right]$, set this equal to $F(\randomValue)$, and solve for $\randomValue$ to obtain the inverse CDF $F^{-1}(\randomValueUniform)$:
 \begin{align}
-    r_u &= \frac{1}{2} \left( \sin x + 1 \right) \\
-    \sin x &= 2 r_u - 1 \\
-    x &= \sin^{-1} \left( 2 r_u - 1 \right).
+    \randomValueUniform &= \frac{1}{2} \left( \sin \randomValue + 1 \right) \\
+    \sin \randomValue &= 2 \randomValueUniform - 1 \\
+    \randomValue &= \sin^{-1} \left( 2 \randomValueUniform - 1 \right).
 \end{align}
 
+
 TEST THIS HERE!!!
+
+:::

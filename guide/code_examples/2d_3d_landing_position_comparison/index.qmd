@@ -71,7 +71,7 @@ Again, we can check that the landing position is on the surface of the Moon by l
 
 For an effective comparison, a single test of **one** starting position with **one** launch velocity is simply not enough. Since the algorithms assume that the Moon is a perfect sphere, the actual position of the launch should not have any influence on the landing position and can, therefore, be neglected in the comparison. A similar argument can be made for the azimuth angle of the launch velocity, leaving only two parameters to systematically analyze: the launch speed and the elevation angle.
 
-In order to not fall prey to systematic errors due to specific starting locations or azimuth angles (i.e., influences of the numerical handling of the polar region in spherical coordinates), a Monte-Carlo-like comparison function is proposed:
+In order to not fall prey to systematic errors due to specific starting locations or azimuth angles (i.e., influences of the numerical handling of the polar region in spherical coordinates), a Monte Carlo-like comparison function is proposed:
 
 ```{julia}
 #| output: false
@@ -103,7 +103,7 @@ function compare_2d_3d(vel, elev; N=10)
 end
 ```
 
-The function `compare_2d_3d` takes in two vectors as inputs: the velocities and the elevation angles. The goal of the function is to calculate an error `e` for each combination of the two inputs. The Monte-Carlo approach is implemented in the line containing `for _ in 1:N`, which repeats the calculations `N`-times for each combination of the two inputs, subsequently averaging over all computed errors to get a better estimate of the actual error, independent of the starting position and azimuth angle. Inside of the loops, the starting position and azimuth angle are randomized and used to initialize `x0` and `v0`. Then, the landing positions are calculated based on both approaches (2D and 3D), saved as `x_landing_2d` and `x_landing_3d`, respectively. The error is then calculated as the norm of the difference between the two landing positions, normalized by the radius of the Moon. 
+The function `compare_2d_3d` takes in two vectors as inputs: the velocities and the elevation angles. The goal of the function is to calculate an error `e` for each combination of the two inputs. The Monte Carlo approach is implemented in the line containing `for _ in 1:N`, which repeats the calculations `N`-times for each combination of the two inputs, subsequently averaging over all computed errors to get a better estimate of the actual error, independent of the starting position and azimuth angle. Inside of the loops, the starting position and azimuth angle are randomized and used to initialize `x0` and `v0`. Then, the landing positions are calculated based on both approaches (2D and 3D), saved as `x_landing_2d` and `x_landing_3d`, respectively. The error is then calculated as the norm of the difference between the two landing positions, normalized by the radius of the Moon. 
 
 We can now define a velocity and elevation angle vector to test the function:
 

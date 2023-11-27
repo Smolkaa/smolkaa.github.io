@@ -31,7 +31,7 @@
 
 **Highlights**
 
-* Monte-Carlo simulation
+* Monte Carlo simulation
 * Implementation in Julia Language
 * Stationary 2D model
 * Neutral exosphere of $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$

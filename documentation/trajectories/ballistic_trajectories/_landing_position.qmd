@@ -11,7 +11,7 @@ The following equations, mostly based on orbital mechanics functions presented i
 \begin{equation}
   \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity}
 \end{equation}
-the relative kinetic energy fraction
+with the gravitational constant $\GravitationalConstant$, the central body's mass $\mass$, and the radial distance of its center of mass $\radius$, the relative kinetic energy fraction
 \begin{equation}
   \relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right) = \left(\frac{|\vec\velocity|}{\velocity_{esc}}\right)^2  \label{eq:relative_kinetic_energy}
 \end{equation}

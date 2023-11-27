@@ -171,7 +171,7 @@ end
 
 
 ## Model Architecture {auto-animate=true}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 :::: {.columns}
 ::: {.column}
@@ -181,7 +181,7 @@ end
 ::: {.column}
 
 ::: {.fragment}
-* $\left(\surfaceNumberDensity\right)_k^{i,j}$: Surface number density of the $i$-th Monte-Carlo step, the $j$-th iteration, at the $k$-th grid element
+* $\left(\surfaceNumberDensity\right)_k^{i,j}$: Surface number density of the $i$-th Monte Carlo step, the $j$-th iteration, at the $k$-th grid element
 * Updating of the surface number density: $\left(\surfaceNumberDensity\right)_k^{i,j} \mathrel{{+}{=}} \frac{\weight}{\area\velocity_z}$
   - $\weight$: current weight of the particle
   - $\area$: area of the grid element at the current position
@@ -204,7 +204,7 @@ end
 
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -220,7 +220,7 @@ end
 
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -246,7 +246,7 @@ end
 
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -263,7 +263,7 @@ end
 
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -288,7 +288,7 @@ end
 
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -304,7 +304,7 @@ end
 ::::
 
 ## Model Architecture {auto-animate=true transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 
 :::: {.columns}
@@ -319,7 +319,7 @@ end
 
 </br></br></br>
 
-* pure Monte-Carlo loop
+* pure Monte Carlo loop
 * save all steps
 * postprocessing after the simulation
   - if not enough steps are performed, the simulation can be re-run to add to the number of saved MC steps

@@ -1,5 +1,5 @@
 ## Model Architecture {transition="fade-in"}
-#### Nested-Loop Monte-Carlo Simulation
+#### Nested-Loop Monte Carlo Simulation
 
 :::: {.columns}
 
@@ -9,7 +9,7 @@
 
 * Nested-Loop architecture
 * Four loops in total:
-  - **Loop IV**: Monte-Carlo steps
+  - **Loop IV**: Monte Carlo steps
   - **Loop III**: Iterations
     + converted particles as a source of other species in the next iteration
   - **Loop II**: Grid elements

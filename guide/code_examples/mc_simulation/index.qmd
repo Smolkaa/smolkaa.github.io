@@ -1,5 +1,5 @@
 ---
-title: "Monte-Carlo Simulation"
+title: "Monte Carlo Simulation"
 author: 
   name: Alexander Smolka
   email: a.smolka@tum.de
@@ -13,9 +13,9 @@ date: 06 10 2023
 
 ---
 
-For additional information about the use of the Monte-Carlo method in the **ExESS** research project, please refer to respective parts in the [documentation]().
+For additional information about the use of the Monte Carlo method in the **ExESS** research project, please refer to respective parts in the [documentation]().
 
-# Basic Monte-Carlo Simulation
+# Basic Monte Carlo Simulation
 
 ## Structure
 
@@ -23,7 +23,7 @@ For additional information about the use of the Monte-Carlo method in the **ExES
 
 # {{< bi image >}} Figure
 
-![Basic Monte-Carlo model structure.](/documentation/fundamentals/stats_mc/imgs/mc_basic/mc_basic.svg){#fig-basic_mc width="600px"}
+![Basic Monte Carlo model structure.](/documentation/fundamentals/stats_mc/imgs/mc_basic/mc_basic.svg){#fig-basic_mc width="600px"}
 
 # {{< bi code >}} LaTeX
 
@@ -40,11 +40,11 @@ For additional information about the use of the Monte-Carlo method in the **ExES
 ]
 
     %::. main nodes
-    \node[main] (START) at (0,0) {Start of Monte-Carlo Simulation};    
-    \node[main, below = 1 of START] (INIT) {\n{Initialization of Monte-Carlo \\ Simulation (e.g. setting of \\ global parameters)}};
+    \node[main] (START) at (0,0) {Start of Monte Carlo Simulation};    
+    \node[main, below = 1 of START] (INIT) {\n{Initialization of Monte Carlo \\ Simulation (e.g. setting of \\ global parameters)}};
     \node[decision, below = 1 of INIT] (CHECKSTEP) {};
-    \node[main, below = 1 of CHECKSTEP, very thick] (STEP) {\n{\vspace{5mm}\\\textbf{Monte-Carlo Step}\\\vspace{5mm}}};
-    \node[main, right = 1 of STEP] (END) {\n{End of\\Monte-Carlo Simulation}};
+    \node[main, below = 1 of CHECKSTEP, very thick] (STEP) {\n{\vspace{5mm}\\\textbf{Monte Carlo Step}\\\vspace{5mm}}};
+    \node[main, right = 1 of STEP] (END) {\n{End of\\Monte Carlo Simulation}};
 
 
     %::. connections
@@ -140,10 +140,10 @@ pi_estimation = µ * 4
 
 ### Additional Packages
 
-Two important packages that can improve the workflow with Monte-Carlo simulations are `ProgressMeter`
+Two important packages that can improve the workflow with Monte Carlo simulations are `ProgressMeter`
 and `Distributed`. The former allows to display of a progress bar, the latter allows simulating
 in parallel on multiple cores/workers. Both packages offer a simple interface that can be used through
-a macro that can be placed in front of the `for`-loop inside of the Monte-Carlo solving function:
+a macro that can be placed in front of the `for`-loop inside of the Monte Carlo solving function:
 
 ```julia
 # progress meter and parallel computing
@@ -157,7 +157,7 @@ a macro that can be placed in front of the `for`-loop inside of the Monte-Carlo 
 ```
 
 
-# Exosphere Simulation with Monte-Carlo
+# Exosphere Simulation with Monte Carlo
 
 ## Structure
 
