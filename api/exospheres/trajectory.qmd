@@ -122,3 +122,8 @@ end
 @doc ExESS.ddx_lunar_gravity
 ```
 :::
+
+
+## Benchmarks
+
+{{< include ../../../exess.jl/test/benchmarks/exospheres/__trajectory__.md >}}
