@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-14">
+<meta name="dcterms.date" content="2023-11-29">
 
 <title>ExESS - Utility</title>
 <style>
@@ -330,7 +330,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 14, 2023</p>
+      <p class="date">November 29, 2023</p>
     </div>
   </div>
   
@@ -355,12 +355,30 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>scale_height</code> – Function
+<code>escape_velocity</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[1] escape_velocity(r::Real, m::Real)</code></pre>
+<p>Calculates the magnitude of the escape velocity for an orbital radius <code>r</code> and body mass <code>m</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>scale_height</code> – Function
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] scale_height(T, m::Real; R::Real=LUNAR_RADIUS, M::Real=LUNAR_MASS)</code></pre>
 <p>Calculates the scale height of a particle with mass <code>m</code>, given the thermal energy based on the thermodynamic equilibrium temperature <code>T</code>, in the exosphere of a planetary body with radius <code>R</code> and mass <code>M</code>.</p>
 <p>Default values for the planetary body are corresponding to the Moon.</p>
@@ -378,8 +396,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] projection_CHAMBERLAIN1963(n1::Real, r1::Real, r2::Real, T::Real, m::Real; M::Real=LUNAR_MASS)</code></pre>
 <p>Calculates the number density of particles of mass <code>m</code> at radial distance <code>r2</code> given the number density <code>n1</code> at radial distance <code>r1</code>, assuming constant temperature <code>T</code>.</p>
 <p>Assumes hydrostatic equilibrium and perfect-gas law with isotropic gas pressure, resulting in the generalized form of the isothermal barometric law. The calculation is based on the equation (14) in Chamberlain (1963).</p>

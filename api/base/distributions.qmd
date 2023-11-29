@@ -264,5 +264,4 @@ end
 
 ## Benchmarks
 
-{{< include ../../../exess.jl/test/benchmarks/base/__distributions__.md >}}
-
+{{< include /../exess.jl/test/benchmarks/base/__distributions__.md >}}

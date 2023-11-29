@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-10-10">
 
 <title>ExESS - Utility</title>
 <style>
@@ -368,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">October 10, 2023</p>
     </div>
   </div>
   
@@ -403,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>masses <span class="op">=</span> <span class="fu">amu2kg</span>.([AMU_H, AMU_H2, AMU_OH, AMU_H2O])</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># calculates the escape velocity of the Moon on its surface in m/s</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>v_esc <span class="op">=</span> <span class="fu">escape_velocity_r_m</span>(LUNAR_RADIUS, LUNAR_MASS)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>v_esc <span class="op">=</span> <span class="fu">escape_velocity</span>(LUNAR_RADIUS, LUNAR_MASS)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># define a function to calculate the kinetic energy of a particle, based on</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># its mass and velocity</span></span>
@@ -423,8 +423,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  2.9915191987056904e-26</code></pre>
 </div>
 </div>
-<p>The next line calculates the velocity that each particle would need to escape the lunar gravity field, i.e., the <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity">escape velocity</a>, for which the orbital mechanics function <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity"><code>escape_velocity_r_m</code></a> is used. Note that, as the name of the function suggests, it requires the radius and mass of the respective body for which the escape velocity shall be calculated as inputs, which are provided as the constants <code>LUNAR_RADIUS</code> and <code>LUNAR_MASS</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v_esc <span class="op">=</span> <span class="fu">escape_velocity_r_m</span>(LUNAR_RADIUS, LUNAR_MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The next line calculates the velocity that each particle would need to escape the lunar gravity field, i.e., the <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity">escape velocity</a>, for which the orbital mechanics function <a href="../../documentation/trajectories/ballistic_trajectories.html#sec-escape-velocity"><code>escape_velocity</code></a> is used. Note that, as the name of the function suggests, it requires the radius and mass of the respective body for which the escape velocity shall be calculated as inputs, which are provided as the constants <code>LUNAR_RADIUS</code> and <code>LUNAR_MASS</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>v_esc <span class="op">=</span> <span class="fu">escape_velocity</span>(LUNAR_RADIUS, LUNAR_MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It results in the following scalar value:</p>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -433,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>The third code line defines a new function called <code>E_kin</code>, which takes one argument <code>m::Real</code> as the mass of a particle in kilograms as a real number type, and one optional keyword argument <code>v</code> which is given the default value of our previously calculated escape velocity <code>v_esc</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">E_kin</span>(m<span class="op">::</span><span class="dt">Real</span>; v<span class="op">=</span>v_esc) <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> m <span class="op">*</span> v_esc<span class="op">^</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, the function <code>E_kin</code> can be used to calculate the kinetic energy of particles with masses saved in <code>masses</code>, again, by broadcasting over the function with the dot notation. In order to provide the result in a more convenient unit, the function <code>J2eV</code> is applied to the result, which converts the energy from Joules to electronvolts:</p>
+<p>Now, the function <code>E_kin</code> can be used to calculate the kinetic energy of particles with masses saved in <code>masses</code>, again, by broadcasting over the function with the dot notation. To provide the result in a more convenient unit, the function <code>J2eV</code> is applied to the result, which converts the energy from Joules to electronvolts:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fu">J2eV</span>.(<span class="fu">E_kin</span>.(masses))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which leads to the final output vector:</p>
 <div class="cell" data-execution_count="4">

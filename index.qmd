@@ -98,4 +98,4 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 ## Code Examples
 
 * [Monte Carlo Simulation](/guide/code_examples/mc_simulation/index.qmd)
-* [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd) 
+<!-- * [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd)  -->

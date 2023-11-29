@@ -11,6 +11,18 @@ title: "Utility"
 ## API
 
 ::: {.callout-note appearance="simple" icon=false}
+# ``escape_velocity`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.escape_velocity
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
 # ``scale_height`` -- Function
 ```{julia}
 #| echo: false

@@ -1,12 +1,14 @@
 ---
 title: "Trajectory"
 ---
+
 ---
 
 A more in-depth description of the implemented functions listed below can be found in the following sections:
 
 * [Ballistic Trajectories](/documentation/trajectories/ballistic_trajectories.qmd)
 * [Non-Ballistic Trajectories](/documentation/trajectories/non-ballistic_trajectories.qmd)
+
 
 
 ## Usage
@@ -126,4 +128,4 @@ end
 
 ## Benchmarks
 
-{{< include ../../../exess.jl/test/benchmarks/exospheres/__trajectory__.md >}}
+{{< include /../exess.jl/test/benchmarks/exospheres/__trajectory__.md >}}

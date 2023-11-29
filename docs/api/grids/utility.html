@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-11-29">
 
 <title>ExESS - Utility</title>
 <style>
@@ -329,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">November 29, 2023</p>
     </div>
   </div>
   
@@ -393,10 +393,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>[1] coord2idx(grid::AbstractGlobalGrid, [r::Real,] theta::Real, phi::Real)
-[2] coord2idx(grid::AbstractGlobalGrid, [r::AbstractVector,] theta::AbstractVector, phi::AbstractVector)
-[3] coord2idx(grid::AbstractGlobalGrid, coords::AbstractPosition)
-[4] coord2idx(grid::AbstractGlobalGrid, coords::Vector{AbstractPosition})</code></pre>
+<pre><code>[1] coord2idx(grid::AbstractGrid, coord::AbstractPosition)
+[2] coord2idx(grid::AbstractGlobalGrid, r::AbstractVector, theta::AbstractVector, phi::AbstractVector)
+[2] coord2idx(grid::AbstractGlobalGrid, coords::Vector{AbstractPosition})</code></pre>
 <p>Calculates the index of the grid element containing the given coordinates.</p>
 </div>
 </div>

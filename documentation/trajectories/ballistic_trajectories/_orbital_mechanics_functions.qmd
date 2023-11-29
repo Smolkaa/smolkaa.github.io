@@ -100,18 +100,18 @@ The eccentricity $\eccentricity$ can be computed in a variety of different way, 
 
 {{< bi code >}} [`eccentricity_epskin_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\relativeKineticEnergy, \vec\velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\velocity=\velocity(\zenith)$ from Eq. \eqref{eq:zenith_angle_v}
 
-{{< bi code >}} [`eccentricity_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\radius, \mass, \velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\velocity_{esc}(\radius,\mass),\velocity\right)$ from Eqs. \eqref{eq:escape_velocity_r_m} and \eqref{eq:relative_Ekin_v_vesc}, and with $\velocity=\velocity(\zenith)$ from Eq. \eqref{eq:zenith_angle_v}
+{{< bi code >}} [`eccentricity_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\eccentricity\left(\radius, \mass, \velocity\right)$: Eq. \eqref{eq:eccentricity_epskin_psi} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\velocity_{esc}(\radius,\mass),\velocity\right)$ from Eqs. \eqref{eq:escape_velocity} and \eqref{eq:relative_Ekin_v_vesc}, and with $\velocity=\velocity(\zenith)$ from Eq. \eqref{eq:zenith_angle_v}
 :::
 
 
 
 ### Escape Velocity -- $\velocity_{esc}$ {#sec-escape-velocity}
 \begin{equation}
-    \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity_r_m}
+    \velocity_{esc}\left(\radius, \mass\right) = \sqrt{\frac{2 \GravitationalConstant \mass}{\radius}} \label{eq:escape_velocity}
 \end{equation}
 
 ::: {.column-margin}
-{{< bi code >}}  [`escape_velocity_r_m`](/api/exospheres/orbital_mechanics.qmd): $\velocity_{esc}\left(\radius, \mass\right)$: Eq. \eqref{eq:escape_velocity_r_m} 
+{{< bi code >}}  [`escape_velocity`](/api/exospheres/orbital_mechanics.qmd): $\velocity_{esc}\left(\radius, \mass\right)$: Eq. \eqref{eq:escape_velocity} 
 :::
 
 
@@ -182,7 +182,7 @@ The eccentricity $\eccentricity$ can be computed in a variety of different way, 
 ::: {.column-margin}
 {{< bi code >}} [`epskin_vesc_v`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\vec\velocity, \velocity_{esc}\right)$: Eq. \eqref{eq:relative_Ekin_v_vesc}  
 
-{{< bi code >}} [`epskin_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:relative_Ekin_v_vesc} with $\velocity_{esc} = \velocity_{esc}\left(\radius, \mass\right)$ of Eq. \eqref{eq:escape_velocity_r_m}
+{{< bi code >}} [`epskin_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:relative_Ekin_v_vesc} with $\velocity_{esc} = \velocity_{esc}\left(\radius, \mass\right)$ of Eq. \eqref{eq:escape_velocity}
 
 {{< bi code >}} [`epskin_r_a`](/api/exospheres/orbital_mechanics.qmd): $\relativeKineticEnergy\left(\radius, \semiMajorAxis\right)$: Eq. \eqref{eq:relative_Ekin_r_a}
 
@@ -216,7 +216,7 @@ The eccentricity $\eccentricity$ can be computed in a variety of different way, 
 ::: {.column-margin}
 {{< bi code >}} [`semi_major_axis_r_epskin`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \relativeKineticEnergy\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin}  
 
-{{< bi code >}} [`semi_major_axis_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$ and $\velocity_{esc}=\velocity_{esc}\left(\radius, \mass\right)$ of Eqs. \eqref{eq:relative_Ekin_v_vesc} and \eqref{eq:escape_velocity_r_m}
+{{< bi code >}} [`semi_major_axis_r_m_v`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\radius, \mass, \vec\velocity\right)$: Eq. \eqref{eq:semi_major_axis_r_epskin} with $\relativeKineticEnergy=\relativeKineticEnergy\left(\radius, \mass, \vec\velocity\right)$ and $\velocity_{esc}=\velocity_{esc}\left(\radius, \mass\right)$ of Eqs. \eqref{eq:relative_Ekin_v_vesc} and \eqref{eq:escape_velocity}
 
 {{< bi code >}} [`semi_major_axis_p_e`](/api/exospheres/orbital_mechanics.qmd): $\semiMajorAxis\left(\semiLatusRectum, \eccentricity\right)$: Eq. \eqref{eq:semi_major_axis_p_e}  
 
