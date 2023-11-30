@@ -26,8 +26,6 @@ website:
       - text: "Documentation"
         href: documentation/documentation.qmd
         icon: book
-      - text: "{{< fa tv >}} Presentations & Videos"
-        href: presentations/presentations.qmd
       - text: "Code"
         href: api/api.qmd
         icon: journal-code
@@ -55,7 +53,7 @@ website:
         - section: "Code Examples"
           contents:
             - guide/code_examples/mc_simulation/index.qmd
-            - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
+            # - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
         - text: License
           href: LICENSE.md
 
@@ -105,13 +103,6 @@ website:
           contents:
             - "9.X Other Exospheres in The Solar System"
         - section: "Appendix"
-
-
-
-    - title: "Presentations & Videos"
-      contents:
-        - text: " " 
-          href: presentations/presentations.qmd
 
 
     - title: "Code"

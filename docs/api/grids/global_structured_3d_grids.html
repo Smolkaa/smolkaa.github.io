@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-10">
+<meta name="dcterms.date" content="2023-09-22">
 
 <title>ExESS - Global, Structured, 3D Grids</title>
 <style>
@@ -44,8 +44,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,10 +116,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
 </i> 
  <span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
@@ -330,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
+      <p class="date">September 22, 2023</p>
     </div>
   </div>
   
@@ -361,7 +355,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] struct GlobalStructured3DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured3DGrid
+<pre><code>[1] struct GlobalStructured3DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured3DGrid end
 [2] GlobalStructured3DGrid([T::Type,] r0::Real, h::AbstractVector, N_theta::Int64, N_phi::Int64)
 [3] GlobalStructured3DGrid([T::Type,] r::AbstractVector, N_theta::Int64, N_phi::Int64)</code></pre>
 <p>Global structured volume grid (3D) of type <code>GlobalSphericalPosition{T}</code> over a sphere of radius <code>r0</code> with heights of the individual radial layers <code>h</code>. Alternatively, the radial distances can directly be specified by <code>r</code> (<code>r = r0 .+ h</code>). Note that all heights have to be positive.</p>

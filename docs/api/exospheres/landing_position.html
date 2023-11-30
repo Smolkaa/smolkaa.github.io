@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-29">
+<meta name="dcterms.date" content="2023-11-30">
 
 <title>ExESS - Landing Position</title>
 <style>
@@ -78,8 +78,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -152,10 +150,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
 </i> 
  <span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
@@ -365,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2023</p>
+      <p class="date">November 30, 2023</p>
     </div>
   </div>
   
@@ -413,7 +407,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th style="text-align: left;">Field</th>
-<th style="text-align: right;">Default Value</th>
+<th style="text-align: right;">Value</th>
 <th style="text-align: left;">Unit</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -423,7 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;"><code>m</code></td>
 <td style="text-align: right;"><code>LUNAR_MASS</code></td>
 <td style="text-align: left;">[kg]</td>
-<td style="text-align: left;">mass of central object</td>
+<td style="text-align: left;">mass of planetary object</td>
 </tr>
 </tbody>
 </table>
@@ -450,27 +444,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] time_of_flight(x0::AbstractVector, v0::AbstractVector; kwargs...)</code></pre>
-<p>Calculates the time of flight of a particle on a ballistic trajectory, starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)).</p>
-<p>Returns the time of flight in seconds. Returns <code>NaN</code> if the particle escapes.</p>
-<p><strong>Key-Word Arguments</strong></p>
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Field</th>
-<th style="text-align: right;">Default Value</th>
-<th style="text-align: left;">Unit</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>m</code></td>
-<td style="text-align: right;"><code>LUNAR_MASS</code></td>
-<td style="text-align: left;">[kg]</td>
-<td style="text-align: left;">mass of central object</td>
-</tr>
-</tbody>
-</table>
 <p><strong>References</strong></p>
 <ul>
 <li>N. Schörghofer: “USER GUIDE: Planetary-Code-Collection: Thermal and Ice Evolution Models for Planetary Surfaces”, https://github.com/nschorgh/Planetary-Code-Collection</li>

@@ -40,13 +40,54 @@ iframe.reveal-demo {
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.card:hover .image {
+  filter: blur(2px);
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .text {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last) value for darkness */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
 
 /* Add some padding inside the card container */
 .container {

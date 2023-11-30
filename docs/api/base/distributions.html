@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-29">
+<meta name="dcterms.date" content="2023-11-30">
 
 <title>ExESS - Distributions</title>
 <style>
@@ -78,8 +78,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -154,10 +152,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
 </i> 
  <span class="menu-text">Documentation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../presentations/presentations.html" rel="" target="">
- <span class="menu-text"><i class="fa-solid fa-tv" aria-label="tv"></i> Presentations &amp; Videos</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
@@ -373,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2023</p>
+      <p class="date">November 30, 2023</p>
     </div>
   </div>
   
@@ -422,37 +416,37 @@ Sampling
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">velocity</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>3-element Vector{Float64}:
- -1082.557541575451
-  -214.88435980115165
-   511.0193730212733</code></pre>
+  401.46588795294537
+  569.7524675250123
+ -160.75186178013317</code></pre>
 </div>
 </div>
 <p>a speed (<code>speed</code>),</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">speed</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>1648.0999919395233</code></pre>
+<pre><code>718.3966519441951</code></pre>
 </div>
 </div>
 <p>an azimuth angle (<code>azimuth</code>),</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">azimuth</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>-0.9331972811819567</code></pre>
+<pre><code>-0.5963191602346436</code></pre>
 </div>
 </div>
 <p>an elevation angle (<code>elevation</code>),</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">elevation</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>-0.40575853185679583</code></pre>
+<pre><code>-0.7570264363328079</code></pre>
 </div>
 </div>
 <p>and a zenith angle (<code>zenith</code>).</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zenith</span>(vd_mb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>1.0147925851210184</code></pre>
+<pre><code>-0.2700926415584921</code></pre>
 </div>
 </div>
 </div>
@@ -500,14 +494,14 @@ Cumulative Distribution Functions
 </div>
 <div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>0.2879619990558504</code></pre>
+<pre><code>0.0006638353807840756</code></pre>
 </div>
 </div>
 <p>will evaluate to the same likelihood as the CDFs of the three spherical components investigated individually</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">speed_cdf</span>(vd_mbf, v1, v2)) <span class="op">*</span> <span class="fu">abs</span>(<span class="fu">azimuth_cdf</span>(vd_mbf, az1, az2)) <span class="op">*</span> <span class="fu">abs</span>(<span class="fu">elevation_cdf</span>(vd_mbf, el1, el2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>0.2879619990558504</code></pre>
+<pre><code>0.0006638353807840756</code></pre>
 </div>
 </div>
 </div>
@@ -880,7 +874,7 @@ Cumulative Distribution Functions
 [6] zenith_cdf([S::Type], vd::AbstractVelocityDistribution, v1::LocalCartesianVelocity, v2::LocalCartesianVelocity)
 [7] zenith_cdf([S::Type], vd::AbstractVelocityDistribution, v::LocalCartesianVelocity)</code></pre>
 <p>Computes the cumulative distribution function of the zenith angle of the velocity distribution <code>vd</code>, between the zenith angles <code>psi[1]</code>/<code>psi1</code> and <code>psi[2]</code>/<code>psi2</code> (in [rad]). Should only one angle be given, the lower boundary is assumed to be lower boundary of the respective domain.</p>
-<p><strong>Notes</strong></p>
+<p>** Notes**</p>
 <ul>
 <li>Domain of <code>MaxwellBoltzmannVelocityDistribution</code> is <code>[-pi/2, pi/2]</code>, thus, using [3,5,7], the lower boundary is <code>-pi/2</code>.</li>
 <li>Domain of <code>MaxwellBoltzmannFluxVelocityDistribution</code> is <code>[0, pi/2]</code>, thus, using [3,5,7], the lower boundary is <code>0</code>.</li>

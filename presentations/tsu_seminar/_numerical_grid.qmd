@@ -1,7 +1,0 @@
-See [Numerical Grids - Structured 2D Grids](/documentation/fundamentals/numerical_grids.qmd#sec-structured-2d-grids) for a general introduction to numerical grids.
-
-::: {#fig-gs2dgrid}
-![](/documentation/fundamentals/numerical_grids/imgs/gs2dgrid/gs2dgrid.svg){width="1200px"}
-
-Global, structured, two-dimensional numerical grid in cartesian (lower right) and spherical (center and upper left) coordinates in arbitrary units. Arrows indicate the projection from the spherical to the cartesian coordinate system and vice versa. Note that the grid is only two-dimensional in the spherical coordinate system, assuming a constant third-dimension, i.e. radius $\sphericalCoordinateRadius$.
-:::
