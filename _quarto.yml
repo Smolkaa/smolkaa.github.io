@@ -44,15 +44,11 @@ website:
       contents:
         - text: "Home"
           href: index.qmd
-        - section: "Guides"
+        - section: "Additional Resources"
           contents:
-            - guide/essentials/onboarding_checklist/index.qmd
-            - guide/essentials/julia_links/index.qmd
-            - guide/essentials/git_essentials/index.qmd
-            - guide/essentials/package_installation/index.qmd
-        - section: "Code Examples"
-          contents:
-            - guide/code_examples/mc_simulation/index.qmd
+            - additionals/essentials/julia_links/index.qmd
+            - additionals/essentials/package_installation/index.qmd
+            - additionals/code_examples/mc_simulation/index.qmd
             # - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
         - text: License
           href: LICENSE.md

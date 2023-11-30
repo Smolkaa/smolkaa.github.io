@@ -32,7 +32,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 
 
-## Publications, Texts, and Videos
+## Publications, Texts, and Presentations
 
 ::: {.grid}
 ::: {.g-col-4}
@@ -53,11 +53,12 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 ```
 
 </br> 
+:::
 
-
+::: {.g-col-4}
 ```{=html}
 <div class="card" style="height: 15rem; padding: 1rem">
-  <img class="image" src="resources/imgs/tsu.png" alt="Card Image" style=" margin: auto">
+  <img class="image" src="resources/imgs/tsu.png" alt="" style=" margin: auto">
   <div class="overlay">
   </div>
   <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
@@ -70,65 +71,43 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 </div>
 ```
 :::
-
-::: {.g-col-4}
-:::
 :::
 
 
-## Guides
+## Additional Resources
 
 ::: {.grid style="font-size:0.85rem;"}
-::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
 
+::: {.g-col-4}
 ```{=html}
 <div class="card">
-  <img src="/guide/essentials/onboarding_checklist/play-solid.svg" alt="a" style="width:35%; margin-left:auto; margin-right:auto; margin-top:1rem">
-  <div class="card-body">
-    <a href="/guide/essentials/onboarding_checklist/index.qmd" class="stretched-link">Student Thesis: On-Boarding Checklist</a> is recommended for all new students to get started with their university thesis and working with the <b>ExESS</b> package
+  <img class="image" src="/additionals/essentials/julia_links/julia-dots.svg" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
+  <div class="overlay">
+  </div>
+  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
+    <p><strong>Julia Programming Language: Links & Resources</strong></p>
+    <a href="/additionals/essentials/julia_links/index.qmd" class="stretched-link"></a> Links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing
   </div>
 </div> 
 ```
 
 :::
 
-::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
-
+::: {.g-col-4}
 ```{=html}
 <div class="card">
-  <img src="/guide/essentials/julia_links/julia-dots.svg" alt="a" style="width:55%; margin-left:auto; margin-right:auto; margin-top:1rem">
-  <div class="card-body">
-    <a href="/guide/essentials/julia_links/index.qmd" class="stretched-link">Julia Programming Language: Links & Resources</a> contains links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing
+  <img class="image" src="/additionals/essentials/package_installation/exess_logo.png" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
+  <div class="overlay">
+  </div>
+  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
+    <p><strong>ExESS Package Installation</strong></p>
+    <a href="/additionals/essentials/package_installation/index.qmd" class="stretched-link"></a> Guide to describes how to install and use the <b>ExESS</b> package on your computer
   </div>
 </div> 
 ```
-
 :::
 
-::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
-
-```{=html}
-<div class="card">
-  <img src="/guide/essentials/package_installation/exess_logo.png" alt="a" style="width:65%; margin-left:auto; margin-right:auto; margin-top:1rem">
-  <div class="card-body">
-    <a href="/guide/essentials/package_installation/index.qmd" class="stretched-link">ExESS Package Installation</a> describes how to install the <b>ExESS</b> package on your computer
-  </div>
-</div> 
-```
-
-:::
-
-::: {.g-col-6 .g-col-sm-4 .g-col-lg-3}
-
-```{=html}
-<div class="card">
-  <img src="/guide/essentials/git_essentials/Git-Icon-Black.png" alt="a" style="width:50%; margin-left:auto; margin-right:auto; margin-top:1rem">
-  <div class="card-body">
-    <a href="/guide/essentials/git_essentials/index.qmd" class="stretched-link">Git Essentials</a> lists some external links to resources for learning the Git version control system
-  </div>
-</div> 
-```
-
+::: {.g-col-4}
 :::
 :::
 

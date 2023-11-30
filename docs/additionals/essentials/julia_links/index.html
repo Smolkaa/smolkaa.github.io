@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
+<meta name="dcterms.date" content="2023-07-31">
 
-<title>ExESS - Extraterrestrial Exosphere and Surface Simulations</title>
+<title>ExESS - Julia Programming Language: Links &amp; Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./additionals/essentials/julia_links/index.html" rel="next">
-<link href=".//resources/logo/exess_logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../additionals/essentials/package_installation/index.html" rel="next">
+<link href="../../../index.html" rel="prev">
+<link href="../../..//resources/logo/exess_logo.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -82,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<link rel="stylesheet" href="_styles.css">
+<link rel="stylesheet" href="../../../_styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -92,10 +94,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./resources/logo/exess_logo_dark.svg" alt="" class="navbar-logo">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../resources/logo/exess_logo_dark.svg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ExESS</span>
     </a>
   </div>
@@ -106,17 +108,17 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../../index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
 </i> 
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../../documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
 </i> 
  <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
+    <a class="nav-link" href="../../../api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
 </i> 
  <span class="menu-text">Code</span></a>
   </li>  
@@ -138,53 +140,53 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../additionals/essentials/julia_links/index.html">Additional Resources</a></li><li class="breadcrumb-item"><a href="../../../additionals/essentials/julia_links/index.html">Julia Programming Language: Links &amp; Resources</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Additional Resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./additionals/essentials/julia_links/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../additionals/essentials/julia_links/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Julia Programming Language: Links &amp; Resources</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./additionals/essentials/package_installation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../additionals/essentials/package_installation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ExESS Package Installation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./additionals/code_examples/mc_simulation/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../additionals/code_examples/mc_simulation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Monte Carlo Simulation</span></a>
   </div>
 </li>
@@ -192,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./LICENSE.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../LICENSE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
 </li>
@@ -203,22 +205,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Extraterrestrial Exosphere and Surface Simulations</h2>
+    <h2 id="toc-title">Julia Programming Language: Links &amp; Resources</h2>
    
   <ul>
-  <li><a href="#author" id="toc-author" class="nav-link active" data-scroll-target="#author">Author</a></li>
-  <li><a href="#publications-texts-and-presentations" id="toc-publications-texts-and-presentations" class="nav-link" data-scroll-target="#publications-texts-and-presentations">Publications, Texts, and Presentations</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
-  <li><a href="#code-examples" id="toc-code-examples" class="nav-link" data-scroll-target="#code-examples">Code Examples</a></li>
+  <li><a href="#learning-julia" id="toc-learning-julia" class="nav-link active" data-scroll-target="#learning-julia">Learning Julia</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/additionals/essentials/julia_links/index.qmd" class="toc-action">Edit this page</a></p></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Extraterrestrial Exosphere and Surface Simulations</h1>
+<h1 class="title">Julia Programming Language: Links &amp; Resources</h1>
 </div>
 
 
@@ -232,105 +233,87 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-  
     <div>
-    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">November 30, 2023</p>
+      <p class="date">July 31, 2023</p>
     </div>
   </div>
+  
     
   </div>
   
 
 </header>
 
-<hr>
-<section id="author" class="level2">
-<h2 class="anchored" data-anchor-id="author">Author</h2>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><img src=".\resources/imgs/me_gray.jpg" class="img-fluid" style="width:100.0%"></p>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:65%;">
-<p><strong>M.Sc. Alexander Smolka</strong></p>
-<p>Professorship of Lunar and Planetary Exploration Technologies<br>
-TUM School of Engineering and Design<br>
-Technical University of Munich</p>
-<p>Phone: +49 (89) 289 - 55681<br>
-Email: <a href="mailto:a.smolka@tum.de">a.smolka@tum.de</a></p>
-</div>
-</div>
-</section>
-<section id="publications-texts-and-presentations" class="level2">
-<h2 class="anchored" data-anchor-id="publications-texts-and-presentations">Publications, Texts, and Presentations</h2>
-<div class="grid">
-<div class="g-col-4">
-<div class="card">
-  <img class="image" src="resources/imgs/smolka2023.png" alt="Card Image">
-  <div class="overlay">
-    <div class="text">
-      <p>
-        <strong>Smolka et al. (2023)</strong>
-        </p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions</p>
-        <p><a href="https://doi.org/10.1016/j.icarus.2023.115508" target="_blank" class="stretched-link">10.1016/j.icarus.2023.115508</a></p>
-      <p></p>
-    </div>
-  </div>
-</div>
-<p><br></p>
-</div>
-<div class="g-col-4">
-<div class="card" style="height: 15rem; padding: 1rem">
-  <img class="image" src="resources/imgs/tsu.png" alt="" style=" margin: auto">
-  <div class="overlay">
-  </div>
-  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
-    <p>
-      <strong>TSU Mini-Moon Seminar</strong>
-      </p><p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions</p>
-      <p><a href="https://youtu.be/k6nHHELlvBY" class="stretched-link">https://youtu.be/k6nHHELlvBY</a></p>
-    <p></p>
-  </div>
-</div>
-</div>
-</div>
-</section>
-<section id="additional-resources" class="level2">
-<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
-<div class="grid" style="font-size:0.85rem;">
-<div class="g-col-4">
-<div class="card">
-  <img class="image" src="./additionals/essentials/julia_links/julia-dots.svg" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
-  <div class="overlay">
-  </div>
-  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
-    <p><strong>Julia Programming Language: Links &amp; Resources</strong></p>
-    <a href="./additionals/essentials/julia_links/index.html" class="stretched-link"></a> Links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing
-  </div>
-</div> 
-</div>
-<div class="g-col-4">
-<div class="card">
-  <img class="image" src="./additionals/essentials/package_installation/exess_logo.png" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
-  <div class="overlay">
-  </div>
-  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
-    <p><strong>ExESS Package Installation</strong></p>
-    <a href="./additionals/essentials/package_installation/index.html" class="stretched-link"></a> Guide to describes how to install and use the <b>ExESS</b> package on your computer
-  </div>
-</div> 
-</div>
-<div class="g-col-4">
-
-</div>
-</div>
-</section>
-<section id="code-examples" class="level2">
-<h2 class="anchored" data-anchor-id="code-examples">Code Examples</h2>
+<p><a href="https://julialang.org/">Julia</a> is a cutting-edge, high-level programming language designed to address the unique challenges of scientific computing and data analytics. Born in 2012, Julia has quickly gained popularity among researchers, data scientists, and developers due to its remarkable performance and ease of use. The language’s key strength lies in its ability to handle complex mathematical computations and large datasets seamlessly. Julia boasts an intuitive syntax and rich mathematical library, making it particularly well-suited for numerical simulations, machine learning, and advanced statistical analysis. With its open-source nature and active community, Julia continues to evolve, receiving regular updates and enhancements that cater to its users’ diverse needs.</p>
+<section id="learning-julia" class="level2">
+<h2 class="anchored" data-anchor-id="learning-julia">Learning Julia</h2>
 <ul>
-<li><a href="./guide/code_examples/mc_simulation/index.qmd">Monte Carlo Simulation</a> <!-- * [Comparison of Landing Position Calculations: 2D vs. 3D](/guide/code_examples/2d_3d_landing_position_comparison/index.qmd)  --></li>
+<li><a href="https://computationalthinking.mit.edu/Fall23/">MIT’s Introduction to Computational Thinking</a>
+<ul>
+<li>This free online course held by the creators of the Julia Programming Language offers you a good overview of numerical methods and scientific computing in Julia. The course is held in Julia and is a great way to get started with the language.</li>
+</ul></li>
+<li><a href="https://github.com/TUM-PIK-ESM/TUM-Dynamics-Lecture/blob/main/lectures/lecture-1/lecture1.ipynb">TUM-Dynamics-Lecture, 1</a> and <a href="https://github.com/TUM-PIK-ESM/TUM-Dynamics-Lecture/blob/main/lectures/lecture-2/lecture2.ipynb">TUM-Dynamics-Lecture, 2</a>
+<ul>
+<li>Created by some colleagues of mine, these two lectures offer a great introduction to Julia and its applications in the field of dynamical systems. The lectures are held in Julia and are a great way to get started with the language.</li>
+</ul></li>
+</ul>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://julialang.org/">Julia Homepage</a> (<em>last visited: 31/07/2023</em>)</li>
+<li><a href="https://docs.julialang.org/en/v1/">Julia Documentation</a> (<em>last visited: 31/07/2023</em>)
+<ul>
+<li>Once you are familiar with the basics of Julia, the documentation is the best place to look up specific functions and syntax. Especially helpful are the following manuals: <a href="https://docs.julialang.org/en/v1/manual/performance-tips/">Performance Tips</a>, <a href="https://docs.julialang.org/en/v1/manual/workflow-tips/">Workflow Tips</a>, and the <a href="https://docs.julialang.org/en/v1/manual/style-guide/">Style Guide</a>.</li>
+</ul></li>
+<li><a href="https://docs.sciml.ai/SciMLStyle/stable/">SciML Style Guide for Julia</a>, by Chris Rackauckas (<em>last visited: 31/07/2023</em>)
+<ul>
+<li>A style guide for scientific machine learning in Julia. This guide is a work in progress and is updated regularly.</li>
+</ul></li>
+</ul>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<ul>
+<li><a href="https://dataframes.juliadata.org/stable/"><code>DataFrames.jl</code></a>
+<ul>
+<li>A package for working with tabular data in Julia. The package is part of the Julia Data Ecosystem and offers a wide range of tools for data manipulation and analysis.</li>
+</ul></li>
+<li><a href="https://docs.sciml.ai/DiffEqDocs/stable/"><code>DifferentialEquations.jl</code></a>
+<ul>
+<li>One of the most popular packages for solving differential equations in Julia. The package is part of the SciML ecosystem and offers a wide range of solvers for ordinary and partial differential equations.</li>
+</ul></li>
+<li><a href="https://juliaio.github.io/JLD2.jl/stable/"><code>JLD2.jl</code></a>
+<ul>
+<li>A package for saving and loading Julia data structures. Can also used for <a href="https://juliaio.github.io/JLD2.jl/stable/compression/">compressions</a> (see <a href="https://github.com/JuliaIO/CodecZlib.jl"><code>CodecZlib.jl</code></a> for more information).</li>
+</ul></li>
+<li><a href="https://makie.org"><code>Makie.jl</code></a> and its <a href="https://docs.makie.org/stable/">Documentation</a>
+<ul>
+<li>A high-performance plotting library for Julia. It features multiple backends and is highly customizable.</li>
+<li>Also check out
+<ul>
+<li><a href="https://geo.makie.org/stable/"><code>GeoMakie.jl</code></a> for plotting geospatial data.</li>
+<li><a href="http://juliagraphics.github.io/Colors.jl/stable/"><code>Colors.jl</code></a> and <a href="https://juliagraphics.github.io/ColorSchemes.jl/stable/"><code>ColorSchemes.jl</code></a> for improved color handling.</li>
+</ul></li>
+</ul></li>
+<li><a href="https://docs.sciml.ai/Measurements/stable/"><code>Measurements.jl</code></a>
+<ul>
+<li>A physics package that handles uncertainty propagations coming from any kind of physical measuements.</li>
+</ul></li>
+<li><a href="https://github.com/timholy/ProgressMeter.jl"><code>ProgressMeter.jl</code></a>
+<ul>
+<li>Progress meter for long-running operations in Julia</li>
+</ul></li>
+<li><a href="https://timholy.github.io/Revise.jl/stable/"><code>Revise.jl</code></a>
+<ul>
+<li>A package that allows you to modify your code without having to restart the Julia session. This is especially useful when working with large projects.</li>
+</ul></li>
+<li><a href="https://painterqubits.github.io/Unitful.jl/stable/"><code>Unitful.jl</code></a>
+<ul>
+<li>A package that allows you to work with physical units in Julia.</li>
+</ul></li>
 </ul>
 
 
@@ -584,12 +567,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
+      <a href="../../../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./additionals/essentials/julia_links/index.html" class="pagination-link">
-        <span class="nav-page-text">Julia Programming Language: Links &amp; Resources</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../additionals/essentials/package_installation/index.html" class="pagination-link">
+        <span class="nav-page-text">ExESS Package Installation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
