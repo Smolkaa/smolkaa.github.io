@@ -37,6 +37,11 @@ iframe.reveal-demo {
   border: 1px solid #dee2e6;
 }
 
+
+
+/* ============================================================================
+  Custom CSS for the cards on the index.qmd page
+============================================================================ */
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -51,6 +56,7 @@ iframe.reveal-demo {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+/* On mouse-over, blur the image */
 .card:hover .image {
   filter: blur(2px);
   transform: scale(1.02);
@@ -58,6 +64,7 @@ iframe.reveal-demo {
 
 }
 
+/* On mouse-over, show description text over the image */
 .text {
   position: absolute;
   top: 50%;
@@ -68,11 +75,11 @@ iframe.reveal-demo {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-
 .card:hover .text {
   opacity: 1;
 }
 
+/* On mouse-over, put a dark overlay behind the text for better readability */
 .overlay {
   position: absolute;
   top: 0;
@@ -83,10 +90,11 @@ iframe.reveal-demo {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-
 .card:hover .overlay {
   opacity: 1;
 }
+/* ========================================================================= */
+
 
 
 /* Add some padding inside the card container */
