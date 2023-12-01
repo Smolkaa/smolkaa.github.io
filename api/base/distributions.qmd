@@ -1,7 +1,5 @@
 ---
 title: "Distributions"
-
-tbl-colwidths: [60,12,12]
 ---
 
 {{< include /resources/latex/_defs.qmd >}}

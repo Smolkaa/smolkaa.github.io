@@ -42,11 +42,11 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
   <img class="image" src="resources/imgs/smolka2023.png" alt="Card Image">
   <div class="overlay">
     <div class="text">
-      <p>
-        <strong>Smolka et al. (2023)</strong>
+        <p><strong>Smolka, A.</strong>, Nikolić, D., Gscheidle, C. and Reiss, P.</p>
+        <p>2023</p>
         <p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions</p>
-        <p><a href="https://doi.org/10.1016/j.icarus.2023.115508" target="_blank" class="stretched-link">10.1016/j.icarus.2023.115508</a></p>
-      </p>
+        <p>0.1016/j.icarus.2023.115508</p>
+        <p><a href="https://doi.org/10.1016/j.icarus.2023.115508" target="_blank" class="stretched-link"></a></p>
     </div>
   </div>
 </div>
@@ -62,11 +62,10 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
   <div class="overlay">
   </div>
   <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
-    <p>
-      <strong>TSU Mini-Moon Seminar</strong>
-      <p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions</p>
-      <p><a href="https://youtu.be/k6nHHELlvBY" class="stretched-link">https://youtu.be/k6nHHELlvBY</a></p>
-    </p>
+    <p><strong>TSU Mini-Moon Seminar</strong></p>
+    <p>Presentation</p>
+    <p>Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions</p>
+    <a href="https://youtu.be/k6nHHELlvBY" class="stretched-link"></a>
   </div>
 </div>
 ```
@@ -76,7 +75,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 ## Additional Resources
 
-::: {.grid style="font-size:0.85rem;"}
+::: {.grid}
 
 ::: {.g-col-4}
 ```{=html}
