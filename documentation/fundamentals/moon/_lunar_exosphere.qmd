@@ -14,6 +14,9 @@ Due to the scarcity of ground-based data, satellite measurements at varying alti
 with the known number density $\tilde\numberDensity = \numberDensity(\tilde\radius)$ at some known radial distance $\tilde\radius = \radius + \height$ with $\radius, \height\in\Set{R}^+$, relative potential energies $\relativeEnergy$, and a partition function $\partitionFunction$. If the radial distance is equal to the radius of the planetary body, the number density is equal to the surface number density $\surfaceNumberDensity$. Equation \eqref{eq:chamberlain_projection} is the general form of the isothermal barometric law [@Chamberlain1963].
 
 
+[{{< bi code >}} [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd)]{.aside}
+
+
 The relative energy of the projection function is given as absolute potential energy in units of thermal energy $\BoltzmannConstant \temperature$:
 \begin{equation}
     \relativeEnergy\left(\radius\right) = \left| - \frac{\mass \hat\mass\GravitationalConstant}{\BoltzmannConstant \temperature \radius} \right|
@@ -28,6 +31,7 @@ with the mass $\mass$ of the particle, the mass $\hat\mass$ of the planetary bod
     \Rightarrow \partitionFunction &= \partitionFunction_{bal} + \partitionFunction_{sat} + \partitionFunction_{esc}
 \end{align}
 with the gamma and lower incomplete gamma function, $\Gamma$ and $\gamma$, respectively [@Cook2013].
+
 
 ### LACE
 The [LACE](/documentation/acronyms.qmd) (Lunar Atmospheric Composition Experiment) on the Apollo 17 mission was part of the [ALSEP](/documentation/acronyms.qmd) (Apollo Lunar Surface Experiments Package) to investigate the composition and variation of the Moon's exosphere. Specifically designed for the mission, the instrument consisted of a small, remotely operated package containing a mass spectrometer coupled with a pressure sensor. With its opening oriented upward, it was able to measure the downward stream of particles at the lunar surface at the Apollo 17 landing location, the Taurus-Littrow Valley. On December 27, 1971, the instrument was activated to start the data acquisition process $\SI{50}{\hour}$ after local sunset to operate through one entire lunar night. Increasing exospheric number densities at the morning-terminator as well as higher outgassing rates led to elevated background gas levels and prompted the temporary suspension of operations during the lunar day, except a short check near $\SI{12}{\hour}$ local time. In total, the [LACE](/documentation/acronyms.qmd) measured the nighttime densities for nine lunations. [@Hoffman1975; @Killen2019]
