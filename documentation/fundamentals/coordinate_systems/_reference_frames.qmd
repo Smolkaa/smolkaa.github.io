@@ -36,10 +36,26 @@ Local reference frames are used for calculations on a smaller scale. One example
 
 ### Local Spherical Coordinate Systems
 
+
 ## Transformations
 Often it is useful to describe one problem in a different reference frame than another, requiring a transformation between the two.
 
 ### To Global Cartesian Positions
+
+Let $\sphericalCoordinate = \sphericalCoordinateDef$ be a global spherical position vector given in spherical elements. The transformation to a global cartesian position vector $\cartesianCoordinate = \cartesianCoordinateDef$ is identical to the transformation presented in Eq. \eqref{eq:cartesian_coordinate_spherical_elements}:
+\begin{equation}
+    \cartesianCoordinate = \begin{bmatrix}
+        \sphericalCoordinateRadius \cos\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\ 
+        \sphericalCoordinateRadius \sin\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\ 
+        \sphericalCoordinateRadius \sin\sphericalCoordinateElevation 
+    \end{bmatrix} = \begin{bmatrix}
+        \cartesianCoordinateX \\ 
+        \cartesianCoordinateY \\ 
+        \cartesianCoordinateZ 
+    \end{bmatrix}
+\end{equation}
+with $\sphericalCoordinateRadius\in\Set{R}^+,\;\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ and $\cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R}$.
+
 
 ### To Global Cartesian Velocities
 

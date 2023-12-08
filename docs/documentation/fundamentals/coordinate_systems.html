@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-21">
+<meta name="dcterms.date" content="2023-12-08">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -478,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 21, 2023</p>
+      <p class="date">December 8, 2023</p>
     </div>
   </div>
   
@@ -513,6 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         r\sin\vartheta\cos\varphi\\
         r\sin\varphi
     \end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
+    \label{eq:cartesian_coordinate_spherical_elements}
 \end{equation}\]</span> Note that the subscript <span class="math inline">\(s\)</span> indicates that the vector is expressed in spherical elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s\)</span>. On the other hand, a coordinate can also be projected into a spherical coordinate system, <span class="math inline">\(\boldsymbol{\mathbf{r}}\)</span>, which is a different domain, and expressed in spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{r}}= \begin{bmatrix}r\\ \vartheta\\ \varphi\end{bmatrix} \qquad\text{with }r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].
     \label{eq:spherical_coordinate}
@@ -874,6 +875,17 @@ Derivation of spherical Laplace operator.
 <p>Often it is useful to describe one problem in a different reference frame than another, requiring a transformation between the two.</p>
 <section id="to-global-cartesian-positions" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-cartesian-positions">To Global Cartesian Positions</h3>
+<p>Let <span class="math inline">\(\boldsymbol{\mathbf{r}}= \left[r, \vartheta, \varphi\right]^T\)</span> be a global spherical position vector given in spherical elements. The transformation to a global cartesian position vector <span class="math inline">\(\boldsymbol{\mathbf{x}}= \left[x, y, z\right]^T\)</span> is identical to the transformation presented in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate_spherical_elements}\)</span>: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
+        r\cos\vartheta\cos\varphi\\
+        r\sin\vartheta\cos\varphi\\
+        r\sin\varphi
+    \end{bmatrix} = \begin{bmatrix}
+        x\\
+        y\\
+        z
+    \end{bmatrix}
+\end{equation}\]</span> with <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span> and <span class="math inline">\(x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}\)</span>.</p>
 </section>
 <section id="to-global-cartesian-velocities" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-cartesian-velocities">To Global Cartesian Velocities</h3>
