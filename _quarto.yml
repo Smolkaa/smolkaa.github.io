@@ -35,12 +35,13 @@ website:
 
   sidebar:
     - title: "Home"
-      border: true
+      # border: true
       # logo: /resources/logo/exess_logo_dark.svg
       logo: /resources/logo/exess_logo.svg
       collapse-level: 1
-      style: "docked"
-      background: secondary
+      # style: "docked"
+      # background: secondary
+      background: white
       contents:
         - text: "Home"
           href: index.qmd
