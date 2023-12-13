@@ -971,5 +971,12 @@
     "title": "Monte Carlo Simulation",
     "section": "Code",
     "text": "Code"
+  },
+  {
+    "objectID": "documentation/appendix/referenced_values.html",
+    "href": "documentation/appendix/referenced_values.html",
+    "title": "Appendix A. Referenced Values",
+    "section": "",
+    "text": "The following contains a comprehensive list of referenced\n\n\n\nCitationBibTeX citation:@online{smolka2023,\n  author = {Smolka, Alexander},\n  title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}\n    {Simulations}},\n  date = {2023},\n  url = {https://smolkaa.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nSmolka, A. (2023). ExESS - Extraterrestrial Exosphere and Surface\nSimulations. https://smolkaa.github.io"
   }
 ]
