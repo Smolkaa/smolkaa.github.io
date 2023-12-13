@@ -66,6 +66,7 @@ iframe.reveal-demo {
 
 /* On mouse-over, show description text over the image */
 .text {
+  font-size: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
