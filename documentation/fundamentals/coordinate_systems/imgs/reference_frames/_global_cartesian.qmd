@@ -2,7 +2,7 @@
 
 # {{< bi image >}} Figure
 
-::: {#fig-spherical_differential_element }
+::: {#fig-global_cartesian}
 <!-- ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.svg){width="600px"} -->
 ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png){width="600px"}
 

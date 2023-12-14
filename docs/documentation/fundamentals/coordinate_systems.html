@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-08">
+<meta name="dcterms.date" content="2023-12-14">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -439,8 +439,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations">Transformations</a>
   <ul class="collapse">
   <li><a href="#to-global-cartesian-positions" id="toc-to-global-cartesian-positions" class="nav-link" data-scroll-target="#to-global-cartesian-positions">To Global Cartesian Positions</a></li>
-  <li><a href="#to-global-cartesian-velocities" id="toc-to-global-cartesian-velocities" class="nav-link" data-scroll-target="#to-global-cartesian-velocities">To Global Cartesian Velocities</a></li>
   <li><a href="#to-global-spherical-positions" id="toc-to-global-spherical-positions" class="nav-link" data-scroll-target="#to-global-spherical-positions">To Global Spherical Positions</a></li>
+  <li><a href="#to-global-cartesian-velocities" id="toc-to-global-cartesian-velocities" class="nav-link" data-scroll-target="#to-global-cartesian-velocities">To Global Cartesian Velocities</a></li>
   <li><a href="#to-global-spherical-velocities" id="toc-to-global-spherical-velocities" class="nav-link" data-scroll-target="#to-global-spherical-velocities">To Global Spherical Velocities</a></li>
   <li><a href="#to-local-cartesian-positions" id="toc-to-local-cartesian-positions" class="nav-link" data-scroll-target="#to-local-cartesian-positions">To Local Cartesian Positions</a></li>
   <li><a href="#to-local-cartesian-velocities" id="toc-to-local-cartesian-velocities" class="nav-link" data-scroll-target="#to-local-cartesian-velocities">To Local Cartesian Velocities</a></li>
@@ -478,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 8, 2023</p>
+      <p class="date">December 14, 2023</p>
     </div>
   </div>
   
@@ -524,6 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
         \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
     \end{bmatrix}  \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
+    \label{eq:spherical_coordinate_cartesian_elements}
 \end{equation}\]</span></p>
 
 <div class="no-row-height column-margin column-container"><div class="">
@@ -656,14 +657,14 @@ Derivation of spherical Laplace operator.
     \int_X \int_Y \int_Z f dzdydx= \int_Vf d^3\boldsymbol{\mathbf{x}},
 \end{equation}\]</span> where <span class="math inline">\(V\)</span> is the volume of the integration domain, with the infinitesimal volume element <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\in V= \left\{dx\, dy\, dz\; | \; dx\in X, dy\in Y, dz\in Z \right\}\)</span>. The superscript <span class="math inline">\(\bullet^3\)</span> in the differentials indicates that the differential is a vector but a scalar representation of the element’s size created by the vector elements. As before, the differential <span class="math inline">\(d^3\boldsymbol{\mathbf{x}}\)</span> can also be expressed in spherical elements by using the Jacobian determinant, which is equal to the matrix of Eq. <span class="math inline">\(\eqref{eq:total_cartesian_spherical_differential_matrix}\)</span>, of the transformation: <span class="math display">\[\begin{equation}
     d^3\boldsymbol{\mathbf{x}}= \left|\frac{\partial\boldsymbol{\mathbf{x}}}{\partial\boldsymbol{\mathbf{r}}}\right| d^3\boldsymbol{\mathbf{r}}= r^2\cos\varphi drd\vartheta d\varphi.
-\end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;2</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
+\end{equation}\]</span> <a href="#fig-spherical_differential_element">Figure&nbsp;1</a> illustrates the spherical differential element <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\)</span> in a three-dimensional cartesian coordinate system. The azimuth angle <span class="math inline">\(\vartheta\)</span> rotates inside of the <span class="math inline">\(x\)</span>–<span class="math inline">\(y\)</span> plane, while the elevation angle <span class="math inline">\(\varphi\)</span> rotates the vector out of that plane in <span class="math inline">\(z\)</span> direction. While the azimuth arc decreases with the sine of the elevation angle, the small angle approximation can be used to approximate the differential element as a cuboid with the volume <span class="math inline">\(d^3\boldsymbol{\mathbf{r}}\approx r^2 \sin\varphi\, drd\vartheta d\varphi\)</span>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset column-page-right page-columns page-full">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content column-page-right">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../..\documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></p>
+<p><img src="../../documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
 </figure>
 </div>
@@ -817,35 +818,39 @@ Derivation of spherical Laplace operator.
 </section>
 <section id="sec-reference_frames" class="level1 page-columns page-full">
 <h1>Reference Frames</h1>
-<p>Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations.</p>
+<p>Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{G}}\bullet\)</span>, and local reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{L}}\bullet\)</span>.</p>
 <section id="global-reference-frames" class="level2">
 <h2 class="anchored" data-anchor-id="global-reference-frames">Global Reference Frames</h2>
-<p>Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun’s position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.</p>
+<p>Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon.</p>
+<p>Moon -&gt; selenocentric</p>
+<p>Earth -&gt; geocentric</p>
+<p>Sun -&gt; heliocentric</p>
+<p>If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun’s position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.</p>
 <section id="global-cartesian-coordinate-systems" class="level3">
 <h3 class="anchored" data-anchor-id="global-cartesian-coordinate-systems">Global Cartesian Coordinate Systems</h3>
 <p>Positional vectors of the global cartesian coordinate system are defined as <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
-        x\\
-        y\\
-        z
-    \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R},
+    {}_{\small\text{G}}\boldsymbol{\mathbf{x}}= \begin{bmatrix}
+        {}_{\small\text{G}}x\\
+        {}_{\small\text{G}}y\\
+        {}_{\small\text{G}}z
+    \end{bmatrix} \qquad\text{with } {}_{\small\text{G}}x\in\mathbb{R},\;{}_{\small\text{G}}y\in\mathbb{R},\;{}_{\small\text{G}}z\in\mathbb{R},
 \end{equation}\]</span> while velocities are defined as their first temporal derivative, and since all global base vectors <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_i\)</span> are time-invariant, it resolves to <span class="math display">\[\begin{align}
-    \dot{\boldsymbol{\mathbf{x}}} = \frac{d}{dt} \left( \boldsymbol{\mathbf{x}}\right) &amp;= \frac{d}{dt} \left( x\hat{\boldsymbol{\mathbf{e}}}_x+ y\hat{\boldsymbol{\mathbf{e}}}_y+ z\hat{\boldsymbol{\mathbf{e}}}_z\right) = \dot x\hat{\boldsymbol{\mathbf{e}}}_x+ \dot y\hat{\boldsymbol{\mathbf{e}}}_y+ \dot z\hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}
-        \dot x\\
-        \dot y\\
-        \dot z
+    {}_{\small\text{G}}\dot{\boldsymbol{\mathbf{x}}} = \frac{d}{dt} \left( {}_{\small\text{G}}\boldsymbol{\mathbf{x}}\right) &amp;= \frac{d}{dt} \left( {}_{\small\text{G}}x\hat{\boldsymbol{\mathbf{e}}}_x+ {}_{\small\text{G}}y\hat{\boldsymbol{\mathbf{e}}}_y+ {}_{\small\text{G}}z\hat{\boldsymbol{\mathbf{e}}}_z\right) = {}_{\small\text{G}}\dot x\hat{\boldsymbol{\mathbf{e}}}_x+ {}_{\small\text{G}}\dot y\hat{\boldsymbol{\mathbf{e}}}_y+ {}_{\small\text{G}}\dot z\hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}
+        {}_{\small\text{G}}\dot x\\
+        {}_{\small\text{G}}\dot y\\
+        {}_{\small\text{G}}\dot z
     \end{bmatrix}
-    \\ &amp; \text{with } \dot x\in\mathbb{R},\;\dot y\in\mathbb{R},\;\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
+    \\ &amp; \text{with } {}_{\small\text{G}}\dot x\in\mathbb{R},\;{}_{\small\text{G}}\dot y\in\mathbb{R},\;{}_{\small\text{G}}\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
 \end{align}\]</span></p>
-<p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other.</p>
+<p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in <a href="#fig-global_cartesian">Figure&nbsp;2</a>. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global subscript was omitted for the simplicity of the visualization.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-global_cartesian" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!-- ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.svg){width="600px"} -->
-<p><img src="../..\documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="../../documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png" class="img-fluid figure-img" width="600"></p>
 <figcaption class="figure-caption">Figure&nbsp;2: Minimal and simplified sketch of the global, cartesian, subsolar, selenocentric coordinate system. The dashed lines indicate the Moon’s orbit around the Sun. All sizes and distances are not to scale.</figcaption>
 </figure>
 </div>
@@ -885,13 +890,27 @@ Derivation of spherical Laplace operator.
         y\\
         z
     \end{bmatrix}
-\end{equation}\]</span> with <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span> and <span class="math inline">\(x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}\)</span>.</p>
-</section>
-<section id="to-global-cartesian-velocities" class="level3">
-<h3 class="anchored" data-anchor-id="to-global-cartesian-velocities">To Global Cartesian Velocities</h3>
+\end{equation}\]</span> with <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span>.</p>
 </section>
 <section id="to-global-spherical-positions" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-spherical-positions">To Global Spherical Positions</h3>
+<p>Let <span class="math inline">\(\boldsymbol{\mathbf{x}}= \left[x, y, z\right]^T\)</span> be a global cartesian position vector given in cartesian elements. The transformation to a global spherical position vector <span class="math inline">\(\boldsymbol{\mathbf{r}}= \left[r, \vartheta, \varphi\right]^T\)</span> is identical to the transformation presented in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate_cartesian_elements}\)</span>: <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{r}}= \begin{bmatrix}
+        \sqrt{x^2 + y^2 + z^2} \\
+        \mathop{\mathrm{sgn}}\left(y\right)\cdot\cos^{-1}\left(\frac{x}{\sqrt{x^2 + y^2}}\right)\\
+        \sin^{-1}\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
+    \end{bmatrix}
+\end{equation}\]</span> with <span class="math inline">\(x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.\)</span></p>
+</section>
+<section id="to-global-cartesian-velocities" class="level3">
+<h3 class="anchored" data-anchor-id="to-global-cartesian-velocities">To Global Cartesian Velocities</h3>
+<p>Let <span class="math inline">\({}_{\small\text{L}}\boldsymbol{\mathbf{v}}= \left[v_x, v_y, v_z\right]^T\)</span> be a local cartesian velocity vector given in cartesian elements, and <span class="math inline">\(\boldsymbol{\mathbf{r}}= \left[r, \vartheta, \varphi\right]^T\)</span> be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector <span class="math inline">\(\dot{\boldsymbol{\mathbf{x}}} = \left[\dot x, \dot y, \dot z\right]^T\)</span> is given by <span class="math display">\[\begin{equation}
+    {}_{\small\text{G}}\dot{\boldsymbol{\mathbf{x}}} = \begin{bmatrix}
+        -v_x\sin\vartheta- v_y\cos\vartheta\sin\varphi+ v_z\cos\vartheta\cos\varphi\\
+        v_x\cos\vartheta- v_y\sin\vartheta\sin\varphi+ v_z\sin\vartheta\cos\varphi\\
+        v_y\cos\varphi+ v_z\sin\varphi
+    \end{bmatrix}
+\end{equation}\]</span> with <span class="math inline">\(v_x\in\mathbb{R},\;v_y\in\mathbb{R},\;v_z\in\mathbb{R}\)</span> and <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span>.</p>
 </section>
 <section id="to-global-spherical-velocities" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-spherical-velocities">To Global Spherical Velocities</h3>

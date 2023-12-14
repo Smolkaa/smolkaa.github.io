@@ -41,6 +41,7 @@ The same coordinate can also be expressed in cartesian elements $\left(\cartesia
         \sgn\left(\cartesianCoordinateY\right)\cdot\cos^{-1}\left(\frac{\cartesianCoordinateX}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2}}\right)\\
         \sin^{-1}\left(\frac{\cartesianCoordinateZ}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}}\right) 
     \end{bmatrix}  \qquad\text{with } \cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R}.
+    \label{eq:spherical_coordinate_cartesian_elements}
 \end{equation}
 
 ::: {.column-margin}

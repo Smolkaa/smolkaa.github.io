@@ -81,6 +81,9 @@
 \newcommand{\youngsModulus}{Y}
 \newcommand{\zenith}{\psi}
 
+\newcommand{\local}{{}_{\small\text{L}}}
+\newcommand{\global}{{}_{\small\text{G}}}
+
 
 \newcommand{\BoltzmannConstant}{k_B}
 \newcommand{\BoltzmannConstantValue}{\SI{1.38e-23}{\joule\per\kelvin}}
