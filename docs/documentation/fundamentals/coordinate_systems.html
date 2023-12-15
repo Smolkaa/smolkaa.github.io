@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-14">
+<meta name="dcterms.date" content="2023-12-15">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -478,7 +478,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 14, 2023</p>
+      <p class="date">December 15, 2023</p>
     </div>
   </div>
   
@@ -818,31 +818,27 @@ Derivation of spherical Laplace operator.
 </section>
 <section id="sec-reference_frames" class="level1 page-columns page-full">
 <h1>Reference Frames</h1>
-<p>Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{G}}\bullet\)</span>, and local reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{L}}\bullet\)</span>.</p>
+<p>Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{G}}\bullet\)</span>, and local reference frames, which are indicated by the prescript <span class="math inline">\({}_{\small\text{L}}\bullet\)</span>. Note that the prescripts are only used for additional clarification, for example, when two vectors out of different reference frames are used in the same equation. In most cases, the reference frame is clear from the context, and the prescripts are omitted for the sake of readability.</p>
 <section id="global-reference-frames" class="level2">
 <h2 class="anchored" data-anchor-id="global-reference-frames">Global Reference Frames</h2>
-<p>Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon.</p>
-<p>Moon -&gt; selenocentric</p>
-<p>Earth -&gt; geocentric</p>
-<p>Sun -&gt; heliocentric</p>
-<p>If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun’s position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.</p>
+<p>Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body. These coordinate systems have their origin at the center of the planetary body, which gives them their body-specific name, for example, selenocentric for the Moon, geocentric for the Earth, and heliocentric for the Sun. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun’s position relative to the planetary body in question. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.</p>
 <section id="global-cartesian-coordinate-systems" class="level3">
 <h3 class="anchored" data-anchor-id="global-cartesian-coordinate-systems">Global Cartesian Coordinate Systems</h3>
 <p>Positional vectors of the global cartesian coordinate system are defined as <span class="math display">\[\begin{equation}
-    {}_{\small\text{G}}\boldsymbol{\mathbf{x}}= \begin{bmatrix}
-        {}_{\small\text{G}}x\\
-        {}_{\small\text{G}}y\\
-        {}_{\small\text{G}}z
-    \end{bmatrix} \qquad\text{with } {}_{\small\text{G}}x\in\mathbb{R},\;{}_{\small\text{G}}y\in\mathbb{R},\;{}_{\small\text{G}}z\in\mathbb{R},
+    \boldsymbol{\mathbf{x}}= \begin{bmatrix}
+        x\\
+        y\\
+        z
+    \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R},
 \end{equation}\]</span> while velocities are defined as their first temporal derivative, and since all global base vectors <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_i\)</span> are time-invariant, it resolves to <span class="math display">\[\begin{align}
-    {}_{\small\text{G}}\dot{\boldsymbol{\mathbf{x}}} = \frac{d}{dt} \left( {}_{\small\text{G}}\boldsymbol{\mathbf{x}}\right) &amp;= \frac{d}{dt} \left( {}_{\small\text{G}}x\hat{\boldsymbol{\mathbf{e}}}_x+ {}_{\small\text{G}}y\hat{\boldsymbol{\mathbf{e}}}_y+ {}_{\small\text{G}}z\hat{\boldsymbol{\mathbf{e}}}_z\right) = {}_{\small\text{G}}\dot x\hat{\boldsymbol{\mathbf{e}}}_x+ {}_{\small\text{G}}\dot y\hat{\boldsymbol{\mathbf{e}}}_y+ {}_{\small\text{G}}\dot z\hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}
-        {}_{\small\text{G}}\dot x\\
-        {}_{\small\text{G}}\dot y\\
-        {}_{\small\text{G}}\dot z
+    \dot{\boldsymbol{\mathbf{x}}} = \frac{d}{dt} \left( \boldsymbol{\mathbf{x}}\right) &amp;= \frac{d}{dt} \left( x\hat{\boldsymbol{\mathbf{e}}}_x+ y\hat{\boldsymbol{\mathbf{e}}}_y+ z\hat{\boldsymbol{\mathbf{e}}}_z\right) = \dot x\hat{\boldsymbol{\mathbf{e}}}_x+ \dot y\hat{\boldsymbol{\mathbf{e}}}_y+ \dot z\hat{\boldsymbol{\mathbf{e}}}_z= \begin{bmatrix}
+        \dot x\\
+        \dot y\\
+        \dot z
     \end{bmatrix}
-    \\ &amp; \text{with } {}_{\small\text{G}}\dot x\in\mathbb{R},\;{}_{\small\text{G}}\dot y\in\mathbb{R},\;{}_{\small\text{G}}\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
+    \\ &amp; \text{with } \dot x\in\mathbb{R},\;\dot y\in\mathbb{R},\;\dot z\in\mathbb{R}. \label{eq:global_cartesian_velocity} \nonumber
 \end{align}\]</span></p>
-<p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in <a href="#fig-global_cartesian">Figure&nbsp;2</a>. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global subscript was omitted for the simplicity of the visualization.</p>
+<p>The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in <a href="#fig-global_cartesian">Figure&nbsp;2</a>. The base vectors are defined as <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_x\)</span> pointing towards the Sun, <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_y\)</span> pointing towards positive longitude (east), and <span class="math inline">\(\hat{\boldsymbol{\mathbf{e}}}_z\)</span> pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global prescript was omitted for the simplicity of the visualization.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content">
@@ -904,13 +900,13 @@ Derivation of spherical Laplace operator.
 </section>
 <section id="to-global-cartesian-velocities" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-cartesian-velocities">To Global Cartesian Velocities</h3>
-<p>Let <span class="math inline">\({}_{\small\text{L}}\boldsymbol{\mathbf{v}}= \left[v_x, v_y, v_z\right]^T\)</span> be a local cartesian velocity vector given in cartesian elements, and <span class="math inline">\(\boldsymbol{\mathbf{r}}= \left[r, \vartheta, \varphi\right]^T\)</span> be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector <span class="math inline">\(\dot{\boldsymbol{\mathbf{x}}} = \left[\dot x, \dot y, \dot z\right]^T\)</span> is given by <span class="math display">\[\begin{equation}
-    {}_{\small\text{G}}\dot{\boldsymbol{\mathbf{x}}} = \begin{bmatrix}
-        -v_x\sin\vartheta- v_y\cos\vartheta\sin\varphi+ v_z\cos\vartheta\cos\varphi\\
-        v_x\cos\vartheta- v_y\sin\vartheta\sin\varphi+ v_z\sin\vartheta\cos\varphi\\
-        v_y\cos\varphi+ v_z\sin\varphi
+<p>Let <span class="math inline">\({}_{\small\text{L}}\boldsymbol{\mathbf{v}}= \left[{}_{\small\text{L}}v_x, {}_{\small\text{L}}v_y, {}_{\small\text{L}}v_z\right]^T\)</span> be a local cartesian velocity vector given in cartesian elements, and <span class="math inline">\({}_{\small\text{G}}\boldsymbol{\mathbf{r}}= \left[{}_{\small\text{G}}r, {}_{\small\text{G}}\vartheta, {}_{\small\text{G}}\varphi\right]^T\)</span> be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector <span class="math inline">\({}_{\small\text{G}}\boldsymbol{\mathbf{v}}= \left[{}_{\small\text{G}}v_x, {}_{\small\text{G}}v_y, {}_{\small\text{G}}v_z\right]^T\)</span> is given by <span class="math display">\[\begin{equation}
+    {}_{\small\text{G}}\boldsymbol{\mathbf{v}}= \begin{bmatrix}
+        -{}_{\small\text{L}}v_x\sin{}_{\small\text{G}}\vartheta- {}_{\small\text{L}}v_y\cos{}_{\small\text{G}}\vartheta\sin{}_{\small\text{G}}\varphi+ {}_{\small\text{L}}v_z\cos{}_{\small\text{G}}\vartheta\cos{}_{\small\text{G}}\varphi\\
+        {}_{\small\text{L}}v_x\cos{}_{\small\text{G}}\vartheta- {}_{\small\text{L}}v_y\sin{}_{\small\text{G}}\vartheta\sin{}_{\small\text{G}}\varphi+ {}_{\small\text{L}}v_z\sin{}_{\small\text{G}}\vartheta\cos{}_{\small\text{G}}\varphi\\
+        {}_{\small\text{L}}v_y\cos{}_{\small\text{G}}\varphi+ {}_{\small\text{L}}v_z\sin{}_{\small\text{G}}\varphi
     \end{bmatrix}
-\end{equation}\]</span> with <span class="math inline">\(v_x\in\mathbb{R},\;v_y\in\mathbb{R},\;v_z\in\mathbb{R}\)</span> and <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span>.</p>
+\end{equation}\]</span> with <span class="math inline">\({}_{\small\text{L}}v_x\in\mathbb{R},\;\localvelocity_y\in\mathbb{R},\;{}_{\small\text{L}}v_z\in\mathbb{R}\)</span> and <span class="math inline">\(r\in\mathbb{R}^+,\;\vartheta\in\left[-\pi,\pi\right),\;\varphi\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\)</span>.</p>
 </section>
 <section id="to-global-spherical-velocities" class="level3">
 <h3 class="anchored" data-anchor-id="to-global-spherical-velocities">To Global Spherical Velocities</h3>

@@ -1,37 +1,29 @@
-Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript $\global\bullet$, and local reference frames, which are indicated by the prescript $\local\bullet$. 
+Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript $\global\bullet$, and local reference frames, which are indicated by the prescript $\local\bullet$. Note that the prescripts are only used for additional clarification, for example, when two vectors out of different reference frames are used in the same equation. In most cases, the reference frame is clear from the context, and the prescripts are omitted for the sake of readability.
 
 
 ## Global Reference Frames
-Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body, like the Moon. 
-
-Moon -> selenocentric
-
-Earth -> geocentric
-
-Sun -> heliocentric
-
-If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun's position. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.
+Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body. These coordinate systems have their origin at the center of the planetary body, which gives them their body-specific name, for example, selenocentric for the Moon, geocentric for the Earth, and heliocentric for the Sun. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun's position relative to the planetary body in question. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.
 
 ### Global Cartesian Coordinate Systems
 Positional vectors of the global cartesian coordinate system are defined as
 \begin{equation}
-    \global\cartesianCoordinate = \begin{bmatrix}
-        \global\cartesianCoordinateX \\ 
-        \global\cartesianCoordinateY \\ 
-        \global\cartesianCoordinateZ 
-    \end{bmatrix} \qquad\text{with } \global\cartesianCoordinateX\in\Set{R},\;\global\cartesianCoordinateY\in\Set{R},\;\global\cartesianCoordinateZ\in\Set{R},
+    \cartesianCoordinate = \begin{bmatrix}
+        \cartesianCoordinateX \\ 
+        \cartesianCoordinateY \\ 
+        \cartesianCoordinateZ 
+    \end{bmatrix} \qquad\text{with } \cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R},
 \end{equation}
 while velocities are defined as their first temporal derivative, and since all global base vectors $\baseVector_i$ are time-invariant, it resolves to
 \begin{align}
-    \global\dot{\cartesianCoordinate} = \frac{d}{d\Time} \left( \global\cartesianCoordinate \right) &= \frac{d}{d\Time} \left( \global\cartesianCoordinateX \cartesianBaseVectorX + \global\cartesianCoordinateY \cartesianBaseVectorY + \global\cartesianCoordinateZ \cartesianBaseVectorZ \right) = \global\dot\cartesianCoordinateX \cartesianBaseVectorX + \global\dot\cartesianCoordinateY \cartesianBaseVectorY + \global\dot\cartesianCoordinateZ \cartesianBaseVectorZ = \begin{bmatrix}
-        \global\dot\cartesianCoordinateX \\ 
-        \global\dot\cartesianCoordinateY \\ 
-        \global\dot\cartesianCoordinateZ 
+    \dot{\cartesianCoordinate} = \frac{d}{d\Time} \left( \cartesianCoordinate \right) &= \frac{d}{d\Time} \left( \cartesianCoordinateX \cartesianBaseVectorX + \cartesianCoordinateY \cartesianBaseVectorY + \cartesianCoordinateZ \cartesianBaseVectorZ \right) = \dot\cartesianCoordinateX \cartesianBaseVectorX + \dot\cartesianCoordinateY \cartesianBaseVectorY + \dot\cartesianCoordinateZ \cartesianBaseVectorZ = \begin{bmatrix}
+        \dot\cartesianCoordinateX \\ 
+        \dot\cartesianCoordinateY \\ 
+        \dot\cartesianCoordinateZ 
     \end{bmatrix}
-    \\ & \text{with } \global\dot\cartesianCoordinateX\in\Set{R},\;\global\dot\cartesianCoordinateY\in\Set{R},\;\global\dot\cartesianCoordinateZ\in\Set{R}. \label{eq:global_cartesian_velocity} \nonumber
+    \\ & \text{with } \dot\cartesianCoordinateX\in\Set{R},\;\dot\cartesianCoordinateY\in\Set{R},\;\dot\cartesianCoordinateZ\in\Set{R}. \label{eq:global_cartesian_velocity} \nonumber
 \end{align}
 
-The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in @fig-global_cartesian. The base vectors are defined as $\cartesianBaseVectorX$ pointing towards the Sun, $\cartesianBaseVectorY$ pointing towards positive longitude (east), and $\cartesianBaseVectorZ$ pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global subscript was omitted for the simplicity of the visualization.
+The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in @fig-global_cartesian. The base vectors are defined as $\cartesianBaseVectorX$ pointing towards the Sun, $\cartesianBaseVectorY$ pointing towards positive longitude (east), and $\cartesianBaseVectorZ$ pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global prescript was omitted for the simplicity of the visualization.
 
 {{< include coordinate_systems/imgs/reference_frames/_global_cartesian.qmd >}}
 
@@ -82,15 +74,15 @@ with $\cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\carte
 
 ### To Global Cartesian Velocities
 
-Let $\local\vec\velocity = \left[\velocity_\cartesianCoordinateX, \velocity_\cartesianCoordinateY, \velocity_\cartesianCoordinateZ\right]^T$ be a local cartesian velocity vector given in cartesian elements, and $\sphericalCoordinate = \sphericalCoordinateDef$ be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector $\dot{\cartesianCoordinate} = \left[\dot\cartesianCoordinateX, \dot\cartesianCoordinateY, \dot\cartesianCoordinateZ\right]^T$ is given by
+Let $\local\vec\velocity = \left[\local\velocity_\cartesianCoordinateX, \local\velocity_\cartesianCoordinateY, \local\velocity_\cartesianCoordinateZ\right]^T$ be a local cartesian velocity vector given in cartesian elements, and $\global\sphericalCoordinate = \left[\global\sphericalCoordinateRadius, \global\sphericalCoordinateAzimuth, \global\sphericalCoordinateElevation\right]^T$ be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector $\global\vec\velocity = \left[\global\velocity_\cartesianCoordinateX, \global\velocity_\cartesianCoordinateY, \global\velocity_\cartesianCoordinateZ\right]^T$ is given by
 \begin{equation}
-    \global\dot{\cartesianCoordinate} = \begin{bmatrix}
-        -\velocity_\cartesianCoordinateX \sin\sphericalCoordinateAzimuth - \velocity_\cartesianCoordinateY \cos\sphericalCoordinateAzimuth \sin\sphericalCoordinateElevation + \velocity_\cartesianCoordinateZ \cos\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\
-        \velocity_\cartesianCoordinateX \cos\sphericalCoordinateAzimuth - \velocity_\cartesianCoordinateY \sin\sphericalCoordinateAzimuth \sin\sphericalCoordinateElevation + \velocity_\cartesianCoordinateZ \sin\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\
-        \velocity_\cartesianCoordinateY \cos\sphericalCoordinateElevation + \velocity_\cartesianCoordinateZ \sin\sphericalCoordinateElevation
+    \global\vec\velocity = \begin{bmatrix}
+        -\local\velocity_\cartesianCoordinateX \sin\global\sphericalCoordinateAzimuth - \local\velocity_\cartesianCoordinateY \cos\global\sphericalCoordinateAzimuth \sin\global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \cos\global\sphericalCoordinateAzimuth \cos\global\sphericalCoordinateElevation \\
+        \local\velocity_\cartesianCoordinateX \cos\global\sphericalCoordinateAzimuth - \local\velocity_\cartesianCoordinateY \sin\global\sphericalCoordinateAzimuth \sin\global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \sin\global\sphericalCoordinateAzimuth \cos\global\sphericalCoordinateElevation \\
+        \local\velocity_\cartesianCoordinateY \cos\global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \sin\global\sphericalCoordinateElevation
     \end{bmatrix}
 \end{equation}
-with $\velocity_\cartesianCoordinateX\in\Set{R},\;\velocity_\cartesianCoordinateY\in\Set{R},\;\velocity_\cartesianCoordinateZ\in\Set{R}$ and $\sphericalCoordinateRadius\in\Set{R}^+,\;\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+with $\local\velocity_\cartesianCoordinateX\in\Set{R},\;\local\velocity_\cartesianCoordinateY\in\Set{R},\;\local\velocity_\cartesianCoordinateZ\in\Set{R}$ and $\global\sphericalCoordinateRadius\in\Set{R}^+,\;\global\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\global\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
 
 
 ### To Global Spherical Velocities
