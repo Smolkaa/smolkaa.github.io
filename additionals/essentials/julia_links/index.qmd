@@ -40,10 +40,11 @@ format:
     + [`GeoMakie.jl`](https://geo.makie.org/stable/) for plotting geospatial data.
     + [`Colors.jl`](http://juliagraphics.github.io/Colors.jl/stable/) and [`ColorSchemes.jl`](https://juliagraphics.github.io/ColorSchemes.jl/stable/) for improved color handling.
 * [`Measurements.jl`](https://docs.sciml.ai/Measurements/stable/)
-  - A physics package that handles uncertainty propagations coming from any kind of physical measuements.
+  - A physics package that handles uncertainty propagations coming from any kind of physical measurements.
 * [`ProgressMeter.jl`](https://github.com/timholy/ProgressMeter.jl)
   - Progress meter for long-running operations in Julia
 * [`Revise.jl`](https://timholy.github.io/Revise.jl/stable/)
   - A package that allows you to modify your code without having to restart the Julia session. This is especially useful when working with large projects.
 * [`Unitful.jl`](https://painterqubits.github.io/Unitful.jl/stable/)
   - A package that allows you to work with physical units in Julia.
+* [`StaticArrays.jl`](https://juliaarrays.github.io/StaticArrays.jl/stable/)

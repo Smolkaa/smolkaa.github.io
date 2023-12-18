@@ -470,6 +470,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  LLVM<span class="op">:</span> libLLVM<span class="op">-</span><span class="fl">14.0.6</span> (ORCJIT, skylake)</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">Threads</span><span class="op">:</span> <span class="fl">1</span> on <span class="fl">8</span> virtual cores</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <table class="table">
+<colgroup>
+<col style="width: 61%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Benchmark</th>
@@ -479,39 +484,135 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Function: <code>landing_position</code></td>
-<td style="text-align: left;">1215.498</td>
-<td style="text-align: left;">1227.366</td>
+<td style="text-align: left;">Function: <code>landing_position</code> - Tuples</td>
+<td style="text-align: left;">185.334</td>
+<td style="text-align: left;">186.896</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Function: <code>time_of_flight</code></td>
-<td style="text-align: left;">1032.094</td>
-<td style="text-align: left;">1047.41</td>
+<td style="text-align: left;">Function: <code>landing_position</code> - Vectors</td>
+<td style="text-align: left;">507.796</td>
+<td style="text-align: left;">568.561</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function: <code>landing_position</code> - Custom Types</td>
+<td style="text-align: left;">160.472</td>
+<td style="text-align: left;">166.368</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function: <code>landing_position</code> - Custom Types w/ conversion</td>
+<td style="text-align: left;">187.828</td>
+<td style="text-align: left;">188.43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function: <code>time_of_flight</code> - Tuple</td>
+<td style="text-align: left;">155.94</td>
+<td style="text-align: left;">156.618</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function: <code>time_of_flight</code> - Vector</td>
+<td style="text-align: left;">477.02</td>
+<td style="text-align: left;">483.117</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Function: <code>time_of_flight</code> - Custom Type</td>
+<td style="text-align: left;">156.554</td>
+<td style="text-align: left;">157.234</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Function: <code>time_of_flight</code> - Custom Type w/ conversion</td>
+<td style="text-align: left;">187.252</td>
+<td style="text-align: left;">189.756</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Function: <code>landing_position</code></strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">7539</span> samples with <span class="fl">500</span> evaluations.</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">1.215</span> μs <span class="op">…</span>  <span class="fl">11.601</span> μs  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">87.11</span><span class="op">%</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">1.227</span> μs               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">1.323</span> μs <span class="op">±</span> <span class="fl">749.768</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">4.86</span><span class="op">%</span> <span class="op">±</span>  <span class="fl">7.47</span><span class="op">%</span></span>
+<p><strong>Function: <code>landing_position</code> - Tuples</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">185.334</span> ns <span class="op">…</span> <span class="fl">509.822</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">186.896</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">200.687</span> ns <span class="op">±</span>  <span class="fl">39.220</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  █▇▂▁▂▅▅▄▃▂▂▂▂▁▂     ▁                                       ▂</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  █████████████████████▇▅▇▆▅▆▆▅▅▅▅▄▆▄▅▃▄▃▄▄▄▁▁▃▄▃▁▃▃▁▁▄▁▃▁▁▁▃ █</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.22</span> μs      Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time      <span class="fl">1.83</span> μs <span class="op">&lt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  █▄▃▁    ▁▁▁▁        ▁                                         ▁</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  ████▅▆▆▅█████▆▇▆▆▆▆████▆▇▇▅▅▆▅▇█▇▅▅▆▄▃▅▆▄▇▅▇▅▂▂▃▃▅▅▆▄▄▃▃▄▄▅▄▅ █</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">185</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">390</span> ns <span class="op">&lt;</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">688</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">16</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Function: <code>time_of_flight</code></strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">8605</span> samples with <span class="fl">500</span> evaluations.</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">1.032</span> μs <span class="op">…</span>  <span class="fl">49.322</span> μs  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">93.44</span><span class="op">%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">1.047</span> μs               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">1.157</span> μs <span class="op">±</span> <span class="fl">853.498</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">4.64</span><span class="op">%</span> <span class="op">±</span>  <span class="fl">6.67</span><span class="op">%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>landing_position</code> - Vectors</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">507.796</span> ns <span class="op">…</span>   <span class="fl">7.215</span> μs  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">88.43</span><span class="op">%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">568.561</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">630.933</span> ns <span class="op">±</span> <span class="fl">245.840</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">1.19</span><span class="op">%</span> <span class="op">±</span>  <span class="fl">3.51</span><span class="op">%</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  █▃▃▄▂▂▂▁▁                                                   ▁</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  ████████████▇▇▇▆▆▇▆▆▅▆▅▄▅▅▅▄▅▄▄▄▃▃▄▂▃▄▃▄▄▄▃▄▄▂▄▅▄▅▃▃▄▃▃▃▂▄▄ █</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.03</span> μs      Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time      <span class="fl">2.45</span> μs <span class="op">&lt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  ▇█▆▆▅▅▅▅▅▄▄▄▃▃▂▃▃▂▂▂▁▁▁▁                                      ▂</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  █████████████████████████████████▇█▇█▇▇▇▆▇▇▇▆▆▆▆▆▆▅▆▅▆▆▆▅▆▆▆▆ █</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">508</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time       <span class="fl">1.33</span> μs <span class="op">&lt;</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">528</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">11</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">160</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">8</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>landing_position</code> - Custom Types</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">160.472</span> ns <span class="op">…</span> <span class="fl">482.998</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">166.368</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">190.688</span> ns <span class="op">±</span>  <span class="fl">46.764</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  ▅█▅▄▄▃▂▃▁▃▂▂▂▂▁▁   ▁ ▁▁▁▁▁                          ▁         ▁</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  ███████████████████████████████████▇▇▇▇▆▅▇▇▆▆▆█▆▇▇▆▇██▇▆▇▇▆▅▆ █</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">160</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">359</span> ns <span class="op">&lt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>landing_position</code> - Custom Types w/ conversion</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">187.828</span> ns <span class="op">…</span> <span class="fl">542.394</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">188.430</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">202.984</span> ns <span class="op">±</span>  <span class="fl">36.482</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  █▆▃▁ ▁    ▁ ▂                                                 ▁</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  ██████▅█▄███████▆▇▆▇▆▇██▇█▇▆▅▇▆▅▇▆▆██▇▅▅▆▇▅▃▄▆▆▇▇▅▆▂▃▃▂▃▄▅▆▇▅ █</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">188</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">364</span> ns <span class="op">&lt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>time_of_flight</code> - Tuple</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">155.940</span> ns <span class="op">…</span> <span class="fl">474.714</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">156.618</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">169.588</span> ns <span class="op">±</span>  <span class="fl">35.099</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  █▆▂ ▁   ▁▂▂ ▁       ▁▁                                        ▁</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  ██████▄████████▇█▆█▇████▇▆▇▆▄█▇██▇▅▅▇▅▅▅▅█▇▅▄▄▄▃▅▄▆▆▇▅▄▁▁▃▃▆▆ █</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">156</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">357</span> ns <span class="op">&lt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>time_of_flight</code> - Vector</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">477.020</span> ns <span class="op">…</span>   <span class="fl">5.369</span> μs  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">89.13</span><span class="op">%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">483.117</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">523.383</span> ns <span class="op">±</span> <span class="fl">193.342</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">1.39</span><span class="op">%</span> <span class="op">±</span>  <span class="fl">3.62</span><span class="op">%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  █▄▅▂▂▂▃▁▁▁▂▂▁▂▁ ▁▁▁                                           ▁</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  ███████████████████▇▇██▇▇▇▇█▇▇▇██▆▆▆▅▆▆▆▄▄▆▅▅▄▅▅▅▄▄▅▄▄▅▅▅▅▄▃▄ █</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">477</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">871</span> ns <span class="op">&lt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">160</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">8</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>time_of_flight</code> - Custom Type</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">156.554</span> ns <span class="op">…</span> <span class="fl">488.858</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">157.234</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">170.553</span> ns <span class="op">±</span>  <span class="fl">34.268</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  █▄        ▁▃▂                                                 ▁</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  ██▇█▇▆▇▅▇▅█████▆▇▅▅▇▅█▆█▇█▇▇▇▆▆▆▅▅▇▆▇▆▇▆▅▅▄▄▅▆▅▆▆▅▅▅▄▃▃▂▂▄▅▆▅ █</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">157</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">331</span> ns <span class="op">&lt;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Function: <code>time_of_flight</code> - Custom Type w/ conversion</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>BenchmarkTools.Trial<span class="op">:</span> <span class="fl">10000</span> samples with <span class="fl">500</span> evaluations.</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">Range</span> (min <span class="op">…</span> max)<span class="op">:</span>  <span class="fl">187.252</span> ns <span class="op">…</span> <span class="fl">464.570</span> ns  ┊ GC (min <span class="op">…</span> max)<span class="op">:</span> <span class="fl">0.00</span><span class="op">%</span> <span class="op">…</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (median)<span class="op">:</span>     <span class="fl">189.756</span> ns               ┊ GC (median)<span class="op">:</span>    <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a> <span class="dt">Time</span>  (mean <span class="op">±</span> σ)<span class="op">:</span>   <span class="fl">203.329</span> ns <span class="op">±</span>  <span class="fl">35.958</span> ns  ┊ GC (mean <span class="op">±</span> σ)<span class="op">:</span>  <span class="fl">0.00</span><span class="op">%</span> <span class="op">±</span> <span class="fl">0.00</span><span class="op">%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  █ ▆▂▂     ▁▁▁          ▁                                      ▁</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  █████▆▆▃▆▅████▇▇▇█▅▆▆▆▇█▆██▇▇▇▅▅▅▇▅▇▇▆▆▅▄▆▄▃▄▇▄▇▆▅▅▅▃▄▄▄▄▅▆▆▅ █</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">187</span> ns        Histogram<span class="op">:</span> <span class="fu">log</span>(frequency) by time        <span class="fl">367</span> ns <span class="op">&lt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a> Memory estimate<span class="op">:</span> <span class="fl">0</span> bytes, allocs estimate<span class="op">:</span> <span class="fl">0</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
