@@ -82,7 +82,7 @@
 \newcommand{\zenith}{\psi}
 
 \newcommand{\local}{{}_{\small\text{L}}}
-\newcommand{\global}{{}_{\small\text{G}}}
+\newcommand{\Global}{{}_{\small\text{G}}}
 
 
 \newcommand{\BoltzmannConstant}{k_B}
