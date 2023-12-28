@@ -25,7 +25,7 @@ Some Text
 {{< include photoreactions/tables/_photorates_HUEBNER1992.qmd >}}
 
 <!-- To be moved elsewhere: -->
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 
 ::: {#fig-atomic-orbitals}
 ![](photoreactions/imgs/atomic_orbitals/Atomic-orbital-clouds.png)

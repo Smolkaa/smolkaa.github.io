@@ -1,6 +1,6 @@
 The global, structured, two-dimensional grid is discretizing the surface of a perfectly spherical body of fixed radius $\sphericalCoordinateRadius$ using a regular, structured grid with a fixed angular resolution $\Delta\sphericalCoordinateAzimuth \times \Delta\sphericalCoordinateElevation$, in azimuth and elevation direction, respectively. Since the definition includes spherical elements, the grid is created in global spherical coordinates $\sphericalCoordinate = \sphericalCoordinateDef$; see the section [Cartesian and Spherical Coordinates](/documentation/fundamentals/coordinate_systems.qmd).
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`GlobalStructured2DGrid`](/api/grids/global_structured_2d_grids.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth} - \eqref{eq:gs2dgrid_coord2idx_elevation}
 :::
 
@@ -14,7 +14,7 @@ The spherical coordinates, the azimuth $\sphericalCoordinateAzimuth$ and elevati
 \end{alignat}
 where $N_\sphericalCoordinateAzimuth$ and $N_\sphericalCoordinateElevation$ define the number of elements in the azimuth and elevation direction, respectively. The created points of the grid are located in the center of each rectangular grid cell, i.e., at $\Delta\sphericalCoordinateAzimuth / 2 = \pi /N_\sphericalCoordinateAzimuth$ and $\Delta\sphericalCoordinateElevation / 2 = \pi / \left(2N_\sphericalCoordinateElevation\right)$ of each elements sides. Let $k$ be a common index with $k = (i-1)N_\sphericalCoordinateElevation + j$, then every grid element's coordinate can be written as $\sphericalCoordinate_k = \left(\sphericalCoordinateRadius, \sphericalCoordinateAzimuth_i, \sphericalCoordinateElevation_j\right)$.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_elevation} </br> {{< bi code >}} [`surfacecoords`](/api/grids/utility.qmd): identical to `coords`
 :::
 
@@ -42,7 +42,7 @@ With the same index notation, the area of each spherical grid element can be cal
 \end{align}
 Note that the definition for the area is independent of the azimuth angle $\sphericalCoordinateAzimuth$, thus equal across all $N_\sphericalCoordinateAzimuth$ elements in the azimuth direction.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid}
 :::
 
@@ -56,7 +56,7 @@ In many applications of numerical grids, it is necessary to map coordinates in t
 \end{align}
 Numerical problems can arise around the boundaries of the numerical grid due to $\lceil 0 \rceil = 0$. As no zeroth grid element exists, the inputs must be pretreated to avoid this problem. For the azimuth angle, the angle is mapped to the half-open interval $\left(-\pi, \pi\right]$, thus if $\sphericalCoordinateAzimuth=-\pi$ then $\sphericalCoordinateAzimuth \mapsto \sphericalCoordinateAzimuth + 2\pi$. The elevation is mapped to the open interval $\left(-\pi/2, \pi/2\right)$ and should $|\sphericalCoordinateElevation| = \pi/2$ then $\sphericalCoordinateElevation \mapsto \sphericalCoordinateElevation - \sgn\left(\sphericalCoordinateElevation\right)\machineAccuracy$, with the machine accuracy $\machineAccuracy$ being the smallest floating point number available to the machine\footnote{Example: for 64-bit floating numbers the machine accuracy is: $2^{-52} \approx 2.22\times 10^{-16}$.}.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 [`coord2idx`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_coord2idx_azimuth}, \eqref{eq:gs2dgrid_coord2idx_elevation}
 :::
 
@@ -75,7 +75,7 @@ This also changes the function mapping continuous coordinates to specific and di
 Taking the absolute value of the elevation angle in the equation above ensures that the function is defined for the entire sphere. Still, the mapping always projects the coordinate onto the upper hemisphere. 
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`GlobalStructuredGrid_EqSim`](/api/grids/global_structured_2d_grids.qmd) Eqs. \eqref{eq:gs2dgrid_eqsim_elevation} - \eqref{eq:gs2dgrid_eqsim_coord2idx_elevation} </br>
 {{< bi code >}} [`areas`](/api/grids/utility.qmd): Eq. \eqref{eq:area_gs2dgrid} </br>
 {{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:gs2dgrid_azimuth}, \eqref{eq:gs2dgrid_eqsim_elevation} </br>

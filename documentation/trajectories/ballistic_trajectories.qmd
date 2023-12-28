@@ -18,7 +18,7 @@ Intro
 <!-- 
 THIS IS NOT PUBLISHED YET AND SHOULD NOT BE ONLINE (24. Nov., 2023)
 
-{{< include ballistic_trajectories/_landing_position.qmd >}} 
+{{< REM REM REM > include ballistic_trajectories/_landing_position.qmd >}} 
 -->
 
 

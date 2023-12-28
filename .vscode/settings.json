@@ -5,5 +5,6 @@
             "scheme": "file"
         }
     ],
-    "svg.preview.background": "dark-transparent"
+    "svg.preview.background": "dark-transparent",
+    "julia.environmentPath": "c:\\Users\\alex\\Documents\\repos\\exess\\smolkaa.github.io"
 }

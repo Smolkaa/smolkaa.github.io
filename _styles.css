@@ -1,5 +1,12 @@
 /* css styles */
 
+
+/* changes the justification of the text in the body */
+:root {
+  --bs-body-text-align: justify;
+}
+
+
 /* adjust box size and position of the sidebar logo */
 div.mt-2 {margin-top: 0rem !important;}
 div.pt-lg-2 {padding-top: 0rem !important;}

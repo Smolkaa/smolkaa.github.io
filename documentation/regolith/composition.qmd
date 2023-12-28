@@ -11,12 +11,12 @@ title: "5.1 Regolith Composition"
 
 
 
-::: {.panel-tabset}
+::: {.panel-tabset .column-page-right}
 
 # {{< bi table >}} Table
 
 | Element / </br>Oxide | Atomic Mass / </br>Molecular Mass | Maria</br>$\left[\si{atom.\percent}\right]$ | Maria</br>$\left[\si{wt. \percent}\right]$ | Highlands</br>$\left[\si{atom.\percent}\right]$ | Highlands</br>$\left[\si{wt. \percent}\right]$ | 
-| --- |:--- | ---:| ---:| ---:| ---:|
+| ------ |:------ | ---:| ---:| ---:| ---:|
 | $\ce{O}$     | $\num{15.999}$  | $\num{60.3}$ | $\num{43.2}$ | $\num{61.1}$ | $\num{45.1}$ |
 | $\ce{Si}$    | $\num{28.085}$  | $\num{16.9}$ | $\num{21.2}$ | $\num{16.3}$ | $\num{21.1}$ |
 | $\ce{Al}$    | $\num{26.982}$  | $\num{6.5}$  | $\num{7.8}$  | $\num{10.1}$ | $\num{12.6}$ |

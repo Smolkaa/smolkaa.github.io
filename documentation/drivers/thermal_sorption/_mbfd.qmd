@@ -4,7 +4,7 @@ The [MBFD](/documentation/acronyms.qmd) (Maxwell-Boltzmann flux velocity distrib
     \label{eq:mbfd_raw}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`MaxwellBoltzmannFluxVelocityDistribution`](/api/base/distributions.qmd)
 :::
 
@@ -38,7 +38,7 @@ Through integration over the solid angles of Eq. \eqref{eq:mbfd_spherical}, the 
 Note that the scaling factor $2$ is a result of the integration over half the sphere through $\sphericalCoordinateElevation\in\left(0,\pi/2\right)$. As before, this speed distribution can be analyzed to extract typical speeds.
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`velocity_cdf`](/api/base/distributions.qmd): integrated Eqs. \eqref{eq:mbfd}, \eqref{eq:mbfd_spherical} </br> {{< bi code >}} [`velocity_pdf`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbfd}, \eqref{eq:mbfd_spherical}
 </br> </br> </br> </br>
 {{< bi code >}} [`speed_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_speed} </br> {{< bi code >}} [`speed_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_speed} 
@@ -67,7 +67,7 @@ This leads to a mean elevation angle for the Maxwell-Boltzmann flux velocity dis
 @fig-mbfd_elevation shows the density plot of $\num{10^6}$ normalized samples of velocities of the [MBD](/documentation/acronyms.qmd) in a 2D plot with the vertical velocity $\velocity_3$ is plotted against the horizontal velocity $\sqrt{\velocity_1^2 + \velocity_2^2}$. For each sample, the angle between the x-axis and the velocity vector is the elevation angle, with the mean value $\meanof{\sphericalCoordinateElevation}$ included in the plot.
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`elevation_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbfd_elevation} </br> {{< bi code >}} [`elevation_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_elevation} 
 :::
 
@@ -84,7 +84,7 @@ The most probable speed occurs at the maximum likelihood of the Eq. \eqref{eq:mb
 \end{equation}
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`speed`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbfd_most_probable_speed}, \eqref{eq:mbfd_mean_speed}, \eqref{eq:mbfd_rms}
 :::
 
@@ -129,7 +129,7 @@ In cartesian coordinates, with $\vec\Velocity = \left(\Velocity_x, \Velocity_y, 
 \end{align}
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`velocity`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_cartesian_component}
 :::
 
@@ -154,7 +154,7 @@ While the latter two integrals are trivial, leading to a cosine-squared dependen
 \end{equation}
 with no direct inversion of Eq. \eqref{eq:mbfd_random_speed}.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`speed`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_speed} </br> {{< bi code >}} [`elevation`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_elevation} </br> {{< bi code >}} [`azimuth`](/api/base/distributions.qmd): Eq. \eqref{eq:mbfd_random_azimuth}
 :::
 

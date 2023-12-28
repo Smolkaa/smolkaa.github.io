@@ -1,0 +1,14 @@
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* margin-right: 20px; */
+    /* margin-left: -50px; */
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta {
+    grid-template-columns: none;
+}

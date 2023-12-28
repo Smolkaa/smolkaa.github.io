@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-01">
+<meta name="dcterms.date" content="2023-11-29">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -318,18 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Trajectory</h2>
-   
-  <ul>
-  <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
-  <li><a href="#benchmarks" id="toc-benchmarks" class="nav-link" data-scroll-target="#benchmarks">Benchmarks</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/exospheres/trajectory.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -359,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2023</p>
+      <p class="date">November 29, 2023</p>
     </div>
   </div>
   
@@ -403,16 +392,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">versioninfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Julia Version 1.9.3
-Commit bed2cd540a1 (2023-08-24 14:43 UTC)
+Commit bed2cd540a (2023-08-24 14:43 UTC)
 Build Info:
   Official https://julialang.org/ release
 Platform Info:
-  OS: Linux (x86_64-linux-gnu)
-  CPU: 8 × Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+  OS: Windows (x86_64-w64-mingw32)
+  CPU: 16 × 13th Gen Intel(R) Core(TM) i7-1360P
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-14.0.6 (ORCJIT, skylake)
-  Threads: 2 on 8 virtual cores</code></pre>
+  LLVM: libLLVM-14.0.6 (ORCJIT, goldmont)
+  Threads: 2 on 16 virtual cores</code></pre>
 </div>
 </div>
 <p>Next, the locally available ExESS package has to be loaded to access the <code>trajectory</code> function:</p>
@@ -508,7 +497,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 <thead>
 <tr class="header">
 <th style="text-align: left;">Field</th>
-<th style="text-align: right;">Value</th>
+<th style="text-align: right;">Default Value</th>
 <th style="text-align: left;">Unit</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -518,7 +507,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 <td style="text-align: left;"><code>m</code></td>
 <td style="text-align: right;"><code>LUNAR_MASS</code></td>
 <td style="text-align: left;">[kg]</td>
-<td style="text-align: left;">mass of planetary object</td>
+<td style="text-align: left;">mass of central object</td>
 </tr>
 </tbody>
 </table>

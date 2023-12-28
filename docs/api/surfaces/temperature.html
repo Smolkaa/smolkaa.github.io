@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-10">
+<meta name="dcterms.date" content="2023-10-10">
 
 <title>ExESS - Temperature</title>
 <style>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -283,16 +283,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Temperature</h2>
-   
-  <ul>
-  <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/surfaces/temperature.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -322,7 +313,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 10, 2023</p>
+      <p class="date">October 10, 2023</p>
     </div>
   </div>
   
@@ -354,13 +345,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] lunar_surface_temperatures_diviner(lng0::Real)
-[2] lunar_surface_temperatures_diviner(lng0::Real, lng::Real, lat::Real)
-[3] lunar_surface_temperatures_diviner(lng0::Real, lngs::AbstractVector, lats::AbstractVector; matrix=true)
-[4] lunar_surface_temperatures_diviner(lng0::Real, xs::GlobalSphericalPosition) 
-[5] lunar_surface_temperatures_diviner(lng0::Real, XS::Vector{GlobalSphericalPosition}) 
-[6] lunar_surface_temperatures_diviner(lng0::Real, grid::Abstract2DGrid)</code></pre>
-<p>Returns the Diviner measurements based lunar surface temperatures, with the sub-solar point shifted by <code>lng</code> (in radians) from the center.</p>
+<pre><code>[1] lunar_surface_temperatures_diviner(theta0::Real)
+[2] lunar_surface_temperatures_diviner(theta0::Real, theta::Real, phi::Real)
+[3] lunar_surface_temperatures_diviner(theta0::Real, thetas::AbstractVector, phis::AbstractVector; matrix=true)
+[4] lunar_surface_temperatures_diviner(theta0::Real, xs::GlobalSphericalPosition) 
+[5] lunar_surface_temperatures_diviner(theta0::Real, XS::Vector{GlobalSphericalPosition}) 
+[6] lunar_surface_temperatures_diviner(theta0::Real, grid::Abstract2DGrid)</code></pre>
+<p>Returns the Diviner measurements based lunar surface temperatures, with the subsolar point shifted by <code>theta</code> (in radians) from the center.</p>
 </div>
 </div>
 </div>
@@ -378,8 +369,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] lunar_surface_temperatures_diviner_avg()
-[2] lunar_surface_temperatures_diviner_avg(lng::Real, lat::Real)
-[3] lunar_surface_temperatures_diviner_avg(lngs::AbstractVector, lats::AbstractVector; matrix=true)
+[2] lunar_surface_temperatures_diviner_avg(theta::Real, phi::Real)
+[3] lunar_surface_temperatures_diviner_avg(thetas::AbstractVector, phis::AbstractVector; matrix=true)
 [4] lunar_surface_temperatures_diviner_avg(xs::GlobalSphericalPosition)
 [5] lunar_surface_temperatures_diviner_avg(XS::Vector{GlobalSphericalPosition})
 [6] lunar_surface_temperatures_diviner_avg(grid::Abstract2DGrid)</code></pre>
@@ -400,12 +391,13 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>[1] lunar_surface_temperatures_BUTLER1997(lng::Real, lat::Real)
-[2] lunar_surface_temperatures_BUTLER1997(lngs::AbstractVector, lats::AbstractVector; matrix=true)
+<pre><code>[1] lunar_surface_temperatures_BUTLER1997(theta::Real, phi::Real)
+[2] lunar_surface_temperatures_BUTLER1997(thetas::AbstractVector, phis::AbstractVector; matrix=true)
 [3] lunar_surface_temperatures_BUTLER1997(xs::GlobalSphericalPosition)
 [4] lunar_surface_temperatures_BUTLER1997(XS::Vector{GlobalSphericalPosition})
-[5] lunar_surface_temperatures_BUTLER1997(grid::Abstract2DGrid)</code></pre>
-<p>Calculates the surface temperature based on the approximation given in Butler, 1997. Takes the SSE coordinates <code>lngs</code> and <code>lats</code> and returns the temperature vector of equal size at the given pair.</p>
+[5] lunar_surface_temperatures_BUTLER1997(grid::AbstractGrid)</code></pre>
+<p>Calcuphies the surface temperature based on the approximation given in Butler, 1997. Takes the SSE coordinates <code>theta</code>/<code>thetas</code> (subsolar longitudes) and <code>phi</code>/<code>phis</code> (subsolar latitudes) and returns the temperature vector of equal size at the given pair. Alternatively, a <code>GlobalSphericalPosition</code>/<code>Vector{GlobalSphericalPosition}</code> or a <code>grid</code> can be passed, from which the subsolar coordinates will be extracted.</p>
+<p>Note that the range for the sunsolar longitude is <code>[-pi, pi]</code>, and for the subsolar latitude is <code>[-pi/2, pi/2]</code>.</p>
 <p><code>T = 250*cos(Z)^1/4 + 100</code> on the Sun-side, and <code>T = 100</code> on the night-side, in kelvin.</p>
 </div>
 </div>
@@ -423,12 +415,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>[1] lunar_surface_temperatures_HURLEY2015(lng::Real, lat::Real)
-[2] lunar_surface_temperatures_HURLEY2015(lngs::AbstractVector, lats::AbstractVector; matrix=true)
+<pre><code>[1] lunar_surface_temperatures_HURLEY2015(theta::Real, phi::Real)
+[2] lunar_surface_temperatures_HURLEY2015(thetas::AbstractVector, phis::AbstractVector; matrix=true)
 [3] lunar_surface_temperatures_HURLEY2015(xs::GlobalSphericalPosition)
 [4] lunar_surface_temperatures_HURLEY2015(XS::Vector{GlobalSphericalPosition})
 [5] lunar_surface_temperatures_HURLEY2015(grid::Abstract2DGrid)</code></pre>
-<p>Calculates the lunar surface temperatures based on the analytic formula given in Hurley et al.&nbsp;2015. All angular arguments are in radians.</p>
+<p>Calcuphies the lunar surface temperatures based on the analytic formula given in Hurley et al.&nbsp;2015. All angular arguments are in radians.</p>
 </div>
 </div>
 </div>

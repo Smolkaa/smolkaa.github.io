@@ -5,7 +5,7 @@ format:
         name: Alexander Smolka
         email: a.smolka@tum.de
         orcid: 0000-0002-4848-3473
-        affiliation: Technical University of Munich
+        affiliation: "Technical University of Munich </br>Lunar and Planetary Exploration" 
     citation:
       author: Alexander Smolka
       title: ExESS - Extraterrestrial Exosphere and Surface Simulations

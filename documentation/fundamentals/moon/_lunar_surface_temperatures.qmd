@@ -19,7 +19,7 @@ Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms
     \end{cases} \label{eq:lunar_surface_temperatures_BUTLER}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`lunar_surface_temperatures_BUTLER1997`](/api/surfaces/temperature.qmd)
 :::
 
@@ -33,7 +33,7 @@ Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms
 \end{equation}
 with the longitude $\longitude_{ss}$ and the subsolar co-latitude $\overline{\latitude_{ss}} = \pi/2 - \latitude_{ss}$. The coefficients of the polynomial fit are $a = \left[444.738,\; -448.937,\; 239.668,\; -63.8844,\; 8.34064,\; -0.423502 \right]$ in kelvin. Note that the longitude has to be used in radians and must be positively defined on the range of $\longitude_{ss} \in \left(\pi/2, 3\pi/2\right)$ for the nightside.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`lunar_surface_temperatures_HURLEY2015`](/api/surfaces/temperature.qmd)
 :::
 

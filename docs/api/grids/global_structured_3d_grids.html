@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-09-22">
+<meta name="dcterms.date" content="2023-10-10">
 
 <title>ExESS - Global, Structured, 3D Grids</title>
 <style>
@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -284,17 +284,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Global, Structured, 3D Grids</h2>
-   
-  <ul>
-  <li><a href="#type-structure" id="toc-type-structure" class="nav-link active" data-scroll-target="#type-structure">Type Structure</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/grids/global_structured_3d_grids.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -324,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2023</p>
+      <p class="date">October 10, 2023</p>
     </div>
   </div>
   
@@ -355,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] struct GlobalStructured3DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured3DGrid end
+<pre><code>[1] struct GlobalStructured3DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured3DGrid
 [2] GlobalStructured3DGrid([T::Type,] r0::Real, h::AbstractVector, N_theta::Int64, N_phi::Int64)
 [3] GlobalStructured3DGrid([T::Type,] r::AbstractVector, N_theta::Int64, N_phi::Int64)</code></pre>
 <p>Global structured volume grid (3D) of type <code>GlobalSphericalPosition{T}</code> over a sphere of radius <code>r0</code> with heights of the individual radial layers <code>h</code>. Alternatively, the radial distances can directly be specified by <code>r</code> (<code>r = r0 .+ h</code>). Note that all heights have to be positive.</p>

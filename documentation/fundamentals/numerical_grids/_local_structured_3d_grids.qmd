@@ -4,7 +4,7 @@ The local, structured, three-dimensional grid is discretizing the volume of a re
 \end{equation}
 The vertical resolution can either be constant over the entire domain or be distributed exponentially. Due to its structured, rectangular nature, the local structured grid is defined in [cartesian coordinates](/documentation/fundamentals/coordinate_systems.qmd) in cartesian elements: $\cartesianCoordinate = \cartesianCoordinateDef$.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`LocalStructured3DGrid`](/api/grids/local_structured_3d_grids.qmd): Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp}
 :::
 
@@ -41,7 +41,7 @@ with Euler's constant $e$. This addition leads to an equal ratio between the max
 \end{equation}
 @fig-exponential_heights shows the exponential distribution of heigh elements using the approach described above. @fig-exponential_heights_N displays the influence of varying numbers of vertical grid elements from the bottom to the top, while @fig-exponential_heights_c presents its dependence on the shape factor $c$.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`coords`](/api/grids/utility.qmd): Eqs. \eqref{eq:local_structure_3d_grid_x}, \eqref{eq:local_structure_3d_grid_y}, and \eqref{eq:local_structure_3d_grid_z_regular} or \eqref{eq:local_structure_3d_grid_z_exp} </br> {{< bi code >}} [`surfacecoords`](/api/grids/utility.qmd): identical to the first two Eqs. used in `coords`, at $\cartesianCoordinateZ = \cartesianCoordinateZ_{min}$
 :::
 

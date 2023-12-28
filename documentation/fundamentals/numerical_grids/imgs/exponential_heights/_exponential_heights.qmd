@@ -7,7 +7,7 @@
 
 ![Exponential distribution of grid elements for varying shape factors $c$.](/documentation/fundamentals/numerical_grids/imgs/exponential_heights/slope_factor.svg){#fig-exponential_heights_c width="600px"}
 
-Exemplary visualization of the exponential distribution of vertical grid elements of the local structured three-dimensional grid for varying number of grid points $N_\cartesianCoordinateZ$ and shape factors $c$. 
+Exemplary visualization of the exponential distribution of vertical grid elements of the local structured three-dimensional grid for varying numbers of grid points $N_\cartesianCoordinateZ$ and shape factors $c$. 
 :::
 
 # {{< bi code >}} Julia

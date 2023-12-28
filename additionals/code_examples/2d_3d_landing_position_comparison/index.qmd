@@ -58,10 +58,10 @@ Since we gave the function `landing_position` inputs in the format of the `ExESS
 
 ## 3D Landing Position
 
-We can do the same calculation using the three-dimensional approach. For this, we are using the predefined acceleration function `ddx_lunar_gravity` which calculates the acceleration due to the lunar gravity at a given position, plugging it into the `trajectory` function, together with our previously defined starting position and launch velocity vector. Since we are interested in the landing location, we are just extracting the last step of the trajectory object `traj,` where positions `[4:6]` are giving the x-, y-, and z-coordinates of the particle in cartesian coordinates. In order to compare the results with the two-dimensional approach, we are converting the cartesian coordinates into spherical coordinates using the `GlobalSphericalPosition` constructor:
+We can do the same calculation using the three-dimensional approach. For this, we are using the predefined acceleration function `ddx_gravity` which calculates the acceleration due to the lunar gravity at a given position, plugging it into the `trajectory` function, together with our previously defined starting position and launch velocity vector. Since we are interested in the landing location, we are just extracting the last step of the trajectory object `traj,` where positions `[4:6]` are giving the x-, y-, and z-coordinates of the particle in cartesian coordinates. In order to compare the results with the two-dimensional approach, we are converting the cartesian coordinates into spherical coordinates using the `GlobalSphericalPosition` constructor:
 
 ```{julia}
-traj = trajectory(x0, v0, ddx_lunar_gravity)
+traj = trajectory(x0, v0, ddx_gravity)
 x_landing_3d = GlobalSphericalPosition(GlobalCartesianPosition(traj[end][4:6]))
 ```
 
@@ -93,7 +93,7 @@ function compare_2d_3d(vel, elev; N=10)
                     sin(elev[j])]))
 
             x_landing_2d = GlobalCartesianPosition(landing_position(x0, v0))
-            traj = trajectory(x0, v0, ddx_lunar_gravity; reltol=1e-6)
+            traj = trajectory(x0, v0, ddx_gravity; reltol=1e-6)
             x_landing_3d = GlobalCartesianPosition(traj[end][4:6])
 
             e[i,j] += norm(vec(x_landing_2d) - vec(x_landing_3d)) / N / LUNAR_RADIUS

@@ -80,9 +80,9 @@ plot_data(get_data(MaxwellBoltzmannFluxVelocityDistribution(1, amu2kg(1)); N=1_0
     \node[anchor=south west] at (0,0) {\includegraphics[width=300px]{mbfd_elevation.png}};
 
     \node[anchor=west] at (5.35, 3) {$\meanof{\sphericalCoordinateElevation} = \frac{\pi}{4} \approx 0.7853$};
-    \draw[thick, -latex] (0.9,0.55) -- +(8,0) node[midway, below] {Horizontal Velocity};
-    \draw[thick, -latex] (0.9,0.55) -- +(0,8) node[midway, above, sloped] {Vertical Velocity};
 
+    \draw[thick, -latex] (0.9,0.70) -- +(8,0) node[midway, below] {Horizontal Velocity};
+    \draw[thick, -latex] (1.05,0.55) -- +(0,8) node[midway, above, sloped] {Vertical Velocity};
 \end{tikzpicture}
 ```
 

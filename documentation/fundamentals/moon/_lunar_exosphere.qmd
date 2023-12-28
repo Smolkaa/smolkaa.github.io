@@ -13,8 +13,9 @@ Due to the scarcity of ground-based data, satellite measurements at varying alti
 \end{equation}
 with the known number density $\tilde\numberDensity = \numberDensity(\tilde\radius)$ at some known radial distance $\tilde\radius = \radius + \height$ with $\radius, \height\in\Set{R}^+$, relative potential energies $\relativeEnergy$, and a partition function $\partitionFunction$. If the radial distance is equal to the radius of the planetary body, the number density is equal to the surface number density $\surfaceNumberDensity$. Equation \eqref{eq:chamberlain_projection} is the general form of the isothermal barometric law [@Chamberlain1963].
 
-
-[{{< bi code >}} [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd)]{.aside}
+::: {.callout-tip title="ExESS" collapse=true}
+{{< bi code >}} [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd)
+:::
 
 
 The relative energy of the projection function is given as absolute potential energy in units of thermal energy $\BoltzmannConstant \temperature$:
@@ -41,7 +42,10 @@ The instrument's mass spectrometer measured the mass per unit charge ratio up to
 
 ### LADEE
 The [LADEE](/documentation/acronyms.qmd) (Lunar Atmosphere and Dust Environment Explorer) mission was created in 2008 to address the goals identified in the decadal survey report "Scientific Context for Exploration of the Moon", which highlighted the lunar atmosphere as a priority for future lunar science missions. Among its main mission objectives was to determine the composition of the lunar exosphere, as well as its distribution and variability. On April 18^th^, 2014, [LADEE](/documentation/acronyms.qmd) was decommissioned through impact into the Moon after around $\SI{100}{\day}$ of nominal science operations. The gathered data was processed and submitted to the [NASA](/documentation/acronyms.qmd) [PDS](/documentation/acronyms.qmd) (Planetary Data System) for public access [@LADEE2014]. The [NMS](/documentation/acronyms.qmd) (Neutral Mass Spectrometer) aboard the spacecraft measured the mass distribution of neutral species over a mass-to-charge range between $\SI{2}{}$ to $\SI{150}{}$. With its retrograde, equatorial orbit around the Moon, [LADEE](/documentation/acronyms.qmd) conducted systematic surveys of helium, neon, and argon densities confined in a $\pm\SI{23}{\degree}$ near-equatorial band with altitudes ranging between $\SI{4}{}$ and $\SI{61}{\kilo\metre}$ [@Benna2015].
-[{{< fa link >}} [pds-atmospheres.nmsu.edu](https://pds-atmospheres.nmsu.edu/ data_and_services/atmospheres_data/LADEE/mainr.html) </br> last visited: May 2023]{.aside}
+
+::: {.callout-note title="PDS Atmospheres"}
+[{{< fa link >}} [pds-atmospheres.nmsu.edu](https://pds-atmospheres.nmsu.edu/ data_and_services/atmospheres_data/LADEE/mainr.html) </br> last visited: May 2023]
+:::
 
 
 {{< include moon/imgs/ladee_n0/_ladee_n0.qmd >}}

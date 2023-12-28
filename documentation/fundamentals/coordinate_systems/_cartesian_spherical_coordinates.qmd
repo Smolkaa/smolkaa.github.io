@@ -8,13 +8,10 @@ A clear distinction has been made between cartesian and spherical coordinates an
     \label{eq:cartesian_coordinate}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 Vectors defining a position or a velocity in a **cartesian** coordinate system and in **cartesian** 
-elements, like the one shown in Eq. \eqref{eq:cartesian_coordinate}: 
-
-{{< bi code >}} [`GlobalCartesianPosition`](/api/base/cs.qmd)
-
-{{< bi code >}} [`GlobalCartesianVelocity`](/api/base/cs.qmd)
+elements, like the one shown in Eq. \eqref{eq:cartesian_coordinate}: </br>
+{{< bi code >}} [`GlobalCartesianPosition`](/api/base/cs.qmd) </br> {{< bi code >}} [`GlobalCartesianVelocity`](/api/base/cs.qmd)
 :::
 
 
@@ -44,12 +41,11 @@ The same coordinate can also be expressed in cartesian elements $\left(\cartesia
     \label{eq:spherical_coordinate_cartesian_elements}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 Vectors defining a position or a velocity in a **spherical** coordinate system and in **spherical** 
-elements, like the one shown in Eq. \eqref{eq:spherical_coordinate}: 
-
-{{< bi code >}} [`GlobalSphericalPosition`](/api/base/cs.qmd)
-
+elements, like the one shown in Eq. \eqref{eq:spherical_coordinate}: </br>
+{{< bi code >}} [`GlobalSphericalPosition`](/api/base/cs.qmd) 
+</br> 
 {{< bi code >}} [`GlobalSphericalVelocity`](/api/base/cs.qmd)
 :::
 

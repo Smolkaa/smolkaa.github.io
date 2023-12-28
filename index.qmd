@@ -1,42 +1,60 @@
 ---
-title: "Extraterrestrial Exosphere and Surface Simulations"
-# date-modified: last-modified
-# author: "Alexander Smolka"
+title: "Extraterrestrial Exosphere and Surface Simulations"  
+affiliation-title: ""
+author-title: ""
+author:
+    name: |
+      
+      </br>
+
+      ::: {.grid style="width: 100%"}
+      ::: {.g-col-6 .g-col-sm-4 .g-col-md-3 .g-col-xl-2}
+      ![](resources/imgs/me_gray_sq.jpg){.circle}
+      :::
+      ::: {.g-col-6 .g-col-sm-8 .g-col-md-9 .g-col-xl-10 style="font-size: 1.05rem"}
+      **Alexander Smolka, M.Sc.** [(_a.smolka@tum.de_)](mailto:a.smolka@tum.de) </br></br> Professorship of Lunar and Planetary Exploration </br> TUM School of Engineering and Design </br> Technical University of Munich
+      :::
+      :::
+    # affiliation: "![](resources/imgs/me_gray_sq.jpg){.circle} &emsp;&emsp;&emsp;&emsp;&emsp; ![](resources/logo/exess_logo.svg){.circle}"
+
+format:
+  html:
+    css:
+      - resources/css/_index.css
+    toc: false
 ---
 
+
+<!-- ::: {.grid}
+::: {.g-col-2}
+</br>
+![](resources/imgs/me_gray_sq.jpg){.circle style="margin-left: -50px"}
+:::
+::: {.g-col-8 style="font-size: 1.5rem"}
+**Alexander Smolka, M.Sc.** [a.smolka@tum.de](mailto:a.smolka@tum.de) </br></br> Professorship of Lunar and Planetary Exploration </br> TUM School of Engineering and Design </br> Technical University of Munich
+:::
+:::
+
 ---
 
-## Author
+</br>
 
-:::: {.columns}
-::: {.column width=30%}
-![](/resources/imgs/me_gray.jpg){width=100%}
+::: {.grid}
+::: {.g-col-3}
 :::
-
-
-::: {.column width=5%}
+::: {.g-col-6  style="font-size: 1.5rem"}
+**Extraterrestrial Exosphere and Surface Simulations**
 :::
-::: {.column width=65%}
-**M.Sc. Alexander Smolka**
-
-Professorship of Lunar and Planetary Exploration Technologies  
-TUM School of Engineering and Design  
-Technical University of Munich  
-
-Phone: +49 (89) 289 - 55681  
-Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
-
+::: {.g-col-2}
+![](resources/logo/exess_logo.svg){.circle style="margin-left: 50px"}
 :::
-::::
-
-
+::: -->
 
 
 ## Publications, Texts, and Presentations
 
 ::: {.grid}
-::: {.g-col-4}
-
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 ```{=html}
 <div class="card">
   <img class="image" src="resources/imgs/smolka2023.png" alt="Card Image">
@@ -55,7 +73,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 </br> 
 :::
 
-::: {.g-col-4}
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 ```{=html}
 <div class="card" style="height: 15rem; padding: 1rem">
   <img class="image" src="resources/imgs/tsu.png" alt="" style=" margin: auto">
@@ -87,6 +105,12 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 ```
 
 :::
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+
+:::
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+
+:::
 :::
 
 
@@ -94,7 +118,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 ::: {.grid}
 
-::: {.g-col-4}
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 ```{=html}
 <div class="card">
   <img class="image" src="/additionals/essentials/julia_links/julia-dots.svg" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
@@ -109,7 +133,7 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 
 :::
 
-::: {.g-col-4}
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 ```{=html}
 <div class="card">
   <img class="image" src="/additionals/essentials/package_installation/exess_logo.png" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
@@ -123,7 +147,10 @@ Email: [a.smolka@tum.de](mailto:a.smolka@tum.de)
 ```
 :::
 
-::: {.g-col-4}
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 :::
 :::
 

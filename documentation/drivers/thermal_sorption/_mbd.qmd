@@ -1,6 +1,6 @@
 The [MBD](/documentation/acronyms.qmd)  (Maxwell-Boltzmann velocity distribution) is a probability distribution function that describes the distribution of velocities and speeds of particles in a gas or liquid. It is intimately connected to the kinetic gas theory, which explains the behavior of gases in terms of the motion of their constituent particles, which is proportional to their temperature. 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`MaxwellBoltzmannVelocityDistribution`](/api/base/distributions.qmd)
 :::
 
@@ -23,7 +23,7 @@ with the speed $\velocity=\sqrt{\vec\velocity ^T\vec\velocity}$. Identical to th
     f(\velocity)d\velocity = \left(\frac{\mass}{2\pi\BoltzmannConstant\temperature}\right)^{3/2} \cdot 4\pi\velocity^2 \cdot \exp\left( -\frac{\mass\velocity^2}{2\BoltzmannConstant\temperature}\right) d\velocity. \label{eq:mbd_speed_3d}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`velocity_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_3d} </br> {{< bi code >}} [`velocity_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_3d} 
 </br> </br> </br> </br>
 {{< bi code >}} [`speed_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_speed_3d} </br> {{< bi code >}} [`speed_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_3d} 
@@ -58,7 +58,7 @@ While the azimuth is uniformly distributed with no preferred direction, the elev
 Note that the factor $2$ in front of the integral is used since the integration boundaries are only half of the full domain. Alternatively, the full domain $\sphericalCoordinateElevation \in \left(-\pi/2, \pi/2\right)$ can be used if one only takes the absolute value of the function. @fig-mbd_elevation shows the density plot of $\num{10^6}$ normalized samples of velocities of the [MBD](/documentation/acronyms.qmd) in a 2D plot with the vertical velocity $\velocity_3$ is plotted against the horizontal velocity $\sqrt{\velocity_1^2 + \velocity_2^2}$. For each sample, the angle between the x-axis and the velocity vector is the elevation angle, with the mean value $\meanof{\sphericalCoordinateElevation}$ included in the plot.
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`elevation_cdf`](/api/base/distributions.qmd): integrated Eq. \eqref{eq:mbd_elevation} </br> {{< bi code >}} [`elevation_pdf`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_elevation} 
 :::
 
@@ -74,7 +74,7 @@ One of those typical speeds obtained from properties of the [MBD](/documentation
     \label{eq:mbd_most_probable_speed}
 \end{equation}
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`speed`](/api/base/distributions.qmd): Eqs. \eqref{eq:mbd_most_probable_speed}, \eqref{eq:mbd_mean_speed}, \eqref{eq:mbd_rms}
 :::
 
@@ -115,7 +115,7 @@ Numerically speaking, to draw any realization from a randomly distributed variab
 \end{alignat}
 Should one dimension be one-directional, the absolute value $|\randomValueNormal|$ can be used in Eq. \eqref{eq:mbd_random_cartesian_component} instead.
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`velocity`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_random_cartesian_component}
 :::
 
@@ -134,6 +134,6 @@ where the speed distribution is equal to Eq. \eqref{eq:mbd_speed_3d}. With the l
 Due to the combination of the Gaussian error function $\erf$ and an exponential function $\exp$, there is no elementary analytical expression of $\velocity$ as a function of $r_\velocity$. Thus, for numerical implementations Eq. \eqref{eq:mbd_speed_random_evaluated} is usually pre-evaluated several times to build up an interpolation table that maps any uniform random $r_\velocity$ to a specific [MBD](/documentation/acronyms.qmd) speed. The other two components, see Eqs. \eqref{eq:mbd_elevation_random}, \eqref{eq:mbd_azimuth_random}, show that the elevation angle $\sphericalCoordinateElevation$ is $\sin$-distributed, while the azimuth angle $\sphericalCoordinateAzimuth$ is uniformly distributed.
 
 
-::: {.column-margin}
+::: {.callout-tip title="ExESS" collapse=true}
 {{< bi code >}} [`speed`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_speed_random} </br> {{< bi code >}} [`elevation`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_elevation_random} </br> {{< bi code >}} [`azimuth`](/api/base/distributions.qmd): Eq. \eqref{eq:mbd_azimuth_random}
 :::

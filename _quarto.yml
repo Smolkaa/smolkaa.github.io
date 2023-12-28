@@ -11,7 +11,7 @@ website:
   # site-url: https://smolkaa.github.io
   title: "ExESS"
   repo-url: https://github.com/Smolkaa/smolkaa.github.io
-  repo-actions: [edit]
+  # repo-actions: [edit]
   favicon: "/resources/logo/exess_logo.png"
   search: true
   page-navigation: true
@@ -42,17 +42,17 @@ website:
       # style: "docked"
       # background: secondary
       background: white
-      contents:
-        - text: "Home"
-          href: index.qmd
-        - section: "Additional Resources"
-          contents:
-            - additionals/essentials/julia_links/index.qmd
-            - additionals/essentials/package_installation/index.qmd
-            - additionals/code_examples/mc_simulation/index.qmd
-            # - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
-        - text: License
-          href: LICENSE.md
+      # contents:
+        # - text: "Home"
+          # href: index.qmd
+      #   - section: "Additional Resources"
+      #     contents:
+      #       - additionals/essentials/julia_links/index.qmd
+      #       - additionals/essentials/package_installation/index.qmd
+      #       - additionals/code_examples/mc_simulation/index.qmd
+      #       # - guide/code_examples/2d_3d_landing_position_comparison/index.qmd
+      #   - text: License
+      #     href: LICENSE.md
 
 
 
@@ -135,8 +135,10 @@ format:
     css: _styles.css
     grid:
       sidebar-width: 350px
-      body-width: 1000px
-      margin-width: 300px
+      # body-width: 1000px
+      body-width: 1200px
+      # margin-width: 300px
+      margin-width: 0px
     html-math-method: mathjax
     include-in-header: 
       - resources/mathjax.html
@@ -147,6 +149,9 @@ format:
       - lumen
       - mystyle.scss
     title-block-style: default
-    toc: true
-    toc-title: "{{< meta title >}}"
+    toc: false
+    # toc-title: "{{< meta title >}}"
+    toc-title: "Table of Contents"
+    toc-location: body
+    toc-depth: 2
 

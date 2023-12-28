@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-18">
+<meta name="dcterms.date" content="2023-12-27">
 
 <title>ExESS - 2.1 Coordinate Systems</title>
 <style>
@@ -415,39 +415,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">2.1 Coordinate Systems</h2>
-   
-  <ul>
-  <li><a href="#cartesian-and-spherical-coordinates" id="toc-cartesian-and-spherical-coordinates" class="nav-link active" data-scroll-target="#cartesian-and-spherical-coordinates">Cartesian and Spherical Coordinates</a>
-  <ul class="collapse">
-  <li><a href="#spacial-differentials" id="toc-spacial-differentials" class="nav-link" data-scroll-target="#spacial-differentials">Spacial Differentials</a></li>
-  <li><a href="#temporal-differentials" id="toc-temporal-differentials" class="nav-link" data-scroll-target="#temporal-differentials">Temporal Differentials</a></li>
-  </ul></li>
-  <li><a href="#sec-reference_frames" id="toc-sec-reference_frames" class="nav-link" data-scroll-target="#sec-reference_frames">Reference Frames</a>
-  <ul class="collapse">
-  <li><a href="#global-reference-frames" id="toc-global-reference-frames" class="nav-link" data-scroll-target="#global-reference-frames">Global Reference Frames</a>
-  <ul class="collapse">
-  <li><a href="#global-cartesian-coordinate-systems" id="toc-global-cartesian-coordinate-systems" class="nav-link" data-scroll-target="#global-cartesian-coordinate-systems">Global Cartesian Coordinate Systems</a></li>
-  <li><a href="#global-spherical-coordinate-systems" id="toc-global-spherical-coordinate-systems" class="nav-link" data-scroll-target="#global-spherical-coordinate-systems">Global Spherical Coordinate Systems</a></li>
-  </ul></li>
-  <li><a href="#local-reference-frames" id="toc-local-reference-frames" class="nav-link" data-scroll-target="#local-reference-frames">Local Reference Frames</a>
-  <ul class="collapse">
-  <li><a href="#local-cartesian-coordinate-systems" id="toc-local-cartesian-coordinate-systems" class="nav-link" data-scroll-target="#local-cartesian-coordinate-systems">Local Cartesian Coordinate Systems</a></li>
-  <li><a href="#local-spherical-coordinate-systems" id="toc-local-spherical-coordinate-systems" class="nav-link" data-scroll-target="#local-spherical-coordinate-systems">Local Spherical Coordinate Systems</a></li>
-  </ul></li>
-  <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations">Transformations</a>
-  <ul class="collapse">
-  <li><a href="#to-global-cartesian-positions" id="toc-to-global-cartesian-positions" class="nav-link" data-scroll-target="#to-global-cartesian-positions">To Global Cartesian Positions</a></li>
-  <li><a href="#to-global-spherical-positions" id="toc-to-global-spherical-positions" class="nav-link" data-scroll-target="#to-global-spherical-positions">To Global Spherical Positions</a></li>
-  <li><a href="#to-global-cartesian-velocities" id="toc-to-global-cartesian-velocities" class="nav-link" data-scroll-target="#to-global-cartesian-velocities">To Global Cartesian Velocities</a></li>
-  <li><a href="#to-global-spherical-velocities" id="toc-to-global-spherical-velocities" class="nav-link" data-scroll-target="#to-global-spherical-velocities">To Global Spherical Velocities</a></li>
-  <li><a href="#to-local-cartesian-positions" id="toc-to-local-cartesian-positions" class="nav-link" data-scroll-target="#to-local-cartesian-positions">To Local Cartesian Positions</a></li>
-  <li><a href="#to-local-cartesian-velocities" id="toc-to-local-cartesian-velocities" class="nav-link" data-scroll-target="#to-local-cartesian-velocities">To Local Cartesian Velocities</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/documentation/fundamentals/coordinate_systems.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -467,7 +434,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Technical University of Munich
+            Technical University of Munich <br>Lunar and Planetary Exploration
           </p>
       </div>
     </div>
@@ -478,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 18, 2023</p>
+      <p class="date">December 27, 2023</p>
     </div>
   </div>
   
@@ -502,12 +469,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     \end{bmatrix} \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
     \label{eq:cartesian_coordinate}
 \end{equation}\]</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span>:</p>
-<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a></p>
-<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a></p>
-</div></div><p>The same vector in the same coordinate system and, thus, the same domain can also be expressed using spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
+<div class="callout callout-style-default callout-tip callout-titled" title="ExESS">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vectors defining a position or a velocity in a <strong>cartesian</strong> coordinate system and in <strong>cartesian</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:cartesian_coordinate}\)</span>: <br> <i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianPosition</code></a> <br> <i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalCartesianVelocity</code></a></p>
+</div>
+</div>
+</div>
+<p>The same vector in the same coordinate system and, thus, the same domain can also be expressed using spherical elements <span class="math inline">\(\left(r, \vartheta, \varphi\right)\)</span>, which are the radial, azimuthal, and elevation components of the vector: <span class="math display">\[\begin{equation}
     \boldsymbol{\mathbf{x}}_s = \begin{bmatrix}
         r\cos\vartheta\cos\varphi\\
         r\sin\vartheta\cos\varphi\\
@@ -526,12 +504,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     \end{bmatrix}  \qquad\text{with } x\in\mathbb{R},\;y\in\mathbb{R},\;z\in\mathbb{R}.
     \label{eq:spherical_coordinate_cartesian_elements}
 \end{equation}\]</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span>:</p>
-<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a></p>
-<p><i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a></p>
-</div></div><p>Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences between these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="ExESS">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ExESS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vectors defining a position or a velocity in a <strong>spherical</strong> coordinate system and in <strong>spherical</strong> elements, like the one shown in Eq. <span class="math inline">\(\eqref{eq:spherical_coordinate}\)</span>: <br> <i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalPosition</code></a> <br> <i class="bi-code " style="" role="img" aria-hidden="true"></i> <a href="../../api/base/cs.html"><code>GlobalSphericalVelocity</code></a></p>
+</div>
+</div>
+</div>
+<p>Note that the subscript <span class="math inline">\(c\)</span> indicates that the vector is expressed in cartesian elements. Both vectors describe the same coordinate in the same coordinate system, thus <span class="math inline">\(\boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. Even though physically speaking, all four coordinate vectors can describe the same position in physical space, mathematically speaking, they are different vectors, thus: <span class="math inline">\(\boldsymbol{\mathbf{x}}= \boldsymbol{\mathbf{x}}_s \neq \boldsymbol{\mathbf{r}}= \boldsymbol{\mathbf{r}}_c\)</span>. The following sections will go into more detail about the differences between these coordinate systems, where the names and are used to describe the domain and not the elements.</p>
 <p>All coordinate vectors can also be written as a sum of scaled base vectors, where the base vectors are the unit vectors of the respective coordinate system. The base vectors of any cartesian coordinate system are: <span class="math display">\[\begin{equation}
     \hat{\boldsymbol{\mathbf{e}}}_x= \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix} \text{,}\qquad
     \hat{\boldsymbol{\mathbf{e}}}_y= \begin{bmatrix}0 \\ 1 \\ 0 \end{bmatrix} \text{,}\qquad\text{and}\qquad
@@ -664,7 +653,7 @@ Derivation of spherical Laplace operator.
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="fig-spherical_differential_element" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../../documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></p>
+<p><img src="../..\documentation/fundamentals/coordinate_systems/imgs/spherical_differential_element/spherical_differential_element.svg" class="img-fluid figure-img" width="600"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Three-dimensional sketch of a spherical differential element in a cartesian coordinate system.</figcaption>
 </figure>
 </div>
@@ -846,7 +835,7 @@ Derivation of spherical Laplace operator.
 <div id="fig-global_cartesian" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <!-- ![](/documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.svg){width="600px"} -->
-<p><img src="../../documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="../..\documentation/fundamentals/coordinate_systems/imgs/reference_frames/global_cartesian.png" class="img-fluid figure-img" width="600"></p>
 <figcaption class="figure-caption">Figure&nbsp;2: Minimal and simplified sketch of the global, cartesian, subsolar, selenocentric coordinate system. The dashed lines indicate the Moon’s orbit around the Sun. All sizes and distances are not to scale.</figcaption>
 </figure>
 </div>

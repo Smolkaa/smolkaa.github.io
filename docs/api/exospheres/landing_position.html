@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-01">
+<meta name="dcterms.date" content="2023-11-29">
 
 <title>ExESS - Landing Position</title>
 <style>
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -318,18 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Landing Position</h2>
-   
-  <ul>
-  <li><a href="#usage" id="toc-usage" class="nav-link active" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
-  <li><a href="#benchmarks" id="toc-benchmarks" class="nav-link" data-scroll-target="#benchmarks">Benchmarks</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Smolkaa/smolkaa.github.io/edit/main/api/exospheres/landing_position.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -359,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2023</p>
+      <p class="date">November 29, 2023</p>
     </div>
   </div>
   
@@ -407,7 +396,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th style="text-align: left;">Field</th>
-<th style="text-align: right;">Value</th>
+<th style="text-align: right;">Default Value</th>
 <th style="text-align: left;">Unit</th>
 <th style="text-align: left;">Description</th>
 </tr>
@@ -417,7 +406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;"><code>m</code></td>
 <td style="text-align: right;"><code>LUNAR_MASS</code></td>
 <td style="text-align: left;">[kg]</td>
-<td style="text-align: left;">mass of planetary object</td>
+<td style="text-align: left;">mass of central object</td>
 </tr>
 </tbody>
 </table>
@@ -444,6 +433,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] time_of_flight(x0::AbstractVector, v0::AbstractVector; kwargs...)</code></pre>
+<p>Calculates the time of flight of a particle on a ballistic trajectory, starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)).</p>
+<p>Returns the time of flight in seconds. Returns <code>NaN</code> if the particle escapes.</p>
+<p><strong>Key-Word Arguments</strong></p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: right;">Default Value</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>m</code></td>
+<td style="text-align: right;"><code>LUNAR_MASS</code></td>
+<td style="text-align: left;">[kg]</td>
+<td style="text-align: left;">mass of central object</td>
+</tr>
+</tbody>
+</table>
 <p><strong>References</strong></p>
 <ul>
 <li>N. Schörghofer: “USER GUIDE: Planetary-Code-Collection: Thermal and Ice Evolution Models for Planetary Surfaces”, https://github.com/nschorgh/Planetary-Code-Collection</li>
