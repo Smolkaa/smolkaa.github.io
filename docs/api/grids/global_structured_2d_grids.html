@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-10">
+<meta name="dcterms.date" content="2023-09-22">
 
 <title>ExESS - Global, Structured, 2D Grids</title>
 <style>
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 10, 2023</p>
+      <p class="date">September 22, 2023</p>
     </div>
   </div>
   
@@ -343,9 +343,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] struct GlobalStructured2DGrid{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+<pre><code>[1] struct GlobalStructured2DGrid{T&lt;:AbstractFloat} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
 <p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over a sphere of radius <code>r</code>.</p>
 <table class="table table-sm table-striped small">
@@ -404,9 +404,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>[1] struct GlobalStructured2DGrid_EqSim{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+<pre><code>[1] struct GlobalStructured2DGrid_EqSim{T&lt;:AbstractFloat} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid_EqSim([T::Type,] r::Real, N_theta::Int64, N_phi::Int64)</code></pre>
 <p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the upper hemisphere with radius <code>r</code>, assuming equatorial symmetry.</p>
 <table class="table table-sm table-striped small">
@@ -465,9 +465,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>[1] struct GlobalStructured2DGrid_Reduced{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+<pre><code>[1] struct GlobalStructured2DGrid_Reduced{T&lt;:AbstractFloat} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid_Reduced([T::Type,] r::Real, N_phi::Int64)</code></pre>
 <p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the sphere radius <code>r</code>. The grid is reduced in the azimuth direction to have approximately equal <code>2*pi*r*cos(phi)/N_theta</code> grid element lengths.</p>
 <table class="table table-sm table-striped small">
@@ -526,9 +526,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>[1] struct GlobalStructured2DGrid_Reduced_EqSim{T&lt;:Real} &lt;: AbstractGlobalStructured2DGrid end
+<pre><code>[1] struct GlobalStructured2DGrid_Reduced_EqSim{T&lt;:AbstractFloat} &lt;: AbstractGlobalStructured2DGrid end
 [2] GlobalStructured2DGrid_Reduced_EqSim([T::Type,] r::Real, N_phi::Int64)</code></pre>
 <p>Global structured grid of surface coordinates (2D) of type <code>GlobalSphericalPosition{T}</code> over the upper hemisphere with radius <code>r</code>, assuming equatorial symmetry. The grid is reduced in the azimuth direction to have approximately equal <code>2*pi*r*cos(phi)/N_theta</code> grid element lengths.</p>
 <table class="table table-sm table-striped small">

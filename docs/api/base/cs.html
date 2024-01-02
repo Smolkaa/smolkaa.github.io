@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-17">
+<meta name="dcterms.date" content="2023-10-16">
 
 <title>ExESS - Coordinate Systems</title>
 <style>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 17, 2023</p>
+      <p class="date">October 16, 2023</p>
     </div>
   </div>
   
@@ -399,12 +399,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[1] GlobalCartesianPosition(x::Real, y::Real, z::Real)
-[2] GlobalCartesianPosition(X::AbstractVector)
-[3] GlobalCartesianPosition(x::AbstractGlobalPosition)</code></pre>
-<p>Three dimensional, global, cartesian position vector [1]. Converts vector or other position type into <code>GlobalCartesianPosition</code> [2,3].</p>
+[2] GlobalCartesianPosition(X::Tuple)
+[3] GlobalCartesianPosition(X::AbstractVector)
+[4] GlobalCartesianPosition(x::AbstractGlobalPosition)</code></pre>
+<p>Three dimensional, global, cartesian position vector [1]. Converts tuples, vector or other position type into <code>GlobalCartesianPosition</code> [2,3,4].</p>
+<p>In a planetary context, global cartesian coordinates are defined as follows:</p>
+<ul>
+<li>the x-axis points towards the Sun (from the central body’s center to the subsolar point)</li>
+<li>the y-axis points towards the positive longitude (east)</li>
+<li>the z-axis points towards the positive latitude (north), completing the coordinate system</li>
+</ul>
 <pre><code>[1] GlobalCartesianPosition(sol::ODESolution, [idx::Integer])
 [2] GlobalCartesianPosition(sol::ODESolution, t::Real)
 [3] GlobalCartesianPosition(sol::ODESolution, t::AbstractVector)</code></pre>
@@ -423,11 +430,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[1] LocalCartesianPosition(x::Real, y::Real, z::Real)
-[2] LocalCartesianPosition(X::AbstractVector)
-[3] LocalCartesianPosition(x::AbstractLocalPosition)</code></pre>
+[2] LocalCartesianPosition(X::Tuple)
+[3] LocalCartesianPosition(X::AbstractVector)
+[4] LocalCartesianPosition(x::AbstractLocalPosition)</code></pre>
+<p>Three dimensional, local, cartesian position vector [1]. Converts tuples, vector or other position type into <code>LocalCartesianPosition</code> [2,3,4].</p>
+<p>Local cartesian coordinates are defined as follows:</p>
+<ul>
+<li>the x- and y-axis are spanning the tangent plane at the given position</li>
+<li>the z-axis is pointing upwards</li>
+</ul>
 </div>
 </div>
 </div>
@@ -442,11 +456,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[1] GlobalSphericalPosition(r::Real, theta::Real, phi::Real)
-[2] GlobalSphericalPosition(X::AbstractVector)
-[3] GlobalSphericalPosition(x::AbstractGlobalPosition)</code></pre>
+[2] GlobalSphericalPosition(X::Tuple)
+[3] GlobalSphericalPosition(X::AbstractVector)
+[4] GlobalSphericalPosition(x::AbstractGlobalPosition)</code></pre>
+<p>Three dimensional, global, spherical position vector [1]. Converts tuples, vector or other position type into <code>GlobalSphericalPosition</code> [2,3,4].</p>
+<p>In a planetary context, global spherical coordinates are defined as follows:</p>
+<ul>
+<li>the r-axis points towards the Sun (from the central body’s center to the subsolar point)</li>
+<li>the theta-angle describes positive longitudes (east)</li>
+<li>the phi-angle describes positive latitudes (north)</li>
+</ul>
+<p>The subsolar point is defined as <code>R, 0, 0</code> where <code>R</code> is the radius of the central body.</p>
 </div>
 </div>
 </div>

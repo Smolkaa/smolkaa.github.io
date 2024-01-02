@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 
-jupyter: julia-1.9
+jupyter: julia-1.10
 
 bibliography: "../asmolka_library/main.bib"
 csl: _apa.csl

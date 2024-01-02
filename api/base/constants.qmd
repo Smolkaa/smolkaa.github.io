@@ -69,6 +69,40 @@ using Printf
 @printf "LUNAR_MASS:                %12e [kg]\n" LUNAR_MASS
 @printf "LUNAR_RADIUS:              %12e [m]\n" LUNAR_RADIUS
 @printf "LUNAR_g0:                  %12e [m s-2]\n" LUNAR_g0
-@printf "LUNAR_vesc:                %12e [m s-1]\n" LUNAR_vesc
+```
+:::
+
+
+
+::: {.callout-note appearance="simple" icon=false}
+# Base - Constants - Mercury
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+using Printf
+
+@printf "MERCURY_MASS:                %12e [kg]\n" MERCURY_MASS
+@printf "MERCURY_RADIUS:              %12e [m]\n" MERCURY_RADIUS
+```
+:::
+
+
+
+
+::: {.callout-note appearance="simple" icon=false}
+# Base - Constants - Ceres
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+using Printf
+
+@printf "CERES_MASS:                %12e [kg]\n" CERES_MASS
+@printf "CERES_RADIUS:              %12e [m]\n" CERES_RADIUS
 ```
 :::

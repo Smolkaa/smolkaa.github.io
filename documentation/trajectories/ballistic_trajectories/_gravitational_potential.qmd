@@ -17,15 +17,15 @@ Assuming isotropic mass distribution, the mass density $\density$ can be express
 
 Integrating over the radius leads to the Newton's equation
 \begin{equation}
-    \frac{d\potential}{d\radius} = \frac{\GravitationalConstant\hat\mass}{\radius^2},
+    \frac{d\potential}{d\radius} = \frac{\GravitationalConstant\Mass}{\radius^2},
     \label{eq:gravitational_potential}
 \end{equation}
-with mass $\hat\mass$ of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass [@Walter2018]. One can easily derive \emph{Newton's law of gravitation} for the gravitational force
+with mass $\Mass$ of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass [@Walter2018]. One can easily derive \emph{Newton's law of gravitation} for the gravitational force
 \begin{equation}
-    \vec{\force} = - \mass\frac{d\potential}{d^3\sphericalCoordinate} = - \mass\frac{d\potential}{d\radius} \cdot \frac{\sphericalCoordinate}{\radius} = - \frac{\mass\hat\mass\GravitationalConstant}{\radius^3}\cdot\sphericalCoordinate,
+    \vec{\force} = - \mass\frac{d\potential}{d^3\sphericalCoordinate} = - \mass\frac{d\potential}{d\radius} \cdot \frac{\sphericalCoordinate}{\radius} = - \frac{\mass\Mass\GravitationalConstant}{\radius^3}\cdot\sphericalCoordinate,
     \label{eq:gravitational_force}
 \end{equation}
-for a mass $\mass$ placed into the gravitational potential $\potential$ of mass $\hat\mass$ [@Walter2018].
+for a mass $\mass$ placed into the gravitational potential $\potential$ of mass $\Mass$ [@Walter2018].
 
 
 The gravitational force is a vital part used orbital mechanics and the calculation of trajectories on planetary bodies. To derive the equation of motion, \emph{Newton's laws of motion} can be applied, which starts at the gradient of the energy conservation

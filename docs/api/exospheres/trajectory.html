@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-29">
+<meta name="dcterms.date" content="2024-01-02">
 
 <title>ExESS - Trajectory</title>
 <style>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2023</p>
+      <p class="date">January 2, 2024</p>
     </div>
   </div>
   
@@ -368,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fu">GlobalCartesianPosition</span>(LUNAR_RADIUS, <span class="fl">0</span>, <span class="fl">0</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="fu">GlobalCartesianVelocity</span>(<span class="fl">100</span>, <span class="fl">0</span>, <span class="fl">0</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_lunar_gravity</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_gravity</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>traj <span class="op">=</span> <span class="fu">trajectory</span>(x0, v0, ddx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="examples" class="level2">
@@ -391,17 +391,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">versioninfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Julia Version 1.9.3
-Commit bed2cd540a (2023-08-24 14:43 UTC)
+<pre><code>Julia Version 1.10.0
+Commit 3120989f39b (2023-12-25 18:01 UTC)
 Build Info:
   Official https://julialang.org/ release
 Platform Info:
-  OS: Windows (x86_64-w64-mingw32)
-  CPU: 16 × 13th Gen Intel(R) Core(TM) i7-1360P
+  OS: Linux (x86_64-linux-gnu)
+  CPU: 8 × Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
   WORD_SIZE: 64
   LIBM: libopenlibm
-  LLVM: libLLVM-14.0.6 (ORCJIT, goldmont)
-  Threads: 2 on 16 virtual cores</code></pre>
+  LLVM: libLLVM-15.0.7 (ORCJIT, skylake)
+  Threads: 2 on 8 virtual cores</code></pre>
 </div>
 </div>
 <p>Next, the locally available ExESS package has to be loaded to access the <code>trajectory</code> function:</p>
@@ -431,15 +431,15 @@ Platform Info:
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="fu">GlobalCartesianVelocity</span>(<span class="fl">100</span>, <span class="fl">0</span>, <span class="fl">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>GlobalCartesianVelocity{Int64}(100, 0, 0)</code></pre>
+<pre><code>GlobalCartesianVelocity{Float64}(100.0, 0.0, 0.0)</code></pre>
 </div>
 </div>
 <p>Without letting the trajectory calculation run, we can review the initial conditions set. Both the position and the velocity vector are set in the same coordinate system and have non-zero components only in the x-direction. For purely gravitational accelerations, the trajectory should therefore be a straight line in the x-direction.</p>
-<p>We can test these assumptions by using the <code>ddx_lunar_gravity</code> function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon’s mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.</p>
+<p>We can test these assumptions by using the <code>ddx_gravity</code> function, which is a predefined acceleration function for the gravitational acceleration of the Moon. It already has the Moon’s mass and radius defined, so we can use it directly as is. Note that it assumes that every other acceleration is negligible, which might not be true for charged particles in electromagnetic fields.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_lunar_gravity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ddx <span class="op">=</span> ddx_gravity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>ddx_lunar_gravity (generic function with 2 methods)</code></pre>
+<pre><code>ddx_gravity (generic function with 6 methods)</code></pre>
 </div>
 </div>
 </section>
@@ -459,14 +459,14 @@ t: 7-element Vector{Float32}:
   89.02362
  125.11684
  125.11684
-u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Float64}, Vector{Float64}}}}:
+u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{StaticArraysCore.SVector{3, Float64}, StaticArraysCore.SVector{3, Float64}}}}:
  ([100.0, 0.0, 0.0], [1.737401e6, 0.0, 0.0])
  ([99.72352819548777, 0.0, 0.0], [1.7374182291764107e6, 0.0, 0.0])
  ([96.95910868428572, 0.0, 0.0], [1.737587897640642e6, 0.0, 0.0])
  ([69.34166361242546, 0.0, 0.0], [1.7390224279588673e6, 0.0, 0.0])
- ([-42.27453422294352, 0.0, 0.0], [1.739967349345177e6, 0.0, 0.0])
- ([-100.0160468921404, 0.0, 0.0], [1.7374e6, 0.0, 0.0])
- ([-100.0160468921404, 0.0, 0.0], [1.7374e6, 0.0, 0.0])</code></pre>
+ ([-42.274534222943544, 0.0, 0.0], [1.739967349345177e6, 0.0, 0.0])
+ ([-100.01604689214057, 0.0, 0.0], [1.7374e6, 0.0, 0.0])
+ ([-100.01604689214057, 0.0, 0.0], [1.7374e6, 0.0, 0.0])</code></pre>
 </div>
 </div>
 </section>
@@ -488,10 +488,11 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
-[2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
+<pre><code>[1] landing_position(x0::Tuple, v0::Tuple; kwargs...)
+[2] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
+[3] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
 <p>Calculates the landing position of a particle starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)), flying on a ballistic trajectory, i.e., only influenced by graviational forces.</p>
-<p>Returns the landing position in global spherical coordinate as <code>r, lon, lat</code> ([1]) or as <code>GlobalSphericalPosition(r, lon, lat)</code> ([2]).</p>
+<p>Returns the landing position as a tuple of global spherical coordinates (radius, longitude, latitude). Returns <code>(NaN, NaN, NaN)</code> if the particle escapes.</p>
 <p><strong>Key-Word Arguments</strong></p>
 <table class="table table-sm table-striped small">
 <thead>
@@ -589,6 +590,7 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 <p>The integration terminates if either the minimum or maximum radius is exceeded or if the end of the time span is reached.</p>
 <p><strong>Notes</strong></p>
 <ul>
+<li>16-bit types are not accurate enough and will be promoted (no type-stability)</li>
 <li>calling the function with <code>&lt;:Integer</code> arguments will promote them to <code>Float64</code></li>
 </ul>
 </div>
@@ -601,14 +603,34 @@ u: 7-element Vector{RecursiveArrayTools.ArrayPartition{Float64, Tuple{Vector{Flo
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<code>ddx_lunar_gravity</code> – Function
+<code>ddx_gravity</code> – Function
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>[1] ddx_lunar_gravity(x::AbstractVector, [args...])</code></pre>
-<p>Acceleration function for the lunar gravity.</p>
+<pre><code>[1] ddx_gravity(x::NTuple{3}, [args...]; kwargs...)
+[1] ddx_gravity(x::AbstractVector, [args...]; kwargs...)</code></pre>
+<p>Acceleration function for gravity. Assumes a global cartesian coordinate system, which is centered at the center of the central object.</p>
+<p><strong>Key-Word Arguments</strong></p>
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: right;">Default Value</th>
+<th style="text-align: left;">Unit</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>m</code></td>
+<td style="text-align: right;"><code>LUNAR_MASS</code></td>
+<td style="text-align: left;">[kg]</td>
+<td style="text-align: left;">mass of central object</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

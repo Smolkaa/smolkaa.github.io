@@ -8,7 +8,7 @@ v0 = LocalCartesianVelocity(250.0, 100.0, 100.0)
 
 x_landing_2d = landing_position(x0, v0)
 
-traj = trajectory(x0, v0, ddx_lunar_gravity)
+traj = trajectory(x0, v0, ddx_gravity)
 x_landing_3d = GlobalSphericalPosition(GlobalCartesianPosition(traj[end][4:6]))
 
 function compare_2d_3d(vel, elev; N=10)
@@ -29,7 +29,7 @@ function compare_2d_3d(vel, elev; N=10)
                     sin(elev[j])]))
 
             x_landing_2d = GlobalCartesianPosition(landing_position(x0, v0))
-            traj = trajectory(x0, v0, ddx_lunar_gravity; reltol=1e-6)
+            traj = trajectory(x0, v0, ddx_gravity; reltol=1e-6)
             x_landing_3d = GlobalCartesianPosition(traj[end][4:6])
 
             e[i,j] += norm(vec(x_landing_2d) - vec(x_landing_3d)) / N / LUNAR_RADIUS

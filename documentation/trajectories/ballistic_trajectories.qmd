@@ -7,7 +7,8 @@ title: "5.1 Ballistic Trajectories"
 
 ---
 
-Intro
+The defining property of exospheres is its extremely low density leading to particles moving on independent and deterministic trajectories through space. The motion of a particle can be described based on the forces acting on it, which can either be gravity or electromagnetic forces, assuming no collisions or other interactions. Neutral particles are only subject to gravitational forces, leading to purely ballistic trajectories, which are described in this chapter.
+
 
 # Gravitational Potential, Energy, and Force
 {{< include ballistic_trajectories/_gravitational_potential.qmd >}}

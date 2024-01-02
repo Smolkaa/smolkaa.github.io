@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-28">
+<meta name="dcterms.date" content="2024-01-01">
 
 <title>ExESS - 5.1 Ballistic Trajectories</title>
 <style>
@@ -429,7 +429,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 28, 2023</p>
+      <p class="date">January 1, 2024</p>
     </div>
   </div>
   
@@ -442,7 +442,7 @@ div.csl-indent {
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <hr>
-<p>Intro</p>
+<p>The defining property of exospheres is its extremely low density leading to particles moving on independent and deterministic trajectories through space. The motion of a particle can be described based on the forces acting on it, which can either be gravity or electromagnetic forces, assuming no collisions or other interactions. Neutral particles are only subject to gravitational forces, leading to purely ballistic trajectories, which are described in this chapter.</p>
 <section id="gravitational-potential-energy-and-force" class="level1">
 <h1>Gravitational Potential, Energy, and Force</h1>
 <p>The physical fundamentals of orbital mechanics, based on the assumption of negligible relativistic effects, is the Poisson’s equation <span class="math display">\[\begin{equation}
@@ -456,12 +456,12 @@ div.csl-indent {
     \label{eq:poisson_equation_symmetric}
 \end{equation}\]</span></p>
 <p>Integrating over the radius leads to the Newton’s equation <span class="math display">\[\begin{equation}
-    \frac{dU}{dr} = \frac{G\hat m}{r^2},
+    \frac{dU}{dr} = \frac{GM}{r^2},
     \label{eq:gravitational_potential}
-\end{equation}\]</span> with mass <span class="math inline">\(\hat m\)</span> of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. One can easily derive for the gravitational force <span class="math display">\[\begin{equation}
-    \boldsymbol{\mathbf{F}} = - m\frac{dU}{d^3\boldsymbol{\mathbf{r}}} = - m\frac{dU}{dr} \cdot \frac{\boldsymbol{\mathbf{r}}}{r} = - \frac{m\hat mG}{r^3}\cdot\boldsymbol{\mathbf{r}},
+\end{equation}\]</span> with mass <span class="math inline">\(M\)</span> of the object exerting the gravitational forces and, thus, curving the space around its position. Note that this result implies that outside of the object, the potential does not depend on the actual shape anymore but only on its total mass <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>. One can easily derive for the gravitational force <span class="math display">\[\begin{equation}
+    \boldsymbol{\mathbf{F}} = - m\frac{dU}{d^3\boldsymbol{\mathbf{r}}} = - m\frac{dU}{dr} \cdot \frac{\boldsymbol{\mathbf{r}}}{r} = - \frac{mMG}{r^3}\cdot\boldsymbol{\mathbf{r}},
     \label{eq:gravitational_force}
-\end{equation}\]</span> for a mass <span class="math inline">\(m\)</span> placed into the gravitational potential <span class="math inline">\(U\)</span> of mass <span class="math inline">\(\hat m\)</span> <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>.</p>
+\end{equation}\]</span> for a mass <span class="math inline">\(m\)</span> placed into the gravitational potential <span class="math inline">\(U\)</span> of mass <span class="math inline">\(M\)</span> <span class="citation" data-cites="Walter2018">(<a href="#ref-Walter2018" role="doc-biblioref">Walter, 2018</a>)</span>.</p>
 <p>The gravitational force is a vital part used orbital mechanics and the calculation of trajectories on planetary bodies. To derive the equation of motion, can be applied, which starts at the gradient of the energy conservation <span class="math display">\[\begin{equation}
     0 = \sum_i - \frac{dE_i}{d\boldsymbol{\mathbf{x}}} = \sum_i \boldsymbol{\mathbf{F}}_i,
     \label{eq:gradient_energy_conservation}

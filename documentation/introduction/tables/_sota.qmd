@@ -278,15 +278,25 @@
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Milillo2023        | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
 |                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
+|{{< kbd REVIEW >}}   | * review of the current state of knowledge on surface-bounded exospheres in the inner solar system and outline of future         |
+|{{< kbd EXOSPHERE >}}|   research                                                                                                                       |
+|                     | * discussion of various drivers, including solar wind interactions, micrometeoroid impacts, and thermal desorption               |
+|{{< kbd SURFACE >}}  | * highlights the importance of coordinated space and ground-based observations and discusses expected outcomes                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
-| @Schoerghofer2023   | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
+| @Schoerghofer2023   | **"Past extent of lunar permanently shadowed areas"**                                                                            |
+|                     |                                                                                                                                  |
+|{{< kbd SURFACE >}}  | * discussion the growth of permanently shadowed regions (PSRs) on the Moon                                                       |
+|                     | * provides an overview of the lunar obliquity and the extent of PSRs as a function of time                                       |
+|                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
-| @Schoerghofer2023a  | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
+| @Schoerghofer2023a  | **"Adsorption Kinetics of Water and Argon on Lunar Grain"**                                                                      |
+|                     |                                                                                                                                  |
+|{{< kbd SURFACE >}}  | * discussion of the adsorption kinetics of water and argon on lunar grains, including multilayer desorption rates, isotherm      |
+|                     |   measurements, and the behavior of adsorbate concentrations with                                                                |
+|                     | * provides a parameterization of water adsorption intended for a wide range of temperatures and adsorbate concentrations         |
+|                     | * emphasizes the significance of understanding the desorption                                                                    |
+|                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Smolka2023         | **"Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions"**                    |
 |                     |                                                                                                                                  |
@@ -571,14 +581,22 @@
 
     \citet{Milillo2023}\newline\emph{Review}\newline\emph{Exosphere}\newline\emph{Surface} & \textbf{“Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System”}
     \begin{itemize}\setlength\itemsep{-0.7em}
+        \item review of the current state of knowledge on surface-bounded exospheres in the inner solar system and outline of future research
+        \item discussion of various drivers, including solar wind interactions, micrometeoroid impacts, and thermal desorption
+        \item highlights the importance of coordinated space and ground-based observations and discusses expected outcomes
     \end{itemize} \\ \midrule
 
-    \citet{Schoerghofer2023} & 
+    \citet{Schoerghofer2023}\newline\emph{Surface} & \textbf{"Past extent of lunar permanently shadowed areas"}
     \begin{itemize}\setlength\itemsep{-0.7em}
+        \item discussion the growth of permanently shadowed regions (PSRs) on the Moon
+        \item provides an overview of the lunar obliquity and the extent of PSRs as a function of time
     \end{itemize} \\ \midrule
 
-    \citet{Schoerghofer2023a} & 
+    \citet{Schoerghofer2023a}\newline\emph{Surface} & \textbf{"Adsorption Kinetics of Water and Argon on Lunar Grain"}
     \begin{itemize}\setlength\itemsep{-0.7em}
+        \item discussion of the adsorption kinetics of water and argon on lunar grains, including multilayer desorption rates, isotherm measurements, and the behavior of adsorbate concentrations with 
+        \item provides a parameterization of water adsorption intended for a wide range of temperatures and adsorbate concentrations
+        \item emphasizes the significance of understanding the desorption
     \end{itemize} \\ \midrule
 
     \citet{Smolka2023}\newline\emph{Exosphere} & \textbf{"Coupled H, H2, OH, and H2O lunar exosphere simulation framework and impacts of conversion reactions"}
@@ -596,7 +614,7 @@
 \end{longtable}
 ```
 
-Please note that the \LaTeX code above requires the `longtable` package and all necessary references in the bibliography.
+Please note that the \LaTeX code above requires the `longtable` and the `mhchem` packages, as well as all necessary references in the bibliography.
 
 
 :::

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-10-27">
+<meta name="dcterms.date" content="2023-10-26">
 
 <title>ExESS - Local, Structured, 3D Grids</title>
 <style>
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 27, 2023</p>
+      <p class="date">October 26, 2023</p>
     </div>
   </div>
   
@@ -343,9 +343,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] struct LocalStructured3DGrid{T&lt;:Real} &lt;: AbstractLocalStructured3DGrid
+<pre><code>[1] struct LocalStructured3DGrid{T&lt;:AbstractFloat} &lt;: AbstractLocalStructured3DGrid
 [2] LocalStructured3DGrid([T::Type,] xrange::Tuple, yrange::Tuple, zrange::Tuple, N_x::Int64, N_y::Int64, N_z::Int64)
 [3] LocalStructured3DGrid([T::Type,] xrange::Tuple, yrange::Tuple, z2::Real, N_x::Int64, N_y::Int64, N_z::Int64)</code></pre>
 <p>Local structured volume grid (3D) of type <code>LocalStructured3DGrid{T}</code> over a rectangular domain. The domain is defined by tuples of the form <code>xrange=(x1, x2)</code>, <code>yrange=(y1, y2)</code>, and <code>zrange=(z1, z2)</code>. The number of grid points in each direction is given by <code>N_x</code>, <code>N_y</code>, and <code>N_z</code>. The grid points are centered in their respective grid element.</p>

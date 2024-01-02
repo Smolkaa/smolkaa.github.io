@@ -29,6 +29,7 @@
 \newcommand{\longitude}{\Theta}
 \newcommand{\machineAccuracy}{\epsilon}
 \newcommand{\mass}{m}
+    \newcommand{\Mass}{M}
 \newcommand{\mean}{\mu}
     \newcommand{\meanof}[1]{\langle #1 \rangle}
 \newcommand{\meanAnomaly}{M}

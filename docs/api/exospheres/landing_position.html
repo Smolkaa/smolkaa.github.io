@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-11-29">
+<meta name="dcterms.date" content="2023-12-01">
 
 <title>ExESS - Landing Position</title>
 <style>
@@ -348,7 +348,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2023</p>
+      <p class="date">December 1, 2023</p>
     </div>
   </div>
   
@@ -387,10 +387,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>[1] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
-[2] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
+<pre><code>[1] landing_position(x0::Tuple, v0::Tuple; kwargs...)
+[2] landing_position(x0::AbstractVector, v0::AbstractVector; kwargs...)
+[3] landing_position(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
 <p>Calculates the landing position of a particle starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)), flying on a ballistic trajectory, i.e., only influenced by graviational forces.</p>
-<p>Returns the landing position in global spherical coordinate as <code>r, lon, lat</code> ([1]) or as <code>GlobalSphericalPosition(r, lon, lat)</code> ([2]).</p>
+<p>Returns the landing position as a tuple of global spherical coordinates (radius, longitude, latitude). Returns <code>(NaN, NaN, NaN)</code> if the particle escapes.</p>
 <p><strong>Key-Word Arguments</strong></p>
 <table class="table table-sm table-striped small">
 <thead>
@@ -432,7 +433,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>[1] time_of_flight(x0::AbstractVector, v0::AbstractVector; kwargs...)</code></pre>
+<pre><code>[1] time_of_flight(x0::Tuple, v0::Tuple; kwargs...)
+[2] time_of_flight(x0::AbstractVector, v0::AbstractVector; kwargs...)
+[3] time_of_flight(x0::AbstractPosition, v0::AbstractVelocity; kwargs...)</code></pre>
 <p>Calculates the time of flight of a particle on a ballistic trajectory, starting at position <code>x0</code> (global spherical coordinates: radius, longitude, latitude), with initial velocity <code>v0</code> (local cartesian coordinates: x (east), y (north), z (up)).</p>
 <p>Returns the time of flight in seconds. Returns <code>NaN</code> if the particle escapes.</p>
 <p><strong>Key-Word Arguments</strong></p>
