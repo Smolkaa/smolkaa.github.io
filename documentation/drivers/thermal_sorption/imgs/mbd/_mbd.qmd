@@ -75,6 +75,6 @@ end
 
 # {{< bi download >}}  Downloads
 
-* {{< downloadthis thermal_sorption/imgs/mbd/mbd.pdf label="mbd.pdf" type="light" dname="mbd" >}} {{< downloadthis thermal_sorption/imgs/mbd/mbd.svg label="mbd.svg" type="light" dname="mbd" >}} {{< downloadthis thermal_sorption/imgs/mbd/mbd.png label="mbd.png" type="light" dname="mbd" >}}
+* {{< downloadthis imgs/mbd/mbd.pdf label="mbd.pdf" type="light" dname="mbd" >}} {{< downloadthis imgs/mbd/mbd.svg label="mbd.svg" type="light" dname="mbd" >}} {{< downloadthis imgs/mbd/mbd.png label="mbd.png" type="light" dname="mbd" >}}
 
 :::

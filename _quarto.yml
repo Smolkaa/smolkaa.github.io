@@ -63,7 +63,11 @@ website:
         - documentation/introduction/introduction.qmd
         - section: "2. Fundamentals"
           contents:
-            - documentation/fundamentals/coordinate_systems.qmd
+            - section: "2.1 Coordinate Systems"
+              contents:
+                - documentation/fundamentals/coordinate_systems/coordinates.qmd
+                - documentation/fundamentals/coordinate_systems/differentials.qmd
+                - documentation/fundamentals/coordinate_systems/reference_frames.qmd
             - documentation/fundamentals/numerical_grids.qmd
             - "2.3 ODEs and Numerical Solvers"
             - documentation/fundamentals/stats_mc.qmd
@@ -72,7 +76,10 @@ website:
         - section: "3. Drivers of Exospheres"
           contents:
             - documentation/drivers/solar_wind.qmd
-            - documentation/drivers/thermal_sorption.qmd
+            - section: documentation/drivers/thermal_sorption.qmd
+              contents: 
+                - documentation/drivers/thermal_sorption/maxwell_boltzmann_distribution.qmd
+                - documentation/drivers/thermal_sorption/maxwell_boltzmann_flux_distribution.qmd
             - documentation/drivers/photoreactions.qmd
             - "Photon and Electron Stimulated Desorption"
             - "Sputtering"

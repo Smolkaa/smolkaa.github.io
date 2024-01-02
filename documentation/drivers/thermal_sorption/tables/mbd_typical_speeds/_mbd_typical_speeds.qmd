@@ -3,7 +3,7 @@
 
 # {{< bi table >}} Table
 
-{{< include /documentation/drivers/thermal_sorption/tables/mbd_typical_speeds/raw_mbd_typical_speeds.md >}}
+{{< include tables/mbd_typical_speeds/raw_mbd_typical_speeds.md >}}
 
 : Overview of normalized speeds $\velocity$ of the [MBD](/documentation/acronyms.qmd), according to Eq. \eqref{eq:mbd_speed_3d}, including a comparison with its typical speeds, the most probable speed, $\velocity_p$, the mean speed, $\meanof{\velocity}$, and the root mean squared speed, $\velocity_\text{rms}$. {#tbl-mbd_typical_speeds .hover}
 
@@ -100,7 +100,7 @@ end
 
 # {{< bi download >}} Downloads
 
-* {{< downloadthis thermal_sorption/tables/mbd_typical_speeds/raw_mbd_typical_speeds.md label="raw.md" type="light" dname="table" >}}
+* {{< downloadthis tables/mbd_typical_speeds/raw_mbd_typical_speeds.md label="raw.md" type="light" dname="table" >}}
 
 :::
 :::

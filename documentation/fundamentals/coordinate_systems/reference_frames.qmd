@@ -1,0 +1,103 @@
+---
+title: "2.1.3 Reference Frames"
+
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+Since this work involves several different scales, from nano to planetary, and processes a variety of algorithms, naturally, it requires varying reference frames for its calculations, each fitting for the respective task at hand. This section provides an overview of the relevant reference frames and their transformations. The main two categories are global reference frames, which are indicated by the prescript $\Global\bullet$, and local reference frames, which are indicated by the prescript $\local\bullet$. Note that the prescripts are only used for additional clarification, for example, when two vectors out of different reference frames are used in the same equation. In most cases, the reference frame is clear from the context, and the prescripts are omitted for the sake of readability.
+
+
+# Global Reference Frames
+Global reference frames are used for calculations on a planetary scale, thus providing a coordinate system based on a planetary body. These coordinate systems have their origin at the center of the planetary body, which gives them their body-specific name, for example, selenocentric for the Moon, geocentric for the Earth, and heliocentric for the Sun. If not specified otherwise, all global coordinate systems are subsolar coordinate systems, meaning that the orientation of their base vectors is based on the Sun's position relative to the planetary body in question. The category can be further divided into two subcategories based on their respective type of coordinates: Cartesian and spherical.
+
+## Global Cartesian Coordinate Systems
+Positional vectors of the global cartesian coordinate system are defined as
+\begin{equation}
+    \cartesianCoordinate = \begin{bmatrix}
+        \cartesianCoordinateX \\ 
+        \cartesianCoordinateY \\ 
+        \cartesianCoordinateZ 
+    \end{bmatrix} \qquad\text{with } \cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R},
+\end{equation}
+while velocities are defined as their first temporal derivative, and since all global base vectors $\baseVector_i$ are time-invariant, it resolves to
+\begin{align}
+    \dot{\cartesianCoordinate} = \frac{d}{d\Time} \left( \cartesianCoordinate \right) &= \frac{d}{d\Time} \left( \cartesianCoordinateX \cartesianBaseVectorX + \cartesianCoordinateY \cartesianBaseVectorY + \cartesianCoordinateZ \cartesianBaseVectorZ \right) = \dot\cartesianCoordinateX \cartesianBaseVectorX + \dot\cartesianCoordinateY \cartesianBaseVectorY + \dot\cartesianCoordinateZ \cartesianBaseVectorZ = \begin{bmatrix}
+        \dot\cartesianCoordinateX \\ 
+        \dot\cartesianCoordinateY \\ 
+        \dot\cartesianCoordinateZ 
+    \end{bmatrix}
+    \\ & \text{with } \dot\cartesianCoordinateX\in\Set{R},\;\dot\cartesianCoordinateY\in\Set{R},\;\dot\cartesianCoordinateZ\in\Set{R}. \label{eq:global_cartesian_velocity} \nonumber
+\end{align}
+
+The coordinate system is fixed in place, with its origin at the center of the planetary body, and its base vectors pointing in the direction of the planetary axes, shown in @fig-global_cartesian. The base vectors are defined as $\cartesianBaseVectorX$ pointing towards the Sun, $\cartesianBaseVectorY$ pointing towards positive longitude (east), and $\cartesianBaseVectorZ$ pointing towards positive latitude (north). The base vectors are orthogonal to each other. Note that in the figure below, the global prescript was omitted for the simplicity of the visualization.
+
+{{< include imgs/reference_frames/_global_cartesian.qmd >}}
+
+## Global Spherical Coordinate Systems
+
+# Local Reference Frames
+Local reference frames are used for calculations on a smaller scale. One example is the calculation of thermal desorption velocities (see [Thermal Sorption](/documentation/drivers/thermal_sorption.qmd)), which only depends on the local surface temperature.
+
+## Local Cartesian Coordinate Systems
+
+## Local Spherical Coordinate Systems
+
+
+# Transformations
+
+Often it is useful to describe one problem in a different reference frame than another, requiring a transformation between the two.
+
+
+## To Global Cartesian Positions
+
+Let $\sphericalCoordinate = \sphericalCoordinateDef$ be a global spherical position vector given in spherical elements. The transformation to a global cartesian position vector $\cartesianCoordinate = \cartesianCoordinateDef$ is identical to the transformation presented in Eq. \eqref{eq:cartesian_coordinate_spherical_elements}:
+\begin{equation}
+    \cartesianCoordinate = \begin{bmatrix}
+        \sphericalCoordinateRadius \cos\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\ 
+        \sphericalCoordinateRadius \sin\sphericalCoordinateAzimuth \cos\sphericalCoordinateElevation \\ 
+        \sphericalCoordinateRadius \sin\sphericalCoordinateElevation 
+    \end{bmatrix} = \begin{bmatrix}
+        \cartesianCoordinateX \\ 
+        \cartesianCoordinateY \\ 
+        \cartesianCoordinateZ 
+    \end{bmatrix}
+\end{equation}
+with $\sphericalCoordinateRadius\in\Set{R}^+,\;\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+
+
+## To Global Spherical Positions
+
+Let $\cartesianCoordinate = \cartesianCoordinateDef$ be a global cartesian position vector given in cartesian elements. The transformation to a global spherical position vector $\sphericalCoordinate = \sphericalCoordinateDef$ is identical to the transformation presented in Eq. \eqref{eq:spherical_coordinate_cartesian_elements}:
+\begin{equation}
+    \sphericalCoordinate = \begin{bmatrix}
+        \sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2} \\ 
+        \sgn\left(\cartesianCoordinateY\right)\cdot\cos^{-1}\left(\frac{\cartesianCoordinateX}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2}}\right)\\
+        \sin^{-1}\left(\frac{\cartesianCoordinateZ}{\sqrt{\cartesianCoordinateX^2 + \cartesianCoordinateY^2 + \cartesianCoordinateZ^2}}\right) 
+    \end{bmatrix}
+\end{equation}
+with $\cartesianCoordinateX\in\Set{R},\;\cartesianCoordinateY\in\Set{R},\;\cartesianCoordinateZ\in\Set{R}.$
+
+
+## To Global Cartesian Velocities
+
+Let $\local\vec\velocity = \left[\local\velocity_\cartesianCoordinateX, \local\velocity_\cartesianCoordinateY, \local\velocity_\cartesianCoordinateZ\right]^T$ be a local cartesian velocity vector given in cartesian elements, and $\Global\sphericalCoordinate = \left[\Global\sphericalCoordinateRadius, \Global\sphericalCoordinateAzimuth, \Global\sphericalCoordinateElevation\right]^T$ be a global spherical position vector given in spherical elements. The transformation to a global cartesian velocity vector $\Global\vec\velocity = \left[\Global\velocity_\cartesianCoordinateX, \Global\velocity_\cartesianCoordinateY, \Global\velocity_\cartesianCoordinateZ\right]^T$ is given by
+\begin{equation}
+    \Global\vec\velocity = \begin{bmatrix}
+        -\local\velocity_\cartesianCoordinateX \sin\Global\sphericalCoordinateAzimuth - \local\velocity_\cartesianCoordinateY \cos\Global\sphericalCoordinateAzimuth \sin\Global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \cos\Global\sphericalCoordinateAzimuth \cos\Global\sphericalCoordinateElevation \\
+        \local\velocity_\cartesianCoordinateX \cos\Global\sphericalCoordinateAzimuth - \local\velocity_\cartesianCoordinateY \sin\Global\sphericalCoordinateAzimuth \sin\Global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \sin\Global\sphericalCoordinateAzimuth \cos\Global\sphericalCoordinateElevation \\
+        \local\velocity_\cartesianCoordinateY \cos\Global\sphericalCoordinateElevation + \local\velocity_\cartesianCoordinateZ \sin\Global\sphericalCoordinateElevation
+    \end{bmatrix}
+\end{equation}
+with $\local\velocity_\cartesianCoordinateX\in\Set{R},\;\local\velocity_\cartesianCoordinateY\in\Set{R},\;\local\velocity_\cartesianCoordinateZ\in\Set{R}$ and $\Global\sphericalCoordinateRadius\in\Set{R}^+,\;\Global\sphericalCoordinateAzimuth\in\left[-\pi,\pi\right),\;\Global\sphericalCoordinateElevation\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+
+
+## To Global Spherical Velocities
+
+## To Local Cartesian Positions
+
+## To Local Cartesian Velocities
+

@@ -5,32 +5,7 @@ title: "Code"
 ---
 
 
-The `ExESS` package is structured into four main parts, which are the four main folders in the `/src` directory:
-
-## Repository Structure
-
-::: {.grid}
-::: {.g-col-6}
-
-```jl
-ExESS/  
-├── data/  
-├── res/  
-├── src/  
-│  ├── base/  
-│  ├── exospheres/  
-│  ├── grids/  
-│  ├── surfaces/  
-│  └── ExESS.jl  
-├── test/  
-├── . . .  
-└── README.md  
-```
-
-:::
-::: {.g-col-6}
-:::
-:::
+The `ExESS` package, short for "Extraterrestrial Exosphere and Surface Simulations", is a custom code library written in the Julia Programming Language.
 
 ## Source Files
 
@@ -84,5 +59,53 @@ ExESS/
 * [`thermal_conductivity_parzinger2014.jl`]()  
 * [`utils.jl`]()  
 
+:::
+:::
+
+
+## Installation
+
+This simulation tool was created as a custom package for the computer language Julia. Please refer to the [official guide](https://julialang.org/downloads/platform/) to install Julia on your machine. To be able to use the `ExESS` package, the entire repository has to be downloaded from LRZ-GitLab. Afterward, the code can be used in several different ways. The entire module can be included directly by specifying the path of the downloaded package in the `include` call.
+```julia
+include(joinpath(PathToPackage, "src", "ExESS.jl"))
+using .ExESS
+```
+
+The `ExESS` package relies on multiple other packages that have to be added and installed by the user. They can be added using Julia's package manager `Pkg`:
+```julia
+using Pkg
+Pkg.add("Interpolations")
+Pkg.add("NearestNeighbors")
+Pkg.add("DifferentialEquations")
+Pkg.add("SpecialFunctions")
+```
+
+
+## Additional Resources
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+```{=html}
+<div class="card">
+  <img class="image" src="/api/additionals/julia_links/julia-dots.svg" alt="a" style="width: 90%; margin: auto; margin-top: 1rem; margin-bottom: 1rem">
+  <div class="overlay">
+  </div>
+  <div class="text" style="margin: -1.rem; margin-top: 0.4rem; margin-right: -5rem">
+    <p><strong>Julia Programming Language: Links & Resources</strong></p>
+    <a href="/api/additionals/julia_links/index.qmd" class="stretched-link"></a> Links to the most important resources for learning the Julia programming language, including a subset of important packages for scientific computing
+  </div>
+</div> 
+```
+
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-lg-4 .g-col-xl-3}
 :::
 :::

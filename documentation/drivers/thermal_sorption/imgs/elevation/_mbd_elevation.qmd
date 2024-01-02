@@ -91,6 +91,6 @@ Note that the code relies on custom-defined variables, like `\sphericalCoordinat
 
 # {{< bi download >}}  Downloads
 
-* {{< downloadthis thermal_sorption/imgs/elevation/mbd_elevation.pdf label="mbd_elevation.pdf" type="light" dname="mbd_elevation" >}} {{< downloadthis thermal_sorption/imgs/elevation/mbd_elevation.svg label="mbd_elevation.svg" type="light" dname="mbd_elevation" >}} 
+* {{< downloadthis imgs/elevation/mbd_elevation.pdf label="mbd_elevation.pdf" type="light" dname="mbd_elevation" >}} {{< downloadthis imgs/elevation/mbd_elevation.svg label="mbd_elevation.svg" type="light" dname="mbd_elevation" >}} 
 
 :::

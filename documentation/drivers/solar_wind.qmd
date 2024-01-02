@@ -49,6 +49,33 @@ The solar wind exerts a magnetic field, called the Interplanetary Magnetic Field
 Due to its high conductivity, the solar wind's magnetic field tends to be relatively frozen inside the streaming plasma [@Bittencourt2004].
 
 
+# Interaction with the Lunar Surface
+
+## Distribution
+
+Assuming that the particles in the solar wind are spatially evenly distributed, the particle distribution on the planetary surface is only a function of the solar zenith angle $\zenith_s$. This angle can be derived in terms of the sub-solar longitude $\longitude_s$ and latitude $\latitude_s$ by $\cos\zenith_s = \cos\longitude_s \cdot \cos\latitude_s$.
+
+Let $\left(\longitude_s, \latitude_s\right)$ be a spherical sub-solar surface coordinate with $\sphericalCoordinateRadius$ equal to the central body's radius. For positive solar zenith angles, the PDF of the solar wind particle distribution on the surface is 
+\begin{equation}
+    f(\longitude_s, \latitude_s) d\longitude d\latitude = \frac{1}{4} \cos\zenith_s d\longitude d\latitude = \frac{1}{4} \cos\longitude_s \cos\latitude_s d\longitude d\latitude, \label{eq:solar_wind_position_pdf}
+\end{equation}
+which can be integrated over the angular arguments of the dayside hemisphere, which is $-\pi / 2 \leq \longitude_s \leq \pi / 2$ and $-ß \leq \latitude_s \leq \pi / 2$, to yield the CDF
+\begin{equation}
+    F(\longitude_s, \latitude_s) = \int_{-\pi/2}^{\latitude_s} \int_{-\pi/2}^{\longitude_s} \frac{1}{4} \cos\longitude \cos\latitude d\longitude d\latitude = \frac{1}{4} \left(1 - \sin\longitude_s\right) \left(1 - \sin\latitude_s\right). \label{eq:solar_wind_position_cdf}
+\end{equation}
+The two arguments can easily be separated into two individual CDFs, one for each angular position:
+\begin{align}
+    F(\longitude_s) &= \frac{1}{2} \left(1 - \sin\longitude_s\right) \\
+    F(\latitude_s) &= \frac{1}{2} \left(1 - \sin\latitude_s\right).
+\end{align}
+
+For the numerical sampling of this distribution, let $\randomVariableUniform \in \left[0, 1\right]$ be a uniformly distributed random variable with realization $\randomValueUniform$ of $\randomVariableUniform \sim f(\randomValueUniform) = 1$. The CDFs can be set equal to such realization and through the inversion technique, a numerical function for the sampling of the surface coordinates can be found. 
+\begin{align}
+    \randomValueUniform &= F(\longitude_s) = \frac{1}{2} \left(1 - \sin\longitude_s\right) \quad\Rightarrow\quad \longitude_s = \sin^{-1}\left(1 - 2 \randomValueUniform\right) \\
+    \randomValueUniform &= F(\latitude_s) = \frac{1}{2} \left(1 - \sin\latitude_s\right) \quad\Rightarrow\quad \latitude_s = \sin^{-1}\left(1 - 2 \randomValueUniform\right).
+\end{align}
+
+
 
 
 [ ]{.aside}

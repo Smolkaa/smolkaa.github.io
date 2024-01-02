@@ -12,7 +12,7 @@
 
 ![Based on the analytic function of @Hurley2015](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png){#fig-lunar-surface-temperatures-HURLEY width="600px"}
 
-Global, stationary lunar surface temperature maps. Coordinates given with respect to the subsolar point at $(\longitude_{ss}, \latitude_{ss}) = (0,0)$, presented in local time and subsolar latitude.
+Global, stationary lunar surface temperature maps. Coordinates given with respect to the subsolar point at $(\longitude_s, \latitude_s) = (0,0)$, presented in local time and subsolar latitude.
 :::
 
 # {{< bi code >}} Julia

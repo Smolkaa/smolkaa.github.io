@@ -2,10 +2,10 @@
 
 
 /* changes the justification of the text in the body */
-:root {
-  --bs-body-text-align: justify;
-}
+:root { --bs-body-text-align: justify; }
 
+/* reverts text justification for the navbar on the left */
+.sidebar-menu-container { text-align: left; }
 
 /* adjust box size and position of the sidebar logo */
 div.mt-2 {margin-top: 0rem !important;}
@@ -25,11 +25,6 @@ div.pt-lg-2 {padding-top: 0rem !important;}
 /* adjust item separation */
 .nav-item {
   padding-left: 1rem;
-}
-
-div.callout-tip.callout-titled .callout-icon::before {
-  background-image: url('resources/icons/cli.svg');
-  width: 25px;
 }
 
 /* enables the use of iframes for revealjs presentations */
