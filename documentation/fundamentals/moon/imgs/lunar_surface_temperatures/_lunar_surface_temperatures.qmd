@@ -13,17 +13,34 @@
 ![Based on the analytic function of @Hurley2015](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png){#fig-lunar-surface-temperatures-HURLEY width="600px"}
 
 Global, stationary lunar surface temperature maps. Coordinates given with respect to the subsolar point at $(\longitude_s, \latitude_s) = (0,0)$, presented in local time and subsolar latitude.
+</br></br>
+See aninmations [here](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/diviner_animations.qmd).
 :::
 
 # {{< bi code >}} Julia
 ```julia
 using .ExESS
-using CairoMakie, ColorSchemes
+using CairoMakie, GeoMakie, ColorSchemes
+cmap = ColorSchemes.lipari
+
 
 #::. functions
 function _default_(N=240, M=120)
-    fig     = Figure(;resolution=(600,285))
-    ga      = GeoAxis(fig[1,1];)
+    fig     = Figure(;resolution=(600,288))
+    ga      = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 1.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+    )
     xlims!(ga, -180, 180); ylims!(ga, -90, 90)
     theta   = range(-1,1,N) .* pi .* 0.995
     phi     = range(-1,1,M) .* pi/2 .* 0.96
@@ -106,13 +123,13 @@ For the exact design, a custom theme was loaded in the preamble of the document.
 
 # {{< bi download >}}  Downloads
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner.png label="diviner.png" type="light" dname="diviner" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner.png label="diviner.png" type="light" dname="diviner" >}}
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png label="diviner_average.png" type="light" dname="diviner_average" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures/lunar_surface_temperature_diviner_average.png label="diviner_average.png" type="light" dname="diviner_average" >}}
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png label="butler.png" type="light" dname="butler" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures/lunar_surface_temperature_BUTLER.png label="butler.png" type="light" dname="butler" >}}
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png label="hurley.png" type="light" dname="hurley" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures/lunar_surface_temperature_HURLEY.png label="hurley.png" type="light" dname="hurley" >}}
 
 :::
 :::

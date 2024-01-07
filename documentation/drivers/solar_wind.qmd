@@ -59,7 +59,7 @@ Let $\left(\longitude_s, \latitude_s\right)$ be a spherical sub-solar surface co
 \begin{equation}
     f(\longitude_s, \latitude_s) d\longitude d\latitude = \frac{1}{4} \cos\zenith_s d\longitude d\latitude = \frac{1}{4} \cos\longitude_s \cos\latitude_s d\longitude d\latitude, \label{eq:solar_wind_position_pdf}
 \end{equation}
-which can be integrated over the angular arguments of the dayside hemisphere, which is $-\pi / 2 \leq \longitude_s \leq \pi / 2$ and $-ß \leq \latitude_s \leq \pi / 2$, to yield the CDF
+which can be integrated over the angular arguments of the dayside hemisphere, which is $-\pi / 2 \leq \longitude_s \leq \pi / 2$ and $-\pi / 2 \leq \latitude_s \leq \pi / 2$, to yield the CDF
 \begin{equation}
     F(\longitude_s, \latitude_s) = \int_{-\pi/2}^{\latitude_s} \int_{-\pi/2}^{\longitude_s} \frac{1}{4} \cos\longitude \cos\latitude d\longitude d\latitude = \frac{1}{4} \left(1 - \sin\longitude_s\right) \left(1 - \sin\latitude_s\right). \label{eq:solar_wind_position_cdf}
 \end{equation}
@@ -74,6 +74,8 @@ For the numerical sampling of this distribution, let $\randomVariableUniform \in
     \randomValueUniform &= F(\longitude_s) = \frac{1}{2} \left(1 - \sin\longitude_s\right) \quad\Rightarrow\quad \longitude_s = \sin^{-1}\left(1 - 2 \randomValueUniform\right) \\
     \randomValueUniform &= F(\latitude_s) = \frac{1}{2} \left(1 - \sin\latitude_s\right) \quad\Rightarrow\quad \latitude_s = \sin^{-1}\left(1 - 2 \randomValueUniform\right).
 \end{align}
+
+{{< include solar_wind/imgs/surface_distribution/_surface_distribution.qmd >}}
 
 
 

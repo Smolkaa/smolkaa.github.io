@@ -9,12 +9,26 @@ if !isdefined(Main, :ExESS)
 end
 
 #::. define colormap for figures
-cmap = lipari
+cmap = ColorSchemes.lipari
+
 
 #::. functions
 function _default_(N=240, M=120)
-    fig     = Figure(;resolution=(600,285))
-    ga      = MyLTGeoAxis(fig[1,1];)
+    fig     = Figure(;resolution=(600,288))
+    ga      = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 1.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+    )
     xlims!(ga, -180, 180); ylims!(ga, -90, 90)
     theta   = range(-1,1,N) .* pi .* 0.995
     phi     = range(-1,1,M) .* pi/2 .* 0.96

@@ -58,7 +58,7 @@ Lunar orbit orientation sketch with the Earth as well as the ecliptic plane as a
 
 # {{< bi download >}} Download
 
-* {{< downloadthis moon/imgs/lunar_orbit_orientation/lunar_orbit_orientation.svg label="lunar_orbit_orientation.svg" type="light" dname="lunar_orbit_orientation" >}}
+* {{< downloadthis imgs/lunar_orbit_orientation/lunar_orbit_orientation.svg label="lunar_orbit_orientation.svg" type="light" dname="lunar_orbit_orientation" >}}
 
 :::
 :::

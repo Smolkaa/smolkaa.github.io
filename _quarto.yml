@@ -71,7 +71,12 @@ website:
             - documentation/fundamentals/numerical_grids.qmd
             - "2.3 ODEs and Numerical Solvers"
             - documentation/fundamentals/stats_mc.qmd
-            - documentation/fundamentals/moon.qmd
+            - section: documentation/fundamentals/moon.qmd
+              contents:
+                - documentation/fundamentals/moon/orbit_orientation.qmd
+                - documentation/fundamentals/moon/space_environment.qmd
+                - documentation/fundamentals/moon/surface_temperatures.qmd
+                - documentation/fundamentals/moon/exosphere.qmd
             - documentation/fundamentals/properties_data.qmd
         - section: "3. Drivers of Exospheres"
           contents:

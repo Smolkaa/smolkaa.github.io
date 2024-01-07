@@ -1,21 +1,18 @@
-::: {.panel-tabset .column-page-right}
+::: {.panel-tabset}
 
 # {{< bi image >}} Figure
 
-::: {#fig-ladee-n0 layout-nrow=3}
-![Helium surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_He_proj.png){#fig-ladee-n0-he width="1200px"}
+::: {#fig-ladee-n0}
+![](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_proj.png){width="1200px"}
 
-![Neon surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_Ne_proj.png){#fig-ladee-n0-ne width="1200px"}
-
-![Argon surface number densities.](/documentation/fundamentals/moon/imgs/ladee_n0/ladee_n0_Ar_proj.png){#fig-ladee-n0-ar width="1200px"}
-
-Helium (a), neon (b), and argon (c) surface number densities, based on derived data of the LADEE mission and projected to the surface based on @Chamberlain1963 barometric model. Maximum densities are highlighted with a red marker and the respective numeric value of the surface number density. The data was taken from the PDS [@LADEE2014]. Gray areas indicate lunar nighttime.
+Helium (a), neon (b), and argon (c) surface number densities based on derived data of the LADEE mission and projected to the surface based on @Chamberlain1963 barometric model, provided in sub-solar coordinates. Maximum densities are highlighted with a red marker and the respective numeric value of the surface number density. The data was taken from the PDS [@LADEE2014]. Gray areas indicate lunar nighttime.
 :::
 
 # {{< bi code >}} Julia
 
 ```julia
 using .ExESS
+using CairoMakie, GeoMakie, ColorSchemes
 using DataFrames, CSV
 DATA_PATH = joinpath(@__DIR__, "..", "..", "data", "ladee_data_derived")
 
@@ -61,59 +58,143 @@ function find_max(df::DataFrame)
     return val, df[idx, 13], df[idx,12]
 end
 
-#::. plotting functions
-function plot_lat(element::String; kwargs...)
-    df = load_all_data(element)
-    plot_lat(df, element; kwargs...)
-    return nothing
+
+#::. helping plot functions
+function night_shade(ax; N=10, color=(:gray, 0.3), kwargs...)
+    for i in 1:N, j in [-1, 1]
+        points = Point2f[
+            (j*90,-30 + (i-1)*60/N), 
+            (j*180,-30 + (i-1)*60/N), 
+            (j*180,-30 + i*60/N), 
+            (j*90,-30 + i*60/N)
+        ]
+        poly!(ax, points; color=color, kwargs...)
+    end
 end
-function plot_lat(df::DataFrame, element::String; stdfilter=1.0, cmap=reverse(ColorSchemes.deep))
-    idxs = df[:,15] ./ df[:,14] .< stdfilter
+
+#::. plotting functions
+function plot_lat_all(dfHe, dfNe, dfAr; stdfilter=1.0, cmap=ColorSchemes.lipari)
+    idxsHe = dfHe[:,15] ./ dfHe[:,14] .< stdfilter
+    idxsNe = dfNe[:,15] ./ dfNe[:,14] .< stdfilter
+    idxsAr = dfAr[:,15] ./ dfAr[:,14] .< stdfilter
 
     #::. figure and axis setup
-    fig = Figure(resolution=(1000,230))
-    ax = MyLTGeoAxis(fig[1, 1];
-        xlabelpadding=30,
-        xticks=([-180, -90, 0, 90, 180], ["","","","","",]),
-        yticks=[-30,-15,0,15,30])
-    ylims!(ax, -30, 30)
-    night_shade(ax)
+    fig = Figure(resolution=(1100,600))
+    axHe = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        # xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 5.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        # ylabel              = "Sub-Solar\nLatitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+        yticks              = [-30,-15,0,15,30],
+    )
+    ylims!(axHe, -30, 30)
+    night_shade(axHe)
+    text!(axHe, 2, 20; text="(a) Helium", align=(:left, :bottom))
+
+    axNe = GeoAxis(fig[2,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        # xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 5.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        # ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+        yticks              = [-30,-15,0,15,30],
+    )
+    ylims!(axNe, -30, 30)
+    night_shade(axNe)
+    text!(axNe, 2, 20; text="(b) Neon", align=(:left, :bottom))
+
+    axAr = GeoAxis(fig[3,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        # xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 5.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        # ylabel              = "Sub-Solar\nLatitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+        yticks              = [-30,-15,0,15,30],
+    )
+    ylims!(axAr, -30, 30)  
+    night_shade(axAr)
+    text!(axAr, 2, 20; text="(c) Argon", align=(:left, :bottom))
+
+    Label(fig[4,1], "Local Time, LT [h]";
+        padding=(50,0,0,-20),
+        tellheight=true,
+        tellwidth=false,)
+
+    Label(fig[1:3,0], "Sub-Solar Latitude, Φₛ [°]";
+        padding=(20,-30,0,0),
+        tellheight=false,
+        tellwidth=true,
+        rotation=pi/2)
 
     #::. data
-    sc = scatter!(ax, df[idxs, 13]/24*360 .- 180, df[idxs, 12];
-        color=df[idxs, 14],
+    scHe = scatter!(axHe, dfHe[idxsHe, 13]/24*360 .- 180, dfHe[idxsHe, 12];
+        color=dfHe[idxsHe, 14],
         colormap=cmap,
         colorrange=(0, 2e4),
+        highclip=cmap[end] |> RGB{Colors.N0f8},
         markersize=2)
 
-    #::. plot maximum
-    nmax, lonmax, latmax = find_max(df[idxs,:])
-    scatter!(ax, lonmax/24*360 .- 180, latmax; color="red", markersize=10, marker=:utriangle)
-    text!(ax, lonmax/24*360 .- 180, latmax; text="$(round((nmax/1e3); digits=1))", halign=:left, valign=:bottom, color="red")
+    scNe = scatter!(axNe, dfNe[idxsNe, 13]/24*360 .- 180, dfNe[idxsNe, 12];
+        color=dfNe[idxsNe, 14],
+        colormap=cmap,
+        colorrange=(0, 2e4),
+        highclip=cmap[end] |> RGB{Colors.N0f8},
+        markersize=2)
+    
+    scAr = scatter!(axAr, dfAr[idxsAr, 13]/24*360 .- 180, dfAr[idxsAr, 12];
+        color=dfAr[idxsAr, 14],
+        colormap=cmap,
+        colorrange=(0, 2e4),
+        highclip=cmap[end] |> RGB{Colors.N0f8},
+        markersize=2)
+
+
+    #::. plot maximum -- He
+    nmax, lonmax, latmax = find_max(dfHe[idxsHe,:])
+    scatter!(axHe, lonmax/24*360 .- 180, latmax; color="red", markersize=10, marker=:utriangle)
+    text!(axHe, lonmax/24*360 .- 180, latmax; text="$(round((nmax/1e3); digits=1))", halign=:left, valign=:bottom, color="red")
+
+    #::. plot maximum -- Ne
+    nmax, lonmax, latmax = find_max(dfNe[idxsNe,:])
+    scatter!(axNe, lonmax/24*360 .- 180, latmax; color="red", markersize=10, marker=:utriangle)
+    text!(axNe, lonmax/24*360 .- 180, latmax; text="$(round((nmax/1e3); digits=1))", halign=:left, valign=:bottom, color="red")
+
+    #::. plot maximum -- Ar
+    nmax, lonmax, latmax = find_max(dfAr[idxsAr,:])
+    scatter!(axAr, lonmax/24*360 .- 180, latmax; color="red", markersize=10, marker=:utriangle)
+    text!(axAr, lonmax/24*360 .- 180, latmax; text="$(round((nmax/1e3); digits=1))", halign=:left, valign=:bottom, color="red")
 
     #::. colorbar
-    Colorbar(fig[1,2], sc;
-        label="$element Abundance [10³/cm³]",
-        ticks=([0,5000,10000,15000,20000], ["0", "5", "10", "15", "20"]),
-        highclip=cmap[end] |> RGB{Colors.N0f8})
-    
-    #::. custom x-axis labels
-    ax2 = MyLTGeoAxis(fig[1, 1];
-        spinewidth = 0,
-        xticks=([-180, -90, 0, 90, 180], ["","","","","",]),
-        yticks=[-30,-15,0,15,30])
-    ylims!(ax2, -40, 30)
-    hidedecorations!(ax2)
-    text!(ax2, -140, -30; text= "0")
-    text!(ax2,  -63, -30; text= "6")
-    text!(ax2,   11, -30; text="12")
-    text!(ax2,   89, -30; text="18")
-    text!(ax2,  165, -30; text="24")
+    Colorbar(fig[1:3,2], scHe;
+        label="Surface Number Density, n₀ [10³/cm³]",
+        ticks=([0,5000,10000,15000,20000], ["0", "5", "10", "15", "20"]),)
 
     #::. save figure
-    save(joinpath(@__DIR__, "ladee_n0_$(element)_proj.pdf"), fig)
+    # save(joinpath(@__DIR__, "ladee_n0_proj.pdf"), fig) # too big!
     # save(joinpath(@__DIR__, "ladee_n0_$(element)_proj.svg"), fig) # too big!
-    save(joinpath(@__DIR__, "ladee_n0_$(element)_proj.png"), fig, px_per_unit=4)
+    save(joinpath(@__DIR__, "ladee_n0_proj.png"), fig, px_per_unit=4)
     return nothing
 end
 
@@ -125,18 +206,12 @@ function run_all(dfHe, dfNe, dfAr; T=250, kwargs...)
     dfHe_p[:,14] .= projection_CHAMBERLAIN1963.(dfHe_p[:, 14], LUNAR_RADIUS .+ dfHe_p[:, 10]*1e3, LUNAR_RADIUS, T, amu2kg(4))
     dfNe_p[:,14] .= projection_CHAMBERLAIN1963.(dfNe_p[:, 14], LUNAR_RADIUS .+ dfNe_p[:, 10]*1e3, LUNAR_RADIUS, T, amu2kg(20))
     dfAr_p[:,14] .= projection_CHAMBERLAIN1963.(dfAr_p[:, 14], LUNAR_RADIUS .+ dfAr_p[:, 10]*1e3, LUNAR_RADIUS, T, amu2kg(40))
-    plot_lat(dfHe_p, "He"; kwargs...)
-    plot_lat(dfNe_p, "Ne"; kwargs...)
-    plot_lat(dfAr_p, "Ar"; kwargs...)
+    plot_lat_all(dfHe_p, dfNe_p, dfAr_p; kwargs...)
 end
 ```
 
 # {{< bi download >}} Download
 
-* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_He_proj.png label="LADEE_n0_Helium.png" type="light" dname="LADEE_n0_Helium" >}} 
-
-* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_Ne_proj.png label="LADEE_n0_Neon.png" type="light" dname="LADEE_n0_Neon" >}} 
-
-* {{< downloadthis moon/imgs/ladee_n0/ladee_n0_Ar_proj.png label="LADEE_n0_Argon.png" type="light" dname="LADEE_n0_Argon" >}} 
+* {{< downloadthis imgs/ladee_n0/ladee_n0_proj.png label="LADEE_n0.png" type="light" dname="LADEE_n0" >}} 
 
 :::

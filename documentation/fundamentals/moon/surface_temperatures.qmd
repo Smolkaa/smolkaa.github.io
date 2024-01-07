@@ -1,0 +1,68 @@
+---
+title: "2.6.3 Surface Temperatures"
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+
+One of the main drivers of any thermodynamic process is its available energy, given by its temperature.
+
+## Measurements and Modeling
+
+Aboard the [LRO](/documentation/acronyms.qmd) the [DLRE](/documentation/acronyms.qmd) gathered infrared data of the lunar surface to create temperature maps of the Moon.
+
+
+{{< include imgs/lunar_surface_temperatures/_lunar_surface_temperatures.qmd >}}
+
+
+@Butler1997 proposed an analytical surface temperature distribution based on the solar zenith angle $\zenith_s$ with regard to the local surface normal, assuming a perfectly spherical Moon, see @fig-lunar_surface_temperatures. Given the subsolar position $\left(\longitude_s, \latitude_s\right)$, longitude and latitude respectively, the cosine of the zenith angle can be calculated as $\cos\zenith_s = \cos\longitude_s \cdot \cos\latitude_s$. All measurements of the lunar surface temperatures on the dayside suggest a $\cos^{1/4}$ shape with regard to the solar zenith angle [@Vasavada2012; @Hurley2015], though such models break down on the nightside. By introducing a cutoff at the terminators alongside a defined nightside temperature and shifting the distribution up, @Butler1997 arrived at
+\begin{equation}
+    \temperature (\zenith_s) = \begin{cases}
+        \SI{250}{\kelvin} \cdot \cos^{1/4} (\zenith_s) + \SI{100}{\kelvin}, \qquad & \text{ if } \zenith_s \leq \SI{90}{\degree}, \\
+        \SI{100}{\kelvin}, & \text{ if } \zenith_s > \SI{90}{\degree}.
+    \end{cases} \label{eq:lunar_surface_temperatures_BUTLER}
+\end{equation}
+
+
+@Hurley2015 proposed another model to further improve the analytical description of the lunar surface temperatures, which included a combination of a cosine-law dependence on the dayside and a 6-term polynomial fitted cooling function for the nightside:
+\begin{equation}
+    \temperature (\longitude_s, \latitude_s) = \begin{cases}
+        \SI{262}{\kelvin} \cdot \cos^{1/2} \left( \zenith_s \right) + \SI{130}{\kelvin}, \qquad & \text{ if } \left|\longitude_s\right| < \SI{90}{\degree}, \\
+        \left( \sum_{i=0}^5 a_i \longitude_s^i \right) + \SI{35}{\kelvin} \left( \sin \overline{\latitude_s} - 1\right), \qquad & \text{ else.} 
+    \end{cases} \label{eq:lunar_surface_temperatures_HURLEY} 
+\end{equation}
+with the longitude $\longitude_s$ and the subsolar co-latitude $\overline{\latitude_s} = \pi/2 - \latitude_s$. The coefficients of the polynomial fit are $a = \left[444.738,\; -448.937,\; 239.668,\; -63.8844,\; 8.34064,\; -0.423502 \right]$ in kelvin. Note that the longitude has to be used in radians and must be positively defined on the range of $\longitude_s \in \left(\pi/2, 3\pi/2\right)$ for the nightside.
+
+
+
+{{< include imgs/lunar_surface_temperatures_comparison/_lunar_surface_temperatures_comparison.qmd >}}
+
+
+The two presented analytical models of the lunar surface temperatures have been compared with the averaged [DLRE](/documentation/acronyms.qmd) measurements. @fig-lunar_surface_temperatures_comparison shows this statistical analysis of the temperatures difference of the @Butler1997 and @Hurley2015 calculated as $\Delta\temperature_i = \temperature_i - \temperature_\text{Diviner}$ for each analytical model $i$, evaluated on $\num{270e3}$ surface points, globally distributed using the [HEALPix](/documentation/fundamentals/numerical_grids.qmd) method. 
+
+
+The left side shows the statistical mean of said temperature differences as a function of subsolar latitude for both models, both globally as well as exclusively on the dayside and nightside of the Moon. Up to $\latitude_s=\SI{60}{\degree}$, the @Hurley2015 model has global means very close to zero, with slight deviations for the exclusive day- and night side. Closer to the poles, the model tends towards positive temperature differences, peaking at around $\SI{35}{\kelvin}$ above the Diviner model on the sunlit side. Using the model by @Butler1997 this effect is even more pronounced with the means starting below zero at the equator and continuously increasing with higher latitudes. Final values close to the poles reach temperature differences of more than $\SI{60}{\kelvin}$ on the dayside.
+
+
+To further investigate the two models, the [rms](/documentation/acronyms.qmd) value of the temperature differences
+\begin{equation}
+    \Delta\temperature_{\text{rms}, i} = \sqrt{\frac{1}{N_j} \cdot \sum_j^{N_j} \left(\Delta\temperature_{i,j}\right)^2},
+\end{equation}
+for $N_j$ applicable positions $j$ is shown on the right side of @fig-lunar_surface_temperatures_comparison. In comparison with the previously shown statistical mean, the [rms](/documentation/acronyms.qmd) shows the spread of the temperatures around the mean. For all cases, globally, dayside, and nightside, the @Hurley2015 model has lower [rms](/documentation/acronyms.qmd) values, which are less than $\SI{10}{\kelvin}$ for latitude uo to $\SI{60}{\degree}$. Closer to the poles and similar to the mean value, the dayside temperatures tend to deviate the most, peaking at $\SI{43}{\kelvin}$ at $\SI{80}{\degree}$. Generally, a steadily increasing behavior with higher latitudes can be observed. For the @Butler1997 model, the [rms](/documentation/acronyms.qmd) values start considerably higher with the worst deviations on the dayside of the Moon. For roughly $\SI{50}{\degree}$ from the equator, the values decrease to the lowest value of $\SI{17}{\kelvin}$ before sharply increasing polewards of it.
+
+
+## Permanently Shadowed Regions
+
+@Schoerghofer2021 investigated the sizes of [PSRs](/documentation/acronyms.qmd) and found that their total area in the northern polar region (poleward of $\SI{80}{\degree}$) is around $\SI{1.3\times 10\tothe{4}}{\kilo\metre\tothe{2}}$, while the southern polar region has a total area of $\SI{1.6\times 10\tothe{4}}{\kilo\metre\tothe{2}}$. 
+
+
+
+
+
+# ExESS API {.appendix .unnumbered}
+
+* Function: [`lunar_surface_temperatures_BUTLER1997`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Butler1997.
+* Function: [`lunar_surface_temperatures_HURLEY2015`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Hurley2015.

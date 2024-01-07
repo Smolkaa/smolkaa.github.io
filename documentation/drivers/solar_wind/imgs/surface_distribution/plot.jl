@@ -7,22 +7,44 @@ if !isdefined(Main, :ExESS)
 end
 
 
-#::.
+#::. main plotting function
 function plot_surface_distribution()
 
-    lng, lat = deg2rad.(-90:1:90), deg2rad.(-89:1:89)
-    p = [pos_pdf(SolarWindSurfaceDistribution(LUNAR_RADIUS), lng[i], lat[j]) for i in eachindex(lng), j in eachindex(lat)]
+    # define grid (leave gaps for better GeoMakie usage)
+    lng, lat = deg2rad.(-179:1:179), deg2rad.(-89:1:89)
 
+    # calculate solar wind distribution probability
+    p = [pos_pdf(SolarWindSurfaceDistribution(LUNAR_RADIUS), lng[i], lat[j]) 
+            for i in eachindex(lng), j in eachindex(lat)]
+
+    # create figure and axis
     fig = Figure(;resolution=(600,300))
-    ax = MyLTGeoAxis(fig[1,1];
-        xlabel = "Local Time, LT [h]",
-        ylabel = "Sub-Solar Latitude, Φₛ [°]")
+    ax = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 1.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+    )
     
-    hm = heatmap!(ax, rad2deg.(lng), rad2deg.(lat), p .* 100; colormap=ColorSchemes.lipari, colorrange=(0,25))
+    # plot probability heatmap
+    hm = heatmap!(ax, rad2deg.(lng), rad2deg.(lat), p .* 100; #
+        colormap=ColorSchemes.lipari, 
+        colorrange=(0,25))
 
-    # Colorbar(fig[0,:], hm; vertical=false, ticklabelalign=(:right,:center), ticklabelpad=5.0, label="Probability [%]")
-    Colorbar(fig[:,2], hm; ticklabelalign=(:right,:center), ticklabelpad=5.0, label="Probability [%]")
+    # add colorbar
+    Colorbar(fig[:,2], hm; 
+        ticklabelpad=.5, 
+        label="Probability [%]")
 
+    # save figure in different formats
     save(joinpath(@__DIR__,"surface_distribution.pdf"), fig)
-    save(joinpath(@__DIR__,"surface_distribution.png"), fig)
+    save(joinpath(@__DIR__,"surface_distribution.png"), fig, px_per_unit=4)
 end

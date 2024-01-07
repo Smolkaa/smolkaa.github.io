@@ -1,0 +1,101 @@
+---
+title: "2.6.4 The Exosphere"
+tbl-colwidths: [45,23,32]
+---
+
+{{< include /resources/latex/_defs.qmd >}}
+{{< include /resources/latex/_symbols.qmd >}}
+
+---
+
+## Missions
+
+### Density Projections
+
+Due to the scarcity of ground-based data, satellite measurements at varying altitudes are often used in the investigation of planetary exospheres. In order to compare measurements at different altitudes, the data must be projected into a common altitude, which usually is the exobase altitude, which is the surface of the planetary body given surface-bounded exospheres.
+
+
+@Chamberlain1963 derived a model for the exospheric particle number density $\numberDensity\left(\radius\right)$ as a function of the radial distance from the center of the planetary body, based on the assumption of a hydrostatic equilibrium and a Maxwellian velocity distribution, see section [Velocity Distributions](/documentation/drivers/thermal_sorption.qmd#sec-velocity-distributions): 
+\begin{equation}
+    % \numberDensity(\radius) = \numberDensity(\radius+\height) \cdot \partitionFunction \cdot \exp \left(\relativeEnergy\left(\radius\right) - \relativeEnergy\left(\radius+\height\right) \right)
+    \numberDensity = \tilde\numberDensity \cdot \partitionFunction \cdot \exp \left(\relativeEnergy - \tilde\relativeEnergy\right)
+    \label{eq:chamberlain_projection}
+\end{equation}
+with the known number density $\tilde\numberDensity = \numberDensity(\tilde\radius)$ at some known radial distance $\tilde\radius = \radius + \height$ with $\radius, \height\in\Set{R}^+$, relative potential energies $\relativeEnergy$, and a partition function $\partitionFunction$. If the radial distance is equal to the radius of the planetary body, the number density is equal to the surface number density $\surfaceNumberDensity$. Equation \eqref{eq:chamberlain_projection} is the general form of the isothermal barometric law [@Chamberlain1963].
+
+
+The relative energy of the projection function is given as absolute potential energy in units of thermal energy $\BoltzmannConstant \temperature$:
+\begin{equation}
+    \relativeEnergy\left(\radius\right) = \left| - \frac{\mass \hat\mass\GravitationalConstant}{\BoltzmannConstant \temperature \radius} \right|
+    \label{eq:relative_potential_energy}
+\end{equation}
+with the mass $\mass$ of the particle, the mass $\hat\mass$ of the planetary body, and the gravitational constant $\GravitationalConstant$ [@Chamberlain1963]. Both, $\relativeEnergy = \relativeEnergy\left(\radius\right)$ and $\tilde\relativeEnergy = \relativeEnergy\left(\radius+\height\right)$, are required for the partition function $\partitionFunction$, which is the linear combination of three individual partition functions which are describing particles in ballistic orbits, $\partitionFunction_{bal}$, particles in satellite orbits, $\partitionFunction_{sat}$, and particles that are on escape trajectories, $\partitionFunction_{esc}$:
+\begin{align}
+    \partitionFunction_{bal} &= \frac{2}{\sqrt{\pi}} \left( \gamma\left(\frac{3}{2}, \relativeEnergy\right) - \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \cdot \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right), \\
+    \partitionFunction_{sat} &= \frac{2}{\sqrt{\pi}} \left( \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \cdot \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right), \\
+    \partitionFunction_{esc} &= \frac{1}{\sqrt{\pi}} \left( \Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy\right) - \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \right. \nonumber \\
+    &\left. \qquad \cdot \left(\Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right) \right) \\[4mm]
+    \Rightarrow \partitionFunction &= \partitionFunction_{bal} + \partitionFunction_{sat} + \partitionFunction_{esc}
+\end{align}
+with the gamma and lower incomplete gamma function, $\Gamma$ and $\gamma$, respectively [@Cook2013].
+
+
+### LACE
+The [LACE](/documentation/acronyms.qmd) (Lunar Atmospheric Composition Experiment) on the Apollo 17 mission was part of the [ALSEP](/documentation/acronyms.qmd) (Apollo Lunar Surface Experiments Package) to investigate the composition and variation of the Moon's exosphere. Specifically designed for the mission, the instrument consisted of a small, remotely operated package containing a mass spectrometer coupled with a pressure sensor. With its opening oriented upward, it was able to measure the downward stream of particles at the lunar surface at the Apollo 17 landing location, the Taurus-Littrow Valley. On December 27, 1971, the instrument was activated to start the data acquisition process $\SI{50}{\hour}$ after local sunset to operate through one entire lunar night. Increasing exospheric number densities at the morning-terminator as well as higher outgassing rates led to elevated background gas levels and prompted the temporary suspension of operations during the lunar day, except a short check near $\SI{12}{\hour}$ local time. In total, the [LACE](/documentation/acronyms.qmd) measured the nighttime densities for nine lunations. [@Hoffman1975; @Killen2019]
+
+
+The instrument's mass spectrometer measured the mass per unit charge ratio up to a maximum of $\SI{110}{}$ in three mass ranges $\SI{1}{}$ to $\SI{4}{}$, $\SI{12}{}$ to $\SI{48}{}$, and $\SI{27.4}{}$ to $\SI{110}{}$ termed low, medium, and high. A triple-channel analyzer was able to capture data from all three ranges simultaneously as counts per $\SI{0.6}{\second}$ at every voltage step [@Hoffman1975]. Note that due to the measurement technique ambiguous data points of particles with double mass being doubly ionized were taken [@Killen2019].
+
+
+### LADEE
+The [LADEE](/documentation/acronyms.qmd) (Lunar Atmosphere and Dust Environment Explorer) mission was created in 2008 to address the goals identified in the decadal survey report "Scientific Context for Exploration of the Moon", which highlighted the lunar atmosphere as a priority for future lunar science missions. Among its main mission objectives was to determine the composition of the lunar exosphere, as well as its distribution and variability. On April 18^th^, 2014, [LADEE](/documentation/acronyms.qmd) was decommissioned through impact into the Moon after around $\SI{100}{\day}$ of nominal science operations. The gathered data was processed and submitted to the [NASA](/documentation/acronyms.qmd) [PDS](/documentation/acronyms.qmd) (Planetary Data System) for public access [@LADEE2014]. The [NMS](/documentation/acronyms.qmd) (Neutral Mass Spectrometer) aboard the spacecraft measured the mass distribution of neutral species over a mass-to-charge range between $\SI{2}{}$ to $\SI{150}{}$. With its retrograde, equatorial orbit around the Moon, [LADEE](/documentation/acronyms.qmd) conducted systematic surveys of helium, neon, and argon densities confined in a $\pm\SI{23}{\degree}$ near-equatorial band with altitudes ranging between $\SI{4}{}$ and $\SI{61}{\kilo\metre}$ [@Benna2015].
+
+::: {.callout-note title="PDS Atmospheres"}
+{{< fa link >}} [pds-atmospheres.nmsu.edu](https://pds-atmospheres.nmsu.edu/ data_and_services/atmospheres_data/LADEE/mainr.html) _(last visited: May 2023)_
+:::
+
+
+{{< include imgs/ladee_n0/_ladee_n0.qmd >}}
+
+
+
+## Densities by Exospheric Species
+
+This section lists referenced values of the lunar exosphere surface densities, generally provided as a number density in $\left[\si{\centi\metre\tothe{-3}}\right]$. Some references provide their values in terms of a column density in $\left[\si{\centi\metre\tothe{-2}}\right]$, which includes the respective measurements column height, i.e., the illuminated line of sight of brightness measurements like LAMP.
+
+See the additional information section in this section's appendix to find details about some sources, their assumptions, and their measurement methods.
+
+### Atomic Hydrogen -- $\ce{H}$
+{{< include tbls/_H.qmd >}}
+
+### Molecular Hydrogen -- $\ce{H2}$
+{{< include tbls/_H2.qmd >}}
+
+### Helium -- $\ce{He}$
+{{< include tbls/_He.qmd >}}
+
+### Hydroxyl -- $\ce{OH}$
+{{< include tbls/_OH.qmd >}}
+
+### Water -- $\ce{H2O}$
+{{< include tbls/_H2O.qmd >}}
+
+### Neon -- $\ce{Ne}$
+{{< include tbls/_Ne.qmd >}}
+
+### Argon -- $\ce{Ar}$
+
+
+
+# Additional Information {.appendix .unnumbered}
+
+* @Gladstone2009 assume for the LAMP derivations a  $\SI{30}{\minute}$, $3\sigma$ observation, and a path length of $\SI{300}{\kilo\metre}$.
+* @Hodges1973 assumed a solar wind proton influx of $3 \times 10^8 \si{\second\tothe{-1}\centi\metre\tothe{-3}}$ for their simulations.
+* CHACE measurements were made during a Moon's pass through Earth's magnetotail, reducing the solar wind influx of particles dramatically.
+* @Heiken1991 reported a joint upper limit of $0.5 \times 10^0$ for both $\ce{OH}$ and $\ce{H2O}$
+
+
+
+# ExESS API {.appendix .unnumbered}
+
+* Function: [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd). Projects the number densities from one altitude to another using the model by @Chamberlain1963.

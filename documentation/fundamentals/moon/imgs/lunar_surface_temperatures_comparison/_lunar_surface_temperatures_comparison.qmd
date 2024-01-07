@@ -189,9 +189,9 @@ end
 
 # {{< bi download >}}  Downloads
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.pdf label="mean.pdf" type="light" dname="mean" >}} {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.svg label="mean.svg" type="light" dname="mean" >}} {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.png label="mean.png" type="light" dname="mean" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.pdf label="mean.pdf" type="light" dname="mean" >}} {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.svg label="mean.svg" type="light" dname="mean" >}} {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_mean.png label="mean.png" type="light" dname="mean" >}}
 
-* {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.pdf label="rms.pdf" type="light" dname="rms" >}} {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.svg label="rms.svg" type="light" dname="rms" >}} {{< downloadthis moon/imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.png label="rms.png" type="light" dname="rms" >}}
+* {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.pdf label="rms.pdf" type="light" dname="rms" >}} {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.svg label="rms.svg" type="light" dname="rms" >}} {{< downloadthis imgs/lunar_surface_temperatures_comparison/temperature_comparison_rms.png label="rms.png" type="light" dname="rms" >}}
 
 :::
 :::

@@ -5,7 +5,7 @@ title: "Temperature"
 
 A more in-depth description of the implemented functions listed below can be found in the following sections:
 
-* [Lunar Surface Temperatures](/documentation/fundamentals/moon.qmd#sec-lunar-surface-temperatures)
+* [Lunar Surface Temperatures](/documentation/fundamentals/moon/surface_temperatures.qmd)
 
 ## Usage
 

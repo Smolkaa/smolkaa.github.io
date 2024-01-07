@@ -1,0 +1,97 @@
+# Animation of Diviner Temperature Snapshots
+
+::: {.panel-tabset}
+
+# {{< bi image >}} Animations
+
+::: {#fig-lunar_surface_temperatures_diviner_animations layout-ncol=2}
+
+![Selenographic coordinate system.](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/animations/anim_raw_diviner/anim_raw_diviner.gif){#fig-lunar_surface_temperatures_diviner_animations_raw width="600px"}
+
+![Subsolar coordinate system.](/documentation/fundamentals/moon/imgs/lunar_surface_temperatures/animations/anim_raw_diviner_fixed/anim_raw_diviner_fixed.gif){#fig-lunar_surface_temperatures_diviner_animations_raw_fixed width="600px"}
+
+Animations of Diviner lunar surface temperature measurements in a Moon-centered (selenographic) and a "fixed", solar-based (subsolar) coordinate system. Both animations contain the identical 18 individual snapshots. Note that (a) does not have a local time x-axis, but a selenographic one, which has been omitted for clarity.
+:::
+
+# {{< bi code >}} Julia
+```julia
+using .ExESS
+using CairoMakie, GeoMakie, ColorSchemes, Printf
+cmap = ColorSchemes.lipari
+
+#::. functions
+function _default_(N=240, M=120)
+    fig     = Figure(;resolution=(600,288))
+    ga      = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 1.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+    )
+    xlims!(ga, -180, 180); ylims!(ga, -90, 90)
+    theta   = range(-1,1,N) .* pi .* 0.995
+    phi     = range(-1,1,M) .* pi/2 .* 0.96
+    return fig, ga, theta, phi
+end
+
+
+function anim_raw_diviner(steps=18)
+    fig, ga, theta, phi = _default_(720, 360)
+    ga.xticklabelcolor = :white
+    ga.xlabelcolor = :white
+
+    N, M = length(theta), length(phi)
+    T = lunar_surface_temperatures_diviner(0, theta, phi)
+    T = reshape(T,N,M)
+    s = heatmap!(ga, -179..179, -89..89, T; colormap=cmap, colorrange=(50,400))
+    Colorbar(fig[:,2], s, label="Temperature [K]") 
+
+    for step in 1:steps
+        T = lunar_surface_temperatures_diviner((step-1)*2*pi/steps, theta, phi)
+        T = reshape(T,N,M)
+        s[3] = T
+        
+        save(joinpath(@__DIR__, "anim_raw_diviner", @sprintf "%02i.png" step), fig, px_per_unit=4)
+    end
+    return nothing
+end
+
+function anim_raw_diviner_fixed(steps=18)
+    fig, ga, theta, phi = _default_(720, 360)
+
+    N, M = length(theta), length(phi)
+    T = lunar_surface_temperatures_diviner(0, theta, phi)
+    T = reshape(T,N,M)
+    s = heatmap!(ga, -179..179, -89..89, T; colormap=cmap, colorrange=(50,400))
+    Colorbar(fig[:,2], s, label="Temperature [K]") 
+
+    for step in 1:steps
+        Nstep = floor(Int64, (step-1)*N/steps)
+        T = lunar_surface_temperatures_diviner(Nstep/N * 2pi, theta, phi)
+        T = reshape(T,N,M)
+        s[3] = T[vcat(Nstep+1:N, 1:Nstep), :]
+        
+        save(joinpath(@__DIR__, "anim_raw_diviner_fixed", @sprintf "%02i.png" step), fig, px_per_unit=4)
+    end
+    return nothing
+end
+```
+
+The code above creates individual `.png` files which are subsequently converted into animated `.gif`s.
+
+# {{< bi download >}} Downloads
+
+* {{< downloadthis animations/anim_raw_diviner/anim_raw_diviner.gif label="anim_raw_diviner.gif" type="light" dname="anim_raw_diviner" >}}
+* {{< downloadthis animations/anim_raw_diviner_fixed/anim_raw_diviner_fixed.gif label="anim_raw_diviner_fixed.gif" type="light" dname="anim_raw_diviner_fixed" >}}
+
+:::
+
+{{< bi arrow-90deg-up >}} [Back to Previous Page](/documentation/fundamentals/moon.qmd)

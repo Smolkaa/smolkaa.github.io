@@ -1,0 +1,65 @@
+::: {.panel-tabset}
+
+# {{< bi image >}} Figure
+
+::: {#fig-solar_wind_surface_distribution}
+![](/documentation/drivers/solar_wind/imgs/surface_distribution/surface_distribution.png){width=600px}
+
+Visualization of the solar wind distribution probability on a planetary surface in sub-solar coordinates. The peak of the PDF is obviously positioned at the sub-solar point and decreases with an increasing solar zenith angle. The night side can not be reached by any solar wind particles, thus, all probabilities with sub-solar longitudes $\left| \longitude_s \right| > \SI{90}{\degree}$ are zero.
+:::
+
+# {{< bi code >}} Julia
+
+```julia
+using .ExESS
+using CairoMakie, GeoMakie, ColorSchemes
+
+#::. main plotting function
+function plot_surface_distribution()
+
+    # define grid (leave gaps for better GeoMakie usage)
+    lng, lat = deg2rad.(-179:1:179), deg2rad.(-89:1:89)
+
+    # calculate solar wind distribution probability
+    p = [pos_pdf(SolarWindSurfaceDistribution(LUNAR_RADIUS), lng[i], lat[j]) 
+            for i in eachindex(lng), j in eachindex(lat)]
+
+    # create figure and axis
+    fig = Figure(;resolution=(600,300))
+    ax = GeoAxis(fig[1,1]; 
+        bottomspinevisible  = false,
+        dest                = "+proj=natearth", 
+        leftspinevisible    = false,
+        rightspinevisible   = false,
+        topspinevisible     = false,
+        xgridcolor          = (:black, 0.3),
+        xlabel              = "Local Time, LT [h]",
+        xtickformat         = Makie.automatic,
+        xticklabelpad       = 1.0,
+        xticks              = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
+        ylabel              = "Sub-Solar Latitude, Φₛ [°]",
+        ytickformat         = Makie.automatic,
+    )
+    
+    # plot probability heatmap
+    hm = heatmap!(ax, rad2deg.(lng), rad2deg.(lat), p .* 100; #
+        colormap=ColorSchemes.lipari, 
+        colorrange=(0,25))
+
+    # add colorbar
+    Colorbar(fig[:,2], hm; 
+        ticklabelpad=.5, 
+        label="Probability [%]")
+
+    # save figure in different formats
+    save(joinpath(@__DIR__,"surface_distribution.pdf"), fig)
+    save(joinpath(@__DIR__,"surface_distribution.png"), fig, px_per_unit=4)
+end
+```
+
+
+# {{< bi download >}}  Downloads
+
+* {{< downloadthis solar_wind/imgs/surface_distribution/surface_distribution.png label="surface_distribution.png" type="light" dname="surface_distribution" >}} {{< downloadthis solar_wind/imgs/surface_distribution/surface_distribution.pdf label="surface_distribution.pdf" type="light" dname="surface_distribution" >}} 
+
+:::

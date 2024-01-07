@@ -81,12 +81,13 @@ set_theme!(default)
 function MyGeoAxis(fig; kwargs...) 
     return GeoAxis(fig; 
         bottomspinevisible  = false,
-        dest                = "+proj=natearth2", 
+        dest                = "+proj=natearth", 
         leftspinevisible    = false,
         rightspinevisible   = false,
         topspinevisible     = false,
         xgridcolor          = (:black, 0.3),
         xtickformat         = Makie.automatic,
+        ytickformat         = Makie.automatic,
         yticks              = [-60,-30,0,30,60,90],
         kwargs...
     )
@@ -94,24 +95,10 @@ end
 
 function MyLTGeoAxis(fig; kwargs...)
     return MyGeoAxis(fig;
-        xlabel          = "Local Time [h]",
+        xlabel          = "Local Time, LT [h]",
         xticklabelpad   = 0.1,
         xticks          = ([-180,-90,0,90,180], ["0","6","12","18","24"]),
-        ylabel          = "Latitude [°]",
+		ylabel          = "Sub-Solar Latitude, Φₛ [°]",
         kwargs...
     )
-end
-
-
-#::. GeoAxis Night-Shade
-function night_shade(ax; N=10, color=(:gray, 0.3), kwargs...)
-    for i in 1:N, j in [-1, 1]
-        points = Point2f[
-            (j*90,-30 + (i-1)*60/N), 
-            (j*180,-30 + (i-1)*60/N), 
-            (j*180,-30 + i*60/N), 
-            (j*90,-30 + i*60/N)
-        ]
-        poly!(ax, points; color=color, kwargs...)
-    end
 end

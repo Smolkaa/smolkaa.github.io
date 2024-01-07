@@ -1,3 +1,0 @@
-{{< include moon/imgs/lunar_orbit_orientation/_lunar_orbit_orientation.qmd >}}
-
-@fig-lunar_orbit_orientation shows the Moon's orientation in its orbit around its host planet, Earth. While the Sun has been removed from the sketch, the ecliptic plane, i.e., the plane in which the Earth is orbiting the Sun, is still shown to illustrate the Moon's tilt towards it. Its orbit plane is inclined by \SI{5.14}{\degree} with respect to the ecliptic plane; however, the Moon's rotational axis itself is tilted in the opposite direction, resulting in an overall obliquity to the ecliptic of \SI{1.54}{\degree}.

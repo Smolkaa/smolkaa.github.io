@@ -7,24 +7,8 @@ tbl-colwidths: [45,23,32]
 {{< include /resources/latex/_symbols.qmd >}}
 
 ---
+ 
 
-Some intro text
-
-# Orbit Orientation
-{{< include /documentation/fundamentals/moon/_lunar_orbit_orientation.qmd >}}
-
-
-# Surface Temperatures {#sec-lunar-surface-temperatures}
-{{< include /documentation/fundamentals/moon/_lunar_surface_temperatures.qmd >}}
-
-
-# Electro-Magnetic Environment
-{{< include /documentation/fundamentals/moon/_em_environment.qmd >}}
-
-
-# The Lunar Surface-Bounded Exosphere
-{{< include /documentation/fundamentals/moon/_lunar_exosphere.qmd >}}
-
-
+Some intro text (greek and roman names and stuff)
 
 [ ]{.aside}
