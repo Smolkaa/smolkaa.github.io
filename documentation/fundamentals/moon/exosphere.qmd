@@ -36,6 +36,7 @@ with the mass $\mass$ of the particle, the mass $\hat\mass$ of the planetary bod
     \partitionFunction_{esc} &= \frac{1}{\sqrt{\pi}} \left( \Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy\right) - \frac{\sqrt{\tilde\relativeEnergy^2 - \relativeEnergy^2}}{\tilde\relativeEnergy} \cdot \exp\left(-\frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right) \right. \nonumber \\
     &\left. \qquad \cdot \left(\Gamma\left(\frac{3}{2}\right) - \gamma\left(\frac{3}{2}, \relativeEnergy - \frac{\relativeEnergy^2}{\relativeEnergy + \tilde\relativeEnergy}\right)\right) \right) \\[4mm]
     \Rightarrow \partitionFunction &= \partitionFunction_{bal} + \partitionFunction_{sat} + \partitionFunction_{esc}
+    \label{eq:chamberlain_partition_function}
 \end{align}
 with the gamma and lower incomplete gamma function, $\Gamma$ and $\gamma$, respectively [@Cook2013].
 
@@ -98,4 +99,4 @@ See the additional information section in this section's appendix to find detail
 
 # ExESS API {.appendix .unnumbered}
 
-* Function: [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd). Projects the number densities from one altitude to another using the model by @Chamberlain1963.
+* Function: [`projection_CHAMBERLAIN1963`](/api/exospheres/utility.qmd). Projects the number densities from one altitude to another using the model by @Chamberlain1963. See Eqs. \eqref{eq:chamberlain_projection} and \eqref{eq:chamberlain_partition_function} for details.

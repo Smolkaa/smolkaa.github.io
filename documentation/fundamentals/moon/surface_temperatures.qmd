@@ -64,5 +64,5 @@ for $N_j$ applicable positions $j$ is shown on the right side of @fig-lunar_surf
 
 # ExESS API {.appendix .unnumbered}
 
-* Function: [`lunar_surface_temperatures_BUTLER1997`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Butler1997.
-* Function: [`lunar_surface_temperatures_HURLEY2015`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Hurley2015.
+* Function: [`lunar_surface_temperatures_BUTLER1997`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Butler1997. See Eq. \eqref{eq:lunar_surface_temperatures_BUTLER}.
+* Function: [`lunar_surface_temperatures_HURLEY2015`](/api/surfaces/temperature.qmd). Calculates the lunar surface temperatures using the analytical model by @Hurley2015. See Eq. \eqref{eq:lunar_surface_temperatures_HURLEY}.
