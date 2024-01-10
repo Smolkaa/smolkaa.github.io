@@ -1,8 +1,8 @@
 +----------------------------------+--------------------------------------------------+---------------+
 | Description                      | Value $\left[\si{\centi\metre\tothe{-3}}\right]$ | Reference(s)  |
 +==================================+==================================================+===============+
-| Model predictions, dayside </br> | $4.0 \text{ to } 7.0 \times 10^3$ </br>          | @Hodges1973   |
-| Model predictions, nightside     | $1.0 \text{ to } 2.0 \times 10^5$                |               |
+| Model predictions, dayside </br> | $4.0 - 7.0 \times 10^3$ </br>                    | @Hodges1973   |
+| Model predictions, nightside     | $1.0 - 2.0 \times 10^5$                          |               |
 +----------------------------------+--------------------------------------------------+---------------+
 | solar zenith angle: </br>        | </br>                                            | </br>         |
 | &emsp; $+168\degree$ </br>       | $9.4 \times 10^4$ </br>                          | </br>         |

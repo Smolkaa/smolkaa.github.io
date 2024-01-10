@@ -15,7 +15,7 @@ tbl-colwidths: [45,23,32]
 Due to the scarcity of ground-based data, satellite measurements at varying altitudes are often used in the investigation of planetary exospheres. In order to compare measurements at different altitudes, the data must be projected into a common altitude, which usually is the exobase altitude, which is the surface of the planetary body given surface-bounded exospheres.
 
 
-@Chamberlain1963 derived a model for the exospheric particle number density $\numberDensity\left(\radius\right)$ as a function of the radial distance from the center of the planetary body, based on the assumption of a hydrostatic equilibrium and a Maxwellian velocity distribution, see section [Velocity Distributions](/documentation/drivers/thermal_sorption.qmd#sec-velocity-distributions): 
+@Chamberlain1963 derived a model for the exospheric particle number density $\numberDensity\left(\radius\right)$ as a function of the radial distance from the center of the planetary body, based on the assumption of hydrostatic equilibrium and a Maxwellian velocity distribution, see section [Velocity Distributions](/documentation/drivers/thermal_sorption.qmd#sec-velocity-distributions): 
 \begin{equation}
     % \numberDensity(\radius) = \numberDensity(\radius+\height) \cdot \partitionFunction \cdot \exp \left(\relativeEnergy\left(\radius\right) - \relativeEnergy\left(\radius+\height\right) \right)
     \numberDensity = \tilde\numberDensity \cdot \partitionFunction \cdot \exp \left(\relativeEnergy - \tilde\relativeEnergy\right)

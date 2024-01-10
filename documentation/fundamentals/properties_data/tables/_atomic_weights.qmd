@@ -5,17 +5,17 @@
 +----+-----------------+--------+------------+-----+--------------+
 | \# | Element         | Symbol | Value      |     |              |
 +===:+=================+========+===========:+====:+=============:+
-| 1  | Hydrogen        | H      | 1.007 840  | to  | 1.008 110    |
+| 1  | Hydrogen        | H      | 1.007 840  | --  | 1.008 110    |
 +----+-----------------+--------+------------+-----+--------------+
 | 2  | Helium          | He     | 4.002 602  | +/- | 0.000 002    |
 +----+-----------------+--------+------------+-----+--------------+
-| 6  | Carbon          | C      | 12.009 600 | to  | 12.011 600   |
+| 6  | Carbon          | C      | 12.009 600 | --  | 12.011 600   |
 +----+-----------------+--------+------------+-----+--------------+
-| 8  | Oxygen          | O      | 15.999 030 | to  | 15.999 770   |
+| 8  | Oxygen          | O      | 15.999 030 | --  | 15.999 770   |
 +----+-----------------+--------+------------+-----+--------------+
 | 10 | Neon            | Ne     | 20.179 700 | +/- | 0.000 600    |
 +----+-----------------+--------+------------+-----+--------------+
-| 18 | Argon           | Ar     | 39.792 000 | to  | 39.963 000   |
+| 18 | Argon           | Ar     | 39.792 000 | --  | 39.963 000   |
 +----+-----------------+--------+------------+-----+--------------+
 
 : Subset of standard atomic weights by @Prohaska2022 relevant to this work. The values are provided either as an interval (indicated with _to_) or as a single value with some measurement uncertainty and natural variation (indicated with _+/-_). {#tbl-atomic_weights tbl-colwidths=[6,32,25,15,7,15] .borderless .hover}
@@ -30,12 +30,12 @@
         \toprule
         \textbf{\#} & \textbf{Element} & \textbf{Symbol} & \multicolumn{3}{c}{Standard Atomic Weight} \\
         \midrule
-         1 & Hydrogen & \ce{H}    & \num{1.007840}   & to    & \num{1.008110} \\
+         1 & Hydrogen & \ce{H}    & \num{1.007840}   & ---   & \num{1.008110} \\
          2 & Helium   & \ce{He}   & \num{4.002602}   & $\pm$ & \num{0.000002} \\
-         6 & Carbon   & \ce{C}    & \num{12.009600}  & to    & \num{12.011600} \\
-         8 & Oxygen   & \ce{O}    & \num{15.999030}  & to    & \num{15.999770} \\
+         6 & Carbon   & \ce{C}    & \num{12.009600}  & ---   & \num{12.011600} \\
+         8 & Oxygen   & \ce{O}    & \num{15.999030}  & ---   & \num{15.999770} \\
         10 & Neon     & \ce{Ne}   & \num{20.179700}  & $\pm$ & \num{0.000600} \\
-        18 & Argon    & \ce{Ar}   & \num{39.792000}  & to    & \num{39.963000} \\
+        18 & Argon    & \ce{Ar}   & \num{39.792000}  & ---   & \num{39.963000} \\
         \bottomrule
     \end{tabularx}
     \label{tab:atomic_weights}
