@@ -18,9 +18,9 @@ const FONTSIZE_BIG    = 18
 
 #:: define (default) theme
 default = Theme(
-	font        = JM_REG,
-	fontsize    = FONTSIZE_MAIN,
-	resolution  = (600,400),
+	font     = JM_REG,
+	fontsize = FONTSIZE_MAIN,
+	size     = (600,400),
 
 	Axis = (
 		backgroundcolor = :white,

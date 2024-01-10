@@ -14,6 +14,9 @@ The following structure shows all currently implemented coordinates in `ExESS`:
 ```julia
 ExESS
 └─ AbstractDistribution
+    ├─ AbstractPositionDistribution{S} where {S<:AbstractFloat}
+    │   ├─ EqualSurfaceDistribution{S} where {S<:AbstractFloat}
+    │   └─ SolarWindSurfaceDistribution{S} where {S<:AbstractFloat}
     └─ AbstractVelocityDistribution{S} where {S<:AbstractFloat}
         ├─ MaxwellBoltzmannVelocityDistribution{S} where {S<:AbstractFloat}
         └─ MaxwellBoltzmannFluxVelocityDistribution{S} where {S<:AbstractFloat}
@@ -22,6 +25,8 @@ ExESS
 Note that the velocity distributions are of subtype `AbstractFloat`.
 
 ## Usage 
+
+### Position Distributions
 
 ### Velocity Distributions
 
@@ -52,6 +57,30 @@ vd_mbf = MaxwellBoltzmannFluxVelocityDistribution(T, m)
 {{< include examples/_distribution_cdf.qmd >}}
 
 ## API
+
+::: {.callout-note appearance="simple" icon=false}
+# ``EqualSurfaceDistribution`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.EqualSurfaceDistribution
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``SolarWindSurfaceDistribution`` -- Struct
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.SolarWindSurfaceDistribution
+```
+:::
 
 ::: {.callout-note appearance="simple" icon=false}
 # ``MaxwellBoltzmannVelocityDistribution`` -- Struct
@@ -148,6 +177,42 @@ include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
 using .ExESS
 end
 @doc ExESS.elevation_pdf
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``pos`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.pos
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``pos_cdf`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.pos_cdf
+```
+:::
+
+::: {.callout-note appearance="simple" icon=false}
+# ``pos_pdf`` -- Function
+```{julia}
+#| echo: false
+if !isdefined(Main, :ExESS)
+include(joinpath(@__DIR__, "..", "..", "..", "exess.jl", "src", "ExESS.jl"))
+using .ExESS
+end
+@doc ExESS.pos_pdf
 ```
 :::
 
