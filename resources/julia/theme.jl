@@ -20,7 +20,8 @@ const FONTSIZE_BIG    = 18
 default = Theme(
 	font     = JM_REG,
 	fontsize = FONTSIZE_MAIN,
-	size     = (600,400),
+	resolution = (600,400),
+	# size     = (600,400), # new with CairoMakie/GeoMakie update - replaces "resolution"
 
 	Axis = (
 		backgroundcolor = :white,

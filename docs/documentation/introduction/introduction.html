@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.544">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2023-12-31">
+<meta name="dcterms.date" content="2024-01-17">
 
 <title>ExESS - 1. Introduction</title>
 <style>
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -97,16 +98,23 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/kbd/kbd.js"></script>
-<link href="../../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/bootstrap-icons-1.9.1/all.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -115,6 +123,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -142,6 +151,33 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../_styles.css">
 </head>
 
@@ -149,9 +185,9 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../resources/logo/exess_logo_dark.svg" alt="" class="navbar-logo">
     </a>
@@ -166,48 +202,48 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../documentation/documentation.html" rel="" target=""><i class="bi bi-book" role="img">
+    <a class="nav-link" href="../../documentation/documentation.html"> <i class="bi bi-book" role="img">
 </i> 
- <span class="menu-text">Documentation</span></a>
+<span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../api/api.html" rel="" target=""><i class="bi bi-journal-code" role="img">
+    <a class="nav-link" href="../../api/api.html"> <i class="bi bi-journal-code" role="img">
 </i> 
- <span class="menu-text">Code</span></a>
+<span class="menu-text">Code</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Smolkaa" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Smolkaa"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/introduction/introduction.html">1. Introduction</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../documentation/introduction/introduction.html">1. Introduction</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../../index.html" class="sidebar-logo-link">
       <img src="../../resources/logo/exess_logo.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -502,7 +538,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -520,14 +556,14 @@ div.csl-indent {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Alexander Smolka <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author">Alexander Smolka <a href="mailto:a.smolka@tum.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-4848-3473" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
             Technical University of Munich <br>Lunar and Planetary Exploration
           </p>
       </div>
-    </div>
+  </div>
 
 <div class="quarto-title-meta">
 
@@ -535,7 +571,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 31, 2023</p>
+      <p class="date">January 17, 2024</p>
     </div>
   </div>
   
@@ -543,38 +579,52 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <hr>
 <p>Space exploration has always captivated humanity’s imagination, driving scientific inquiry and technological advancement to unprecedented heights. While the Moon’s surface has been a focal point of human exploration, its tenuous exosphere, a fragile envelope of particles and gases, has long remained an understudied frontier. Recent decades have witnessed remarkable strides in our understanding of extraterrestrial exospheres, with a particular focus on the Moon’s exosphere and its intricate interactions with the lunar surface.</p>
-<div class="column-page-right">
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="page-columns page-full">
+<div class="tabset-margin-container"></div><div class="panel-tabset page-columns page-full">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true"><i class="bi-image " style="" role="img" aria-hidden="true"></i> Figure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="fig-LROC_poles" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-LROC_north_pole" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="imgs/LROC_poles/LROC_north_pole.jpg" class="img-fluid figure-img" data-ref-parent="fig-LROC_poles"></p>
-<figcaption class="figure-caption">(a) Lunar north pole.</figcaption>
+<div class="tab-content page-columns page-full">
+<div id="tabset-1-1" class="tab-pane active page-columns page-full" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="fig-LROC_poles" class="quarto-layout-panel page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-LROC_poles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<div class="quarto-layout-row column-page-right">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-LROC_poles" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-LROC_north_pole" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-LROC_north_pole-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="imgs/LROC_poles/LROC_north_pole.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="fig-LROC_poles"><img src="imgs/LROC_poles/LROC_north_pole.jpg" class="img-fluid figure-img" data-ref-parent="fig-LROC_poles"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-LROC_north_pole-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Lunar north pole.
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-LROC_south_pole" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="imgs/LROC_poles/LROC_south_pole.jpg" class="img-fluid figure-img" data-ref-parent="fig-LROC_poles"></p>
-<figcaption class="figure-caption">(b) Lunar south pole.</figcaption>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-LROC_poles" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-LROC_south_pole" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-LROC_south_pole-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="imgs/LROC_poles/LROC_south_pole.jpg" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="fig-LROC_poles"><img src="imgs/LROC_poles/LROC_south_pole.jpg" class="img-fluid figure-img" data-ref-parent="fig-LROC_poles"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-LROC_south_pole-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Lunar south pole.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: <a href="../../documentation/acronyms.html">LROC</a> Wide Angle Camera (<a href="../../documentation/acronyms.html">WAC</a>) mosaic of the lunar north and south pole region. With a resolution of 400m/pixel, the total width of each image extends to ~600km, ranging from 80° to 90° latitude, north and south, respectively. The names of major craters are indicated at their respective location. <em>Image Credit: NASA/GSFC/Arizona State University: <a href="http://lroc.sese.asu.edu/posts/242">North Pole</a>, <a href="http://lroc.sese.asu.edu/posts/237%3E">South Pole</a></em>.</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-LROC_poles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <a href="../../documentation/acronyms.html">LROC</a> Wide Angle Camera (<a href="../../documentation/acronyms.html">WAC</a>) mosaic of the lunar north and south pole region. With a resolution of 400m/pixel, the total width of each image extends to ~600km, ranging from 80° to 90° latitude, north and south, respectively. The names of major craters are indicated at their respective location. <em>Image Credit: NASA/GSFC/Arizona State University: <a href="http://lroc.sese.asu.edu/posts/242">North Pole</a>, <a href="http://lroc.sese.asu.edu/posts/237%3E">South Pole</a></em>.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -599,7 +649,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>Advances in space exploration have unveiled the Moon’s exosphere as a realm of astonishing complexity. Notable missions such as the Lunar Reconnaissance Orbiter (<a href="../../documentation/acronyms.html">LRO</a>) have played a pivotal role in unraveling the mysteries of the lunar exosphere. The orbiter mission has not only provided the most highly resolved images of the Moon’s surface, see <a href="#fig-LROC_poles">Fig.&nbsp;1</a> showing high-resolution mosaic images of the lunar’s north and south poles, but the Lyman Alpha Mapping Project (<a href="../../documentation/acronyms.html">LAMP</a>) <span class="citation" data-cites="Gladstone2009">(<a href="#ref-Gladstone2009" role="doc-biblioref">Gladstone et al., 2009</a>)</span> aboard <a href="../../documentation/acronyms.html">LRO</a> has studied the exosphere by analyzing the scattering of ultraviolet sunlight. Additionally, the Lunar Atmosphere and Dust Environment Explorer (<a href="../../documentation/acronyms.html">LADEE</a>) mission’s Neutral Mass Spectrometer (<a href="../../documentation/acronyms.html">NMS</a>) <span class="citation" data-cites="Benna2015">(<a href="#ref-Benna2015" role="doc-biblioref">Benna et al., 2015</a>)</span> provided valuable insights into the composition of the exosphere and its temporal variations. These missions collectively painted a new picture of the Moon - a dynamic world with a delicate exosphere shaped by intricate surface interactions.</p>
+<p>Advances in space exploration have unveiled the Moon’s exosphere as a realm of astonishing complexity. Notable missions such as the Lunar Reconnaissance Orbiter (<a href="../../documentation/acronyms.html">LRO</a>) have played a pivotal role in unraveling the mysteries of the lunar exosphere. The orbiter mission has not only provided the most highly resolved images of the Moon’s surface, see <a href="#fig-LROC_poles" class="quarto-xref">Fig.&nbsp;1</a> showing high-resolution mosaic images of the lunar’s north and south poles, but the Lyman Alpha Mapping Project (<a href="../../documentation/acronyms.html">LAMP</a>) <span class="citation" data-cites="Gladstone2009">(<a href="#ref-Gladstone2009" role="doc-biblioref">Gladstone et al., 2009</a>)</span> aboard <a href="../../documentation/acronyms.html">LRO</a> has studied the exosphere by analyzing the scattering of ultraviolet sunlight. Additionally, the Lunar Atmosphere and Dust Environment Explorer (<a href="../../documentation/acronyms.html">LADEE</a>) mission’s Neutral Mass Spectrometer (<a href="../../documentation/acronyms.html">NMS</a>) <span class="citation" data-cites="Benna2015">(<a href="#ref-Benna2015" role="doc-biblioref">Benna et al., 2015</a>)</span> provided valuable insights into the composition of the exosphere and its temporal variations. These missions collectively painted a new picture of the Moon - a dynamic world with a delicate exosphere shaped by intricate surface interactions.</p>
 <p>However, the first endeavors to investigate the lunar exosphere were already made decades earlier, during the Apollo program, during which the Lunar Atmosphere Composition Experiment (<a href="../../documentation/acronyms.html">LACE</a>) instrument was deployed on the Moon’s surface by Apollo 17 as part of the Apollo Lunar Surface Experiment Package (<a href="../../documentation/acronyms.html">ALSEP</a>) <span class="citation" data-cites="Chang1972">(<a href="#ref-Chang1972" role="doc-biblioref">Chang, 1972</a>)</span>. <a href="../../documentation/acronyms.html">LACE</a> marked the first direct detection of exospheric species, capturing trace amounts of noble gases and demonstrating the existence of a lunar atmosphere. This historic endeavor laid the foundation for our present understanding, highlighting the complexity of the lunar exosphere and the need for continued exploration.</p>
 <p>In the broader scope of planetary science, beyond the lunar realm, lies a captivating tapestry of exospheric phenomena across our solar system. Among these, Mercury, the closest planet to the Sun, has beckoned explorers and researchers alike. Pioneering missions such as <a href="../../documentation/acronyms.html">NASA’s MESSENGER</a> (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) have revealed the intricate details of Mercury’s exosphere. <a href="../../documentation/acronyms.html">MESSENGER’s</a> observations have unraveled the complex interplay between the planet’s surface and its tenuous envelope of gases, shedding light on the origins of exospheric constituents and their dynamic behavior in response to solar wind interactions. Through these missions, the study of exospheres extends its reach beyond Earth’s celestial companion, contributing valuable insights to the broader understanding of planetary atmospheres and their interactions with the space environment.</p>
 <section id="background-and-motivation" class="level1 page-columns page-full">
@@ -608,7 +658,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="sec-sota">State of the Art</h2>
 <p>One of the first modelers of the lunar exosphere was <span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span>, who analyzed light noble gases as well as volatile molecular hydrogen and compared their results with data from the Apollo missions. Their Monte Carlo approach of tracking individual particles through the tenuous atmosphere until eventually lost to one of the implemented loss mechanisms was pioneering work that still inspires new models today. With <span class="citation" data-cites="Chamberlain1963">Chamberlain (<a href="#ref-Chamberlain1963" role="doc-biblioref">1963</a>)</span>, <span class="citation" data-cites="Armand1977">Armand (<a href="#ref-Armand1977" role="doc-biblioref">1977</a>)</span>, and <span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#ref-Huebner1992" role="doc-biblioref">1992</a>)</span> setting the theoretical foundation of exospheric density projections, thermal velocity distributions, and lunar exospheric photoreaction rates, respectively, models became increasingly adapted to predicting number densities in surface-bounded exospheres.</p>
 <p>While previously, only single-species simulations with mostly noble gases were performed, <span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#ref-Crider2002" role="doc-biblioref">2002</a>)</span> were among the first to investigate the highly reactive hydrogen exosphere, which includes reaction pathways to allow conversions from atomic hydrogen to more complex molecules like water. Their research led to a heightened interest in the role of the planetary surface in exosphere densities and compositions. <span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="Jones2018">B. M. Jones et al. (<a href="#ref-Jones2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="Jones2021">B. Jones et al. (<a href="#ref-Jones2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="Tucker2018">Tucker et al. (<a href="#ref-Tucker2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#ref-Grumpe2019" role="doc-biblioref">2019</a>)</span> are among the leading researchers to investigate the proton/hydrogen interaction with lunar regolith, trying to untangle the highly complex physical and chemical reaction environment of the lunar surface.</p>
-<p>A more complete list of relevant publications about the state-of-the-art modeling approaches regarding surface-bounded exosphere, their respective surface, various involved processes, and auxiliary research can be found in <a href="#tbl-sota">Table&nbsp;1</a>.</p>
+<p>A more complete list of relevant publications about the state-of-the-art modeling approaches regarding surface-bounded exosphere, their respective surface, various involved processes, and auxiliary research can be found in <a href="#tbl-sota" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="column-page-right">
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -616,7 +666,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
+State-of-the-Art - <a href="#tbl-sota" class="quarto-xref">Table&nbsp;1</a>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -626,9 +676,13 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><i class="bi-table " style="" role="img" aria-hidden="true"></i> Table</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><i class="bi-code " style="" role="img" aria-hidden="true"></i> LaTeX</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div id="tbl-sota" class="anchored">
+<div id="tbl-sota" class="hover quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-sota-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: List of relevant publications about modeling of surface-bounded exospheres, their respective surfaces, or auxiliary research.
+</figcaption>
+<div aria-describedby="tbl-sota-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table-hover table">
-<caption>Table&nbsp;1: List of relevant publications about modeling of surface-bounded exospheres, their respective surfaces, or auxiliary research.</caption>
 <colgroup>
 <col style="width: 8%">
 <col style="width: 35%">
@@ -641,8 +695,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Chamberlain1963">Chamberlain (<a href="#ref-Chamberlain1963" role="doc-biblioref">1963</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Chamberlain1963">Chamberlain (<a href="#ref-Chamberlain1963" role="doc-biblioref">1963</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“Planetary coronae and atmospheric evaporation”</strong></p>
 <ul>
 <li>analytical model of density distributions in planetary atmospheres/exospheres</li>
@@ -651,8 +704,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Vogel1966">Vogel (<a href="#ref-Vogel1966" role="doc-biblioref">1966</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Vogel1966">Vogel (<a href="#ref-Vogel1966" role="doc-biblioref">1966</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“Molecular fluxes in the lunar atmosphere”</strong></p>
 <ul>
 <li>theoretical model of molecular fluxes in the lunar exosphere</li>
@@ -660,8 +712,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Composition and dynamics of lunar atmosphere”</strong></p>
 <ul>
 <li>first <span class="math inline">\(\ce{H2}, \ce{He}, \ce{Ne}\)</span>, and <span class="math inline">\(\ce{Ar}\)</span> model of the lunar exosphere</li>
@@ -669,16 +720,14 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Armand1977">Armand (<a href="#ref-Armand1977" role="doc-biblioref">1977</a>)</span></p>
-<p><kbd>THEORY</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Armand1977">Armand (<a href="#ref-Armand1977" role="doc-biblioref">1977</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em></td>
 <td><p><strong>“Classical theory of desorption rate velocity distribution of desorbed atoms; Possibility of a compensation effect”</strong></p>
 <ul>
 <li>proposed the theory of desorption <a href="../../documentation/drivers/thermal_sorption.html">velocity distributions</a> (Maxwell-Boltzmann Flux Distribution, <a href="../../documentation/acronyms.html">MBFD</a>)</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Smith1978">Smith et al. (<a href="#ref-Smith1978" role="doc-biblioref">1978</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Smith1978">Smith et al. (<a href="#ref-Smith1978" role="doc-biblioref">1978</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Monte Carlo modeling of exospheric bodies: Mercury”</strong></p>
 <ul>
 <li>Monte Carlo model of Mercury’s exosphere</li>
@@ -686,16 +735,14 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#ref-Huebner1992" role="doc-biblioref">1992</a>)</span></p>
-<p><kbd>THEORY</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Huebner1992">Huebner et al. (<a href="#ref-Huebner1992" role="doc-biblioref">1992</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em></td>
 <td><p><strong>“Solar photo rates for planetary atmospheres and atmospheric pollutants”</strong></p>
 <ul>
 <li>provides a comprehensive overview of photoreaction rates widely used for modeling the lunar exosphere</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“The migration of volatiles on the surfaces of Mercury and the Moon”</strong></p>
 <ul>
 <li>Monte Carlo exosphere model of Mercury and the Moon, specifically <span class="math inline">\(\ce{H2O}\)</span> and <span class="math inline">\(\ce{CO2}\)</span></li>
@@ -704,8 +751,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#ref-Crider2002" role="doc-biblioref">2002</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Crider2002">Crider &amp; Vondrak (<a href="#ref-Crider2002" role="doc-biblioref">2002</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Hydrogen migration to the lunar poles by solar wind bombardment of the Moon”</strong></p>
 <ul>
 <li>Monte Carlo simulation of exospheric hydrogen migration on the Moon</li>
@@ -714,8 +760,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Chaufray2009">Chaufray et al. (<a href="#ref-Chaufray2009" role="doc-biblioref">2009</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Chaufray2009">Chaufray et al. (<a href="#ref-Chaufray2009" role="doc-biblioref">2009</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Lunar Argon cycle modeling”</strong></p>
 <ul>
 <li>Monte Carlo model of the lunar argon exosphere</li>
@@ -723,8 +768,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Poppe2013">Poppe et al. (<a href="#ref-Poppe2013" role="doc-biblioref">2013</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Poppe2013">Poppe et al. (<a href="#ref-Poppe2013" role="doc-biblioref">2013</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“The self-sputtered contribution to the lunar exosphere”</strong></p>
 <ul>
 <li>first self-sputtering model of the lunar exosphere</li>
@@ -732,8 +776,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Grava2014">Grava et al. (<a href="#ref-Grava2014" role="doc-biblioref">2014</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Grava2014">Grava et al. (<a href="#ref-Grava2014" role="doc-biblioref">2014</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Lunar exospheric argon modeling”</strong></p>
 <ul>
 <li>Monte Carlo model of the lunar argon exosphere, based on <span class="citation" data-cites="Chaufray2009">Chaufray et al. (<a href="#ref-Chaufray2009" role="doc-biblioref">2009</a>)</span></li>
@@ -742,8 +785,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schorghofer2014">Schorghofer (<a href="#ref-Schorghofer2014" role="doc-biblioref">2014</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schorghofer2014">Schorghofer (<a href="#ref-Schorghofer2014" role="doc-biblioref">2014</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Migration calculations for water in the exosphere of the Moon: dusk-dawn asymmetry, heterogeneous trapping, and<strong> </strong>D/H fractionation”</strong></p>
 <ul>
 <li>Monte Carlo model of exospheric water migration of the Moon, based on <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
@@ -751,8 +793,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Solar wind implantation into lunar regolith: hydrogen retention in a surface with defects”</strong></p>
 <ul>
 <li>Monte Carlo model of solar wind implantation into the lunar surface regolith</li>
@@ -760,8 +801,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#ref-Hurley2015" role="doc-biblioref">2015</a>)</span></p>
-<p><kbd>THEORY</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2015">Hurley et al. (<a href="#ref-Hurley2015" role="doc-biblioref">2015</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em></td>
 <td><p><strong>“An analytic function of lunar surface temperature for exospheric modeling”</strong></p>
 <ul>
 <li>presents an analytic approximation of the lunar surface temperatures based on Diviner measurements</li>
@@ -770,8 +810,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Transport of water in a transient impact-generated lunar atmosphere”</strong></p>
 <ul>
 <li>hybrid DSMC approach to investigate water transport in impact-generated lunar atmosphere, combining a continuum description of the dense plume with a Monte Carlo model of the tenuous water vapor exosphere</li>
@@ -779,8 +818,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Hurley2016">Hurley et al. (<a href="#ref-Hurley2016" role="doc-biblioref">2016</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2016">Hurley et al. (<a href="#ref-Hurley2016" role="doc-biblioref">2016</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Understanding temporal and spatial variability of the lunar helium atmosphere using simultaneous observations from LRO,<strong> </strong>LADEE, and ARTEMIS”</strong></p>
 <ul>
 <li>Monte Carlo model of the lunar surface-bounded helium exosphere</li>
@@ -789,8 +827,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Moores2016">Moores (<a href="#ref-Moores2016" role="doc-biblioref">2016</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Moores2016">Moores (<a href="#ref-Moores2016" role="doc-biblioref">2016</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Lunar water migration in the interval between large impacts: heterogeneous delivery to permanently shadowed regions,<strong> </strong>fractionation, and diffusive barriers”</strong></p>
 <ul>
 <li>Monte Carlo simulation to examine water delivery to lunar PSRs</li>
@@ -800,8 +837,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“The statistical mechanics of solar wind hydroxylation at the Moon, within lunar magnetic anomalies, and at Phobos”</strong></p>
 <ul>
 <li>extension of the previous model <span class="citation" data-cites="Farrell2015">(<a href="#ref-Farrell2015" role="doc-biblioref">Farrell et al., 2015</a>)</span>, presents a formalism to statistically describe hydrogen implantation into the lunar surface and subsurface diffusion of <span class="math inline">\(\ce{H}\)</span> using a Monte Carlo simulation</li>
@@ -809,8 +845,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Hurley2017">Hurley et al. (<a href="#ref-Hurley2017" role="doc-biblioref">2017</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Hurley2017">Hurley et al. (<a href="#ref-Hurley2017" role="doc-biblioref">2017</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Contributions of solar wind and micrometeoroids to molecular hydrogen in the lunar exosphere”</strong></p>
 <ul>
 <li>Monte Carlo model (extension of previous model <span class="citation" data-cites="Hurley2016">(<a href="#ref-Hurley2016" role="doc-biblioref">Hurley et al., 2016</a>)</span>) to investigate spatial distribution of <span class="math inline">\(\ce{H2}\)</span> in the lunar exosphere</li>
@@ -819,8 +854,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Kegerreis2017">J. A. Kegerreis et al. (<a href="#ref-Kegerreis2017" role="doc-biblioref">2017</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Kegerreis2017">J. A. Kegerreis et al. (<a href="#ref-Kegerreis2017" role="doc-biblioref">2017</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Evidence for a localized source of the argon in the lunar exosphere”</strong></p>
 <ul>
 <li>Monte Carlo model of the lunar <span class="math inline">\(\ce{Ar}\)</span> exosphere, based on the works of <span class="citation" data-cites="Smith1978">Smith et al. (<a href="#ref-Smith1978" role="doc-biblioref">1978</a>)</span>, <span class="citation" data-cites="Hodges1973">Hodges et al. (<a href="#ref-Hodges1973" role="doc-biblioref">1973</a>)</span>, and <span class="citation" data-cites="Butler1997">Butler (<a href="#ref-Butler1997" role="doc-biblioref">1997</a>)</span></li>
@@ -828,8 +862,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Jones2018">B. M. Jones et al. (<a href="#ref-Jones2018" role="doc-biblioref">2018</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Jones2018">B. M. Jones et al. (<a href="#ref-Jones2018" role="doc-biblioref">2018</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Solar wind-induced water cycle on the Moon”</strong></p>
 <ul>
 <li>chemical kinetics model of lunar surficial <span class="math inline">\(\ce{OH}\)</span> and <span class="math inline">\(\ce{H2O}\)</span>, investigating the long-term evolution</li>
@@ -838,8 +871,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Prem2018">Prem et al. (<a href="#ref-Prem2018" role="doc-biblioref">2018</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Prem2018">Prem et al. (<a href="#ref-Prem2018" role="doc-biblioref">2018</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Surface</em></td>
 <td><p><strong>“The influence of surface roughness on volatile transport on the Moon”</strong></p>
 <ul>
 <li>numerical thermal model for a rough lunar surface</li>
@@ -847,8 +879,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Tucker2018">Tucker et al. (<a href="#ref-Tucker2018" role="doc-biblioref">2018</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd> <kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Tucker2018">Tucker et al. (<a href="#ref-Tucker2018" role="doc-biblioref">2018</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em> <em>Surface</em></td>
 <td><p><strong>“Solar wind implantation into the lunar regolith: Monte Carlo simulations of H retention in a surface with defects and the<strong> </strong>H2 exosphere”</strong></p>
 <ul>
 <li>Monte Carlo-based simulation of solar wind implantation into the lunar lunar regolith to study <span class="math inline">\(\ce{H}\)</span> retention and implications for the <span class="math inline">\(\ce{H2}\)</span> exosphere</li>
@@ -858,8 +889,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#ref-Grumpe2019" role="doc-biblioref">2019</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Grumpe2019">Grumpe et al. (<a href="#ref-Grumpe2019" role="doc-biblioref">2019</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling”</strong></p>
 <ul>
 <li>reaction kinetics model as an extension of <span class="citation" data-cites="Farrell2015">Farrell et al. (<a href="#ref-Farrell2015" role="doc-biblioref">2015</a>)</span> and <span class="citation" data-cites="Farrell2017">Farrell et al. (<a href="#ref-Farrell2017" role="doc-biblioref">2017</a>)</span> Monte Carlo simulation</li>
@@ -868,8 +898,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Killen2019">Killen et al. (<a href="#ref-Killen2019" role="doc-biblioref">2019</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Killen2019">Killen et al. (<a href="#ref-Killen2019" role="doc-biblioref">2019</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“The Lunar Neon Exosphere Seen in LACE data”</strong></p>
 <ul>
 <li>Monte Carlo simulation of the lunar neon exosphere</li>
@@ -878,8 +907,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Prem2019">Prem et al. (<a href="#ref-Prem2019" role="doc-biblioref">2019</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Prem2019">Prem et al. (<a href="#ref-Prem2019" role="doc-biblioref">2019</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Coupled DSMC-Monte Carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere”</strong></p>
 <ul>
 <li>extension of the Monte Carlo model of <span class="citation" data-cites="Prem2015">Prem et al. (<a href="#ref-Prem2015" role="doc-biblioref">2015</a>)</span> to include the influence of radiative heat transfer and shielding of an impact-generated atmosphere</li>
@@ -889,8 +917,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Grava2020">Grava et al. (<a href="#ref-Grava2020" role="doc-biblioref">2020</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Grava2020">Grava et al. (<a href="#ref-Grava2020" role="doc-biblioref">2020</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“LRO/LAMP observations of the lunar helium exosphere: constraints on thermal accommodation and outgassing rate”</strong></p>
 <ul>
 <li>Monte Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation</li>
@@ -900,8 +927,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Kegerreis2020">J. Kegerreis (<a href="#ref-Kegerreis2020" role="doc-biblioref">2020</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Kegerreis2020">J. Kegerreis (<a href="#ref-Kegerreis2020" role="doc-biblioref">2020</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“Planetary giant impacts, simulating collisions and their consequences”</strong></p>
 <ul>
 <li>Monte Carlo simulation of the lunar argon exosphere and comparison with <a href="../../documentation/acronyms.html">LADEE</a> data</li>
@@ -910,8 +936,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2020">Schörghofer (<a href="#ref-Schoerghofer2020" role="doc-biblioref">2020</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2020">Schörghofer (<a href="#ref-Schoerghofer2020" role="doc-biblioref">2020</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“Thermodynamics of surface-bounded exospheres”</strong></p>
 <ul>
 <li>thermodynamical investigation of exospheric densities based on various velocity distributions</li>
@@ -919,8 +944,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Grava2021">Grava et al. (<a href="#ref-Grava2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>REVIEW</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Grava2021">Grava et al. (<a href="#ref-Grava2021" role="doc-biblioref">2021</a>)</span> <br><br> <strong>Tags</strong>: <em>Review</em>, <em>Exosphere</em></td>
 <td><p><strong>“Volatiles and refractories in surface-bounded exospheres in the inner solar system”</strong></p>
 <ul>
 <li>review of exospheric models of surface-bounded exospheres in the inner solar system, focusing on the Moon and Mercury</li>
@@ -928,8 +952,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Jones2021">B. Jones et al. (<a href="#ref-Jones2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Jones2021">B. Jones et al. (<a href="#ref-Jones2021" role="doc-biblioref">2021</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Thermal evolution of water and hydrogen from Apollo lunar regolith grains”</strong></p>
 <ul>
 <li>simulated <a href="../../documentation/acronyms.html">TPD</a> process and comparison with TPD experiment</li>
@@ -938,8 +961,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Sarantos2021">Sarantos &amp; Tsavachidis (<a href="#ref-Sarantos2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Sarantos2021">Sarantos &amp; Tsavachidis (<a href="#ref-Sarantos2021" role="doc-biblioref">2021</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Lags in desorption of lunar volatiles”</strong></p>
 <ul>
 <li>computer-generated lunar regolith packing to model random walks of argon and water particles to simulate gas transport</li>
@@ -947,9 +969,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2021">Schörghofer et al. (<a href="#ref-Schoerghofer2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>REVIEW</kbd> <kbd>SURFACE</kbd></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2021">Schörghofer et al. (<a href="#ref-Schoerghofer2021" role="doc-biblioref">2021</a>)</span> <br><br> <strong>Tags</strong>: <em>Review</em>, <em>Surface</em>, <em>Exosphere</em></td>
 <td><p><strong>“Water group exospheres and surface interactions on the Moon, Mercury, and Ceres”</strong></p>
 <ul>
 <li>review of hydrogen-based exospheric particles and their interaction with their planetary surface</li>
@@ -957,8 +977,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span></p>
-<p><kbd>SURFACE</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Tucker2021">Tucker et al. (<a href="#ref-Tucker2021" role="doc-biblioref">2021</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em>, <em>Exosphere</em></td>
 <td><p><strong>“On the effect of magnetospheric shielding on the lunar hydrogen cycle”</strong></p>
 <ul>
 <li>Monte Carlo model to investigate <span class="math inline">\(\ce{H}\)</span> implantation, conversion to <span class="math inline">\(\ce{OH}\)</span>, and subsequent outgassing of <span class="math inline">\(\ce{H2}\)</span></li>
@@ -967,8 +986,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Morrissey2022">Morrissey et al. (<a href="#ref-Morrissey2022" role="doc-biblioref">2022</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Morrissey2022">Morrissey et al. (<a href="#ref-Morrissey2022" role="doc-biblioref">2022</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Simulating the diffusion of hydrogen in amorphous silicates: a ‘jumping’ migration process and its implications for solar<strong> </strong>wind implanted lunar volatiles”</strong></p>
 <ul>
 <li>molecular dynamics simulation to describe the <span class="math inline">\(\ce{H}\)</span> movement in amorphous silica on an atomistic level</li>
@@ -978,8 +996,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Poppe2022">Poppe et al. (<a href="#ref-Poppe2022" role="doc-biblioref">2022</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Poppe2022">Poppe et al. (<a href="#ref-Poppe2022" role="doc-biblioref">2022</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“A comprehensive model for pickup ion formation at the Moon”</strong></p>
 <ul>
 <li>two-part analytic model describing the lunar exospheric neutrals density distributions and the ionization and charged-particle dynamics of pickup ions based on the modeled neutral distributions</li>
@@ -987,8 +1004,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2022">Schörghofer (<a href="#ref-Schoerghofer2022" role="doc-biblioref">2022</a>)</span></p>
-<p><kbd>THEORY</kbd> <kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2022">Schörghofer (<a href="#ref-Schoerghofer2022" role="doc-biblioref">2022</a>)</span> <br><br> <strong>Tags</strong>: <em>Theory</em>, <em>Exosphere</em></td>
 <td><p><strong>“Statistical thermodynamics of surface-bounded exospheres”</strong></p>
 <ul>
 <li>building on <span class="citation" data-cites="Schoerghofer2020">Schörghofer (<a href="#ref-Schoerghofer2020" role="doc-biblioref">2020</a>)</span></li>
@@ -996,9 +1012,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Wurz2022">Wurz et al. (<a href="#ref-Wurz2022" role="doc-biblioref">2022</a>)</span></p>
-<p><kbd>REVIEW</kbd> <kbd>THEORY</kbd></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Wurz2022">Wurz et al. (<a href="#ref-Wurz2022" role="doc-biblioref">2022</a>)</span> <br><br> <strong>Tags</strong>: <em>Review</em>, <em>Theory</em>, <em>Surface</em></td>
 <td><p><strong>“Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury”</strong></p>
 <ul>
 <li>review of surface interactions of exospheric particles</li>
@@ -1006,9 +1020,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Milillo2023">Milillo (<a href="#ref-Milillo2023" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>REVIEW</kbd> <kbd>EXOSPHERE</kbd></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Milillo2023">Milillo (<a href="#ref-Milillo2023" role="doc-biblioref">2023</a>)</span> <br><br> <strong>Tags</strong>: <em>Review</em>, <em>Exosphere</em>, <em>Surface</em></td>
 <td><p><strong>“Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System”</strong></p>
 <ul>
 <li>review of the current state of knowledge on surface-bounded exospheres in the inner solar system and outline of future research</li>
@@ -1017,8 +1029,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2023">Schörghofer &amp; Rufu (<a href="#ref-Schoerghofer2023" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2023">Schörghofer &amp; Rufu (<a href="#ref-Schoerghofer2023" role="doc-biblioref">2023</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Past extent of lunar permanently shadowed areas”</strong></p>
 <ul>
 <li>discussion the growth of permanently shadowed regions (PSRs) on the Moon</li>
@@ -1026,8 +1037,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Schoerghofer2023a">Schörghofer (<a href="#ref-Schoerghofer2023a" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Schoerghofer2023a">Schörghofer (<a href="#ref-Schoerghofer2023a" role="doc-biblioref">2023</a>)</span> <br><br> <strong>Tags</strong>: <em>Surface</em></td>
 <td><p><strong>“Adsorption Kinetics of Water and Argon on Lunar Grain”</strong></p>
 <ul>
 <li>discussion of the adsorption kinetics of water and argon on lunar grains, including multilayer desorption rates, isotherm measurements, and the behavior of adsorbate concentrations with</li>
@@ -1036,8 +1046,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><p><span class="citation" data-cites="Smolka2023">Smolka et al. (<a href="#ref-Smolka2023" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>EXOSPHERE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Smolka2023">Smolka et al. (<a href="#ref-Smolka2023" role="doc-biblioref">2023</a>)</span> <br><br> <strong>Tags</strong>: <em>Exosphere</em></td>
 <td><p><strong>“Coupled H, H<sub>2</sub>, OH, and H<sub>2</sub>O lunar exosphere simulation framework and impacts of conversion reactions”</strong></p>
 <ul>
 <li>Monte Carlo simulation framework to simultaneously model multiple hydrogen-based exospheric species</li>
@@ -1046,9 +1055,7 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </ul></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><p><span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#ref-Teolis2023" role="doc-biblioref">2023</a>)</span></p>
-<p><kbd>REVIEW</kbd> <kbd>EXOSPHERE</kbd></p>
-<p><kbd>SURFACE</kbd></p></td>
+<td style="text-align: left;"><span class="citation" data-cites="Teolis2023">Teolis et al. (<a href="#ref-Teolis2023" role="doc-biblioref">2023</a>)</span> <br><br> <strong>Tags</strong>: <em>Review</em>, <em>Exosphere</em>, <em>Surface</em></td>
 <td><p><strong>“Surface exospheric interactions”</strong></p>
 <ul>
 <li>review of descriptions, current developments, and issues of exosphere-surface interactions</li>
@@ -1057,6 +1064,8 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
@@ -1373,13 +1382,17 @@ State-of-the-Art - <a href="#tbl-sota">Table&nbsp;1</a>
 <section id="document-structure" class="level1 page-columns page-full">
 <h1>Document Structure</h1>
 <hr>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""></span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"></span></div></div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figure&nbsp;1&nbsp;(a): Lunar north pole.</span>
+<span class="glightbox-desc lightbox-desc-2">Figure&nbsp;1&nbsp;(b): Lunar south pole.</span>
+</div>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Armand1977" class="csl-entry" role="listitem">
 Armand, G. (1977). Classical theory of desorption rate velocity distributionof desorbed atoms; possibility of a compensation effect. <em>Surface Science</em>, <em>66</em>, 321–345.
 </div>
@@ -1521,7 +1534,7 @@ Vogel, U. (1966). Molecular fluxes in the lunar atmosphere. <em>Planetary and Sp
 <div id="ref-Wurz2022" class="csl-entry" role="listitem">
 Wurz, P., Fatemi, S., Galli, A., Halekas, J., Harada, Y., Jäggi, N., Jasinski, J., Lammer, H., Lindsay, S., Nishino, M. N., Orlando, T. M., Raines, J. M., Scherf, M., Slavin, J., Vorburger, A., &amp; Winslow, R. (2022). <span class="nocase">Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury</span>. <em>Space Science Reviews</em>, <em>218</em>(3). <a href="https://doi.org/10.1007/s11214-022-00875-6">https://doi.org/10.1007/s11214-022-00875-6</a>
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2024,
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2024,
   author = {Smolka, Alexander},
   title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
     {Simulations}},
@@ -1612,10 +1625,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1625,8 +1655,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1639,6 +1678,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1682,6 +1840,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1707,6 +1866,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1764,35 +1949,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../documentation/acronyms.html" class="pagination-link">
+      <a href="../../documentation/acronyms.html" class="pagination-link  aria-label=" acronyms"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acronyms</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../documentation/fundamentals/coordinate_systems/coordinates.html" class="pagination-link">
+      <a href="../../documentation/fundamentals/coordinate_systems/coordinates.html" class="pagination-link" aria-label="2.1.1 Coordinates">
         <span class="nav-page-text">2.1.1 Coordinates</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
 
 
 

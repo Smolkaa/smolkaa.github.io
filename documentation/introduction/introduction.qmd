@@ -9,7 +9,9 @@ title: "1. Introduction"
 
 Space exploration has always captivated humanity's imagination, driving scientific inquiry and technological advancement to unprecedented heights. While the Moon's surface has been a focal point of human exploration, its tenuous exosphere, a fragile envelope of particles and gases, has long remained an understudied frontier. Recent decades have witnessed remarkable strides in our understanding of extraterrestrial exospheres, with a particular focus on the Moon's exosphere and its intricate interactions with the lunar surface.
 
+
 {{< include imgs/LROC_poles/_LROC_poles.qmd >}}
+
 
 Advances in space exploration have unveiled the Moon's exosphere as a realm of astonishing complexity. Notable missions such as the Lunar Reconnaissance Orbiter ([LRO](/documentation/acronyms.qmd)) have played a pivotal role in unraveling the mysteries of the lunar exosphere. The orbiter mission has not only provided the most highly resolved images of the Moon's surface, see [Fig. @fig-LROC_poles] showing high-resolution mosaic images of the lunar's north and south poles, but the Lyman Alpha Mapping Project ([LAMP](/documentation/acronyms.qmd)) [@Gladstone2009] aboard [LRO](/documentation/acronyms.qmd) has studied the exosphere by analyzing the scattering of ultraviolet sunlight. Additionally, the Lunar Atmosphere and Dust Environment Explorer ([LADEE](/documentation/acronyms.qmd)) mission's Neutral Mass Spectrometer ([NMS](/documentation/acronyms.qmd)) [@Benna2015] provided valuable insights into the composition of the exosphere and its temporal variations. These missions collectively painted a new picture of the Moon - a dynamic world with a delicate exosphere shaped by intricate surface interactions.
 

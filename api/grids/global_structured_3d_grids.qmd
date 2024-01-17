@@ -5,7 +5,44 @@ title: "Global, Structured, 3D Grids"
 
 ## Type Structure
 
+The global, structured, three-dimensional grids are implemented in the following grid-type hierarchy:
+
+```julia
+ExESS
+└─ AbstractGrid
+    ├─ AbstractGrid
+    │   ├─ AbstractGlobalStructuredGrid
+    │   │   ├─ ...
+    │   │   └─ AbstractGlobalStructured3DGrid
+    │   │       ├─ GlobalStructured3DGrid{T<:AbstractFloat}
+    │   │       ├─ GlobalStructured3DGrid_EqSim{T<:AbstractFloat}
+    │   │       ├─ GlobalStructured3DGrid_Reduced{T<:AbstractFloat}
+    │   │       └─ GlobalStructured3DGrid_Reduced_EqSim{T<:AbstractFloat}
+    │   └─ ...
+    └─ AbstractLocalGrid
+        └─ ...
+```
+
 ## Usage
+
+The general usage of each of the four grids is the same, as each of them defines a discretization of the three-dimensional, spherical space around a sphere of radius `r0` with heights given the height vector `h`. The only difference is the construction of grid points in the longitudinal and latitudinal directions. 
+
+### `GlobalStructured3DGrid{T<:AbstractFloat}`
+
+Starting with the most generic grid, the `GlobalStructured3DGrid{T<:AbstractFloat}` type is constructed by specifying the radius of the sphere `r0`, the height vector `h`, and the number of grid points in the longitudinal and latitudinal directions `N_theta` and `N_phi`, respectively. 
+
+::: {.grid}
+
+::: {.g-col-6}
+```julia
+grid = GlobalStructured3DGrid(r0, h, N_theta, N_phi)
+```
+:::
+
+::: {.g-col-6}
+:::
+
+:::
 
 ## API
 

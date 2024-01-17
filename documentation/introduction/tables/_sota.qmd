@@ -9,178 +9,178 @@
 | Reference           | Description / Highlights                                                                                                         |
 +:====================+==================================================================================================================================+
 | @Chamberlain1963    | **"Planetary coronae and atmospheric evaporation"**                                                                              |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * analytical model of density distributions in planetary atmospheres/exospheres                                                  |
-|{{< kbd EXOSPHERE >}}| * assumes an isothermal, spherically symmetric, and globally uniform atmosphere                                                  |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * analytical model of density distributions in planetary atmospheres/exospheres                                                  |
+| _Exosphere_         | * assumes an isothermal, spherically symmetric, and globally uniform atmosphere                                                  |
 |                     | * developed a scaled barometric scaling for exospheric number densities at varying altitudes                                     |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Vogel1966          | **"Molecular fluxes in the lunar atmosphere"**                                                                                   |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * theoretical model of molecular fluxes in the lunar exosphere                                                                   |
-|{{< kbd EXOSPHERE >}}| * proposed an analytical framework to calculate elliptical trajectories and the respective landing positions on the Moon         |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * theoretical model of molecular fluxes in the lunar exosphere                                                                   |
+| _Exosphere_         | * proposed an analytical framework to calculate elliptical trajectories and the respective landing positions on the Moon         |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Hodges1973         | **"Composition and dynamics of lunar atmosphere"**                                                                               |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * first $\ce{H2}, \ce{He}, \ce{Ne}$, and $\ce{Ar}$ model of the lunar exosphere                                                  |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * first $\ce{H2}, \ce{He}, \ce{Ne}$, and $\ce{Ar}$ model of the lunar exosphere                                                  |
 |                     | * compared model results with preliminary Apollo 17 data                                                                         |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Armand1977         | **"Classical theory of desorption rate velocity distribution of desorbed atoms; Possibility of a compensation effect"**          |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * proposed the theory of desorption [velocity distributions](/documentation/drivers/thermal_sorption.qmd)                        |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_            | * proposed the theory of desorption [velocity distributions](/documentation/drivers/thermal_sorption.qmd)                        |
 |                     |  (Maxwell-Boltzmann Flux Distribution, [MBFD](/documentation/acronyms.qmd))                                                      |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Smith1978          | **"Monte Carlo modeling of exospheric bodies: Mercury"**                                                                         |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model of Mercury's exosphere                                                                                       |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo model of Mercury's exosphere                                                                                       |
 |                     | * [MBFD](/documentation/acronyms.qmd) distributed particle velocities                                                            |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Huebner1992        | **"Solar photo rates for planetary atmospheres and atmospheric pollutants"**                                                     |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * provides a comprehensive overview of photoreaction rates widely used for modeling the lunar exosphere                          |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_            | * provides a comprehensive overview of photoreaction rates widely used for modeling the lunar exosphere                          |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Butler1997         | **"The migration of volatiles on the surfaces of Mercury and the Moon"**                                                         |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * Monte Carlo exosphere model of Mercury and the Moon, specifically $\ce{H2O}$ and $\ce{CO2}$                                    |
-|{{< kbd EXOSPHERE >}}| * proposed an analytic function to approximate the lunar surface temperature                                                     |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * Monte Carlo exosphere model of Mercury and the Moon, specifically $\ce{H2O}$ and $\ce{CO2}$                                    |
+| _Exosphere_         | * proposed an analytic function to approximate the lunar surface temperature                                                     |
 |                     | * extension of @Vogel1966 trajectory calculation                                                                                 |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Crider2002         | **"Hydrogen migration to the lunar poles by solar wind bombardment of the Moon"**                                                |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo simulation of exospheric hydrogen migration on the Moon                                                            |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo simulation of exospheric hydrogen migration on the Moon                                                            |
 |                     | * lists a variety of conversion paths for solar wind protons to $\ce{H}$, $\ce{H2}$, $\ce{OH}$, and $\ce{H2O}$                   |
 |                     | * comments on the high inaccuracies of the implementation of the chemical and physical reactions                                 |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Chaufray2009       | **"Lunar Argon cycle modeling"**                                                                                                 |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model of the lunar argon exosphere                                                                                 |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo model of the lunar argon exosphere                                                                                 |
 |                     | * investigated the accumulation of $\ce{Ar}$ in PSRs                                                                             |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Poppe2013          | **"The self-sputtered contribution to the lunar exosphere"**                                                                     |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * first self-sputtering model of the lunar exosphere                                                                             |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * first self-sputtering model of the lunar exosphere                                                                             |
 |                     | * self-sputtering is a significant source of neutrals (locally comparable to solar wind and micrometeoroid bombardment)          |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Grava2014          | **"Lunar exospheric argon modeling"**                                                                                            |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model of the lunar argon exosphere, based on @Chaufray2009                                                         |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo model of the lunar argon exosphere, based on @Chaufray2009                                                         |
 |                     | * compared model predictions with LACE, LAMP, and LADEE measurements                                                             |
 |                     | * found that charge exchange is a relevant argon loss process and that cold-trapping losses are comparable to ionization fluxes  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schorghofer2014    | **"Migration calculations for water in the exosphere of the Moon: dusk-dawn asymmetry, heterogeneous trapping, and**             |
-|                     | **D/H fractionation"**                                                                                                           |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
+|</br></br> **Tags**: | **D/H fractionation"**                                                                                                           |
+| _Exosphere_         |                                                                                                                                  |
 |                     | * Monte Carlo model of exospheric water migration of the Moon, based on @Butler1997                                              |
 |                     | * presents a dusk-dawn asymmetry of hydrogenous species                                                                          |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Farrell2015        | **"Solar wind implantation into lunar regolith: hydrogen retention in a surface with defects"**                                  |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * Monte Carlo model of solar wind implantation into the lunar surface regolith                                                   |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * Monte Carlo model of solar wind implantation into the lunar surface regolith                                                   |
 |                     | * systematically studied distributions of activation energies to simulate hydrogen retention and $\ce{OH}$ formation             |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Hurley2015         | **"An analytic function of lunar surface temperature for exospheric modeling"**                                                  |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * presents an analytic approximation of the lunar surface temperatures based on Diviner measurements                             |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_            | * presents an analytic approximation of the lunar surface temperatures based on Diviner measurements                             |
 |                     | * improved the analytical approach of @Butler1997                                                                                |
 |                     | * temperature model does not include topographical, temporal, or compositional features                                          |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Prem2015           | **"Transport of water in a transient impact-generated lunar atmosphere"**                                                        |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * hybrid DSMC approach to investigate water transport in impact-generated lunar atmosphere, combining a continuum description    |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * hybrid DSMC approach to investigate water transport in impact-generated lunar atmosphere, combining a continuum description    |
 |                     |   of the dense plume with a Monte Carlo model of the tenuous water vapor exosphere                                               |
 |                     | * unsteady and three-dimensional simulations                                                                                     |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Hurley2016         | **"Understanding temporal and spatial variability of the lunar helium atmosphere using simultaneous observations from LRO,**     |
-|                     | **LADEE, and ARTEMIS"**                                                                                                          |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model of the lunar surface-bounded helium exosphere                                                                |
+|</br></br> **Tags**: | **LADEE, and ARTEMIS"**                                                                                                          |
+| _Exosphere_         |                                                                                                                                  |
+|                     | * Monte Carlo model of the lunar surface-bounded helium exosphere                                                                |
 |                     | * suggests that endogenic helium provides roughly a third of the Moon's exospheric helium                                        |
 |                     | * built on previous works by @Killen1999, @Hodges1973, @Butler1997, @Grava2014, and more                                         |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Moores2016         | **"Lunar water migration in the interval between large impacts: heterogeneous delivery to permanently shadowed regions,**        |
-|                     | **fractionation, and diffusive barriers"**                                                                                       |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo simulation to examine water delivery to lunar PSRs                                                                 |
+|</br></br> **Tags**: | **fractionation, and diffusive barriers"**                                                                                       |
+| _Exosphere_         |                                                                                                                                  |
+|                     | * Monte Carlo simulation to examine water delivery to lunar PSRs                                                                 |
 |                     | * impactor water delivery (based on @Prem2015) and ballistic migration included as water sources                                 |
 |                     | * explicitly modeled the high-latitude regions, including several PSRs                                                           |
 |                     | * extended @Crider2002 and @Schorghofer2014 for higher latitudes                                                                 |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Farrell2017        | **"The statistical mechanics of solar wind hydroxylation at the Moon, within lunar magnetic anomalies, and at Phobos"**          |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * extension of the previous model [@Farrell2015], presents a formalism to statistically describe hydrogen implantation into the  |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * extension of the previous model [@Farrell2015], presents a formalism to statistically describe hydrogen implantation into the  |
 |                     |   lunar surface and subsurface diffusion of $\ce{H}$ using a Monte Carlo simulation                                              |
 |                     | * used distributed activation energies in the physical model                                                                     |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Hurley2017         | **"Contributions of solar wind and micrometeoroids to molecular hydrogen in the lunar exosphere"**                               |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model (extension of previous model [@Hurley2016]) to investigate spatial distribution of $\ce{H2}$ in the          |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo model (extension of previous model [@Hurley2016]) to investigate spatial distribution of $\ce{H2}$ in the          |
 |                     |   lunar exosphere                                                                                                                |
 |                     | * examined the contributions of micrometeoroids and solar wind particles                                                         |
 |                     | * found that micrometeoroids are an insufficient source to reproduce LAMP $\ce{H2}$ measurements                                 |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Kegerreis2017      | **"Evidence for a localized source of the argon in the lunar exosphere"**                                                        |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo model of the lunar $\ce{Ar}$ exosphere, based on the works of @Smith1978, @Hodges1973, and @Butler1997             |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo model of the lunar $\ce{Ar}$ exosphere, based on the works of @Smith1978, @Hodges1973, and @Butler1997             |
 |                     | * includes seasonal effects to study long-term variations                                                                        |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Jones2018          | **"Solar wind-induced water cycle on the Moon"**                                                                                 |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * chemical kinetics model of lunar surficial $\ce{OH}$ and $\ce{H2O}$, investigating the long-term evolution                     |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * chemical kinetics model of lunar surficial $\ce{OH}$ and $\ce{H2O}$, investigating the long-term evolution                     |
 |                     | * based on solar wind proton delivery as the main source of the simulated water cycle                                            |
 |                     | * focuses on recombinative desorption as the primary water formation pathway                                                     |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Prem2018           | **"The influence of surface roughness on volatile transport on the Moon"**                                                       |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * numerical thermal model for a rough lunar surface                                                                              |
-|{{< kbd SURFACE >}}  | * extension of @Hurley2015 thermal model                                                                                         |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * numerical thermal model for a rough lunar surface                                                                              |
+| _Surface_           | * extension of @Hurley2015 thermal model                                                                                         |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Tucker2018         | **"Solar wind implantation into the lunar regolith: Monte Carlo simulations of H retention in a surface with defects and the**   |
-|                     | **H2 exosphere"**                                                                                                                |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo-based simulation of solar wind implantation into the lunar lunar regolith to study $\ce{H}$ retention and          |
-|{{< kbd SURFACE >}}  |   implications for the $\ce{H2}$ exosphere                                                                                       |
+|</br></br> **Tags**: | **H2 exosphere"**                                                                                                                |
+| _Exosphere_         |                                                                                                                                  |
+| _Surface_           | * Monte Carlo-based simulation of solar wind implantation into the lunar lunar regolith to study $\ce{H}$ retention and          |
+|                     |   implications for the $\ce{H2}$ exosphere                                                                                       |
 |                     | * modeled hydrogen diffusion and recombination to $\ce{H2}$                                                                      |
 |                     | * includes Gaussian distributions of activation energies                                                                         |
 |                     | * based on models by @Killen1999, @Farrell2015, @Farrell2017, and @Hurley2017                                                    |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Grumpe2019         | **"Time-of-day-dependent behavior of surficial lunar hydroxyl/water: Observations and modeling"**                                |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * reaction kinetics model as an extension of @Farrell2015 and @Farrell2017 Monte Carlo simulation                                |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * reaction kinetics model as an extension of @Farrell2015 and @Farrell2017 Monte Carlo simulation                                |
 |                     | * investigates $\ce{H}$, $\ce{OH}$, and $\ce{H2O}$ concentrations, based on both solar wind and micrometeoroid influx            |
 |                     | * includes a 1D lateral heat conduction model with surface roughness dependence                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Killen2019         | **"The Lunar Neon Exosphere Seen in LACE data"**                                                                                 |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo simulation of the lunar neon exosphere                                                                             |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo simulation of the lunar neon exosphere                                                                             |
 |                     | * comparison with Apollo 17's LACE data                                                                                          |
 |                     | * suggests that theoretical photodissociation losses are too low to reproduce $\ce{Ne}$ measurements                             |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Prem2019           | **"Coupled DSMC-Monte Carlo radiative transfer modeling of gas dynamics in a transient impact-generated lunar atmosphere"**      |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * extension of the Monte Carlo model of @Prem2015 to include the influence of radiative heat transfer and shielding of an        |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * extension of the Monte Carlo model of @Prem2015 to include the influence of radiative heat transfer and shielding of an        |
 |                     |   impact-generated atmosphere                                                                                                    |
 |                     | * applies new model to simulate a $\ce{H2O}$ exosphere                                                                           |
 |                     | * finds that gas-gas radiative transfer is playing an important role, significantly influencing water vapor transport            |
@@ -189,8 +189,8 @@
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Grava2020          | **"LRO/LAMP observations of the lunar helium exosphere: constraints on thermal accommodation and outgassing rate"**              |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation                        |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo simulation of lunar exospheric helium to investigate source rates and thermal accommodation                        |
 |                     | * compares modelled $\ce{He}$ densities with [LAMP](/documentation/acronyms.qmd) measurements                                    |
 |                     | * suggests the best description of lunar helium assuming full thermal accommodation and an [MBFD](/documentation/acronyms.qmd)   |
 |                     |   distribution of kinetic energies                                                                                               |
@@ -198,57 +198,57 @@
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Kegerreis2020      | **"Planetary giant impacts, simulating collisions and their consequences"**                                                      |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * Monte Carlo simulation of the lunar argon exosphere and comparison with [LADEE](/documentation/acronyms.qmd) data              |
-|{{< kbd EXOSPHERE >}}| * applied altitude fitting based on @Chamberlain1963 projection model to compare predicted densities with satellite data         |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * Monte Carlo simulation of the lunar argon exosphere and comparison with [LADEE](/documentation/acronyms.qmd) data              |
+| _Exosphere_         | * applied altitude fitting based on @Chamberlain1963 projection model to compare predicted densities with satellite data         |
 |                     | * uses the landing position calculation proposed by @Butler1997                                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2020   | **"Thermodynamics of surface-bounded exospheres"**                                                                               |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * thermodynamical investigation of exospheric densities based on various velocity distributions                                  |
-|{{< kbd EXOSPHERE >}}| * provides statistical averaged and exact solutions for short ballistic flights, assuming constant gravitational acceleration    |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * thermodynamical investigation of exospheric densities based on various velocity distributions                                  |
+| _Exosphere_         | * provides statistical averaged and exact solutions for short ballistic flights, assuming constant gravitational acceleration    |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Grava2021          | **"Volatiles and refractories in surface-bounded exospheres in the inner solar system"**                                         |
-|                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   | * review of exospheric models of surface-bounded exospheres in the inner solar system, focusing on the Moon and Mercury          |
-|{{< kbd EXOSPHERE >}}| * considers various volatiles, refractories, ions, and [ENAs](/documentation/acronyms.qmd)                                       |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Review_,           | * review of exospheric models of surface-bounded exospheres in the inner solar system, focusing on the Moon and Mercury          |
+| _Exosphere_         | * considers various volatiles, refractories, ions, and [ENAs](/documentation/acronyms.qmd)                                       |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Jones2021          | **"Thermal evolution of water and hydrogen from Apollo lunar regolith grains"**                                                  |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * simulated [TPD](/documentation/acronyms.qmd) process and comparison with TPD experiment                                        |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * simulated [TPD](/documentation/acronyms.qmd) process and comparison with TPD experiment                                        |
 |                     | * considered several hydrogen-based species and their concentrations on the surface, in the subsurface and void space            |
 |                     |   subsurface, and in gaseous form                                                                                                |
 |                     | * specifically discussed recombinative desorption as the main pathway of water formation                                         |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Sarantos2021       | **"Lags in desorption of lunar volatiles"**                                                                                      |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * computer-generated lunar regolith packing to model random walks of argon and water particles to simulate gas transport         |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * computer-generated lunar regolith packing to model random walks of argon and water particles to simulate gas transport         |
 |                     | * suggests subsurface diffusion and desorption-readsorption of gas particles leads to a lag in the exospheric density signature  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2021   | **"Water group exospheres and surface interactions on the Moon, Mercury, and Ceres"**                                            |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Review_,           | * review of hydrogen-based exospheric particles and their interaction with their planetary surface                               |
+| _Surface_,          | * reports on the status of observations, theory, and laboratory measurements                                                     |
+| _Exosphere_         |                                                                                                                                  |
 |                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   | * review of hydrogen-based exospheric particles and their interaction with their planetary surface                               |
-|{{< kbd SURFACE >}}  | * reports on the status of observations, theory, and laboratory measurements                                                     |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}|                                                                                                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Tucker2021         | **"On the effect of magnetospheric shielding on the lunar hydrogen cycle"**                                                      |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * Monte Carlo model to investigate $\ce{H}$ implantation, conversion to $\ce{OH}$, and subsequent outgassing of $\ce{H2}$        |
-|{{< kbd EXOSPHERE >}}| * simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen      |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_,          | * Monte Carlo model to investigate $\ce{H}$ implantation, conversion to $\ce{OH}$, and subsequent outgassing of $\ce{H2}$        |
+| _Exosphere_         | * simulates the Moon's passage through Earth's magnetotail, eliminating the solar wind proton source, to which the hydrogen      |
 |                     |   both on the surface as well as in the exosphere responds quickly                                                               |
 |                     | * general model based on previous work of @Tucker2018                                                                            |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Morrissey2022      | **"Simulating the diffusion of hydrogen in amorphous silicates: a ‘jumping’ migration process and its implications for solar**   |
-|                     | **wind implanted lunar volatiles"**                                                                                              |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
+|</br></br> **Tags**: | **wind implanted lunar volatiles"**                                                                                              |
+| _Surface_           |                                                                                                                                  |
 |                     | * molecular dynamics simulation to describe the $\ce{H}$ movement in amorphous silica on an atomistic level                      |
 |                     | * uses insights to infer hydrogen diffusion in planetary regoliths                                                               |
 |                     | * examines the degassing of water group particles and its influence on the lunar exosphere                                       |
@@ -256,61 +256,61 @@
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Poppe2022          | **"A comprehensive model for pickup ion formation at the Moon"**                                                                 |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * two-part analytic model describing the lunar exospheric neutrals density distributions and the ionization and charged-particle | 
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * two-part analytic model describing the lunar exospheric neutrals density distributions and the ionization and charged-particle | 
 |                     |   dynamics of pickup ions based on the modeled neutral distributions                                                             |
 |                     | * includes 18 different exospheric ion species                                                                                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2022   | **"Statistical thermodynamics of surface-bounded exospheres"**                                                                   |
-|                     |                                                                                                                                  |
-|{{< kbd THEORY >}}   | * building on @Schoerghofer2020                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * provides an analytic description of velocity distributions and exact solutions for emerging density profiles                   |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Theory_,           | * building on @Schoerghofer2020                                                                                                  |
+| _Exosphere_         | * provides an analytic description of velocity distributions and exact solutions for emerging density profiles                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Wurz2022           | **"Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury"**                            |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Review_,           | * review of surface interactions of exospheric particles                                                                         |
+| _Theory_,           | * includes space weathering, thermal releases, [MMIV](/documentation/acronyms.qmd), [PSD](/documentation/acronyms.qmd) and       |
+| _Surface_           |   [ESD](/documentation/acronyms.qmd), physical and chemical sputtering, and particle reflections                                 |
 |                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   | * review of surface interactions of exospheric particles                                                                         |
-|{{< kbd THEORY >}}   | * includes space weathering, thermal releases, [MMIV](/documentation/acronyms.qmd), [PSD](/documentation/acronyms.qmd) and       |
-|                     |   [ESD](/documentation/acronyms.qmd), physical and chemical sputtering, and particle reflections                                 |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Milillo2023        | **"Future Directions for the Investigation of Surface-Bounded Exospheres in the Inner Solar System"**                            |
-|                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   | * review of the current state of knowledge on surface-bounded exospheres in the inner solar system and outline of future         |
-|{{< kbd EXOSPHERE >}}|   research                                                                                                                       |
-|                     | * discussion of various drivers, including solar wind interactions, micrometeoroid impacts, and thermal desorption               |
-|{{< kbd SURFACE >}}  | * highlights the importance of coordinated space and ground-based observations and discusses expected outcomes                   |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Review_,           | * review of the current state of knowledge on surface-bounded exospheres in the inner solar system and outline of future         |
+| _Exosphere_,        |   research                                                                                                                       |
+| _Surface_           | * discussion of various drivers, including solar wind interactions, micrometeoroid impacts, and thermal desorption               |
+|                     | * highlights the importance of coordinated space and ground-based observations and discusses expected outcomes                   |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2023   | **"Past extent of lunar permanently shadowed areas"**                                                                            |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * discussion the growth of permanently shadowed regions (PSRs) on the Moon                                                       |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * discussion the growth of permanently shadowed regions (PSRs) on the Moon                                                       |
 |                     | * provides an overview of the lunar obliquity and the extent of PSRs as a function of time                                       |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Schoerghofer2023a  | **"Adsorption Kinetics of Water and Argon on Lunar Grain"**                                                                      |
-|                     |                                                                                                                                  |
-|{{< kbd SURFACE >}}  | * discussion of the adsorption kinetics of water and argon on lunar grains, including multilayer desorption rates, isotherm      |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Surface_           | * discussion of the adsorption kinetics of water and argon on lunar grains, including multilayer desorption rates, isotherm      |
 |                     |   measurements, and the behavior of adsorbate concentrations with                                                                |
 |                     | * provides a parameterization of water adsorption intended for a wide range of temperatures and adsorbate concentrations         |
 |                     | * emphasizes the significance of understanding the desorption                                                                    |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Smolka2023         | **"Coupled H, H~2~, OH, and H~2~O lunar exosphere simulation framework and impacts of conversion reactions"**                    |
-|                     |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * Monte Carlo simulation framework to simultaneously model multiple hydrogen-based exospheric species                            |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Exosphere_         | * Monte Carlo simulation framework to simultaneously model multiple hydrogen-based exospheric species                            |
 |                     | * includes several, uncertain conversion reactions, coupling the species with each other                                         |
 |                     | * suggests that surface reaction with hydrogen can significantly change exospheric dynamics around the terminator regions        |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 | @Teolis2023         | **"Surface exospheric interactions"**                                                                                            |
+|</br></br> **Tags**: |                                                                                                                                  |
+| _Review_,           |                                                                                                                                  |
+| _Exosphere_,        | * review of descriptions, current developments, and issues of exosphere-surface interactions                                     |
+| _Surface_           | * includes discussions of thermal accommodation, volatile diffusion, and cold-trapping                                           |
 |                     |                                                                                                                                  |
-|{{< kbd REVIEW >}}   |                                                                                                                                  |
-|{{< kbd EXOSPHERE >}}| * review of descriptions, current developments, and issues of exosphere-surface interactions                                     |
-|                     | * includes discussions of thermal accommodation, volatile diffusion, and cold-trapping                                           |
-|{{< kbd SURFACE >}}  |                                                                                                                                  |
 |                     |                                                                                                                                  |
 +---------------------+----------------------------------------------------------------------------------------------------------------------------------+ 
 
