@@ -9,6 +9,9 @@ title: "3.2 Thermal Sorption"
 
 Stuff about thermal sorption.
 
+* Thermal desorption occurs when the thermal energy of an atom exceeds its binding energy at grain surfaces, leading to the release of the particle. At the surface, these particles are released into the exosphere (Moroni, 2023)
+* As the name suggests, the process is highly dependent on the temperature and, thus, on the solar photon flux ($\SI{3 \times 10^{15}}{\centi\metre\tothe{2}\per\second}$) (Moroni, 2023)
+* 
 
 # Velocity Distributions
 
