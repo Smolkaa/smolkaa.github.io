@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.545">
+<meta name="generator" content="quarto-1.4.544">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexander Smolka">
-<meta name="dcterms.date" content="2024-01-19">
+<meta name="dcterms.date" content="2024-01-20">
 
 <title>ExESS - 3.2 Thermal Sorption</title>
 <style>
@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -513,7 +533,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 19, 2024</p>
+      <p class="date">January 20, 2024</p>
     </div>
   </div>
   
@@ -528,21 +548,37 @@ window.Quarto = {
 <!-- SIUNITX WORKAROUND -->
 <!-- GLS WORKAROUND -->
 <hr>
-<p>Stuff about thermal sorption.</p>
-<ul>
-<li>Thermal desorption occurs when the thermal energy of an atom exceeds its binding energy at grain surfaces, leading to the release of the particle. At the surface, these particles are released into the exosphere (Moroni, 2023)</li>
-<li>As the name suggests, the process is highly dependent on the temperature and, thus, on the solar photon flux (<span class="math inline">\(3 \times 10^{15}\,\mathrm{cm^{\mathrm{2}}/s}\)</span>) (Moroni, 2023)</li>
-<li></li>
-</ul>
+<p>The liberation of particles from lunar grain surfaces through thermal desorption is a crucial process, as highlighted by <span class="citation" data-cites="Moroni2023">Moroni (<a href="#ref-Moroni2023" role="doc-biblioref">2023</a>)</span>. This phenomenon occurs when the thermal energy of an atom exceeds its binding energy, leading to the subsequent release of liberated particles into the lunar exosphere. The efficiency of thermal desorption, intricately tied to temperature, is driven by the solar photon flux, estimated at <span class="math inline">\(3 \times 10^{15}\,\mathrm{cm^{\mathrm{2}}/s}\)</span> <span class="citation" data-cites="Moroni2023">(<a href="#ref-Moroni2023" role="doc-biblioref">Moroni, 2023</a>)</span>, underscoring the complex interplay between solar radiation, temperature, and the compositional dynamics of the lunar exosphere.</p>
+<p>The thermal release and its flux are further elucidated by the residence time of individual particles on the lunar surface <span class="citation" data-cites="Wurz2022">(<a href="#ref-Wurz2022" role="doc-biblioref">Wurz et al., 2022</a>)</span>. This residence time, denoted by <span class="citation" data-cites="Bernatowicz1991">Bernatowicz &amp; Podosek (<a href="#ref-Bernatowicz1991" role="doc-biblioref">1991</a>)</span> as: <span class="math display">\[\begin{equation}
+    \tau= \frac{h}{k_BT} \exp\left( - \frac{E_a}{k_BT}\right)
+\end{equation}\]</span> incorporates the Planck constant <span class="math inline">\(h\)</span>, Boltzmann constant <span class="math inline">\(k_B\)</span>, temperature <span class="math inline">\(T\)</span>, and activation energy <span class="math inline">\(E_a\)</span>. Additionally, the pre-factor in the exponential, termed the “vibration frequency” <span class="citation" data-cites="Wurz2022">(<a href="#ref-Wurz2022" role="doc-biblioref">Wurz et al., 2022</a>)</span>, is expressed as: <span class="math display">\[\begin{equation}
+    \nu= \frac{k_BT}{h}
+\end{equation}\]</span> is approximately on the order of <span class="math inline">\(10^{13}\,\mathrm{s^{\mathrm{-1}}}\)</span>. Notably, the flux is often only a rough approximation, and it is preferable to utilize measured values. <span class="citation" data-cites="Fray2009">Fray &amp; Schmitt (<a href="#ref-Fray2009" role="doc-biblioref">2009</a>)</span> provide a comprehensive formulation: <span class="math display">\[\begin{equation}
+    \ln \left( p_i \right) = A_0 + \sum_{j=1}^{n} \frac{A_j}{T^j}
+\end{equation}\]</span> which offers a more accurate representation of thermal desorption flux in the lunar exosphere. This comprehensive understanding is indispensable for unraveling the intricacies of the lunar exospheric composition.</p>
 <section id="velocity-distributions" class="level1 page-columns page-full">
 <h1>Velocity Distributions</h1>
-<p>The following sections, <a href="../../documentation/drivers/thermal_sorption/maxwell_boltzmann_distribution.html">3.2.1 Maxwell-Boltzmann Velocity Distribution</a> and <a href="../../documentation/drivers/thermal_sorption/maxwell_boltzmann_flux_distribution.html">3.2.2 Maxwell-Boltzmann Flux Velocity Distribution</a>, cover the theoretical description of velocity distributions used to describe the thermal sorption mechanics. Note that the velocities are generally given either in their spherical form, i.e.&nbsp;their speed <span class="math inline">\(v\)</span>, the azimuth angle <span class="math inline">\(\vartheta\)</span>, and the elevation angle <span class="math inline">\(\varphi\)</span>, or in their cartesian form, i.e.&nbsp;the velocity components <span class="math inline">\(v_x\)</span>, <span class="math inline">\(v_y\)</span>, and <span class="math inline">\(v_z\)</span>. In the spherical expression, the angles are based on the local surface, i.e.&nbsp;the azimuth describes the horizontal angle and the elevation describes the vertical angle. For the cartesian description, a local reference frame is used (see <a href="../..\documentation/fundamentals/coordinate_systems.qmd#sec-reference_frames">Coordinate Systems, Reference Frames</a>), which means that the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> direction describe the horizontal towards the local surface, and the <span class="math inline">\(z\)</span> describes the vertical velocity.</p>
+<p>The following sections, <a href="../../documentation/drivers/thermal_sorption/maxwell_boltzmann_distribution.html">3.2.1 Maxwell-Boltzmann Velocity Distribution</a> and <a href="../../documentation/drivers/thermal_sorption/maxwell_boltzmann_flux_distribution.html">3.2.2 Maxwell-Boltzmann Flux Velocity Distribution</a>, cover the theoretical description of velocity distributions used to describe the thermal sorption mechanics. Note that the velocities are generally given either in their spherical form, i.e.&nbsp;their speed <span class="math inline">\(v\)</span>, the azimuth angle <span class="math inline">\(\vartheta\)</span>, and the elevation angle <span class="math inline">\(\varphi\)</span>, or in their cartesian form, i.e.&nbsp;the velocity components <span class="math inline">\(v_x\)</span>, <span class="math inline">\(v_y\)</span>, and <span class="math inline">\(v_z\)</span>. In the spherical expression, the angles are based on the local surface, i.e.&nbsp;the azimuth describes the horizontal angle and the elevation describes the vertical angle. For the cartesian description, a local reference frame is used (see <a href="../../documentation/fundamentals/coordinate_systems/reference_frames.html">Coordinate Systems, Reference Frames</a>), which means that the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> direction describe the horizontal towards the local surface, and the <span class="math inline">\(z\)</span> describes the vertical velocity.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"></span></div></div>
+
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2024,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Bernatowicz1991" class="csl-entry" role="listitem">
+Bernatowicz, T. J., &amp; Podosek, F. A. (1991). Argon adsorption and the lunar atmosphere. <em>Proceedings of Lunar and Planetary Science</em>, <em>21</em>(1991LPSC...21..307B), 307–313.
+</div>
+<div id="ref-Fray2009" class="csl-entry" role="listitem">
+Fray, N., &amp; Schmitt, B. (2009). Sublimation of ices of astrophysical interest: A bibliographic review. <em>Planetary and Space Science</em>, <em>57</em>(14-15), 2053–2080. <a href="https://doi.org/10.1016/j.pss.2009.09.011">https://doi.org/10.1016/j.pss.2009.09.011</a>
+</div>
+<div id="ref-Moroni2023" class="csl-entry" role="listitem">
+Moroni, M. (2023). <em>Planetary environments and exosphere modelling and a new particle</em> [PhD thesis, Università degli Studi di Roma "La Sapienza"]. <a href="https://hdl.handle.net/11573/1698042">https://hdl.handle.net/11573/1698042</a>
+</div>
+<div id="ref-Wurz2022" class="csl-entry" role="listitem">
+Wurz, P., Fatemi, S., Galli, A., Halekas, J., Harada, Y., Jäggi, N., Jasinski, J., Lammer, H., Lindsay, S., Nishino, M. N., Orlando, T. M., Raines, J. M., Scherf, M., Slavin, J., Vorburger, A., &amp; Winslow, R. (2022). <span class="nocase">Particles and Photons as Drivers for Particle Release from the Surfaces of the Moon and Mercury</span>. <em>Space Science Reviews</em>, <em>218</em>(3). <a href="https://doi.org/10.1007/s11214-022-00875-6">https://doi.org/10.1007/s11214-022-00875-6</a>
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{smolka2024,
   author = {Smolka, Alexander},
   title = {ExESS - {Extraterrestrial} {Exosphere} and {Surface}
     {Simulations}},

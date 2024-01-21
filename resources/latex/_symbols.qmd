@@ -77,6 +77,7 @@
     \newcommand{\Variance}[1]{\text{Var}\left( #1 \right)}
 \newcommand{\velocity}{v}
     \newcommand{\Velocity}{V}
+\newcommand{\vibrationFrequency}{\nu}
 \newcommand{\volume}{V}
 \newcommand{\weight}{w}
 \newcommand{\youngsModulus}{Y}

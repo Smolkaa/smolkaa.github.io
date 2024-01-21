@@ -7,15 +7,27 @@ title: "3.2 Thermal Sorption"
 
 ---
 
-Stuff about thermal sorption.
+The liberation of particles from lunar grain surfaces through thermal desorption is a crucial process, as highlighted by @Moroni2023. This phenomenon occurs when the thermal energy of an atom exceeds its binding energy, leading to the subsequent release of liberated particles into the lunar exosphere. The efficiency of thermal desorption, intricately tied to temperature, is driven by the solar photon flux, estimated at $\SI{3 \times 10^{15}}{\centi\metre\tothe{2}\per\second}$ [@Moroni2023], underscoring the complex interplay between solar radiation, temperature, and the compositional dynamics of the lunar exosphere.
 
-* Thermal desorption occurs when the thermal energy of an atom exceeds its binding energy at grain surfaces, leading to the release of the particle. At the surface, these particles are released into the exosphere (Moroni, 2023)
-* As the name suggests, the process is highly dependent on the temperature and, thus, on the solar photon flux ($\SI{3 \times 10^{15}}{\centi\metre\tothe{2}\per\second}$) (Moroni, 2023)
-* 
+
+The thermal release and its flux are further elucidated by the residence time of individual particles on the lunar surface [@Wurz2022]. This residence time, denoted by @Bernatowicz1991 as:
+\begin{equation}
+    \residenceTime = \frac{\PlanckConstant}{\BoltzmannConstant \temperature} \exp\left( - \frac{\energy_a}{\BoltzmannConstant \temperature}\right)
+\end{equation}
+incorporates the Planck constant $\PlanckConstant$, Boltzmann constant $\BoltzmannConstant$, temperature $\temperature$, and activation energy $\energy_a$. Additionally, the pre-factor in the exponential, termed the "vibration frequency" [@Wurz2022], is expressed as:
+\begin{equation}
+    \vibrationFrequency = \frac{\BoltzmannConstant \temperature}{\PlanckConstant}
+\end{equation}
+is approximately on the order of $\SI{10^{13}}{\second\tothe{-1}}$. Notably, the flux is often only a rough approximation, and it is preferable to utilize measured values. @Fray2009 provide a comprehensive formulation:
+\begin{equation}
+    \ln \left( \pressure_i \right) = A_0 + \sum_{j=1}^{n} \frac{A_j}{\temperature^j}
+\end{equation}
+which offers a more accurate representation of thermal desorption flux in the lunar exosphere. This comprehensive understanding is indispensable for unraveling the intricacies of the lunar exospheric composition.
+
 
 # Velocity Distributions
 
-The following sections, [3.2.1 Maxwell-Boltzmann Velocity Distribution](/documentation/drivers/thermal_sorption/maxwell_boltzmann_distribution.qmd) and [3.2.2 Maxwell-Boltzmann Flux Velocity Distribution](/documentation/drivers/thermal_sorption/maxwell_boltzmann_flux_distribution.qmd), cover the theoretical description of velocity distributions used to describe the thermal sorption mechanics. Note that the velocities are generally given either in their spherical form, i.e. their speed $\velocity$, the azimuth angle $\sphericalCoordinateAzimuth$, and the elevation angle $\sphericalCoordinateElevation$, or in their cartesian form, i.e. the velocity components $\velocity_\cartesianCoordinateX$, $\velocity_\cartesianCoordinateY$, and $\velocity_\cartesianCoordinateZ$. In the spherical expression, the angles are based on the local surface, i.e. the azimuth describes the horizontal angle and the elevation describes the vertical angle. For the cartesian description, a local reference frame is used (see [Coordinate Systems, Reference Frames](/documentation/fundamentals/coordinate_systems.qmd#sec-reference_frames)), which means that the $\cartesianCoordinateX$ and $\cartesianCoordinateY$ direction describe the horizontal towards the local surface, and the $\cartesianCoordinateZ$ describes the vertical velocity.
+The following sections, [3.2.1 Maxwell-Boltzmann Velocity Distribution](/documentation/drivers/thermal_sorption/maxwell_boltzmann_distribution.qmd) and [3.2.2 Maxwell-Boltzmann Flux Velocity Distribution](/documentation/drivers/thermal_sorption/maxwell_boltzmann_flux_distribution.qmd), cover the theoretical description of velocity distributions used to describe the thermal sorption mechanics. Note that the velocities are generally given either in their spherical form, i.e. their speed $\velocity$, the azimuth angle $\sphericalCoordinateAzimuth$, and the elevation angle $\sphericalCoordinateElevation$, or in their cartesian form, i.e. the velocity components $\velocity_\cartesianCoordinateX$, $\velocity_\cartesianCoordinateY$, and $\velocity_\cartesianCoordinateZ$. In the spherical expression, the angles are based on the local surface, i.e. the azimuth describes the horizontal angle and the elevation describes the vertical angle. For the cartesian description, a local reference frame is used (see [Coordinate Systems, Reference Frames](/documentation/fundamentals/coordinate_systems/reference_frames.qmd)), which means that the $\cartesianCoordinateX$ and $\cartesianCoordinateY$ direction describe the horizontal towards the local surface, and the $\cartesianCoordinateZ$ describes the vertical velocity.
 
 
 
