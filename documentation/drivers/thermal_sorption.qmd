@@ -14,15 +14,14 @@ The thermal release and its flux are further elucidated by the residence time of
 \begin{equation}
     \residenceTime = \frac{\PlanckConstant}{\BoltzmannConstant \temperature} \exp\left( - \frac{\energy_a}{\BoltzmannConstant \temperature}\right)
 \end{equation}
-incorporates the Planck constant $\PlanckConstant$, Boltzmann constant $\BoltzmannConstant$, temperature $\temperature$, and activation energy $\energy_a$. Additionally, the pre-factor in the exponential, termed the "vibration frequency" [@Wurz2022], is expressed as:
+incorporates the Planck constant $\PlanckConstant$, Boltzmann constant $\BoltzmannConstant$, temperature $\temperature$, and activation energy $\energy_a$. The pre-factor before the exponential, termed the "vibration frequency" [@Wurz2022], is expressed as:
 \begin{equation}
     \vibrationFrequency = \frac{\BoltzmannConstant \temperature}{\PlanckConstant}
 \end{equation}
-is approximately on the order of $\SI{10^{13}}{\second\tothe{-1}}$. Notably, the flux is often only a rough approximation, and it is preferable to utilize measured values. @Fray2009 provide a comprehensive formulation:
+is approximately on the order of $\SI{10^{13}}{\second\tothe{-1}}$. Notably, the flux is often only a rough approximation, and it is preferable to utilize measured values. @Fray2009 provide a formulation:
 \begin{equation}
     \ln \left( \pressure_i \right) = A_0 + \sum_{j=1}^{n} \frac{A_j}{\temperature^j}
 \end{equation}
-which offers a more accurate representation of thermal desorption flux in the lunar exosphere. This comprehensive understanding is indispensable for unraveling the intricacies of the lunar exospheric composition.
 
 
 # Velocity Distributions
